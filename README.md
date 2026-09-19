@@ -93,22 +93,27 @@ grep -rl 'sandra.grafycom@gmail.com' . | xargs sed -i 's/sandra\.grafycom@gmail\
 ### 4. Nom de domaine — provisoire
 
 Le site est publié sur **GitHub Pages**, à l'adresse
-<https://rezofabrik-hub.github.io/grafycom/>. Les balises canoniques, le
+<https://rezofabrik-hub.github.io/Grafycom/>. Les balises canoniques, le
 `sitemap.xml` et le `robots.txt` pointent vers cette adresse.
+
+⚠️ **La majuscule de `Grafycom` compte.** Le dépôt s'appelle `Grafycom`, et
+GitHub Pages respecte la casse dans l'URL : `…github.io/grafycom/` renvoie une
+erreur 404, `…github.io/Grafycom/` fonctionne. C'est une raison de plus de
+basculer vers un vrai nom de domaine, où le problème disparaît.
 
 Le jour où un vrai nom de domaine existe (`grafycom.fr` par exemple), trois
 choses à faire :
 
 ```bash
 # 1. basculer toutes les URL du site
-grep -rl 'rezofabrik-hub.github.io/grafycom' . \
+grep -rl 'rezofabrik-hub.github.io/Grafycom' . \
   | xargs sed -i 's#rezofabrik-hub\.github\.io/grafycom#www.grafycom.fr#g'
 
 # 2. déclarer le domaine à GitHub Pages
 echo 'www.grafycom.fr' > CNAME
 
 # 3. retirer le préfixe /grafycom/ de la page 404, qui devient inutile
-sed -i 's#"/grafycom/#"/#g' 404.html
+sed -i 's#"/Grafycom/#"/#g' 404.html
 ```
 
 Puis, chez le bureau d'enregistrement, faire pointer le domaine vers GitHub
