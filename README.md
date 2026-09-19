@@ -27,7 +27,7 @@ puis ouvrir <http://localhost:8000>.
 |---|---|
 | `index.html` | Accueil : promesse, bénéfices d'une identité cohérente, les 6 prestations, présentation de Sandra, méthode en 4 étapes, secteurs, aperçu des réalisations, FAQ |
 | `prestations.html` | Le détail des 6 familles de prestations, et la question du budget |
-| `realisations.html` | Portfolio — **à remplir**, voir `assets/img/realisations/LISEZ-MOI.md` |
+| `realisations.html` | Portfolio — **retirée du menu** tant qu'elle est vide, voir ci-dessous |
 | `methode.html` | Le déroulé d'un projet en 6 étapes, et ce qui est attendu du client |
 | `a-propos.html` | Sandra, le colibri, la double casquette, le bilinguisme |
 | `contact.html` | Formulaire de devis détaillé + coordonnées + zone d'intervention |
@@ -43,6 +43,24 @@ le menu ou une mention du pied, il faut passer sur les huit pages.
 ## À faire avant la mise en ligne
 
 Par ordre d'importance.
+
+### 0. Remettre la page Réalisations en ligne
+
+Cette page existe et fonctionne, mais elle **n'est liée nulle part** : ni dans
+le menu, ni dans le pied de page, ni dans le sitemap, et elle porte une balise
+`noindex`. Un portfolio vide dessert plus qu'il ne sert — mieux vaut pas de
+page qu'une page avec six cadres vides.
+
+Pour la remettre en circulation une fois les photos déposées :
+
+1. Déposer les six images dans `assets/img/realisations/` (noms attendus dans
+   le `LISEZ-MOI.md` du dossier)
+2. Remettre `<a href="realisations.html">Réalisations</a>` dans le menu et le
+   pied de page des neuf pages
+3. Retirer `noindex` de `realisations.html` et remettre son entrée dans
+   `sitemap.xml`
+4. Sur l'accueil, la section « Un aperçu du travail » a été supprimée : la
+   reprendre depuis l'historique git si vous la voulez de nouveau
 
 ### 1. Déposer les visuels manquants
 
