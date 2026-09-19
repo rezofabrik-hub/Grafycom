@@ -1,6 +1,13 @@
+# Sur une page de projet GitHub Pages, ce fichier n'est pas lu : les robots ne
+# consultent robots.txt qu'à la racine du domaine (rezofabrik-hub.github.io),
+# qui n'appartient pas à ce dépôt. Il reste utile le jour où le site basculera
+# sur son propre nom de domaine.
+# L'exclusion des pages légales repose donc, pour l'instant, sur la balise
+# <meta name="robots" content="noindex"> présente dans ces deux pages.
+
 User-agent: *
 Allow: /
 Disallow: /mentions-legales.html
 Disallow: /confidentialite.html
 
-Sitemap: https://www.grafycom.fr/sitemap.xml
+Sitemap: https://rezofabrik-hub.github.io/grafycom/sitemap.xml

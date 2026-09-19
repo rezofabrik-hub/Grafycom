@@ -90,15 +90,30 @@ Pour basculer :
 grep -rl 'sandra.grafycom@gmail.com' . | xargs sed -i 's/sandra\.grafycom@gmail\.com/contact@grafycom.fr/g'
 ```
 
-### 4. Confirmer le nom de domaine
+### 4. Nom de domaine — provisoire
 
-Les balises canoniques, le `sitemap.xml` et `robots.txt` pointent vers
-`https://www.grafycom.fr`. Ce domaine est une hypothèse : le vérifier auprès
-d'un bureau d'enregistrement. Pour un autre nom :
+Le site est publié sur **GitHub Pages**, à l'adresse
+<https://rezofabrik-hub.github.io/grafycom/>. Les balises canoniques, le
+`sitemap.xml` et le `robots.txt` pointent vers cette adresse.
+
+Le jour où un vrai nom de domaine existe (`grafycom.fr` par exemple), trois
+choses à faire :
 
 ```bash
-grep -rl 'www.grafycom.fr' . | xargs sed -i 's#www\.grafycom\.fr#le-vrai-domaine.fr#g'
+# 1. basculer toutes les URL du site
+grep -rl 'rezofabrik-hub.github.io/grafycom' . \
+  | xargs sed -i 's#rezofabrik-hub\.github\.io/grafycom#www.grafycom.fr#g'
+
+# 2. déclarer le domaine à GitHub Pages
+echo 'www.grafycom.fr' > CNAME
+
+# 3. retirer le préfixe /grafycom/ de la page 404, qui devient inutile
+sed -i 's#"/grafycom/#"/#g' 404.html
 ```
+
+Puis, chez le bureau d'enregistrement, faire pointer le domaine vers GitHub
+Pages (un enregistrement `CNAME` de `www` vers `rezofabrik-hub.github.io`), et
+cocher « Enforce HTTPS » dans les réglages Pages une fois le certificat émis.
 
 ### 5. Brancher le formulaire de contact
 
@@ -185,16 +200,35 @@ Trois choix délibérés, à assumer ou à corriger :
 - **Aucun chiffre non vérifiable** (nombre de clients, de projets, taux de
   satisfaction). Seul « +7 ans d'expertise » apparaît, repris de vos visuels.
 
-## Hébergement
+## Hébergement — GitHub Pages
 
-Un site statique tient sur n'importe quel hébergement mutualisé, et gratuitement
-sur Netlify, Cloudflare Pages ou GitHub Pages. Trois points à vérifier :
+Le site est servi directement depuis la branche `main` de ce dépôt, sans
+workflow ni étape de construction. Un `git push` met le site à jour ; la
+publication prend une à deux minutes.
 
-- **HTTPS activé** (gratuit et automatique chez tous les hébergeurs cités)
-- Redirection de `grafycom.fr` vers `www.grafycom.fr`, ou l'inverse — une seule
-  des deux versions doit répondre, pour ne pas diviser le référencement
-- Une fois en ligne, déclarer le site dans Google Search Console et y soumettre
-  `sitemap.xml`
+**Réglage (à faire une fois, dans Settings → Pages) :** source « Deploy from a
+branch », branche `main`, dossier `/ (root)`.
+
+À savoir :
+
+- GitHub Pages sur un **dépôt privé** demande un abonnement payant (Pro ou
+  plus). Sur un compte gratuit, le dépôt doit être **public**. Le code d'un
+  site vitrine n'a rien de confidentiel — c'est exactement ce que le navigateur
+  de chaque visiteur télécharge — mais le dépôt public rend aussi visibles le
+  README et l'historique des commits.
+- Le fichier `.nojekyll` désactive le traitement Jekyll : les fichiers sont
+  servis tels quels.
+- `404.html` s'affiche pour toute adresse inconnue. Ses chemins sont absolus
+  (`/grafycom/…`) car elle peut être servie depuis n'importe quel niveau
+  d'URL, où des chemins relatifs casseraient.
+- HTTPS est automatique et gratuit.
+- `robots.txt` n'est **pas** lu sur une page de projet : les robots ne le
+  consultent qu'à la racine du domaine, qui n'appartient pas à ce dépôt. Les
+  pages légales restent exclues de l'indexation par leur balise
+  `<meta name="robots" content="noindex">`.
+
+Une fois en ligne, déclarer le site dans Google Search Console et y soumettre
+`sitemap.xml`.
 
 ## Confidentialité et polices externes
 
