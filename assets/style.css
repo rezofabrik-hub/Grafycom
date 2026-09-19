@@ -197,6 +197,15 @@ nav.principal a.actif { font-weight: 700; }
 .secteur-texte h3 { margin-bottom: 8px; }
 .secteur-texte p { font-size: 15px; }
 
+/* ---------- Photo d'illustration d'une prestation ---------- */
+.presta-photo { margin: 26px 0 0; border-radius: var(--radius); overflow: hidden; }
+.presta-photo img {
+  width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
+  filter: saturate(.82) sepia(.12) contrast(1.02);
+  transition: filter .3s, transform .5s ease;
+}
+.presta-photo:hover img { filter: saturate(1) sepia(0); transform: scale(1.02); }
+
 /* ---------- Étapes ---------- */
 .etape { position: relative; padding-top: 10px; }
 .etape .num {

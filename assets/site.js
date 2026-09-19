@@ -35,9 +35,11 @@
     if (!img.parentNode) return;
     var bloc = document.createElement('div');
     bloc.className = 'placeholder-visuel';
+    // Le chemin du fichier reste en info-bulle : utile à qui maintient le site,
+    // invisible pour le visiteur, à qui il ne dirait rien.
+    bloc.title = 'Fichier attendu : ' + img.getAttribute('src');
     bloc.innerHTML = '<i class="fa-regular fa-image" aria-hidden="true"></i>'
-      + '<strong>' + (img.getAttribute('data-attente') || 'Visuel à déposer') + '</strong>'
-      + '<span>' + img.getAttribute('src') + '</span>';
+      + '<strong>' + (img.getAttribute('data-attente') || 'Visuel à venir') + '</strong>';
     img.parentNode.replaceChild(bloc, img);
   }
 
