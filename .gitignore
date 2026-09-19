@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+
+# Fichiers de travail
+*.ai
+*.psd
+*.indd
+_a-traiter/
