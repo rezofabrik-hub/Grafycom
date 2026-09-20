@@ -153,7 +153,7 @@ obligation ne s'applique pas — mais la section doit alors être retirée plut�
 que laissée incomplète.
 
 **L'adresse du siège n'est pas publiée**, à la demande de l'éditrice. Elle est
-pourtant publique au registre (98 avenue Louis Torcatis, 66000 Perpignan) et
+pourtant publique au registre national des entreprises, et
 l'article 6-III de la LCEN l'exige. Voir «&nbsp;Ce qui reste à trancher&nbsp;».
 
 ### 3. Coordonnées — fait
