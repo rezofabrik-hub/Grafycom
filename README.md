@@ -31,6 +31,11 @@ puis ouvrir <http://localhost:8000>.
 | `methode.html` | Le déroulé d'un projet en 6 étapes, et ce qui est attendu du client |
 | `a-propos.html` | Sandra, le colibri, la double casquette, le bilinguisme |
 | `contact.html` | Formulaire de devis détaillé + coordonnées + zone d'intervention |
+| `infographiste-perpignan.html` | Page locale — Perpignan |
+| `graphiste-canet-en-roussillon.html` | Page locale — Canet-en-Roussillon |
+| `graphiste-argeles-sur-mer.html` | Page locale — Argelès-sur-Mer |
+| `graphiste-ceret.html` | Page locale — Céret |
+| `basculer-domaine.sh` | Script de bascule vers un vrai nom de domaine |
 | `mentions-legales.html` | Obligatoires — **à compléter avant mise en ligne** |
 | `confidentialite.html` | RGPD — **à compléter avant mise en ligne** |
 | `assets/style.css` | Feuille de style commune |
@@ -160,6 +165,51 @@ le formulaire intégré si le site est hébergé chez Netlify.
 Les trois icônes du pied de page pointent vers les accueils de Facebook,
 Instagram et LinkedIn. Remplacer par les vraies adresses, ou supprimer les
 lignes inutiles (commentaire `À REMPLACER` dans chaque page).
+
+## Référencement local
+
+Quatre pages visent chacune une commune et une requête&nbsp;: «&nbsp;infographiste
+Perpignan&nbsp;», «&nbsp;graphiste Canet-en-Roussillon&nbsp;», «&nbsp;graphiste
+Argelès-sur-Mer&nbsp;», «&nbsp;graphiste Céret&nbsp;». Elles sont liées depuis le
+pied de page de toutes les pages et déclarées dans le `sitemap.xml`.
+
+**Quatre, et pas onze.** Décliner la même page sur tout le département produit
+ce que Google appelle des pages satellites, et les déclasse. Chaque page dit ici
+quelque chose de vrai et de différent sur son territoire&nbsp;: le secteur
+patrimonial protégé à Perpignan, la double saison à Canet, la signalétique de
+camping à Argelès, les étiquettes de producteur à Céret. C'est ce qui fait la
+différence entre une page utile et une page de remplissage.
+
+Pour en ajouter une&nbsp: copier un bloc de `villes.py`, et n'écrire la page que
+si vous avez réellement quelque chose de spécifique à dire sur la commune. Sinon,
+mieux vaut s'abstenir.
+
+### Titres et descriptions
+
+Tous les titres tiennent en 60 caractères et les descriptions en 155&nbsp;: au-delà,
+Google tronque. Un contrôle&nbsp;:
+
+```bash
+python3 - <<'EOF'
+import re, glob
+for p in sorted(glob.glob('*.html')):
+    s = open(p, encoding='utf-8').read()
+    t = re.search(r'<title>(.*?)</title>', s, re.S)
+    d = re.search(r'name="description" content="(.*?)"', s, re.S)
+    if t and len(t.group(1)) > 60: print('titre long :', p)
+    if d and len(d.group(1)) > 155: print('description longue :', p)
+EOF
+```
+
+### Ce qui reste à faire pour le référencement
+
+1. **Acheter le nom de domaine** — voir `basculer-domaine.sh`
+2. **Créer la fiche Google Business Profile** — gratuite, et pour une activité
+   locale elle pèse souvent plus lourd que le site lui-même. Le mode «&nbsp;zone de
+   chalandise&nbsp;» permet de ne pas afficher d'adresse publiquement.
+3. **Déclarer le site dans Google Search Console** et y soumettre le sitemap
+4. **Remettre la page Réalisations** avec de vraies photos&nbsp;: c'est le contenu
+   qui manque le plus
 
 ## Ce qui reste à trancher
 
