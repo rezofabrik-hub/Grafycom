@@ -189,26 +189,47 @@ lignes inutiles (commentaire `À REMPLACER` dans chaque page).
 
 ## Référencement local
 
-Quatre pages visent chacune une commune et une requête&nbsp;: «&nbsp;infographiste
-Perpignan&nbsp;», «&nbsp;graphiste Canet-en-Roussillon&nbsp;», «&nbsp;graphiste
-Argelès-sur-Mer&nbsp;», «&nbsp;graphiste Céret&nbsp;». Elles sont liées depuis le
-pied de page de toutes les pages et déclarées dans le `sitemap.xml`.
+**Douze pages de commune**, chacune visant une requête précise, plus une page
+**Zone d'intervention** qui liste les 226 communes du département.
 
-**Quatre, et pas onze.** Décliner la même page sur tout le département produit
-ce que Google appelle des pages satellites, et les déclasse. Chaque page dit ici
-quelque chose de vrai et de différent sur son territoire&nbsp;: le secteur
-patrimonial protégé à Perpignan, la double saison à Canet, la signalétique de
-camping à Argelès, les étiquettes de producteur à Céret. C'est ce qui fait la
-différence entre une page utile et une page de remplissage.
+| Page | Angle |
+|---|---|
+| `infographiste-perpignan.html` | Secteur protégé, autorisations d'enseigne, clientèle catalane |
+| `graphiste-canet-en-roussillon.html` | Double saison, sel et tramontane |
+| `graphiste-saint-cyprien.html` | Port de plaisance, résidences de tourisme |
+| `graphiste-argeles-sur-mer.html` | Signalétique de camping, multilingue |
+| `graphiste-le-barcares.html` | Camping, événementiel, calendrier de saison |
+| `graphiste-elne.html` | Producteurs de la plaine, centre ancien |
+| `graphiste-rivesaltes.html` | Étiquettes de vin, artisans de la zone d'activité |
+| `graphiste-thuir.html` | Gammes de cuvées, accueil au caveau |
+| `graphiste-collioure.html` | Site protégé, appellations, galeries |
+| `graphiste-ceret.html` | Étiquettes de producteur, vie associative |
+| `graphiste-prades.html` | Affiches de festival, montagne |
+| `graphiste-font-romeu.html` | Saison inversée, sport de haut niveau |
+| `zone-intervention.html` | Les 12 pages + les 226 communes |
 
-Pour en ajouter une&nbsp: copier un bloc de `villes.py`, et n'écrire la page que
-si vous avez réellement quelque chose de spécifique à dire sur la commune. Sinon,
-mieux vaut s'abstenir.
+**Douze, et pas 226.** Le département compte 226 communes, dont 138 de moins de
+mille habitants. Une page par commune serait un cas d'école de ce que Google
+appelle des pages satellites&nbsp;: la sanction ne frappe pas seulement ces
+pages, elle frappe le domaine entier. Et personne ne cherche «&nbsp;graphiste à
+Campoussy&nbsp;», 28 habitants.
+
+Chaque page dit donc quelque chose de vrai et de distinct sur son territoire.
+La page Zone d'intervention capte le reste&nbsp;: nommer 226 communes sur une
+page utile n'est pas une page satellite, c'est une information.
+
+La liste des communes vient du répertoire officiel (`geo.api.gouv.fr`).
+
+### Pour ajouter une commune
+
+Copier un bloc dans `villes.py` à `villes6.py` — et n'écrire la page que si vous
+avez réellement quelque chose de spécifique à dire. Sinon, s'abstenir&nbsp;: la
+mention dans la page Zone d'intervention suffit.
 
 ### Titres et descriptions
 
-Tous les titres tiennent en 60 caractères et les descriptions en 155&nbsp;: au-delà,
-Google tronque. Un contrôle&nbsp;:
+Tous les titres tiennent en 60 caractères, toutes les descriptions en 155&nbsp;:
+au-delà, Google tronque. Contrôle&nbsp;:
 
 ```bash
 python3 - <<'EOF'
@@ -221,16 +242,6 @@ for p in sorted(glob.glob('*.html')):
     if d and len(d.group(1)) > 155: print('description longue :', p)
 EOF
 ```
-
-### Ce qui reste à faire pour le référencement
-
-1. **Acheter le nom de domaine** — voir `basculer-domaine.sh`
-2. **Créer la fiche Google Business Profile** — gratuite, et pour une activité
-   locale elle pèse souvent plus lourd que le site lui-même. Le mode «&nbsp;zone de
-   chalandise&nbsp;» permet de ne pas afficher d'adresse publiquement.
-3. **Déclarer le site dans Google Search Console** et y soumettre le sitemap
-4. **Remettre la page Réalisations** avec de vraies photos&nbsp;: c'est le contenu
-   qui manque le plus
 
 ## Ce qui reste à trancher
 

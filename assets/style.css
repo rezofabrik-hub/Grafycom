@@ -206,6 +206,17 @@ nav.principal a.actif { font-weight: 700; }
 }
 .presta-photo:hover img { filter: saturate(1) sepia(0); transform: scale(1.02); }
 
+/* ---------- Liste des communes ---------- */
+.communes {
+  list-style: none; margin: 34px 0 0; padding: 0;
+  columns: 4; column-gap: 26px;
+  font-size: 14.5px; line-height: 1.9;
+}
+.communes li { break-inside: avoid; color: var(--brun); }
+@media (max-width: 900px) { .communes { columns: 3; } }
+@media (max-width: 640px) { .communes { columns: 2; font-size: 14px; } }
+@media (max-width: 400px) { .communes { columns: 1; } }
+
 /* ---------- Étapes ---------- */
 .etape { position: relative; padding-top: 10px; }
 .etape .num {
