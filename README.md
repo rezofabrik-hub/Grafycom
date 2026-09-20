@@ -74,7 +74,9 @@ Si vous régénérez les pages depuis les scripts de génération, pensez à pas
 | `graphiste-argeles-sur-mer.html` | Page locale — Argelès-sur-Mer |
 | `graphiste-ceret.html` | Page locale — Céret |
 | `basculer-domaine.sh` | Script de bascule vers un vrai nom de domaine |
-| `mentions-legales.html` | Obligatoires — **à compléter avant mise en ligne** |
+| `MENTIONS-DEVIS.md` | Textes prêts à coller dans les devis (hors site) |
+| `cgv.html` | Conditions générales de vente — professionnels et particuliers |
+| `mentions-legales.html` | Obligatoires — un seul champ reste à remplir |
 | `confidentialite.html` | RGPD — **à compléter avant mise en ligne** |
 | `assets/style.css` | Feuille de style commune |
 | `assets/site.js` | Menu mobile, année du copyright, visuels manquants, formulaire |
@@ -129,6 +131,16 @@ entreprises&nbsp;: Grafycom, nom commercial de **Sandra Martinez Gala**,
 entrepreneur individuel, SIREN 999 556 301, SIRET 999 556 301 00011, TVA non
 applicable (art. 293 B du CGI). L'hébergeur (GitHub,&nbsp;Inc.) et la date de
 mise à jour y figurent également.
+
+Les **conditions générales de vente** sont rédigées (`cgv.html`), avec les
+régimes distincts pour les clients professionnels et pour les consommateurs&nbsp;:
+devis, acomptes, allers-retours, bon à tirer, cession de droits au sens de
+l'article L131-3 du CPI, droit de rétractation et formulaire type.
+
+Les mentions à faire figurer sur les devis — dont la renonciation au droit de
+rétractation — sont rassemblées dans `MENTIONS-DEVIS.md`, à la racine du dépôt.
+
+⚠ **Ces textes doivent être relus par un juriste avant usage.**
 
 **Il reste un point&nbsp;:** le médiateur de la consommation. L'article L612-1
 du code de la consommation impose d'adhérer à un médiateur dès lors qu'on a des
