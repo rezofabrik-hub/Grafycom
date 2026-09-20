@@ -10,4 +10,4 @@ Allow: /
 Disallow: /mentions-legales.html
 Disallow: /confidentialite.html
 
-Sitemap: https://rezofabrik-hub.github.io/Grafycom/sitemap.xml
+Sitemap: https://www.grafycom.fr/sitemap.xml

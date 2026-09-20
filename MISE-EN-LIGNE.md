@@ -15,7 +15,7 @@ serveur web.
 - **Dépôt** : <https://github.com/rezofabrik-hub/Grafycom>
 - **Branche de production** : `main`
 - **Racine du site** : la racine du dépôt (`index.html` est à la racine)
-- **Adresse provisoire actuelle** : <https://rezofabrik-hub.github.io/Grafycom/>
+- **Adresse provisoire actuelle** : <https://www.grafycom.fr/>
 
 ---
 
@@ -134,7 +134,7 @@ certificat Let's Encrypt — comptez de quelques minutes à quelques heures.
 Une fois le certificat émis, **cocher « Enforce HTTPS »**.
 
 GitHub redirige automatiquement l'autre forme du domaine (nu ↔ `www`) ainsi que
-l'ancienne adresse `rezofabrik-hub.github.io/Grafycom/` vers le domaine
+l'ancienne adresse `www.grafycom.fr/` vers le domaine
 configuré. Rien à faire de plus côté redirections.
 
 ### 2.3 Côté dépôt — une commande

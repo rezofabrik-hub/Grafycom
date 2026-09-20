@@ -113,35 +113,18 @@ Pour basculer :
 grep -rl 'sandra.grafycom@gmail.com' . | xargs sed -i 's/sandra\.grafycom@gmail\.com/contact@grafycom.fr/g'
 ```
 
-### 4. Nom de domaine — provisoire
+### 4. Nom de domaine — fait
 
-Le site est publié sur **GitHub Pages**, à l'adresse
-<https://rezofabrik-hub.github.io/Grafycom/>. Les balises canoniques, le
-`sitemap.xml` et le `robots.txt` pointent vers cette adresse.
+Le site est publié sur **https://www.grafycom.fr**. Les balises canoniques, le
+`sitemap.xml`, le `robots.txt` et les chemins de la page 404 pointent vers cette
+adresse, et le fichier `CNAME` la déclare à GitHub Pages.
 
-⚠️ **La majuscule de `Grafycom` compte.** Le dépôt s'appelle `Grafycom`, et
-GitHub Pages respecte la casse dans l'URL : `…github.io/grafycom/` renvoie une
-erreur 404, `…github.io/Grafycom/` fonctionne. C'est une raison de plus de
-basculer vers un vrai nom de domaine, où le problème disparaît.
+L'ancienne adresse `rezofabrik-hub.github.io/Grafycom/` est redirigée
+automatiquement par GitHub.
 
-Le jour où un vrai nom de domaine existe (`grafycom.fr` par exemple), trois
-choses à faire :
-
-```bash
-# 1. basculer toutes les URL du site
-grep -rl 'rezofabrik-hub.github.io/Grafycom' . \
-  | xargs sed -i 's#rezofabrik-hub\.github\.io/grafycom#www.grafycom.fr#g'
-
-# 2. déclarer le domaine à GitHub Pages
-echo 'www.grafycom.fr' > CNAME
-
-# 3. retirer le préfixe /grafycom/ de la page 404, qui devient inutile
-sed -i 's#"/Grafycom/#"/#g' 404.html
-```
-
-Puis, chez le bureau d'enregistrement, faire pointer le domaine vers GitHub
-Pages (un enregistrement `CNAME` de `www` vers `rezofabrik-hub.github.io`), et
-cocher « Enforce HTTPS » dans les réglages Pages une fois le certificat émis.
+**Reste à vérifier :** le domaine nu `grafycom.fr` (sans `www`) ne résolvait pas
+au moment de la bascule. Pour qu'il redirige lui aussi, il faut quatre
+enregistrements `A` sur `@` dans Route 53 — voir `MISE-EN-LIGNE.md`.
 
 ### 5. Brancher le formulaire de contact
 
