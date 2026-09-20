@@ -122,16 +122,27 @@ Les deux logos, eux, sont bien en place :
 `assets/img/logo-grafycom.jpg` (bandeau, en-tête et pied) et
 `assets/img/logo-grafycom-carre.jpg` (héros, favicon, aperçu de partage).
 
-### 2. Compléter les informations légales
+### 2. Informations légales — presque fait
 
-Les passages surlignés en jaune dans `mentions-legales.html` et
-`confidentialite.html` sont des trous à remplir : raison sociale, statut
-juridique, SIRET, TVA, coordonnées de l'hébergeur, médiateur de la
-consommation. Rien n'a été inventé — ces mentions sont obligatoires
-(art. 6-III de la LCEN) et leur absence est sanctionnée.
+Les mentions légales sont renseignées d'après le registre national des
+entreprises&nbsp;: Grafycom, nom commercial de **Sandra Martinez Gala**,
+entrepreneur individuel, SIREN 999 556 301, SIRET 999 556 301 00011, TVA non
+applicable (art. 293 B du CGI). L'hébergeur (GitHub,&nbsp;Inc.) et la date de
+mise à jour y figurent également.
 
-L'adresse postale et le nom de famille ont été retirés à la demande de
-l'éditrice : voir « Ce qui reste à trancher » plus bas.
+**Il reste un point&nbsp;:** le médiateur de la consommation. L'article L612-1
+du code de la consommation impose d'adhérer à un médiateur dès lors qu'on a des
+clients **consommateurs** (des particuliers). L'adhésion coûte quelques dizaines
+d'euros par an auprès d'organismes agréés. Une fois souscrite, remplacer le
+passage surligné dans `mentions-legales.html`.
+
+Si Grafycom ne travaille qu'avec des professionnels et des associations, cette
+obligation ne s'applique pas — mais la section doit alors être retirée plutôt
+que laissée incomplète.
+
+**L'adresse du siège n'est pas publiée**, à la demande de l'éditrice. Elle est
+pourtant publique au registre (98 avenue Louis Torcatis, 66000 Perpignan) et
+l'article 6-III de la LCEN l'exige. Voir «&nbsp;Ce qui reste à trancher&nbsp;».
 
 ### 3. Coordonnées — fait
 
@@ -245,34 +256,25 @@ EOF
 
 ## Ce qui reste à trancher
 
-### L'adresse et le nom de famille
+### L'adresse du siège
 
-La page de mentions légales publie aujourd'hui : Grafycom, Sandra, le
-téléphone, le courriel et « Perpignan (66) — adresse postale communiquée sur
-demande ». Ni adresse complète, ni nom de famille, conformément à la demande.
+Le nom complet de l'éditrice est désormais publié, comme la loi l'exige.
+L'adresse du siège, elle, ne l'est pas&nbsp;: la page indique «&nbsp;Perpignan
+(66000) — adresse postale communiquée sur demande&nbsp;».
 
-Il faut le savoir : l'article 6-III de la LCEN impose, pour un site
-professionnel, **l'adresse du siège et le nom complet du responsable de la
-publication**. En l'état, la page n'y répond pas entièrement. Le risque est
-faible en pratique pour une petite structure, mais il existe, et il se
-matérialise surtout en cas de litige avec un client ou de signalement.
+L'article 6-III de la LCEN impose l'adresse de l'établissement. La page n'y
+répond donc pas entièrement. À noter&nbsp;: cette adresse est **déjà publique**
+au registre national des entreprises, consultable par quiconque tape
+«&nbsp;Grafycom&nbsp;» sur `annuaire-entreprises.data.gouv.fr`. La taire sur le
+site ne protège donc rien&nbsp;; c'est un choix d'affichage, pas de
+confidentialité.
 
-Trois façons de régler ça sans publier une adresse personnelle :
+Trois façons de régler ça&nbsp;:
 
-1. **Une société de domiciliation** — une adresse commerciale à Perpignan pour
-   quelques dizaines d'euros par mois, utilisable au registre comme sur le site.
-2. **Un espace de coworking** qui propose la domiciliation dans son offre.
-3. **Publier l'adresse professionnelle déclarée au registre**, qui est de toute
-   façon déjà consultable publiquement sur l'annuaire des entreprises de
-   l'INSEE dès lors que l'entreprise est immatriculée — ce point vaut la peine
-   d'être vérifié avant de chercher une solution à un problème qui n'existe
-   peut-être plus.
-
-Pour le nom de famille, la mention « Directrice de la publication : Sandra »
-reste incomplète au regard du texte. À arbitrer en connaissance de cause.
-
-Un rappel de tout ceci est laissé en commentaire HTML dans
-`mentions-legales.html`, pour la personne qui reprendra le fichier.
+1. **Publier l'adresse du siège**, puisqu'elle est déjà accessible.
+2. **Une société de domiciliation** — une adresse commerciale à Perpignan pour
+   quelques dizaines d'euros par mois, à déclarer au registre comme sur le site.
+3. **Un espace de coworking** proposant la domiciliation.
 
 ## Direction artistique
 
