@@ -157,6 +157,73 @@ Le script modifie les URL du site, corrige `404.html` et crée le fichier
 
 ---
 
+## 2 bis. Passer sur Cloudflare Pages et rendre le dépôt privé
+
+**Pourquoi.** GitHub Pages sur un dépôt privé exige un abonnement payant, et
+n'autorise aucun en-tête HTTP personnalisé. Cloudflare Pages accepte les dépôts
+privés sur son offre gratuite et lit le fichier `_headers` — c'est ce qui permet
+`Strict-Transport-Security`, `X-Frame-Options` et la CSP en vrai en-tête.
+
+**L'ordre compte.** Rendre le dépôt privé avant que Cloudflare ne serve le site
+met celui-ci hors ligne immédiatement. Suivre la séquence :
+
+### 1. Créer le projet Cloudflare Pages
+
+Tableau de bord Cloudflare → **Workers & Pages** → **Create** → **Pages** →
+**Connect to Git** → autoriser GitHub → choisir `rezofabrik-hub/Grafycom`.
+
+Réglages de construction :
+
+| Champ | Valeur |
+|---|---|
+| Framework preset | None |
+| Build command | `bash build.sh` |
+| Build output directory | `dist` |
+| Production branch | `main` |
+
+Le premier déploiement donne une adresse en `…pages.dev`. **Vérifier le site
+dessus avant d'aller plus loin** : pages, polices, icônes, page 404.
+
+### 2. Rattacher le domaine
+
+Dans le projet Pages → **Custom domains** → **Set up a domain** →
+`www.grafycom.fr`.
+
+Cloudflare indique alors l'enregistrement à créer. Dans Route 53, **remplacer**
+l'enregistrement `www` existant par celui qu'indique Cloudflare (un `CNAME` vers
+le nom `…pages.dev`). Ne pas laisser les deux : les anciens `A` vers GitHub
+entrent en conflit.
+
+Attendre que `https://www.grafycom.fr` soit servi par Cloudflare — l'en-tête de
+réponse porte alors un `cf-ray` au lieu de `server: GitHub.com` :
+
+```bash
+curl -sI https://www.grafycom.fr/ | grep -iE 'server|cf-ray'
+```
+
+### 3. Débrancher GitHub Pages
+
+Une fois Cloudflare confirmé : dépôt → **Settings → Pages** → source **None**.
+Supprimer aussi le fichier `CNAME` à la racine, qui ne sert qu'à GitHub Pages.
+
+### 4. Rendre le dépôt privé
+
+**Settings → General → Danger Zone → Change repository visibility → Private.**
+
+À vérifier ensuite : que le déploiement Cloudflare fonctionne toujours
+(l'autorisation GitHub accordée à l'étape 1 survit au passage en privé), et que
+`https://www.grafycom.fr` répond.
+
+### Ce que le passage en privé change vraiment
+
+Le code d'un site vitrine n'a rien de confidentiel : c'est exactement ce que le
+navigateur de chaque visiteur télécharge. Ce que le dépôt privé protège, c'est
+le reste — `README.md`, `MISE-EN-LIGNE.md`, `MENTIONS-DEVIS.md`, les scripts, et
+l'historique des commits, jusqu'ici lisibles et indexés par les moteurs.
+
+`build.sh` écarte déjà ces fichiers du site publié. Le dépôt privé ferme la
+seconde porte.
+
 ## 3. Option B — héberger ailleurs
 
 Si vous préférez un hébergement mutualisé classique, c'est possible sans rien
