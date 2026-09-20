@@ -16,3 +16,6 @@ desktop.ini
 *.psd
 *.indd
 _a-traiter/
+
+# Sortie de build.sh, reconstruite a chaque deploiement.
+dist/
