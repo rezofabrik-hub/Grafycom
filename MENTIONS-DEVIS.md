@@ -5,39 +5,46 @@ Textes prêts à copier dans le modèle de devis de Grafycom.
 
 ---
 
-## 1. La mention indispensable : renonciation au droit de rétractation
+## 1. La mention indispensable : le client agit à titre professionnel
 
-**Pour qui** — uniquement les clients **particuliers** (consommateurs), quand le
-devis est conclu **à distance** (téléphone, courriel, visio) ou **hors
-établissement**. Inutile entre professionnels.
+**Pourquoi** — Grafycom ne contracte qu'avec des professionnels. Cette mention
+est ce qui rend ce choix opposable : sans elle, un client pourrait soutenir
+avoir agi comme consommateur et réclamer le droit de rétractation de quatorze
+jours, ainsi que l'accès à un médiateur.
 
-**Pourquoi** — sans elle, le client dispose de 14 jours pour se rétracter sans
-motif. Vous pouvez travailler deux semaines et devoir tout rembourser.
+Bloc à insérer juste au-dessus de la signature :
 
-Bloc à insérer juste au-dessus de la signature, avec deux cases distinctes :
-
-> **Droit de rétractation**
+> **Qualité du client**
 >
-> En tant que consommateur, vous disposez d'un délai de quatorze jours à compter
-> de la signature du présent devis pour vous rétracter sans motif ni pénalité
-> (article L221-18 du code de la consommation). Le formulaire type de
-> rétractation figure dans les conditions générales de vente.
+> Le client déclare agir dans le cadre de son activité professionnelle
+> (commerciale, industrielle, artisanale, libérale ou associative) et non en
+> qualité de consommateur au sens de l'article liminaire du code de la
+> consommation.
 >
-> ☐ **Je demande expressément que la prestation débute immédiatement**, avant
-> l'expiration du délai de quatorze jours. Je reconnais qu'en cas de rétractation
-> après le début d'exécution, je resterai redevable du montant correspondant au
-> travail déjà réalisé, et que je perdrai mon droit de rétractation si la
-> prestation est pleinement exécutée avant la fin du délai (article L221-25).
+> Numéro SIREN ou RNA de la structure : ………………………………
 >
-> ☐ Je préfère attendre l'expiration du délai de quatorze jours avant le
-> démarrage.
->
-> Date : ……/……/………  Signature :
+> Date : ……/……/………  Signature précédée de « bon pour accord » :
 
-> **Important :** la case doit être cochée **par le client**, pas pré-cochée.
-> Une case pré-cochée est réputée non écrite.
+> **Important :** demandez systématiquement le SIREN (ou le numéro RNA pour une
+> association) et reportez-le sur le devis. C'est la preuve la plus simple que
+> le client est bien un professionnel. Un particulier n'en a pas — c'est aussi
+> votre filtre.
 
 ---
+
+## 1 bis. Si un particulier vous sollicite
+
+Vous avez trois possibilités, et il faut en choisir une avant de répondre :
+
+- **Refuser poliment** et l'orienter vers un confrère. C'est cohérent avec votre
+  positionnement et cela ne coûte rien.
+- **Accepter exceptionnellement** : dans ce cas l'obligation d'adhérer à un
+  médiateur de la consommation redevient applicable, et le droit de rétractation
+  de quatorze jours s'applique au contrat. Une seule exception suffit à
+  déclencher l'obligation.
+- **Facturer via une structure tierce** qui, elle, est en règle.
+
+Le positionnement « professionnels uniquement » n'a de valeur que s'il est tenu.
 
 ## 2. Les mentions obligatoires sur tout devis
 
@@ -97,10 +104,8 @@ fragile — et vous prive de toute renégociation si le client élargit l'usage.
 
 ## 4. Ce qui reste à faire
 
-- **Adhérer à un médiateur de la consommation.** Obligatoire dès lors qu'on a
-  des clients particuliers (article L612-1). Quelques dizaines d'euros par an
-  auprès d'un organisme agréé par la CECMC. Une fois l'adhésion prise, ses
-  coordonnées doivent figurer sur le site, sur les devis et sur les CGV.
+- **Tenir le positionnement professionnel.** Il ne vaut que s'il est constant :
+  faire signer la mention de qualité sur chaque devis, et relever le SIREN.
 - **Vérifier la RC professionnelle.** Non obligatoire pour cette activité, mais
   fortement conseillée : une erreur sur un bon à tirer validé peut coûter le prix
   d'un tirage entier.

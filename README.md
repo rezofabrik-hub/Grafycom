@@ -76,7 +76,7 @@ Si vous régénérez les pages depuis les scripts de génération, pensez à pas
 | `basculer-domaine.sh` | Script de bascule vers un vrai nom de domaine |
 | `MENTIONS-DEVIS.md` | Textes prêts à coller dans les devis (hors site) |
 | `cgv.html` | Conditions générales de vente — professionnels et particuliers |
-| `mentions-legales.html` | Obligatoires — un seul champ reste à remplir |
+| `mentions-legales.html` | Obligatoires — complètes |
 | `confidentialite.html` | RGPD — **à compléter avant mise en ligne** |
 | `assets/style.css` | Feuille de style commune |
 | `assets/site.js` | Menu mobile, année du copyright, visuels manquants, formulaire |
@@ -124,7 +124,7 @@ Les deux logos, eux, sont bien en place :
 `assets/img/logo-grafycom.jpg` (bandeau, en-tête et pied) et
 `assets/img/logo-grafycom-carre.jpg` (héros, favicon, aperçu de partage).
 
-### 2. Informations légales — presque fait
+### 2. Informations légales — fait
 
 Les mentions légales sont renseignées d'après le registre national des
 entreprises&nbsp;: Grafycom, nom commercial de **Sandra Martinez Gala**,
@@ -142,15 +142,26 @@ rétractation — sont rassemblées dans `MENTIONS-DEVIS.md`, à la racine du d�
 
 ⚠ **Ces textes doivent être relus par un juriste avant usage.**
 
-**Il reste un point&nbsp;:** le médiateur de la consommation. L'article L612-1
-du code de la consommation impose d'adhérer à un médiateur dès lors qu'on a des
-clients **consommateurs** (des particuliers). L'adhésion coûte quelques dizaines
-d'euros par an auprès d'organismes agréés. Une fois souscrite, remplacer le
-passage surligné dans `mentions-legales.html`.
+### Le choix du tout-professionnel
 
-Si Grafycom ne travaille qu'avec des professionnels et des associations, cette
-obligation ne s'applique pas — mais la section doit alors être retirée plutôt
-que laissée incomplète.
+Grafycom ne contracte **qu'avec des clients professionnels** — entreprises,
+commerçants, artisans, professions libérales, associations, collectivités. Ce
+n'est pas un détail de rédaction&nbsp;: c'est ce qui dispense de deux obligations
+qui ne s'appliquent qu'aux consommateurs.
+
+- **L'adhésion à un médiateur de la consommation** (article L612-1), qui est un
+  abonnement annuel payant.
+- **Le droit de rétractation de quatorze jours** sur les contrats conclus à
+  distance, qui permet à un client de tout annuler après deux semaines de
+  travail.
+
+Les mentions légales et les CGV sont rédigées en conséquence, et la mention de
+qualité à faire signer sur chaque devis figure dans `MENTIONS-DEVIS.md`.
+
+⚠ **Ce positionnement ne vaut que s'il est tenu.** Accepter un seul particulier
+fait renaître les deux obligations pour ce contrat. Si Grafycom décide un jour
+d'ouvrir aux particuliers, il faudra adhérer à un médiateur et rétablir les
+sections retirées — l'historique git les conserve.
 
 **L'adresse du siège n'est pas publiée**, à la demande de l'éditrice. Elle est
 pourtant publique au registre national des entreprises, et
