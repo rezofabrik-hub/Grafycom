@@ -349,14 +349,50 @@ branch », branche `main`, dossier `/ (root)`.
 Une fois en ligne, déclarer le site dans Google Search Console et y soumettre
 `sitemap.xml`.
 
-## Confidentialité et polices externes
+## Sécurité et confidentialité
 
-Les polices (Google Fonts) et les icônes (Font Awesome via cdnjs) sont chargées
-depuis des serveurs tiers. Aucun cookie n'est déposé, mais ces services voient
-l'adresse IP des visiteurs. Pour une conformité RGPD maximale, télécharger les
-fichiers et les servir depuis `assets/` — la politique de confidentialité
-mentionne déjà ce point.
+**Aucune ressource externe.** Polices (`assets/fonts/`) et icônes
+(`assets/fa/`) sont servies depuis le site. Le navigateur d'un visiteur ne
+contacte aucun serveur tiers&nbsp;: ni Google, ni cdnjs. Personne d'autre que
+l'hébergeur ne voit son adresse IP.
 
-Si vous ajoutez un outil de statistiques, un pixel Meta ou une carte Google
-Maps, `confidentialite.html` doit être mis à jour et un bandeau de consentement
-devient obligatoire.
+Ce n'est pas qu'une question de sécurité&nbsp;: un site qui charge ses polices
+chez Google transmet l'IP de chacun de ses visiteurs à Google. Plusieurs
+décisions européennes ont jugé cette pratique contraire au RGPD.
+
+**Politique de sécurité de contenu.** Chaque page porte une balise
+`Content-Security-Policy` qui interdit&nbsp;:
+
+- tout script qui ne vient pas du site (`script-src 'self'`) — la protection
+  principale contre l'injection de code&nbsp;;
+- toute ressource, police ou image extérieure&nbsp;;
+- l'affichage du site dans un cadre tiers (`frame-ancestors 'none'`), ce qui
+  bloque le détournement de clic&nbsp;;
+- les greffons et objets embarqués (`object-src 'none'`).
+
+Un `Referrer-Policy` limite par ailleurs ce qui est transmis aux sites que vos
+visiteurs atteignent depuis le vôtre.
+
+**Aucun cookie**, aucun traceur, aucune mesure d'audience. Pas de bandeau de
+consentement à afficher, puisqu'il n'y a rien à consentir.
+
+**HTTPS** est actif, avec redirection automatique depuis HTTP.
+
+### La limite de GitHub Pages
+
+GitHub Pages ne permet pas de définir d'en-têtes HTTP. Trois protections
+restent donc hors de portée&nbsp;: `Strict-Transport-Security` (HSTS),
+`X-Frame-Options` et `X-Content-Type-Options`. La balise CSP couvre l'essentiel
+de ce que ferait `X-Frame-Options`, mais pas les deux autres.
+
+Un hébergeur permettant les en-têtes personnalisés — Cloudflare&nbsp;Pages ou
+Netlify, gratuits tous les deux — les rendrait possibles via un fichier
+`_headers`. C'est aussi la condition pour garder le dépôt privé.
+
+### Si vous ajoutez quelque chose
+
+Tout outil externe (statistiques, pixel publicitaire, carte, service de
+formulaire) sera **bloqué par la CSP** tant que son domaine n'y est pas ajouté.
+C'est voulu&nbsp;: cela oblige à un choix conscient. Le cas échéant, modifier la
+directive concernée dans `gen.py`, et mettre à jour `confidentialite.html`.
+

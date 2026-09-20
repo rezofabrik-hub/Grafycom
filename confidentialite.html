@@ -19,10 +19,10 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="assets/img/logo-grafycom-carre.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/fa/css/all.min.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -60,7 +60,7 @@
 <section>
   <div class="conteneur prose">
     <div class="encart">
-      <strong>Avant la mise en ligne&nbsp;:</strong> ce texte décrit le site tel qu'il est livré — statique, sans mesure d'audience ni cookie tiers. Si vous ajoutez un outil de statistiques, un pixel de réseau social, une carte interactive ou un service d'envoi de formulaire, ce document doit être mis à jour et un bandeau de consentement devient nécessaire.
+      <strong>À jour du site tel qu'il fonctionne aujourd'hui&nbsp;:</strong> statique, sans cookie, sans mesure d'audience, sans aucune ressource chargée depuis un service tiers. Si vous ajoutez un outil de statistiques, un pixel de réseau social, une carte interactive ou un service d'envoi de formulaire, ce document doit être mis à jour et un bandeau de consentement devient nécessaire.
     </div>
 
     <h2 style="margin-top:34px">Qui est responsable de vos données</h2>
@@ -81,14 +81,16 @@
     <p>Sandra, seule. Les prestataires techniques strictement nécessaires (hébergeur du site, fournisseur de messagerie) peuvent héberger ces données dans le cadre de leur service, sans y accéder pour leur propre compte.</p>
 
     <h2>Cookies</h2>
-    <p>Ce site ne dépose aucun cookie publicitaire ni aucun traceur de mesure d'audience. Les polices de caractères et la bibliothèque d'icônes sont chargées depuis Google&nbsp;Fonts et cdnjs&nbsp;: ces services reçoivent l'adresse IP du visiteur du fait de la requête, sans cookie déposé. Pour supprimer même cette requête externe, ces fichiers peuvent être hébergés directement sur le site — voir le README technique.</p>
+    <p>Ce site ne dépose <strong>aucun cookie</strong> — ni publicitaire, ni de mesure d'audience, ni technique. Il n'utilise aucun traceur.</p>
+    <p>Toutes les ressources — polices de caractères, icônes, images, feuille de style, script — sont <strong>servies depuis ce site</strong>. Aucune requête n'est adressée à un service tiers&nbsp;: votre adresse IP n'est transmise à personne d'autre qu'à l'hébergeur, dans le simple fait d'afficher la page. C'est un choix délibéré&nbsp;: un site qui charge ses polices chez Google communique l'adresse IP de chacun de ses visiteurs à Google, sans que personne l'ait demandé.</p>
+    <p>Aucun bandeau de consentement n'est donc nécessaire, puisqu'il n'y a rien à consentir.</p>
 
     <h2>Vos droits</h2>
     <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition sur vos données, ainsi que d'un droit à la portabilité. Pour les exercer, écrivez à <a href="mailto:sandra.grafycom@gmail.com">sandra.grafycom@gmail.com</a>&nbsp;; une réponse vous sera apportée sous un mois.</p>
     <p>Si la réponse ne vous satisfait pas, vous pouvez saisir la CNIL&nbsp;: <a href="https://www.cnil.fr" rel="noopener">www.cnil.fr</a>, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.</p>
 
     <h2>Sécurité</h2>
-    <p>Le site est diffusé en HTTPS. Les messages reçus sont conservés dans une messagerie protégée par mot de passe.</p>
+    <p>Le site est diffusé exclusivement en HTTPS, avec redirection automatique depuis HTTP. Il applique une politique de sécurité de contenu (<em>Content Security Policy</em>) qui n'autorise le chargement d'aucune ressource extérieure au site et interdit son affichage dans un cadre tiers. Les messages reçus sont conservés dans une messagerie protégée par mot de passe.</p>
 
     <p style="margin-top:34px;font-size:14px;color:var(--taupe)">Dernière mise à jour&nbsp;: 20 septembre 2026</p>
   </div>
