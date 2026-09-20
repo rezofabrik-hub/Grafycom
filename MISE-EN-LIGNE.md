@@ -53,6 +53,78 @@ Chez le bureau d'enregistrement du domaine (OVH, Gandi, Infomaniak…) :
 
 Les enregistrements AAAA sont facultatifs ; ils servent aux visiteurs en IPv6.
 
+### 2.1 bis — Marche à suivre sur AWS Route 53
+
+Le DNS du domaine est géré par Route 53. Voici le détail, console AWS ouverte.
+
+> **Attention, piège AWS.** Route 53 ne permet pas de créer un `CNAME` sur le
+> domaine nu, et son type **Alias ne fonctionne qu'avec des ressources AWS**
+> (CloudFront, S3, ELB) — **pas avec GitHub Pages**. Pour le domaine nu, il faut
+> donc obligatoirement des enregistrements **A**, pas un Alias.
+
+**Étape 1 — ouvrir la zone hébergée**
+
+Console AWS → **Route 53** → **Hosted zones** → cliquer sur le domaine.
+
+**Étape 2 — le domaine nu (`grafycom.fr`)**
+
+Bouton **Create record** :
+
+| Champ | Valeur |
+|---|---|
+| Record name | *laisser vide* |
+| Record type | `A` |
+| Alias | **désactivé** |
+| Value | les quatre IP, **une par ligne** :<br>`185.199.108.153`<br>`185.199.109.153`<br>`185.199.110.153`<br>`185.199.111.153` |
+| TTL | `300` |
+| Routing policy | Simple routing |
+
+**Étape 3 — le sous-domaine `www`**
+
+De nouveau **Create record** :
+
+| Champ | Valeur |
+|---|---|
+| Record name | `www` |
+| Record type | `CNAME` |
+| Alias | désactivé |
+| Value | `rezofabrik-hub.github.io` |
+| TTL | `300` |
+
+**Étape 4 — IPv6 (facultatif)**
+
+Un enregistrement `AAAA` sur le domaine nu, avec les quatre adresses
+`2606:50c0:8000::153` à `2606:50c0:8003::153`, une par ligne.
+
+**À ne pas toucher**
+
+- Les enregistrements **NS** et **SOA** de la zone : ils sont gérés par AWS.
+- Les enregistrements **MX**, **TXT/SPF**, **DKIM** s'il y a une messagerie sur
+  le domaine — les supprimer couperait les courriels.
+- S'il existe déjà un `A`, un `CNAME` ou un Alias sur `@` ou `www` (page
+  parking, ancien site), **le supprimer d'abord** : deux enregistrements du même
+  type sur le même nom sont en conflit.
+
+**Si le domaine est enregistré ailleurs que chez AWS**
+
+Vérifier que les serveurs de noms déclarés chez le bureau d'enregistrement
+correspondent bien aux quatre `NS` affichés en haut de la zone hébergée Route 53.
+Sinon, la zone ne sert à rien : c'est l'autre DNS qui répond.
+
+**Délai**
+
+Avec un TTL de 300 secondes, la propagation prend quelques minutes. Contrôle en
+ligne de commande :
+
+```bash
+dig +short grafycom.fr A
+dig +short www.grafycom.fr CNAME
+```
+
+> Note : une zone hébergée Route 53 est facturée environ 0,50 $ par mois. Le DNS
+> inclus chez la plupart des bureaux d'enregistrement ferait le même travail
+> gratuitement — sans urgence, mais bon à savoir.
+
 ### 2.2 Côté GitHub
 
 Dans **Settings → Pages → Custom domain**, saisir le domaine retenu
