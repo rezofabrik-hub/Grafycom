@@ -21,6 +21,44 @@ python3 -m http.server 8000
 
 puis ouvrir <http://localhost:8000>.
 
+## ⚠ Le site est en mode chantier
+
+La racine `https://www.grafycom.fr/` affiche une **page d'attente** : logo,
+promesse en une phrase, téléphone et courriel. L'activité ne s'arrête pas — un
+visiteur qui arrive peut appeler ou écrire.
+
+Le site complet reste **accessible et fonctionnel** à `accueil.html` et aux
+autres adresses, mais :
+
+- toutes les pages portent `noindex, nofollow` ;
+- `robots.txt` interdit l'exploration ;
+- un lien discret « Aperçu du site en préparation » figure en bas de la page
+  d'attente, pour vous et vos relecteurs.
+
+### Ouvrir le site au public
+
+Quand tout est prêt&nbsp;:
+
+```bash
+./fin-de-construction.sh
+git add -A && git commit -m "Ouverture du site" && git push
+```
+
+Le script remet `accueil.html` à la racine sous le nom `index.html`, repointe
+les liens internes, retire le lien d'aperçu, rend les pages indexables et
+rétablit le `robots.txt` normal.
+
+Si vous régénérez les pages depuis les scripts de génération, pensez à passer
+`CONSTRUCTION = False` dans `gen.py`.
+
+### Avant d'ouvrir — la liste
+
+1. Les six photos du portfolio, et la page Réalisations remise dans le menu
+2. Les mentions légales complètes : raison sociale, statut, SIRET, TVA, hébergeur
+3. Le formulaire de contact branché sur un service d'envoi
+4. Le domaine nu `grafycom.fr` qui redirige vers `www`
+5. HTTPS forcé dans les réglages GitHub Pages
+
 ## Les pages
 
 | Fichier | Rôle |
