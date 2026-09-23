@@ -200,20 +200,52 @@ enregistrements `A` sur `@` dans Route 53 — voir `MISE-EN-LIGNE.md`.
 
 ### 5. Brancher le formulaire de contact
 
-En l'état, le formulaire de `contact.html` **n'envoie rien tout seul** : un site
-statique n'a pas de serveur pour traiter un envoi. Au clic sur « Envoyer », il
-ouvre le logiciel de messagerie du visiteur avec un message prérempli. Ça
-fonctionne, mais une partie des visiteurs abandonnera à cette étape.
+Le formulaire est **entièrement câblé**, il ne lui manque que trois secrets
+Cloudflare. Il n'utilise aucun service de formulaire tiers&nbsp;: le message part
+du Worker (`src/index.js`) vers **Resend**, sur votre propre domaine.
 
-Pour un vrai envoi, il suffit d'ajouter un attribut `action` à la balise
-`<form>` — dès qu'il est présent, le repli par courriel se désactive tout seul :
+En attendant, `FORMULAIRE_ACTIF = False` dans les scripts de génération&nbsp;:
+le formulaire ouvre la messagerie du visiteur avec un message prérempli, comme
+avant. GitHub Pages ne sait pas exécuter de code, donc l'activer maintenant
+casserait l'envoi.
 
-```html
-<form class="devis" action="https://formspree.io/f/VOTRE-ID" method="POST" data-mailto="sandra.grafycom@gmail.com">
-```
+#### Ce qu'il reste à faire, une fois le site sur Cloudflare
 
-Services courants et gratuits pour ce volume : Formspree, Web3Forms, Basin, ou
-le formulaire intégré si le site est hébergé chez Netlify.
+1. **Créer une clé d'API Resend** — [resend.com](https://resend.com) →
+   API Keys → Create.
+2. **Déclarer trois secrets** dans Cloudflare → Workers &amp; Pages → le projet →
+   Settings → Variables and Secrets&nbsp;:
+
+   | Secret | Contenu |
+   |---|---|
+   | `RESEND_API_KEY` | la clé créée à l'étape 1 |
+   | `CONTACT_TO` | l'adresse qui reçoit les demandes |
+   | `CONTACT_FROM` | l'expéditeur, par exemple `Grafycom <contact@grafycom.fr>` — le domaine doit être vérifié chez Resend. Sans ce secret, l'expéditeur est `onboarding@resend.dev`, qui ne délivre qu'au titulaire du compte Resend&nbsp;: pratique pour tester, insuffisant en production. |
+
+3. **Passer `FORMULAIRE_ACTIF = True`** et régénérer les pages, ou ajouter à la
+   main `action="/api/contact" method="POST"` sur la balise `<form>` de
+   `contact.html`.
+
+#### Changer l'adresse de réception
+
+C'est le secret `CONTACT_TO`, **pas le code**. Modifier la valeur dans
+l'interface Cloudflare suffit — rien à redéployer, rien à recommiter. C'est ce
+qui permet de recevoir les demandes sur une adresse pendant la mise au point,
+puis de basculer sur celle de Sandra en trente secondes.
+
+L'adresse affichée sur le site reste indépendante&nbsp;: c'est `MAIL` dans les
+scripts de génération.
+
+#### Ce que fait le Worker
+
+Il vérifie le pot de miel, contrôle que le nom, le courriel et le message sont
+présents et plausibles, limite leur longueur, puis appelle Resend en plaçant
+l'adresse du visiteur en `reply_to` — un simple « Répondre » suffit.
+
+En cas de succès il redirige vers `merci.html`&nbsp;; en cas d'échec vers
+`contact.html?erreur=…`, et la page affiche alors un message qui distingue le
+champ manquant de la panne d'envoi.
+
 
 ### 6. Renseigner les réseaux sociaux
 

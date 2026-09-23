@@ -49,6 +49,28 @@
     img.addEventListener('error', function () { remplacer(img); });
   });
 
+  /* --- Retour d'erreur après un envoi refusé ---
+     Le Worker renvoie vers /contact.html?erreur=… plutôt que d'afficher une
+     page nue : le visiteur retrouve ses repères, et on lui dit quoi faire. */
+  var erreur = new URLSearchParams(window.location.search).get('erreur');
+  if (erreur) {
+    var textes = {
+      champs: "Il manque quelque chose : votre nom, une adresse de courriel valide et une description de votre projet sont nécessaires pour vous répondre.",
+      envoi: "L'envoi n'a pas abouti — le problème vient de chez moi, pas de vous. Réessayez dans un instant, ou appelez-moi directement.",
+      format: "Le formulaire n'a pas été transmis correctement. Réessayez, ou écrivez-moi directement."
+    };
+    var cible = document.querySelector('form.devis');
+    if (cible) {
+      var avis = document.createElement('p');
+      avis.setAttribute('role', 'alert');
+      avis.style.cssText = 'background:#fdecea;border-left:4px solid #f2585c;border-radius:0 12px 12px 0;'
+        + 'padding:16px 18px;margin-bottom:24px;font-size:15px;color:#7a2a2a';
+      avis.textContent = textes[erreur] || textes.envoi;
+      cible.insertBefore(avis, cible.firstChild);
+      avis.scrollIntoView({ block: 'center' });
+    }
+  }
+
   /* --- Formulaire de contact ---
      Tant qu'aucun service d'envoi n'est branché (voir README), le formulaire
      compose un courriel prérempli plutôt que de perdre le message. */

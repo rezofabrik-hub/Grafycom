@@ -11,5 +11,20 @@
 name = "grafycom"
 compatibility_date = "2026-01-01"
 
+# Le Worker sert le site et traite le formulaire de contact sur /api/contact.
+main = "src/index.js"
+
 [assets]
 directory = "./dist"
+binding = "ASSETS"
+# Les adresses inconnues reçoivent la page 404 du site, pas celle de Cloudflare.
+not_found_handling = "404-page"
+# Seul /api/* passe par le code ; tout le reste est servi directement depuis
+# le stockage d'assets, sans invoquer le Worker.
+run_worker_first = [ "/api/*" ]
+
+# Secrets à définir dans l'interface (Settings > Variables and Secrets),
+# jamais dans ce fichier :
+#   RESEND_API_KEY   cle d'API Resend
+#   CONTACT_TO       adresse qui recoit les demandes du formulaire
+#   CONTACT_FROM     expediteur, sur un domaine verifie chez Resend (facultatif)

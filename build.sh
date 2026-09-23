@@ -25,6 +25,9 @@ tar --exclude=./.git --exclude=./dist -cf - . | tar -xf - -C dist
 # Outils, sources et automatisations : pas du site.
 rm -rf dist/.github
 
+# Le code du Worker n'est pas un fichier statique : il ne doit pas etre servi.
+rm -rf dist/src
+
 # Artefacts propres a GitHub Pages, inutiles chez Cloudflare.
 rm -f dist/CNAME dist/.nojekyll dist/.gitignore dist/wrangler.toml
 
