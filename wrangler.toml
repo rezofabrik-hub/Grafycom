@@ -6,7 +6,7 @@
 #
 # Reglages attendus dans l'interface Cloudflare :
 #   Commande de build    : bash build.sh
-#   Deployer la commande : npx wrangler deploy   (valeur par defaut)
+#   Commande de deploiement : npx wrangler deploy
 
 name = "grafycom"
 compatibility_date = "2026-01-01"

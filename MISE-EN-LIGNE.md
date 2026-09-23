@@ -19,7 +19,7 @@ serveur web.
 
 ---
 
-## 2. Option A — rester sur GitHub Pages (recommandé)
+## 2. Option A — GitHub Pages (hébergement actuel)
 
 C'est la configuration en place. Hébergement gratuit, HTTPS automatique,
 mise à jour par simple `git push`. Il n'y a qu'à brancher le domaine.
@@ -157,56 +157,106 @@ Le script modifie les URL du site, corrige `404.html` et crée le fichier
 
 ---
 
-## 2 bis. Passer sur Cloudflare Pages et rendre le dépôt privé
+## 2 bis. Passer sur Cloudflare et rendre le dépôt privé
 
 **Pourquoi.** GitHub Pages sur un dépôt privé exige un abonnement payant, et
-n'autorise aucun en-tête HTTP personnalisé. Cloudflare Pages accepte les dépôts
-privés sur son offre gratuite et lit le fichier `_headers` — c'est ce qui permet
-`Strict-Transport-Security`, `X-Frame-Options` et la CSP en vrai en-tête.
+n'autorise aucun en-tête HTTP personnalisé. Cloudflare sert un dépôt privé sur
+son offre gratuite, lit le fichier `_headers` — c'est ce qui permet
+`Strict-Transport-Security`, `X-Frame-Options` et la CSP en vrai en-tête — et
+exécute le code du formulaire de contact, ce que GitHub Pages ne sait pas faire.
+
+**Workers, pas Pages.** Le dépôt contient `wrangler.toml` et `src/index.js` : le
+site part en **Worker avec fichiers statiques**. Le Worker sert `dist/` tel quel
+et ne s'exécute que sur `/api/contact`, la route du formulaire. Un projet Pages
+ne servirait que les fichiers ; le formulaire resterait mort.
 
 **L'ordre compte.** Rendre le dépôt privé avant que Cloudflare ne serve le site
-met celui-ci hors ligne immédiatement. Suivre la séquence :
+met celui-ci hors ligne immédiatement. Suivre la séquence.
 
-### 1. Créer le projet Cloudflare Pages
+### 1. Créer le projet
 
-Tableau de bord Cloudflare → **Workers & Pages** → **Create** → **Pages** →
-**Connect to Git** → autoriser GitHub → choisir `rezofabrik-hub/Grafycom`.
-
-Réglages de construction :
+Tableau de bord Cloudflare → **Workers & Pages** → **Create** → **Workers** →
+**Import a repository** → autoriser GitHub → choisir `rezofabrik-hub/Grafycom`.
 
 | Champ | Valeur |
 |---|---|
-| Framework preset | None |
 | Build command | `bash build.sh` |
-| Build output directory | `dist` |
+| Deploy command | `npx wrangler deploy` |
 | Production branch | `main` |
 
-Le premier déploiement donne une adresse en `…pages.dev`. **Vérifier le site
-dessus avant d'aller plus loin** : pages, polices, icônes, page 404.
+Tout le reste — nom du service, dossier publié, page 404, route du formulaire —
+est déjà écrit dans `wrangler.toml`, que Cloudflare lit.
 
-### 2. Rattacher le domaine
+Le premier déploiement donne une adresse en `grafycom.<compte>.workers.dev`.
+**Vérifier le site dessus avant d'aller plus loin** : pages, polices, icônes,
+page 404.
 
-Dans le projet Pages → **Custom domains** → **Set up a domain** →
-`www.grafycom.fr`.
+En ligne de commande, depuis le dépôt, avec un jeton d'API Cloudflare
+(`CLOUDFLARE_API_TOKEN`, droits *Workers Scripts: Edit*) :
 
-Cloudflare indique alors l'enregistrement à créer. Dans Route 53, **remplacer**
-l'enregistrement `www` existant par celui qu'indique Cloudflare (un `CNAME` vers
-le nom `…pages.dev`). Ne pas laisser les deux : les anciens `A` vers GitHub
-entrent en conflit.
+```bash
+bash build.sh
+npx wrangler deploy
+```
 
-Attendre que `https://www.grafycom.fr` soit servi par Cloudflare — l'en-tête de
-réponse porte alors un `cf-ray` au lieu de `server: GitHub.com` :
+### 2. Les trois secrets du formulaire
+
+Projet → **Settings → Variables and Secrets** → **Add**, type **Secret** :
+
+| Nom | Valeur |
+|---|---|
+| `RESEND_API_KEY` | clé d'API Resend (`re_…`) |
+| `CONTACT_TO` | adresse qui reçoit les demandes |
+| `CONTACT_FROM` | expéditeur sur un domaine vérifié chez Resend (facultatif) |
+
+Tant qu'ils manquent, `/api/contact` renvoie une erreur. C'est pourquoi le
+formulaire du site reste pour l'instant en mode « ouvre le logiciel de
+messagerie » : il ne sera basculé sur `/api/contact` qu'une fois les secrets en
+place et un envoi réel vérifié.
+
+### 3. Rattacher le domaine
+
+Un domaine personnalisé sur un Worker exige que **la zone `grafycom.fr` soit
+gérée par Cloudflare** : contrairement à Pages, un Worker ne peut pas être
+atteint par un simple `CNAME` depuis un DNS extérieur. Aujourd'hui la zone est
+sur AWS Route 53. Deux chemins.
+
+**Chemin recommandé — déplacer la zone chez Cloudflare.**
+
+1. Cloudflare → **Domains** → **Onboard a domain** → `grafycom.fr` → offre
+   **Free**. Cloudflare recopie automatiquement les enregistrements existants :
+   **vérifier la liste**, en particulier les `MX` et les `TXT` si une messagerie
+   est branchée sur le domaine — les perdre coupe les e-mails.
+2. Chez le registrar, remplacer les serveurs de noms Route 53 par les deux que
+   Cloudflare indique. Propagation : quelques heures, jusqu'à 48 h.
+3. Zone active → projet du Worker → **Settings → Domains & Routes** → **Add** →
+   **Custom domain** → `www.grafycom.fr`. Certificat et enregistrement DNS sont
+   créés par Cloudflare.
+4. Pour que `grafycom.fr` sans `www` fonctionne enfin : enregistrement `A` sur
+   `@` vers `192.0.2.0` **proxifié** (adresse réservée, jamais joignable), plus
+   une *Redirect Rule* `grafycom.fr/*` → `https://www.grafycom.fr/$1` en 301.
+5. La zone hébergée Route 53 peut alors être supprimée (elle est facturée au
+   mois).
+
+**Chemin sans toucher aux serveurs de noms.** Rester sur Route 53 et créer à la
+place un projet **Pages**, qui accepte un `CNAME` depuis un DNS extérieur. Le
+formulaire doit alors être réécrit en *Pages Function* (`functions/api/contact.js`
+au lieu de `src/index.js`) — une modification courte, mais une modification.
+
+Dans les deux cas, attendre que `https://www.grafycom.fr` soit servi par
+Cloudflare : la réponse porte alors un `cf-ray` au lieu de `server: GitHub.com`.
 
 ```bash
 curl -sI https://www.grafycom.fr/ | grep -iE 'server|cf-ray'
 ```
 
-### 3. Débrancher GitHub Pages
+### 4. Débrancher GitHub Pages
 
 Une fois Cloudflare confirmé : dépôt → **Settings → Pages** → source **None**.
-Supprimer aussi le fichier `CNAME` à la racine, qui ne sert qu'à GitHub Pages.
+Supprimer aussi le fichier `CNAME` à la racine, qui ne sert qu'à GitHub Pages,
+et les anciens enregistrements `A` vers GitHub s'ils subsistent.
 
-### 4. Rendre le dépôt privé
+### 5. Rendre le dépôt privé
 
 **Settings → General → Danger Zone → Change repository visibility → Private.**
 
