@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="assets/img/logo-grafycom-carre.jpg">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto: https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/fa/css/all.min.css">
@@ -126,6 +126,13 @@
       <div class="champ">
         <label for="message">Votre projet *</label>
         <textarea id="message" name="message" required placeholder="Votre activité, vos clients, ce qui existe déjà et ce qui vous gêne aujourd'hui. Pas besoin de vocabulaire technique : écrivez simplement."></textarea>
+      </div>
+
+      <!-- Pot de miel anti-robots : invisible et hors du parcours au clavier.
+           Un humain ne le voit pas, un robot le remplit et l'envoi est rejeté. -->
+      <div class="pot-de-miel" aria-hidden="true">
+        <label for="entreprise-site">Ne remplissez pas ce champ</label>
+        <input type="text" id="entreprise-site" name="botcheck" tabindex="-1" autocomplete="off">
       </div>
 
       <div class="champ rgpd">
