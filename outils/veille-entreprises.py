@@ -314,6 +314,44 @@ def classer(texte_activite: str, forme: str) -> tuple[int, str]:
 
 
 ANNUAIRE = "https://recherche-entreprises.api.gouv.fr/search"
+AGENT = "veille-grafycom/1.0 (+https://www.grafycom.fr)"
+
+# Une seule connexion, reutilisee pour tous les appels.
+#
+# La version precedente en ouvrait une par entreprise, soit 78 par veille.
+# Mesure faite : le premier appel passait, les suivants mouraient en
+# « connection reset » apres six secondes, et les cinq tentatives de repli
+# portaient le cout a une dizaine de secondes par entreprise — un quart
+# d'heure pour une veille, et la plupart des adresses non verifiees. Avec
+# une connexion maintenue : 0,5 seconde par appel, aucun echec.
+#
+# requests gere la reutilisation sans rien demander. S'il manque, on
+# retombe sur urllib : plus lent et moins sur, mais la veille tourne.
+try:
+    import requests as _requests
+    _session = _requests.Session()
+    _session.headers["User-Agent"] = AGENT
+except ImportError:
+    _requests = None
+    _session = None
+
+
+def interroger_annuaire(params: dict) -> dict | None:
+    """Un appel a l'annuaire des entreprises. None si rien n'a abouti."""
+    for essai in range(5):
+        try:
+            if _session is not None:
+                reponse = _session.get(ANNUAIRE, params=params, timeout=25)
+                reponse.raise_for_status()
+                return reponse.json()
+            url = ANNUAIRE + "?" + urllib.parse.urlencode(params)
+            requete = urllib.request.Request(url, headers={"User-Agent": AGENT})
+            with urllib.request.urlopen(requete, timeout=25) as rep:
+                return json.loads(rep.read().decode("utf-8"))
+        except Exception:
+            if essai < 4:
+                time.sleep(1.5 * (essai + 1))
+    return None
 
 
 def adresse_postale(siren_recherche: str) -> tuple[str, str, str]:
@@ -332,21 +370,8 @@ def adresse_postale(siren_recherche: str) -> tuple[str, str, str]:
     """
     if not siren_recherche:
         return "", "", "introuvable"
-    params = {"q": siren_recherche, "minimal": "true",
-              "include": "siege,dirigeants", "per_page": "1"}
-    url = ANNUAIRE + "?" + urllib.parse.urlencode(params)
-    requete = urllib.request.Request(
-        url, headers={"User-Agent": "veille-grafycom/1.0 (+https://www.grafycom.fr)"}
-    )
-    data = None
-    for essai in range(5):
-        try:
-            with urllib.request.urlopen(requete, timeout=25) as reponse:
-                data = json.loads(reponse.read().decode("utf-8"))
-            break
-        except Exception:
-            if essai < 4:
-                time.sleep(1.5 * (essai + 1))
+    data = interroger_annuaire({"q": siren_recherche, "minimal": "true",
+                                "include": "siege,dirigeants", "per_page": "1"})
     if data is None:
         return "", "", "non vérifié"
 
@@ -702,7 +727,9 @@ def main() -> int:
             retenus.append(prosp)
             if n % 25 == 0:
                 print(f"  {n}/{len(prospects)}")
-            time.sleep(0.6)
+            # 0,3 s entre deux appels, soit trois par seconde : loin sous
+            # la limite de l'annuaire, et poli.
+            time.sleep(0.3)
         prospects = retenus
         if opposes:
             print(f"  {opposes} retirées : non diffusibles chez l'INSEE, "

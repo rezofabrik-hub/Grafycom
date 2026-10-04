@@ -77,7 +77,8 @@ Le modèle de courrier et le cadre légal sont dans `PROSPECTION.md`.
    restauration, commerce de détail, artisanat, beauté, loisirs… Une SCI ou
    un holding ne sort pas de la liste.
 4. **Vérification des adresses** avec `--adresses` : un appel par
-   entreprise auprès de l'INSEE. Les entreprises marquées
+   entreprise auprès de l'INSEE, sur une connexion unique maintenue
+   ouverte — environ 50 secondes pour une centaine de créations. Les entreprises marquées
    `[NON-DIFFUSIBLE]` sont **retirées** — leur dirigeant s'est opposé à la
    diffusion de ses données, ou bien c'est le réglage par défaut des
    entrepreneurs individuels depuis 2023. Dans les deux cas il n'y a pas
@@ -154,6 +155,22 @@ vérification des adresses, envoyer le courriel, puis pousser la mémoire mise
 > dans le dépôt, et il n'y entre que des SIREN. Les fichiers `.csv` et `.md`
 > contiennent des noms et des adresses de personnes physiques : ils sont
 > exclus par `.gitignore` et doivent le rester. Un dépôt n'oublie jamais.
+
+## Une leçon de performance, gardée ici pour mémoire
+
+La vérification des adresses ouvrait une connexion par entreprise, soit
+78 connexions pour une veille. Résultat mesuré : le premier appel passait,
+les suivants mouraient en « connection reset » au bout de six secondes, et
+les cinq tentatives de repli portaient le coût à une dizaine de secondes
+par entreprise. Un quart d'heure par veille, et la plupart des adresses
+marquées « non vérifiées », donc inutilisables.
+
+Ce n'était pas l'INSEE qui refusait : c'était le tunnel réseau qui lâchait
+à chaque nouvelle connexion. Une seule connexion, maintenue ouverte pour
+les 78 appels : **47 secondes, et aucun échec**.
+
+La morale vaut au-delà de ce script : quand un service public répond mal,
+regarder d'abord combien de connexions on lui ouvre.
 
 ## Retirer quelqu'un des envois
 
