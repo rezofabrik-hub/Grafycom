@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""Fait pointer grafycom.fr (sans www) vers GitHub Pages, dans Route 53.
+
+Aujourd'hui seul www.grafycom.fr résout : quelqu'un qui tape « grafycom.fr »
+dans sa barre d'adresse tombe sur une erreur. Il manque quatre
+enregistrements A sur le domaine nu. GitHub redirige ensuite tout seul vers
+www, puisque c'est lui le domaine personnalisé du dépôt.
+
+Le script peut être relancé sans dommage : il écrit
+l'état voulu plutôt qu'il n'ajoute, et ne touche à rien si c'est déjà bon.
+
+Il lui faut des identifiants AWS ayant le droit de lire les zones et de
+modifier celle-ci :
+    route53:ListHostedZones, route53:ChangeResourceRecordSets,
+    route53:ListResourceRecordSets, route53:GetChange
+
+    python3 outils/dns-apex.py              # montre ce qui serait fait
+    python3 outils/dns-apex.py --appliquer  # le fait
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
+import time
+
+DOMAINE = "grafycom.fr"
+# Les quatre adresses de GitHub Pages pour les domaines nus.
+CIBLES = ["185.199.108.153", "185.199.109.153",
+          "185.199.110.153", "185.199.111.153"]
+TTL = 300
+
+
+def main() -> int:
+    a = argparse.ArgumentParser(description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    a.add_argument("--appliquer", action="store_true",
+                   help="écrire réellement ; sans cette option, rien n'est modifié")
+    args = a.parse_args()
+
+    try:
+        import boto3
+        from botocore.exceptions import ClientError, NoCredentialsError
+    except ImportError:
+        print("boto3 manquant :  pip install boto3", file=sys.stderr)
+        return 1
+
+    r53 = boto3.client("route53")
+
+    try:
+        zones = [z for z in r53.list_hosted_zones()["HostedZones"]
+                 if z["Name"].rstrip(".") == DOMAINE and not z["Config"].get("PrivateZone")]
+    except (ClientError, NoCredentialsError) as e:
+        code = getattr(e, "response", {}).get("Error", {}).get("Code", type(e).__name__)
+        print(f"AWS refuse la connexion ({code}).", file=sys.stderr)
+        print("Vérifiez AWS_ACCESS_KEY_ID et AWS_SECRET_ACCESS_KEY.", file=sys.stderr)
+        return 1
+
+    if not zones:
+        print(f"Aucune zone publique « {DOMAINE} » sur ce compte.", file=sys.stderr)
+        return 1
+    if len(zones) > 1:
+        print(f"Plusieurs zones « {DOMAINE} » : à démêler à la main.", file=sys.stderr)
+        return 1
+
+    zone = zones[0]
+    zid = zone["Id"].split("/")[-1]
+    print(f"Zone {DOMAINE} ({zid})")
+
+    actuels = []
+    lots = r53.get_paginator("list_resource_record_sets")
+    for lot in lots.paginate(HostedZoneId=zid):
+        for r in lot["ResourceRecordSets"]:
+            if r["Name"].rstrip(".") == DOMAINE and r["Type"] == "A":
+                actuels = [v["Value"] for v in r.get("ResourceRecords", [])]
+
+    if sorted(actuels) == sorted(CIBLES):
+        print("Les quatre enregistrements A sont déjà en place. Rien à faire.")
+        return 0
+
+    print("  actuel :", ", ".join(actuels) if actuels else "aucun enregistrement A")
+    print("  voulu  :", ", ".join(CIBLES))
+
+    if not args.appliquer:
+        print("\nEssai à blanc. Relancer avec --appliquer pour écrire.")
+        return 0
+
+    reponse = r53.change_resource_record_sets(
+        HostedZoneId=zid,
+        ChangeBatch={
+            "Comment": "Domaine nu vers GitHub Pages",
+            "Changes": [{
+                "Action": "UPSERT",
+                "ResourceRecordSet": {
+                    "Name": DOMAINE,
+                    "Type": "A",
+                    "TTL": TTL,
+                    "ResourceRecords": [{"Value": ip} for ip in CIBLES],
+                },
+            }],
+        },
+    )
+
+    change = reponse["ChangeInfo"]["Id"].split("/")[-1]
+    print(f"\nModification envoyée ({change}). Attente de la propagation…")
+    for _ in range(40):
+        etat = r53.get_change(Id=change)["ChangeInfo"]["Status"]
+        if etat == "INSYNC":
+            print("Propagé sur tous les serveurs Route 53.")
+            break
+        time.sleep(15)
+    else:
+        print("Toujours en cours après dix minutes — vérifiez dans la console.")
+
+    print("\nÀ vérifier dans l'heure qui suit :")
+    print(f"  curl -sI https://{DOMAINE}/     → doit rediriger vers www")
+    print("  GitHub peut mettre jusqu'à une heure à émettre le certificat du")
+    print("  domaine nu. Si « Enforce HTTPS » se décoche, le recocher après.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
