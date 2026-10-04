@@ -1,31 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grafycom — Infographiste à Perpignan | Logo & identité</title>
-<meta name="description" content="Infographiste à Perpignan : création de logo, identité visuelle, menus et supports de communication. +7 ans d'expertise. Devis gratuit.">
-<link rel="canonical" href="https://www.grafycom.fr/">
-<meta name="robots" content="noindex, nofollow">
-<meta name="author" content="Grafycom">
+# -*- coding: utf-8 -*-
+from gen import page, appel, ACCUEIL
 
-<meta property="og:type" content="website">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="Grafycom">
-<meta property="og:title" content="Grafycom — L'image qui vous ressemble">
-<meta property="og:description" content="Infographiste à Perpignan : création de logo, identité visuelle, menus et supports de communication. +7 ans d'expertise. Devis gratuit.">
-<meta property="og:url" content="https://www.grafycom.fr/">
-<meta property="og:image" content="https://www.grafycom.fr/assets/img/logo-grafycom-carre.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="icon" href="assets/img/logo-grafycom-carre.jpg">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="stylesheet" href="assets/fonts/fonts.css">
-<link rel="stylesheet" href="assets/fa/css/all.min.css">
-<link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">
-{
+JSONLD = """{
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Grafycom",
@@ -40,32 +16,9 @@
   "areaServed": [ "Perpignan", "Pyrénées-Orientales", "Occitanie", "France" ],
   "knowsLanguage": [ "fr", "es" ],
   "serviceType": [ "Identité visuelle", "Création de logo", "Design graphique", "Menus et cartes", "Supports de communication", "Direction artistique" ]
-}
-</script>
-</head>
-<body>
+}"""
 
-<div class="bandeau">Studio de communication visuelle à Perpignan — <a href="contact.html">premier échange gratuit</a></div>
-
-<header>
-  <div class="entete">
-    <a class="logo" href="accueil.html" aria-label="Grafycom, accueil">
-      <img src="assets/img/logo-grafycom.jpg" alt="Grafycom — L'image qui vous ressemble" width="960" height="384">
-    </a>
-    <nav class="principal" id="menu">
-      <a href="accueil.html" class="actif">Accueil</a>
-      <a href="prestations.html">Prestations</a>
-      <a href="methode.html">Méthode</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a href="contact.html" class="btn btn-primaire">Parlons de votre projet</a>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-  </div>
-</header>
-
-<main>
-
+BODY = """
 <section class="heros">
   <div class="conteneur heros-grille">
     <div>
@@ -292,82 +245,14 @@
   </div>
 </section>
 
-<section class="">
-  <div class="conteneur">
-    <div class="appel">
-      <h2>Racontez-moi votre projet</h2>
-      <p>Un logo à refaire, une carte à remettre au propre, une communication à reprendre de zéro&nbsp;? Le premier échange est gratuit et sans engagement&nbsp;: on regarde ensemble ce dont vous avez vraiment besoin.</p>
-      <div class="groupe-btn"><a href="contact.html" class="btn btn-clair">Demander un devis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
-    </div>
-  </div>
-</section>
+""" + appel(
+    "Racontez-moi votre projet",
+    "Un logo à refaire, une carte à remettre au propre, une communication à reprendre de zéro&nbsp;? Le premier échange est gratuit et sans engagement&nbsp;: on regarde ensemble ce dont vous avez vraiment besoin.",
+    fond="")
 
-</main>
-
-<footer>
-  <div class="conteneur">
-    <div class="pied-grille">
-      <div>
-        <div class="pied-logo"><img src="assets/img/logo-grafycom.jpg" alt="Grafycom" width="960" height="384"></div>
-        <p>Infographiste et chef de projet à Perpignan. Solutions 360° et sur mesure pour les entreprises, commerces et associations des Pyrénées-Orientales.</p>
-        <!-- Réseaux sociaux : bloc retiré tant que les adresses réelles ne sont
-             pas connues. Pointer vers l'accueil de Facebook ou d'Instagram est
-             pire que ne rien afficher. Pour le rétablir, remplacer les # par les
-             vraies URL et décommenter.
-        <div class="pied-social">
-          <a href="#" aria-label="Facebook" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-        </div>
-        -->
-      </div>
-      <div>
-        <h4>Prestations</h4>
-        <ul>
-          <li><a href="prestations.html#identite">Identité visuelle</a></li>
-          <li><a href="prestations.html#menus">Menus &amp; cartes</a></li>
-          <li><a href="prestations.html#print">Supports imprimés</a></li>
-          <li><a href="prestations.html#signaletique">Signalétique</a></li>
-          <li><a href="prestations.html#digital">Réseaux &amp; web</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Le studio</h4>
-        <ul>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="methode.html">Méthode</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Zone d'intervention</h4>
-        <ul>
-          <li><a href="infographiste-perpignan.html">Perpignan</a></li>
-          <li><a href="graphiste-canet-en-roussillon.html">Canet-en-Roussillon</a></li>
-          <li><a href="graphiste-argeles-sur-mer.html">Argelès-sur-Mer</a></li>
-          <li><a href="graphiste-saint-cyprien.html">Saint-Cyprien</a></li>
-          <li><a href="graphiste-collioure.html">Collioure</a></li>
-          <li><a href="zone-intervention.html"><strong>Tout le 66 &rarr;</strong></a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+33782921981">07 82 92 19 81</a></li>
-          <li><a href="mailto:sandra.grafycom@gmail.com">sandra.grafycom@gmail.com</a></li>
-          <li>Perpignan · Pyrénées-Orientales</li>
-          <li><a href="cgv.html">CGV</a></li>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-          <li><a href="confidentialite.html">Confidentialité</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="pied-bas">
-      <span>© <span data-annee>2026</span> Grafycom — L'image qui vous ressemble</span>
-      <span class="mono">Perpignan · 66</span>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/site.js"></script>
-</body>
-</html>
+page(ACCUEIL,
+     "Grafycom — Infographiste à Perpignan | Logo & identité",
+     "Infographiste à Perpignan : création de logo, identité visuelle, menus et supports de communication. +7 ans d'expertise. Devis gratuit.",
+     BODY,
+     ogtitle="Grafycom — L'image qui vous ressemble",
+     jsonld=JSONLD)

@@ -1,0 +1,104 @@
+# -*- coding: utf-8 -*-
+"""Page d'attente servie à la racine pendant les travaux.
+
+Autonome : elle n'utilise ni l'en-tête ni le pied de page du site, pour rester
+lisible et rapide même si le reste bouge.
+"""
+import io
+import os
+from gen import MAIL, TEL, TEL_URI, OUT
+
+HTML = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grafycom — Site en construction | Perpignan</title>
+<meta name="description" content="Grafycom, studio de communication visuelle à Perpignan. Le site est en cours de préparation. Sandra reste joignable au %(tel)s.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.grafycom.fr/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Grafycom">
+<meta property="og:title" content="Grafycom — L'image qui vous ressemble">
+<meta property="og:description" content="Studio de communication visuelle à Perpignan. Site en cours de préparation.">
+<meta property="og:url" content="https://www.grafycom.fr/">
+<meta property="og:image" content="https://www.grafycom.fr/assets/img/logo-grafycom-carre.jpg">
+
+<link rel="icon" href="assets/img/logo-grafycom-carre.jpg">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/fa/css/all.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  .chantier {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    background: var(--degrade-chaud); position: relative; overflow: hidden;
+    padding: clamp(40px, 8vw, 90px) 0;
+  }
+  .chantier::before, .chantier::after {
+    content: ''; position: absolute; border-radius: 50%%; filter: blur(110px); pointer-events: none;
+  }
+  .chantier::before { width: 460px; height: 460px; background: radial-gradient(circle, rgba(53,169,221,.42), transparent 70%%); top: -170px; left: -130px; }
+  .chantier::after  { width: 520px; height: 520px; background: radial-gradient(circle, rgba(231,91,166,.34), transparent 70%%); bottom: -250px; right: -150px; }
+  .chantier-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 clamp(20px,5vw,40px); text-align: center; }
+  .chantier-logo { width: min(260px, 62vw); height: auto; margin: 0 auto 34px; border-radius: var(--radius-lg); box-shadow: var(--ombre-lg); background: #fff; }
+  .chantier h1 { font-size: clamp(30px, 5vw, 50px); margin-bottom: 6px; }
+  .chantier .sous { font-family: 'Caveat', cursive; font-size: clamp(24px, 3vw, 32px); color: var(--taupe); display: block; margin-bottom: 4px; }
+  .chantier p { font-size: clamp(16px, 1.6vw, 18px); max-width: 52ch; margin: 0 auto; }
+  .coord { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+  .pastilles { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+  .pastille {
+    background: rgba(255,255,255,.72); border-radius: 100px; padding: 9px 18px;
+    font-size: 13.5px; color: var(--brun); backdrop-filter: blur(6px);
+  }
+  .pastille i { color: var(--violet); margin-right: 7px; }
+  .pied-chantier { background: var(--encre); color: rgba(255,255,255,.62); text-align: center; padding: 22px 20px; font-size: 13.5px; }
+  .pied-chantier a { color: rgba(255,255,255,.62); text-decoration: none; }
+  .pied-chantier a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<main class="chantier">
+  <div class="chantier-inner">
+    <img class="chantier-logo" src="assets/img/logo-grafycom-carre.jpg" alt="Grafycom — L'image qui vous ressemble" width="2000" height="2000">
+
+    <span class="sous">bientôt en ligne</span>
+    <h1>Le site <span class="texte-degrade">se prépare</span></h1>
+    <div class="trait" style="margin-left:auto;margin-right:auto"></div>
+
+    <p>Grafycom, studio de communication visuelle à Perpignan. Logos, identité visuelle, menus, cartes et supports de communication — avec plus de sept ans d'expertise à votre service.</p>
+    <p style="margin-top:14px"><strong style="color:var(--encre)">En attendant, Sandra reste joignable&nbsp;:</strong> un projet, une question, un devis&nbsp;— c'est le même numéro et la même adresse qu'une fois le site ouvert.</p>
+
+    <div class="coord">
+      <a href="tel:%(tel_uri)s" class="btn btn-couleur"><i class="fa-solid fa-phone" aria-hidden="true"></i> %(tel)s</a>
+      <a href="mailto:%(mail)s" class="btn btn-secondaire"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Écrire un courriel</a>
+    </div>
+
+    <div class="pastilles">
+      <span class="pastille"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Perpignan &amp; Pyrénées-Orientales</span>
+      <span class="pastille"><i class="fa-solid fa-language" aria-hidden="true"></i>Français &amp; espagnol</span>
+      <span class="pastille"><i class="fa-solid fa-award" aria-hidden="true"></i>+7 ans d'expertise</span>
+    </div>
+  </div>
+</main>
+
+<footer class="pied-chantier">
+  © <span data-annee>2026</span> Grafycom — L'image qui vous ressemble ·
+  <a href="mentions-legales.html">Mentions légales</a> ·
+  <!-- Lien d'aperçu pour Sandra et ses relecteurs. À retirer à l'ouverture
+       du site : fin-de-construction.sh s'en charge. -->
+  <a href="accueil.html">Aperçu du site en préparation</a>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
+""" % {"mail": MAIL, "tel": TEL, "tel_uri": TEL_URI}
+
+io.open(os.path.join(OUT, "index.html"), "w", encoding="utf-8").write(HTML)
+print("index.html (page de chantier) : %d octets" % len(HTML.encode("utf-8")))

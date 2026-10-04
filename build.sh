@@ -35,6 +35,12 @@ rm -rf dist/outils
 # Calendriers editoriaux et ligne editoriale : documents de travail.
 rm -rf dist/reseaux
 
+# Les generateurs du site. Leurs .py sont deja retires plus bas, mais pas
+# communes66.json : le garde-fou le laisse passer, .json etant une
+# extension legitime pour un site. Une liste blanche d'extensions ne
+# remplace pas l'exclusion d'un dossier entier.
+rm -rf dist/generateurs
+
 # Artefacts propres a GitHub Pages, inutiles chez Cloudflare.
 rm -f dist/CNAME dist/.nojekyll dist/.gitignore dist/wrangler.toml
 
