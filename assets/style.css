@@ -125,7 +125,9 @@ nav.principal a.actif { font-weight: 700; }
 .heros h1 span.l { display: block; }
 .heros .chapeau { margin: 22px 0 32px; }
 .heros-visuel { position: relative; max-width: 430px; margin-left: auto; width: 100%; }
-.heros-visuel img { width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--ombre-lg); background: #fff; }
+/* Le logo est détouré : ni fond, ni cadre, ni ombre portée — il se pose
+   directement sur le dégradé du héros. */
+.heros-visuel img { width: 100%; height: auto; }
 
 .reperes { display: flex; gap: clamp(20px, 4vw, 44px); margin-top: 42px; padding-top: 28px; border-top: 1px solid rgba(47,39,35,.12); flex-wrap: wrap; }
 .repere strong { display: block; font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: var(--encre); line-height: 1.1; }

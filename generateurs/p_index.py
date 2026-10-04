@@ -36,7 +36,7 @@ BODY = """
       </div>
     </div>
     <div class="heros-visuel">
-      <img src="assets/img/logo-grafycom-carre.jpg" alt="Logo Grafycom : un colibri tracé à l'encre sur une aquarelle multicolore" width="2000" height="2000">
+      <img src="assets/img/logo-grafycom-carre.webp" alt="Logo Grafycom : un colibri tracé à l'encre sur une aquarelle multicolore" width="1200" height="1200">
     </div>
   </div>
 </section>

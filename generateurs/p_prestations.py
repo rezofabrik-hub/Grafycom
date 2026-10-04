@@ -61,7 +61,7 @@ BODY += bloc(
     ["Atelier de cadrage : activité, clientèle, positionnement, concurrence",
      "Pistes créatives argumentées, présentées en situation",
      "Déclinaisons : couleur, monochrome, fond sombre, format carré réseaux",
-     "Palette de couleurs avec références RVB, CMJN et Pantone",
+     "Palette de couleurs, avec ses déclinaisons",
      "Typographies de titre et de texte, et leurs règles d'emploi",
      "Charte graphique PDF, remise avec les fichiers sources vectoriels"],
     fond="")
@@ -89,7 +89,6 @@ BODY += bloc(
     ["Cartes de visite, cartes de fidélité, chèques cadeaux",
      "Flyers, dépliants, brochures, catalogues",
      "Affiches et programmes d'événement",
-     "Papeterie : en-tête, devis, facture, tampon",
      "Packaging, étiquettes, stickers",
      "Kakémonos, roll-ups, stands de salon"],
     fond="")
