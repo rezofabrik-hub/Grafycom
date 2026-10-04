@@ -21,6 +21,7 @@ modifier celle-ci :
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 
@@ -29,6 +30,32 @@ DOMAINE = "grafycom.fr"
 CIBLES = ["185.199.108.153", "185.199.109.153",
           "185.199.110.153", "185.199.111.153"]
 TTL = 300
+
+
+def identifiants() -> dict:
+    """Les clés à présenter à AWS.
+
+    Dans l'environnement d'exécution de Claude, AWS_ACCESS_KEY_ID et
+    AWS_SECRET_ACCESS_KEY sont déjà occupés : le proxy y injecte la valeur
+    « proxy-injected », qui n'est pas un identifiant. Une clé déposée sous
+    ces noms-là risque donc d'être écrasée sans bruit.
+
+    On regarde d'abord une paire à soi, GRAFYCOM_AWS_*, qui n'entre en
+    collision avec rien. À défaut, on laisse boto3 chercher comme il en a
+    l'habitude — ce qui convient sur une machine où la configuration AWS
+    est normale.
+    """
+    cle = os.environ.get("GRAFYCOM_AWS_ACCESS_KEY_ID")
+    secret = os.environ.get("GRAFYCOM_AWS_SECRET_ACCESS_KEY")
+    if cle and secret:
+        print("Identifiants : GRAFYCOM_AWS_*")
+        return {"aws_access_key_id": cle, "aws_secret_access_key": secret}
+    if os.environ.get("AWS_ACCESS_KEY_ID") == "proxy-injected":
+        print("Attention : AWS_ACCESS_KEY_ID vaut « proxy-injected », ce qui "
+              "n'est pas\nun identifiant. Déposez la clé sous "
+              "GRAFYCOM_AWS_ACCESS_KEY_ID et\nGRAFYCOM_AWS_SECRET_ACCESS_KEY.",
+              file=sys.stderr)
+    return {}
 
 
 def main() -> int:
@@ -45,7 +72,7 @@ def main() -> int:
         print("boto3 manquant :  pip install boto3", file=sys.stderr)
         return 1
 
-    r53 = boto3.client("route53")
+    r53 = boto3.client("route53", region_name="us-east-1", **identifiants())
 
     try:
         zones = [z for z in r53.list_hosted_zones()["HostedZones"]
@@ -53,7 +80,8 @@ def main() -> int:
     except (ClientError, NoCredentialsError) as e:
         code = getattr(e, "response", {}).get("Error", {}).get("Code", type(e).__name__)
         print(f"AWS refuse la connexion ({code}).", file=sys.stderr)
-        print("Vérifiez AWS_ACCESS_KEY_ID et AWS_SECRET_ACCESS_KEY.", file=sys.stderr)
+        print("Vérifiez GRAFYCOM_AWS_ACCESS_KEY_ID et "
+              "GRAFYCOM_AWS_SECRET_ACCESS_KEY.", file=sys.stderr)
         return 1
 
     if not zones:
