@@ -117,8 +117,7 @@ BODY += bloc(
      "Gabarits de publication et de story, réutilisables",
      "Carrousels et visuels de campagne",
      "Signature de courriel et fond de visioconférence",
-     "Visuels pour site web, bandeaux et vignettes",
-     "Prise en main : une séance pour apprendre à décliner les modèles"],
+     "Visuels pour site web, bandeaux et vignettes"],
     fond="")
 
 BODY += bloc(
