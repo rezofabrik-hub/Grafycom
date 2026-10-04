@@ -15,6 +15,13 @@ CONSTRUCTION = True
 # jour où Cloudflare sert le site.
 FORMULAIRE_ACTIF = False
 ENVOI_FORMULAIRE = "/api/contact"
+
+# Jeton de validation de la Google Search Console, methode « balise HTML ».
+# Vide = aucune balise emise. Le jeton n'est pas un secret : c'est une chaine
+# publique que Google lit dans la page pour confirmer qu'on tient le site. Il
+# s'obtient dans la Search Console (voir outils/SEARCH-CONSOLE.md) et se colle
+# ici tel quel, sans les chevrons ni le reste de la balise.
+GOOGLE_VERIF = ""
 # La racine du dépôt : le dossier qui contient celui-ci.
 OUT = str(pathlib.Path(__file__).resolve().parent.parent)
 MAIL = "sandra.grafycom@gmail.com"
@@ -46,7 +53,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="canonical" href="{site}/{slug}">
 <meta name="robots" content="{robots}">
 <meta name="author" content="Grafycom">
-
+{verif}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Grafycom">
@@ -186,9 +193,11 @@ def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow
         for h, l in NAV
     )
     jl = ('<script type="application/ld+json">\n%s\n</script>\n' % jsonld) if jsonld else ""
+    verif = ('<meta name="google-site-verification" content="%s">\n' % GOOGLE_VERIF) if GOOGLE_VERIF else ""
     html = HEAD.format(title=title, desc=desc, site=SITE, accueil=ACCUEIL,
                        slug="" if slug in ("accueil.html", "index.html") else slug,
-                       ogtitle=ogtitle or title, nav=nav, jsonld=jl, robots=robots)
+                       ogtitle=ogtitle or title, nav=nav, jsonld=jl, robots=robots,
+                       verif=verif)
     html += body
     html += FOOT.format(mail=MAIL, tel=TEL, tel_uri=TEL_URI)
     with io.open(os.path.join(OUT, slug), "w", encoding="utf-8") as f:

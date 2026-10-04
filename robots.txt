@@ -1,5 +1,21 @@
-# Site en construction : aucune page ne doit être indexée pour l'instant.
-# À l'ouverture, ouvrir-le-site.sh rétablit le fichier normal.
+# Site en construction jusqu'au 16 octobre 2026.
+#
+# Les robots sont autorisés à EXPLORER, et chaque page porte « noindex ».
+# C'est volontaire, et c'est l'inverse de ce qu'on croit devoir faire.
+#
+# Un « Disallow: / » empêche l'exploration, donc empêche Google de LIRE le
+# noindex : si une adresse du site est citée ailleurs, il peut l'indexer
+# quand même, sans jamais avoir vu la consigne. Interdire l'exploration
+# protège donc moins bien que de l'autoriser.
+#
+# En laissant entrer, les robots lisent le noindex sur les 29 pages et
+# n'indexent rien — et la validation de la Search Console, qui passe par
+# une lecture de la page d'accueil, reste possible dès maintenant.
+#
+# À l'ouverture, ouvrir-le-site.sh remplace ce fichier et retire les noindex.
 
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /merci.html
+
+Sitemap: https://www.grafycom.fr/sitemap.xml

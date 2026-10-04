@@ -39,7 +39,7 @@ grep -q '^CONSTRUCTION = False' "$GEN/gen.py" || { echo "bascule ratée" >&2; ex
 # p_locales.py n'est qu'un gabarit : ce sont villes.py à villes6.py qui
 # produisent les douze pages locales, deux par fichier.
 for p in p_index p_prestations p_methode p_apropos p_contact p_merci \
-         p_legal p_cgv p_realisations zone \
+         p_legal p_cgv p_realisations p_cibles zone \
          villes villes2 villes3 villes4 villes5 villes6; do
   ( cd "$GEN" && python3 "$p.py" >/dev/null )
 done
@@ -53,7 +53,6 @@ cat > robots.txt <<'ROBOTS'
 User-agent: *
 Allow: /
 Disallow: /merci.html
-Disallow: /realisations.html
 
 Sitemap: https://www.grafycom.fr/sitemap.xml
 ROBOTS
@@ -61,13 +60,16 @@ ROBOTS
 # 5. Vérifications. Mieux vaut échouer ici qu'en ligne.
 erreurs=0
 
-restant=$(grep -rl 'noindex, nofollow' . --include='*.html' 2>/dev/null \
-          | grep -v -E 'merci\.html|realisations\.html' || true)
+# dist/ est la sortie du build precedent, encore en mode chantier a cet
+# instant : build.sh la reconstruit plus bas. L'inclure dans la verification
+# faisait echouer l'ouverture sur toute machine ou build.sh avait deja tourne.
+restant=$(grep -rl 'noindex, nofollow' . --include='*.html' --exclude-dir=dist 2>/dev/null \
+          | grep -v -E 'merci\.html' || true)
 if [ -n "$restant" ]; then
   echo "ERREUR : pages encore en noindex :" >&2; echo "$restant" >&2; erreurs=1
 fi
 
-liens=$(grep -rl 'href="accueil\.html"' . --include='*.html' 2>/dev/null || true)
+liens=$(grep -rl 'href="accueil\.html"' . --include='*.html' --exclude-dir=dist 2>/dev/null || true)
 if [ -n "$liens" ]; then
   echo "ERREUR : liens vers accueil.html :" >&2; echo "$liens" >&2; erreurs=1
 fi
@@ -90,6 +92,8 @@ echo
 echo "Site ouvert. Vérifié : aucune page en noindex, aucun lien orphelin,"
 echo "index.html en place, construction du site réussie."
 echo
-echo "Reste à faire :"
-echo "  git add -A && git commit -m 'Ouverture du site' && git push"
-echo "  soumettre https://www.grafycom.fr/sitemap.xml dans Search Console"
+echo "Reste à faire, dans cet ordre :"
+echo "  1. git add -A && git commit -m 'Ouverture du site' && git push"
+echo "  2. python3 outils/indexnow.py       (Bing, Yandex, Qwant, Ecosia)"
+echo "  3. soumettre sitemap.xml dans la Search Console, puis demander"
+echo "     l'indexation des six pages listées dans outils/SEARCH-CONSOLE.md"
