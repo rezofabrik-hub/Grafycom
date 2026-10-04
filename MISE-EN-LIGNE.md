@@ -239,20 +239,43 @@ sur AWS Route 53. Deux chemins.
 
 **Chemin recommandé — déplacer la zone chez Cloudflare.**
 
-1. Cloudflare → **Domains** → **Onboard a domain** → `grafycom.fr` → offre
-   **Free**. Cloudflare recopie automatiquement les enregistrements existants :
-   **vérifier la liste**, en particulier les `MX` et les `TXT` si une messagerie
-   est branchée sur le domaine — les perdre coupe les e-mails.
-2. Chez le registrar, remplacer les serveurs de noms Route 53 par les deux que
-   Cloudflare indique. Propagation : quelques heures, jusqu'à 48 h.
-3. Zone active → projet du Worker → **Settings → Domains & Routes** → **Add** →
-   **Custom domain** → `www.grafycom.fr`. Certificat et enregistrement DNS sont
-   créés par Cloudflare.
-4. Pour que `grafycom.fr` sans `www` fonctionne enfin : enregistrement `A` sur
-   `@` vers `192.0.2.0` **proxifié** (adresse réservée, jamais joignable), plus
-   une *Redirect Rule* `grafycom.fr/*` → `https://www.grafycom.fr/$1` en 301.
-5. La zone hébergée Route 53 peut alors être supprimée (elle est facturée au
-   mois).
+Le domaine est enregistré chez **Gandi** ; seule la zone DNS est déléguée à
+Route 53. Changer de DNS se fait donc chez Gandi, pas chez AWS.
+
+L'ordre ci-dessous ne coupe le site à aucun moment : les enregistrements sont
+créés chez Cloudflare **avant** la bascule, à l'identique. Pendant la
+propagation, les visiteurs sont servis par l'une ou l'autre zone, et les deux
+disent la même chose.
+
+1. Cloudflare → **Add a domain** → `grafycom.fr` → offre **Free**. Cloudflare
+   recopie les enregistrements existants.
+2. **Vérifier la liste importée.** Elle doit contenir quatre `A` sur `www` vers
+   `185.199.108.153`, `.109.153`, `.110.153`, `.111.153`, et rien d'autre : la
+   zone ne porte ni `MX`, ni `TXT`, ni `CAA` — aucune messagerie ne dépend de
+   ce domaine. Si quelque chose d'autre apparaît, l'examiner avant de
+   continuer.
+3. **Ajouter le domaine nu**, absent aujourd'hui : quatre `A` sur `@` vers les
+   mêmes adresses GitHub, et quatre `AAAA` sur `@` vers `2606:50c0:8000::153`
+   à `2606:50c0:8003::153`.
+4. **Mettre tous ces enregistrements sur « DNS only »** (nuage gris), pas sur
+   « Proxied ». GitHub Pages gère lui-même le certificat du domaine, et un
+   enregistrement proxifié l'empêche de le valider. Le nuage orange redeviendra
+   utile le jour où c'est Cloudflare qui sert le site.
+5. Relever les **deux serveurs de noms** que Cloudflare attribue.
+6. **Chez Gandi** → le domaine → *Serveurs de noms* → remplacer les quatre
+   serveurs AWS par les deux de Cloudflare. Propagation : quelques heures,
+   parfois jusqu'à 48 h.
+7. Attendre que Cloudflare affiche la zone **Active**, puis vérifier que
+   `grafycom.fr` et `www.grafycom.fr` répondent tous les deux.
+8. **Supprimer alors la zone hébergée Route 53**, facturée au mois, et dont
+   plus personne ne se sert.
+
+Une fois le site servi par un Worker plutôt que par GitHub Pages, les
+enregistrements de l'étape 3 sont remplacés par un *Custom domain* sur le
+Worker (**Settings → Domains & Routes → Add → Custom domain**), et le domaine
+nu se traite par un `A` sur `@` vers `192.0.2.0` **proxifié** — une adresse
+réservée, jamais joignable — accompagné d'une *Redirect Rule* `grafycom.fr/*`
+→ `https://www.grafycom.fr/$1` en 301.
 
 **Chemin sans toucher aux serveurs de noms.** Rester sur Route 53 et créer à la
 place un projet **Pages**, qui accepte un `CNAME` depuis un DNS extérieur. Le
