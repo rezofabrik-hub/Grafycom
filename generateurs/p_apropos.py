@@ -24,7 +24,7 @@ BODY = """
       </div>
     </div>
     <div class="portrait">
-      <img src="assets/img/sandra-grafycom.jpg" alt="Sandra, fondatrice de Grafycom, en portrait. Mentions manuscrites autour d'elle&nbsp;: «&nbsp;hello, moi c'est Sandra&nbsp;», «&nbsp;j'accompagne votre réussite avec Grafycom&nbsp;», «&nbsp;solutions 360° : logos, menus, cartes et supports de communication&nbsp;», «&nbsp;+7 ans d'expertise à votre service&nbsp;»" width="1080" height="1350">
+      <img src="assets/img/sandra-grafycom.webp" alt="Sandra, fondatrice de Grafycom, en portrait. Mentions manuscrites autour d'elle&nbsp;: «&nbsp;hello, moi c'est Sandra&nbsp;», «&nbsp;j'accompagne votre réussite avec Grafycom&nbsp;», «&nbsp;solutions 360° : logos, menus, cartes et supports de communication&nbsp;», «&nbsp;+7 ans d'expertise à votre service&nbsp;»" width="900" height="1125">
     </div>
   </div>
 </section>

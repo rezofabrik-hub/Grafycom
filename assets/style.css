@@ -232,7 +232,9 @@ nav.principal a.actif { font-weight: 700; }
 /* ---------- Portrait ---------- */
 .portrait { position: relative; }
 .portrait { max-width: 460px; margin: 0 auto; }
-.portrait img { width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--ombre-lg); background: var(--creme); }
+/* Le portrait a un fond transparent : ni carte, ni ombre portée, qui
+   dessineraient un rectangle là où il n'y en a plus. */
+.portrait img { width: 100%; height: auto; }
 .portrait .signature {
   position: absolute; left: -14px; bottom: 26px; background: #fff; border-radius: 100px;
   padding: 12px 24px; box-shadow: var(--ombre); font-family: 'Caveat', cursive; font-size: 26px; color: var(--encre);
