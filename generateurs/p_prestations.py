@@ -20,33 +20,37 @@ BLOC = """<section class="{fond}" id="{ancre}">
 
 """
 
-# Deux entrées sur six portent encore une photo d'illustration libre de
-# droits. Les quatre autres attendent les vraies : les images qui s'y
-# trouvaient montraient le métier d'à côté — un homme crayonnant pour le
-# travail de Sandra, une ardoise anglaise pour une carte de restaurant, une
-# presse offset pour du grand format, une devanture pour une enseigne
-# lumineuse. Mieux vaut un emplacement vide qu'une image qui raconte autre
-# chose.
+# Quatre rubriques montrent désormais de vraies réalisations de Grafycom,
+# tirées du portfolio de Sandra. Les deux dernières gardent une photo
+# d'illustration libre de droits, créditée dans les mentions légales.
 #
-# Pour en remettre une : déposer le fichier dans assets/img/prestations/
-# sous le nom indiqué, remplacer None par ce nom, écrire le texte
-# alternatif, et régénérer.
+# Le troisième champ dit laquelle est laquelle : le commentaire posé dans
+# le HTML en dépend, et c'est une distinction qui compte — présenter une
+# photo d'illustration comme un travail de Grafycom serait faux, et
+# l'inverse priverait Sandra du crédit de son travail.
+#
+# Pour ajouter une photo là où il n'y en a pas : déposer le fichier dans
+# assets/img/prestations/, remplacer None par son nom, écrire le texte
+# alternatif, régénérer.
 PHOTOS = {
- "identite":     (None, "presta-identite.jpg",
-                  "Sandra à sa table de travail, de dos ou en plan rapproché sur les mains"),
- "menus":        (None, "presta-menus.jpg",
-                  "Une carte de restaurant imprimée, à plat, en lumière naturelle"),
- "print":        (None, "presta-print.jpg",
-                  "Le traceur grand format en train d'imprimer, de trois quarts"),
- "signaletique": (None, "presta-signaletique.jpg",
-                  "Une enseigne PVC rétro-éclairée allumée, à la tombée du jour"),
- "digital":      ("presta-digital.jpg", None,
+ "identite":     ("presta-identite.webp", "grafycom",
+                  "Logo Crazy Frenchy, lettrage doré et tour Eiffel, appliqué en grand sur le mur d'un hall d'entreprise"),
+ "menus":        ("presta-menus.webp", "grafycom",
+                  "Menu de la pizzeria Pizza Fry ouvert à plat, carte des pizzas et carte des boissons sur fond ardoise"),
+ "print":        ("presta-print.webp", "grafycom",
+                  "Dépliant trois volets de Cap Loisirs, déplié, fond violet et plan d'accès"),
+ "signaletique": ("presta-signaletique.webp", "grafycom",
+                  "Enseigne lumineuse du restaurant Le Cayrou, allumée sur une façade à la tombée du jour"),
+ "digital":      ("presta-digital.jpg", "illustration",
                   "Main tenant un téléphone qui photographie un ciel au coucher du soleil"),
- "projet":       ("presta-projet.jpg", None,
+ "projet":       ("presta-projet.jpg", "illustration",
                   "Bureau vu de dessus : clavier, carnet, appareil photo, téléphone et tasse de café"),
 }
 
-PHOTO = """      <!-- Photographie d'illustration (Wikimedia Commons, créditée dans les
+REALISATION = """      <!-- Réalisation de Grafycom, tirée du portfolio de Sandra. -->
+      <figure class="presta-photo"><img src="assets/img/prestations/%s" alt="%s" loading="lazy"></figure>"""
+
+ILLUSTRATION = """      <!-- Photographie d'illustration (Wikimedia Commons, créditée dans les
            mentions légales). Ce n'est pas une réalisation de Grafycom. -->
       <figure class="presta-photo"><img src="assets/img/prestations/%s" alt="%s" loading="lazy"></figure>"""
 
@@ -58,8 +62,12 @@ ATTENTE = """      <!-- Emplacement en attente de la photo de Grafycom. -->
       </div>"""
 
 def bloc(ancre, picto, icone, titre, intro, suite, soustitre, items, fond=""):
-    photo, attendu, texte = PHOTOS[ancre]
-    visuel = (PHOTO % (photo, texte)) if photo else (ATTENTE % (texte, texte))
+    fichier, origine, texte = PHOTOS[ancre]
+    if not fichier:
+        visuel = ATTENTE % (texte, texte)
+    else:
+        gabarit = REALISATION if origine == "grafycom" else ILLUSTRATION
+        visuel = gabarit % (fichier, texte)
     return BLOC.format(ancre=ancre, picto=picto, icone=icone, titre=titre, intro=intro,
                        suite=suite, soustitre=soustitre, fond=fond, visuel=visuel,
                        items="".join("<li>%s</li>" % i for i in items))
