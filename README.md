@@ -40,7 +40,7 @@ autres adresses, mais :
 Quand tout est prêt&nbsp;:
 
 ```bash
-./fin-de-construction.sh
+./ouvrir-le-site.sh
 git add -A && git commit -m "Ouverture du site" && git push
 ```
 
@@ -101,7 +101,7 @@ Pour la remettre en circulation une fois les photos déposées :
 1. Déposer les six images dans `assets/img/realisations/` (noms attendus dans
    le `LISEZ-MOI.md` du dossier)
 2. Remettre `<a href="realisations.html">Réalisations</a>` dans le menu et le
-   pied de page des neuf pages
+   pied de page de toutes les pages
 3. Retirer `noindex` de `realisations.html` et remettre son entrée dans
    `sitemap.xml`
 4. Sur l'accueil, la section « Un aperçu du travail » a été supprimée : la

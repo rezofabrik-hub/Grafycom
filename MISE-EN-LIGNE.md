@@ -7,15 +7,31 @@ domaine définitif.
 
 ## 1. Ce qu'est ce site
 
-Un site **statique** : neuf pages HTML, une feuille de style, un fichier
-JavaScript, des images. **Aucune base de données, aucun PHP, aucun CMS, aucune
-étape de build.** Il fonctionne en le déposant tel quel sur n'importe quel
-serveur web.
+Un site **statique** : vingt-cinq pages HTML, une feuille de style, un fichier
+JavaScript, des polices, des icônes et des images. **Aucune base de données,
+aucun PHP, aucun CMS.** Il fonctionne en le déposant tel quel sur n'importe
+quel serveur web.
 
 - **Dépôt** : <https://github.com/rezofabrik-hub/Grafycom>
 - **Branche de production** : `main`
-- **Racine du site** : la racine du dépôt (`index.html` est à la racine)
-- **Adresse provisoire actuelle** : <https://www.grafycom.fr/>
+- **Racine du site** : la racine du dépôt
+- **Adresse actuelle** : <https://www.grafycom.fr/>
+
+**Le site est en mode chantier jusqu'au 16 octobre 2026.** La racine sert une
+page d'attente ; le vrai site vit dans `accueil.html` et toutes les pages
+portent un `noindex`. Le script `./ouvrir-le-site.sh` fait la bascule : la page
+d'accueil reprend sa place à la racine, les moteurs sont autorisés, et il
+refuse de rendre la main si quelque chose ne va pas.
+
+**Les pages HTML sont générées.** Les scripts qui les produisent sont dans
+`generateurs/`, avec un LISEZ-MOI. Modifier un fichier HTML à la main marche
+jusqu'à la prochaine régénération, qui écrase la correction sans prévenir. Tout
+passe par les générateurs.
+
+**Deux fichiers ne sont pas publiés en l'état** : `build.sh` construit `dist/`,
+qui contient le site public et rien d'autre — ni documentation, ni scripts, ni
+générateurs. C'est `dist/` qui part en ligne chez Cloudflare. Sur GitHub Pages,
+c'est la racine du dépôt qui est servie.
 
 ---
 
@@ -277,46 +293,70 @@ seconde porte.
 ## 3. Option B — héberger ailleurs
 
 Si vous préférez un hébergement mutualisé classique, c'est possible sans rien
-changer au code : **déposez le contenu du dépôt à la racine web** (`www/`,
-`public_html/`…) par FTP ou rsync, en excluant `.git/`, `README.md`,
-`MISE-EN-LIGNE.md` et `basculer-domaine.sh`.
+changer au code. **Mais n'envoyez pas le dépôt tel quel** : il contient des
+scripts, des générateurs, de la documentation interne et des listes de
+prospection comportant des noms et des adresses de personnes. Tout cela serait
+servi publiquement.
+
+```bash
+bash build.sh        # construit dist/ : le site public, et rien d'autre
+```
+
+C'est le **contenu de `dist/`** qu'on dépose à la racine web (`www/`,
+`public_html/`…), par FTP ou rsync. Le script refuse de construire s'il
+rencontre un fichier qui n'a rien à faire en ligne, ce qui évite la mauvaise
+surprise.
 
 Dans ce cas :
 
 - pointez le domaine vers le serveur selon les indications de l'hébergeur
   (souvent un `A` vers son IP) ;
 - **activez HTTPS** (Let's Encrypt est gratuit chez tous les hébergeurs) ;
-- lancez tout de même `./basculer-domaine.sh votre-domaine.fr` avant l'envoi,
-  pour que les URL internes soient correctes ;
-- les mises à jour ne se feront plus par `git push` mais par un nouvel envoi de
-  fichiers.
+- reportez les en-têtes de `_headers` dans la configuration du serveur
+  (`.htaccess` chez Apache, un bloc `add_header` chez nginx) : un hébergement
+  mutualisé ne lit pas ce fichier ;
+- le formulaire de contact restera en repli par courriel, sauf à porter
+  `src/index.js` vers le langage du serveur ;
+- les mises à jour se feront par un nouvel envoi de fichiers, pas par
+  `git push`.
 
 ---
 
 ## 4. Points d'attention
 
-**Le formulaire de contact n'envoie rien.** Un site statique n'a pas de serveur
-pour traiter un envoi : au clic, le formulaire ouvre le logiciel de messagerie
-du visiteur avec un message prérempli. Pour un vrai envoi, ajouter un attribut
-`action` à la balise `<form>` de `contact.html` (Formspree, Web3Forms, Basin,
-ou le formulaire intégré de Netlify) — dès que cet attribut est présent, le
-repli par courriel se désactive tout seul.
+**Le domaine nu ne résout pas.** Seul `www.grafycom.fr` répond ; `grafycom.fr`
+sans `www` renvoie une erreur. Il manque les enregistrements `A` et `AAAA` sur
+l'apex de la zone Route 53 — ils sont détaillés en 2.1. C'est la seule chose à
+faire avant l'ouverture du 16 octobre.
 
-**Polices et icônes sont chargées depuis des CDN** (Google Fonts, cdnjs). Aucun
-cookie n'est déposé, mais ces services voient l'IP des visiteurs. Pour une
-conformité RGPD maximale, les télécharger et les servir depuis `assets/`.
+**Le formulaire de contact ouvre le logiciel de messagerie du visiteur.** C'est
+un repli volontaire : GitHub Pages n'exécute aucun code. La vraie solution est
+déjà écrite — `src/index.js` est un Worker Cloudflare qui reçoit le formulaire
+sur `/api/contact` et envoie le message via Resend. Elle s'active le jour où
+Cloudflare sert le site : définir les trois secrets (section 2 bis), puis
+passer `FORMULAIRE_ACTIF` à `True` dans `generateurs/gen.py` et régénérer.
+Ne pas brancher un service tiers du type Formspree : le travail est fait.
 
-**Les mentions légales sont incomplètes.** Raison sociale, statut juridique,
-SIRET, TVA et coordonnées de l'hébergeur restent à renseigner — les passages
-concernés sont surlignés en jaune dans `mentions-legales.html`. À compléter
-avant toute communication publique.
+**Aucune ressource tierce n'est chargée.** Les polices et les icônes sont
+servies depuis `assets/`, pas depuis Google Fonts ni un CDN. Aucun cookie,
+aucun traceur, aucune adresse IP de visiteur transmise à qui que ce soit. C'est
+un choix, et il ne faut pas le défaire en ajoutant une police distante : la
+page de confidentialité affirme le contraire au visiteur.
+
+**Les en-têtes de sécurité sont dans `_headers`** — HSTS, CSP, X-Frame-Options,
+Referrer-Policy, et les durées de cache. GitHub Pages ignore ce fichier ;
+Cloudflare le lit. C'est l'une des raisons du passage à Cloudflare.
+
+**Les mentions légales sont complètes**, de même que les CGV, écrites pour une
+clientèle exclusivement professionnelle. Elles n'ont pas été relues par un
+juriste : la recommandation tient toujours.
 
 **La page `realisations.html` est volontairement hors ligne** : elle existe mais
 n'est liée nulle part et porte un `noindex`, en attendant de vraies photos. La
 marche à suivre pour la remettre en circulation est en tête du `README.md`.
 
-**Après la bascule**, déclarer le site dans Google Search Console avec la
-nouvelle adresse et y soumettre `sitemap.xml`.
+**Après l'ouverture**, déclarer le site dans Google Search Console et y
+soumettre `https://www.grafycom.fr/sitemap.xml`.
 
 ---
 
@@ -330,4 +370,6 @@ nouvelle adresse et y soumettre `sitemap.xml`.
 | Cible CNAME | `rezofabrik-hub.github.io.` |
 | A (IPv4) | `185.199.108.153`, `.109.153`, `.110.153`, `.111.153` |
 | AAAA (IPv6) | `2606:50c0:8000::153` à `2606:50c0:8003::153` |
+| État | Mode chantier jusqu'au 16 octobre 2026 |
+| À faire en priorité | Les `A` et `AAAA` sur l'apex, dans Route 53 |
 | Contact | Sandra — 07 82 92 19 81 — sandra.grafycom@gmail.com |
