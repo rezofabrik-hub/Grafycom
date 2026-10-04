@@ -369,15 +369,15 @@ def adresse_postale(siren_recherche: str) -> tuple[str, str, str]:
     et « non vérifié ».
     """
     if not siren_recherche:
-        return "", "", "introuvable"
+        return "", "", "introuvable", ""
     data = interroger_annuaire({"q": siren_recherche, "minimal": "true",
                                 "include": "siege,dirigeants", "per_page": "1"})
     if data is None:
-        return "", "", "non vérifié"
+        return "", "", "non vérifié", ""
 
     resultats = data.get("results") or []
     if not resultats:
-        return "", "", "introuvable"
+        return "", "", "introuvable", ""
     fiche = resultats[0]
     siege = fiche.get("siege") or {}
     adresse = " ".join(texte(siege.get("adresse")).split())
@@ -388,7 +388,15 @@ def adresse_postale(siren_recherche: str) -> tuple[str, str, str]:
                 x for x in (texte(d.get("prenoms")), texte(d.get("nom"))) if x
             )
             break
-    return adresse, nom_dirigeant, "ok"
+    # L'enseigne commerciale : le nom sur la vitrine, souvent different de
+    # la raison sociale. « CBE » au registre, « CONFORT BIEN ETRE » sur la
+    # facade. C'est celui-la qu'on cherche sur place et sur internet.
+    enseigne = texte(siege.get("nom_commercial")) or ""
+    for e in (siege.get("liste_enseignes") or []):
+        if texte(e):
+            enseigne = enseigne or texte(e)
+            break
+    return adresse, nom_dirigeant, "ok", enseigne
 
 
 def collecter(depuis: str, jusqu_a: str) -> list[dict]:
@@ -500,6 +508,9 @@ def corps_html(prospects: list[dict], debut: dt.date, fin: dt.date,
                      '(%s)</span></div>' % (echapper(p["nom"]),
                                             echapper(p["ville"]),
                                             echapper(p["code_postal"])))
+            if p.get("enseigne"):
+                h.append('<div style="color:#444">enseigne : <strong>%s</strong>'
+                         '</div>' % echapper(p["enseigne"]))
             if p["adresse"]:
                 h.append('<div style="color:#444">%s</div>'
                          % echapper(p["adresse"]))
@@ -556,6 +567,8 @@ def corps_texte(prospects: list[dict], debut: dt.date, fin: dt.date,
         for pr in groupe:
             l.append("")
             l.append("%s - %s (%s)" % (pr["nom"], pr["ville"], pr["code_postal"]))
+            if pr.get("enseigne"):
+                l.append("  enseigne : %s" % pr["enseigne"])
             if pr["adresse"]:
                 l.append("  %s" % pr["adresse"])
             if pr["dirigeant"] and pr["dirigeant"].lower() not in pr["nom"].lower():
@@ -675,6 +688,7 @@ def main() -> int:
             "siren": sir,
             "adresse": "",
             "dirigeant": "",
+            "enseigne": "",
             "diffusion": "non vérifié",
             "debut_activite": (acte.get("dateCommencementActivite") or ""),
             "parution": annonce.get("dateparution") or "",
@@ -710,9 +724,11 @@ def main() -> int:
         print(f"Recherche des adresses ({len(prospects)} appels)…")
         retenus = []
         for n, prosp in enumerate(prospects, 1):
-            adr, dir_, statut = adresse_postale(prosp["siren"])
+            adr, dir_, statut, enseigne = adresse_postale(prosp["siren"])
             prosp["adresse"], prosp["dirigeant"] = adr, dir_
             prosp["diffusion"] = statut
+            if enseigne and enseigne.upper() != prosp["nom"].upper():
+                prosp["enseigne"] = enseigne
             # « [NON-DIFFUSIBLE] » : l'INSEE ne publie pas les données de
             # cette entreprise. Pour une société c'est une demande expresse ;
             # pour un entrepreneur individuel c'est devenu le réglage par
@@ -777,7 +793,8 @@ def main() -> int:
 
     base = f"prospects-66-{debut:%Y%m%d}-{fin:%Y%m%d}"
     chemin_csv = SORTIE / f"{base}.csv"
-    colonnes = ["note", "secteur", "nom", "forme", "ville", "code_postal",
+    colonnes = ["note", "secteur", "nom", "enseigne", "forme", "ville",
+                "code_postal",
                 "adresse", "dirigeant", "diffusion", "activite", "siren",
                 "debut_activite", "parution", "annonce"]
     with chemin_csv.open("w", encoding="utf-8-sig", newline="") as f:
@@ -814,6 +831,8 @@ def main() -> int:
         lignes.append("")
         for p in groupe:
             lignes.append(f"**{p['nom']}** — {p['ville']} ({p['code_postal']})")
+            if p.get("enseigne"):
+                lignes.append(f"  enseigne : {p['enseigne']}")
             if p["adresse"]:
                 lignes.append(f"  {p['adresse']}")
             if p["dirigeant"] and p["dirigeant"].lower() not in p["nom"].lower():
