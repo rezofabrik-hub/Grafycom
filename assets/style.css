@@ -208,6 +208,18 @@ nav.principal a.actif { font-weight: 700; }
 }
 .presta-photo:hover img { filter: saturate(1) sepia(0); transform: scale(1.02); }
 
+/* Emplacement de photo en attente, au même gabarit que .presta-photo :
+   la mise en page ne bouge pas le jour où la vraie image arrive. */
+.presta-attente {
+  margin: 26px 0 0; aspect-ratio: 16 / 10; border-radius: var(--radius);
+  background: var(--degrade-chaud); border: 1.5px dashed var(--sable-fonce);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; text-align: center; padding: 26px; color: var(--taupe);
+}
+.presta-attente i { font-size: 30px; opacity: .55; }
+.presta-attente strong { color: var(--brun); font-size: 15px; }
+.presta-attente span { font-size: 13px; max-width: 34ch; line-height: 1.5; }
+
 /* ---------- Liste des communes ---------- */
 .communes {
   list-style: none; margin: 34px 0 0; padding: 0;

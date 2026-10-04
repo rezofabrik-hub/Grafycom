@@ -9,9 +9,7 @@ BLOC = """<section class="{fond}" id="{ancre}">
       <div class="trait"></div>
       <p>{intro}</p>
       <p style="margin-top:14px">{suite}</p>
-      <!-- Photographie d'illustration (Wikimedia Commons, créditée dans les
-           mentions légales). Ce n'est pas une réalisation de Grafycom. -->
-      <figure class="presta-photo"><img src="assets/img/prestations/{photo}" alt="{alt}" loading="lazy"></figure>
+{visuel}
     </div>
     <div class="carte" style="background:#fff">
       <h3 style="margin-bottom:16px">{soustitre}</h3>
@@ -22,19 +20,48 @@ BLOC = """<section class="{fond}" id="{ancre}">
 
 """
 
+# Deux entrées sur six portent encore une photo d'illustration libre de
+# droits. Les quatre autres attendent les vraies : les images qui s'y
+# trouvaient montraient le métier d'à côté — un homme crayonnant pour le
+# travail de Sandra, une ardoise anglaise pour une carte de restaurant, une
+# presse offset pour du grand format, une devanture pour une enseigne
+# lumineuse. Mieux vaut un emplacement vide qu'une image qui raconte autre
+# chose.
+#
+# Pour en remettre une : déposer le fichier dans assets/img/prestations/
+# sous le nom indiqué, remplacer None par ce nom, écrire le texte
+# alternatif, et régénérer.
 PHOTOS = {
- "identite":     ("presta-identite.jpg",     "Graphiste crayonnant des propositions de logo sur un carnet, à côté d'un ordinateur portable"),
- "menus":        ("presta-menus.jpg",        "Ardoise de menu manuscrite dans la salle d'un café"),
- "print":        ("presta-print.jpg",        "Presse offset quatre couleurs dans un atelier d'imprimerie"),
- "signaletique": ("presta-signaletique.jpg", "Devanture de café avec son enseigne bandeau, sa marquise et sa terrasse"),
- "digital":      ("presta-digital.jpg",      "Main tenant un téléphone qui photographie un ciel au coucher du soleil"),
- "projet":       ("presta-projet.jpg",       "Bureau vu de dessus : clavier, carnet, appareil photo, téléphone et tasse de café"),
+ "identite":     (None, "presta-identite.jpg",
+                  "Sandra à sa table de travail, de dos ou en plan rapproché sur les mains"),
+ "menus":        (None, "presta-menus.jpg",
+                  "Une carte de restaurant imprimée, à plat, en lumière naturelle"),
+ "print":        (None, "presta-print.jpg",
+                  "Le traceur grand format en train d'imprimer, de trois quarts"),
+ "signaletique": (None, "presta-signaletique.jpg",
+                  "Une enseigne PVC rétro-éclairée allumée, à la tombée du jour"),
+ "digital":      ("presta-digital.jpg", None,
+                  "Main tenant un téléphone qui photographie un ciel au coucher du soleil"),
+ "projet":       ("presta-projet.jpg", None,
+                  "Bureau vu de dessus : clavier, carnet, appareil photo, téléphone et tasse de café"),
 }
 
+PHOTO = """      <!-- Photographie d'illustration (Wikimedia Commons, créditée dans les
+           mentions légales). Ce n'est pas une réalisation de Grafycom. -->
+      <figure class="presta-photo"><img src="assets/img/prestations/%s" alt="%s" loading="lazy"></figure>"""
+
+ATTENTE = """      <!-- Emplacement en attente de la photo de Grafycom. -->
+      <div class="presta-attente" role="img" aria-label="Emplacement réservé : %s">
+        <i class="fa-solid fa-camera" aria-hidden="true"></i>
+        <strong>Photo à venir</strong>
+        <span>%s</span>
+      </div>"""
+
 def bloc(ancre, picto, icone, titre, intro, suite, soustitre, items, fond=""):
-    photo, alt = PHOTOS[ancre]
+    photo, attendu, texte = PHOTOS[ancre]
+    visuel = (PHOTO % (photo, texte)) if photo else (ATTENTE % (texte, texte))
     return BLOC.format(ancre=ancre, picto=picto, icone=icone, titre=titre, intro=intro,
-                       suite=suite, soustitre=soustitre, fond=fond, photo=photo, alt=alt,
+                       suite=suite, soustitre=soustitre, fond=fond, visuel=visuel,
                        items="".join("<li>%s</li>" % i for i in items))
 
 BODY = """
