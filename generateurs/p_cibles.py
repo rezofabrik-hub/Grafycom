@@ -147,7 +147,7 @@ cible(
 
     <h2>Ce que ça donne, en vrai</h2>
     <p>Pour <strong>Ô Fait Maison</strong>, coffee shop et salon de thé, l'enseigne de devanture et la décoration intérieure ont été pensées ensemble : les mêmes formes végétales se retrouvent sur la façade et sur le mur du fond, et le client qui pousse la porte reconnaît ce qu'il a vu de la rue.</p>
-    <p>Pour <strong>Casa Aldo</strong>, restaurant italien, le logo a été dessiné d'emblée pour tenir en enseigne ronde rétroéclairée — un format qui pardonne peu les détails fins. La vitrophanie et les cartes de visite en découlent.</p>
+    <p>Pour <strong>Casa Aldo</strong>, restaurant italien, le logo a été dessiné d'emblée pour tenir en enseigne ronde — un format qui pardonne peu les détails fins. Savoir dès le crayonné sur quoi le logo finira évite de le refaire au moment de la fabrication.</p>
     <p>Les deux sont visibles sur la page <a href="realisations.html">réalisations</a>. Le détail de chaque prestation est sur la page <a href="prestations.html">prestations</a>, et si vous ouvrez hors de Perpignan, la <a href="zone-intervention.html">zone d'intervention</a> couvre tout le département.</p>""",
  "Ouvrir sans mauvaise surprise",
  [("Combien de temps avant l'ouverture faut-il s'y prendre&nbsp;?",
@@ -256,7 +256,7 @@ cible(
   carte("p-violet", "fa-mobile-screen", "Les réseaux et la fiche Google",
         "Gabarits de publication réutilisables, photos de plats bien cadrées, visuels de campagne. Le relais naturel de ce qui se passe en salle.")],
  """    <h2 style="margin-top:0">Des restaurants, pour de vrai</h2>
-    <p><strong>Casa Aldo</strong>, restaurant italien : création du logo, décliné en enseigne ronde rétroéclairée, vitrophanie, cartes de visite et menu. Le logo a été dessiné dès le départ pour tenir dans un cercle lumineux, format qui pardonne peu les détails fins.</p>
+    <p><strong>Casa Aldo</strong>, restaurant italien : création du logo. Il a été dessiné dès le départ pour tenir dans un cercle lumineux, format qui pardonne peu les détails fins — l'enseigne elle-même a été réalisée par Alinea.</p>
     <p><strong>Pizza Fry</strong>, pizzeria : le menu complet, carte des pizzas et carte des boissons, plus les dépliants et l'enseigne. Une mise en page qui tient debout sur une table, avec les formats et les prix lisibles d'un coup d'œil.</p>
     <p><strong>Le Cayrou</strong>, restaurant : logo et enseigne lumineuse de façade. Un trait simple, qui reste lisible de nuit comme de jour.</p>
     <p><strong>Ô Fait Maison</strong>, coffee shop et salon de thé : enseigne de devanture, décoration intérieure, flyers et cartes de visite. L'extérieur et l'intérieur se répondent, de sorte que le client qui pousse la porte reconnaît ce qu'il a vu de la rue.</p>
@@ -314,8 +314,8 @@ cible(
     <h2>Du fichier à la pose</h2>
     <p>Je conçois le visuel et je prépare le fichier aux normes du fabricant. Si vous le souhaitez, je consulte les enseignistes et poseurs avec qui je travaille dans la région, je compare les devis, je vérifie le bon à tirer et je contrôle la conformité à la réception. Vous gardez un seul interlocuteur du premier crayonné à la pose — et si vous avez déjà votre poseur, les fichiers sont prévus pour qu'il travaille avec.</p>
 
-    <h2>Des enseignes posées</h2>
-    <p><strong>Le Cayrou</strong>, restaurant : enseigne lumineuse de façade, un trait simple qui tient de nuit. <strong>Casa Aldo</strong> : enseigne ronde rétroéclairée, dessinée avec le logo et non après lui. <strong>Ô Fait Maison</strong> : enseigne de devanture et décoration intérieure conçues ensemble. <strong>Cap Loisirs</strong> : totem numérique d'entrée, activités et tarifs lisibles depuis le parking. <strong>Alliance Peintures</strong> : marquage de flotte, du hayon aux portes latérales.</p>
+    <h2>Des façades, et ce qui les accompagne</h2>
+    <p><strong>Le Cayrou</strong>, restaurant : enseigne lumineuse de façade, un trait simple qui tient de nuit. <strong>Ô Fait Maison</strong> : enseigne de devanture et décoration intérieure conçues ensemble. <strong>Alliance Peintures</strong> : marquage de flotte, du hayon aux portes latérales. Et <strong>Cap Loisirs</strong> : l'affiche tarifaire des prestations, qui relève de la même exigence — être lue de loin, en passant.</p>
     <p>Tous sur la page <a href="realisations.html">réalisations</a>. Pour une ouverture, voir <a href="ouverture-commerce-66.html">ouvrir un commerce dans le 66</a> ; pour une enseigne fatiguée, <a href="refaire-son-image.html">refaire son image</a>.</p>""",
  "Ce qu'on me demande avant de poser",
  [("Combien de temps entre la commande et la pose&nbsp;?",

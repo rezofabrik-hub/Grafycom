@@ -10,7 +10,7 @@ def reaz(cat, titre, desc, fichier):
 
 GALERIE = "".join([
     reaz("Identité visuelle", "Casa Aldo",
-         "Logo d'un restaurant italien, décliné en enseigne ronde rétroéclairée et en vitrophanie.",
+         "Création du logo d'un restaurant italien. L'enseigne a été réalisée par Alinea.",
          "casa-aldo.webp"),
     reaz("Signalétique", "Ô Fait Maison",
          "Enseigne de devanture d'un salon de thé, et la décoration intérieure qui lui répond.",
@@ -22,7 +22,7 @@ GALERIE = "".join([
          "Livret de formation : couverture, mise en page et gabarit des pages intérieures.",
          "mia-beauty.webp"),
     reaz("Affichage", "Cap Loisirs",
-         "Totem numérique à l'entrée : activités, tarifs et horaires, lisibles de loin.",
+         "Affiche tarifaire des prestations proposées, lisible de loin à l'entrée.",
          "cap-loisirs.webp"),
     reaz("Réseaux sociaux", "Pano Perpignan",
          "Gabarits de publication et visuels de campagne, déclinables semaine après semaine.",
