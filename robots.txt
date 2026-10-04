@@ -1,5 +1,5 @@
 # Site en construction : aucune page ne doit être indexée pour l'instant.
-# À l'ouverture, fin-de-construction.sh rétablit le fichier normal.
+# À l'ouverture, ouvrir-le-site.sh rétablit le fichier normal.
 
 User-agent: *
 Disallow: /
