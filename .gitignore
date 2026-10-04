@@ -27,3 +27,7 @@ dist/
 outils/prospects/
 __pycache__/
 *.pyc
+
+# Squelettes de calendrier régénérés par reseaux/calendrier.py.
+reseaux/calendrier-*.csv
+reseaux/*-squelette.md

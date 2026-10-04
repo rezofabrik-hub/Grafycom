@@ -32,6 +32,9 @@ rm -rf dist/src
 # des noms et des adresses de personnes physiques. Jamais en ligne.
 rm -rf dist/outils
 
+# Calendriers editoriaux et ligne editoriale : documents de travail.
+rm -rf dist/reseaux
+
 # Artefacts propres a GitHub Pages, inutiles chez Cloudflare.
 rm -f dist/CNAME dist/.nojekyll dist/.gitignore dist/wrangler.toml
 
