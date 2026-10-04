@@ -22,6 +22,13 @@ python3 outils/veille-entreprises.py --jours 7 --adresses   # + adresse postale
 python3 outils/veille-entreprises.py --tout           # sans filtre d'intérêt
 ```
 
+Pour l'envoi automatique du matin à Sandra, voir `VEILLE-QUOTIDIENNE.md` :
+
+```bash
+python3 outils/veille-entreprises.py --quotidien --adresses \
+        --envoyer sandra.grafycom@gmail.com
+```
+
 Deux fichiers sortent dans `outils/prospects/` : un `.csv` à ouvrir dans un
 tableur, et un `.md` à lire tel quel.
 

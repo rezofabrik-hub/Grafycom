@@ -20,6 +20,16 @@ Usage :
     python3 outils/veille-entreprises.py --jours 30
     python3 outils/veille-entreprises.py --depuis 2026-09-01
     python3 outils/veille-entreprises.py --tout          # sans filtre d'intérêt
+
+Veille quotidienne (le mode destiné à l'envoi du matin) :
+    python3 outils/veille-entreprises.py --quotidien --adresses
+
+    --quotidien regarde les sept derniers jours, puis retire tout ce qui a
+    déjà été signalé une fois, et produit en plus un corps de courriel HTML.
+    Pourquoi sept jours et non un seul : le BODACC publie avec deux à cinq
+    jours de décalage et ne publie pas le week-end. Une fenêtre d'un jour
+    manquerait des créations et en raterait toutes celles du samedi et du
+    dimanche. La mémoire des SIREN déjà vus évite les répétitions.
 """
 
 from __future__ import annotations
@@ -31,9 +41,12 @@ import json
 import pathlib
 import re
 import sys
+import os
+import smtplib
 import time
 import urllib.parse
 import urllib.request
+from email.message import EmailMessage
 
 BODACC = ("https://bodacc-datadila.opendatasoft.com/api/explore/v2.1"
           "/catalog/datasets/annonces-commerciales/records")
@@ -43,6 +56,10 @@ PAR_PAGE = 100
 RACINE = pathlib.Path(__file__).resolve().parent
 SORTIE = RACINE / "prospects"
 EXCLUSIONS = RACINE / "ne-pas-contacter.txt"
+# Memoire de la veille quotidienne : un SIREN par ligne, deja signale.
+# Sans elle, l'envoi du matin repeterait chaque jour les memes entreprises
+# pendant une semaine.
+DEJA_VUS = SORTIE / "deja-signales.txt"
 
 # Secteurs classés par intérêt réel pour Grafycom. L'ordre compte : le
 # premier groupe dont un mot apparaît dans l'activité déclarée fixe la note.
@@ -373,6 +390,205 @@ def collecter(depuis: str, jusqu_a: str) -> list[dict]:
     return lignes
 
 
+def lire_deja_vus() -> set[str]:
+    """Les SIREN deja signales par une veille precedente."""
+    if not DEJA_VUS.exists():
+        return set()
+    return {
+        l.split("#")[0].strip()
+        for l in DEJA_VUS.read_text(encoding="utf-8").splitlines()
+        if l.split("#")[0].strip()
+    }
+
+
+def noter_deja_vus(prospects: list[dict], jour: dt.date) -> None:
+    """Ajoute les SIREN du jour a la memoire, en gardant la trace de la date."""
+    SORTIE.mkdir(exist_ok=True)
+    with DEJA_VUS.open("a", encoding="utf-8") as f:
+        for p in prospects:
+            if p["siren"]:
+                f.write("%s  # %s %s\n" % (p["siren"], jour.isoformat(), p["nom"]))
+
+
+def echapper(t: str) -> str:
+    return (t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+             .replace('"', "&quot;"))
+
+
+ETOILES = {3: "●●●", 2: "●●", 1: "●"}
+
+
+def corps_html(prospects: list[dict], debut: dt.date, fin: dt.date,
+               total: int, avec_adresses: bool) -> str:
+    """Un courriel lisible sur telephone, sans image ni script.
+
+    Volontairement en tableau et en styles en ligne : c'est la seule mise
+    en page que tous les clients de messagerie respectent encore.
+    """
+    par_secteur: dict[str, list[dict]] = {}
+    for p in prospects:
+        par_secteur.setdefault(p["secteur"], []).append(p)
+
+    h = []
+    h.append('<div style="font-family:-apple-system,BlinkMacSystemFont,'
+             'Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;'
+             'line-height:1.5;color:#1a1a1a;max-width:640px;margin:0 auto;'
+             'padding:16px">')
+    h.append('<h1 style="font-size:19px;margin:0 0 4px">Nouvelles entreprises '
+             'des Pyrénées-Orientales</h1>')
+    h.append('<p style="margin:0 0 18px;color:#666;font-size:13px">Créations '
+             'publiées au BODACC du %s au %s</p>' % (debut.strftime("%d/%m"),
+                                                     fin.strftime("%d/%m/%Y")))
+
+    if not prospects:
+        h.append('<p style="background:#f4f4f4;padding:14px;border-radius:6px;'
+                 'margin:0">Aucune nouvelle création à signaler aujourd\'hui. '
+                 'Les %d annonces de la période étaient déjà connues ou sans '
+                 'rapport avec l\'activité.</p>' % total)
+        h.append('</div>')
+        return "\n".join(h)
+
+    h.append('<p style="background:#eef6ff;padding:12px 14px;border-radius:6px;'
+             'margin:0 0 20px"><strong>%d entreprise%s à regarder</strong>, '
+             'sur %d créations publiées.</p>'
+             % (len(prospects), "s" if len(prospects) > 1 else "", total))
+
+    if not avec_adresses:
+        h.append('<p style="background:#fff6e5;padding:12px 14px;'
+                 'border-radius:6px;margin:0 0 20px;font-size:14px">'
+                 '⚠ Les adresses n\'ont pas été vérifiées pour cet envoi. '
+                 'Ne rien expédier avant de les contrôler : le droit '
+                 'd\'opposition exercé auprès de l\'INSEE n\'est pas connu.</p>')
+
+    for secteur in sorted(par_secteur,
+                          key=lambda x: (-par_secteur[x][0]["note"], x)):
+        groupe = par_secteur[secteur]
+        h.append('<h2 style="font-size:15px;margin:22px 0 10px;'
+                 'padding-bottom:5px;border-bottom:1px solid #ddd">'
+                 '%s <span style="color:#999;font-weight:normal">%s · %d</span>'
+                 '</h2>' % (echapper(secteur),
+                            ETOILES.get(groupe[0]["note"], ""), len(groupe)))
+        for p in groupe:
+            h.append('<div style="margin:0 0 14px;padding-left:10px;'
+                     'border-left:2px solid #e5e5e5">')
+            h.append('<div><strong>%s</strong> <span style="color:#666">— %s '
+                     '(%s)</span></div>' % (echapper(p["nom"]),
+                                            echapper(p["ville"]),
+                                            echapper(p["code_postal"])))
+            if p["adresse"]:
+                h.append('<div style="color:#444">%s</div>'
+                         % echapper(p["adresse"]))
+            if p["dirigeant"] and p["dirigeant"].lower() not in p["nom"].lower():
+                h.append('<div style="color:#444">à l\'attention de %s</div>'
+                         % echapper(p["dirigeant"]))
+            if p["diffusion"] == "non vérifié":
+                h.append('<div style="color:#b35309">⚠ diffusion non vérifiée '
+                         '— ne rien envoyer</div>')
+            act = p["activite"][:200] + ("…" if len(p["activite"]) > 200 else "")
+            h.append('<div style="color:#555;font-size:14px;margin-top:2px">%s'
+                     '</div>' % echapper(act))
+            reperes = [x for x in (p["forme"],
+                                   "SIREN %s" % p["siren"] if p["siren"] else "",
+                                   "début %s" % p["debut_activite"]
+                                   if p["debut_activite"] else "") if x]
+            h.append('<div style="color:#999;font-size:12px;margin-top:2px">%s'
+                     '</div>' % echapper(" · ".join(reperes)))
+            h.append('</div>')
+
+    h.append('<hr style="border:0;border-top:1px solid #e5e5e5;margin:26px 0 12px">')
+    h.append('<p style="color:#888;font-size:12px;margin:0">'
+             'Source : BODACC (données ouvertes). Le bulletin ne publie '
+             'aucune adresse e-mail ni téléphone : la prise de contact se '
+             'fait par courrier, au téléphone après recherche, ou sur place. '
+             'Pour retirer une entreprise des prochains envois, l\'ajouter à '
+             'outils/ne-pas-contacter.txt.</p>')
+    h.append('</div>')
+    return "\n".join(h)
+
+
+def corps_texte(prospects: list[dict], debut: dt.date, fin: dt.date,
+                total: int) -> str:
+    """Repli texte du courriel. Tout client de messagerie sait l'afficher."""
+    l = ["NOUVELLES ENTREPRISES DES PYRENEES-ORIENTALES",
+         "Creations publiees au BODACC du %s au %s"
+         % (debut.strftime("%d/%m"), fin.strftime("%d/%m/%Y")), ""]
+    if not prospects:
+        l.append("Aucune nouvelle creation a signaler aujourd'hui. "
+                 "Les %d annonces de la periode etaient deja connues ou "
+                 "sans rapport avec l'activite." % total)
+        return "\n".join(l)
+
+    l.append("%d entreprise%s a regarder, sur %d creations publiees."
+             % (len(prospects), "s" if len(prospects) > 1 else "", total))
+    l.append("")
+    par_secteur: dict[str, list[dict]] = {}
+    for pr in prospects:
+        par_secteur.setdefault(pr["secteur"], []).append(pr)
+    for secteur in sorted(par_secteur,
+                          key=lambda x: (-par_secteur[x][0]["note"], x)):
+        groupe = par_secteur[secteur]
+        l.append("--- %s (%d) ---" % (secteur, len(groupe)))
+        for pr in groupe:
+            l.append("")
+            l.append("%s - %s (%s)" % (pr["nom"], pr["ville"], pr["code_postal"]))
+            if pr["adresse"]:
+                l.append("  %s" % pr["adresse"])
+            if pr["dirigeant"] and pr["dirigeant"].lower() not in pr["nom"].lower():
+                l.append("  a l'attention de %s" % pr["dirigeant"])
+            if pr["diffusion"] == "non vérifié":
+                l.append("  /!\\ diffusion non verifiee - ne rien envoyer")
+            act = pr["activite"][:200] + ("..." if len(pr["activite"]) > 200 else "")
+            l.append("  %s" % act)
+            if pr["siren"]:
+                l.append("  SIREN %s" % pr["siren"])
+        l.append("")
+    l += ["", "Source : BODACC (donnees ouvertes). Le bulletin ne publie aucune",
+          "adresse e-mail ni telephone : la prise de contact se fait par",
+          "courrier, au telephone apres recherche, ou sur place.",
+          "Pour retirer une entreprise des prochains envois, l'ajouter a",
+          "outils/ne-pas-contacter.txt."]
+    return "\n".join(l)
+
+
+# Identifiants de l'expedition. Ce ne sont pas des constantes a remplir ici :
+# un mot de passe n'a rien a faire dans un depot. Ils sont lus dans
+# l'environnement, ou l'hebergeur les garde chiffres.
+SMTP_HOTE = os.environ.get("GRAFYCOM_SMTP_HOTE", "smtp.gmail.com")
+SMTP_PORT = int(os.environ.get("GRAFYCOM_SMTP_PORT", "587"))
+
+
+def envoyer(destinataires: list[str], copie: list[str], sujet: str,
+            html: str, texte: str) -> None:
+    """Expedie le courriel en SMTP. Leve une exception si ca echoue.
+
+    Avec Gmail il faut un « mot de passe d'application » : le mot de passe
+    du compte ne marche pas, et c'est une bonne chose — celui-la ne donne
+    que le droit d'envoyer, et se revoque sans toucher au compte.
+    """
+    utilisateur = os.environ.get("GRAFYCOM_SMTP_UTILISATEUR", "").strip()
+    secret = os.environ.get("GRAFYCOM_SMTP_MOTDEPASSE", "").strip()
+    if not utilisateur or not secret:
+        raise RuntimeError(
+            "identifiants d'envoi absents. Renseigner GRAFYCOM_SMTP_UTILISATEUR "
+            "(l'adresse expeditrice) et GRAFYCOM_SMTP_MOTDEPASSE (un mot de "
+            "passe d'application, pas le mot de passe du compte) dans les "
+            "variables d'environnement. Voir outils/VEILLE-QUOTIDIENNE.md.")
+
+    msg = EmailMessage()
+    msg["From"] = utilisateur
+    msg["To"] = ", ".join(destinataires)
+    if copie:
+        msg["Cc"] = ", ".join(copie)
+    msg["Subject"] = sujet
+    msg.set_content(texte)
+    msg.add_alternative(html, subtype="html")
+
+    with smtplib.SMTP(SMTP_HOTE, SMTP_PORT, timeout=60) as serveur:
+        serveur.starttls()
+        serveur.login(utilisateur, secret)
+        serveur.send_message(msg, to_addrs=destinataires + copie)
+
+
 def main() -> int:
     a = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -384,6 +600,18 @@ def main() -> int:
                         "(un appel par entreprise, comptez ~1 min pour 200)")
     a.add_argument("--tout", action="store_true",
                    help="garder aussi les créations sans intérêt apparent")
+    a.add_argument("--quotidien", action="store_true",
+                   help="mode envoi du matin : fenêtre de 7 jours, retire ce "
+                        "qui a déjà été signalé, et écrit un corps de "
+                        "courriel HTML")
+    a.add_argument("--sans-memoire", action="store_true",
+                   help="avec --quotidien, ne rien inscrire dans la mémoire "
+                        "(pour essayer sans consommer la journée)")
+    a.add_argument("--envoyer", metavar="ADRESSES",
+                   help="expédier le courriel aux adresses indiquées, "
+                        "séparées par des virgules")
+    a.add_argument("--copie", metavar="ADRESSES", default="",
+                   help="adresses en copie")
     args = a.parse_args()
 
     fin = dt.date.today()
@@ -441,6 +669,15 @@ def main() -> int:
         uniques[cle] = p
     prospects = list(uniques.values())
 
+    deja = 0
+    if args.quotidien:
+        connus = lire_deja_vus()
+        avant = len(prospects)
+        prospects = [p for p in prospects if p["siren"] not in connus]
+        deja = avant - len(prospects)
+        if deja:
+            print(f"{deja} déjà signalées lors d'une veille précédente.")
+
     prospects.sort(key=lambda p: (-p["note"], p["ville"], p["nom"]))
 
     opposes = douteux = 0
@@ -475,6 +712,42 @@ def main() -> int:
                   f"Ne rien leur envoyer avant de relancer.")
 
     SORTIE.mkdir(exist_ok=True)
+    if args.quotidien:
+        html = corps_html(prospects, debut, fin, len(annonces), args.adresses)
+        texte = corps_texte(prospects, debut, fin, len(annonces))
+        chemin_html = SORTIE / f"courriel-{fin:%Y%m%d}.html"
+        chemin_html.write_text(html, encoding="utf-8")
+        print(f"\n  {chemin_html}")
+
+        envoye = True
+        if args.envoyer:
+            dests = [x.strip() for x in args.envoyer.split(",") if x.strip()]
+            copies = [x.strip() for x in args.copie.split(",") if x.strip()]
+            sujet = (f"Nouvelles entreprises du 66 — {len(prospects)} à regarder"
+                     if prospects
+                     else "Nouvelles entreprises du 66 — rien de neuf aujourd'hui")
+            try:
+                envoyer(dests, copies, sujet, html, texte)
+            except Exception as e:
+                # L'echec de l'envoi doit empecher l'inscription en memoire :
+                # sans ca, les entreprises du jour seraient marquees comme
+                # signalees alors que personne ne les a recues, et elles ne
+                # reviendraient jamais dans un envoi.
+                print(f"\nENVOI ÉCHOUÉ : {e}", file=sys.stderr)
+                print("La mémoire n'a pas été modifiée : ces entreprises "
+                      "reviendront au prochain essai.", file=sys.stderr)
+                return 1
+            print(f"  envoyé à {', '.join(dests)}"
+                  + (f" (copie : {', '.join(copies)})" if copies else ""))
+
+        if prospects and not args.sans_memoire and envoye:
+            noter_deja_vus(prospects, fin)
+            print(f"  {len(prospects)} inscrites dans la mémoire "
+                  f"({DEJA_VUS.name}).")
+        if not prospects:
+            print("\nRien de neuf : le courriel le dit, et reste envoyable.")
+            return 0
+
     base = f"prospects-66-{debut:%Y%m%d}-{fin:%Y%m%d}"
     chemin_csv = SORTIE / f"{base}.csv"
     colonnes = ["note", "secteur", "nom", "forme", "ville", "code_postal",
@@ -495,6 +768,7 @@ def main() -> int:
         f"{len(annonces)} créations publiées au BODACC, "
         f"**{len(prospects)} à regarder**, {ecartes} écartées"
         + (f", {doublons} doublons retirés" if doublons else "")
+        + (f", {deja} déjà signalées" if deja else "")
         + (f", {opposes} sans adresse diffusible" if opposes else "")
         + (f", {douteux} non vérifiées" if douteux else "") + ".",
         "",
