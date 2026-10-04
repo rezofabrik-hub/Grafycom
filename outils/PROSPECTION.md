@@ -93,17 +93,34 @@ professionnelle, mais impose d'indiquer d'où vient l'information dès le
 premier contact (article 14) et de respecter l'opposition sans discuter
 (article 21).
 
-**Certaines entreprises ont déjà dit non, avant même d'être contactées.**
-L'INSEE marque « non diffusible » les entreprises dont le dirigeant a
-demandé que ses données ne soient pas rendues publiques. Sur un
-échantillon d'une semaine, cela représentait près d'une sur trois. L'outil
-les retire automatiquement dès que l'option `--adresses` est utilisée,
-parce que leur envoyer un courrier serait précisément ce qu'elles ont
-refusé.
+**Plus de la moitié des créations n'a pas d'adresse exploitable.**
+L'INSEE marque « non diffusible » les entreprises dont les données ne sont
+pas rendues publiques dans sa base. Sur une semaine de test :
+**42 sur 78**. Il faut être précis sur ce que cela veut dire, parce que
+c'est contre-intuitif.
 
-C'est la raison pour laquelle **il ne faut jamais faire d'envoi à partir
-d'une liste produite sans `--adresses`** : sans cet appel à l'annuaire, le
-refus déjà exprimé reste invisible.
+Pour une société, c'est un choix : quelqu'un a demandé la non-diffusion.
+Pour un entrepreneur individuel — la moitié de la liste — c'est devenu le
+réglage par défaut : ses données ne sont plus publiées sauf s'il le
+demande. Ce n'est donc pas toujours un refus exprimé.
+
+Mais la conséquence pratique est la même : **l'adresse postale n'existe
+pas dans les données ouvertes**, donc il n'y a rien à quoi envoyer un
+courrier. L'outil les retire pour cette raison — pas au nom d'une
+interdiction légale, qui serait une affirmation plus large que ce que je
+peux garantir. Leur nom et leur commune, eux, restent publics par le
+BODACC, dont la publication est obligatoire : rien n'interdit de passer
+dans une boutique ou d'appeler un numéro trouvé par ailleurs.
+
+Si une campagne de courrier devient un axe sérieux, c'est le point à faire
+vérifier par un juriste avant d'aller plus loin — pas le modèle de lettre.
+
+**Quand l'annuaire ne répond pas, la fiche est marquée « diffusion non
+vérifiée ».** Un appel réseau qui échoue ressemblait au départ à un appel
+qui réussit et ne trouve rien ; c'est ainsi qu'une entreprise non
+diffusible s'est glissée dans une première liste. L'outil distingue
+désormais les deux et refuse de garantir ce qu'il n'a pas vérifié. Ne rien
+envoyer à ces fiches sans relancer la commande.
 
 **Toute opposition s'inscrit le jour même dans
 `outils/ne-pas-contacter.txt`.** Une ligne, le SIREN ou le nom. L'outil ne

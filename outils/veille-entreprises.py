@@ -299,41 +299,54 @@ def classer(texte_activite: str, forme: str) -> tuple[int, str]:
 ANNUAIRE = "https://recherche-entreprises.api.gouv.fr/search"
 
 
-def adresse_postale(siren_recherche: str) -> tuple[str, str]:
-    """Adresse complète et dirigeant, depuis l'annuaire des entreprises.
+def adresse_postale(siren_recherche: str) -> tuple[str, str, str]:
+    """Adresse, dirigeant, et statut de la vérification.
 
     Le BODACC ne publie que la commune. Pour écrire à quelqu'un — et un
     courrier soigné reste la meilleure carte de visite d'un graphiste — il
     faut la rue. L'annuaire des entreprises la donne, et il est ouvert.
+
+    Le statut renvoyé compte autant que l'adresse. Un appel qui échoue ne
+    doit jamais ressembler à un appel qui réussit et ne trouve rien :
+    c'est de cette confusion qu'une entreprise non diffusible s'est
+    retrouvée dans une liste de prospects, parce que l'erreur réseau
+    était avalée en silence. Trois statuts, donc : « ok », « introuvable »
+    et « non vérifié ».
     """
     if not siren_recherche:
-        return "", ""
+        return "", "", "introuvable"
     params = {"q": siren_recherche, "minimal": "true",
               "include": "siege,dirigeants", "per_page": "1"}
     url = ANNUAIRE + "?" + urllib.parse.urlencode(params)
     requete = urllib.request.Request(
         url, headers={"User-Agent": "veille-grafycom/1.0 (+https://www.grafycom.fr)"}
     )
-    try:
-        with urllib.request.urlopen(requete, timeout=20) as reponse:
-            data = json.loads(reponse.read().decode("utf-8"))
-    except Exception:
-        return "", ""
+    data = None
+    for essai in range(5):
+        try:
+            with urllib.request.urlopen(requete, timeout=25) as reponse:
+                data = json.loads(reponse.read().decode("utf-8"))
+            break
+        except Exception:
+            if essai < 4:
+                time.sleep(1.5 * (essai + 1))
+    if data is None:
+        return "", "", "non vérifié"
+
     resultats = data.get("results") or []
     if not resultats:
-        return "", ""
+        return "", "", "introuvable"
     fiche = resultats[0]
     siege = fiche.get("siege") or {}
     adresse = " ".join(texte(siege.get("adresse")).split())
-    dirigeants = fiche.get("dirigeants") or []
     nom_dirigeant = ""
-    for d in dirigeants:
+    for d in fiche.get("dirigeants") or []:
         if d.get("type_dirigeant") == "personne physique":
             nom_dirigeant = " ".join(
                 x for x in (texte(d.get("prenoms")), texte(d.get("nom"))) if x
             )
             break
-    return adresse, nom_dirigeant
+    return adresse, nom_dirigeant, "ok"
 
 
 def collecter(depuis: str, jusqu_a: str) -> list[dict]:
@@ -409,6 +422,7 @@ def main() -> int:
             "siren": sir,
             "adresse": "",
             "dirigeant": "",
+            "diffusion": "non vérifié",
             "debut_activite": (acte.get("dateCommencementActivite") or ""),
             "parution": annonce.get("dateparution") or "",
             "annonce": annonce.get("url_complete") or "",
@@ -429,35 +443,43 @@ def main() -> int:
 
     prospects.sort(key=lambda p: (-p["note"], p["ville"], p["nom"]))
 
-    opposes = 0
+    opposes = douteux = 0
     if args.adresses:
         print(f"Recherche des adresses ({len(prospects)} appels)…")
         retenus = []
         for n, prosp in enumerate(prospects, 1):
-            prosp["adresse"], prosp["dirigeant"] = adresse_postale(prosp["siren"])
-            # L'INSEE marque « [NON-DIFFUSIBLE] » les entreprises dont le
-            # dirigeant a demandé que ses données ne soient pas diffusées.
-            # C'est le droit d'opposition, exercé en amont et par écrit.
-            # Leur envoyer un courrier serait exactement ce qu'elles ont
-            # refusé. On les retire sans discuter.
-            if "NON-DIFFUSIBLE" in (prosp["adresse"] + prosp["dirigeant"]).upper():
+            adr, dir_, statut = adresse_postale(prosp["siren"])
+            prosp["adresse"], prosp["dirigeant"] = adr, dir_
+            prosp["diffusion"] = statut
+            # « [NON-DIFFUSIBLE] » : l'INSEE ne publie pas les données de
+            # cette entreprise. Pour une société c'est une demande expresse ;
+            # pour un entrepreneur individuel c'est devenu le réglage par
+            # défaut. Dans les deux cas il n'y a pas d'adresse, donc rien à
+            # quoi adresser un courrier : la fiche sort de la liste.
+            if "NON-DIFFUSIBLE" in (adr + dir_).upper():
+                prosp["diffusion"] = "non diffusible"
                 opposes += 1
-            else:
-                retenus.append(prosp)
+                continue
+            if statut == "non vérifié":
+                douteux += 1
+            retenus.append(prosp)
             if n % 25 == 0:
                 print(f"  {n}/{len(prospects)}")
-            time.sleep(0.25)
+            time.sleep(0.6)
         prospects = retenus
         if opposes:
-            print(f"  {opposes} entreprises retirées : données non diffusibles "
-                  f"(opposition déjà exercée auprès de l'INSEE).")
+            print(f"  {opposes} retirées : non diffusibles chez l'INSEE, "
+                  f"donc sans adresse postale exploitable.")
+        if douteux:
+            print(f"  {douteux} non vérifiées : l'annuaire n'a pas répondu. "
+                  f"Ne rien leur envoyer avant de relancer.")
 
     SORTIE.mkdir(exist_ok=True)
     base = f"prospects-66-{debut:%Y%m%d}-{fin:%Y%m%d}"
     chemin_csv = SORTIE / f"{base}.csv"
     colonnes = ["note", "secteur", "nom", "forme", "ville", "code_postal",
-                "adresse", "dirigeant", "activite", "siren", "debut_activite",
-                "parution", "annonce"]
+                "adresse", "dirigeant", "diffusion", "activite", "siren",
+                "debut_activite", "parution", "annonce"]
     with chemin_csv.open("w", encoding="utf-8-sig", newline="") as f:
         ecrivain = csv.DictWriter(f, fieldnames=colonnes)
         ecrivain.writeheader()
@@ -473,7 +495,8 @@ def main() -> int:
         f"{len(annonces)} créations publiées au BODACC, "
         f"**{len(prospects)} à regarder**, {ecartes} écartées"
         + (f", {doublons} doublons retirés" if doublons else "")
-        + (f", {opposes} non diffusibles retirées" if opposes else "") + ".",
+        + (f", {opposes} sans adresse diffusible" if opposes else "")
+        + (f", {douteux} non vérifiées" if douteux else "") + ".",
         "",
     ]
     if args.adresses:
@@ -494,6 +517,8 @@ def main() -> int:
                 lignes.append(f"  {p['adresse']}")
             if p["dirigeant"] and p["dirigeant"].lower() not in p["nom"].lower():
                 lignes.append(f"  à l'attention de {p['dirigeant']}")
+            if p["diffusion"] == "non vérifié":
+                lignes.append("  ⚠ diffusion non vérifiée — ne rien envoyer")
             detail = p["activite"][:180] + ("…" if len(p["activite"]) > 180 else "")
             lignes.append(f"  {detail}")
             repere = [x for x in (p["forme"], f"SIREN {p['siren']}" if p["siren"] else "",
