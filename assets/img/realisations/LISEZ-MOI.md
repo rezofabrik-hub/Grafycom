@@ -1,33 +1,27 @@
-# Photos des réalisations
+# Les réalisations du portfolio
 
-Déposez ici les visuels de la page `realisations.html`. Les noms de fichiers
-attendus par la page telle qu'elle est livrée :
+Six visuels, tirés du portfolio de Sandra, au format **4/3** et en WebP.
 
-| Fichier | Projet |
-|---|---|
-| `logo-01.jpg` | Création de logo |
-| `carte-01.jpg` | Carte de restaurant |
-| `enseigne-01.jpg` | Enseigne de façade |
-| `print-01.jpg` | Cartes de visite |
-| `vehicule-01.jpg` | Marquage de flotte |
-| `evenement-01.jpg` | Affiche & programme |
+| Fichier | Projet | Ce qu'il montre |
+|---|---|---|
+| `casa-aldo.webp` | Casa Aldo | Logo décliné en enseigne ronde rétroéclairée |
+| `o-fait-maison.webp` | Ô Fait Maison | Enseigne de devanture d'un salon de thé |
+| `alliance-vehicule.webp` | Alliance Peintures | Marquage de véhicule, hayon et flanc |
+| `mia-beauty.webp` | Mia Beauty | Livret de formation ouvert |
+| `cap-loisirs.webp` | Cap Loisirs | Totem numérique d'entrée |
+| `pano-perpignan.webp` | Pano Perpignan | Gabarits de publication pour les réseaux |
 
-Tant qu'un fichier manque, la page affiche un cadre explicite à sa place
-plutôt qu'une icône d'image cassée.
+## En ajouter une
 
-## Format conseillé
+1. Déposer le fichier ici, recadré en 4/3, en WebP, 900 px de large environ.
+2. Ajouter un appel à `reaz()` dans `generateurs/p_realisations.py`, avec sa
+   catégorie, le nom du projet et une phrase sur ce qu'il fallait résoudre.
+3. Régénérer la page.
 
-- Format **4/3 paysage**, 1200 × 900 px environ
-- JPEG de qualité 80, soit moins de 300 Ko par image
-- Si vous ajoutez, retirez ou renommez un projet, modifiez directement le bloc
-  correspondant dans `realisations.html` (titre, catégorie, description, nom de
-  fichier) — tout est en clair dans le HTML.
+## Une précaution qui n'est pas une formalité
 
-## Avant de publier une photo de chantier
-
-Les photos prises au téléphone contiennent les coordonnées GPS du lieu dans
-leurs données EXIF. Publier une photo de devanture sans la nettoyer revient à
-publier l'adresse de votre client. La plupart des outils de retouche proposent
-« exporter sans métadonnées ».
-
-Et n'oubliez pas l'accord du client avant de publier son enseigne ou sa carte.
+Ces projets appartiennent à des clients identifiables. Les montrer suppose
+leur accord — le contrat cède les droits sur la création, il ne donne pas
+celui de s'en servir de vitrine. Un message suffit, et c'est rarement
+refusé ; mais un client qui se découvre en ligne sans avoir été prévenu est
+un client perdu.

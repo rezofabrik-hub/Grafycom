@@ -9,29 +9,39 @@ def reaz(cat, titre, desc, fichier):
 """ % (fichier, titre, cat, titre, desc)
 
 GALERIE = "".join([
-    reaz("Identité visuelle", "Création de logo", "Recherche, esquisses, déclinaisons et charte d'usage.", "logo-01.jpg"),
-    reaz("Restauration", "Carte de restaurant", "Mise en page, hiérarchie des prix, déclinaison saisonnière.", "carte-01.jpg"),
-    reaz("Signalétique", "Enseigne de façade", "Du fichier à la pose, en lien avec l'imprimeur et le poseur.", "enseigne-01.jpg"),
-    reaz("Print", "Cartes de visite", "Papier, finition et façonnage choisis avec le client.", "print-01.jpg"),
-    reaz("Véhicule", "Marquage de flotte", "Un gabarit décliné sur plusieurs véhicules.", "vehicule-01.jpg"),
-    reaz("Événement", "Affiche &amp; programme", "Une saison culturelle déclinée sur tous ses supports.", "evenement-01.jpg"),
+    reaz("Identité visuelle", "Casa Aldo",
+         "Logo d'un restaurant italien, décliné en enseigne ronde rétroéclairée et en vitrophanie.",
+         "casa-aldo.webp"),
+    reaz("Signalétique", "Ô Fait Maison",
+         "Enseigne de devanture d'un salon de thé, et la décoration intérieure qui lui répond.",
+         "o-fait-maison.webp"),
+    reaz("Véhicule", "Alliance Peintures",
+         "Une identité déclinée sur la flotte, du hayon aux portes latérales.",
+         "alliance-vehicule.webp"),
+    reaz("Édition", "Mia Beauty",
+         "Livret de formation : couverture, mise en page et gabarit des pages intérieures.",
+         "mia-beauty.webp"),
+    reaz("Affichage", "Cap Loisirs",
+         "Totem numérique à l'entrée : activités, tarifs et horaires, lisibles de loin.",
+         "cap-loisirs.webp"),
+    reaz("Réseaux sociaux", "Pano Perpignan",
+         "Gabarits de publication et visuels de campagne, déclinables semaine après semaine.",
+         "pano-perpignan.webp"),
 ])
-
 BODY = """
 <section class="heros">
   <div class="conteneur centre" style="position:relative;z-index:1">
     <span class="eyebrow">Réalisations</span>
-    <h1>Des projets, <span class="texte-degrade">pas des maquettes</span></h1>
+    <h1>Quelques projets,<br><span class="texte-degrade">et ce qu'ils demandaient</span></h1>
     <div class="trait"></div>
     <p class="chapeau">Chaque projet part d'une page blanche et d'une conversation. Voici une sélection de travaux et, pour chacun, ce qu'il fallait résoudre.</p>
   </div>
 </section>
 
 <section>
-  <!-- À DÉPOSER : les photos de cette galerie vont dans assets/img/realisations/
-       (noms attendus : logo-01.jpg, carte-01.jpg, enseigne-01.jpg, print-01.jpg,
-       vehicule-01.jpg, evenement-01.jpg). Tant qu'un fichier manque, un cadre
-       explicite s'affiche à la place. Voir le README. -->
+  <!-- Réalisations de Grafycom, tirées du portfolio de Sandra. Pour en
+       ajouter une : déposer le fichier dans assets/img/realisations/ et
+       ajouter un appel à reaz() ci-dessus. -->
   <div class="conteneur galerie">
 """ + GALERIE + """  </div>
 </section>
@@ -67,4 +77,4 @@ page("realisations.html",
      "Une sélection de réalisations Grafycom : logos, cartes de restaurant, enseignes et supports imprimés dans les Pyrénées-Orientales.",
      BODY,
      ogtitle="Les réalisations Grafycom",
-     robots="noindex, follow")
+     robots="index, follow")

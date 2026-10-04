@@ -30,6 +30,7 @@ ACCUEIL = "accueil.html" if CONSTRUCTION else "index.html"
 NAV = [
     (ACCUEIL, "Accueil"),
     ("prestations.html", "Prestations"),
+    ("realisations.html", "Réalisations"),
     ("methode.html", "Méthode"),
     ("a-propos.html", "À propos"),
     ("contact.html", "Contact"),

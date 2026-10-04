@@ -188,12 +188,12 @@ nav.principal a.actif { font-weight: 700; }
 .secteur-photo { aspect-ratio: 4 / 3; overflow: hidden; background: var(--creme); }
 .secteur-photo img {
   width: 100%; height: 100%; object-fit: cover;
-  /* Léger réchauffement pour que des photos d'origines diverses
-     s'accordent à la palette beige de la marque. */
-  filter: saturate(.82) sepia(.12) contrast(1.02);
+  /* Aucun filtre : ce sont les créations de Sandra, et la couleur en est
+     le sujet. Un voile sépia sur le travail d'une coloriste serait une
+     faute de goût autant qu'une trahison. */
   transition: transform .5s ease, filter .3s;
 }
-.carte-secteur:hover .secteur-photo img { transform: scale(1.04); filter: saturate(1) sepia(0); }
+.carte-secteur:hover .secteur-photo img { transform: scale(1.04); }
 .secteur-texte { padding: 24px 24px 28px; }
 .secteur-texte .picto { width: 44px; height: 44px; font-size: 18px; border-radius: 13px; margin: -46px 0 16px; position: relative; box-shadow: var(--ombre); }
 .secteur-texte h3 { margin-bottom: 8px; }
@@ -203,10 +203,9 @@ nav.principal a.actif { font-weight: 700; }
 .presta-photo { margin: 26px 0 0; border-radius: var(--radius); overflow: hidden; }
 .presta-photo img {
   width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
-  filter: saturate(.82) sepia(.12) contrast(1.02);
-  transition: filter .3s, transform .5s ease;
+  transition: transform .5s ease;
 }
-.presta-photo:hover img { filter: saturate(1) sepia(0); transform: scale(1.02); }
+.presta-photo:hover img { transform: scale(1.02); }
 
 /* Emplacement de photo en attente, au même gabarit que .presta-photo :
    la mise en page ne bouge pas le jour où la vraie image arrive. */

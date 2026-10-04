@@ -53,7 +53,6 @@ Si vous régénérez les pages depuis les scripts de génération, pensez à pas
 
 ### Avant d'ouvrir — la liste
 
-1. Les six photos du portfolio, et la page Réalisations remise dans le menu
 2. Les mentions légales complètes : raison sociale, statut, SIRET, TVA, hébergeur
 3. Le formulaire de contact branché sur un service d'envoi
 4. Le domaine nu `grafycom.fr` qui redirige vers `www`
@@ -65,7 +64,7 @@ Si vous régénérez les pages depuis les scripts de génération, pensez à pas
 |---|---|
 | `index.html` | Accueil : promesse, bénéfices d'une identité cohérente, les 6 prestations, présentation de Sandra, méthode en 4 étapes, secteurs, aperçu des réalisations, FAQ |
 | `prestations.html` | Le détail des 6 familles de prestations, et la question du budget |
-| `realisations.html` | Portfolio — **retirée du menu** tant qu'elle est vide, voir ci-dessous |
+| `realisations.html` | Portfolio : six réalisations, dans le menu et indexée |
 | `methode.html` | Le déroulé d'un projet en 6 étapes, et ce qui est attendu du client |
 | `a-propos.html` | Sandra, le colibri, la double casquette, le bilinguisme |
 | `contact.html` | Formulaire de devis détaillé + coordonnées + zone d'intervention |
@@ -89,24 +88,6 @@ le menu ou une mention du pied, il faut passer sur les huit pages.
 
 Par ordre d'importance.
 
-### 0. Remettre la page Réalisations en ligne
-
-Cette page existe et fonctionne, mais elle **n'est liée nulle part** : ni dans
-le menu, ni dans le pied de page, ni dans le sitemap, et elle porte une balise
-`noindex`. Un portfolio vide dessert plus qu'il ne sert — mieux vaut pas de
-page qu'une page avec six cadres vides.
-
-Pour la remettre en circulation une fois les photos déposées :
-
-1. Déposer les six images dans `assets/img/realisations/` (noms attendus dans
-   le `LISEZ-MOI.md` du dossier)
-2. Remettre `<a href="realisations.html">Réalisations</a>` dans le menu et le
-   pied de page de toutes les pages
-3. Retirer `noindex` de `realisations.html` et remettre son entrée dans
-   `sitemap.xml`
-4. Sur l'accueil, la section « Un aperçu du travail » a été supprimée : la
-   reprendre depuis l'historique git si vous la voulez de nouveau
-
 ### 1. Déposer les visuels manquants
 
 Trois visuels de la marque ne sont pas encore dans le dossier :
@@ -114,7 +95,7 @@ Trois visuels de la marque ne sont pas encore dans le dossier :
 | À déposer sous ce nom | Ce que c'est | Utilisé par |
 |---|---|---|
 | `assets/img/sandra-grafycom.jpg` | Le visuel « hello, moi c'est Sandra » | `index.html`, `a-propos.html` |
-| `assets/img/realisations/*.jpg` | Les six photos du portfolio | `realisations.html` |
+| `assets/img/realisations/*.webp` | Les six réalisations du portfolio | `realisations.html` |
 
 Tant qu'un fichier manque, la page affiche un cadre pointillé nommant le visuel
 attendu, au lieu d'une icône d'image cassée. Rien n'est cassé, mais rien n'est
