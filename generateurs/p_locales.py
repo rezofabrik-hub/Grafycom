@@ -51,6 +51,9 @@ GABARIT = """
     </div>
     <h2>Les communes voisines</h2>
     <p>{voisines}</p>
+    <h2>Selon votre situation</h2>
+    <p>Trois pages répondent plus précisément que celle-ci selon le moment où vous me lisez&nbsp;: <a href="ouverture-commerce-66.html">vous ouvrez un commerce</a> et vous cherchez l'ordre dans lequel préparer vos supports&nbsp;; <a href="refaire-son-image.html">votre entreprise a des années</a> et son image ne la raconte plus&nbsp;; ou vous avez <a href="enseigne-perpignan.html">une façade à habiller</a>. Les restaurateurs trouveront le détail de ce qui les concerne sur la page <a href="graphiste-restaurant-perpignan.html">graphiste pour restaurant</a>.</p>
+
     <p>Et partout ailleurs en visio&nbsp;: une partie de mes clients ne m'a jamais rencontrée en personne, ce qui n'a rien changé au résultat. La liste complète des communes du département est sur la page <a href="zone-intervention.html">zone d'intervention</a>.</p>
   </div>
 </section>

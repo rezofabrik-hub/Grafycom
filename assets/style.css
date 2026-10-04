@@ -334,7 +334,7 @@ form.devis { background: #fff; border: 1px solid var(--sable); border-radius: va
 
 /* ---------- Pied de page ---------- */
 footer { background: var(--encre); color: rgba(255,255,255,.68); padding: 70px 0 0; font-size: 14.5px; }
-.pied-grille { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 34px; padding-bottom: 46px; }
+.pied-grille { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 46px; }
 footer h4 { color: #fff; font-size: 13.5px; letter-spacing: 1.6px; text-transform: uppercase; font-family: 'Courier Prime', monospace; margin-bottom: 18px; font-weight: 400; }
 footer ul { list-style: none; display: grid; gap: 10px; }
 footer a { color: rgba(255,255,255,.68); text-decoration: none; transition: color .2s; }
