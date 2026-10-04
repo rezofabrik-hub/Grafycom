@@ -1,0 +1,9 @@
+# Entreprises à ne jamais faire remonter dans la veille.
+#
+# Une ligne par entrée : un SIREN (avec ou sans espaces) ou un nom exact.
+# Les lignes vides et celles commençant par # sont ignorées.
+#
+# À quoi ça sert : toute entreprise qui demande à ne plus être contactée
+# doit être ajoutée ici le jour même. Le droit d'opposition au démarchage
+# n'est pas une faveur, c'est une obligation — et une liste de prospects
+# qui recontacte quelqu'un qui a dit non est une liste qui coûte un client.

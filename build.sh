@@ -28,6 +28,10 @@ rm -rf dist/.github
 # Le code du Worker n'est pas un fichier statique : il ne doit pas etre servi.
 rm -rf dist/src
 
+# Les outils internes et, surtout, les listes de prospects qu'ils produisent :
+# des noms et des adresses de personnes physiques. Jamais en ligne.
+rm -rf dist/outils
+
 # Artefacts propres a GitHub Pages, inutiles chez Cloudflare.
 rm -f dist/CNAME dist/.nojekyll dist/.gitignore dist/wrangler.toml
 
@@ -35,12 +39,31 @@ rm -f dist/CNAME dist/.nojekyll dist/.gitignore dist/wrangler.toml
 find dist \( -name '*.md' -o -name '*.sh' -o -name '*.py' -o -name '*.mhtml' -o -name '*.toml' \) -delete
 find dist -type d \( -name '_*' -o -name '__pycache__' \) -prune -exec rm -rf {} +
 
-# Garde-fou : mieux vaut ne rien publier que publier une fuite.
-fuites=$(find dist \( -name '*.md' -o -name '*.sh' -o -name '*.py' -o -name '*.mhtml' -o -name '*.toml' \
-  -o -name '.env*' -o -name '*.key' -o -name '*.pem' \) -print)
-if [ -n "$fuites" ]; then
-  echo "ERREUR : fichier interne dans dist/, publication annulee :" >&2
-  echo "$fuites" >&2
+# Garde-fou. Il ne repete pas la liste noire ci-dessus : il verifie
+# l'inverse. Tout ce qui part en ligne doit porter une extension connue
+# d'un site statique, ou etre un fichier de configuration attendu. Une
+# liste noire oublie toujours un cas — elle a deja laisse passer des
+# fichiers .csv de prospection. Une liste blanche de verification, elle,
+# refuse ce qu'elle ne connait pas, et c'est exactement ce qu'on veut
+# d'un dernier controle.
+autorises='html|css|js|mjs|json|webmanifest|xml|txt|svg|ico|png|jpg|jpeg|webp|avif|gif|woff2|woff|ttf|eot|pdf|map'
+attendus='_headers|_redirects|_routes.json|.nojekyll'
+
+inconnus=$(find dist -type f -printf '%P\n' | while read -r f; do
+  base=${f##*/}
+  if printf '%s\n' "$attendus" | tr '|' '\n' | grep -qxF "$base"; then
+    continue
+  fi
+  ext=${base##*.}
+  if [ "$ext" = "$base" ] || ! printf '%s\n' "$autorises" | tr '|' '\n' | grep -qxF "$ext"; then
+    echo "$f"
+  fi
+done)
+
+if [ -n "$inconnus" ]; then
+  echo "ERREUR : fichier non publiable dans dist/, publication annulee." >&2
+  echo "Ajoutez son extension a la liste si elle est legitime :" >&2
+  echo "$inconnus" >&2
   exit 1
 fi
 

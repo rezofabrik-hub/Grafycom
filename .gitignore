@@ -19,3 +19,11 @@ _a-traiter/
 
 # Sortie de build.sh, reconstruite a chaque deploiement.
 dist/
+
+# Listes de prospects produites par outils/veille-entreprises.py.
+# Elles contiennent des noms et des adresses de personnes physiques :
+# elles n'ont rien à faire dans l'historique d'un dépôt, qui ne s'oublie
+# jamais. L'outil les régénère en une minute.
+outils/prospects/
+__pycache__/
+*.pyc
