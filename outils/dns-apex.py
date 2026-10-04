@@ -26,9 +26,15 @@ import sys
 import time
 
 DOMAINE = "grafycom.fr"
-# Les quatre adresses de GitHub Pages pour les domaines nus.
-CIBLES = ["185.199.108.153", "185.199.109.153",
-          "185.199.110.153", "185.199.111.153"]
+# Les adresses de GitHub Pages pour les domaines nus. Les AAAA servent
+# aux visiteurs en IPv6 — chez Free et sur les réseaux mobiles français,
+# ce n'est plus une minorité.
+CIBLES = {
+    "A": ["185.199.108.153", "185.199.109.153",
+          "185.199.110.153", "185.199.111.153"],
+    "AAAA": ["2606:50c0:8000::153", "2606:50c0:8001::153",
+             "2606:50c0:8002::153", "2606:50c0:8003::153"],
+}
 TTL = 300
 
 
@@ -95,22 +101,26 @@ def main() -> int:
     zid = zone["Id"].split("/")[-1]
     print(f"Zone {DOMAINE} ({zid})")
 
-    actuels = []
+    actuels: dict[str, list[str]] = {t: [] for t in CIBLES}
     lots = r53.get_paginator("list_resource_record_sets")
     for lot in lots.paginate(HostedZoneId=zid):
         for r in lot["ResourceRecordSets"]:
-            if r["Name"].rstrip(".") == DOMAINE and r["Type"] == "A":
-                actuels = [v["Value"] for v in r.get("ResourceRecords", [])]
+            if r["Name"].rstrip(".") == DOMAINE and r["Type"] in CIBLES:
+                actuels[r["Type"]] = [v["Value"] for v in r.get("ResourceRecords", [])]
 
-    if sorted(actuels) == sorted(CIBLES):
-        print("Les quatre enregistrements A sont déjà en place. Rien à faire.")
+    a_faire = [t for t in CIBLES if sorted(actuels[t]) != sorted(CIBLES[t])]
+    for t in CIBLES:
+        etat = "déjà bon" if t not in a_faire else (
+            ", ".join(actuels[t]) if actuels[t] else "absent")
+        print(f"  {t:5s} {etat}")
+
+    if not a_faire:
+        print("\nTout est déjà en place. Rien à faire.")
         return 0
 
-    print("  actuel :", ", ".join(actuels) if actuels else "aucun enregistrement A")
-    print("  voulu  :", ", ".join(CIBLES))
-
+    print("\nÀ écrire :", ", ".join(a_faire))
     if not args.appliquer:
-        print("\nEssai à blanc. Relancer avec --appliquer pour écrire.")
+        print("Essai à blanc. Relancer avec --appliquer pour écrire.")
         return 0
 
     reponse = r53.change_resource_record_sets(
@@ -121,11 +131,11 @@ def main() -> int:
                 "Action": "UPSERT",
                 "ResourceRecordSet": {
                     "Name": DOMAINE,
-                    "Type": "A",
+                    "Type": t,
                     "TTL": TTL,
-                    "ResourceRecords": [{"Value": ip} for ip in CIBLES],
+                    "ResourceRecords": [{"Value": ip} for ip in CIBLES[t]],
                 },
-            }],
+            } for t in a_faire],
         },
     )
 
