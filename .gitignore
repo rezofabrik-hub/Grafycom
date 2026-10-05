@@ -31,3 +31,6 @@ __pycache__/
 # Squelettes de calendrier régénérés par reseaux/calendrier.py.
 reseaux/calendrier-*.csv
 reseaux/*-squelette.md
+
+# Aperçus HTML régénérés par reseaux/envoyer-propositions.py --essai.
+reseaux/propositions/*-apercu.html

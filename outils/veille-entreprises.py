@@ -41,17 +41,18 @@ import json
 import pathlib
 import re
 import sys
-import os
-import smtplib
 import time
 import urllib.parse
 import urllib.request
-from email.message import EmailMessage
 
 BODACC = ("https://bodacc-datadila.opendatasoft.com/api/explore/v2.1"
           "/catalog/datasets/annonces-commerciales/records")
 DEPARTEMENT = "66"
 PAR_PAGE = 100
+
+# courriel.py est a cote : on l'ajoute au chemin d'import pour que le
+# script tourne aussi bien lance depuis la racine que depuis outils/.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 RACINE = pathlib.Path(__file__).resolve().parent
 SORTIE = RACINE / "prospects"
@@ -588,43 +589,10 @@ def corps_texte(prospects: list[dict], debut: dt.date, fin: dt.date,
     return "\n".join(l)
 
 
-# Identifiants de l'expedition. Ce ne sont pas des constantes a remplir ici :
-# un mot de passe n'a rien a faire dans un depot. Ils sont lus dans
-# l'environnement, ou l'hebergeur les garde chiffres.
-SMTP_HOTE = os.environ.get("GRAFYCOM_SMTP_HOTE", "smtp.gmail.com")
-SMTP_PORT = int(os.environ.get("GRAFYCOM_SMTP_PORT", "587"))
-
-
-def envoyer(destinataires: list[str], copie: list[str], sujet: str,
-            html: str, texte: str) -> None:
-    """Expedie le courriel en SMTP. Leve une exception si ca echoue.
-
-    Avec Gmail il faut un « mot de passe d'application » : le mot de passe
-    du compte ne marche pas, et c'est une bonne chose — celui-la ne donne
-    que le droit d'envoyer, et se revoque sans toucher au compte.
-    """
-    utilisateur = os.environ.get("GRAFYCOM_SMTP_UTILISATEUR", "").strip()
-    secret = os.environ.get("GRAFYCOM_SMTP_MOTDEPASSE", "").strip()
-    if not utilisateur or not secret:
-        raise RuntimeError(
-            "identifiants d'envoi absents. Renseigner GRAFYCOM_SMTP_UTILISATEUR "
-            "(l'adresse expeditrice) et GRAFYCOM_SMTP_MOTDEPASSE (un mot de "
-            "passe d'application, pas le mot de passe du compte) dans les "
-            "variables d'environnement. Voir outils/VEILLE-QUOTIDIENNE.md.")
-
-    msg = EmailMessage()
-    msg["From"] = utilisateur
-    msg["To"] = ", ".join(destinataires)
-    if copie:
-        msg["Cc"] = ", ".join(copie)
-    msg["Subject"] = sujet
-    msg.set_content(texte)
-    msg.add_alternative(html, subtype="html")
-
-    with smtplib.SMTP(SMTP_HOTE, SMTP_PORT, timeout=60) as serveur:
-        serveur.starttls()
-        serveur.login(utilisateur, secret)
-        serveur.send_message(msg, to_addrs=destinataires + copie)
+# L'expedition vit dans outils/courriel.py, partagee avec les propositions
+# de publications. Deux copies de la gestion d'un mot de passe, c'est une
+# copie de trop : celle qu'on oublie de corriger.
+from courriel import envoyer  # noqa: E402
 
 
 def main() -> int:
