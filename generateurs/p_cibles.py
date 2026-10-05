@@ -256,7 +256,7 @@ cible(
   carte("p-violet", "fa-mobile-screen", "Les réseaux et la fiche Google",
         "Gabarits de publication réutilisables, photos de plats bien cadrées, visuels de campagne. Le relais naturel de ce qui se passe en salle.")],
  """    <h2 style="margin-top:0">Des restaurants, pour de vrai</h2>
-    <p><strong>Casa Aldo</strong>, restaurant italien : création du logo. Il a été dessiné dès le départ pour tenir dans un cercle lumineux, format qui pardonne peu les détails fins — l'enseigne elle-même a été réalisée par Alinea.</p>
+    <p><strong>Casa Aldo</strong>, restaurant italien : création du logo. Il a été dessiné dès le départ pour tenir dans un cercle lumineux, format qui pardonne peu les détails fins. La fabrication de l\'enseigne a été confiée à un partenaire.</p>
     <p><strong>Pizza Fry</strong>, pizzeria : le menu complet, carte des pizzas et carte des boissons, plus les dépliants et l'enseigne. Une mise en page qui tient debout sur une table, avec les formats et les prix lisibles d'un coup d'œil.</p>
     <p><strong>Le Cayrou</strong>, restaurant : logo et enseigne lumineuse de façade. Un trait simple, qui reste lisible de nuit comme de jour.</p>
     <p><strong>Ô Fait Maison</strong>, coffee shop et salon de thé : enseigne de devanture, décoration intérieure, flyers et cartes de visite. L'extérieur et l'intérieur se répondent, de sorte que le client qui pousse la porte reconnaît ce qu'il a vu de la rue.</p>

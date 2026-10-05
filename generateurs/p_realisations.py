@@ -10,7 +10,8 @@ def reaz(cat, titre, desc, fichier):
 
 GALERIE = "".join([
     reaz("Identité visuelle", "Casa Aldo",
-         "Création du logo d'un restaurant italien. L'enseigne a été réalisée par Alinea.",
+         "Création du logo d'un restaurant italien, dessiné pour tenir dans "
+         "un cercle lumineux.",
          "casa-aldo.webp"),
     reaz("Signalétique", "Ô Fait Maison",
          "Enseigne de devanture d'un salon de thé, et la décoration intérieure qui lui répond.",
