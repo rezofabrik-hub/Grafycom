@@ -76,6 +76,23 @@ La balise part alors sur toutes les pages d'un coup, et elle y restera :
 Google revérifie la propriété régulièrement et la révoque si la balise
 disparaît.
 
+## ⚠️ Le fichier à ne jamais supprimer
+
+`googled06dc63854d9f4a5.html`, à la racine du dépôt, est la preuve de
+propriété. Il ne contient qu'une ligne :
+
+```
+google-site-verification: googled06dc63854d9f4a5.html
+```
+
+Google revérifie la propriété régulièrement. **Si ce fichier disparaît,
+l'accès à la Search Console est révoqué** — et avec lui l'historique des
+performances. Il reste donc en place pour toujours, même après la
+validation. Ce n'est pas un fichier de travail, c'est une serrure.
+
+La constante `GOOGLE_VERIF` de `generateurs/gen.py` reste disponible pour
+la méthode par balise, en second moyen de validation si besoin.
+
 ## À faire dès maintenant, sans attendre le 16
 
 Un `noindex` sur la page ne gêne pas la validation : Google lit la page, il
