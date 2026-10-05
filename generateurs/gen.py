@@ -5,7 +5,7 @@ import os, io, pathlib
 SITE = "https://www.grafycom.fr"
 
 # Mode chantier : passer à False pour ouvrir le site au public et aux moteurs.
-CONSTRUCTION = True
+CONSTRUCTION = False
 
 # Le formulaire est traité par le Worker Cloudflare (src/index.js), qui envoie
 # le message via Resend. Ni clé ni adresse ici : ce sont des secrets Cloudflare.
