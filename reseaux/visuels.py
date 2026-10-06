@@ -254,10 +254,10 @@ class Planche:
 
 
 # ---------------------------------------------------------------------
-# Le carrousel du 7 octobre, en exemple complet et reproductible.
+# Le carrousel du 12 octobre, en exemple complet et reproductible.
 # ---------------------------------------------------------------------
 def carrousel_couleurs(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-07-couleurs"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-12-couleurs"))
     faits = []
 
     p = Planche("creme").bandeau_bas("violet", 0.30)
@@ -303,7 +303,7 @@ def carrousel_couleurs(dossier=None):
 
 
 def dilemme_enseigne(dossier=None):
-    """Le test A/B du 8 octobre. La seconde planche est la premiere, floutee.
+    """Le test A/B du 15 octobre. La seconde planche est la premiere, floutee.
 
     Le flou n'illustre pas, il demontre. Il est applique par le script a la
     planche nette : les deux images sont donc rigoureusement identiques
@@ -318,7 +318,7 @@ def dilemme_enseigne(dossier=None):
     lecture, pas des elements de la scene : les flouter les rendrait
     inutiles.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-08-dilemme"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-15-dilemme"))
     faits = []
     LARG, HAUTF, ECART = 420, 430, 60
     X0 = (LARGE - 2 * LARG - ECART) // 2
@@ -357,7 +357,7 @@ def dilemme_enseigne(dossier=None):
 
 
 def carrousel_typographie(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-12-typographie"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-19-typographie"))
     f = []
     p = Planche("blanc")
     t = "Cette police est magnifique."
@@ -460,7 +460,7 @@ def carrousel_enseigne(dossier=None):
 
 
 def quiz_idees_recues(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-15-quiz"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-22-quiz"))
     f = []
     p = Planche("violet")
     p.pastille(MARGE, 240, "QUIZ", "corail", "blanc", 30)
@@ -536,8 +536,8 @@ def carrousel_droits(dossier=None):
 
 
 def plans_reel_cmjn(dossier=None):
-    """Les cinq plans du reel du 9 octobre, en 9:16, a enchainer au montage."""
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-09-reel-cmjn"))
+    """Les cinq plans du reel du 16 octobre, en 9:16, a enchainer au montage."""
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-16-reel-cmjn"))
     f = []
     plans = [
         ("creme", "encre", "Pourquoi ce n'est jamais\nla même couleur", ""),
@@ -559,7 +559,7 @@ def plans_reel_cmjn(dossier=None):
 
 
 def plans_reel_halloween(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-16-reel-halloween"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-halloween"))
     f = []
     plans = [
         ("#111111", "#f5883c", "Pourquoi Halloween\nest orange et noir", ""),
@@ -637,7 +637,7 @@ def main():
     a = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     a.add_argument("--exemple", action="store_true",
-                   help="produire le carrousel du 7 octobre")
+                   help="produire le carrousel du 12 octobre")
     a.add_argument("--liste", action="store_true", help="les gabarits connus")
     a.add_argument("--tout", action="store_true", help="produire tout le cycle")
     args = a.parse_args()

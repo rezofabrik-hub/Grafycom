@@ -370,15 +370,15 @@ def adresse_postale(siren_recherche: str) -> tuple[str, str, str]:
     et « non vérifié ».
     """
     if not siren_recherche:
-        return "", "", "introuvable", ""
+        return "", "", "introuvable", "", ""
     data = interroger_annuaire({"q": siren_recherche, "minimal": "true",
                                 "include": "siege,dirigeants", "per_page": "1"})
     if data is None:
-        return "", "", "non vérifié", ""
+        return "", "", "non vérifié", "", ""
 
     resultats = data.get("results") or []
     if not resultats:
-        return "", "", "introuvable", ""
+        return "", "", "introuvable", "", ""
     fiche = resultats[0]
     siege = fiche.get("siege") or {}
     adresse = " ".join(texte(siege.get("adresse")).split())
@@ -397,7 +397,10 @@ def adresse_postale(siren_recherche: str) -> tuple[str, str, str]:
         if texte(e):
             enseigne = enseigne or texte(e)
             break
-    return adresse, nom_dirigeant, "ok", enseigne
+    # Les coordonnees servent a ordonner une tournee : sans elles, on
+    # visite au hasard et on traverse la ville trois fois.
+    coord = texte(siege.get("coordonnees")) or ""
+    return adresse, nom_dirigeant, "ok", enseigne, coord
 
 
 def collecter(depuis: str, jusqu_a: str) -> list[dict]:
@@ -657,6 +660,7 @@ def main() -> int:
             "adresse": "",
             "dirigeant": "",
             "enseigne": "",
+            "coord": "",
             "diffusion": "non vérifié",
             "debut_activite": (acte.get("dateCommencementActivite") or ""),
             "parution": annonce.get("dateparution") or "",
@@ -692,11 +696,12 @@ def main() -> int:
         print(f"Recherche des adresses ({len(prospects)} appels)…")
         retenus = []
         for n, prosp in enumerate(prospects, 1):
-            adr, dir_, statut, enseigne = adresse_postale(prosp["siren"])
+            adr, dir_, statut, enseigne, coord = adresse_postale(prosp["siren"])
             prosp["adresse"], prosp["dirigeant"] = adr, dir_
             prosp["diffusion"] = statut
             if enseigne and enseigne.upper() != prosp["nom"].upper():
                 prosp["enseigne"] = enseigne
+            prosp["coord"] = coord
             # « [NON-DIFFUSIBLE] » : l'INSEE ne publie pas les données de
             # cette entreprise. Pour une société c'est une demande expresse ;
             # pour un entrepreneur individuel c'est devenu le réglage par
@@ -763,7 +768,7 @@ def main() -> int:
     chemin_csv = SORTIE / f"{base}.csv"
     colonnes = ["note", "secteur", "nom", "enseigne", "forme", "ville",
                 "code_postal",
-                "adresse", "dirigeant", "diffusion", "activite", "siren",
+                "adresse", "dirigeant", "diffusion", "activite", "siren", "coord",
                 "debut_activite", "parution", "annonce"]
     with chemin_csv.open("w", encoding="utf-8-sig", newline="") as f:
         ecrivain = csv.DictWriter(f, fieldnames=colonnes)
