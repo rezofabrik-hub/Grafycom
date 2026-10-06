@@ -1,5 +1,16 @@
 # Ligne éditoriale — Instagram & Facebook
 
+> ⚠️ **Ce document n'est plus la référence principale.** Depuis le 6 octobre
+> 2026, le cahier des charges complet vit dans
+> `.claude/agents/social-grafycom.md` : cycles de 15 jours, quatre
+> publications par semaine, cinq canaux (Instagram, Facebook, fiche Google,
+> blog SEO, messages privés), charte chromatique, scripts vidéo.
+>
+> Ce fichier-ci reste utile pour ce qu'il explique **en prose** : le
+> pourquoi des choix, les règles apprises à la dure, les pièges. Les deux
+> ne doivent pas se contredire. En cas de divergence, **la définition de
+> l'agent fait foi.**
+
 Ce document n'est pas une note d'intention, c'est le cerveau de l'assistant.
 Tout ce qui est produit chaque mois en découle : s'il est juste, les
 publications le sont ; s'il dérive, elles dérivent avec lui.
@@ -73,6 +84,11 @@ est un client perdu.
 assumée. Une fois par mois suffit : ce compte parle du client, pas d'elle.
 
 ## Le rythme
+
+> **Revu le 6 octobre 2026 : quatre publications par semaine**, selon le
+> cahier des charges de l'agent. Le raisonnement ci-dessous garde sa valeur
+> d'avertissement — si un cycle n'est pas publié en entier, c'est le signe
+> qu'il faut redescendre.
 
 **Deux publications par semaine, mardi et vendredi.** Plus serait tenu
 trois semaines puis abandonné — et un compte qui s'arrête fait plus de mal
