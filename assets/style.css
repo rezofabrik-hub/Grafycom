@@ -419,3 +419,25 @@ footer a:hover { color: #fff; }
 .billet p { margin: 0 0 10px; }
 .lien-suite { font-weight: 600; color: var(--bleu); text-decoration: none; }
 .lien-suite:hover { text-decoration: underline; }
+
+/* ---------------------------------------------------------------
+   Encart « Vos démarches ». Les formulaires ne sont pas hébergés
+   ici : voir le commentaire de demarches() dans generateurs/gen.py.
+   --------------------------------------------------------------- */
+.demarches { border-left: 4px solid var(--violet); }
+.demarches h3 { margin: 0 0 12px; font-size: 18px; }
+.demarches h3 i { color: var(--violet); margin-right: 8px; }
+.demarches > p { margin: 0 0 12px; }
+.liste-demarches { margin: 0 0 16px; padding-left: 20px; }
+.liste-demarches li { margin: 0 0 8px; }
+.liste-demarches a { font-weight: 600; }
+.liste-demarches .pdf {
+  display: inline-block; margin-left: 6px; padding: 1px 7px;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  color: var(--blanc); background: var(--violet); border-radius: 3px;
+  vertical-align: 2px;
+}
+.note-demarches {
+  margin: 0 0 10px; font-size: 14px; color: var(--brun);
+}
+.note-demarches:last-child { margin-bottom: 0; color: var(--brun-clair); }

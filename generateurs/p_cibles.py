@@ -10,7 +10,7 @@ ans ». Deux situations, plus deux pages sectorielles adossées à de vraies
 références du portfolio.
 """
 import json
-from gen import page, appel, TEL, TEL_URI, SITE
+from gen import page, appel, demarches, TEL, TEL_URI, SITE
 
 
 def carte(picto, icone, titre, texte):
@@ -142,6 +142,7 @@ cible(
         "L'impression elle-même est rapide. Ce qui prend du temps, c'est la relecture, la correction et la validation — et c'est précisément là qu'il ne faut pas se presser.")],
  """    <h2 style="margin-top:0">L'autorisation d'enseigne, le point que tout le monde découvre trop tard</h2>
     <p>Poser une enseigne n'est pas libre. Dans bien des cas, il faut déposer une <strong>demande d'autorisation préalable</strong> (formulaire Cerfa n°&nbsp;16308*01) en mairie, avec un plan coté et une insertion sur photo de la façade. Les communes dotées d'un règlement local de publicité y ajoutent leurs propres règles : surface maximale, nombre d'enseignes par façade, matériaux, éclairage et horaires d'extinction.</p>
+    """ + demarches() + """
     <p>À Perpignan, une bonne partie du centre est en secteur patrimonial protégé : l'avis de l'architecte des Bâtiments de France s'ajoute au dossier, et il porte sur les couleurs, les matières et le mode d'éclairage. Sur la côte, plusieurs communes encadrent l'affichage saisonnier. Ce sont des règles locales : <strong>vérifiez auprès de votre mairie avant de faire fabriquer quoi que ce soit.</strong></p>
     <p>Concrètement, cela change l'ordre des choses : le dossier se prépare pendant la conception, pas après. Un visuel conçu sans connaître la surface autorisée est un visuel à refaire.</p>
 
@@ -310,6 +311,8 @@ cible(
  """    <h2 style="margin-top:0">La mairie a son mot à dire, et ce n'est pas une formalité</h2>
     <p>Poser une enseigne suppose, dans bien des cas, une <strong>autorisation préalable</strong> (Cerfa n°&nbsp;16308*01), avec plan coté et insertion sur photo de la façade. Les communes dotées d'un règlement local de publicité y ajoutent leurs règles : surface, nombre d'enseignes, matériaux, éclairage, horaires d'extinction.</p>
     <p>À Perpignan, une grande partie du centre est en secteur patrimonial protégé, et l'avis de l'architecte des Bâtiments de France porte alors sur les couleurs, les matières et le mode d'éclairage. Plusieurs communes du littoral encadrent en plus l'affichage saisonnier. Les règles sont locales et changent : <strong>à vérifier auprès de votre mairie avant de lancer la fabrication</strong>, et à intégrer dès la conception plutôt qu'après.</p>
+
+    """ + demarches() + """
 
     <h2>Du fichier à la pose</h2>
     <p>Je conçois le visuel et je prépare le fichier aux normes du fabricant. Si vous le souhaitez, je consulte les enseignistes et poseurs avec qui je travaille dans la région, je compare les devis, je vérifie le bon à tirer et je contrôle la conformité à la réception. Vous gardez un seul interlocuteur du premier crayonné à la pose — et si vous avez déjà votre poseur, les fichiers sont prévus pour qu'il travaille avec.</p>

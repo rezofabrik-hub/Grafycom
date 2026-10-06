@@ -187,6 +187,43 @@ APPEL = """<section class="{fond}">
 def appel(titre, texte, fond=""):
     return APPEL.format(titre=titre, texte=texte, fond=fond)
 
+# Date du dernier controle des liens et numeros de formulaire ci-dessous.
+# Elle est affichee sur le site : un lecteur doit pouvoir juger si
+# l'information est fraiche. A remettre a jour en meme temps que les liens.
+DEMARCHES_VERIFIE = "6 octobre 2026"
+
+CERFA_ENSEIGNE = "https://www.formulaires.service-public.gouv.fr/gf/cerfa_16308.do"
+CERFA_NOTICE = "https://www.formulaires.service-public.gouv.fr/gf/cerfa_52393.do"
+CERFA_FICHE = ("https://www.formulaires.service-public.gouv.fr/gf/"
+               "showFormulaireSignaletiqueConsulter.do?numCerfaAndExtension=16308*01")
+
+
+def demarches():
+    """L'encart « Vos demarches », avec les liens officiels.
+
+    Les formulaires ne sont pas heberges ici, et c'est deliberé. Un Cerfa
+    change de numero : le 14798 a ete remplace par le 16308, et depuis le
+    1er juillet 2026 un dossier depose avec l'ancien est incomplet. Une
+    copie posee sur ce site serait un jour perimee, et ferait refuser le
+    dossier de quelqu'un qui nous a fait confiance. Le lien pointe donc
+    vers service-public.gouv.fr, qui sert toujours la version en vigueur.
+    """
+    return """
+  <aside class="encart demarches">
+    <h3><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Vos démarches&nbsp;: le formulaire officiel</h3>
+    <p>Poser, remplacer ou modifier une enseigne demande une <strong>autorisation préalable</strong> en mairie. Le formulaire en vigueur&nbsp;:</p>
+    <ul class="liste-demarches">
+      <li><a href="%(form)s" rel="noopener">Cerfa n°&nbsp;16308*01 — demande d'autorisation préalable</a> <span class="pdf">PDF</span></li>
+      <li><a href="%(notice)s" rel="noopener">Notice explicative n°&nbsp;52393#01</a></li>
+      <li><a href="%(fiche)s" rel="noopener">La fiche officielle du formulaire</a> — pour vérifier qu'il est toujours à jour</li>
+    </ul>
+    <p class="note-demarches"><strong>Pourquoi ces liens plutôt qu'un fichier à télécharger ici&nbsp;?</strong> Parce qu'un Cerfa change de numéro. Le 14798*01 a été remplacé par le 16308*01, et depuis le 1<sup>er</sup> juillet 2026 un dossier déposé avec l'ancien formulaire est considéré comme incomplet. Une copie hébergée sur ce site finirait périmée&nbsp;; ces liens servent toujours la version en vigueur.</p>
+    <p class="note-demarches">Liens et numéros vérifiés le %(date)s. Les règles applicables dépendent de votre commune&nbsp;: vérifiez auprès de votre mairie avant de lancer la fabrication.</p>
+  </aside>
+""" % {"form": CERFA_ENSEIGNE, "notice": CERFA_NOTICE, "fiche": CERFA_FICHE,
+       "date": DEMARCHES_VERIFIE}
+
+
 def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow"):
     if CONSTRUCTION:
         robots = "noindex, nofollow"
