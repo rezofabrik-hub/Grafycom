@@ -224,7 +224,7 @@ hexadécimaux** de la charte avec leur emplacement, le style typographique,
 et surtout **ce qu'il ne doit pas ajouter**. Sans cette dernière ligne, il
 ajoute des icônes et des illustrations.
 
-### Les deux pièges mesurés, à vérifier sur chaque export
+### Les trois pièges mesurés, à vérifier sur chaque export
 
 - **Le format part en 9:16 tout seul.** Le premier essai, demandé en
   « Instagram Post (Portrait) », est sorti en 1080×1920 — du format story,
@@ -237,8 +237,21 @@ ajoute des icônes et des illustrations.
   recopie. **Relis le pseudo sur chaque visuel produit**, caractère par
   caractère : `@grafycom.graphiste`.
 
-Ces deux contrôles ne sont pas optionnels. Un visuel non relu part avec son
-erreur, et l'erreur est publique.
+Ces trois contrôles ne sont pas optionnels — format, pseudo, accents. Un
+visuel non relu part avec son erreur, et l'erreur est publique.
+
+- **Il choisit des polices sans accents français.** Mesuré le 6 octobre :
+  sur une même commande de six pages, la page 1 rendait « déjà »
+  correctement, la page 4 rendait « crédible » en *crıdible*,
+  « mémorable » en *mımorable* et « problème » en *problØme*. Canva avait
+  pris deux polices différentes, dont une sans jeu accentué.
+  **C'est le défaut le plus grave des trois** : il touche presque tous les
+  visuels, puisque le français est accentué, et un texte fautif publié sur
+  le compte d'une professionnelle de l'écrit la décrédibilise directement.
+
+  Deux parades, à appliquer ensemble : écrire dans le brief que **la
+  police doit comporter les accents français (é è à ù ê ô ç)**, et
+  **relire chaque mot accentué sur l'export**, pas seulement le pseudo.
 
 ### Pas encore de charte enregistrée dans Canva
 
