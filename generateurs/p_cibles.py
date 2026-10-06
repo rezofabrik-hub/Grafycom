@@ -137,11 +137,11 @@ cible(
  [carte("p-corail", "fa-sign-hanging", "La fabrication de l'enseigne",
         "Entre la validation du fichier et la pose, comptez quatre à six semaines. Les lettres découpées et les caissons lumineux sont fabriqués à la commande."),
   carte("p-orange", "fa-stamp", "L'autorisation d'urbanisme",
-        "Une déclaration préalable en mairie se compte en semaines, pas en jours. Dans les secteurs protégés, l'avis de l'architecte des Bâtiments de France s'y ajoute."),
+        "Une autorisation préalable d'enseigne en mairie se compte en semaines, pas en jours. Dans les secteurs protégés, l'avis de l'architecte des Bâtiments de France s'y ajoute."),
   carte("p-bleu", "fa-print", "Le bon à tirer",
         "L'impression elle-même est rapide. Ce qui prend du temps, c'est la relecture, la correction et la validation — et c'est précisément là qu'il ne faut pas se presser.")],
  """    <h2 style="margin-top:0">L'autorisation d'enseigne, le point que tout le monde découvre trop tard</h2>
-    <p>Poser une enseigne n'est pas libre. Dans la plupart des cas, il faut déposer une <strong>déclaration préalable</strong> en mairie, avec un plan coté et une insertion sur photo de la façade. Les communes dotées d'un règlement local de publicité y ajoutent leurs propres règles : surface maximale, nombre d'enseignes par façade, matériaux, éclairage et horaires d'extinction.</p>
+    <p>Poser une enseigne n'est pas libre. Dans bien des cas, il faut déposer une <strong>demande d'autorisation préalable</strong> (formulaire Cerfa n°&nbsp;16308*01) en mairie, avec un plan coté et une insertion sur photo de la façade. Les communes dotées d'un règlement local de publicité y ajoutent leurs propres règles : surface maximale, nombre d'enseignes par façade, matériaux, éclairage et horaires d'extinction.</p>
     <p>À Perpignan, une bonne partie du centre est en secteur patrimonial protégé : l'avis de l'architecte des Bâtiments de France s'ajoute au dossier, et il porte sur les couleurs, les matières et le mode d'éclairage. Sur la côte, plusieurs communes encadrent l'affichage saisonnier. Ce sont des règles locales : <strong>vérifiez auprès de votre mairie avant de faire fabriquer quoi que ce soit.</strong></p>
     <p>Concrètement, cela change l'ordre des choses : le dossier se prépare pendant la conception, pas après. Un visuel conçu sans connaître la surface autorisée est un visuel à refaire.</p>
 
@@ -153,7 +153,7 @@ cible(
  [("Combien de temps avant l'ouverture faut-il s'y prendre&nbsp;?",
    "Trois mois est confortable, deux mois est tenable, un mois oblige à faire des choix. Le facteur limitant est presque toujours l'enseigne : fabrication et pose, plus l'autorisation quand elle est nécessaire."),
   ("Faut-il vraiment une autorisation pour une enseigne&nbsp;?",
-   "Dans la plupart des cas, oui : une déclaration préalable en mairie. Les règles varient d'une commune à l'autre et se durcissent en secteur protégé. C'est à vérifier auprès de votre mairie, et à anticiper dès la conception."),
+   "Dans bien des cas, oui : une autorisation préalable en mairie, à demander avec le formulaire Cerfa n°&nbsp;16308*01. Attention au vocabulaire : on « déclare » une publicité, on « autorise » une enseigne, et la procédure n'est pas la même. Les règles varient d'une commune à l'autre et se durcissent en secteur protégé. C'est à vérifier auprès de votre mairie, et à anticiper dès la conception."),
   ("Peut-on étaler la dépense&nbsp;?",
    "Oui, et c'est souvent la bonne approche. Le logo et l'enseigne d'abord, parce qu'ils conditionnent tout le reste et qu'ils sont les plus visibles. Les supports du quotidien peuvent suivre un mois plus tard, une fois les premières semaines passées."),
   ("Je n'ai pas encore de nom définitif. On peut commencer&nbsp;?",
@@ -271,7 +271,7 @@ cible(
   ("Vous vous occupez aussi de l'impression&nbsp;?",
    "Si vous le souhaitez. Je travaille avec des imprimeurs de la région, je prépare les fichiers à leurs normes et je vérifie les bons à tirer. Vous pouvez aussi garder votre imprimeur : les fichiers sont prévus pour."),
   ("Et pour l'enseigne, il faut une autorisation&nbsp;?",
-   "Le plus souvent oui, une déclaration préalable en mairie, et un avis supplémentaire en secteur protégé — une bonne partie du centre de Perpignan l'est. C'est à vérifier auprès de votre mairie et à anticiper dès la conception.")],
+   "Le plus souvent oui, une autorisation préalable en mairie, et un avis supplémentaire en secteur protégé — une bonne partie du centre de Perpignan l'est. C'est à vérifier auprès de votre mairie et à anticiper dès la conception.")],
  "Votre carte mérite mieux qu'un traitement de texte",
  "Envoyez-moi une photo de votre carte actuelle et de votre devanture. Je vous dis en trente minutes ce qui se joue dessus, et ce qui mérite d'être repris en premier.")
 
@@ -308,7 +308,7 @@ cible(
   carte("p-bleu", "fa-file-code", "Le fichier du poseur",
         "Tracé vectoriel, polices converties, cotes, matière et couleurs indiquées. Un fichier approximatif se paie en allers-retours, puis en délai.")],
  """    <h2 style="margin-top:0">La mairie a son mot à dire, et ce n'est pas une formalité</h2>
-    <p>Poser une enseigne suppose le plus souvent une <strong>déclaration préalable</strong>, avec plan coté et insertion sur photo de la façade. Les communes dotées d'un règlement local de publicité y ajoutent leurs règles : surface, nombre d'enseignes, matériaux, éclairage, horaires d'extinction.</p>
+    <p>Poser une enseigne suppose, dans bien des cas, une <strong>autorisation préalable</strong> (Cerfa n°&nbsp;16308*01), avec plan coté et insertion sur photo de la façade. Les communes dotées d'un règlement local de publicité y ajoutent leurs règles : surface, nombre d'enseignes, matériaux, éclairage, horaires d'extinction.</p>
     <p>À Perpignan, une grande partie du centre est en secteur patrimonial protégé, et l'avis de l'architecte des Bâtiments de France porte alors sur les couleurs, les matières et le mode d'éclairage. Plusieurs communes du littoral encadrent en plus l'affichage saisonnier. Les règles sont locales et changent : <strong>à vérifier auprès de votre mairie avant de lancer la fabrication</strong>, et à intégrer dès la conception plutôt qu'après.</p>
 
     <h2>Du fichier à la pose</h2>
@@ -319,7 +319,7 @@ cible(
     <p>Tous sur la page <a href="realisations.html">réalisations</a>. Pour une ouverture, voir <a href="ouverture-commerce-66.html">ouvrir un commerce dans le 66</a> ; pour une enseigne fatiguée, <a href="refaire-son-image.html">refaire son image</a>.</p>""",
  "Ce qu'on me demande avant de poser",
  [("Combien de temps entre la commande et la pose&nbsp;?",
-   "Quatre à six semaines sont courantes pour un caisson ou des lettres découpées, fabrication et pose comprises. Il faut y ajouter le délai d'instruction de la déclaration préalable quand elle est nécessaire."),
+   "Quatre à six semaines sont courantes pour un caisson ou des lettres découpées, fabrication et pose comprises. Il faut y ajouter le délai d'instruction de l'autorisation préalable quand elle est nécessaire."),
   ("Mon logo actuel peut-il servir d'enseigne&nbsp;?",
    "Pas toujours tel quel. Un logo conçu pour un écran a souvent des détails trop fins, des dégradés ou des contre-formes qui disparaissent en découpe. On adapte — ou on en profite pour le remettre au net."),
   ("Qui s'occupe de l'autorisation&nbsp;?",

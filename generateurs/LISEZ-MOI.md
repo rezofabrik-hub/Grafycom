@@ -32,6 +32,13 @@ Un script par page, sauf trois cas :
 - `p_cibles.py` produit les quatre pages « par situation » d'un seul coup.
   Il a été oublié dans les listes de régénération pendant un temps, et les
   quatre pages seraient restées en `noindex` le jour de l'ouverture.
+- `p_blog.py` est le seul générateur qui ne contient pas son texte. Les
+  articles vivent en Markdown dans `reseaux/blog/`, un fichier par
+  article avec un en-tête de métadonnées ; le script les lit, les
+  convertit, produit `blog.html` et une page par article, puis met à jour
+  le bloc du blog dans `sitemap.xml` entre ses deux marqueurs. Ajouter un
+  article, c'est déposer un `.md` et relancer le script — rien d'autre,
+  et surtout pas d'édition manuelle du sitemap, qu'on oublierait.
 - `p_construction.py` produit la page d'attente. Il n'est pas rejoué à
   l'ouverture, et pour cause.
 
@@ -43,7 +50,7 @@ parce qu'il doit s'afficher correctement depuis n'importe quelle adresse.
 ```bash
 cd generateurs
 for f in p_index p_prestations p_methode p_apropos p_contact p_merci \
-         p_legal p_cgv p_realisations p_cibles zone villes villes2 villes3 \
+         p_legal p_cgv p_realisations p_cibles p_blog zone villes villes2 villes3 \
          villes4 villes5 villes6; do python3 $f.py; done
 python3 p_construction.py        # seulement si CONSTRUCTION = True
 ```

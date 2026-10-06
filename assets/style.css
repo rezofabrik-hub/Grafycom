@@ -379,3 +379,43 @@ footer a:hover { color: #fff; }
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
 }
+
+/* ---------------------------------------------------------------
+   Le blog. Une colonne étroite : au-delà de 68 caractères par ligne,
+   l'œil perd la ligne suivante en revenant à la marge.
+   --------------------------------------------------------------- */
+.conteneur-texte { max-width: 68ch; }
+
+.fil { font-size: 14px; color: var(--brun-clair); margin: 0 0 14px; }
+.fil a { color: var(--brun-clair); text-decoration: none; }
+.fil a:hover { color: var(--bleu); text-decoration: underline; }
+.fil span { margin: 0 6px; opacity: .5; }
+
+.date-article { font-size: 14px; color: var(--brun-clair); margin: 10px 0 0; }
+
+.article > h2 { margin: 42px 0 12px; font-size: clamp(21px, 2.2vw, 26px); }
+.article > h3 { margin: 30px 0 8px; font-size: clamp(17.5px, 1.7vw, 20px); }
+.article > h2:first-child { margin-top: 0; }
+.article > p { margin: 0 0 17px; }
+.article > ul, .article > ol { margin: 0 0 18px; padding-left: 22px; }
+.article > ul li, .article > ol li { margin: 0 0 7px; }
+.article blockquote {
+  margin: 22px 0; padding: 2px 0 2px 18px;
+  border-left: 3px solid var(--violet); color: var(--brun);
+}
+.article blockquote p { margin: 0; }
+.article code {
+  background: var(--creme-rose); padding: 1px 6px;
+  border-radius: 4px; font-size: .92em;
+}
+.article em { color: var(--brun); }
+
+.billet { padding: 30px 0; border-bottom: 1px solid var(--sable); }
+.billet:first-child { padding-top: 0; }
+.billet:last-child { border-bottom: 0; }
+.billet h2 { margin: 6px 0 10px; font-size: clamp(20px, 2.1vw, 25px); }
+.billet h2 a { color: inherit; text-decoration: none; }
+.billet h2 a:hover { color: var(--bleu); }
+.billet p { margin: 0 0 10px; }
+.lien-suite { font-weight: 600; color: var(--bleu); text-decoration: none; }
+.lien-suite:hover { text-decoration: underline; }

@@ -38,6 +38,7 @@ NAV = [
     (ACCUEIL, "Accueil"),
     ("prestations.html", "Prestations"),
     ("realisations.html", "Réalisations"),
+    ("blog.html", "Blog"),
     ("methode.html", "Méthode"),
     ("a-propos.html", "À propos"),
     ("contact.html", "Contact"),
@@ -121,6 +122,7 @@ FOOT = """</main>
       <div>
         <h4>Le studio</h4>
         <ul>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="a-propos.html">À propos</a></li>
           <li><a href="methode.html">Méthode</a></li>
           <li><a href="contact.html">Contact</a></li>

@@ -2,7 +2,7 @@
 titre: "Enseigne de commerce : comment obtenir l'autorisation préalable dans les Pyrénées-Orientales"
 slug: autorisation-enseigne-perpignan
 date: 2026-10-16
-meta: "Autorisation préalable d'enseigne : Cerfa 14798*01, dépôt en mairie, RLP et secteur protégé. Le guide pour les commerces du 66."
+meta: "Autorisation préalable d'enseigne : Cerfa 16308*01, dépôt en mairie, RLP et secteur protégé. Le guide pour les commerces du 66."
 statut: rédigé, en attente de la rubrique blog
 ---
 
@@ -22,13 +22,22 @@ C'est inexact, et la nuance change tout.
 
 Une **déclaration**, on la dépose et l'on peut avancer. Une
 **autorisation**, on l'attend. Pour une enseigne, c'est une autorisation
-préalable qui s'applique, au titre des articles R.581-6 à R.581-8 du code
-de l'environnement.
+préalable qui s'applique, au titre de l'article L.581-18 du code de
+l'environnement. Elle est délivrée par le maire — et, aux abords d'un
+monument historique ou dans un site patrimonial remarquable, **après
+accord de l'architecte des Bâtiments de France**.
 
-Le formulaire porte un nom précis : **Cerfa n° 14798\*01**, établi par
-l'arrêté du 31 août 2012. Il couvre l'installation, le remplacement et la
-modification d'un ou plusieurs dispositifs. Il est téléchargeable
-librement sur service-public.fr.
+Le formulaire porte un nom précis : **Cerfa n° 16308\*01**, accompagné de
+sa notice, le Cerfa n° 52393#01. Il couvre l'installation, le remplacement
+et la modification d'un ou plusieurs dispositifs, et il est téléchargeable
+librement sur service-public.gouv.fr.
+
+> ⚠️ **Attention au numéro.** Beaucoup de documents encore en ligne —
+> y compris sur des sites de mairies et de préfectures — renvoient vers
+> l'ancien formulaire **Cerfa 14798\*01**. Il n'est plus valable : depuis
+> le 1er juillet 2026, un dossier déposé avec l'ancien formulaire est
+> considéré comme incomplet. Vérifiez toujours le numéro sur
+> service-public.gouv.fr avant de télécharger.
 
 Deux points pratiques que les commerçants découvrent souvent au guichet :
 
@@ -90,7 +99,8 @@ La bonne séquence est simple :
    urbanisme de la mairie — ils répondent, et c'est gratuit ;
 2. vérifier si l'adresse est en secteur protégé ;
 3. concevoir l'enseigne **avec** ces contraintes comme point de départ ;
-4. déposer le Cerfa n° 14798\*01 en trois exemplaires ;
+4. télécharger le **Cerfa n° 16308\*01 depuis service-public.gouv.fr**
+   — et nulle part ailleurs — puis le déposer en trois exemplaires ;
 5. attendre la réponse avant de lancer la fabrication.
 
 Cette dernière ligne est celle qu'on saute le plus souvent, et c'est celle

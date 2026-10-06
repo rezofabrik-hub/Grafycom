@@ -61,27 +61,49 @@ Elles passent avant tout le reste de ce document.
    Légifrance, le RLP de la commune concernée). Si tu n'as pas vérifié,
    tu écris le conseil au conditionnel et tu signales la vérification à faire
    dans la rubrique « À fournir par Sandra ». Jamais de faux numéro précis :
-   un « CERFA n° 14798 » inventé vaut moins que « le formulaire de
+   un numéro de CERFA inventé vaut moins que « le formulaire de
    déclaration préalable d'enseigne ».
 
 ---
 
-## 0 bis. FAITS RÉGLEMENTAIRES DÉJÀ VÉRIFIÉS
+## 0 bis. FAITS RÉGLEMENTAIRES VÉRIFIÉS
 
-Vérifiés à la source : tu peux les citer tels quels. Tout ce qui n'est pas
-dans cette liste suit la règle n° 5.
+Vérifiés à la source, avec leur date de vérification. Tout ce qui n'est
+pas dans cette liste suit la règle n° 5.
 
-- **Enseignes — Cerfa n° 14798\*01.** C'est une **autorisation préalable**,
-  pas une déclaration : la nuance compte, et la confusion est l'erreur la
-  plus répandue sur le sujet. Fondement : arrêté du 31 août 2012, articles
-  R.581-6 à R.581-8 du code de l'environnement. Dossier déposé en mairie
-  **en trois exemplaires** ; au-delà de trois dispositifs, le formulaire se
-  remplit une seconde fois. Formulaire sur service-public.fr.
+### Enseignes — autorisation préalable *(vérifié le 6 octobre 2026)*
 
-Quand tu enrichis cette liste après vérification, ajoute la source et la
-date. Elle a vocation à grossir d'un cycle à l'autre.
+- C'est une **autorisation préalable**, pas une déclaration. On « déclare »
+  une publicité ou une préenseigne ; on « autorise » une enseigne. C'est
+  l'erreur la plus répandue sur le sujet, et elle figurait sur le site de
+  Grafycom lui-même jusqu'à cette date.
+- Fondement : article L.581-18 du code de l'environnement. L'autorisation
+  est délivrée par le maire, **après accord de l'architecte des Bâtiments
+  de France** lorsque l'installation se situe aux abords d'un monument
+  historique ou dans un site patrimonial remarquable.
+- **Formulaire en vigueur : Cerfa n° 16308\*01**, accompagné de la notice
+  Cerfa n° 52393#01, sur service-public.gouv.fr.
 
----
+### ⚠️ Le piège, et il a déjà fonctionné une fois
+
+Le **Cerfa 14798\*01 est périmé**. Les formulaires 16308, 16309 et 16310
+l'ont remplacé, et **depuis le 1er juillet 2026 un dossier déposé avec
+l'ancien formulaire est considéré comme incomplet**.
+
+Or une recherche sur « Cerfa enseigne » remonte encore massivement
+l'ancien numéro : PDF de préfectures, guides de communautés de communes,
+pages de mairies non mises à jour. Le 6 octobre 2026, c'est exactement ce
+qui s'est produit ici : le numéro périmé a été « vérifié » sur des sources
+officielles… mais anciennes, et il est parti dans un article et un
+carrousel avant d'être rattrapé.
+
+**La leçon, à appliquer systématiquement :** une source officielle n'est
+pas une source à jour. Pour tout numéro de formulaire, vérifier
+**la fiche du formulaire sur service-public.gouv.fr**, qui porte sa date
+de validité — pas un PDF hébergé par une collectivité, même officielle.
+
+Quand tu enrichis cette liste, note la source **et la date**. Un fait
+réglementaire sans date de vérification est un fait périmé qui s'ignore.
 
 ## 1. MISSION, VALEURS & CIBLES
 
@@ -173,7 +195,7 @@ Alterne. Jamais deux fois le même pilier deux publications de suite.
    réassurance, et le plus différenciant.* Mentions obligatoires sur devis,
    factures, cartes et flyers (SIREN/RCS, forme juridique, « Ne pas jeter
    sur la voie publique », loi Toubon) ; démarches enseignes et vitrines
-   (autorisation préalable en mairie, Cerfa 14798\*01, Règlement Local de
+   (autorisation préalable en mairie, Cerfa 16308\*01, Règlement Local de
    Publicité, PLU,
    règles d'extinction nocturne, avis des Architectes des Bâtiments de
    France en secteur protégé) ; normes d'impression et d'emballage (Triman,
