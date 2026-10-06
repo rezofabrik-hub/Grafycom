@@ -368,6 +368,23 @@ footer a:hover { color: #fff; }
   .cases { grid-template-columns: 1fr; }
   .portrait .signature { left: 50%; transform: translateX(-50%); bottom: -18px; }
 }
+/* Pied de page sur écran tactile.
+   Mesuré au doigt : les liens du pied tombaient à 17 px de hauteur, bien
+   en deçà des 44 px recommandés. On ne touche pas à la taille du texte —
+   seule la zone cliquable grandit, par du remplissage vertical. Le rendu
+   bureau est inchangé : la règle ne s'applique qu'en dessous de 860 px. */
+@media (max-width: 860px) {
+  footer ul { gap: 0; }
+  footer ul li a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 0;
+  }
+  footer ul li { line-height: 1.3; }
+  .pied-bas { padding: 26px 0; gap: 10px; }
+}
+
 @media (max-width: 520px) {
   .g4 { grid-template-columns: 1fr; }
   .pied-grille { grid-template-columns: 1fr; gap: 30px; }

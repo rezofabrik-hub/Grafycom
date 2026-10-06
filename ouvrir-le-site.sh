@@ -39,7 +39,7 @@ grep -q '^CONSTRUCTION = False' "$GEN/gen.py" || { echo "bascule ratée" >&2; ex
 # p_locales.py n'est qu'un gabarit : ce sont villes.py à villes6.py qui
 # produisent les douze pages locales, deux par fichier.
 for p in p_index p_prestations p_methode p_apropos p_contact p_merci \
-         p_legal p_cgv p_realisations p_cibles p_blog zone \
+         p_legal p_cgv p_realisations p_cibles p_blog zone pays \
          villes villes2 villes3 villes4 villes5 villes6; do
   ( cd "$GEN" && python3 "$p.py" >/dev/null )
 done

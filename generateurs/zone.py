@@ -33,6 +33,26 @@ cartes = "\n    ".join(
   '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p></a>' % (s, v, d)
   for s, v, d in VEDETTES)
 
+# Les trois pays de montagne. Ce ne sont pas des communes mais des
+# territoires : on y vit du même rythme et on y relève des mêmes
+# contraintes, ce qui justifie une page par pays plutôt qu'une page par
+# village — il y en aurait des dizaines, et ce serait des pages satellites.
+PAYS = [
+ ("graphiste-conflent.html", "Conflent",
+  "Secteur protégé, UNESCO, thermalisme, Prades et Villefranche"),
+ ("graphiste-cerdagne.html", "Cerdagne",
+  "Altitude, deux saisons, frontière espagnole et catalane"),
+ ("graphiste-capcir.html", "Capcir",
+  "Les Angles, Formiguères&nbsp;: une saison courte, des supports qui tiennent le gel"),
+]
+
+cartes_pays = "\n    ".join(
+  '<a class="carte carte-creme" href="%s" style="text-decoration:none">'
+  '<h3 style="margin-bottom:6px">%s</h3><p>%s</p>'
+  '<p style="margin-top:12px;color:var(--violet);font-weight:600;font-size:14px">Voir la page '
+  '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></p></a>' % (s, v, d)
+  for s, v, d in PAYS)
+
 liste = "".join("<li>%s</li>" % html.escape(n) for n in com)
 
 BODY = """
@@ -62,6 +82,18 @@ BODY = """
 </section>
 
 <section class="fond-creme">
+  <div class="conteneur centre">
+    <span class="eyebrow">La montagne</span>
+    <h2>Les trois pays d'altitude</h2>
+    <div class="trait"></div>
+    <p class="chapeau">Au-dessus de la plaine, les contraintes ne sont plus les mêmes&nbsp;: le gel et les ultraviolets abîment les supports, la saison est courte, et le patrimoine classé encadre les enseignes. Une page par pays, parce qu'on n'y répond pas de la même façon.</p>
+  </div>
+  <div class="conteneur grille g3" style="margin-top:44px">
+    %s
+  </div>
+</section>
+
+<section>
   <div class="conteneur">
     <div class="centre">
       <span class="eyebrow">Le département entier</span>
@@ -85,7 +117,7 @@ BODY = """
   </div>
 </section>
 
-""" % (len(com), TEL_URI, TEL, cartes, len(com), liste)
+""" % (len(com), TEL_URI, TEL, cartes, cartes_pays, len(com), liste)
 
 BODY += appel("Votre commune, votre projet",
   "Le premier échange est gratuit et sans engagement, où que vous soyez dans le département.",

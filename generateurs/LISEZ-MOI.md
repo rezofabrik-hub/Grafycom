@@ -39,6 +39,11 @@ Un script par page, sauf trois cas :
   le bloc du blog dans `sitemap.xml` entre ses deux marqueurs. Ajouter un
   article, c'est déposer un `.md` et relancer le script — rien d'autre,
   et surtout pas d'édition manuelle du sitemap, qu'on oublierait.
+- `pays.py` produit les trois pages de pays de montagne — Cerdagne,
+  Capcir, Conflent. Des pays et non des communes : la haute montagne
+  compte des dizaines de villages de quelques centaines d'habitants, et
+  une page par village serait exactement la page satellite que la règle
+  de `p_locales.py` cherche à éviter.
 - `p_construction.py` produit la page d'attente. Il n'est pas rejoué à
   l'ouverture, et pour cause.
 
@@ -50,7 +55,7 @@ parce qu'il doit s'afficher correctement depuis n'importe quelle adresse.
 ```bash
 cd generateurs
 for f in p_index p_prestations p_methode p_apropos p_contact p_merci \
-         p_legal p_cgv p_realisations p_cibles p_blog zone villes villes2 villes3 \
+         p_legal p_cgv p_realisations p_cibles p_blog zone pays villes villes2 villes3 \
          villes4 villes5 villes6; do python3 $f.py; done
 python3 p_construction.py        # seulement si CONSTRUCTION = True
 ```
