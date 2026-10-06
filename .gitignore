@@ -34,3 +34,8 @@ reseaux/*-squelette.md
 
 # Aperçus HTML régénérés par reseaux/envoyer-propositions.py --essai.
 reseaux/propositions/*-apercu.html
+
+# Visuels produits par reseaux/visuels.py. Ils se régénèrent en deux
+# secondes à partir du script : les versionner alourdirait le dépôt sans
+# rien apporter.
+reseaux/visuels/
