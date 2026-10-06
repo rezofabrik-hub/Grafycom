@@ -15,7 +15,7 @@ quel serveur web.
 - **Dépôt** : <https://github.com/rezofabrik-hub/Grafycom>
 - **Branche de production** : `main`
 - **Racine du site** : la racine du dépôt
-- **Adresse actuelle** : <https://www.grafycom.fr/>
+- **Adresse actuelle** : <https://grafycom.fr/>
 
 **Le site est en mode chantier jusqu'au 16 octobre 2026.** La racine sert une
 page d'attente ; le vrai site vit dans `accueil.html` et toutes les pages
@@ -134,7 +134,7 @@ ligne de commande :
 
 ```bash
 dig +short grafycom.fr A
-dig +short www.grafycom.fr CNAME
+dig +short grafycom.fr CNAME
 ```
 
 > Note : une zone hébergée Route 53 est facturée environ 0,50 $ par mois. Le DNS
@@ -144,13 +144,13 @@ dig +short www.grafycom.fr CNAME
 ### 2.2 Côté GitHub
 
 Dans **Settings → Pages → Custom domain**, saisir le domaine retenu
-(`www.grafycom.fr` recommandé) et valider. GitHub vérifie le DNS, puis émet un
+(`grafycom.fr` recommandé) et valider. GitHub vérifie le DNS, puis émet un
 certificat Let's Encrypt — comptez de quelques minutes à quelques heures.
 
 Une fois le certificat émis, **cocher « Enforce HTTPS »**.
 
 GitHub redirige automatiquement l'autre forme du domaine (nu ↔ `www`) ainsi que
-l'ancienne adresse `www.grafycom.fr/` vers le domaine
+l'ancienne adresse `grafycom.fr/` vers le domaine
 configuré. Rien à faire de plus côté redirections.
 
 ### 2.3 Côté dépôt — une commande
@@ -162,9 +162,9 @@ chemins absolus de la page 404 doivent suivre. Un script s'en charge :
 ```bash
 git clone https://github.com/rezofabrik-hub/Grafycom.git
 cd Grafycom
-./basculer-domaine.sh www.grafycom.fr
+./basculer-domaine.sh grafycom.fr
 git add -A
-git commit -m "Bascule sur www.grafycom.fr"
+git commit -m "Bascule sur grafycom.fr"
 git push
 ```
 
@@ -266,7 +266,7 @@ disent la même chose.
    serveurs AWS par les deux de Cloudflare. Propagation : quelques heures,
    parfois jusqu'à 48 h.
 7. Attendre que Cloudflare affiche la zone **Active**, puis vérifier que
-   `grafycom.fr` et `www.grafycom.fr` répondent tous les deux.
+   `grafycom.fr` et `grafycom.fr` répondent tous les deux.
 8. **Supprimer alors la zone hébergée Route 53**, facturée au mois, et dont
    plus personne ne se sert.
 
@@ -275,18 +275,18 @@ enregistrements de l'étape 3 sont remplacés par un *Custom domain* sur le
 Worker (**Settings → Domains & Routes → Add → Custom domain**), et le domaine
 nu se traite par un `A` sur `@` vers `192.0.2.0` **proxifié** — une adresse
 réservée, jamais joignable — accompagné d'une *Redirect Rule* `grafycom.fr/*`
-→ `https://www.grafycom.fr/$1` en 301.
+→ `https://grafycom.fr/$1` en 301.
 
 **Chemin sans toucher aux serveurs de noms.** Rester sur Route 53 et créer à la
 place un projet **Pages**, qui accepte un `CNAME` depuis un DNS extérieur. Le
 formulaire doit alors être réécrit en *Pages Function* (`functions/api/contact.js`
 au lieu de `src/index.js`) — une modification courte, mais une modification.
 
-Dans les deux cas, attendre que `https://www.grafycom.fr` soit servi par
+Dans les deux cas, attendre que `https://grafycom.fr` soit servi par
 Cloudflare : la réponse porte alors un `cf-ray` au lieu de `server: GitHub.com`.
 
 ```bash
-curl -sI https://www.grafycom.fr/ | grep -iE 'server|cf-ray'
+curl -sI https://grafycom.fr/ | grep -iE 'server|cf-ray'
 ```
 
 ### 4. Débrancher GitHub Pages
@@ -301,7 +301,7 @@ et les anciens enregistrements `A` vers GitHub s'ils subsistent.
 
 À vérifier ensuite : que le déploiement Cloudflare fonctionne toujours
 (l'autorisation GitHub accordée à l'étape 1 survit au passage en privé), et que
-`https://www.grafycom.fr` répond.
+`https://grafycom.fr` répond.
 
 ### Ce que le passage en privé change vraiment
 
@@ -347,7 +347,7 @@ Dans ce cas :
 
 ## 4. Points d'attention
 
-**Le domaine nu ne résout pas.** Seul `www.grafycom.fr` répond ; `grafycom.fr`
+**Le domaine nu ne résout pas.** Seul `grafycom.fr` répond ; `grafycom.fr`
 sans `www` renvoie une erreur. Il manque les enregistrements `A` et `AAAA` sur
 l'apex de la zone Route 53 — ils sont détaillés en 2.1. C'est la seule chose à
 faire avant l'ouverture du 16 octobre.
@@ -379,7 +379,7 @@ n'est liée nulle part et porte un `noindex`, en attendant de vraies photos. La
 marche à suivre pour la remettre en circulation est en tête du `README.md`.
 
 **Après l'ouverture**, déclarer le site dans Google Search Console et y
-soumettre `https://www.grafycom.fr/sitemap.xml`.
+soumettre `https://grafycom.fr/sitemap.xml`.
 
 ---
 

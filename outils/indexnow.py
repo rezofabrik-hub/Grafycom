@@ -14,7 +14,7 @@ soumettre les adresses de n'importe quel site.
 
     python3 outils/indexnow.py            # toutes les pages du sitemap
     python3 outils/indexnow.py --essai    # montre ce qui serait envoyé
-    python3 outils/indexnow.py https://www.grafycom.fr/prestations.html
+    python3 outils/indexnow.py https://grafycom.fr/prestations.html
 
 Le script refuse de travailler tant que le site est en construction : rien
 ne sert à soumettre des pages que robots.txt interdit, et une soumission
@@ -29,7 +29,7 @@ import urllib.error
 import urllib.request
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-HOTE = "www.grafycom.fr"
+HOTE = "grafycom.fr"
 SITE = "https://" + HOTE
 POINT = "https://api.indexnow.org/indexnow"
 

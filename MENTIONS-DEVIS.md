@@ -98,7 +98,7 @@ fragile — et vous prive de toute renégociation si le client élargit l'usage.
 **Renvoi aux CGV**
 
 > Le client déclare avoir pris connaissance des conditions générales de vente,
-> consultables sur www.grafycom.fr/cgv.html, et les accepter sans réserve.
+> consultables sur grafycom.fr/cgv.html, et les accepter sans réserve.
 
 ---
 

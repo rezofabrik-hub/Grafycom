@@ -41,7 +41,7 @@ EXPEDITEUR = {
     "nom": "Sandra — Grafycom",
     "tel": "07 82 92 19 81",
     "mail": "sandra.grafycom@gmail.com",
-    "site": "www.grafycom.fr",
+    "site": "grafycom.fr",
 }
 
 # Une phrase par secteur. Un courrier qui parle du métier du destinataire

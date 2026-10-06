@@ -17,11 +17,11 @@ n'y a qu'un jeton à me rapporter, et je m'occupe de la suite.
 
 | Méthode | Ce qu'elle couvre | Qui doit agir |
 |---|---|---|
-| **Préfixe d'URL + balise HTML** | `https://www.grafycom.fr/` seulement | toi seul, 5 min |
+| **Préfixe d'URL + balise HTML** | `https://grafycom.fr/` seulement | toi seul, 5 min |
 | Propriété de domaine (TXT) | `www`, l'apex, http et https | le webmaster |
 
 **À faire d'abord : le préfixe d'URL avec la balise HTML.** C'est la seule
-voie qui ne dépend de personne d'autre, et elle couvre `www.grafycom.fr`,
+voie qui ne dépend de personne d'autre, et elle couvre `grafycom.fr`,
 c'est-à-dire le site tel qu'il est servi aujourd'hui.
 
 La propriété de domaine viendra en second, quand le webmaster touchera à la
@@ -36,7 +36,7 @@ le même message, l'enregistrement TXT ne coûte rien de plus.
    Le compte de Sandra est le bon choix si le site est le sien ; sinon le
    tien, en lui donnant ensuite un accès « propriétaire délégué ».
 2. « Ajouter une propriété » → colonne de **droite**, « Préfixe de l'URL ».
-3. Saisir exactement : `https://www.grafycom.fr/`
+3. Saisir exactement : `https://grafycom.fr/`
 4. Dans la liste des méthodes de validation, déplier **« Balise HTML »**.
    Google affiche une ligne de ce genre :
 

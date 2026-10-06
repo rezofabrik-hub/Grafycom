@@ -166,7 +166,7 @@ Texte de départ, à réécrire avec ses mots :
 > qui me semble utile, ou inutile.
 >
 > Sandra — Grafycom
-> 07 82 92 19 81 · sandra.grafycom@gmail.com · www.grafycom.fr
+> 07 82 92 19 81 · sandra.grafycom@gmail.com · grafycom.fr
 >
 > *Vous recevez ce courrier parce que votre immatriculation a été publiée
 > au BODACC. Dites-le-moi d'un mot et je retire votre entreprise de ma

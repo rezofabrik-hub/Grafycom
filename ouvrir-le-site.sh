@@ -54,7 +54,7 @@ User-agent: *
 Allow: /
 Disallow: /merci.html
 
-Sitemap: https://www.grafycom.fr/sitemap.xml
+Sitemap: https://grafycom.fr/sitemap.xml
 ROBOTS
 
 # 5. Vérifications. Mieux vaut échouer ici qu'en ligne.

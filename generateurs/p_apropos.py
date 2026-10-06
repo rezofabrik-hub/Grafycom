@@ -6,7 +6,7 @@ JSONLD = """{
   "@type": "Person",
   "name": "Sandra",
   "jobTitle": "Infographiste et chef de projet",
-  "worksFor": { "@type": "Organization", "name": "Grafycom", "url": "https://www.grafycom.fr/" },
+  "worksFor": { "@type": "Organization", "name": "Grafycom", "url": "https://grafycom.fr/" },
   "address": { "@type": "PostalAddress", "addressLocality": "Perpignan", "addressCountry": "FR" },
   "knowsLanguage": [ "fr", "es" ]
 }"""

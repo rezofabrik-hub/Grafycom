@@ -70,7 +70,7 @@ def jsonld(ville, cp, slug):
   "@type": "ProfessionalService",
   "name": "Grafycom — infographiste à %s",
   "description": "Création de logo, identité visuelle et supports de communication à %s (%s).",
-  "url": "https://www.grafycom.fr/%s",
+  "url": "https://grafycom.fr/%s",
   "telephone": "+33782921981",
   "email": "%s",
   "slogan": "L'image qui vous ressemble",

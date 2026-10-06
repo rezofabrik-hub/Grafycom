@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fait pointer grafycom.fr (sans www) vers GitHub Pages, dans Route 53.
 
-Aujourd'hui seul www.grafycom.fr résout : quelqu'un qui tape « grafycom.fr »
+Aujourd'hui seul grafycom.fr résout : quelqu'un qui tape « grafycom.fr »
 dans sa barre d'adresse tombe sur une erreur. Il manque quatre
 enregistrements A sur le domaine nu. GitHub redirige ensuite tout seul vers
 www, puisque c'est lui le domaine personnalisé du dépôt.

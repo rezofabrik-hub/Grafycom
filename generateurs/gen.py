@@ -2,7 +2,7 @@
 """Assemble les pages du site Grafycom (en-tete/pied communs + contenu par page)."""
 import os, io, pathlib
 
-SITE = "https://www.grafycom.fr"
+SITE = "https://grafycom.fr"
 
 # Mode chantier : passer à False pour ouvrir le site au public et aux moteurs.
 CONSTRUCTION = False

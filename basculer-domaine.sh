@@ -1,7 +1,7 @@
 #!/bin/sh
 # Bascule le site de l'adresse GitHub Pages vers un vrai nom de domaine.
 #
-#   ./basculer-domaine.sh www.grafycom.fr
+#   ./basculer-domaine.sh grafycom.fr
 #
 # À lancer le jour où le domaine est acheté, depuis la racine du dépôt.
 # Ensuite : git add -A && git commit && git push, puis renseigner le domaine

@@ -16,15 +16,15 @@ HTML = """<!DOCTYPE html>
 <title>Grafycom — Site en construction | Perpignan</title>
 <meta name="description" content="Grafycom, studio de communication visuelle à Perpignan. Le site est en cours de préparation. Sandra reste joignable au %(tel)s.">
 <meta name="robots" content="noindex, follow">
-<link rel="canonical" href="https://www.grafycom.fr/">
+<link rel="canonical" href="https://grafycom.fr/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Grafycom">
 <meta property="og:title" content="Grafycom — L'image qui vous ressemble">
 <meta property="og:description" content="Studio de communication visuelle à Perpignan. Site en cours de préparation.">
-<meta property="og:url" content="https://www.grafycom.fr/">
-<meta property="og:image" content="https://www.grafycom.fr/assets/img/logo-grafycom-carre.jpg">
+<meta property="og:url" content="https://grafycom.fr/">
+<meta property="og:image" content="https://grafycom.fr/assets/img/logo-grafycom-carre.jpg">
 
 <link rel="icon" href="assets/img/logo-grafycom-carre.jpg">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">

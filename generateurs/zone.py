@@ -96,7 +96,7 @@ JSONLD = """{
   "@type": "ProfessionalService",
   "name": "Grafycom",
   "description": "Infographiste à Perpignan intervenant dans tout le département des Pyrénées-Orientales.",
-  "url": "https://www.grafycom.fr/zone-intervention.html",
+  "url": "https://grafycom.fr/zone-intervention.html",
   "telephone": "+33782921981",
   "address": { "@type": "PostalAddress", "addressLocality": "Perpignan", "postalCode": "66000", "addressCountry": "FR" },
   "areaServed": { "@type": "AdministrativeArea", "name": "Pyrénées-Orientales" },

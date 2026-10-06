@@ -182,7 +182,7 @@ def lire_exclusions() -> set[str]:
 def appeler(params: dict) -> dict:
     url = BODACC + "?" + urllib.parse.urlencode(params)
     requete = urllib.request.Request(
-        url, headers={"User-Agent": "veille-grafycom/1.0 (+https://www.grafycom.fr)"}
+        url, headers={"User-Agent": "veille-grafycom/1.0 (+https://grafycom.fr)"}
     )
     for essai in range(4):
         try:
@@ -315,7 +315,7 @@ def classer(texte_activite: str, forme: str) -> tuple[int, str]:
 
 
 ANNUAIRE = "https://recherche-entreprises.api.gouv.fr/search"
-AGENT = "veille-grafycom/1.0 (+https://www.grafycom.fr)"
+AGENT = "veille-grafycom/1.0 (+https://grafycom.fr)"
 
 # Une seule connexion, reutilisee pour tous les appels.
 #

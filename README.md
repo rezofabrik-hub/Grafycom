@@ -23,7 +23,7 @@ puis ouvrir <http://localhost:8000>.
 
 ## ⚠ Le site est en mode chantier
 
-La racine `https://www.grafycom.fr/` affiche une **page d'attente** : logo,
+La racine `https://grafycom.fr/` affiche une **page d'attente** : logo,
 promesse en une phrase, téléphone et courriel. L'activité ne s'arrête pas — un
 visiteur qui arrive peut appeler ou écrire.
 
@@ -168,7 +168,7 @@ grep -rl 'sandra.grafycom@gmail.com' . | xargs sed -i 's/sandra\.grafycom@gmail\
 
 ### 4. Nom de domaine — fait
 
-Le site est publié sur **https://www.grafycom.fr**. Les balises canoniques, le
+Le site est publié sur **https://grafycom.fr**. Les balises canoniques, le
 `sitemap.xml`, le `robots.txt` et les chemins de la page 404 pointent vers cette
 adresse, et le fichier `CNAME` la déclare à GitHub Pages.
 
