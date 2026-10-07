@@ -469,29 +469,29 @@ def corps_html(prospects: list[dict], debut: dt.date, fin: dt.date,
     h = []
     h.append('<div style="font-family:-apple-system,BlinkMacSystemFont,'
              'Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;'
-             'line-height:1.5;color:#1a1a1a;max-width:640px;margin:0 auto;'
+             'line-height:1.5;color:#2f2723;max-width:640px;margin:0 auto;'
              'padding:16px">')
     h.append('<h1 style="font-size:19px;margin:0 0 4px">Nouvelles entreprises '
              'des Pyrénées-Orientales</h1>')
-    h.append('<p style="margin:0 0 18px;color:#666;font-size:13px">Créations '
+    h.append('<p style="margin:0 0 18px;color:#a2897c;font-size:13px">Créations '
              'publiées au BODACC du %s au %s</p>' % (debut.strftime("%d/%m"),
                                                      fin.strftime("%d/%m/%Y")))
 
     if not prospects:
-        h.append('<p style="background:#f4f4f4;padding:14px;border-radius:6px;'
+        h.append('<p style="background:#f7f1ef;padding:14px;border-radius:6px;'
                  'margin:0">Aucune nouvelle création à signaler aujourd\'hui. '
                  'Les %d annonces de la période étaient déjà connues ou sans '
                  'rapport avec l\'activité.</p>' % total)
         h.append('</div>')
         return "\n".join(h)
 
-    h.append('<p style="background:#eef6ff;padding:12px 14px;border-radius:6px;'
+    h.append('<p style="background:#f3eae9;padding:12px 14px;border-radius:6px;'
              'margin:0 0 20px"><strong>%d entreprise%s à regarder</strong>, '
              'sur %d créations publiées.</p>'
              % (len(prospects), "s" if len(prospects) > 1 else "", total))
 
     if not avec_adresses:
-        h.append('<p style="background:#fff6e5;padding:12px 14px;'
+        h.append('<p style="background:#efe4dd;padding:12px 14px;'
                  'border-radius:6px;margin:0 0 20px;font-size:14px">'
                  '⚠ Les adresses n\'ont pas été vérifiées pour cet envoi. '
                  'Ne rien expédier avant de les contrôler : le droit '
@@ -507,8 +507,8 @@ def corps_html(prospects: list[dict], debut: dt.date, fin: dt.date,
                             ETOILES.get(groupe[0]["note"], ""), len(groupe)))
         for p in groupe:
             h.append('<div style="margin:0 0 14px;padding-left:10px;'
-                     'border-left:2px solid #e5e5e5">')
-            h.append('<div><strong>%s</strong> <span style="color:#666">— %s '
+                     'border-left:2px solid #e4d5cc">')
+            h.append('<div><strong>%s</strong> <span style="color:#a2897c">— %s '
                      '(%s)</span></div>' % (echapper(p["nom"]),
                                             echapper(p["ville"]),
                                             echapper(p["code_postal"])))
@@ -522,7 +522,7 @@ def corps_html(prospects: list[dict], debut: dt.date, fin: dt.date,
                 h.append('<div style="color:#444">à l\'attention de %s</div>'
                          % echapper(p["dirigeant"]))
             if p["diffusion"] == "non vérifié":
-                h.append('<div style="color:#b35309">⚠ diffusion non vérifiée '
+                h.append('<div style="color:#f2585c">⚠ diffusion non vérifiée '
                          '— ne rien envoyer</div>')
             act = p["activite"][:200] + ("…" if len(p["activite"]) > 200 else "")
             h.append('<div style="color:#555;font-size:14px;margin-top:2px">%s'
@@ -535,7 +535,7 @@ def corps_html(prospects: list[dict], debut: dt.date, fin: dt.date,
                      '</div>' % echapper(" · ".join(reperes)))
             h.append('</div>')
 
-    h.append('<hr style="border:0;border-top:1px solid #e5e5e5;margin:26px 0 12px">')
+    h.append('<hr style="border:0;border-top:1px solid #e4d5cc;margin:26px 0 12px">')
     h.append('<p style="color:#888;font-size:12px;margin:0">'
              'Source : BODACC (données ouvertes). Le bulletin ne publie '
              'aucune adresse e-mail ni téléphone : la prise de contact se '

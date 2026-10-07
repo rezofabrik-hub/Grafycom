@@ -65,7 +65,7 @@ def en_html(markdown: str) -> str:
             if dans_code:
                 sortie.append("</pre>")
             else:
-                sortie.append('<pre style="background:#f6f6f6;padding:10px;'
+                sortie.append('<pre style="background:#f7f1ef;padding:10px;'
                               'border-radius:5px;overflow-x:auto;'
                               'font-size:13px">')
             dans_code = not dans_code
@@ -78,7 +78,7 @@ def en_html(markdown: str) -> str:
         # Gras et italique, apres echappement pour ne pas casser le HTML.
         t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
         t = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", t)
-        t = re.sub(r"`(.+?)`", r'<code style="background:#f0f0f0;'
+        t = re.sub(r"`(.+?)`", r'<code style="background:#efe4dd;'
                                r'padding:1px 4px;border-radius:3px">\1</code>', t)
 
         if not t:
@@ -95,7 +95,7 @@ def en_html(markdown: str) -> str:
             continue
         if t.startswith("---"):
             ferme_liste()
-            sortie.append('<hr style="border:0;border-top:1px solid #e0e0e0;'
+            sortie.append('<hr style="border:0;border-top:1px solid #e4d5cc;'
                           'margin:20px 0">')
             continue
         if re.match(r"^(-|\d+\.)\s", brute.strip()):
@@ -114,15 +114,15 @@ def en_html(markdown: str) -> str:
 
     return ('<div style="font-family:-apple-system,BlinkMacSystemFont,'
             'Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:15px;'
-            'line-height:1.55;color:#1a1a1a;max-width:640px;margin:0 auto;'
+            'line-height:1.55;color:#2f2723;max-width:640px;margin:0 auto;'
             'padding:16px">'
-            '<p style="background:#eef6ff;padding:12px 14px;border-radius:6px;'
+            '<p style="background:#f3eae9;padding:12px 14px;border-radius:6px;'
             'margin:0 0 20px;font-size:14px">Propositions de publications, '
             '<strong>à relire avant toute publication</strong>. Rien n\'a été '
             'publié et rien ne le sera automatiquement : la mise en ligne se '
             'fait à la main, depuis Meta Business Suite.</p>'
             + "\n".join(sortie) +
-            '<hr style="border:0;border-top:1px solid #e0e0e0;margin:24px 0 12px">'
+            '<hr style="border:0;border-top:1px solid #e4d5cc;margin:24px 0 12px">'
             '<p style="color:#888;font-size:12px;margin:0">Préparé par '
             'l\'agent social-grafycom. Pour demander une correction, répondre '
             'à ce message.</p></div>')

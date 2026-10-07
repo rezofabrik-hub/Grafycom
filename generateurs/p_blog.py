@@ -155,9 +155,21 @@ def convertir(markdown: str) -> tuple[str, str]:
     return titre, "\n".join(sortie)
 
 
-def lire_articles() -> list[dict]:
-    """Tous les articles du dossier, du plus récent au plus ancien."""
-    articles = []
+def VALIDE(statut: str) -> bool:
+    """Le statut autorise-t-il la publication ?
+
+    Volontairement strict : on cherche le mot « validé » en toutes
+    lettres. « rédigé », « à relire », « prêt » ne suffisent pas — ils
+    décrivent l'état du texte, pas l'accord de Laurent.
+    """
+    s = (statut or "").strip().lower()
+    return s.startswith("validé") or s.startswith("valide")
+
+
+def lire_articles() -> tuple[list[dict], list[tuple]]:
+    """Les articles validés, et la liste de ceux qui attendent."""
+    articles: list[dict] = []
+    attente: list[tuple] = []
     for f in sorted(ARTICLES.glob("*.md")):
         meta, corps = entete(f.read_text(encoding="utf-8"))
         titre_h1, html = convertir(corps)
@@ -165,6 +177,17 @@ def lire_articles() -> list[dict]:
         slug = meta.get("slug") or f.stem
         if not titre or not slug:
             print("  ignoré (en-tête incomplet) : %s" % f.name)
+            continue
+        # VERROU DE VALIDATION
+        # Un article ne part en ligne que si son en-tête porte
+        # « statut: validé ». Tout autre statut, ou aucun, le laisse en
+        # attente : il n'est ni publié, ni indexé, et sa page est retirée
+        # du site si elle y était.
+        # La règle vient de Laurent, le 7 octobre 2026 : rien ne se publie
+        # sans son accord. Ne pas la contourner en écrivant « validé » à sa
+        # place — c'est lui qui le fait, article par article.
+        if not VALIDE(meta.get("statut", "")):
+            attente.append((f.name, meta.get("statut", "(aucun statut)"), slug))
             continue
         # Le chapô : le premier paragraphe, qui sert aussi de résumé
         # sur l'index. Pas de résumé à écrire deux fois.
@@ -176,9 +199,15 @@ def lire_articles() -> list[dict]:
             "meta": meta.get("meta", chapo[:155]),
             "html": html, "chapo": chapo,
             "fichier": "blog-%s.html" % slug,
+            # L'illustration d'en-tete, produite par
+            # reseaux/illustrations.py depuis la charte du site. Le champ
+            # est facultatif : un article sans illustration s'affiche
+            # simplement sans.
+            "illustration": meta.get("illustration", ""),
+            "alt": meta.get("illustration_alt", ""),
         })
     articles.sort(key=lambda a: a["date"], reverse=True)
-    return articles
+    return articles, attente
 
 
 def jsonld_article(a: dict) -> str:
@@ -207,6 +236,28 @@ def jsonld_article(a: dict) -> str:
     }, ensure_ascii=False, indent=1)
 
 
+def figure(a: dict) -> str:
+    """La figure d'en-tete, si l'article en declare une.
+
+    Le texte alternatif est obligatoire des qu'il y a une image : une
+    illustration qui porte l'argument de l'article doit etre lisible par
+    quelqu'un qui ne la voit pas.
+    """
+    if not a.get("illustration"):
+        return ""
+    alt = a.get("alt") or ""
+    if not alt:
+        raise SystemExit(
+            "%s declare une illustration sans « illustration_alt ». "
+            "Ajouter une description dans l'en-tete du .md." % a["slug"])
+    return ('    <figure class="illu-article">\n'
+            '      <img src="assets/img/blog/%s" alt="%s" '
+            'width="1200" height="630" loading="eager">\n'
+            '    </figure>\n'
+            % (_html.escape(a["illustration"], quote=True),
+               _html.escape(alt, quote=True)))
+
+
 def page_article(a: dict) -> None:
     corps = """<section class="heros">
   <div class="conteneur">
@@ -221,7 +272,7 @@ def page_article(a: dict) -> None:
 
 <section>
   <div class="conteneur conteneur-texte article">
-%(html)s
+%(illustration)s%(html)s
   </div>
 </section>
 
@@ -231,7 +282,8 @@ def page_article(a: dict) -> None:
   </div>
 </section>
 """ % {"titre": _html.escape(a["titre"]), "date": a["date"],
-       "date_fr": en_francais(a["date"]), "html": a["html"]}
+       "date_fr": en_francais(a["date"]), "html": a["html"],
+       "illustration": figure(a)}
 
     corps += appel("Un projet en préparation&nbsp;?",
                    "Un premier échange est gratuit, et franc — y compris "
@@ -330,12 +382,34 @@ def main():
     if not ARTICLES.exists():
         print("reseaux/blog/ n'existe pas : rien à produire.")
         return
-    articles = lire_articles()
+    articles, attente = lire_articles()
     for a in articles:
         page_article(a)
     page_index(articles)
     maj_sitemap(articles)
+
+    # Un article dépublié doit disparaître du site, pas seulement cesser
+    # d'être ajouté : sa page resterait sinon en ligne, atteignable par
+    # son adresse directe et par les moteurs.
+    retires = []
+    for nom, statut, slug in attente:
+        page = RACINE / ("blog-%s.html" % slug)
+        if page.exists():
+            page.unlink()
+            retires.append(page.name)
+
     print("  %d article(s) publié(s)." % len(articles))
+    if attente:
+        print("  %d en attente de validation :" % len(attente))
+        for nom, statut, slug in attente:
+            print("      %-46s statut : %s" % (nom, statut))
+    if retires:
+        print("  %d page(s) retirée(s) du site :" % len(retires))
+        for r in retires:
+            print("      %s" % r)
+    if attente:
+        print("\n  Pour publier : mettre « statut: validé » dans l'en-tête")
+        print("  du .md, puis relancer ce script.")
 
 
 main()

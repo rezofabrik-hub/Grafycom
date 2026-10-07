@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from gen import page, MAIL, TEL, TEL_URI
 
-TODO = '<mark style="background:#fdf0c9;padding:2px 6px;border-radius:4px">[À COMPLÉTER&nbsp;: %s]</mark>'
+TODO = '<mark style="background:#f9c33f;padding:2px 6px;border-radius:4px">[À COMPLÉTER&nbsp;: %s]</mark>'
 
 ML = ("""
 <section class="heros">

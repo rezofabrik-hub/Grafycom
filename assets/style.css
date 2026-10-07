@@ -458,3 +458,9 @@ footer a:hover { color: #fff; }
   margin: 0 0 10px; font-size: 14px; color: var(--brun);
 }
 .note-demarches:last-child { margin-bottom: 0; color: var(--brun-clair); }
+
+/* Illustration d'en-tete d'article : pleine largeur de la
+   colonne de texte, coins arrondis comme les cartes. */
+.illu-article { margin: 0 0 34px; }
+.illu-article img { width: 100%; height: auto; display: block;
+  border-radius: var(--radius); box-shadow: var(--ombre-xs); }

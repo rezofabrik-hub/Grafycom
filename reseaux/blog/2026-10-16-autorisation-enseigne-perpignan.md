@@ -3,6 +3,8 @@ titre: "Enseigne de commerce : comment obtenir l'autorisation préalable dans le
 slug: autorisation-enseigne-perpignan
 date: 2026-10-16
 meta: "Autorisation préalable d'enseigne : Cerfa 16308*01, dépôt en mairie, RLP et secteur protégé. Le guide pour les commerces du 66."
+illustration: enseigne.png
+illustration_alt: "Deux devantures identiques cote a cote : celle de droite est entouree d'un pointille rouge marquant le secteur protege, ou l'autorisation prealable s'impose."
 statut: rédigé, en attente de la rubrique blog
 ---
 

@@ -48,19 +48,14 @@ MARGE = 86
 PSEUDO = "@grafycom.graphiste"    # avec le point. C'est une constante
                                   # justement pour qu'il ne se perde plus.
 
-# La charte, reprise des variables CSS du site.
-C = {
-    "creme":  "#f7f1ef",
-    "blanc":  "#ffffff",
-    "encre":  "#2f2723",
-    "violet": "#a86cd0",
-    "bleu":   "#2f7fc4",
-    "corail": "#f2585c",
-    "rose":   "#e75ba6",
-    "vert":   "#3a6b4a",
-    "jaune":  "#f5e6a8",
-    "brun":   "#6d5a50",
-}
+# La charte n'est plus recopiee ici : elle est LUE dans la feuille de
+# style du site, par generateurs/charte.py. Recopier une palette, c'est
+# la laisser deriver — et elle avait derive. Mesure le 7 octobre 2026 :
+# ce fichier ecrivait un jaune #f5e6a8 la ou le site dit #f9c33f, un vert
+# #3a6b4a introuvable dans la charte, et ignorait neuf couleurs du site.
+sys.path.insert(0, str(RACINE.parent / "generateurs"))
+from charte import C, DEGRADE  # noqa: E402
+from charte import couleur as teinte  # noqa: E402
 
 
 def police(graisse: int, taille: int) -> ImageFont.FreeTypeFont:
@@ -92,7 +87,7 @@ class Planche:
 
     def __init__(self, fond="creme", large=LARGE, haut=HAUT):
         self.l, self.h = large, haut
-        self.im = Image.new("RGB", (large, haut), C.get(fond, fond))
+        self.im = Image.new("RGB", (large, haut), teinte(fond))
         self.d = ImageDraw.Draw(self.im)
         self.y = MARGE
 
@@ -100,7 +95,7 @@ class Planche:
     def bandeau_bas(self, couleur="violet", part=0.33):
         """Un aplat plein sur le bas de la planche."""
         haut = int(self.h * (1 - part))
-        self.d.rectangle([0, haut, self.l, self.h], fill=C.get(couleur, couleur))
+        self.d.rectangle([0, haut, self.l, self.h], fill=teinte(couleur))
         return self
 
     # -- texte -------------------------------------------------------
@@ -109,7 +104,7 @@ class Planche:
         if y is not None:
             self.y = y
         for ligne in couper(texte, f, self.l - 2 * MARGE):
-            self.d.text((MARGE, self.y), ligne, font=f, fill=C.get(couleur, couleur))
+            self.d.text((MARGE, self.y), ligne, font=f, fill=teinte(couleur))
             self.y += int(taille * interligne)
         return self
 
@@ -118,7 +113,7 @@ class Planche:
         f = police(graisse, taille)
         self.y += avant
         for ligne in couper(contenu, f, self.l - 2 * MARGE):
-            self.d.text((MARGE, self.y), ligne, font=f, fill=C.get(couleur, couleur))
+            self.d.text((MARGE, self.y), ligne, font=f, fill=teinte(couleur))
             self.y += int(taille * interligne)
         return self
 
@@ -126,14 +121,14 @@ class Planche:
         """Le pseudo, en bas à gauche. Jamais saisi à la main ailleurs."""
         f = police(600, 26)
         self.d.text((MARGE, self.h - MARGE - 26), PSEUDO, font=f,
-                    fill=C.get(couleur, couleur))
+                    fill=teinte(couleur))
         return self
 
     def numero(self, n, total, couleur="brun"):
         f = police(600, 24)
         t = "%d/%d" % (n, total)
         self.d.text((self.l - MARGE - f.getlength(t), MARGE - 30), t,
-                    font=f, fill=C.get(couleur, couleur))
+                    font=f, fill=teinte(couleur))
         return self
 
     # -- formes ------------------------------------------------------
@@ -144,7 +139,7 @@ class Planche:
         espace = (self.l - 2 * MARGE - n * diam) // max(n - 1, 1)
         x = MARGE
         for i, c in enumerate(couleurs):
-            self.d.ellipse([x, y, x + diam, y + diam], fill=C.get(c, c))
+            self.d.ellipse([x, y, x + diam, y + diam], fill=teinte(c))
             if legendes and legendes[i]:
                 f = police(600, 25)
                 for j, l in enumerate(legendes[i].split("\n")):
@@ -167,7 +162,7 @@ class Planche:
         ecart = self.l - 2 * MARGE - 2 * larg
         for i, fond in enumerate((gauche, droite)):
             x = MARGE + i * (larg + ecart)
-            self.d.rectangle([x, y, x + larg, y + haut], fill=C.get(fond, fond))
+            self.d.rectangle([x, y, x + larg, y + haut], fill=teinte(fond))
             w = f.getlength(texte)
             self.d.text((x + (larg - w) / 2, y + haut / 2 - 75), texte,
                         font=f, fill=C["blanc"])
@@ -175,9 +170,22 @@ class Planche:
         return self
 
     def fleche(self, couleur="corail", y=None, taille=54):
+        """Une fleche TRACEE, pas ecrite.
+
+        Inter n'a pas le glyphe « → » : ecrit avec cette police, il
+        sortait en carre vide — et il sortait ainsi dans les visuels deja
+        produits. Un trait et un triangle ne dependent d'aucune police.
+        """
         y = self.y if y is None else y
-        f = police(800, taille)
-        self.d.text((MARGE, y), "→", font=f, fill=C.get(couleur, couleur))
+        t = teinte(couleur)
+        long_, ep = int(taille * 1.25), max(3, taille // 13)
+        cy = y + taille // 2
+        self.d.line([(MARGE, cy), (MARGE + long_ - taille // 3, cy)],
+                    fill=t, width=ep)
+        self.d.polygon([(MARGE + long_, cy),
+                        (MARGE + long_ - taille // 2.6, cy - taille // 4),
+                        (MARGE + long_ - taille // 2.6, cy + taille // 4)],
+                       fill=t)
         self.y = y + taille + 20
         return self
 
@@ -203,27 +211,27 @@ class Planche:
 
     # -- formes supplementaires ----------------------------------------
     def devanture(self, x, y, larg, haut, mot, graisse, taille,
-                  fond="#e8e2dc", bandeau="#2f2723", texte_couleur="#f7f1ef"):
+                  fond="sable", bandeau="encre", texte_couleur="creme"):
         """Une facade schematique avec son enseigne, pour le test A/B."""
-        self.d.rectangle([x, y, x + larg, y + haut], fill=fond)
+        self.d.rectangle([x, y, x + larg, y + haut], fill=teinte(fond))
         hb = int(haut * 0.26)
-        self.d.rectangle([x, y, x + larg, y + hb], fill=bandeau)
+        self.d.rectangle([x, y, x + larg, y + hb], fill=teinte(bandeau))
         f = police(graisse, taille)
         w = f.getlength(mot)
         self.d.text((x + (larg - w) / 2, y + hb / 2 - taille * 0.62), mot,
-                    font=f, fill=texte_couleur)
+                    font=f, fill=teinte(texte_couleur))
         # La vitrine, pour que ca ressemble a un commerce.
         self.d.rectangle([x + larg * .12, y + hb + haut * .18,
-                          x + larg * .88, y + haut * .86], fill="#cfc6bd")
+                          x + larg * .88, y + haut * .86], fill=teinte("sable_fonce"))
         return self
 
     def pastille(self, x, y, texte, fond, couleur="blanc", taille=30, pad=16):
         f = police(800, taille)
         w = f.getlength(texte)
         self.d.rounded_rectangle([x, y, x + w + pad * 2, y + taille + pad],
-                                 radius=(taille + pad) // 2, fill=C.get(fond, fond))
+                                 radius=(taille + pad) // 2, fill=teinte(fond))
         self.d.text((x + pad, y + pad / 2 - 2), texte, font=f,
-                    fill=C.get(couleur, couleur))
+                    fill=teinte(couleur))
         return w + pad * 2
 
     def flouter(self, rayon=14):
@@ -238,7 +246,7 @@ class Planche:
         ft, fl = police(600, 24), police(600, 30)
         haut = 30 + 34 + len(lignes) * 44 + 24
         self.d.rounded_rectangle([MARGE, y, self.l - MARGE, y + haut],
-                                 radius=28, fill=C.get(fond, fond))
+                                 radius=28, fill=teinte(fond))
         self.d.text((MARGE + 30, y + 24), titre.upper(), font=ft, fill=C["brun"])
         for i, l in enumerate(lignes):
             self.d.text((MARGE + 30, y + 66 + i * 44), l, font=fl, fill=C["encre"])
@@ -267,12 +275,12 @@ def carrousel_couleurs(dossier=None):
 
     p = Planche("blanc")
     p.titre("Avant même de lire votre nom…", 62, y=170)
-    p.disques(["vert", "bleu", "rose"], y=460)
+    p.disques(["turquoise", "bleu", "rose"], y=460)
     p.texte("Le client a déjà deviné votre secteur.", 42, "encre", 600, avant=90)
     faits.append(p.ecrire(d / "02.png"))
 
     p = Planche("blanc")
-    p.disques(["vert", "bleu", "rose"],
+    p.disques(["turquoise", "bleu", "rose"],
               ["BIO\nSANTÉ", "BANQUE\nCONSEIL", "SOIN\nENFANCE"], y=250)
     p.titre("Ce ne sont pas des règles.\nCe sont des réflexes.", 66, y=820)
     faits.append(p.ecrire(d / "03.png"))
@@ -562,9 +570,9 @@ def plans_reel_halloween(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-halloween"))
     f = []
     plans = [
-        ("#111111", "#f5883c", "Pourquoi Halloween\nest orange et noir", ""),
-        ("#f5883c", "#111111", "Le contraste\nmaximal", "On le repère avant de comprendre ce qu'on regarde."),
-        ("#111111", "#f5883c", "La nature\nl'utilise déjà", "Guêpes, serpents, rubans de chantier.\nLe message : attention."),
+        ("encre", "orange", "Pourquoi Halloween\nest orange et noir", ""),
+        ("orange", "encre", "Le contraste\nmaximal", "On le repère avant de comprendre ce qu'on regarde."),
+        ("encre", "orange", "La nature\nl'utilise déjà", "Guêpes, serpents, rubans de chantier.\nLe message : attention."),
         ("creme", "encre", "Et pour\nvotre vitrine ?", "Parfait en saisonnier.\nÉpuisant toute l'année."),
         ("violet", "blanc", "Une couleur\nn'est jamais neutre.", "Elle dit quelque chose avant vous."),
     ]
