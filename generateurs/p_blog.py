@@ -32,7 +32,7 @@ import pathlib
 import re
 from datetime import date as _date
 
-from gen import page, appel, SITE
+from gen import page, appel, SITE, DEBUT_RETOUR, FIN_RETOUR
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 ARTICLES = RACINE / "reseaux" / "blog"
@@ -447,10 +447,6 @@ def page_index(articles: list[dict]) -> None:
          "réglementation des enseignes, choix des supports, préparation "
          "des fichiers d'impression.",
          corps, ogtitle="Le blog de Grafycom")
-
-
-DEBUT_RETOUR = "<!-- blog : articles liés, bloc généré -->"
-FIN_RETOUR = "<!-- fin articles liés -->"
 
 
 def maj_liens_retour(articles: list[dict]) -> None:

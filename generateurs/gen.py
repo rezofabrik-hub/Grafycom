@@ -227,6 +227,46 @@ def demarches():
        "date": DEMARCHES_VERIFIE}
 
 
+# Marqueurs du bloc « A lire aussi », pose par p_blog.maj_liens_retour().
+# Ils sont declares ici parce que page() doit les connaitre pour ne pas
+# effacer le bloc ; p_blog les importe de son cote.
+DEBUT_RETOUR = "<!-- blog : articles liés, bloc généré -->"
+FIN_RETOUR = "<!-- fin articles liés -->"
+
+
+def _garde_liens_retour(chemin, html):
+    """Reporte le bloc « A lire aussi » deja present dans la page.
+
+    page() reecrit la page entiere depuis son modele. Sans cette reprise,
+    relancer pays.py ou tout autre generateur effacerait silencieusement
+    les liens vers les articles parus : la page resterait correcte, mais
+    le maillage interne disparaitrait sans que rien ne le signale, jusqu'a
+    la prochaine execution de p_blog.py.
+
+    Plutot que d'imposer un ordre d'execution - qu'on oublie un jour -, on
+    rend la reprise automatique. p_blog.py recalculera le bloc de toute
+    facon a son prochain passage.
+    """
+    if not os.path.exists(chemin):
+        return html
+    try:
+        with io.open(chemin, encoding="utf-8") as f:
+            ancien = f.read()
+    except OSError:
+        return html
+    if DEBUT_RETOUR not in ancien or FIN_RETOUR not in ancien:
+        return html
+    bloc = (DEBUT_RETOUR
+            + ancien.split(DEBUT_RETOUR, 1)[1].split(FIN_RETOUR, 1)[0]
+            + FIN_RETOUR)
+    neuf = html.replace("\n</main>", "\n" + bloc + "\n</main>", 1)
+    if neuf == html:
+        print("  %s : pas de </main>, bloc « à lire aussi » perdu"
+              % os.path.basename(chemin))
+        return html
+    return neuf
+
+
 def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow",
          ogtype="website", ogimage=None, ogdate=None):
     """ogtype / ogimage / ogdate servent aux articles du blog.
@@ -255,6 +295,8 @@ def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow
                        verif=verif)
     html += body
     html += FOOT.format(mail=MAIL, tel=TEL, tel_uri=TEL_URI)
-    with io.open(os.path.join(OUT, slug), "w", encoding="utf-8") as f:
+    chemin = os.path.join(OUT, slug)
+    html = _garde_liens_retour(chemin, html)
+    with io.open(chemin, "w", encoding="utf-8") as f:
         f.write(html)
     print("%-24s %6d octets" % (slug, len(html.encode("utf-8"))))
