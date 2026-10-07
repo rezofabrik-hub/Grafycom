@@ -115,18 +115,3 @@ la distance réelle où les gens la découvrent, elle est conforme aux règles
 de la commune, et elle est fabricable dans les matériaux autorisés.
 
 Les trois se décident ensemble, dès le croquis. Pas l'une après l'autre.
-
-C'est le travail que nous menons avec les commerces et artisans des
-Pyrénées-Orientales : la conception graphique et la conformité réglementaire
-dans le même mouvement, puis la fabrication et la pose avec nos partenaires
-de la région.
-
-**Vous préparez l'ouverture d'un commerce ou le changement de votre
-enseigne ?** Parlons-en avant que le dossier ne parte : un échange de
-vingt minutes évite souvent plusieurs semaines de retard.
-
----
-
-*Liens internes à placer : [enseigne et signalétique à Perpignan](enseigne-perpignan.html) ·
-[ouvrir un commerce dans le 66](ouverture-commerce-66.html) ·
-[nos prestations](prestations.html)*

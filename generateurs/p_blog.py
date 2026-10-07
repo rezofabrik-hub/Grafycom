@@ -90,6 +90,7 @@ def convertir(markdown: str) -> tuple[str, str]:
     titre, sortie = "", []
     liste = None       # None, "ul" ou "ol"
     paragraphe = []    # lignes consecutives du paragraphe en cours
+    citation = []      # lignes consecutives d'une citation « > »
 
     def vide_paragraphe():
         # En Markdown, un paragraphe se termine sur une ligne vide, pas sur
@@ -99,9 +100,20 @@ def convertir(markdown: str) -> tuple[str, str]:
             sortie.append("<p>%s</p>" % en_ligne(" ".join(paragraphe)))
             paragraphe.clear()
 
+    def vide_citation():
+        # Meme principe que pour le paragraphe : les lignes « > »
+        # consecutives forment UNE citation. Sans ce regroupement, un
+        # encart de six lignes sortait en six blockquotes empiles, chacun
+        # avec sa barre violette et ses marges - ce qui se voyait.
+        if citation:
+            sortie.append("<blockquote><p>%s</p></blockquote>"
+                          % " ".join(citation))
+            citation.clear()
+
     def ferme():
         nonlocal liste
         vide_paragraphe()
+        vide_citation()
         if liste:
             sortie.append("</%s>" % liste)
             liste = None
@@ -129,10 +141,11 @@ def convertir(markdown: str) -> tuple[str, str]:
             ferme()
             continue
         if l.startswith("> "):
-            ferme()
-            sortie.append("<blockquote><p>%s</p></blockquote>"
-                          % en_ligne(l[2:].strip()))
+            vide_paragraphe()
+            citation.append(en_ligne(l[2:].strip()))
             continue
+        if citation:
+            vide_citation()
 
         puce = re.match(r"^[-*]\s+(.*)$", l)
         numero = re.match(r"^\d+\.\s+(.*)$", l)
