@@ -1,105 +1,79 @@
-# Débloquer le certificat HTTPS du domaine personnalisé.
+# Lire l'état du certificat HTTPS du domaine personnalisé.
 #
 # POURQUOI UN WORKFLOW
-# L'API Pages de GitHub est inaccessible depuis l'environnement où ce
-# dépôt est maintenu : le proxy refuse la route /pages avec un 403, alors
-# qu'il laisse passer le reste de l'API. Impossible donc d'y lire l'état
-# du certificat, ni de relancer la demande.
+# L'API Pages est refusée par le proxy de l'environnement où ce dépôt est
+# maintenu : 403 sur la route /pages, alors que le reste de l'API répond.
+# Un workflow s'exécute chez GitHub, sans ce proxy, et peut la lire.
 #
-# Un workflow, lui, s'exécute chez GitHub. Il atteint l'API sans proxy, et
-# le GITHUB_TOKEN de l'exécution suffit avec la permission pages: write.
+# CE QU'IL A SERVI À TROUVER, le 7 octobre 2026
+# L'état du certificat disait :
 #
-# CE QU'IL FAIT
-#  1. il lit l'état du domaine et du certificat, et l'affiche — c'est le
-#     message d'erreur que l'interface montre et que l'API nous refusait ;
-#  2. il redonne le domaine à Pages, ce qui relance la demande ;
-#  3. il relit l'état pour montrer ce qui a changé.
+#   state       : dns_changed
+#   description : Detected a change to DNS settings. Requesting a new
+#                 certificate.
+#   domains     : grafycom.fr, www.grafycom.fr
 #
-# Rien de destructeur : le domaine réécrit est celui du fichier CNAME.
+# GitHub demande un seul certificat pour les DEUX noms. Or
+# www.grafycom.fr n'a aucun enregistrement DNS (NXDOMAIN). L'autorité de
+# certification valide chaque nom de la demande : celle du www échoue,
+# donc aucun certificat n'est émis — pas même pour l'apex, qui est
+# pourtant correctement configuré.
+#
+# Le blocage n'est donc pas chez GitHub mais dans la zone DNS, et il se
+# lève en créant un seul enregistrement :
+#
+#   www.grafycom.fr.  CNAME  rezofabrik-hub.github.io.
+#
+# CE QUE CE WORKFLOW NE FAIT PAS
+# Il ne modifie rien. L'écriture a été tentée et refusée : le
+# GITHUB_TOKEN d'une exécution n'a pas le droit de modifier la
+# configuration Pages (403 « Resource not accessible by integration »),
+# même avec la permission pages: write. Il faudrait un jeton personnel.
+# Inutile ici : la configuration est correcte, c'est le DNS qui bloque.
 
 name: Certificat Pages
 
 on:
   workflow_dispatch:
-    inputs:
-      forcer_https:
-        description: "Cocher Enforce HTTPS (ne marche qu'une fois le certificat émis)"
-        type: boolean
-        default: false
 
 permissions:
-  pages: write
+  pages: read
 
 jobs:
-  certificat:
+  etat:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Domaine attendu, lu dans le fichier CNAME
-        id: domaine
+      - name: État du domaine et du certificat
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ ! -f CNAME ]; then
-            echo "::error::Pas de fichier CNAME à la racine, rien à faire."
-            exit 1
+          gh api "repos/${{ github.repository }}/pages" > etat.json
+          echo "## État Pages" >> "$GITHUB_STEP_SUMMARY"
+          jq -r '
+            "- domaine : `\(.cname // "aucun")`",
+            "- HTTPS imposé : `\(.https_enforced)`",
+            "- état du certificat : `\(.https_certificate.state // "aucun")`",
+            "- description : \(.https_certificate.description // "-")",
+            "- noms couverts : `\((.https_certificate.domains // []) | join("`, `"))`"
+          ' etat.json | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Chaque nom du certificat résout-il ?
+        run: |
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Résolution DNS des noms du certificat" >> "$GITHUB_STEP_SUMMARY"
+          manquant=0
+          for d in $(jq -r '(.https_certificate.domains // [])[]' etat.json); do
+            if getent hosts "$d" > /dev/null 2>&1; then
+              echo "- \`$d\` : résout" | tee -a "$GITHUB_STEP_SUMMARY"
+            else
+              echo "- \`$d\` : **NE RÉSOUT PAS** — bloque l'émission du certificat pour tous les noms" \
+                | tee -a "$GITHUB_STEP_SUMMARY"
+              manquant=1
+            fi
+          done
+          if [ "$manquant" = "1" ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "Créer l'enregistrement manquant chez l'hébergeur DNS, puis relancer ce workflow." \
+              >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning::Un nom du certificat ne résout pas : aucun certificat ne sera émis."
           fi
-          d=$(tr -d ' \t\r\n' < CNAME)
-          echo "domaine=$d" >> "$GITHUB_OUTPUT"
-          echo "Domaine attendu : $d"
-
-      - name: État actuel
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "--- GET /repos/${{ github.repository }}/pages ---"
-          gh api "repos/${{ github.repository }}/pages" > avant.json || {
-            echo "::error::Lecture de la configuration Pages refusée."
-            exit 1
-          }
-          cat avant.json
-          echo
-          echo "--- l'essentiel ---"
-          jq -r '
-            "domaine            : \(.cname // "aucun")",
-            "HTTPS impose       : \(.https_enforced)",
-            "etat du certificat : \(.https_certificate.state // "aucun certificat")",
-            "description        : \(.https_certificate.description // "-")",
-            "domaines du cert   : \((.https_certificate.domains // []) | join(", "))",
-            "domaine protege    : \(.protected_domain_state // "-")",
-            "expire le          : \(.pending_domain_unverified_at // "-")"
-          ' avant.json
-
-      - name: Redonner le domaine, ce qui relance la demande
-        env:
-          GH_TOKEN: ${{ github.token }}
-          D: ${{ steps.domaine.outputs.domaine }}
-        run: |
-          echo "On retire le domaine..."
-          gh api -X PUT "repos/${{ github.repository }}/pages" -f 'cname=' \
-            && echo "retiré" || echo "le retrait a échoué, on tente quand même la remise"
-          sleep 20
-          echo "On le remet : $D"
-          gh api -X PUT "repos/${{ github.repository }}/pages" -f "cname=$D" \
-            && echo "remis" || { echo "::error::La remise du domaine a échoué."; exit 1; }
-
-      - name: Forcer HTTPS, si demandé
-        if: ${{ inputs.forcer_https }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api -X PUT "repos/${{ github.repository }}/pages" -F https_enforced=true \
-            && echo "Enforce HTTPS activé" \
-            || echo "::warning::Enforce HTTPS refusé — le certificat n'est probablement pas encore émis."
-
-      - name: État après
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          sleep 30
-          gh api "repos/${{ github.repository }}/pages" > apres.json
-          jq -r '
-            "domaine            : \(.cname // "aucun")",
-            "HTTPS impose       : \(.https_enforced)",
-            "etat du certificat : \(.https_certificate.state // "aucun certificat")",
-            "description        : \(.https_certificate.description // "-")"
-          ' apres.json
