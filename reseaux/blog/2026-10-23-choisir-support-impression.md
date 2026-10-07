@@ -2,6 +2,7 @@
 titre: "Pourquoi vos couleurs imprimées ne ressemblent jamais à votre écran"
 slug: couleurs-impression-ecran-cmjn
 titre_seo: "Couleurs : pourquoi l'impression diffère"
+liens_retour: prestations.html, realisations.html, graphiste-cerdagne.html
 date: 2026-10-23
 meta: "RVB, CMJN, choix du papier : comprendre pourquoi l'impression diffère de l'écran, et comment éviter les mauvaises surprises."
 illustration: pantone-photo.webp

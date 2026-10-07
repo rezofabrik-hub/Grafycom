@@ -246,6 +246,12 @@ def lire_articles() -> tuple[list[dict], list[tuple]]:
             # est facultatif : un article sans illustration s'affiche
             # simplement sans.
             "titre_seo": meta.get("titre_seo", ""),
+            # Les pages du site depuis lesquelles cet article doit etre
+            # cite. Declare ici, dans l'article : tout ce qui le concerne
+            # vit dans son propre fichier.
+            "liens_retour": [x.strip() for x in
+                             meta.get("liens_retour", "").split(",")
+                             if x.strip()],
             "illustration": meta.get("illustration", ""),
             "alt": meta.get("illustration_alt", ""),
         })
@@ -315,6 +321,21 @@ def figure(a: dict) -> str:
             '    </figure>\n'
             % (_html.escape(a["illustration"], quote=True),
                _html.escape(alt, quote=True)))
+
+
+def extrait(texte: str, limite: int) -> str:
+    """Raccourcit un texte sans couper un mot en deux.
+
+    Meme raison que pour le <title> : un resume tronque au milieu d'un
+    mot (« plusieurs semaines de ret… ») se lit comme une erreur. On
+    coupe sur le dernier espace, et on retire la ponctuation restee
+    orpheline avant les points de suspension.
+    """
+    texte = texte.strip()
+    if len(texte) <= limite:
+        return texte
+    coupe = texte[:limite].rsplit(" ", 1)[0].rstrip(" ,;:.—-")
+    return (coupe or texte[:limite]) + "…"
 
 
 def titre_balise(a: dict) -> str:
@@ -391,7 +412,7 @@ def page_index(articles: list[dict]) -> None:
             '      </article>'
             % (a["date"], en_francais(a["date"]), a["fichier"],
                _html.escape(a["titre"]),
-               _html.escape(a["chapo"][:220] + ("…" if len(a["chapo"]) > 220 else "")),
+               _html.escape(extrait(a["chapo"], 220)),
                a["fichier"])
             for a in articles)
     else:
@@ -426,6 +447,105 @@ def page_index(articles: list[dict]) -> None:
          "réglementation des enseignes, choix des supports, préparation "
          "des fichiers d'impression.",
          corps, ogtitle="Le blog de Grafycom")
+
+
+DEBUT_RETOUR = "<!-- blog : articles liés, bloc généré -->"
+FIN_RETOUR = "<!-- fin articles liés -->"
+
+
+def maj_liens_retour(articles: list[dict]) -> None:
+    """Cite les articles PARUS depuis les pages de service concernées.
+
+    Pourquoi automatiquement : un lien pose a la main vers un article pas
+    encore paru est un lien mort, et un lien qu'on oublie de poser le jour
+    de la parution ne sert a rien. Ici, le bloc suit l'etat reel du blog -
+    il apparait le jour ou l'article sort, et disparait si on le depublie.
+
+    Le bloc est delimite par deux marqueurs, comme celui du sitemap : tout
+    ce qui est en dehors n'est jamais touche. Les marqueurs s'inserent
+    d'eux-memes, juste avant la fermeture de <main>, a la premiere
+    execution.
+    """
+    # page -> articles parus qui la citent
+    par_page: dict[str, list[dict]] = {}
+    for a in articles:
+        for cible in a.get("liens_retour", []):
+            par_page.setdefault(cible, []).append(a)
+
+    # Toute page ayant deja un bloc doit etre revue, meme si plus aucun
+    # article ne la cite : c'est ainsi qu'un bloc devenu caduc disparait.
+    for f in sorted(RACINE.glob("*.html")):
+        texte = f.read_text(encoding="utf-8")
+        porte_bloc = DEBUT_RETOUR in texte
+        lies = par_page.get(f.name, [])
+        if not lies and not porte_bloc:
+            continue
+
+        if lies:
+            cartes = []
+            for a in lies:
+                vignette = ""
+                if a.get("illustration"):
+                    # alt vide : le titre juste en dessous dit deja ce que
+                    # l'image montre, le repeter ferait doublon au lecteur
+                    # d'ecran. width/height evitent que la page sursaute
+                    # pendant le chargement.
+                    vignette = ('<img src="assets/img/blog/%s" alt="" '
+                                'width="1200" height="630" loading="lazy" '
+                                'style="width:100%%;height:auto;'
+                                'border-radius:12px;margin-bottom:18px">'
+                                % _html.escape(a["illustration"], quote=True))
+                cartes.append(
+                    '      <div class="carte carte-creme">%s\n'
+                    '        <p class="date-article">'
+                    '<time datetime="%s">%s</time></p>\n'
+                    '        <h3><a href="%s">%s</a></h3>\n'
+                    '        <p>%s</p>\n'
+                    '        <p><a class="lien-suite" href="%s">'
+                    'Lire l\'article →</a></p>\n'
+                    '      </div>'
+                    % (vignette, a["date"], en_francais(a["date"]),
+                       a["fichier"], _html.escape(a["titre"]),
+                       _html.escape(extrait(a["chapo"], 150)),
+                       a["fichier"]))
+            # Une grille a trois colonnes avec un seul article laisse deux
+            # tiers de vide. On prend le nombre de colonnes que le contenu
+            # remplit : la regle CSS existante repasse a une colonne sur
+            # telephone.
+            # Un article seul dans une grille pleine largeur, c'est une
+            # image de 1200 px de large pour un simple renvoi : on borne
+            # la colonne. .conteneur etant centre, le bloc reste aligne.
+            colonnes, borne = {
+                1: ("", ";max-width:640px"),
+                2: (" g2", ""),
+            }.get(len(lies), (" g3", ""))
+            bloc = (DEBUT_RETOUR + """
+<section>
+  <div class="conteneur centre">
+    <span class="eyebrow">À lire aussi</span>
+    <h2>Sur le même sujet</h2>
+    <div class="trait"></div>
+  </div>
+  <div class="conteneur grille%s" style="margin-top:40px%s">
+%s
+  </div>
+</section>
+""" % (colonnes, borne, "\n".join(cartes)) + FIN_RETOUR)
+        else:
+            bloc = DEBUT_RETOUR + "\n" + FIN_RETOUR
+
+        if porte_bloc:
+            avant = texte.split(DEBUT_RETOUR)[0]
+            apres = texte.split(FIN_RETOUR, 1)[1]
+            neuf = avant + bloc + apres
+        else:
+            neuf = texte.replace("\n</main>", "\n" + bloc + "\n</main>", 1)
+            if neuf == texte:
+                print("  %s : pas de </main>, bloc non posé" % f.name)
+                continue
+        if neuf != texte:
+            f.write_text(neuf, encoding="utf-8")
+            print("  %s : %d article(s) lié(s)" % (f.name, len(lies)))
 
 
 def maj_sitemap(articles: list[dict]) -> None:
@@ -470,6 +590,7 @@ def main():
         page_article(a)
     page_index(articles)
     maj_sitemap(articles)
+    maj_liens_retour(articles)
 
     # Un article dépublié doit disparaître du site, pas seulement cesser
     # d'être ajouté : sa page resterait sinon en ligne, atteignable par
