@@ -88,22 +88,6 @@ blanc sur la tranche.
 numéro de téléphone : on les garde à bonne distance, sinon la coupe les
 rogne.
 
-## La seule parade qui fonctionne vraiment : le bon à tirer
-
-Tout ce qui précède peut être anticipé. Mais une seule méthode donne une
-certitude : le **bon à tirer**, ou BAT.
-
-Il s'agit d'un exemplaire réel, imprimé sur le papier définitif, avec les
-encres définitives, que vous validez avant le lancement de la série. Chez
-la plupart des imprimeurs, il est gratuit ou facturé quelques euros.
-
-Comparé au coût d'un tirage de mille exemplaires à refaire, c'est
-l'investissement le plus rentable de toute la chaîne.
-
-Ne validez jamais une couleur importante — celle de votre logo, en
-particulier — sur un écran seul. Pas le vôtre, pas celui de votre
-graphiste. Les deux mentent, et ils ne mentent pas de la même façon.
-
 ## Faire préparer ses fichiers correctement
 
 Préparer un fichier d'impression, ce n'est pas exporter un PDF. C'est
@@ -112,16 +96,9 @@ les résolutions selon le support, intégrer les polices, et contrôler le BAT
 à la réception.
 
 C'est ce que nous faisons pour les entreprises et commerces des
-Pyrénées-Orientales : soit en livrant des fichiers directement exploitables
-par votre imprimeur, soit en pilotant l'impression avec nos partenaires de
-la région et en contrôlant la conformité à la livraison.
+Pyrénées-Orientales : en livrant des fichiers directement exploitables
+par votre imprimeur.
 
 **Un projet d'impression en préparation ?** Parlons-en avant l'envoi des
 fichiers. C'est le moment où l'on peut encore tout corriger sans rien
 payer.
-
----
-
-*Liens internes à placer : [nos prestations](prestations.html) ·
-[refaire son image](refaire-son-image.html) ·
-[nos réalisations](realisations.html)*

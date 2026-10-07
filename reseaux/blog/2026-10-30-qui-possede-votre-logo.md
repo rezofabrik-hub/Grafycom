@@ -51,7 +51,7 @@ En pratique, ça se gère très bien — c'est même rarement un sujet entre gen
 
 ## Comment je travaille
 
-Pour chaque identité visuelle que je livre, la cession de droits est **écrite dans le devis**, avec les quatre délimitations que la loi demande, et les fichiers sources vectoriels sont remis avec la charte graphique. Vous repartez propriétaire de l'usage de votre image, sans avoir à y revenir.
+Pour chaque identité visuelle que je livre, les fichiers sources vectoriels sont remis avec la charte graphique. Vous repartez propriétaire de l'usage de votre image, sans avoir à y revenir.
 
 Ce n'est pas un argument commercial, c'est le minimum. Un logo dont vous ne maîtrisez pas les droits n'est pas un actif de votre entreprise : c'est une dépendance.
 
