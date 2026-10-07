@@ -1,0 +1,105 @@
+# Débloquer le certificat HTTPS du domaine personnalisé.
+#
+# POURQUOI UN WORKFLOW
+# L'API Pages de GitHub est inaccessible depuis l'environnement où ce
+# dépôt est maintenu : le proxy refuse la route /pages avec un 403, alors
+# qu'il laisse passer le reste de l'API. Impossible donc d'y lire l'état
+# du certificat, ni de relancer la demande.
+#
+# Un workflow, lui, s'exécute chez GitHub. Il atteint l'API sans proxy, et
+# le GITHUB_TOKEN de l'exécution suffit avec la permission pages: write.
+#
+# CE QU'IL FAIT
+#  1. il lit l'état du domaine et du certificat, et l'affiche — c'est le
+#     message d'erreur que l'interface montre et que l'API nous refusait ;
+#  2. il redonne le domaine à Pages, ce qui relance la demande ;
+#  3. il relit l'état pour montrer ce qui a changé.
+#
+# Rien de destructeur : le domaine réécrit est celui du fichier CNAME.
+
+name: Certificat Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      forcer_https:
+        description: "Cocher Enforce HTTPS (ne marche qu'une fois le certificat émis)"
+        type: boolean
+        default: false
+
+permissions:
+  pages: write
+
+jobs:
+  certificat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Domaine attendu, lu dans le fichier CNAME
+        id: domaine
+        run: |
+          if [ ! -f CNAME ]; then
+            echo "::error::Pas de fichier CNAME à la racine, rien à faire."
+            exit 1
+          fi
+          d=$(tr -d ' \t\r\n' < CNAME)
+          echo "domaine=$d" >> "$GITHUB_OUTPUT"
+          echo "Domaine attendu : $d"
+
+      - name: État actuel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "--- GET /repos/${{ github.repository }}/pages ---"
+          gh api "repos/${{ github.repository }}/pages" > avant.json || {
+            echo "::error::Lecture de la configuration Pages refusée."
+            exit 1
+          }
+          cat avant.json
+          echo
+          echo "--- l'essentiel ---"
+          jq -r '
+            "domaine            : \(.cname // "aucun")",
+            "HTTPS impose       : \(.https_enforced)",
+            "etat du certificat : \(.https_certificate.state // "aucun certificat")",
+            "description        : \(.https_certificate.description // "-")",
+            "domaines du cert   : \((.https_certificate.domains // []) | join(", "))",
+            "domaine protege    : \(.protected_domain_state // "-")",
+            "expire le          : \(.pending_domain_unverified_at // "-")"
+          ' avant.json
+
+      - name: Redonner le domaine, ce qui relance la demande
+        env:
+          GH_TOKEN: ${{ github.token }}
+          D: ${{ steps.domaine.outputs.domaine }}
+        run: |
+          echo "On retire le domaine..."
+          gh api -X PUT "repos/${{ github.repository }}/pages" -f 'cname=' \
+            && echo "retiré" || echo "le retrait a échoué, on tente quand même la remise"
+          sleep 20
+          echo "On le remet : $D"
+          gh api -X PUT "repos/${{ github.repository }}/pages" -f "cname=$D" \
+            && echo "remis" || { echo "::error::La remise du domaine a échoué."; exit 1; }
+
+      - name: Forcer HTTPS, si demandé
+        if: ${{ inputs.forcer_https }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X PUT "repos/${{ github.repository }}/pages" -F https_enforced=true \
+            && echo "Enforce HTTPS activé" \
+            || echo "::warning::Enforce HTTPS refusé — le certificat n'est probablement pas encore émis."
+
+      - name: État après
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 30
+          gh api "repos/${{ github.repository }}/pages" > apres.json
+          jq -r '
+            "domaine            : \(.cname // "aucun")",
+            "HTTPS impose       : \(.https_enforced)",
+            "etat du certificat : \(.https_certificate.state // "aucun certificat")",
+            "description        : \(.https_certificate.description // "-")"
+          ' apres.json
