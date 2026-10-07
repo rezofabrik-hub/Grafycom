@@ -147,6 +147,11 @@ nav.principal a.actif { font-weight: 700; }
 .carte::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--degrade); opacity: 0; transition: opacity .25s; }
 .carte:hover::before { opacity: 1; }
 .carte h3 { margin-bottom: 10px; }
+/* Un titre de carte qui est un lien reste un titre : meme regle que
+   .billet h2 a sur l'index du blog. Sans elle, le titre sort souligne
+   et brun, et la carte se lit comme un bloc de liens. */
+.carte h3 a { color: inherit; text-decoration: none; }
+.carte h3 a:hover { color: var(--bleu); }
 .carte p { font-size: 15.5px; }
 .carte-creme { background: var(--creme); border-color: transparent; }
 
