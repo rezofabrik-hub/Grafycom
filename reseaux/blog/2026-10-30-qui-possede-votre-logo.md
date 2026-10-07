@@ -4,7 +4,7 @@ slug: qui-possede-votre-logo
 date: 2026-10-30
 meta: "Payer un logo ne suffit pas à en détenir les droits. Ce que dit le code de la propriété intellectuelle et ce que doit contenir votre contrat."
 illustration: droits.png
-illustration_alt: "Le meme logo agrandi deux fois : net a gauche depuis un fichier vectoriel, en gros carres de pixels a droite depuis un JPEG."
+illustration_alt: "Le même logo agrandi deux fois : net à gauche depuis un fichier vectoriel, en gros carrés de pixels à droite depuis un JPEG."
 statut: rédigé
 ---
 Un commerçant me contacte. Il veut décliner son logo sur un véhicule et une enseigne. Le logo a été créé il y a quatre ans par quelqu'un qui n'exerce plus. Il a la facture, il a un fichier JPEG, et c'est tout.
