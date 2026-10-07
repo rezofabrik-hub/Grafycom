@@ -1,6 +1,7 @@
 ---
 titre: "Pourquoi vos couleurs imprimées ne ressemblent jamais à votre écran"
 slug: couleurs-impression-ecran-cmjn
+titre_seo: "Couleurs : pourquoi l'impression diffère"
 date: 2026-10-23
 meta: "RVB, CMJN, choix du papier : comprendre pourquoi l'impression diffère de l'écran, et comment éviter les mauvaises surprises."
 illustration: pantone-photo.webp
@@ -96,7 +97,9 @@ les résolutions selon le support et intégrer les polices.
 
 C'est ce que nous faisons pour les entreprises et commerces des
 Pyrénées-Orientales : en livrant des fichiers directement exploitables
-par votre imprimeur.
+par votre imprimeur. Le détail de ce travail figure sur la page
+[prestations](prestations.html), et des exemples sur celle des
+[réalisations](realisations.html).
 
 **Un projet d'impression en préparation ?** Parlons-en avant l'envoi des
 fichiers. C'est le moment où l'on peut encore tout corriger sans rien

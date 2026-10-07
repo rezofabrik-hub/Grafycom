@@ -1,6 +1,7 @@
 ---
 titre: "Enseigne de commerce : comment obtenir l'autorisation préalable dans les Pyrénées-Orientales"
 slug: autorisation-enseigne-perpignan
+titre_seo: "Autorisation d'enseigne dans le 66"
 date: 2026-10-16
 meta: "Autorisation préalable d'enseigne : Cerfa 16308*01, dépôt en mairie, RLP et secteur protégé. Le guide pour les commerces du 66."
 illustration: enseigne-photo.webp
@@ -11,7 +12,8 @@ statut: validé
 # Enseigne de commerce : comment obtenir l'autorisation préalable dans les Pyrénées-Orientales
 
 Vous avez trouvé le local. Le bail est signé, les travaux avancent, et
-l'enseigne est commandée. C'est généralement à ce moment-là qu'une
+l'enseigne est commandée — c'est l'une des dernières étapes quand on
+[ouvre un commerce dans le 66](ouverture-commerce-66.html). C'est généralement à ce moment-là qu'une
 question tombe : **avez-vous le droit de la poser ?**
 
 La réponse surprend beaucoup de commerçants. Non, pas automatiquement. Et
@@ -115,3 +117,6 @@ la distance réelle où les gens la découvrent, elle est conforme aux règles
 de la commune, et elle est fabricable dans les matériaux autorisés.
 
 Les trois se décident ensemble, dès le croquis. Pas l'une après l'autre.
+C'est la façon dont je travaille les
+[enseignes et la signalétique](enseigne-perpignan.html) : la règle locale
+entre dans le dessin, elle ne s'y ajoute pas après coup.

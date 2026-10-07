@@ -245,6 +245,7 @@ def lire_articles() -> tuple[list[dict], list[tuple]]:
             # reseaux/illustrations.py depuis la charte du site. Le champ
             # est facultatif : un article sans illustration s'affiche
             # simplement sans.
+            "titre_seo": meta.get("titre_seo", ""),
             "illustration": meta.get("illustration", ""),
             "alt": meta.get("illustration_alt", ""),
         })
@@ -254,19 +255,35 @@ def lire_articles() -> tuple[list[dict], list[tuple]]:
 
 def jsonld_article(a: dict) -> str:
     import json
+    # Google demande une image pour un article : sans elle, la fiche
+    # n'est pas eligible aux resultats enrichis. On donne l'illustration
+    # de l'article, pas le logo du studio.
+    bloc = {"@type": "BlogPosting",
+            "headline": a["titre"],
+            "description": a["meta"],
+            "datePublished": a["date"],
+            "dateModified": a["date"],
+            "inLanguage": "fr-FR",
+            "wordCount": len(re.findall(r"[\wÀ-ÿ'’-]+",
+                                        re.sub(r"<[^>]+>", " ", a["html"]))),
+            "mainEntityOfPage": "%s/%s" % (SITE, a["fichier"]),
+            # L'auteur est une personne, pas une organisation : c'est ce
+            # que Google attend d'un article de conseil, et c'est vrai.
+            "author": {"@type": "Person", "name": "Sandra",
+                       "jobTitle": "Infographiste et chef de projet",
+                       "worksFor": {"@type": "Organization",
+                                    "name": "Grafycom", "url": SITE},
+                       "url": SITE + "/a-propos.html"},
+            "publisher": {"@type": "Organization", "name": "Grafycom",
+                          "url": SITE,
+                          "logo": {"@type": "ImageObject",
+                                   "url": SITE + "/assets/img/logo-grafycom-carre.jpg"}}}
+    if a.get("illustration"):
+        bloc["image"] = "%s/assets/img/blog/%s" % (SITE, a["illustration"])
     return json.dumps({
         "@context": "https://schema.org",
         "@graph": [
-            {"@type": "BlogPosting",
-             "headline": a["titre"],
-             "description": a["meta"],
-             "datePublished": a["date"],
-             "dateModified": a["date"],
-             "inLanguage": "fr-FR",
-             "mainEntityOfPage": "%s/%s" % (SITE, a["fichier"]),
-             "author": {"@type": "Organization", "name": "Grafycom"},
-             "publisher": {"@type": "Organization", "name": "Grafycom",
-                           "url": SITE}},
+            bloc,
             {"@type": "BreadcrumbList", "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Accueil",
                  "item": SITE + "/"},
@@ -298,6 +315,27 @@ def figure(a: dict) -> str:
             '    </figure>\n'
             % (_html.escape(a["illustration"], quote=True),
                _html.escape(alt, quote=True)))
+
+
+def titre_balise(a: dict) -> str:
+    """Le <title>, celui que Google affiche dans ses resultats.
+
+    L'ancienne version coupait a 62 caracteres sans egard pour les mots :
+    « ...comment obtenir l'autorisation prealabl | Grafycom ». Un mot
+    tronque dans un resultat de recherche, c'est un clic perdu.
+
+    Deux corrections. Un article peut declarer « titre_seo » dans son
+    en-tete : un titre court ecrit pour la recherche, qui n'a pas a etre
+    celui affiche en haut de la page. A defaut, on coupe sur le dernier
+    espace avant la limite, jamais au milieu d'un mot.
+    """
+    suffixe = " | Grafycom"
+    limite = 60 - len(suffixe)
+    t = (a.get("titre_seo") or "").strip() or a["titre"]
+    if len(t) > limite:
+        coupe = t[:limite].rsplit(" ", 1)[0].rstrip(" ,;:—-")
+        t = coupe or t[:limite]
+    return t + suffixe
 
 
 def page_article(a: dict) -> None:
@@ -332,10 +370,13 @@ def page_article(a: dict) -> None:
                    "quand la réponse est que vous n'avez besoin de rien.")
 
     page(a["fichier"],
-         "%s | Grafycom" % a["titre"][:62],
+         titre_balise(a),
          a["meta"],
          corps,
          ogtitle=a["titre"],
+         ogtype="article",
+         ogimage=("assets/img/blog/%s" % a["illustration"]) if a.get("illustration") else None,
+         ogdate=a.get("date") or None,
          jsonld=jsonld_article(a))
 
 

@@ -1,6 +1,7 @@
 ---
 titre: "Qui possède votre logo ?"
 slug: qui-possede-votre-logo
+titre_seo: "Qui possède votre logo ?"
 date: 2026-10-30
 meta: "Payer un logo ne suffit pas à en détenir les droits. Ce que dit le code de la propriété intellectuelle et ce que doit contenir votre contrat."
 illustration: droits.png
@@ -51,8 +52,8 @@ En pratique, ça se gère très bien — c'est même rarement un sujet entre gen
 
 ## Comment je travaille
 
-Pour chaque identité visuelle que je livre, les fichiers sources vectoriels sont remis.
+Pour chaque [identité visuelle](prestations.html) que je livre, les fichiers sources vectoriels sont remis.
 
 Ce n'est pas un argument commercial, c'est le minimum. Un logo dont vous ne maîtrisez pas les droits n'est pas un actif de votre entreprise : c'est une dépendance.
 
-Si vous avez un logo existant et aucun écrit, ne le jetez pas — la situation se rattrape souvent, et il vaut mieux s'en occuper avant d'avoir besoin du fichier en urgence. Parlons-en.
+Si vous avez un logo existant et aucun écrit, ne le jetez pas — la situation se rattrape souvent, et il vaut mieux s'en occuper avant d'avoir besoin du fichier en urgence. C'est souvent le moment où l'on se demande aussi s'il ne faudrait pas [refaire son image](refaire-son-image.html). Parlons-en.

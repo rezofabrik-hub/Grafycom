@@ -55,14 +55,14 @@ HEAD = """<!DOCTYPE html>
 <meta name="robots" content="{robots}">
 <meta name="author" content="Grafycom">
 {verif}
-<meta property="og:type" content="website">
+<meta property="og:type" content="{ogtype}">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Grafycom">
 <meta property="og:title" content="{ogtitle}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{site}/{slug}">
-<meta property="og:image" content="{site}/assets/img/logo-grafycom-carre.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="{ogimage}">
+<meta name="twitter:card" content="summary_large_image">{ogdate}
 
 <link rel="icon" href="assets/img/logo-grafycom-carre.jpg">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
@@ -227,7 +227,14 @@ def demarches():
        "date": DEMARCHES_VERIFIE}
 
 
-def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow"):
+def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow",
+         ogtype="website", ogimage=None, ogdate=None):
+    """ogtype / ogimage / ogdate servent aux articles du blog.
+
+    Un article partage sur un reseau social avec le logo du studio en
+    vignette ne donne aucune envie de cliquer. Avec son illustration, si.
+    Les valeurs par defaut laissent toutes les autres pages inchangees.
+    """
     if CONSTRUCTION:
         robots = "noindex, nofollow"
     nav = "\n".join(
@@ -239,6 +246,12 @@ def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow
     html = HEAD.format(title=title, desc=desc, site=SITE, accueil=ACCUEIL,
                        slug="" if slug in ("accueil.html", "index.html") else slug,
                        ogtitle=ogtitle or title, nav=nav, jsonld=jl, robots=robots,
+                       ogtype=ogtype,
+                       ogimage=(ogimage if ogimage and ogimage.startswith("http")
+                                else "%s/%s" % (SITE, ogimage)) if ogimage
+                               else "%s/assets/img/logo-grafycom-carre.jpg" % SITE,
+                       ogdate=('\n<meta property="article:published_time" '
+                               'content="%s">' % ogdate) if ogdate else "",
                        verif=verif)
     html += body
     html += FOOT.format(mail=MAIL, tel=TEL, tel_uri=TEL_URI)
