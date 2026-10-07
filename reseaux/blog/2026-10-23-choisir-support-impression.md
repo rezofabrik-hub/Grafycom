@@ -5,7 +5,7 @@ date: 2026-10-23
 meta: "RVB, CMJN, choix du papier : comprendre pourquoi l'impression diffère de l'écran, et comment éviter les mauvaises surprises."
 illustration: pantone-photo.webp
 illustration_alt: "Deux personnes consultent ensemble des nuanciers Pantone déployés en éventail ; chaque bande porte ses teintes et leurs codes imprimés."
-statut: rédigé, en attente de la rubrique blog
+statut: validé
 ---
 
 # Pourquoi vos couleurs imprimées ne ressemblent jamais à votre écran

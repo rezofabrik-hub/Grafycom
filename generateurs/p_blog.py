@@ -30,6 +30,7 @@ import io
 import os
 import pathlib
 import re
+from datetime import date as _date
 
 from gen import page, appel, SITE
 
@@ -179,6 +180,28 @@ def VALIDE(statut: str) -> bool:
     return s.startswith("validé") or s.startswith("valide")
 
 
+def A_PARAITRE(jour: str) -> bool:
+    """La date de l'article est-elle encore dans le futur ?
+
+    Second verrou, independant du premier. Laurent valide un article une
+    fois pour toutes, mais sa date de parution reste celle inscrite dans
+    l'en-tete : un article du 30 octobre ne sort pas le 7. Sans ce
+    controle, valider les trois d'un coup les publierait tous les trois
+    le meme jour.
+
+    La comparaison se fait en date UTC. L'ecart avec Paris ne porte que
+    sur les premieres heures de la journee, et la publication automatique
+    tourne le matin : la date a tourne des deux cotes.
+    """
+    if not jour:
+        return False
+    try:
+        return _date.fromisoformat(jour.strip()) > _date.today()
+    except ValueError:
+        # Une date illisible vaut un article qu'on ne publie pas.
+        return True
+
+
 def lire_articles() -> tuple[list[dict], list[tuple]]:
     """Les articles validés, et la liste de ceux qui attendent."""
     articles: list[dict] = []
@@ -201,6 +224,12 @@ def lire_articles() -> tuple[list[dict], list[tuple]]:
         # place — c'est lui qui le fait, article par article.
         if not VALIDE(meta.get("statut", "")):
             attente.append((f.name, meta.get("statut", "(aucun statut)"), slug))
+            continue
+        # Valide, mais pas encore a sa date : il attend son tour.
+        if A_PARAITRE(meta.get("date", "")):
+            attente.append((f.name,
+                            "validé — paraît le %s" % meta.get("date", "?"),
+                            slug))
             continue
         # Le chapô : le premier paragraphe, qui sert aussi de résumé
         # sur l'index. Pas de résumé à écrire deux fois.
@@ -421,8 +450,12 @@ def main():
         for r in retires:
             print("      %s" % r)
     if attente:
-        print("\n  Pour publier : mettre « statut: validé » dans l'en-tête")
-        print("  du .md, puis relancer ce script.")
+        if any("validé — paraît" in st for _, st, _ in attente):
+            print("\n  Les articles validés sortiront d'eux-mêmes à leur date,")
+            print("  par la routine de publication. Rien à faire.")
+        else:
+            print("\n  Pour publier : mettre « statut: validé » dans l'en-tête")
+            print("  du .md, puis relancer ce script.")
 
 
 main()

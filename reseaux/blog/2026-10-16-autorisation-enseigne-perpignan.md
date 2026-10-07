@@ -5,7 +5,7 @@ date: 2026-10-16
 meta: "Autorisation préalable d'enseigne : Cerfa 16308*01, dépôt en mairie, RLP et secteur protégé. Le guide pour les commerces du 66."
 illustration: enseigne-photo.webp
 illustration_alt: "Une ancienne enseigne peinte à la main, « Prêt à Porter » en lettres bleues cursives sur un panneau blanc, au-dessus de volets de bois usés, dans une rue ancienne."
-statut: rédigé, en attente de la rubrique blog
+statut: validé
 ---
 
 # Enseigne de commerce : comment obtenir l'autorisation préalable dans les Pyrénées-Orientales
