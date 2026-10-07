@@ -2,7 +2,7 @@
 titre: "Pourquoi vos couleurs imprimées ne ressemblent jamais à votre écran"
 slug: couleurs-impression-ecran-cmjn
 date: 2026-10-23
-meta: "RVB, CMJN, choix du papier, bon à tirer : comprendre pourquoi l'impression diffère de l'écran, et comment éviter les mauvaises surprises."
+meta: "RVB, CMJN, choix du papier : comprendre pourquoi l'impression diffère de l'écran, et comment éviter les mauvaises surprises."
 illustration: pantone-photo.webp
 illustration_alt: "Deux personnes consultent ensemble des nuanciers Pantone déployés en éventail ; chaque bande porte ses teintes et leurs codes imprimés."
 statut: rédigé, en attente de la rubrique blog
@@ -92,8 +92,7 @@ rogne.
 
 Préparer un fichier d'impression, ce n'est pas exporter un PDF. C'est
 convertir les couleurs dans le bon profil, poser les fonds perdus, vérifier
-les résolutions selon le support, intégrer les polices, et contrôler le BAT
-à la réception.
+les résolutions selon le support et intégrer les polices.
 
 C'est ce que nous faisons pour les entreprises et commerces des
 Pyrénées-Orientales : en livrant des fichiers directement exploitables
