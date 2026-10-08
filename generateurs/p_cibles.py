@@ -209,7 +209,7 @@ cible(
 
     <h2>Un exemple</h2>
     <p><strong>Alliance Peintures</strong>, peintres en bâtiment, est exactement ce cas : une entreprise installée, une activité qui tourne, et une image qui ne suivait plus. La refonte a repris l'identité complète — logo, enseignes, cartes de visite, marquage des véhicules, flyers — en gardant la lisibilité d'un métier où l'on est jugé sur le sérieux avant le style. Le véhicule est visible sur la page <a href="realisations.html">réalisations</a>.</p>
-    <p>Si votre image tient encore mais que vos supports partent dans tous les sens, la page <a href="prestations.html#identite">identité visuelle</a> décrit ce que comprend une remise au net. Et si vous venez d'ouvrir, c'est l'autre page qu'il faut lire : <a href="ouverture-commerce-66.html">ouvrir un commerce dans le 66</a>.</p>""",
+    <p>Si votre image tient encore mais que vos supports partent dans tous les sens, c'est souvent qu'aucune règle n'a jamais été écrite : la <a href="prestations.html#charte">charte graphique</a> les fixe, et elle se commande seule, sur le logo que vous avez déjà. Si c'est le logo lui-même qui ne va plus, voyez la <a href="prestations.html#logo">création de logo</a>. Et si vous venez d'ouvrir, c'est l'autre page qu'il faut lire : <a href="ouverture-commerce-66.html">ouvrir un commerce dans le 66</a>.</p>""",
  "Reprendre son image sans tout perdre",
  [("Faut-il tout changer en même temps&nbsp;?",
    "Non, et c'est rarement souhaitable. On commence par le logo et par ce qui se voit le plus, puis on remplace le reste au fil des réimpressions. Étaler sur six mois ne gêne personne, à condition que le cap soit fixé dès le départ."),

@@ -15,7 +15,7 @@ JSONLD = """{
   "address": { "@type": "PostalAddress", "addressLocality": "Perpignan", "postalCode": "66000", "addressRegion": "Pyrénées-Orientales", "addressCountry": "FR" },
   "areaServed": [ "Perpignan", "Pyrénées-Orientales", "Occitanie", "France" ],
   "knowsLanguage": [ "fr", "es" ],
-  "serviceType": [ "Identité visuelle", "Création de logo", "Design graphique", "Menus et cartes", "Supports de communication", "Direction artistique" ]
+  "serviceType": [ "Création de logo", "Charte graphique", "Identité visuelle", "Design graphique", "Menus et cartes", "Supports de communication", "Direction artistique" ]
 }"""
 
 BODY = """
@@ -63,11 +63,16 @@ BODY = """
     <p class="chapeau">Tout ce qui porte votre nom, conçu au même endroit et dans la même logique.</p>
   </div>
 
-  <div class="conteneur grille g3" style="margin-top:50px">
+  <div class="conteneur grille g4" style="margin-top:50px">
     <article class="carte">
       <div class="picto p-bleu"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i></div>
-      <h3>Identité de marque</h3>
-      <p>Logo, déclinaisons, palette de couleurs, typographies et règles d'usage réunies dans une charte claire, utilisable par n'importe quel imprimeur.</p>
+      <h3>Création de logo</h3>
+      <p>Un logo et ses déclinaisons — couleur, monochrome, fond sombre, format réseaux — livrés en fichiers vectoriels, lisibles sur une carte de visite comme sur un panneau.</p>
+    </article>
+    <article class="carte">
+      <div class="picto p-jaune"><i class="fa-solid fa-swatchbook" aria-hidden="true"></i></div>
+      <h3>Charte graphique</h3>
+      <p>Couleurs, typographies et règles d'usage réunies dans un document que n'importe quel prestataire peut suivre. Se commande seule, sur un logo que vous avez déjà.</p>
     </article>
     <article class="carte">
       <div class="picto p-turq"><i class="fa-solid fa-utensils" aria-hidden="true"></i></div>

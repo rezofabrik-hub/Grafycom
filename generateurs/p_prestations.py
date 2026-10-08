@@ -33,8 +33,13 @@ BLOC = """<section class="{fond}" id="{ancre}">
 # assets/img/prestations/, remplacer None par son nom, écrire le texte
 # alternatif, régénérer.
 PHOTOS = {
- "identite":     ("presta-identite.webp", "grafycom",
+ "logo":         ("presta-identite.webp", "grafycom",
                   "Logo Crazy Frenchy, lettrage doré et tour Eiffel, appliqué en grand sur le mur d'un hall d'entreprise"),
+ # La charte n'a pas encore sa photo. L'emplacement reserve vaut mieux
+ # qu'une image empruntee a une autre prestation : il dit ce qu'il
+ # manque, au lieu de faire passer le logo d'un client pour une charte.
+ "charte":       ("", "grafycom",
+                  "une charte graphique ouverte : palette, polices et règles d'usage du logo"),
  "menus":        ("presta-menus.webp", "grafycom",
                   "Menu de la pizzeria Pizza Fry ouvert à plat, carte des pizzas et carte des boissons sur fond ardoise"),
  "print":        ("presta-print.webp", "grafycom",
@@ -61,14 +66,23 @@ ATTENTE = """      <!-- Emplacement en attente de la photo de Grafycom. -->
         <span>%s</span>
       </div>"""
 
-def bloc(ancre, picto, icone, titre, intro, suite, soustitre, items, fond=""):
+def bloc(ancre, picto, icone, titre, intro, suite, soustitre, items,
+         fond="", alias=""):
+    """alias : une ancre supplementaire, posee juste avant la section.
+
+    #identite etait l'ancre d'une prestation qui en reunissait deux. Elle
+    est citee par le pied de page de chaque page du site, et sans doute
+    ailleurs. On la garde vivante sur la section du logo : un lien ancien
+    arrive au bon endroit au lieu de retomber en haut de page.
+    """
     fichier, origine, texte = PHOTOS[ancre]
     if not fichier:
         visuel = ATTENTE % (texte, texte)
     else:
         gabarit = REALISATION if origine == "grafycom" else ILLUSTRATION
         visuel = gabarit % (fichier, texte)
-    return BLOC.format(ancre=ancre, picto=picto, icone=icone, titre=titre, intro=intro,
+    repere = ('<span id="%s" aria-hidden="true"></span>\n' % alias) if alias else ""
+    return repere + BLOC.format(ancre=ancre, picto=picto, icone=icone, titre=titre, intro=intro,
                        suite=suite, soustitre=soustitre, fond=fond, visuel=visuel,
                        items="".join("<li>%s</li>" % i for i in items))
 
@@ -88,18 +102,31 @@ BODY = """
 """
 
 BODY += bloc(
-    "identite", "p-bleu", "fa-feather-pointed",
-    "Identité visuelle &amp; création de logo",
+    "logo", "p-bleu", "fa-feather-pointed",
+    "Création de logo",
     "Un logo n'est pas un dessin joli&nbsp;: c'est un outil qui doit fonctionner sur une carte de visite de 8&nbsp;cm comme sur un panneau de 3&nbsp;mètres, en couleur comme en noir et blanc, brodé sur un polo comme affiché sur un écran.",
-    "Je pars de votre activité, de vos clients et de ce qui vous distingue réellement de la concurrence. Vous repartez avec un logo, ses déclinaisons et une charte graphique qui dit comment l'utiliser — pour que votre image reste la même dans dix ans, quel que soit le prestataire.",
+    "Je pars de votre activité, de vos clients et de ce qui vous distingue réellement de la concurrence. Vous repartez avec un logo et ses déclinaisons, en fichiers sources vectoriels&nbsp;— ceux qui s'agrandissent sans perdre en netteté, et que n'importe quel imprimeur sait utiliser.",
     "Ce que comprend la prestation",
     ["Atelier de cadrage : activité, clientèle, positionnement, concurrence",
      "Pistes créatives argumentées, présentées en situation",
      "Déclinaisons : couleur, monochrome, fond sombre, format carré réseaux",
-     "Palette de couleurs, avec ses déclinaisons",
+     "Fichiers sources vectoriels, prêts pour l'impression comme pour l'écran",
+     "Cession des droits d'usage écrite dans le devis"],
+    fond="", alias="identite")
+
+BODY += bloc(
+    "charte", "p-jaune", "fa-swatchbook",
+    "Charte graphique",
+    "Un logo seul ne tient pas une image. Ce qui la tient, c'est ce qui l'entoure&nbsp;: les mêmes couleurs d'un support à l'autre, les mêmes polices, les mêmes règles. Sans document qui les fixe, chaque nouveau prestataire réinterprète, et l'image dérive sans que personne décide de la changer.",
+    "La charte écrit ces règles. Elle se commande avec un logo que je viens de créer, ou seule, pour un logo que vous avez déjà&nbsp;— y compris fait par quelqu'un d'autre. Son périmètre s'adapte&nbsp;: une association qui tient deux supports n'a pas besoin du même document qu'un restaurant qui en imprime quinze. On en fixe le contenu ensemble, et il est écrit dans le devis.",
+    "Ce qu'elle peut contenir",
+    ["Palette de couleurs, avec ses références pour l'écran et pour l'impression",
      "Typographies de titre et de texte, et leurs règles d'emploi",
-     "Charte graphique PDF, remise avec les fichiers sources vectoriels"],
-    fond="")
+     "Règles d'usage du logo : tailles minimales, espace libre autour, fonds autorisés",
+     "Gabarits de supports : carte de visite, flyer, publication réseaux, signature mail",
+     "Ton, style photographique et iconographie",
+     "Le tout réuni dans un PDF que vous remettez à n'importe quel prestataire"],
+    fond="fond-creme")
 
 BODY += bloc(
     "menus", "p-turq", "fa-utensils",
@@ -113,7 +140,7 @@ BODY += bloc(
      "Carte numérique accessible par QR code",
      "Déclinaisons saisonnières et cartes événementielles",
      "Version bilingue français / espagnol ou anglais"],
-    fond="fond-creme")
+    fond="")
 
 BODY += bloc(
     "print", "p-violet", "fa-print",
@@ -126,7 +153,7 @@ BODY += bloc(
      "Affiches et programmes d'événement",
      "Packaging, étiquettes, stickers",
      "Kakémonos, roll-ups, stands de salon"],
-    fond="")
+    fond="fond-creme")
 
 BODY += bloc(
     "signaletique", "p-rose", "fa-store",
@@ -140,7 +167,7 @@ BODY += bloc(
      "Marquage de véhicule : voiture, camionnette, flotte",
      "Habillage de stand et de terrasse",
      "Relevé de cotes et coordination avec le poseur"],
-    fond="fond-creme")
+    fond="")
 
 BODY += bloc(
     "digital", "p-corail", "fa-mobile-screen",
@@ -153,7 +180,7 @@ BODY += bloc(
      "Carrousels et visuels de campagne",
      "Signature de courriel et fond de visioconférence",
      "Visuels pour site web, bandeaux et vignettes"],
-    fond="")
+    fond="fond-creme")
 
 BODY += bloc(
     "projet", "p-orange", "fa-diagram-project",
@@ -167,7 +194,7 @@ BODY += bloc(
      "Contrôle de conformité à la réception",
      "Direction artistique d'une campagne ou d'une saison",
      "Refonte progressive d'une communication existante"],
-    fond="fond-creme")
+    fond="")
 
 BODY += """<section>
   <div class="conteneur centre">
@@ -201,7 +228,7 @@ BODY += """<section>
     fond="fond-creme")
 
 page("prestations.html",
-     "Création de logo et supports — Grafycom Perpignan",
-     "Logo et identité visuelle, menus, supports imprimés, signalétique et réseaux sociaux. Grafycom, infographiste à Perpignan.",
+     "Création de logo et charte graphique — Grafycom Perpignan",
+     "Création de logo, charte graphique, menus, supports imprimés, signalétique et réseaux sociaux. Grafycom, infographiste à Perpignan. La charte se commande seule, sur un logo existant.",
      BODY,
      ogtitle="Les prestations Grafycom — Perpignan")
