@@ -56,6 +56,11 @@ jobs:
             "- description : \(.https_certificate.description // "-")",
             "- noms couverts : `\((.https_certificate.domains // []) | join("`, `"))`"
           ' etat.json | tee -a "$GITHUB_STEP_SUMMARY"
+          # Les journaux et le resume sont servis depuis un hote que le
+          # proxy de maintenance ne joint pas ; les annotations passent
+          # par l'API. On y recopie donc l'essentiel.
+          jq -r '"::notice title=Pages::domaine=\(.cname // "aucun") | https_enforced=\(.https_enforced) | certificat=\(.https_certificate.state // "aucun") | noms=\((.https_certificate.domains // []) | join(","))"' etat.json
+          jq -r '"::notice title=Certificat::\(.https_certificate.description // "-")"' etat.json
 
       - name: Chaque nom du certificat résout-il ?
         run: |
@@ -65,9 +70,11 @@ jobs:
           for d in $(jq -r '(.https_certificate.domains // [])[]' etat.json); do
             if getent hosts "$d" > /dev/null 2>&1; then
               echo "- \`$d\` : résout" | tee -a "$GITHUB_STEP_SUMMARY"
+              echo "::notice title=DNS::$d resout"
             else
               echo "- \`$d\` : **NE RÉSOUT PAS** — bloque l'émission du certificat pour tous les noms" \
                 | tee -a "$GITHUB_STEP_SUMMARY"
+              echo "::error title=DNS::$d NE RESOUT PAS - bloque l emission du certificat pour tous les noms"
               manquant=1
             fi
           done
