@@ -101,4 +101,44 @@
         + '&body=' + encodeURIComponent(corps);
     });
   }
+
+  /* --- Entree du back-office : cinq clics sur le logo ---
+     Une porte discrete, pas une serrure. La serrure est ailleurs :
+     Cloudflare Access garde /admin, et le Worker verifie la signature
+     du jeton. Ce compteur ne protege rien et n'a pas a le faire - il
+     evite seulement d'afficher un lien « Administration » dans le pied
+     de page de chaque visiteur.
+
+     Le compte vit dans sessionStorage, et non dans une variable. Un
+     clic sur le logo mene a l'accueil : la page se recharge, et une
+     variable serait perdue a chaque fois - le cinquieme clic ne
+     serait jamais atteint. Un visiteur ordinaire clique une fois,
+     arrive sur l'accueil, et ne voit aucune difference.
+
+     L'ecoute porte sur « click » et non « pointerdown » : sur
+     pointerdown, preventDefault n'arrete pas le lien, dont la
+     navigation se declenche au click et ecrase la redirection. Mesure
+     faite, pas supposee : le compteur montait bien jusqu'a cinq, mais
+     la page partait vers l'accueil. */
+  var logo = document.querySelector('.logo img') || document.querySelector('.logo');
+  if (logo) {
+    logo.addEventListener('click', function (e) {
+      var n = 1;
+      try {
+        var brut = sessionStorage.getItem('gfc-porte');
+        if (brut) {
+          var d = JSON.parse(brut);
+          if (Date.now() - d.t < 3000) n = d.n + 1;
+        }
+        sessionStorage.setItem('gfc-porte', JSON.stringify({ n: n, t: Date.now() }));
+      } catch (err) {
+        return;  /* navigation privee : la porte ne s'ouvre pas, tant pis */
+      }
+      if (n >= 5) {
+        e.preventDefault();
+        try { sessionStorage.removeItem('gfc-porte'); } catch (err2) {}
+        window.location.href = '/admin';
+      }
+    });
+  }
 })();

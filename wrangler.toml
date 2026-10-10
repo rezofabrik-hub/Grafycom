@@ -29,7 +29,10 @@ not_found_handling = "404-page"
 html_handling = "none"
 # Seul /api/* passe par le code ; tout le reste est servi directement depuis
 # le stockage d'assets, sans invoquer le Worker.
-run_worker_first = [ "/api/*", "/" ]
+# /admin doit passer par le code : sans cette ligne, la requete va
+# directement au stockage d'assets, qui ne connait pas cette adresse et
+# repond 404. Le back-office ne serait jamais appele - ni sa garde.
+run_worker_first = [ "/api/*", "/", "/admin", "/admin/*" ]
 
 # ---------------------------------------------------------------------
 # Envoi du formulaire de contact.
@@ -60,3 +63,31 @@ CONTACT_TO = "sandra.grafycom@gmail.com"
 # c'est une adresse d'expedition, les reponses partent vers le visiteur
 # par l'en-tete Reply-To.
 CONTACT_FROM = "contact@grafycom.fr"
+
+# ---------------------------------------------------------------------
+# Back-office — /admin
+#
+# Garde : Cloudflare Access. Laurent se connecte avec son compte
+# Cloudflare ; il n'y a pas de mot de passe a inventer, donc pas de mot
+# de passe a perdre. Le Worker ne se contente pas de croire l'en-tete
+# d'Access : il verifie la signature du jeton et son audience.
+#
+# FERME PAR DEFAUT. Tant que les deux valeurs ci-dessous sont vides,
+# /admin/* repond 403 - y compris entre le deploiement et le moment ou
+# l'application Access sera creee. Il n'y a donc aucune fenetre ouverte.
+#
+# A renseigner une fois l'application Access creee (Zero Trust > Access
+# > Applications > Add, self-hosted, domaine grafycom.fr, chemin /admin) :
+#   ADMIN_TEAM  le nom d'equipe Zero Trust, sans .cloudflareaccess.com
+#   ADMIN_AUD   le « Application Audience (AUD) Tag » de l'application
+# Ce ne sont pas des secrets : ils identifient, ils n'autorisent pas.
+# ---------------------------------------------------------------------
+ADMIN_TEAM = ""
+ADMIN_AUD = ""
+
+# Les publications en attente de relecture. Rien de personnel n'y entre :
+# ni prospect, ni client, seulement ce qui est destine a etre publie.
+[[d1_databases]]
+binding = "DB"
+database_name = "grafycom-publications"
+database_id = "bfa19a4a-2a9c-4053-bf1d-5a14105b42cb"

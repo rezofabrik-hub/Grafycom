@@ -22,6 +22,9 @@
  * interface.
  */
 
+import { identite, api } from "./admin.js";
+import { PAGE_ADMIN } from "./admin-page.js";
+
 const CHAMPS = [
   ["nom", "Nom"],
   ["structure", "Structure"],
@@ -124,6 +127,27 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/contact") return contact(request, env);
+
+    // Le back-office. La page n'est pas un fichier du site : elle
+    // n'existe que servie ici, apres verification. Un fichier dans
+    // dist/ serait accessible a tous, garde ou pas.
+    if (url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
+      const qui = await identite(request, env);
+      if (!qui) {
+        return new Response(
+          "Back-office réservé.\n\nSi vous êtes Laurent et que vous voyez ce " +
+          "message, l'application Cloudflare Access n'est pas encore " +
+          "configurée, ou ADMIN_TEAM / ADMIN_AUD ne sont pas renseignés " +
+          "dans wrangler.toml.\n",
+          { status: 403, headers: { "Content-Type": "text/plain; charset=utf-8" } });
+      }
+      if (url.pathname.startsWith("/admin/api")) return api(request, env, url, qui);
+      return new Response(PAGE_ADMIN, {
+        headers: { "Content-Type": "text/html; charset=utf-8",
+                   "Cache-Control": "no-store",
+                   "X-Robots-Tag": "noindex, nofollow" },
+      });
+    }
 
     // La racine n'a pas de fichier a son nom. wrangler.toml demande
     // html_handling = "none" pour que /prestations.html soit servi tel

@@ -41,3 +41,6 @@ reseaux/propositions/*-apercu.html
 reseaux/visuels/
 .dev.vars
 .wrangler/
+node_modules/
+package.json
+package-lock.json
