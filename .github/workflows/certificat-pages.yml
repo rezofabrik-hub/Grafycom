@@ -84,3 +84,17 @@ jobs:
               >> "$GITHUB_STEP_SUMMARY"
             echo "::warning::Un nom du certificat ne résout pas : aucun certificat ne sera émis."
           fi
+
+      - name: Le site répond-il en HTTPS ?
+        run: |
+          # Les tests TLS faits depuis l'environnement de maintenance
+          # traversent un proxy qui presente son propre certificat : ils ne
+          # disent rien du vrai. Ici, la connexion est directe.
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Réponse réelle du site" >> "$GITHUB_STEP_SUMMARY"
+          for u in https://grafycom.fr/ https://www.grafycom.fr/ http://grafycom.fr/; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "$u" || echo "000")
+            echo "- \`$u\` : $code" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "::notice title=HTTP::$u -> $code"
+          done
+          echo "::notice title=Certificat servi::$(echo | openssl s_client -servername grafycom.fr -connect grafycom.fr:443 2>/dev/null | openssl x509 -noout -issuer -ext subjectAltName 2>/dev/null | tr '\n' ' ' | tr -s ' ' || echo aucun)"
