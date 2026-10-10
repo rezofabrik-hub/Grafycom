@@ -2,16 +2,24 @@
  * Worker Grafycom.
  *
  * Sert le site statique, et traite le formulaire de contact sur /api/contact.
- * Le message part par Resend. Ni la clé d'API ni les adresses ne figurent
- * dans le dépôt : ce sont des secrets Cloudflare, modifiables sans toucher
- * au code ni redéployer.
+ * Le message part par le service d'envoi de Cloudflare, par le lien EMAIL
+ * declare dans wrangler.toml. Il n'y a donc aucune cle d'API a garder :
+ * l'envoi est autorise par le lien lui-meme, pas par un secret.
  *
- * Secrets attendus (Workers & Pages > Settings > Variables and Secrets) :
- *   RESEND_API_KEY   clé d'API Resend                        (obligatoire)
- *   CONTACT_TO       adresse qui reçoit les demandes          (obligatoire)
- *   CONTACT_FROM     expéditeur, sur un domaine vérifié chez Resend
- *                    (facultatif ; par défaut onboarding@resend.dev, qui ne
- *                     délivre qu'au titulaire du compte Resend)
+ * Pourquoi pas un prestataire exterieur : le formulaire ecrit toujours a la
+ * meme adresse, celle de Sandra. Cloudflare facture l'envoi vers une
+ * destination verifiee du compte a zero, sur toutes les offres. Un
+ * fournisseur de moins a gerer, une cle de moins a renouveler.
+ *
+ * A preparer une seule fois, cote Cloudflare :
+ *   1. Email Routing active sur grafycom.fr, et l'adresse de CONTACT_TO
+ *      verifiee comme destination du compte.
+ *   2. Le domaine de CONTACT_FROM integre au service d'envoi, sans quoi
+ *      l'envoi est refuse (E_SENDER_DOMAIN_NOT_AVAILABLE).
+ *
+ * Les deux adresses sont dans wrangler.toml : ce ne sont pas des secrets,
+ * et les avoir sous les yeux vaut mieux que de les chercher dans une
+ * interface.
  */
 
 const CHAMPS = [
@@ -63,8 +71,8 @@ async function contact(request, env) {
     return redirection("/contact.html?erreur=champs", origine);
   }
 
-  if (!env.RESEND_API_KEY || !env.CONTACT_TO) {
-    console.error("RESEND_API_KEY ou CONTACT_TO manquant");
+  if (!env.EMAIL || !env.CONTACT_TO || !env.CONTACT_FROM) {
+    console.error("lien EMAIL, CONTACT_TO ou CONTACT_FROM manquant");
     return redirection("/contact.html?erreur=envoi", origine);
   }
 
@@ -88,30 +96,24 @@ async function contact(request, env) {
     `<p style="font:15px/1.7 system-ui,sans-serif;margin-top:18px"><strong>Projet :</strong><br>` +
     `${echappe(message).replace(/\n/g, "<br>")}</p>`;
 
-  let reponse;
   try {
-    reponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: env.CONTACT_FROM || "Grafycom <onboarding@resend.dev>",
-        to: [env.CONTACT_TO],
-        reply_to: email,
-        subject: `Demande de devis — ${nom}`,
-        text: texte,
-        html,
-      }),
+    // replyTo porte l'adresse du visiteur : Sandra repond directement
+    // depuis sa boite, sans recopier quoi que ce soit. L'expediteur,
+    // lui, reste le domaine - une adresse d'expedition empruntee au
+    // visiteur serait rejetee par les controles anti-usurpation.
+    const envoi = await env.EMAIL.send({
+      from: { email: env.CONTACT_FROM, name: "Grafycom" },
+      to: env.CONTACT_TO,
+      replyTo: { email, name: nom },
+      subject: `Demande de devis — ${nom}`,
+      text: texte,
+      html,
     });
+    console.log("message envoyé", envoi && envoi.messageId);
   } catch (e) {
-    console.error("Resend injoignable", e);
-    return redirection("/contact.html?erreur=envoi", origine);
-  }
-
-  if (!reponse.ok) {
-    console.error("Resend a refusé l'envoi", reponse.status, await reponse.text());
+    // Les causes previsibles : domaine d'expedition pas encore integre
+    // au service, ou destinataire pas verifie. Le message dit laquelle.
+    console.error("envoi refusé", e && e.message ? e.message : e);
     return redirection("/contact.html?erreur=envoi", origine);
   }
 

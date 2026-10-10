@@ -28,6 +28,13 @@ rm -rf dist/.github
 # Le code du Worker n'est pas un fichier statique : il ne doit pas etre servi.
 rm -rf dist/src
 
+# Dependances et cache de wrangler. Deployer le site depuis le depot cree
+# node_modules/ ; sans cette ligne, le garde-fou de fin de script refuse la
+# publication a cause des milliers de .d.ts et de LICENSE qu'il contient.
+# Il avait raison de refuser - mais le bon endroit pour le dire est ici.
+rm -rf dist/node_modules dist/.wrangler
+rm -f dist/package.json dist/package-lock.json
+
 # Les outils internes et, surtout, les listes de prospects qu'ils produisent :
 # des noms et des adresses de personnes physiques. Jamais en ligne.
 rm -rf dist/outils

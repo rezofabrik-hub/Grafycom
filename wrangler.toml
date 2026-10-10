@@ -31,8 +31,32 @@ html_handling = "none"
 # le stockage d'assets, sans invoquer le Worker.
 run_worker_first = [ "/api/*", "/" ]
 
-# Secrets à définir dans l'interface (Settings > Variables and Secrets),
-# jamais dans ce fichier :
-#   RESEND_API_KEY   cle d'API Resend
-#   CONTACT_TO       adresse qui recoit les demandes du formulaire
-#   CONTACT_FROM     expediteur, sur un domaine verifie chez Resend (facultatif)
+# ---------------------------------------------------------------------
+# Envoi du formulaire de contact.
+#
+# Plus aucune cle d'API : le droit d'envoyer vient du lien ci-dessous,
+# pas d'un secret a renouveler. Les deux adresses ne sont pas secretes -
+# celle de Sandra figure deja en clair sur la page contact - et les voir
+# ici vaut mieux que d'aller les chercher dans une interface.
+#
+# destination_address verrouille le lien sur une seule adresse. Si
+# quelqu'un detournait un jour le formulaire, il ne pourrait toujours
+# ecrire qu'a Sandra. C'est aussi ce qui rend l'envoi gratuit : vers une
+# destination verifiee du compte, Cloudflare ne facture rien, sur toutes
+# les offres.
+#
+# Les deux adresses doivent rester identiques. Changer l'une sans
+# l'autre fait echouer l'envoi.
+# ---------------------------------------------------------------------
+[[send_email]]
+name = "EMAIL"
+destination_address = "sandra.grafycom@gmail.com"
+
+[vars]
+# Doit etre la meme que destination_address ci-dessus.
+CONTACT_TO = "sandra.grafycom@gmail.com"
+# Le domaine doit etre integre au service d'envoi de Cloudflare, sinon
+# l'envoi est refuse. La boite n'a pas besoin d'exister pour autant :
+# c'est une adresse d'expedition, les reponses partent vers le visiteur
+# par l'en-tete Reply-To.
+CONTACT_FROM = "contact@grafycom.fr"
