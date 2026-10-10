@@ -111,6 +111,52 @@ export async function api(request, env, url, qui) {
     return json({ qui, canaux: CANAUX, publications: results || [] });
   }
 
+  // Creer une publication a soi. L'agent propose un cycle ; Laurent
+  // ajoute ce qu'il veut, quand il veut, sans passer par un cycle.
+  if (chemin === "/publication" && request.method === "PUT") {
+    let d;
+    try { d = await request.json(); } catch { return json({ erreur: "format" }, 400); }
+    const jour = String(d.jour || "").trim();
+    const titre = String(d.titre || "").trim();
+    const canal = String(d.canal || "").trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(jour)) return json({ erreur: "date attendue au format AAAA-MM-JJ" }, 400);
+    if (!titre) return json({ erreur: "il faut un titre" }, 400);
+    if (!CANAUX.includes(canal)) return json({ erreur: "canal inconnu" }, 400);
+
+    // Un identifiant tire du hasard, et non du contenu : deux
+    // publications du meme jour sur le meme canal sont legitimes, et un
+    // identifiant calcule sur le titre les ferait se recouvrir.
+    const id = crypto.randomUUID().replace(/-/g, "").slice(0, 16);
+    await env.DB.prepare(
+      "INSERT INTO publications (id,cycle,jour,heure,canal,titre,texte,hashtags,"
+      + "visuel,note,statut,rang,maj) VALUES (?,?,?,?,?,?,?,?,?,?,'propose',999,?)"
+    ).bind(id, String(d.cycle || "ajouts"), jour, String(d.heure || ""), canal, titre,
+           String(d.texte || ""), String(d.hashtags || ""), String(d.visuel || ""),
+           String(d.note || ""), new Date().toISOString()).run();
+    await journalise(env, qui, "publication créée", id);
+    const ligne = await env.DB.prepare(
+      "SELECT * FROM publications WHERE id = ?").bind(id).first();
+    return json({ publication: ligne });
+  }
+
+  if (chemin === "/publication" && request.method === "DELETE") {
+    let d;
+    try { d = await request.json(); } catch { return json({ erreur: "format" }, 400); }
+    const id = String(d.id || "").trim();
+    if (!id) return json({ erreur: "id manquant" }, 400);
+    // Les photos attachees partent avec : sans cela elles resteraient
+    // dans le stockage sans que rien ne les montre ni ne les efface.
+    if (env.FICHIERS) {
+      const l = await env.FICHIERS.list({ prefix: `pub/${id}/` });
+      for (const o of l.objects || []) await env.FICHIERS.delete(o.key);
+    }
+    const r = await env.DB.prepare(
+      "DELETE FROM publications WHERE id = ?").bind(id).run();
+    if (!r.meta.changes) return json({ erreur: "publication introuvable" }, 404);
+    await journalise(env, qui, "publication supprimée", id);
+    return json({ supprime: id });
+  }
+
   if (chemin === "/publication" && request.method === "POST") {
     let d;
     try { d = await request.json(); } catch { return json({ erreur: "format" }, 400); }

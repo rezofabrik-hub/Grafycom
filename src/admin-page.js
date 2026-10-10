@@ -89,6 +89,17 @@ textarea{resize:vertical;min-height:120px;line-height:1.6}
  font-size:12.5px;color:var(--taupe);text-align:center;padding:8px}
 .depot:hover{border-color:var(--taupe)}
 .depot input{display:none}
+.neuve{background:var(--carte);border:1px solid var(--filet);border-radius:14px;
+ padding:18px 20px;margin:14px 0 4px;display:none}
+.neuve.ouvert{display:block}
+.rang{display:grid;grid-template-columns:150px 110px 1fr;gap:12px}
+@media(max-width:620px){.rang{grid-template-columns:1fr}}
+select,input[type=date]{width:100%;font:inherit;font-size:14px;color:var(--texte);
+ background:var(--fond);border:1px solid var(--filet);border-radius:10px;padding:10px 12px}
+.creer{background:var(--encre);color:#fff;border-color:var(--encre);font-weight:600}
+@media(prefers-color-scheme:dark){.creer{background:var(--violet);border-color:var(--violet)}}
+.sup{margin-left:6px;color:var(--corail);border-color:transparent;background:none;
+ font-size:13px;text-decoration:underline}
 </style></head><body>
 <div class="filet"></div>
 <header><span class="oeil">Grafycom · back-office</span><h1>Publications à relire</h1></header>
@@ -98,6 +109,19 @@ fiche Google, le texte est à recopier dans Meta Business Suite — marque
 ensuite « publié » pour garder le fil. Le blog, lui, sort tout seul à sa date
 une fois validé.</div>
 <div class="barre" id="barre"></div>
+<div style="margin:14px 0 0"><button class="creer" id="btn-neuve">+ Nouvelle publication</button></div>
+<div class="neuve" id="neuve">
+  <div class="rang">
+    <div><label>Date</label><input type=date id=n-jour></div>
+    <div><label>Heure</label><input type=text id=n-heure placeholder="12 h 30"></div>
+    <div><label>Canal</label><select id=n-canal></select></div>
+  </div>
+  <label>Titre</label><input type=text id=n-titre placeholder="Carrousel — les trois erreurs de logo">
+  <label>Texte</label><textarea id=n-texte></textarea>
+  <label>Hashtags</label><input type=text id=n-hashtags>
+  <div class="actions"><button class="ok" id="n-ok">Créer</button>
+    <button id="n-annuler">Annuler</button><span class="etat" id="n-etat"></span></div>
+</div>
 <div id="liste"><div class="vide">Chargement…</div></div>
 </main>
 <script>
@@ -151,6 +175,7 @@ function dessiner(){
       + "<button class=fait data-a=publie>Marqué publié</button>"
       + "<button data-a=copier>Copier le texte</button>"
       + "<button data-a=enregistrer>Enregistrer</button>"
+      + "<button class=sup data-a=supprimer>Supprimer</button>"
       + '<span class="etat"></span></div></div></div>';
   }
   L.innerHTML = html;
@@ -216,6 +241,16 @@ async function agir(bouton){
     catch{ ligne.querySelector("[data-c=texte]").select(); etat.textContent="sélectionné, Ctrl+C"; }
     return;
   }
+  if(a==="supprimer"){
+    if(!confirm("Supprimer cette publication, et ses photos ?")) return;
+    etat.textContent = "…";
+    const r = await fetch("/admin/api/publication", {method:"DELETE",
+      headers:{"Content-Type":"application/json"}, body:JSON.stringify({id})});
+    if(!r.ok){ etat.textContent = "échec ("+r.status+")"; return; }
+    TOUT = TOUT.filter(p=>p.id!==id);
+    dessiner();
+    return;
+  }
   const corps = {id, texte:champ("texte"), hashtags:champ("hashtags"),
                  visuel:champ("visuel"), note:champ("note")};
   if(a!=="enregistrer") corps.statut = a;
@@ -231,5 +266,36 @@ async function agir(bouton){
   if(ouvert){ const n = document.querySelector('.ligne[data-id="'+CSS.escape(id)+'"]');
               if(n){ n.classList.add("ouvert"); n.querySelector(".etat").textContent="enregistré"; } }
 }
+const CANAUX = ["Instagram + Facebook","Stories","Fiche Google","Blog","DM"];
+document.getElementById("n-canal").innerHTML =
+  CANAUX.map(c=>'<option>'+c+'</option>').join("");
+document.getElementById("btn-neuve").onclick = () => {
+  const f = document.getElementById("neuve");
+  f.classList.toggle("ouvert");
+  if(f.classList.contains("ouvert") && !document.getElementById("n-jour").value){
+    document.getElementById("n-jour").value = new Date().toISOString().slice(0,10);
+  }
+};
+document.getElementById("n-annuler").onclick = () =>
+  document.getElementById("neuve").classList.remove("ouvert");
+document.getElementById("n-ok").onclick = async () => {
+  const v = (i) => document.getElementById("n-"+i).value.trim();
+  const etat = document.getElementById("n-etat");
+  if(!v("jour") || !v("titre")){ etat.textContent = "il faut au moins une date et un titre"; return; }
+  etat.textContent = "…";
+  const r = await fetch("/admin/api/publication", {method:"PUT",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({jour:v("jour"), heure:v("heure"), canal:v("canal"),
+                          titre:v("titre"), texte:v("texte"), hashtags:v("hashtags")})});
+  if(!r.ok){ const m = await r.json().catch(()=>({}));
+             etat.textContent = m.erreur || ("échec "+r.status); return; }
+  const d = await r.json();
+  TOUT.push(d.publication);
+  TOUT.sort((a,b)=> (a.jour+a.heure).localeCompare(b.jour+b.heure));
+  ["titre","texte","hashtags","heure"].forEach(i=>document.getElementById("n-"+i).value="");
+  etat.textContent = "créée";
+  document.getElementById("neuve").classList.remove("ouvert");
+  dessiner();
+};
 charger();
 </script></body></html>`;
