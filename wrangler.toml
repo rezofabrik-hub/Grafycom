@@ -91,3 +91,15 @@ ADMIN_AUD = ""
 binding = "DB"
 database_name = "grafycom-publications"
 database_id = "bfa19a4a-2a9c-4053-bf1d-5a14105b42cb"
+
+# Les photos deposees dans le back-office. Elles ne vont pas dans le
+# depot : une photo de 3 Mo n'a rien a faire dans un historique git, qui
+# ne l'oublierait jamais. Elles ne sont pas servies publiquement non
+# plus - Laurent les telecharge pour les poster lui-meme.
+#
+# A DECOMMENTER une fois R2 active dans le tableau de bord Cloudflare et
+# le seau cree. Declarer un seau qui n'existe pas fait echouer le
+# deploiement, et le site resterait sur sa version precedente.
+# [[r2_buckets]]
+# binding = "FICHIERS"
+# bucket_name = "grafycom-photos"

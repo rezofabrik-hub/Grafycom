@@ -74,6 +74,21 @@ textarea{resize:vertical;min-height:120px;line-height:1.6}
 .vide{text-align:center;padding:60px 20px;color:var(--taupe)}
 .avis{border-left:4px solid var(--bleu);background:var(--carte);border-radius:0 10px 10px 0;
  padding:12px 16px;font-size:13.5px;margin:16px 0}
+.photos{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.ph{position:relative;width:104px}
+.ph img{width:104px;height:104px;object-fit:cover;border-radius:10px;
+ border:1px solid var(--filet);display:block;background:var(--fond)}
+.ph button{position:absolute;top:-7px;right:-7px;width:24px;height:24px;padding:0;
+ border-radius:50%;line-height:1;font-size:14px;background:var(--corail);
+ border-color:var(--corail);color:#fff}
+.ph a{display:block;font-size:11.5px;color:var(--taupe);text-align:center;
+ margin-top:3px;text-decoration:none}
+.ph a:hover{text-decoration:underline}
+.depot{width:104px;height:104px;border:2px dashed var(--filet);border-radius:10px;
+ display:flex;align-items:center;justify-content:center;cursor:pointer;
+ font-size:12.5px;color:var(--taupe);text-align:center;padding:8px}
+.depot:hover{border-color:var(--taupe)}
+.depot input{display:none}
 </style></head><body>
 <div class="filet"></div>
 <header><span class="oeil">Grafycom · back-office</span><h1>Publications à relire</h1></header>
@@ -129,6 +144,7 @@ function dessiner(){
       + "<label>Hashtags</label><input type=text data-c=hashtags value=\""+E(p.hashtags)+"\">"
       + "<label>Visuel</label><input type=text data-c=visuel value=\""+E(p.visuel)+"\">"
       + "<label>Note interne</label><input type=text data-c=note value=\""+E(p.note)+"\">"
+      + "<label>Photos</label><div class=photos data-photos></div>"
       + '<div class="actions">'
       + "<button class=ok data-a=valide>Valider</button>"
       + "<button class=non data-a=refuse>Refuser</button>"
@@ -138,8 +154,55 @@ function dessiner(){
       + '<span class="etat"></span></div></div></div>';
   }
   L.innerHTML = html;
-  L.querySelectorAll(".tete").forEach(t=>t.onclick=()=>t.parentElement.classList.toggle("ouvert"));
+  L.querySelectorAll(".tete").forEach(t=>t.onclick=()=>{
+    const li = t.parentElement;
+    li.classList.toggle("ouvert");
+    if(li.classList.contains("ouvert")) photos(li);
+  });
   L.querySelectorAll(".actions button").forEach(x=>x.onclick=(e)=>agir(e.target));
+}
+async function photos(ligne){
+  const zone = ligne.querySelector("[data-photos]");
+  if(!zone || zone.dataset.charge) return;
+  zone.dataset.charge = "1";
+  const id = ligne.dataset.id;
+  const r = await fetch("/admin/api/photos?pub=" + encodeURIComponent(id));
+  if(r.status === 503){
+    zone.innerHTML = '<span style="font-size:13px;color:var(--taupe)">'
+      + "Stockage des photos pas encore activé.</span>";
+    return;
+  }
+  const d = r.ok ? await r.json() : {photos:[]};
+  dessinePhotos(zone, id, d.photos || []);
+}
+function dessinePhotos(zone, id, liste){
+  const u = (c) => "/admin/api/photo?cle=" + encodeURIComponent(c);
+  zone.innerHTML = liste.map(p =>
+      '<div class="ph" data-cle="'+E(p.cle)+'"><img src="'+u(p.cle)+'" alt="">'
+      + '<button title="Retirer">&times;</button>'
+      + '<a href="'+u(p.cle)+'" download>télécharger</a></div>').join("")
+    + '<label class="depot">Déposer une photo<input type=file accept="image/*" multiple></label>';
+
+  zone.querySelectorAll(".ph button").forEach(b => b.onclick = async () => {
+    const cle = b.closest(".ph").dataset.cle;
+    await fetch("/admin/api/photo?cle=" + encodeURIComponent(cle), {method:"DELETE"});
+    zone.dataset.charge = ""; photos(zone.closest(".ligne"));
+  });
+  zone.querySelector(".depot input").onchange = async (e) => {
+    const depot = zone.querySelector(".depot");
+    for(const f of e.target.files){
+      depot.textContent = "envoi…";
+      const r = await fetch("/admin/api/photo?pub=" + encodeURIComponent(id)
+          + "&nom=" + encodeURIComponent(f.name),
+        {method:"PUT", headers:{"Content-Type": f.type}, body: f});
+      if(!r.ok){
+        const m = await r.json().catch(()=>({}));
+        depot.textContent = m.erreur || ("échec " + r.status);
+        return;
+      }
+    }
+    zone.dataset.charge = ""; photos(zone.closest(".ligne"));
+  };
 }
 async function agir(bouton){
   const ligne = bouton.closest(".ligne");

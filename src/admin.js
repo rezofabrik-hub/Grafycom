@@ -141,6 +141,75 @@ export async function api(request, env, url, qui) {
     return json({ publication: ligne });
   }
 
+  // --- Photos -------------------------------------------------------
+  // Elles vivent dans R2, pas dans le depot : une photo de 3 Mo n'a rien
+  // a faire dans un historique git, qui ne l'oublierait jamais.
+  //
+  // Elles ne sont pas servies publiquement. Laurent les telecharge d'ici
+  // pour les deposer dans Meta Business Suite ; une photo client mise en
+  // ligne par megarde, avant l'accord du client, serait difficile a
+  // rattraper.
+  if (chemin.startsWith("/photo")) {
+    if (!env.FICHIERS) {
+      return json({ erreur: "stockage non activé",
+                    detail: "R2 n'est pas encore branché sur ce Worker." }, 503);
+    }
+
+    if (chemin === "/photos" && request.method === "GET") {
+      const pub = url.searchParams.get("pub") || "";
+      if (!pub) return json({ erreur: "publication manquante" }, 400);
+      const l = await env.FICHIERS.list({ prefix: `pub/${pub}/` });
+      return json({ photos: (l.objects || []).map((o) => ({
+        cle: o.key, nom: o.key.split("/").pop(),
+        taille: o.size, date: o.uploaded,
+      })) });
+    }
+
+    if (chemin === "/photo" && request.method === "PUT") {
+      const pub = url.searchParams.get("pub") || "";
+      const nom = (url.searchParams.get("nom") || "").replace(/[^\w.\-]/g, "_");
+      if (!pub || !nom) return json({ erreur: "publication ou nom manquant" }, 400);
+      const type = request.headers.get("Content-Type") || "";
+      if (!/^image\/(jpeg|png|webp|avif|gif)$/.test(type)) {
+        return json({ erreur: "ce n'est pas une image" }, 415);
+      }
+      const taille = Number(request.headers.get("Content-Length") || 0);
+      if (taille > 25 * 1024 * 1024) {
+        return json({ erreur: "image trop lourde (25 Mo maximum)" }, 413);
+      }
+      const cle = `pub/${pub}/${Date.now()}-${nom}`;
+      await env.FICHIERS.put(cle, request.body, {
+        httpMetadata: { contentType: type },
+      });
+      await journalise(env, qui, "photo ajoutée", cle);
+      return json({ cle, nom });
+    }
+
+    if (chemin === "/photo" && request.method === "GET") {
+      const cle = url.searchParams.get("cle") || "";
+      if (!cle.startsWith("pub/")) return json({ erreur: "clé invalide" }, 400);
+      const o = await env.FICHIERS.get(cle);
+      if (!o) return json({ erreur: "introuvable" }, 404);
+      return new Response(o.body, {
+        headers: {
+          "Content-Type": o.httpMetadata?.contentType || "application/octet-stream",
+          "Cache-Control": "private, max-age=300",
+          "Content-Disposition": `inline; filename="${cle.split("/").pop()}"`,
+        },
+      });
+    }
+
+    if (chemin === "/photo" && request.method === "DELETE") {
+      const cle = url.searchParams.get("cle") || "";
+      if (!cle.startsWith("pub/")) return json({ erreur: "clé invalide" }, 400);
+      await env.FICHIERS.delete(cle);
+      await journalise(env, qui, "photo supprimée", cle);
+      return json({ supprime: cle });
+    }
+
+    return json({ erreur: "route photo inconnue" }, 404);
+  }
+
   if (chemin === "/journal" && request.method === "GET") {
     const { results } = await env.DB.prepare(
       "SELECT * FROM journal ORDER BY id DESC LIMIT 100").all();
