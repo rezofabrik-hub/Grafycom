@@ -122,6 +122,15 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/contact") return contact(request, env);
+
+    // La racine n'a pas de fichier a son nom. wrangler.toml demande
+    // html_handling = "none" pour que /prestations.html soit servi tel
+    // quel, sans redirection : en contrepartie, plus rien ne devine
+    // qu'une adresse qui finit par / designe son index.html. On le dit
+    // ici, pour la seule adresse concernee.
+    if (url.pathname === "/") {
+      return env.ASSETS.fetch(new Request(new URL("/index.html", url), request));
+    }
     return env.ASSETS.fetch(request);
   },
 };

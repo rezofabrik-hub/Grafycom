@@ -39,3 +39,5 @@ reseaux/propositions/*-apercu.html
 # secondes à partir du script : les versionner alourdirait le dépôt sans
 # rien apporter.
 reseaux/visuels/
+.dev.vars
+.wrangler/

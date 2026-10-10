@@ -19,9 +19,17 @@ directory = "./dist"
 binding = "ASSETS"
 # Les adresses inconnues reçoivent la page 404 du site, pas celle de Cloudflare.
 not_found_handling = "404-page"
+# Servir /prestations.html tel quel. Par defaut, Cloudflare retire le .html
+# et redirige en 307 vers /prestations. Or le site porte 1101 liens internes
+# en .html, son sitemap 26 adresses en .html, et chaque page declare une
+# canonique en .html. Avec le comportement par defaut : une redirection a
+# chaque clic, et une canonique qui designe une adresse qui redirige - ce
+# que Google interprete mal. Les adresses restent donc celles qui sont
+# deja indexees.
+html_handling = "none"
 # Seul /api/* passe par le code ; tout le reste est servi directement depuis
 # le stockage d'assets, sans invoquer le Worker.
-run_worker_first = [ "/api/*" ]
+run_worker_first = [ "/api/*", "/" ]
 
 # Secrets à définir dans l'interface (Settings > Variables and Secrets),
 # jamais dans ce fichier :
