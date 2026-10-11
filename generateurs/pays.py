@@ -194,7 +194,7 @@ pays(
  "Prades, Villefranche-de-Conflent, Vernet-les-Bains, Molitg-les-Bains, "
  "Ille-sur-Têt, Vinça, Olette, Mont-Louis&nbsp;— et la Cerdagne en remontant "
  "la vallée.",
- "Graphiste en Conflent — enseignes en secteur protégé | Grafycom",
+ "Graphiste en Conflent — secteur protégé | Grafycom",
  "Graphiste en Conflent (66) : enseignes en secteur protégé, identité "
  "visuelle et supports pour Prades, Villefranche-de-Conflent et Vernet. "
  "Devis gratuit.")

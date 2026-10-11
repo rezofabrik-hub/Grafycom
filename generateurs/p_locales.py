@@ -81,17 +81,26 @@ GABARIT = """
 # ressemble a ce qu'elle ne doit pas etre.
 VOISINS = {
     # Littoral, du nord au sud
-    "graphiste-le-barcares.html":        ["graphiste-canet-en-roussillon.html", "graphiste-rivesaltes.html", "graphiste-saint-cyprien.html"],
-    "graphiste-canet-en-roussillon.html":["graphiste-saint-cyprien.html", "graphiste-le-barcares.html", "graphiste-rivesaltes.html"],
+    "graphiste-le-barcares.html":        ["graphiste-canet-en-roussillon.html", "graphiste-claira.html", "graphiste-fitou.html"],
+    "graphiste-canet-en-roussillon.html":["graphiste-saint-cyprien.html", "graphiste-le-barcares.html", "graphiste-claira.html"],
     "graphiste-saint-cyprien.html":      ["graphiste-canet-en-roussillon.html", "graphiste-elne.html", "graphiste-collioure.html"],
     "graphiste-argeles-sur-mer.html":    ["graphiste-collioure.html", "graphiste-elne.html", "graphiste-ceret.html"],
     "graphiste-collioure.html":          ["graphiste-argeles-sur-mer.html", "graphiste-elne.html", "graphiste-saint-cyprien.html"],
-    # Plaine et Aspres
+    # Plaine sud et Aspres
     "graphiste-elne.html":               ["graphiste-argeles-sur-mer.html", "graphiste-saint-cyprien.html", "graphiste-thuir.html"],
-    "graphiste-rivesaltes.html":         ["graphiste-le-barcares.html", "graphiste-canet-en-roussillon.html", "graphiste-thuir.html"],
-    "graphiste-thuir.html":              ["graphiste-elne.html", "graphiste-ceret.html", "graphiste-rivesaltes.html"],
+    "graphiste-thuir.html":              ["graphiste-elne.html", "graphiste-ceret.html", "graphiste-le-soler.html"],
     # Vallespir
     "graphiste-ceret.html":              ["graphiste-thuir.html", "graphiste-elne.html", "graphiste-argeles-sur-mer.html"],
+    # Couronne nord-ouest de Perpignan et Ribéral
+    "graphiste-saint-esteve.html":       ["graphiste-baho.html", "graphiste-peyrestortes.html", "graphiste-le-soler.html"],
+    "graphiste-le-soler.html":           ["graphiste-baho.html", "graphiste-saint-esteve.html", "graphiste-thuir.html"],
+    "graphiste-baho.html":               ["graphiste-le-soler.html", "graphiste-saint-esteve.html", "graphiste-peyrestortes.html"],
+    "graphiste-peyrestortes.html":       ["graphiste-rivesaltes.html", "graphiste-saint-esteve.html", "graphiste-baho.html"],
+    # Salanque et porte nord
+    "graphiste-rivesaltes.html":         ["graphiste-peyrestortes.html", "graphiste-salses-le-chateau.html", "graphiste-claira.html"],
+    "graphiste-claira.html":             ["graphiste-rivesaltes.html", "graphiste-le-barcares.html", "graphiste-salses-le-chateau.html"],
+    "graphiste-salses-le-chateau.html":  ["graphiste-rivesaltes.html", "graphiste-claira.html", "graphiste-fitou.html"],
+    "graphiste-fitou.html":              ["graphiste-salses-le-chateau.html", "graphiste-claira.html", "graphiste-rivesaltes.html"],
     # Conflent et haute montagne
     "graphiste-prades.html":             ["graphiste-conflent.html", "graphiste-cerdagne.html", "graphiste-thuir.html"],
     "graphiste-conflent.html":           ["graphiste-prades.html", "graphiste-capcir.html", "graphiste-cerdagne.html"],
@@ -99,7 +108,7 @@ VOISINS = {
     "graphiste-capcir.html":             ["graphiste-cerdagne.html", "graphiste-font-romeu.html", "graphiste-conflent.html"],
     "graphiste-font-romeu.html":         ["graphiste-cerdagne.html", "graphiste-capcir.html", "graphiste-prades.html"],
     # Perpignan, qui est le centre et non une voisine comme les autres
-    "infographiste-perpignan.html":      ["graphiste-rivesaltes.html", "graphiste-thuir.html", "graphiste-canet-en-roussillon.html"],
+    "infographiste-perpignan.html":      ["graphiste-saint-esteve.html", "graphiste-rivesaltes.html", "graphiste-canet-en-roussillon.html"],
 }
 
 LIBELLES = {
@@ -114,7 +123,14 @@ LIBELLES = {
     "graphiste-font-romeu.html": "Font-Romeu",
     "graphiste-le-barcares.html": "Le Barcarès",
     "graphiste-prades.html": "Prades",
+    "graphiste-baho.html": "Baho",
+    "graphiste-claira.html": "Claira",
+    "graphiste-fitou.html": "Fitou",
+    "graphiste-le-soler.html": "Le Soler",
+    "graphiste-peyrestortes.html": "Peyrestortes",
     "graphiste-rivesaltes.html": "Rivesaltes",
+    "graphiste-saint-esteve.html": "Saint-Estève",
+    "graphiste-salses-le-chateau.html": "Salses-le-Château",
     "graphiste-saint-cyprien.html": "Saint-Cyprien",
     "graphiste-thuir.html": "Thuir",
     "infographiste-perpignan.html": "Perpignan",
