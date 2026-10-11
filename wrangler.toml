@@ -100,6 +100,17 @@ database_id = "bfa19a4a-2a9c-4053-bf1d-5a14105b42cb"
 # A DECOMMENTER une fois R2 active dans le tableau de bord Cloudflare et
 # le seau cree. Declarer un seau qui n'existe pas fait echouer le
 # deploiement, et le site resterait sur sa version precedente.
+#
+# jurisdiction = "eu" : le seau est cree dans la juridiction europeenne,
+# et les photos n'en sortent pas. Ce sont des travaux clients non encore
+# publics, et parfois des personnes identifiables ; pour un studio
+# francais qui facture des entreprises, pouvoir repondre « les fichiers
+# restent en Europe » est une reponse, pas une approximation.
+# Ce choix se fait A LA CREATION du seau et ne se change jamais apres :
+# pour en changer il faudrait creer un autre seau et tout recopier.
+# La ligne du binding doit repeter la juridiction, sinon le Worker
+# cherche le seau dans la juridiction par defaut et ne le trouve pas.
 # [[r2_buckets]]
 # binding = "FICHIERS"
 # bucket_name = "grafycom-photos"
+# jurisdiction = "eu"
