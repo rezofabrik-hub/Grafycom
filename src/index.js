@@ -11,11 +11,24 @@
  * destination verifiee du compte a zero, sur toutes les offres. Un
  * fournisseur de moins a gerer, une cle de moins a renouveler.
  *
- * A preparer une seule fois, cote Cloudflare :
- *   1. Email Routing active sur grafycom.fr, et l'adresse de CONTACT_TO
- *      verifiee comme destination du compte.
- *   2. Le domaine de CONTACT_FROM integre au service d'envoi, sans quoi
- *      l'envoi est refuse (E_SENDER_DOMAIN_NOT_AVAILABLE).
+ * DEUX ENVOYEURS POSSIBLES, et le code choisit seul.
+ *
+ * 1. Resend, des que le secret RESEND_API_KEY existe sur le Worker.
+ *    C'est la voie retenue : le compte existe deja, le domaine y est
+ *    declare en eu-west-1, les messages sont signes DKIM, et l'envoi
+ *    ne depend pas d'une destination verifiee - donc demain on peut
+ *    aussi ecrire au client, pas seulement a Sandra.
+ *    A preparer une fois : les 4 enregistrements DNS que Resend donne
+ *    (DKIM sur resend._domainkey, SPF sur send., CNAME rsend), puis le
+ *    secret dans les reglages du Worker. Le CNAME doit etre en DNS only.
+ *
+ * 2. Le lien EMAIL de Cloudflare, tant que ce secret n'existe pas.
+ *    Il demande Email Routing actif sur grafycom.fr et CONTACT_TO
+ *    verifiee comme destination du compte, faute de quoi l'envoi est
+ *    refuse (E_SENDER_DOMAIN_NOT_AVAILABLE).
+ *
+ * Ce choix au vol evite un deploiement en deux temps : ajouter le secret
+ * suffit a basculer, et le retirer suffit a revenir en arriere.
  *
  * Les deux adresses sont dans wrangler.toml : ce ne sont pas des secrets,
  * et les avoir sous les yeux vaut mieux que de les chercher dans une
@@ -42,6 +55,41 @@ function echappe(s) {
   return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => (
     { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
   ));
+}
+
+/**
+ * Envoi par Resend.
+ *
+ * Choisi quand le secret RESEND_API_KEY existe sur le Worker. Le domaine
+ * grafycom.fr y est declare en eu-west-1 : les messages sont signes DKIM
+ * et partent d'Europe.
+ *
+ * L'API REST attend reply_to en minuscules avec un tiret bas. La forme
+ * replyTo n'existe que dans la bibliotheque Node, qui la convertit ;
+ * ici on parle a l'API directement, donc reply_to.
+ */
+async function envoiResend(env, m) {
+  const r = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: `Grafycom <${env.CONTACT_FROM}>`,
+      to: [env.CONTACT_TO],
+      reply_to: m.replyTo,
+      subject: m.subject,
+      text: m.text,
+      html: m.html,
+    }),
+  });
+  // Resend repond en JSON meme en erreur. On remonte le corps tel quel :
+  // c'est lui qui dit « domaine non verifie » ou « cle invalide », et sans
+  // lui on cherche a l'aveugle.
+  const corps = await r.text();
+  if (!r.ok) throw new Error(`Resend ${r.status} : ${corps}`);
+  try { return JSON.parse(corps); } catch { return {}; }
 }
 
 async function contact(request, env) {
@@ -74,8 +122,8 @@ async function contact(request, env) {
     return redirection("/contact.html?erreur=champs", origine);
   }
 
-  if (!env.EMAIL || !env.CONTACT_TO || !env.CONTACT_FROM) {
-    console.error("lien EMAIL, CONTACT_TO ou CONTACT_FROM manquant");
+  if (!env.CONTACT_TO || !env.CONTACT_FROM || !(env.RESEND_API_KEY || env.EMAIL)) {
+    console.error("aucun envoyeur disponible, ou CONTACT_TO / CONTACT_FROM manquant");
     return redirection("/contact.html?erreur=envoi", origine);
   }
 
@@ -104,15 +152,31 @@ async function contact(request, env) {
     // depuis sa boite, sans recopier quoi que ce soit. L'expediteur,
     // lui, reste le domaine - une adresse d'expedition empruntee au
     // visiteur serait rejetee par les controles anti-usurpation.
-    const envoi = await env.EMAIL.send({
-      from: { email: env.CONTACT_FROM, name: "Grafycom" },
-      to: env.CONTACT_TO,
-      replyTo: { email, name: nom },
-      subject: `Demande de devis — ${nom}`,
-      text: texte,
-      html,
-    });
-    console.log("message envoyé", envoi && envoi.messageId);
+    const sujet = `Demande de devis — ${nom}`;
+
+    // Deux chemins, et le choix se fait tout seul. Tant que le secret
+    // RESEND_API_KEY n'existe pas sur le Worker, rien ne change : on
+    // reste sur le lien Cloudflare. Le jour ou Laurent ajoute le secret,
+    // l'envoi bascule sur Resend sans redeploiement.
+    if (env.RESEND_API_KEY) {
+      const envoi = await envoiResend(env, {
+        replyTo: email,
+        subject: sujet,
+        text: texte,
+        html,
+      });
+      console.log("message envoyé par Resend", envoi && envoi.id);
+    } else {
+      const envoi = await env.EMAIL.send({
+        from: { email: env.CONTACT_FROM, name: "Grafycom" },
+        to: env.CONTACT_TO,
+        replyTo: { email, name: nom },
+        subject: sujet,
+        text: texte,
+        html,
+      });
+      console.log("message envoyé par Cloudflare", envoi && envoi.messageId);
+    }
   } catch (e) {
     // Les causes previsibles : domaine d'expedition pas encore integre
     // au service, ou destinataire pas verifie. Le message dit laquelle.
