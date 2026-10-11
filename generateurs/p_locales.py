@@ -57,8 +57,96 @@ GABARIT = """
     <p>Et partout ailleurs en visio&nbsp;: une partie de mes clients ne m'a jamais rencontrée en personne, ce qui n'a rien changé au résultat. La liste complète des communes du département est sur la page <a href="zone-intervention.html">zone d'intervention</a>.</p>
   </div>
 </section>
-
+{secteur}
 """
+
+
+# ---------------------------------------------------------------- SECTEUR
+# Maillage interne entre pages locales.
+#
+# Le constat qui l'a motive : quatorze pages de villes sur seize ne
+# recevaient qu'UN seul lien editorial. Elles existaient, bien ecrites, et
+# ne recevaient presque aucune autorite du reste du site. Le gabarit liait
+# deja les pages thematiques - d'ou leurs quinze a dix-huit liens - mais
+# jamais une ville vers sa voisine.
+#
+# Les voisinages sont poses a la main : communes66.json ne porte ni
+# coordonnees ni limites, seulement un nom, une population et un code. On
+# ne peut donc pas calculer une distance, et inventer une mitoyennete
+# serait pire que de s'abstenir. D'ou la formule « dans le meme secteur »,
+# qui dit un voisinage de zone et n'affirme aucune limite commune.
+#
+# Trois voisines par page, pas davantage : au-dela on ecrit une liste de
+# liens, et une liste de liens ne se lit pas - elle se saute, et elle
+# ressemble a ce qu'elle ne doit pas etre.
+VOISINS = {
+    # Littoral, du nord au sud
+    "graphiste-le-barcares.html":        ["graphiste-canet-en-roussillon.html", "graphiste-rivesaltes.html", "graphiste-saint-cyprien.html"],
+    "graphiste-canet-en-roussillon.html":["graphiste-saint-cyprien.html", "graphiste-le-barcares.html", "graphiste-rivesaltes.html"],
+    "graphiste-saint-cyprien.html":      ["graphiste-canet-en-roussillon.html", "graphiste-elne.html", "graphiste-collioure.html"],
+    "graphiste-argeles-sur-mer.html":    ["graphiste-collioure.html", "graphiste-elne.html", "graphiste-ceret.html"],
+    "graphiste-collioure.html":          ["graphiste-argeles-sur-mer.html", "graphiste-elne.html", "graphiste-saint-cyprien.html"],
+    # Plaine et Aspres
+    "graphiste-elne.html":               ["graphiste-argeles-sur-mer.html", "graphiste-saint-cyprien.html", "graphiste-thuir.html"],
+    "graphiste-rivesaltes.html":         ["graphiste-le-barcares.html", "graphiste-canet-en-roussillon.html", "graphiste-thuir.html"],
+    "graphiste-thuir.html":              ["graphiste-elne.html", "graphiste-ceret.html", "graphiste-rivesaltes.html"],
+    # Vallespir
+    "graphiste-ceret.html":              ["graphiste-thuir.html", "graphiste-elne.html", "graphiste-argeles-sur-mer.html"],
+    # Conflent et haute montagne
+    "graphiste-prades.html":             ["graphiste-conflent.html", "graphiste-cerdagne.html", "graphiste-thuir.html"],
+    "graphiste-conflent.html":           ["graphiste-prades.html", "graphiste-capcir.html", "graphiste-cerdagne.html"],
+    "graphiste-cerdagne.html":           ["graphiste-font-romeu.html", "graphiste-capcir.html", "graphiste-conflent.html"],
+    "graphiste-capcir.html":             ["graphiste-cerdagne.html", "graphiste-font-romeu.html", "graphiste-conflent.html"],
+    "graphiste-font-romeu.html":         ["graphiste-cerdagne.html", "graphiste-capcir.html", "graphiste-prades.html"],
+    # Perpignan, qui est le centre et non une voisine comme les autres
+    "infographiste-perpignan.html":      ["graphiste-rivesaltes.html", "graphiste-thuir.html", "graphiste-canet-en-roussillon.html"],
+}
+
+LIBELLES = {
+    "graphiste-argeles-sur-mer.html": "Argelès-sur-Mer",
+    "graphiste-canet-en-roussillon.html": "Canet-en-Roussillon",
+    "graphiste-capcir.html": "le Capcir",
+    "graphiste-cerdagne.html": "la Cerdagne",
+    "graphiste-ceret.html": "Céret",
+    "graphiste-collioure.html": "Collioure",
+    "graphiste-conflent.html": "le Conflent",
+    "graphiste-elne.html": "Elne",
+    "graphiste-font-romeu.html": "Font-Romeu",
+    "graphiste-le-barcares.html": "Le Barcarès",
+    "graphiste-prades.html": "Prades",
+    "graphiste-rivesaltes.html": "Rivesaltes",
+    "graphiste-saint-cyprien.html": "Saint-Cyprien",
+    "graphiste-thuir.html": "Thuir",
+    "infographiste-perpignan.html": "Perpignan",
+}
+
+
+def bloc_secteur(slug):
+    """Les trois voisines, plus Perpignan, en fin de page.
+
+    Perpignan est ajoutee partout sauf sur sa propre page : c'est le
+    centre economique du departement, et la page vers laquelle un
+    visiteur qui elargit sa recherche doit pouvoir aller d'un clic.
+    """
+    voisins = list(VOISINS.get(slug, []))
+    if not voisins:
+        return ""
+    liens = ", ".join(
+        '<a href="%s">%s</a>' % (v, LIBELLES[v]) for v in voisins)
+    centre = ""
+    if slug != "infographiste-perpignan.html":
+        centre = (' Et <a href="infographiste-perpignan.html">Perpignan</a>'
+                  ' pour le reste du département.')
+    # Pas de fond-creme : l'appel a l'action qui suit en porte un, et deux
+    # sections de la meme couleur se fondent l'une dans l'autre. Mesure
+    # faite au rendu, pas devinee - les deux sortaient en rgb(247,241,239).
+    return """
+<section style="padding-top:0">
+  <div class="conteneur" style="max-width:760px">
+    <p class="encart" style="margin:0"><strong>Dans le même secteur&nbsp;:</strong> %s.%s</p>
+  </div>
+</section>
+""" % (liens, centre)
 
 def carte(picto, icone, titre, texte):
     return ('<article class="carte carte-creme"><div class="picto %s"><i class="fa-solid %s" aria-hidden="true"></i></div>'
@@ -85,7 +173,7 @@ def locale(slug, ville, cp, eyebrow, h1a, h1b, chapeau, particularites, cartes,
         eyebrow=eyebrow, h1a=h1a, h1b=h1b, chapeau=chapeau, ville=ville,
         particularites=particularites, cartes="\n    ".join(cartes),
         a_ville=a_ville, deplacement=deplacement, voisines=voisines,
-        tel=TEL, tel_uri=TEL_URI)
+        tel=TEL, tel_uri=TEL_URI, secteur=bloc_secteur(slug))
     corps += appel(
         "Un projet %s&nbsp;?" % a_ville,
         "Le premier échange est gratuit et sans engagement. Décrivez-moi votre activité et ce qui vous gêne dans votre image&nbsp;: je vous réponds sous 48&nbsp;heures ouvrées.",

@@ -30,7 +30,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from gen import page, appel, TEL, TEL_URI, MAIL          # noqa: E402
-from p_locales import GABARIT, carte                     # noqa: E402
+from p_locales import GABARIT, carte, bloc_secteur                     # noqa: E402
 
 
 def jsonld_pays(nom, slug, communes):
@@ -70,7 +70,7 @@ def pays(slug, nom, avec_article, communes, eyebrow, h1a, h1b, chapeau,
         eyebrow=eyebrow, h1a=h1a, h1b=h1b, chapeau=chapeau, ville=avec_article,
         particularites=particularites, cartes="\n    ".join(cartes),
         a_ville=au_pays, deplacement=deplacement, voisines=voisines,
-        tel=TEL, tel_uri=TEL_URI)
+        tel=TEL, tel_uri=TEL_URI, secteur=bloc_secteur(slug))
     corps += appel(
         "Un projet %s&nbsp;?" % au_pays,
         "Le premier échange est gratuit et sans engagement. Décrivez-moi "
