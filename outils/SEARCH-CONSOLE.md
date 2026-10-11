@@ -157,3 +157,32 @@ supprimé en 2023, le sitemap dans la Search Console est la seule voie.
 Un compte **Bing Webmaster Tools** reste utile ensuite — il sait importer la
 propriété depuis la Search Console en un clic, et Bing alimente aussi les
 réponses de ChatGPT et de Copilot, ce qui commence à compter.
+
+---
+
+## IndexNow — Bing et Yandex, mis en place le 11 octobre 2026
+
+IndexNow permet de *prévenir* un moteur qu'une page est nouvelle ou a
+changé, au lieu d'attendre son prochain passage. Bing et Yandex le
+supportent ; **Google ne le supporte pas**, et c'est la limite de
+l'exercice : pour Google, il n'existe pas d'équivalent sans la Search
+Console.
+
+La clé est un fichier `<clé>.txt` à la racine du site, qui contient la
+clé elle-même. Ce n'est pas un secret — le protocole exige qu'elle soit
+publique, c'est ce qui prouve qu'on possède bien le domaine. Elle est
+donc versionnée, et `build.sh` la publie : l'extension `txt` est dans la
+liste blanche du garde-fou.
+
+Pour signaler de nouvelles pages plus tard :
+
+```
+curl -X POST https://api.indexnow.org/indexnow \
+  -H 'Content-Type: application/json' \
+  -d '{"host":"grafycom.fr","key":"<la clé>","keyLocation":"https://grafycom.fr/<la clé>.txt",
+       "urlList":["https://grafycom.fr/ma-nouvelle-page.html"]}'
+```
+
+Une réponse 200 ou 202 vaut acceptation. L'API ne dit pas si la page sera
+indexée, seulement que la liste a été reçue — l'indexation reste la
+décision du moteur.
