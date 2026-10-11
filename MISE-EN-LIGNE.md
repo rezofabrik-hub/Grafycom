@@ -5,6 +5,82 @@ domaine définitif.
 
 ---
 
+## 0. État réel au 11 octobre 2026 — à lire avant le reste
+
+Ce document a été écrit avant plusieurs bascules. **Les sections 2 et 2 bis
+décrivent des états passés** : le site n'est plus sur GitHub Pages, le domaine
+n'est plus géré chez AWS, et le mode chantier est terminé (les pages portent
+`index, follow`, `accueil.html` n'existe plus). Elles sont conservées parce
+qu'elles expliquent comment on en est arrivé là, pas parce qu'il faut les
+suivre.
+
+### Hébergement
+
+| | |
+|---|---|
+| Hébergeur | Cloudflare Workers, Worker `grafycom` |
+| Déploiement | Workers Builds, automatique à chaque `push` sur `main` |
+| Ce qui est publié | `dist/`, construit par `build.sh` |
+| DNS | Cloudflare (`dimitris` / `malavika.ns.cloudflare.com`) |
+| Registrar | AWS Route 53 Registrar, qui revend le `.fr` via Gandi — d'où le nom « GANDI » dans le RDAP de l'AFNIC |
+
+**Reste à faire chez AWS** : supprimer la zone hébergée Route 53. Elle ne sert
+plus à rien depuis la bascule et reste facturée au mois. Route 53 refuse de
+supprimer une zone qui contient encore des enregistrements : effacer d'abord
+le A et le CNAME `www`, les NS et SOA partent avec la zone.
+
+### Messagerie — vérifiée de bout en bout le 11 octobre 2026
+
+Deux services, deux rôles, et **aucun conflit DNS** : Resend occupe le
+sous-domaine `send.`, Cloudflare occupe la racine.
+
+**Envoi** — le formulaire de contact, par Resend :
+
+| Enregistrement | Nom | Valeur |
+|---|---|---|
+| TXT | `resend._domainkey` | clé DKIM fournie par Resend |
+| MX | `send` | `feedback-smtp.eu-west-1.amazonses.com`, priorité 10 |
+| TXT | `send` | `v=spf1 include:amazonses.com ~all` |
+| CNAME | `rsend` | `send.forge.rmta.net` — **en DNS only, nuage gris** |
+
+Domaine `grafycom.fr` vérifié chez Resend, région `eu-west-1`. Le Worker
+appelle l'API REST avec le secret `RESEND_API_KEY`, posé dans les réglages du
+Worker (Settings → Variables and Secrets, type Secret). **Ce secret n'est pas
+dans le dépôt et ne doit jamais y être.**
+
+**Réception** — `contact@grafycom.fr`, par Cloudflare Email Routing :
+
+| Enregistrement | Nom | Valeur |
+|---|---|---|
+| MX ×3 | racine | `route1/2/3.mx.cloudflare.net` |
+| TXT | racine | `v=spf1 include:_spf.mx.cloudflare.net ~all` |
+| TXT | `cf2024-1._domainkey` | DKIM Cloudflare |
+
+Une règle de routage envoie `contact@grafycom.fr` vers la boîte Gmail de
+Sandra. Email Routing **reçoit seulement** : une réponse partira de son adresse
+Gmail, pas de `contact@grafycom.fr`.
+
+**Manque encore** : le DMARC. Aucun enregistrement `_dmarc` n'existe. À poser
+en `TXT` sur `_dmarc`, valeur `v=DMARC1; p=none;` pour commencer, puis
+durcir en `p=quarantine` une fois qu'on a observé de vrais messages passer.
+
+### Si le formulaire cesse de fonctionner
+
+Le Worker choisit son envoyeur au vol : Resend si `RESEND_API_KEY` existe, le
+lien `EMAIL` de Cloudflare sinon. Un formulaire qui renvoie le visiteur sur
+`contact.html?erreur=envoi` veut dire que les deux ont échoué.
+
+Dans l'ordre : vérifier que le secret existe toujours et s'appelle exactement
+`RESEND_API_KEY` ; vérifier que le domaine est toujours `verified` chez
+Resend ; regarder le journal des appels API de Resend — un `POST /emails` en
+401 désigne la clé, aucun `POST /emails` du tout désigne le secret absent.
+
+C'est exactement ce chemin qui a servi à diagnostiquer la mise en service : un
+test en apparence raté n'était qu'un test lancé avant que le secret ne soit
+déployé.
+
+---
+
 ## 1. Ce qu'est ce site
 
 Un site **statique** : vingt-cinq pages HTML, une feuille de style, un fichier
