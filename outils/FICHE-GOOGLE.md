@@ -22,6 +22,39 @@ Les ordres de grandeur, pour fixer les attentes :
 
 La fiche est donc le seul levier à effet rapide. Le reste est du fond.
 
+## D'abord : dans quel état est la fiche ?
+
+Une fiche existe déjà. Avant tout, savoir laquelle des trois situations —
+elles ne demandent pas le même geste.
+
+Ouvrir **Google Maps**, chercher `Grafycom`, et regarder ce qu'affiche le
+panneau de gauche.
+
+| Ce qu'on voit | Situation | Ce qu'il faut faire |
+|---|---|---|
+| « Vous êtes propriétaire de cet établissement ? » | Fiche **non revendiquée**, créée automatiquement par Google à partir de données publiques | La revendiquer, puis valider, puis corriger |
+| La fiche est administrable depuis le compte de Sandra | Déjà **revendiquée par elle** | Rien à revendiquer : corriger les champs |
+| « Cet établissement est déjà revendiqué » par un autre compte | Revendiquée par **quelqu'un d'autre** | Demander le transfert de propriété |
+
+**Non revendiquée.** C'est le cas le plus courant pour une petite
+structure : Google fabrique des fiches tout seul à partir d'annuaires et
+de mentions sur le web. La fiche existe, elle est visible, et personne ne
+la contrôle — donc les informations y sont souvent fausses ou vieilles.
+La revendiquer est gratuit et prend le même chemin de validation qu'une
+création.
+
+**Revendiquée par un autre compte.** Google propose « Demander l'accès ».
+Il contacte le propriétaire actuel, qui a trois à sept jours pour
+répondre. Sans réponse, on peut réclamer la propriété. Si c'est un ancien
+prestataire ou un annuaire, ça se règle presque toujours ainsi — ne pas
+créer une deuxième fiche en attendant, les doublons finissent suspendus
+tous les deux.
+
+**Dans les trois cas, le contenu ci-dessous reste valable.** Il sert à
+créer la fiche, ou à corriger celle qui existe. Les trois champs les plus
+souvent faux sur une fiche non revendiquée sont, dans l'ordre : la
+catégorie principale, le nom, et le fait que l'adresse soit affichée.
+
 ## Le compte qui doit la posséder
 
 **Celui de Sandra.** C'est son entreprise : c'est elle qui doit recevoir
