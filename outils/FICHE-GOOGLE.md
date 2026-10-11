@@ -22,7 +22,34 @@ Les ordres de grandeur, pour fixer les attentes :
 
 La fiche est donc le seul levier à effet rapide. Le reste est du fond.
 
-## D'abord : dans quel état est la fiche ?
+## État au 11 octobre 2026
+
+**La fiche existe et appartient à Sandra. Laurent y a accès via son
+compte Google.** Il n'y a donc rien à revendiquer et rien à attendre : le
+travail est une correction, pas une création.
+
+Ce qui suit reste écrit comme un guide complet — les valeurs à saisir
+sont les mêmes qu'on crée ou qu'on corrige. Le tableau des trois
+situations est conservé plus bas au cas où l'état changerait, ou si une
+fiche en double apparaissait un jour.
+
+### Dans quel ordre corriger
+
+Par ordre d'effet réel, pas par ordre d'apparition dans le formulaire :
+
+1. **La catégorie principale.** C'est elle qui décide sur quelles
+   recherches la fiche sort. Une catégorie approximative coûte plus que
+   tous les autres champs réunis.
+2. **Le type d'établissement.** Vérifier que c'est bien une zone
+   desservie et que l'adresse n'est **pas** affichée. Si elle l'est,
+   c'est à la fois un manquement à la discrétion voulue et le mauvais
+   type de fiche.
+3. **Le nom.** S'il contient autre chose que `Grafycom`, retirer le
+   reste.
+4. **Le site web.** Doit pointer sur `https://grafycom.fr/`.
+5. Description, services, horaires, photos.
+
+## Les trois situations possibles (référence)
 
 Une fiche existe déjà. Avant tout, savoir laquelle des trois situations —
 elles ne demandent pas le même geste.
