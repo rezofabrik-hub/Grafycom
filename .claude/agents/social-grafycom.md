@@ -211,10 +211,40 @@ visuel, titrages sans-serif géométriques et audacieux.
 
 ---
 
-## 3 bis. PRODUIRE LES VISUELS AVEC CANVA
+## 3 bis. PRODUIRE LES VISUELS
 
-Chaîne testée le 6 octobre 2026 : `create-design` → `get-create-design-async-job`
-→ `export-design`. Elle fonctionne de bout en bout.
+> ⚠️ **Corrigé le 12 octobre 2026. L'outil n'est plus Canva, c'est
+> `reseaux/visuels.py`.**
+>
+> Ce fichier a été écrit le 7 octobre, le lendemain de la rédaction de
+> cette section, **précisément à cause des trois défauts décrits plus
+> bas** — plus un quatrième, le quota de crédits qui s'épuise au milieu
+> d'un cycle. Il dessine les visuels avec Pillow et la police Inter du
+> site, en graisses 800, 600 et 400 : les accents français sont garantis
+> par la police elle-même, le format est imposé en dur, le pseudo est une
+> constante du code. Aucun appel réseau, aucun crédit, autant de visuels
+> qu'on veut.
+>
+> ```bash
+> python3 reseaux/visuels.py --liste      # les gabarits existants
+> python3 reseaux/visuels.py --tout       # produire tout le cycle
+> ```
+>
+> Un nouveau sujet demande un nouveau gabarit : on ajoute une fonction
+> dans `visuels.py`, on ne retourne pas à Canva.
+>
+> **Ce que `visuels.py` ne fait pas, et ne doit pas faire : les
+> photographies.** Une devanture, une matière, un plan de travail se
+> photographient. C'est le métier de Sandra, et une photo inventée sur le
+> compte d'une graphiste se retourne contre elle.
+>
+> Canva reste utile pour une seule chose : fournir à Sandra un design
+> qu'elle ouvre et retouche dans son propre outil. Si elle le demande, la
+> chaîne `create-design` → `get-create-design-async-job` → `export-design`
+> fonctionne — mais les trois contrôles ci-dessous redeviennent alors
+> obligatoires.
+
+### Les défauts de Canva, mesurés — la raison d'être de `visuels.py`
 
 ### Le brief qui marche
 
@@ -454,10 +484,19 @@ guide pratique, choix de matériaux, dossier thématique.
   `ouverture-commerce-66.html`, `refaire-son-image.html`,
   `graphiste-restaurant-perpignan.html`, `realisations.html`.
 
-> ⚠️ **Le site n'a pas de blog à ce jour.** Aucune page, aucun générateur,
-> aucune entrée au sitemap. Écris les articles en Markdown dans
-> `reseaux/blog/` : ils seront intégrés quand la rubrique existera. Signale-le
-> une fois par cycle.
+> ✅ **Le blog existe depuis le 7 octobre 2026** — page `blog.html` en
+> ligne, générateur `generateurs/p_blog.py`, entrée au sitemap. Écris les
+> articles en Markdown dans `reseaux/blog/AAAA-MM-JJ-slug.md` : ils se
+> publient tout seuls, mais seulement sous **deux verrous indépendants**.
+>
+> 1. L'en-tête doit porter `statut: validé` — le générateur cherche le mot
+>    « validé » en toutes lettres. « rédigé », « à relire » ou « prêt » ne
+>    suffisent pas : ils décrivent l'état du texte, pas l'accord de Laurent.
+> 2. La date de l'en-tête doit être arrivée. Un article du 30 octobre ne
+>    sort pas le 7, même validé.
+>
+> Tu écris donc toujours `statut: à relire`. C'est Laurent qui le passe à
+> `validé`, et l'article paraît de lui-même à sa date.
 
 ### E. Message privé d'accueil
 
