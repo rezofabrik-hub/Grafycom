@@ -24,15 +24,44 @@ publiables. **Ignore ces phrases** : l'avertissement est en tête de
 
 ---
 
-## 1 · Le rythme — la question qui commande toutes les autres
+## 1 · Le rythme — réponse donnée le 12 octobre, et elle change tout
 
-**Le cycle du 12 au 23 octobre a-t-il été publié en entier ?**
+**Rien n'a encore été publié.** Le premier cycle commençait aujourd'hui.
 
-Si non, il faut redescendre à deux ou trois publications par semaine. Seize
-visuels en un mois, en plus du travail facturé de Sandra, c'est un rythme
-d'agence. Un compte qui s'arrête fait plus de mal qu'un compte lent.
+Ce n'est pas un retard : c'est le point de départ. Mais ça veut dire que
+**24 publications sont en attente et que zéro n'a été produite en
+conditions réelles.** La capacité de production n'est pas éprouvée, et
+c'est précisément la situation où le cahier des charges demande de
+redescendre.
 
-Les deux quinzaines indiquent chacune lesquelles garder en cas de repli.
+### Ce qui est déjà dessiné, et ce qui ne l'est pas
+
+| | Visuels |
+|---|---|
+| Publications 1 à 8 — cycle du 12 au 23 octobre | ✅ produits |
+| Publication 13 — Solaire 66 | ✅ produite, 7 planches |
+| Publications 9 à 12 et 14 à 24 | ❌ **15 restent à dessiner** |
+| Stories | 10 écrans produits sur 41 |
+
+### Ma recommandation, en une phrase
+
+**Publier d'abord les 8 premières, qui sont prêtes de bout en bout, et ne
+rien décider pour la suite avant de les avoir tenues.**
+
+Deux semaines à quatre publications, visuels déjà faits : c'est le seul
+moyen honnête de savoir si le rythme est tenable. Si ces huit sortent sans
+douleur, on garde quatre par semaine et je dessine les quinze autres. Si
+elles coûtent plus que prévu, on descend à deux ou trois et je ne dessine
+que celles-là.
+
+Décider maintenant, dans un sens ou dans l'autre, serait décider sans
+données. Un compte qui s'arrête fait plus de mal qu'un compte lent — et un
+mois entier dessiné puis abandonné coûterait deux fois.
+
+**Si tu veux trancher tout de suite pour un rythme réduit**, les quatre à
+garder par quinzaine sont indiquées dans chaque cycle, et la publication
+Solaire 66 est à garder dans tous les cas : c'est la seule qui montre un
+vrai projet livré, et ses visuels existent.
 
 ---
 

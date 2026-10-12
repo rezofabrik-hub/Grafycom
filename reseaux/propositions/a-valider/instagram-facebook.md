@@ -1,23 +1,548 @@
-# Instagram & Facebook — les 16 publications du 26 octobre au 21 novembre 2026
+# Instagram & Facebook — les 24 publications à valider
 
-Document de relecture **canal par canal**, demandé par Laurent. Les textes
-de fiche Google sont dans `fiche-google.md`, les stories dans `stories.md`,
-les messages privés dans `messages-prives.md`, et tout ce qui demande un
-arbitrage dans `arbitrages.md`. Le calendrier complet est dans
-`calendrier.md`.
+Du **lundi 12 octobre au samedi 21 novembre 2026**. Tout ce qui est écrit
+et non encore publié, dans l'ordre.
 
 > **Rien n'est programmé.** Les dates et heures sont des recommandations.
 > Aucune publication ne part sans ta validation explicite.
 
-Facebook est synchronisé depuis Meta Business Suite : une publication
-préparée pour Instagram part sur les deux. Les textes ci-dessous valent
-donc pour les deux réseaux.
+Facebook est synchronisé depuis Meta Business Suite : un contenu préparé
+pour Instagram part sur les deux.
+
+Les autres canaux sont dans leurs propres documents : `fiche-google.md`,
+`stories.md`, `blog.md`, `messages-prives.md`. Le calendrier d'ensemble est
+dans `calendrier.md`, et ce qui demande ta décision dans `arbitrages.md`.
 
 ---
 
-# SEMAINE 1 — du 26 octobre au 1er novembre
+# SEMAINE 1 — du 12 au 18 octobre
 
-## 1 — Lundi 26 octobre, 12 h 30 · Carrousel · Pilier 1, conseils & pédagogie de marque
+## 1 — Lundi 12 octobre, 12 h 30 · Carrousel · Pédagogie couleur
+
+### Direction visuelle — 6 slides
+
+- **S1.** Fond `#f7f1ef`. Aplat violet `#a86cd0` sur le tiers bas. En gros,
+  au-dessus : « Votre couleur dit déjà ce que vous vendez. » Signature
+  `@grafycom.graphiste` en pied, discrète.
+- **S2.** Trois pastilles côte à côte, sans légende : vert sapin, bleu
+  `#2f7fc4`, rose `#e75ba6`. Sous-titre : « Avant même de lire votre nom, le
+  client a deviné votre secteur. »
+- **S3.** Les mêmes pastilles, avec sous chacune le secteur qu'on lui
+  associe : *bio, nature, santé* — *banque, conseil, assurance* — *soin,
+  beauté, enfance*. En bas : « Ce ne sont pas des règles. Ce sont des
+  réflexes. »
+- **S4.** Fond violet plein. Texte blanc : « Les suivre vous rend crédible.
+  Les casser vous rend mémorable. Le problème, c'est de le faire sans le
+  savoir. »
+- **S5.** Deux rectangles, même texte blanc « 12 € » : l'un sur jaune pâle,
+  l'autre sur bleu `#2f7fc4`. Le premier illisible. « La couleur juste à
+  l'écran peut être illisible imprimée. Le contraste se vérifie. »
+- **S6.** Fond blanc. Flèche corail `#f2585c`. « Votre secteur en
+  commentaire. Je vous propose trois couleurs pour vous démarquer de vos
+  concurrents directs. »
+
+### Accroche
+**« Votre couleur dit déjà ce que vous vendez. »**
+
+### Légende
+
+> Votre couleur parle avant vous.
+>
+> Un client qui découvre votre devanture, votre carte ou votre camionnette
+> s'est déjà fait une impression avant d'avoir lu votre nom. Pas parce
+> qu'il est superficiel : parce que le cerveau classe plus vite qu'il ne
+> lit.
+>
+> Le vert pour le bio et la santé. Le bleu marine pour le conseil. Le rose
+> poudré pour le soin et l'enfance.
+>
+> Ce ne sont pas des règles, ce sont des réflexes collectifs. Les suivre
+> vous rend crédible immédiatement. Les casser volontairement vous rend
+> mémorable.
+>
+> Le vrai problème n'est ni l'un ni l'autre : c'est de les casser sans
+> l'avoir décidé. Un cabinet comptable en rose dragée, ça arrive, et ça
+> coûte des clients qui n'appellent pas sans savoir dire pourquoi.
+>
+> Et il y a le piège technique. Une couleur impeccable sur votre écran peut
+> devenir illisible imprimée sur une bâche ou gravée sur un panneau. Le
+> contraste, ça se mesure. 🎨
+>
+> **Votre secteur d'activité en commentaire** : je vous propose trois
+> couleurs qui vous démarqueraient de vos concurrents directs.
+>
+> Enregistrez ce post si vous préparez votre identité visuelle.
+
+### Texte alternatif
+Carrousel de six visuels sur la psychologie des couleurs. Trois pastilles —
+vert sapin, bleu marine, rose poudré — associées aux secteurs qu'elles
+évoquent. Un visuel compare un prix en blanc sur jaune pâle, illisible, et
+le même sur bleu marine, parfaitement lisible.
+
+### Hashtags — jeu B + 2 locaux
+`#identitevisuelle #creationlogo #designgraphique #charteGraphique #directionArtistique #printdesign #psychologiedescouleurs #graphistePerpignan #PyreneesOrientales #brandingLocal`
+
+### À fournir par Sandra
+- Les 6 slides. Le contraste de la S5 doit être **réellement** vrai à l'œil :
+  la démonstration perd tout si elle est truquée.
+- Rien d'autre. Pas de photo, pas d'accord client.
+
+---
+
+## 2 — Mardi 13 octobre, 8 h 00 · Carrousel · Réglementation enseigne
+
+> 🔎 **Contenu vérifié à la source.** Cerfa n° 16308\*01, arrêté du 31 août
+> 2012, articles R.581-6 à R.581-8 du code de l'environnement.
+
+### Direction visuelle — 7 slides
+
+- **S1.** Photo d'une devanture avec enseigne. Bandeau violet en travers :
+  « Votre enseigne a besoin d'une autorisation. Pas d'une déclaration. »
+- **S2.** Fond blanc cassé. Gros titre : « La confusion la plus répandue ».
+  Deux blocs : *Déclaration préalable* barré en corail · *Autorisation
+  préalable* entouré en violet.
+- **S3.** « Le formulaire : Cerfa n° 16308\*01 ». Capture stylisée du haut
+  du formulaire. Mention : « À déposer en mairie, **en trois exemplaires** ».
+- **S4.** « Au-delà de trois dispositifs ? Le formulaire se remplit une
+  seconde fois. » Pictogramme de trois panneaux, puis un quatrième en corail.
+- **S5.** « Ce qui change selon la commune » : Règlement Local de Publicité,
+  PLU, secteur patrimonial protégé. Trois pastilles numérotées en corail.
+- **S6.** « À Perpignan, le centre ancien est en secteur protégé. L'avis des
+  Architectes des Bâtiments de France s'ajoute au dossier. »
+- **S7.** Fond violet. « Posez votre question en commentaire : je vous dis
+  quelle procédure s'applique à votre rue. »
+
+### Accroche
+**« Votre enseigne a besoin d'une autorisation. Pas d'une déclaration. »**
+
+### Légende
+
+> Une enseigne, ce n'est pas qu'un choix esthétique. C'est un dossier.
+>
+> Et la confusion la plus répandue tient en un mot. On parle partout de
+> « déclaration préalable ». Pour une enseigne, c'est une **autorisation
+> préalable** — le formulaire Cerfa n° 16308*01, à déposer en mairie en
+> trois exemplaires.
+>
+> La nuance n'est pas un détail de vocabulaire. Une déclaration, on la
+> dépose et on avance. Une autorisation, on l'attend.
+>
+> Au-delà de trois dispositifs sur la même façade, il faut remplir le
+> formulaire une deuxième fois.
+>
+> Ensuite, tout dépend de votre rue. Le Règlement Local de Publicité et le
+> PLU de votre commune fixent les tailles, les matériaux, les règles
+> d'éclairage et l'extinction nocturne. À Perpignan, une bonne partie du
+> centre ancien est en secteur patrimonial protégé : l'avis des Architectes
+> des Bâtiments de France s'ajoute au dossier, et il oriente souvent le
+> choix des matières bien avant le choix du logo.
+>
+> C'est pour ça qu'une enseigne se pense en amont, pas après le logo.
+>
+> **Votre rue en commentaire**, je vous dis quelle procédure s'applique.
+>
+> Partagez à quelqu'un qui ouvre bientôt.
+
+### Texte alternatif
+Carrousel de sept visuels sur l'autorisation préalable d'enseigne. Il
+oppose les termes « déclaration préalable », barré, et « autorisation
+préalable », entouré, puis présente le formulaire Cerfa 16308 étoile 01 à
+déposer en mairie en trois exemplaires, et les règles qui varient selon la
+commune.
+
+### Hashtags — jeu C + 2 métier
+`#enseigne #signaletique #commercantsPerpignan #ouvertureCommerce #nouvelleEntreprise #reglementation #autorisationprealable #graphistePerpignan #identitevisuelle #PaysCatalan`
+
+### À fournir par Sandra
+- Une photo de devanture avec enseigne pour la S1. Si la façade est
+  identifiable, en choisir une neutre : ça évite de demander une
+  autorisation pour un post qui ne parle pas d'eux.
+- Une capture stylisée du haut du Cerfa (il est public, téléchargeable sur
+  service-public.fr).
+- ⚠️ **Avant publication :** vérifier si Perpignan dispose d'un RLP en
+  vigueur et sous quel nom. J'affirme l'existence du secteur patrimonial
+  protégé, pas le détail du règlement local.
+
+---
+
+## 3 — Jeudi 15 octobre, 12 h 30 · Dilemme A/B · Interactivité
+
+### Direction visuelle — 2 images
+
+- **Image 1.** Une même façade dupliquée côte à côte. À gauche, le nom en
+  script fin et élégant. À droite, le même en sans-serif large et épaisse.
+  Même taille, même couleur. En haut : « Laquelle se lit depuis le trottoir
+  d'en face ? » **A** et **B** en gros, en corail.
+- **Image 2 — la réponse.** Les deux mêmes, floutées comme à vingt mètres.
+  Le script devient une tache ; la sans-serif reste lisible. « À vingt
+  mètres, votre enseigne n'est plus une typo. C'est une silhouette. »
+
+### Accroche
+**« Laquelle se lit depuis le trottoir d'en face ? »**
+
+### Légende
+
+> A ou B ? Répondez avant de lire la suite.
+>
+> Les deux enseignes portent le même nom, à la même taille, dans la même
+> couleur. Sur un écran, à trente centimètres, la A est plus jolie. Presque
+> tout le monde choisit la A.
+>
+> Sauf que personne ne lit une enseigne à trente centimètres.
+>
+> On la lit en marchant, de biais, à vingt mètres, parfois en voiture. À
+> cette distance, une typographie n'est plus une typographie : c'est une
+> silhouette. Les déliés fins disparaissent les premiers, et il ne reste
+> qu'une tache.
+>
+> Une enseigne ne se choisit pas sur un écran. Elle se teste à la distance
+> réelle de lecture, sur la vraie façade, avec la vraie lumière. Dix
+> minutes sur le trottoir évitent une enseigne qu'on regrette dix ans.
+>
+> **Vous avez voté A ou B ?** Dites-le en commentaire — et dites-moi
+> surtout si votre enseigne actuelle passe le test des vingt mètres.
+>
+> Partagez à un commerçant qui refait sa façade.
+
+### Texte alternatif
+Deux photos de la même façade côte à côte, avec le même nom en typographie
+script fine à gauche et en sans-serif épaisse à droite. Une seconde image
+montre les deux versions floutées comme vues de loin : le script devient
+illisible, la sans-serif reste lisible.
+
+### Hashtags — jeu B + 2 secteur
+`#typographie #identitevisuelle #designgraphique #directionArtistique #charteGraphique #graphismeFrance #enseigne #signaletique #graphistePerpignan #CommerceLocal66`
+
+### À fournir par Sandra
+- Une photo de façade neutre, idéalement une devanture de Perpignan sans
+  enseigne lisible, ou un mur nu.
+- Les deux versions d'enseigne, et les deux mêmes floutées.
+- **Publier le sondage en story deux heures avant l'image 2**, sinon la
+  réponse tue le vote.
+
+---
+
+## 4 — Vendredi 16 octobre, 18 h 00 · REEL 24 s · Matières & impression
+
+### Découpage
+
+| Chrono | Visuel / action | Texte incrusté | Voix off |
+|---|---|---|---|
+| 0-3 s | Gros plan sur un écran affichant un visuel en bleu électrique éclatant. Transition brutale vers le même visuel imprimé, terne. | **« Pourquoi ce n'est jamais la même couleur »** | Vous validez un bleu éclatant à l'écran. Vous recevez l'impression. Ce n'est pas la même couleur. |
+| 3-9 s | Animation : trois faisceaux de lumière rouge, vert, bleu qui se superposent et deviennent blanc. | RVB : de la **lumière** | Un écran fabrique les couleurs avec de la lumière. Il additionne du rouge, du vert et du bleu. Plus il en met, plus c'est lumineux. |
+| 9-15 s | Animation : quatre gouttes d'encre cyan, magenta, jaune, noir qui se mélangent sur du papier et s'assombrissent. | CMJN : de l'**encre** | Une imprimante fait l'inverse. Elle dépose de l'encre sur du papier blanc. Chaque couche retire de la lumière. |
+| 15-20 s | Nuancier posé sur une table, main qui le feuillette, lumière rasante sur un papier texturé. | Le papier change tout | Et le papier compte autant que l'encre. Un mat absorbe. Un couché renvoie. Le même fichier donne deux résultats. |
+| 20-24 s | Logo Grafycom sur fond `#a86cd0`, signature `@grafycom.graphiste`. | **Demandez un BAT. Toujours.** | Alors ne validez jamais une couleur sur un écran. Demandez un bon à tirer. C'est gratuit, et ça évite de tout refaire. |
+
+**Prompt d'arrière-plan 0-3 s** (si génération nécessaire) :
+`Close-up macro shot of a computer screen displaying vivid electric blue graphic, shallow depth of field, soft studio lighting, then cut to the same design printed on matte paper lying on a wooden desk, muted colors, natural window light, 4K, photorealistic`
+
+**Voix de synthèse suggérée :** féminine française, calme et professionnelle,
+débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
+
+### Légende
+
+> Votre bleu à l'écran n'existe pas sur le papier.
+>
+> Ce n'est ni un défaut de l'imprimeur ni une erreur de votre graphiste.
+> Ce sont deux mondes physiques différents.
+>
+> Un écran fabrique la couleur avec de la lumière : il additionne du rouge,
+> du vert et du bleu. Plus il en ajoute, plus c'est lumineux. C'est le RVB.
+>
+> Une imprimante fait exactement l'inverse. Elle dépose de l'encre sur un
+> papier blanc, et chaque couche retire de la lumière. C'est le CMJN.
+>
+> Certains bleus et certains verts fluorescents existent en lumière et
+> n'existent pas en encre. Point.
+>
+> Et le papier compte autant que l'encre. Un mat absorbe et adoucit. Un
+> couché brillant renvoie et sature. Le même fichier donne deux résultats
+> différents selon le support.
+>
+> La seule parade tient en trois lettres : le BAT, le bon à tirer. Un
+> exemplaire réel, imprimé sur le vrai papier, validé avant le lancement de
+> la série.
+>
+> **Vous avez déjà eu une mauvaise surprise à la livraison ?** Racontez en
+> commentaire.
+
+### Hashtags — jeu B + 2 secteur
+`#printdesign #cmjn #impression #designgraphique #identitevisuelle #charteGraphique #graphismeFrance #bonatirer #graphistePerpignan #ArtisanDuRoussillon`
+
+### À fournir par Sandra
+- Le tournage : un écran, une impression du même visuel, un nuancier, un
+  papier texturé en lumière rasante. **Quatre plans de cinq secondes, filmés
+  au téléphone, suffisent.**
+- Les deux animations (superposition RVB, mélange CMJN) peuvent être faites
+  en motion simple, ou remplacées par deux schémas fixes animés au zoom.
+
+---
+
+
+# SEMAINE 2
+
+# SEMAINE 2 — du 19 au 25 octobre
+
+## 5 — Lundi 19 octobre, 12 h 30 · Carrousel · Typographie
+
+### Direction visuelle — 6 slides
+
+- **S1.** Fond blanc. Une seule phrase en très gros, dans une typo fine et
+  élégante : « Cette police est magnifique. » En dessous, petit, en corail :
+  « Et elle va vous coûter des clients. »
+- **S2.** La même phrase déclinée sur quatre supports : carte de visite,
+  menu, bâche, enseigne. Lisible sur la carte, illisible sur la bâche.
+- **S3.** « Trois questions avant de choisir une police » — pastilles
+  numérotées en corail sur fond `#f7f1ef`.
+- **S4.** « 1. À quelle distance sera-t-elle lue ? » Schéma : 30 cm · 2 m ·
+  20 m, avec la même police qui se dégrade.
+- **S5.** « 2. Tient-elle en tout petit ? » Le même mot à 6 pt, 10 pt, 24 pt.
+  « 3. Avez-vous le droit de l'utiliser ? » — mention licence commerciale.
+- **S6.** Fond `#2f7fc4`. « Une identité, c'est deux polices. Une pour les
+  titres, une pour le texte. Pas cinq. »
+
+### Accroche
+**« Cette police est magnifique. Et elle va vous coûter des clients. »**
+
+### Légende
+
+> La plus belle police du monde peut ruiner votre communication.
+>
+> Pas parce qu'elle est laide — justement parce qu'elle est belle. Une
+> police fine et élégante séduit sur une maquette, à trente centimètres,
+> sur un écran rétroéclairé. Et elle s'effondre partout ailleurs.
+>
+> Trois questions à se poser avant de choisir, dans cet ordre.
+>
+> **À quelle distance sera-t-elle lue ?** Une carte de visite se lit à bout
+> de bras. Un menu, à table, parfois le soir. Une enseigne, à vingt mètres.
+> Ce ne sont pas les mêmes polices.
+>
+> **Tient-elle en tout petit ?** Vos mentions légales, votre numéro de
+> téléphone, votre adresse au dos d'un flyer : si ça devient illisible à
+> six points, le problème n'est pas l'imprimeur.
+>
+> **Avez-vous le droit de l'utiliser ?** Une police téléchargée gratuitement
+> n'est pas forcément libre pour un usage commercial. C'est le point que
+> presque personne ne vérifie, et c'est celui qui pose un vrai problème le
+> jour où l'entreprise grandit.
+>
+> Dernière chose : une identité visuelle, c'est **deux polices**. Une pour
+> les titres, une pour le texte courant. Au-delà, ce n'est plus une
+> identité, c'est un collage.
+>
+> **Combien de polices différentes y a-t-il sur vos supports actuels ?**
+> Comptez, et dites-le en commentaire. 😅
+
+### Texte alternatif
+Carrousel de six visuels sur le choix des polices de caractères. Une phrase
+écrite dans une police fine apparaît lisible sur une carte de visite et
+illisible sur une bâche. Trois questions sont listées : la distance de
+lecture, la tenue en petit corps, et les droits d'utilisation commerciale.
+
+### Hashtags — jeu B + 2 locaux
+`#typographie #identitevisuelle #charteGraphique #designgraphique #directionArtistique #printdesign #graphismeFrance #brandingLocal #graphistePerpignan #PyreneesOrientales`
+
+### À fournir par Sandra
+- Les 6 slides. La S2 est la plus importante : la dégradation sur bâche doit
+  être réelle, pas suggérée.
+- Rien d'autre.
+
+---
+
+## 6 — Mardi 20 octobre, 8 h 00 · Carrousel · Mentions obligatoires
+
+> ⚠️ **À vérifier avant publication.** Les mentions ci-dessous sont celles
+> communément admises pour un devis et une facture. Je n'ai pas vérifié
+> chaque point à la source dans ce cycle : **faire relire la liste sur
+> service-public.fr avant de publier**, ou retirer les slides 4 et 5 qui
+> sont les plus précises.
+>
+> J'ai volontairement écarté la mention « Ne pas jeter sur la voie
+> publique » de ce cycle. En vérifiant, je n'ai trouvé aucun texte qui la
+> rende obligatoire — seulement des blogs d'imprimeurs qui l'affirment.
+> Ce qu'impose l'article L541-10-1 du code de l'environnement, c'est une
+> signalétique de tri, ce qui n'est pas la même chose. **Le sujet fera un
+> excellent post** — « la mention que tout le monde croit obligatoire » —
+> mais seulement après vérification sérieuse. Je le garde pour le cycle
+> suivant.
+
+### Direction visuelle — 6 slides
+
+- **S1.** Fond `#f7f1ef`. Un devis stylisé, avec une loupe corail sur son
+  pied de page. « Ce qui doit figurer sur votre devis. »
+- **S2.** « Un devis mal renseigné, ce n'est pas qu'un détail
+  administratif. C'est une crédibilité en moins au moment de la signature. »
+  Fond `#2f7fc4`, texte blanc.
+- **S3.** Le squelette d'un devis en fil de fer, avec les zones surlignées
+  en violet : en-tête, identité, corps, pied.
+- **S4.** « Dans l'en-tête » : dénomination, forme juridique, adresse,
+  SIREN, numéro de TVA le cas échéant.
+- **S5.** « En pied » : durée de validité, conditions de règlement, et la
+  case de signature avec « Bon pour accord ».
+- **S6.** Fond violet. « Le design d'un devis, ce n'est pas de la
+  décoration. C'est ce qui le rend lisible — et signé. »
+
+### Accroche
+**« Ce qui doit figurer sur votre devis. »**
+
+### Légende
+
+> Un devis, c'est un document commercial. Et c'est souvent le premier que
+> votre client lit en entier.
+>
+> On soigne son logo, sa carte, sa devanture — et on envoie un devis fait
+> dans un tableur, sans hiérarchie, où le prix total se cherche.
+>
+> Pourtant c'est le document qui décide. Il doit porter votre identité, être
+> lisible d'un coup d'œil, et contenir les informations qui font de lui un
+> document sérieux : qui vous êtes, sous quelle forme juridique, sous quel
+> numéro, pour combien de temps l'offre tient, et comment on vous règle.
+>
+> Ce n'est pas de la décoration. Un devis bien construit se lit en trente
+> secondes, et on sait quoi en faire. Un devis confus, on le met de côté
+> « pour y revenir ».
+>
+> Et une papeterie cohérente — devis, facture, en-tête, tampon — dit quelque
+> chose que le discours commercial ne dira jamais : que la maison est tenue.
+>
+> **Votre devis actuel, vous l'avez fait sur quoi ?** Tableur, logiciel,
+> modèle ? Dites-le en commentaire, sans honte, on est entre nous. 😊
+
+### Texte alternatif
+Carrousel de six visuels sur la construction d'un devis professionnel. Le
+squelette d'un devis apparaît en fil de fer avec ses zones surlignées :
+en-tête contenant l'identité de l'entreprise, corps détaillant les
+prestations, et pied de page portant la durée de validité, les conditions
+de règlement et la case de signature.
+
+### Hashtags — jeu B + 2 locaux
+`#printdesign #identitevisuelle #papeterie #designgraphique #charteGraphique #graphismeFrance #entrepreneur #devis #graphistePerpignan #CommerceLocal66`
+
+### À fournir par Sandra
+- Les 6 slides.
+- ⚠️ **Faire relire les slides 4 et 5** sur service-public.fr, ou par un
+  comptable. Ce sont les seules affirmations précises du carrousel ; la
+  légende, elle, reste sur le terrain du conseil et ne risque rien.
+
+---
+
+## 7 — Jeudi 22 octobre, 19 h 00 · Quiz vrai/faux · Interactivité
+
+### Direction visuelle — carrousel 5 slides
+
+- **S1.** Fond violet `#a86cd0`. « 4 idées reçues sur l'impression et les
+  enseignes. Combien allez-vous rater ? » Pastille corail « QUIZ ».
+- **S2 à S5.** Une affirmation par slide, en gros, sur fond blanc cassé.
+  En bas, deux pastilles **VRAI** (bleu) et **FAUX** (corail). La réponse
+  est en bas de la slide suivante, en petit.
+  1. « Une enseigne se déclare en mairie. » → **Faux**, elle s'autorise.
+  2. « Un logo doit rester lisible en noir et blanc. » → **Vrai**.
+  3. « Un fichier à 300 DPI est toujours bon pour une bâche. » → **Faux**,
+     une bâche se calcule à la distance de lecture, pas en DPI absolus.
+  4. « Une police gratuite est libre pour un usage commercial. » → **Faux**.
+
+### Accroche
+**« 4 idées reçues. Combien allez-vous rater ? »**
+
+### Légende
+
+> Quatre affirmations. Comptez vos points avant de swiper.
+>
+> Ce ne sont pas des pièges : ce sont les quatre confusions que je rencontre
+> le plus souvent, et elles coûtent cher.
+>
+> La première est la plus répandue de toutes. On « déclare » une publicité,
+> on « autorise » une enseigne. Un mot de différence, et une procédure
+> entièrement différente.
+>
+> La troisième est celle qui surprend les gens méticuleux : 300 DPI est une
+> excellente règle pour un document qu'on tient en main, et une règle
+> absurde pour une bâche de six mètres qu'on regarde à trente mètres. Ce
+> qui compte, c'est la distance de lecture.
+>
+> **Votre score en commentaire.** 4 sur 4, je suis impressionnée. 0 sur 4,
+> c'est exactement pour vous que j'écris ces posts.
+>
+> Enregistrez pour vérifier avant votre prochaine commande.
+
+### Texte alternatif
+Carrousel quiz de cinq visuels. Quatre affirmations sur l'impression et les
+enseignes sont proposées, chacune accompagnée de deux pastilles vrai et
+faux, la réponse apparaissant sur le visuel suivant.
+
+### Hashtags — jeu C + 2 métier
+`#enseigne #signaletique #ouvertureCommerce #commercantsPerpignan #nouvelleEntreprise #printdesign #identitevisuelle #quiz #graphistePerpignan #PaysCatalan`
+
+### À fournir par Sandra
+- Les 5 slides.
+- Rien d'autre. Les quatre réponses sont sûres : l'autorisation est
+  vérifiée, les trois autres relèvent du métier et non du droit.
+
+---
+
+## 8 — Vendredi 23 octobre, 10 h 30 · REEL 22 s · Halloween & couleurs
+
+### Découpage
+
+| Chrono | Visuel / action | Texte incrusté | Voix off |
+|---|---|---|---|
+| 0-3 s | Écran noir. Une citrouille orange apparaît brutalement sur fond noir. | **« Pourquoi Halloween est orange et noir »** | Orange et noir. Pourquoi ces deux couleurs, et pas d'autres ? |
+| 3-9 s | L'orange et le noir se séparent en deux aplats plein écran, puis se superposent. | Le **contraste** maximal | Parce que c'est l'un des contrastes les plus violents que l'œil humain sache traiter. On le repère avant même de comprendre ce qu'on regarde. |
+| 9-15 s | Images rapides : panneau de danger, ruban de chantier, guêpe, signalisation routière. | La nature l'utilise déjà | La nature s'en sert pour dire « attention ». La signalisation aussi. Halloween n'a rien inventé : elle a emprunté le code de l'alerte. |
+| 15-19 s | Une devanture de commerce passe du blanc au orange et noir, puis revient. | Et pour votre commerce ? | Ce contraste attire l'œil. Mais il crie. Utilisé toute l'année, il fatigue. Pour une vitrine saisonnière, il est parfait. |
+| 19-22 s | Logo Grafycom sur `#a86cd0`. Signature `@grafycom.graphiste`. | **Une couleur n'est jamais neutre.** | Une couleur n'est jamais neutre. Elle dit quelque chose avant vous. |
+
+**Prompt d'arrière-plan 9-15 s** (si génération nécessaire) :
+`Fast sequence of high-contrast orange and black warning patterns: industrial hazard tape, road warning sign, macro shot of a wasp, construction barrier. Cinematic, sharp focus, dramatic side lighting, 4K`
+
+**Voix de synthèse suggérée :** féminine française, posée, légèrement plus
+grave que d'habitude, débit lent sur les deux premières phrases puis
+normal. Ton curieux, pas effrayant.
+
+### Légende
+
+> Orange et noir. Pourquoi toujours ces deux-là ?
+>
+> Parce que c'est l'un des contrastes les plus violents que l'œil humain
+> sache traiter. On le repère avant même d'avoir compris ce qu'on regarde.
+>
+> La nature s'en sert depuis bien plus longtemps que nous : guêpes,
+> serpents, batraciens venimeux. Le message est toujours le même —
+> attention. La signalisation routière et les rubans de chantier ont repris
+> exactement le même code.
+>
+> Halloween n'a rien inventé. Elle a emprunté le langage de l'alerte, et
+> c'est précisément ce qui la rend si visible.
+>
+> Ce qui nous ramène à votre vitrine. Ce contraste attire l'œil, mais il
+> crie. Pour une décoration saisonnière, c'est exactement ce qu'on veut.
+> Pour une identité qu'on garde dix ans, c'est épuisant.
+>
+> Une couleur n'est jamais neutre. Elle dit quelque chose avant vous — et
+> parfois autre chose que ce que vous vouliez dire. 🎃
+>
+> **Vous décorez votre vitrine pour Halloween cette année ?** Dites-moi ce
+> que vous préparez.
+
+### Hashtags — jeu A + 2 métier
+`#graphistePerpignan #Perpignan #PyreneesOrientales #CommerceLocal66 #ArtisanDuRoussillon #Halloween #vitrine #psychologiedescouleurs #identitevisuelle #designgraphique`
+
+### À fournir par Sandra
+- Les quatre plans. Les images de signalisation peuvent être filmées en
+  ville en dix minutes — un ruban de chantier, un panneau — ce qui vaut
+  mieux qu'une banque d'images, et évite toute question de droits.
+- ⚠️ **Pas de photo trouvée sur internet** pour la séquence 9-15 s : soit
+  filmée, soit générée avec le prompt fourni.
+
+---
+
+---
+
+# SEMAINE 3 — du 26 octobre au 1er novembre
+
+## 9 — Lundi 26 octobre, 12 h 30 · Carrousel · Pilier 1, conseils & pédagogie de marque
 
 ### Direction visuelle — 6 slides
 
@@ -97,7 +622,7 @@ visite, polo brodé, flanc de camionnette, panneau de chantier, favicon.
 
 ---
 
-## 2 — Mardi 27 octobre, 8 h 00 · Carrousel · Pilier 2, réglementation
+## 10 — Mardi 27 octobre, 8 h 00 · Carrousel · Pilier 2, réglementation
 
 > 🔎 **Vérifié à la source :** une enseigne relève d'une **autorisation
 > préalable** du maire, formulaire **Cerfa n° 16308\*01** (notice 52393#01),
@@ -207,7 +732,7 @@ soumises à des plages d'extinction nocturne fixées par la commune.
 
 ---
 
-## 3 — Jeudi 29 octobre, 12 h 30 · Dilemme A/B · Pilier 5, interactivité
+## 11 — Jeudi 29 octobre, 12 h 30 · Dilemme A/B · Pilier 5, interactivité
 
 ### Direction visuelle — 2 images
 
@@ -278,7 +803,7 @@ typographie sont identiques.
 
 ---
 
-## 4 — Vendredi 30 octobre, 18 h 00 · REEL 23 s · Pilier 3, supports & matières
+## 12 — Vendredi 30 octobre, 18 h 00 · REEL 23 s · Pilier 3, supports & matières
 
 ### Accroche 0-3 s
 Plan serré sur une vitrine vide, reflets de rue dedans. Texte incrusté :
@@ -359,9 +884,9 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 
 ---
 
-# SEMAINE 2 — du 2 au 8 novembre
+# SEMAINE 4 — du 2 au 8 novembre
 
-## 5 — Lundi 2 novembre, 12 h 30 · Carrousel 7 slides · Pilier « réalisations » · **Solaire 66**
+## 13 — Lundi 2 novembre, 12 h 30 · Carrousel 7 slides · Pilier « réalisations » · **Solaire 66**
 
 > ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
 > est aussi le commanditaire de ces publications — la carte de visite porte
@@ -499,7 +1024,7 @@ gravure, broderie, tampon.
 
 ---
 
-## 6 — Mardi 3 novembre, 8 h 00 · Carrousel · Pilier 2, réglementation
+## 14 — Mardi 3 novembre, 8 h 00 · Carrousel · Pilier 2, réglementation
 
 > ⚠️ **Contenu entièrement au conditionnel, et c'est volontaire.** Le
 > principe — la langue française obligatoire dans la publicité et
@@ -602,7 +1127,7 @@ français en plus petit dessous.
 
 ---
 
-## 7 — Jeudi 5 novembre, 19 h 00 · Quiz 4 choix · Pilier 5, interactivité
+## 15 — Jeudi 5 novembre, 19 h 00 · Quiz 4 choix · Pilier 5, interactivité
 
 ### Direction visuelle — carrousel 5 slides
 
@@ -688,7 +1213,7 @@ le dernier visuel donne les quatre réponses et leur usage.
 
 ---
 
-## 8 — Samedi 7 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
+## 16 — Samedi 7 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
 
 ### Accroche 0-3 s
 Gros plan sur un calendrier de novembre, un doigt qui remonte du 24 décembre
@@ -777,9 +1302,9 @@ fin novembre, livraison début décembre.
 
 ---
 
-# SEMAINE 3 — du lundi 9 au samedi 14 novembre
+# SEMAINE 5 — du lundi 9 au samedi 14 novembre
 
-## 9 — Lundi 9 novembre, 12 h 30 · Carrousel · Pilier 1, conseils stratégiques
+## 17 — Lundi 9 novembre, 12 h 30 · Carrousel · Pilier 1, conseils stratégiques
 
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
@@ -863,7 +1388,7 @@ chez le même imprimeur au même moment.
 
 ---
 
-## 10 — Mardi 10 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
+## 18 — Mardi 10 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
 
 > ⚠️ **Contenu au conditionnel, vérification à faire avant publication.**
 > Je n'ai **pas** pu confirmer les règles de signalétique de tri sur la
@@ -967,7 +1492,7 @@ une méthode validée, « on réserve la zone puis on dessine autour ».
 
 ---
 
-## 11 — Jeudi 12 novembre, 19 h 00 · Dilemme A/B · Pilier 5, interactivité
+## 19 — Jeudi 12 novembre, 19 h 00 · Dilemme A/B · Pilier 5, interactivité
 
 ### Direction visuelle — 2 images, 1080 × 1350 px
 
@@ -1040,7 +1565,7 @@ personnel.
 
 ---
 
-## 12 — Vendredi 13 novembre, 18 h 00 · REEL 24 s · Pilier 3, matières & fabrication
+## 20 — Vendredi 13 novembre, 18 h 00 · REEL 24 s · Pilier 3, matières & fabrication
 
 ### Accroche 0-3 s
 Gros plan, lumière rasante, sur un pouce qui passe sur un gaufrage. Texte
@@ -1118,9 +1643,9 @@ dorée selon l'angle.
 
 ---
 
-# SEMAINE 4 — du lundi 16 au samedi 21 novembre
+# SEMAINE 6 — du lundi 16 au samedi 21 novembre
 
-## 13 — Lundi 16 novembre, 18 h 30 · Carrousel · Pilier 4, saisonnalité & valeurs
+## 21 — Lundi 16 novembre, 18 h 30 · Carrousel · Pilier 4, saisonnalité & valeurs
 
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
@@ -1215,7 +1740,7 @@ illisible devant un rayonnage encombré, puis lisible devant un panneau uni.
 
 ---
 
-## 14 — Mardi 17 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
+## 22 — Mardi 17 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
 
 > 🔎 **Partie vérifiée à la source.** La distinction enseigne / publicité,
 > l'autorisation préalable au titre de l'article L.581-18 du code de
@@ -1328,7 +1853,7 @@ en vigueur est le Cerfa 16308\*01 et que le 14798\*01 est périmé.
 
 ---
 
-## 15 — Jeudi 19 novembre, 19 h 00 · Quiz · Pilier 5, interactivité
+## 23 — Jeudi 19 novembre, 19 h 00 · Quiz · Pilier 5, interactivité
 
 ### Direction visuelle — carrousel 6 slides, 1080 × 1350 px
 
@@ -1414,7 +1939,7 @@ violet pour la dernière.
 
 ---
 
-## 16 — Samedi 21 novembre, 10 h 30 · REEL 26 s · Pilier 7, démarche studio
+## 24 — Samedi 21 novembre, 10 h 30 · REEL 26 s · Pilier 7, démarche studio
 
 ### Accroche 0-3 s
 Un carnet de croquis qui se ferme d'un coup sec sur une table en bois.

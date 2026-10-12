@@ -1,21 +1,236 @@
-# Fiche Google Établissement — les 16 textes du 26 octobre au 21 novembre
+# Fiche Google Établissement — les 24 textes à valider
 
-> ✅ **Correction du 12 octobre 2026.** Les deux quinzaines ont été écrites
-> en reprenant une note périmée du cahier des charges selon laquelle « la
-> fiche Google n'existe pas encore » et « ces textes ne sont pas
-> publiables ». **C'est faux :** la fiche existe, elle appartient au compte
-> de Sandra, et Laurent y a accès. Ces seize textes sont donc publiables.
+Du 12 octobre au 21 novembre. Un texte par publication, à publier le même
+jour qu'elle.
+
+> ✅ **La fiche existe et appartient au compte de Sandra**, Laurent y a
+> accès : ces textes sont publiables. Avant d'y publier, régler la fiche —
+> catégorie principale, type « zone desservie » à adresse masquée, nom,
+> site web. Marche à suivre dans `outils/FICHE-GOOGLE.md`.
 >
-> La réserve qui subsiste est d'une autre nature : la fiche n'a jamais été
-> réglée depuis sa création. Avant d'y publier, reprendre dans cet ordre la
-> catégorie principale, le type « zone desservie » avec adresse masquée, le
-> nom, puis le site web — la marche à suivre est dans
-> `outils/FICHE-GOOGLE.md`. Toute phrase du présent document disant que la
-> fiche n'existe pas est à ignorer.
+> Toute phrase de ce document affirmant que la fiche n'existe pas est un
+> reste d'une note périmée du cahier des charges : à ignorer.
 
 ---
 
-## 1 — Lundi 26 octobre 2026, 12 h 30 · 182 mots
+## 1 — Lundi 12 octobre, 12 h 30 · Carrousel · Pédagogie couleur
+
+> **Choisir les couleurs de son entreprise : trois réflexes à connaître**
+>
+> Avant même de lire le nom d'un commerce, un client s'est déjà fait une
+> idée de ce qu'il y trouvera. La couleur de la devanture, de l'enseigne ou
+> du véhicule déclenche une association immédiate : le vert évoque le
+> naturel et la santé, le bleu marine la rigueur et le conseil, les tons
+> poudrés le soin et l'enfance.
+>
+> Ces associations ne sont pas des règles, mais des réflexes partagés. Les
+> suivre installe une crédibilité immédiate. S'en écarter volontairement
+> permet de se distinguer. L'erreur coûteuse consiste à s'en écarter sans
+> l'avoir choisi.
+>
+> S'ajoute une contrainte technique que beaucoup découvrent trop tard : une
+> couleur parfaitement lisible sur un écran peut devenir illisible une fois
+> imprimée sur une bâche ou appliquée sur un panneau extérieur. Le
+> contraste se vérifie avant production, pas après.
+>
+> Grafycom accompagne les commerces et artisans des Pyrénées-Orientales
+> dans le choix de leur identité visuelle, de la palette jusqu'aux fichiers
+> de fabrication.
+
+**Bouton :** « En savoir plus » → `https://grafycom.fr/prestations.html`
+
+---
+
+## 2 — Mardi 13 octobre, 8 h 00 · Carrousel · Réglementation enseigne
+
+> **Enseigne de commerce : l'autorisation préalable, mode d'emploi**
+>
+> Installer, remplacer ou modifier une enseigne ne se fait pas librement.
+> La démarche relève d'une autorisation préalable — et non d'une simple
+> déclaration, contrairement à une idée très répandue.
+>
+> Le formulaire est le Cerfa n° 16308*01, prévu par l'arrêté du 31 août
+> 2012 en application des articles R.581-6 à R.581-8 du code de
+> l'environnement. Le dossier se dépose en mairie en trois exemplaires. Au
+> delà de trois dispositifs, le formulaire doit être rempli une seconde
+> fois.
+>
+> Les contraintes concrètes — dimensions, matériaux, éclairage, extinction
+> nocturne — dépendent du Règlement Local de Publicité et du PLU de la
+> commune. Dans les secteurs patrimoniaux protégés, dont une partie du
+> centre ancien de Perpignan, l'avis des Architectes des Bâtiments de
+> France s'ajoute à la procédure.
+>
+> Anticiper ces règles dès la conception évite de refaire une enseigne
+> refusée. Grafycom conçoit les enseignes des commerces et artisans des
+> Pyrénées-Orientales en tenant compte des contraintes locales dès le
+> premier croquis.
+
+**Bouton :** « En savoir plus » → lien vers l'article de blog de la semaine
+
+---
+
+## 3 — Jeudi 15 octobre, 12 h 30 · Dilemme A/B · Interactivité
+
+> **Enseigne : le test des vingt mètres**
+>
+> Une enseigne ne se choisit pas devant un écran. Elle se lit en marchant,
+> de biais, à une vingtaine de mètres, parfois depuis une voiture en
+> mouvement.
+>
+> À cette distance, une typographie cesse d'être une typographie : elle
+> devient une silhouette. Les déliés fins, les empattements délicats et les
+> scripts élégants — ceux qui séduisent sur maquette — disparaissent les
+> premiers. Il ne reste qu'une tache illisible.
+>
+> Le test est simple et gratuit : imprimez la proposition à l'échelle,
+> placez-la sur la façade, et traversez la rue. Dix minutes sur le trottoir
+> évitent une enseigne qu'on regrette pendant dix ans, et un
+> investissement à refaire.
+>
+> Grafycom conçoit les enseignes en tenant compte de la distance réelle de
+> lecture, de l'éclairage et du support, dès le premier croquis.
+
+**Bouton :** « En savoir plus » → `https://grafycom.fr/enseigne-perpignan.html`
+
+---
+
+## 4 — Vendredi 16 octobre, 18 h 00 · REEL 24 s · Matières & impression
+
+> **RVB, CMJN : pourquoi l'impression ne rend jamais comme l'écran**
+>
+> C'est la surprise la plus fréquente à la livraison d'un support imprimé :
+> la couleur validée sur l'ordinateur n'est pas celle du papier.
+>
+> L'explication est physique. Un écran produit la couleur en additionnant
+> de la lumière rouge, verte et bleue. Une imprimante dépose des encres
+> cyan, magenta, jaune et noire sur un papier blanc, et chaque couche
+> retire de la lumière. Certaines teintes très saturées existent en lumière
+> et n'ont aucun équivalent en encre.
+>
+> Le support amplifie l'écart. Un papier mat absorbe et adoucit les teintes,
+> un couché brillant les sature. Le même fichier donne deux résultats selon
+> le papier choisi.
+>
+> La parade est simple : demander un bon à tirer, un exemplaire réel
+> imprimé sur le papier définitif, avant le lancement de la série.
+>
+> Grafycom prépare les fichiers aux normes des imprimeurs et contrôle les
+> bons à tirer pour ses clients.
+
+**Bouton :** « Nous contacter »
+
+---
+
+## 5 — Lundi 19 octobre, 12 h 30 · Carrousel · Typographie
+
+> **Choisir la police de son entreprise : trois questions avant de décider**
+>
+> Une police de caractères élégante sur une maquette n'est pas
+> nécessairement un bon choix pour une entreprise. Trois critères la
+> départagent, et aucun n'est esthétique.
+>
+> La distance de lecture d'abord. Une carte de visite se lit à bout de
+> bras, un menu à table, une enseigne à vingt mètres. Une police fine qui
+> fonctionne sur papier devient une tache illisible sur une façade.
+>
+> La tenue en petit corps ensuite. Mentions légales, numéro de téléphone,
+> adresse : si le texte devient illisible à six points, le problème vient
+> du choix typographique, pas de l'impression.
+>
+> Les droits enfin. Une police téléchargée gratuitement n'est pas toujours
+> libre pour un usage commercial. C'est le point le moins vérifié, et celui
+> qui pose problème lorsque l'entreprise se développe.
+>
+> Une identité visuelle cohérente repose sur deux polices : une pour les
+> titres, une pour le texte. Grafycom construit ces systèmes
+> typographiques pour les entreprises des Pyrénées-Orientales.
+
+**Bouton :** « En savoir plus » → `https://grafycom.fr/prestations.html`
+
+---
+
+## 6 — Mardi 20 octobre, 8 h 00 · Carrousel · Mentions obligatoires
+
+> **Le devis : le document commercial qu'on néglige le plus**
+>
+> C'est souvent le premier document qu'un prospect lit en entier. Et c'est
+> celui qu'on soigne le moins.
+>
+> Un devis construit dans un tableur, sans hiérarchie visuelle, où le
+> montant total se cherche, envoie un signal avant même d'être lu. Un devis
+> clair se parcourt en trente secondes : on identifie immédiatement qui
+> émet l'offre, ce qu'elle couvre, combien de temps elle reste valable et
+> comment régler.
+>
+> Au-delà de la mise en page, un devis doit porter les informations qui
+> l'établissent comme document sérieux : identité et forme juridique de
+> l'entreprise, numéro d'identification, durée de validité, conditions de
+> règlement.
+>
+> Une papeterie cohérente — devis, facture, papier à en-tête — fait partie
+> de l'identité visuelle au même titre que le logo.
+>
+> Grafycom conçoit ces documents pour les entreprises du département.
+
+**Bouton :** « Nous contacter »
+
+---
+
+## 7 — Jeudi 22 octobre, 19 h 00 · Quiz vrai/faux · Interactivité
+
+> **Quatre idées reçues sur l'impression et les enseignes**
+>
+> Certaines confusions reviennent systématiquement et coûtent du temps ou
+> de l'argent.
+>
+> Une enseigne ne se déclare pas, elle s'autorise : la procédure est une
+> autorisation préalable déposée en mairie, pas une simple déclaration.
+>
+> Un logo doit rester lisible en noir et blanc. S'il ne fonctionne qu'en
+> couleur, il échouera sur un tampon, un fax, une gravure ou une broderie.
+>
+> La règle des 300 DPI, excellente pour un document tenu en main, n'a pas
+> de sens pour une grande bâche : la résolution se calcule à partir de la
+> distance de lecture.
+>
+> Enfin, une police téléchargée gratuitement n'est pas automatiquement
+> libre pour un usage commercial.
+>
+> Grafycom accompagne les commerces du 66 sur ces choix, en amont de la
+> production.
+
+**Bouton :** « Appeler »
+
+---
+
+## 8 — Vendredi 23 octobre, 10 h 30 · REEL 22 s · Halloween & couleurs
+
+> **Halloween : ce que l'orange et le noir disent de votre vitrine**
+>
+> L'association orange et noir n'est pas un hasard esthétique. C'est l'un
+> des contrastes les plus puissants que l'œil humain sache traiter : il est
+> détecté avant même d'être interprété.
+>
+> La nature l'utilise pour signaler le danger — guêpes, serpents,
+> batraciens. La signalisation routière et les rubans de chantier ont repris
+> le même code. Halloween n'a fait que l'emprunter, et c'est ce qui rend
+> ses décorations si visibles de loin.
+>
+> Pour un commerce, l'enseignement est double. Ce contraste est redoutable
+> pour attirer le regard sur une vitrine saisonnière. Il est épuisant
+> appliqué à une identité visuelle permanente, parce qu'il crie en
+> continu.
+>
+> Choisir ses couleurs, c'est choisir ce qu'elles disent avant vous.
+> Grafycom conseille les commerces des Pyrénées-Orientales sur ces
+> arbitrages, du décor saisonnier à l'identité durable.
+
+**Bouton :** « En savoir plus » → `https://grafycom.fr/`
+
+---
+
+## 9 — Lundi 26 octobre 2026, 12 h 30 · 182 mots
 
 > **Un logo réussi est un logo qui se décline**
 >
@@ -42,7 +257,7 @@
 
 ---
 
-## 2 — Mardi 27 octobre 2026, 8 h 00 · 190 mots
+## 10 — Mardi 27 octobre 2026, 8 h 00 · 190 mots
 
 > **Enseigne de commerce : ce que l'arrivée de l'hiver change**
 >
@@ -74,7 +289,7 @@
 
 ---
 
-## 3 — Jeudi 29 octobre 2026, 12 h 30 · 189 mots
+## 11 — Jeudi 29 octobre 2026, 12 h 30 · 189 mots
 
 > **Carte de restaurant : où placer les prix change la commande**
 >
@@ -102,7 +317,7 @@
 
 ---
 
-## 4 — Vendredi 30 octobre 2026, 18 h 00 · 204 mots
+## 12 — Vendredi 30 octobre 2026, 18 h 00 · 204 mots
 
 > **Habiller sa vitrine : trois familles d'adhésifs, trois usages**
 >
@@ -134,7 +349,7 @@
 
 ---
 
-## 5 — Lundi 2 novembre 2026, 12 h 30 · 215 mots · **Solaire 66**
+## 13 — Lundi 2 novembre 2026, 12 h 30 · 215 mots · **Solaire 66**
 
 > 🔒 Accord client à obtenir. Ce texte ne nomme pas le client : il décrit
 > le métier et la démarche. Il reste publiable même si l'accord tarde,
@@ -168,7 +383,7 @@
 
 **Bouton** : « En savoir plus » → <https://grafycom.fr/prestations.html#logo>
 
-## 6 — Mardi 3 novembre 2026, 8 h 00 · 193 mots
+## 14 — Mardi 3 novembre 2026, 8 h 00 · 193 mots
 
 > **Un slogan en langue étrangère sur vos supports : ce qu'il faut savoir**
 >
@@ -199,7 +414,7 @@
 
 ---
 
-## 7 — Jeudi 5 novembre 2026, 19 h 00 · 189 mots
+## 15 — Jeudi 5 novembre 2026, 19 h 00 · 189 mots
 
 > **Signalétique : quatre supports, quatre usages à ne pas confondre**
 >
@@ -230,7 +445,7 @@
 
 ---
 
-## 8 — Samedi 7 novembre 2026, 10 h 30 · 191 mots
+## 16 — Samedi 7 novembre 2026, 10 h 30 · 191 mots
 
 > **Supports de fin d'année : le calendrier commence maintenant**
 >
@@ -276,7 +491,7 @@
 
 ---
 
-## 1 — Lundi 9 novembre, 12 h 30 — « Décider maintenant ses supports de fin d'année » (197 mots)
+## 17 — Lundi 9 novembre, 12 h 30 — « Décider maintenant ses supports de fin d'année » (197 mots)
 
 > **Supports de fin d'année : la décision se prend maintenant**
 >
@@ -308,7 +523,7 @@
 
 ---
 
-## 2 — Mardi 10 novembre, 8 h 00 — « Emballage de fête et signalétique de tri » (211 mots)
+## 18 — Mardi 10 novembre, 8 h 00 — « Emballage de fête et signalétique de tri » (211 mots)
 
 > **Emballage de fête : prévoir la place des mentions dès le dessin**
 >
@@ -341,7 +556,7 @@
 
 ---
 
-## 3 — Jeudi 12 novembre, 19 h 00 — « À quoi sert vraiment une carte de vœux » (189 mots)
+## 19 — Jeudi 12 novembre, 19 h 00 — « À quoi sert vraiment une carte de vœux » (189 mots)
 
 > **Carte de vœux d'entreprise : ce qui fait qu'elle est gardée**
 >
@@ -372,7 +587,7 @@
 
 ---
 
-## 4 — Vendredi 13 novembre, 18 h 00 — « Grammage, gaufrage, dorure : ce qui se touche » (219 mots)
+## 20 — Vendredi 13 novembre, 18 h 00 — « Grammage, gaufrage, dorure : ce qui se touche » (219 mots)
 
 > **Papier, gaufrage, dorure : la partie du support qui ne se voit pas à l'écran**
 >
@@ -406,7 +621,7 @@
 
 ---
 
-## 5 — Lundi 16 novembre, 18 h 30 — « Une vitrine de fin d'année qui se lit du trottoir » (217 mots)
+## 21 — Lundi 16 novembre, 18 h 30 — « Une vitrine de fin d'année qui se lit du trottoir » (217 mots)
 
 > **Vitrine de fin d'année : quatre points qui changent tout, vus du trottoir**
 >
@@ -439,7 +654,7 @@
 
 ---
 
-## 6 — Mardi 17 novembre, 8 h 00 — « Décorer sa vitrine et rester dans les règles » (220 mots)
+## 22 — Mardi 17 novembre, 8 h 00 — « Décorer sa vitrine et rester dans les règles » (220 mots)
 
 > **Décor de vitrine : la différence entre une enseigne et une publicité**
 >
@@ -473,7 +688,7 @@
 
 ---
 
-## 7 — Jeudi 19 novembre, 19 h 00 — « Quatre idées reçues sur les impressions de fin d'année » (201 mots)
+## 23 — Jeudi 19 novembre, 19 h 00 — « Quatre idées reçues sur les impressions de fin d'année » (201 mots)
 
 > **Quatre idées reçues sur les impressions de fin d'année**
 >
@@ -504,7 +719,7 @@
 
 ---
 
-## 8 — Samedi 21 novembre, 10 h 30 — « Faut-il refaire son logo pour la nouvelle année » (204 mots)
+## 24 — Samedi 21 novembre, 10 h 30 — « Faut-il refaire son logo pour la nouvelle année » (204 mots)
 
 > **Refaire son logo en janvier : trois questions avant de décider**
 >
