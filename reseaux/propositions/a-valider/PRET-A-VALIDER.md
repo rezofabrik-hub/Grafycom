@@ -192,28 +192,31 @@ calendrier — dis-le, c'est cinq minutes.
 
 ---
 
-## Une question à trancher avant la première publication
+## Le pseudo Instagram — tranché le 12 octobre
 
-Tu m'as donné **`instagram.com/sandra.grafycom`**. Le pied de page du site
-pointe vers **`instagram.com/grafycom.graphiste`**, et c'est ce second
-pseudo qui est signé en bas des 71 planches.
+Le compte qui fait foi est **`instagram.com/grafycom.graphiste`**.
 
-Je n'ai pas pu vérifier depuis ici lequel est le bon compte : Instagram
-refuse les requêtes de cet environnement. **Dis-moi lequel fait foi.**
-Si c'est `sandra.grafycom`, je change la constante et je régénère les 71
-planches — c'est une ligne de code et deux minutes —, et je corrige le
-lien du site dans la foulée.
+C'est déjà celui qui est en place partout, et il n'y a donc rien à
+changer : la constante `PSEUDO` de `visuels.py` vaut `@grafycom.graphiste`
+— avec le point —, les 69 planches le portent en signature, et le pied de
+page du site pointe sur la bonne adresse.
+
+La question s'était posée parce que `sandra.grafycom` avait été cité en
+cours de route et qu'Instagram refuse les requêtes depuis l'environnement
+de travail : impossible de vérifier autrement qu'en demandant.
 
 ---
 
 ## Dans quel ordre valider
 
-1. **Les 10 publications et leurs planches** — le plus long, et ce qui
-   débloque les stories qui s'y rattachent.
+1. **Les 11 publications et leurs planches** — le plus long, et ce qui
+   débloque les stories qui s'y rattachent. Commence par la n° 1 : son
+   créneau est ce soir.
 2. **Les 7 articles de blog** — quatre lignes `statut:` à changer.
-3. **Les 24 textes de fiche Google** — mais corriger la fiche d'abord.
+3. **Les 25 textes de fiche Google** — mais corriger la fiche d'abord.
 4. **Les 10 écrans de story.**
-5. **Le pseudo Instagram**, qui conditionne les 71 planches.
+
+Le pseudo Instagram, lui, est réglé : rien à faire.
 
 Les arbitrages qui demandent une décision de fond — et non une relecture —
 sont rassemblés dans `arbitrages.md`.
