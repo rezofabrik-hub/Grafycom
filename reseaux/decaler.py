@@ -56,7 +56,8 @@ ANCREES = {
     (7, 1):   "la péremption du Cerfa 14798*01",
     (1, 4):   "la réouverture inventée de la carte de vœux n° 19",
     (11, 24): "le dernier jour calculé pour lancer la création",
-    (10, 31): "Halloween",
+    (10, 31): "Halloween — story S3-F, maintenue par Laurent le 12 octobre",
+    (11, 1):  "la Toussaint — le jour sans story",
 }
 
 # Une date peut aussi dire QUAND quelque chose a été fait. « Corrigée le
@@ -74,8 +75,9 @@ PROVENANCE = re.compile(
 SAISONNIER = [
     ("n° 8, reel Halloween", dt.date(2026, 10, 23), dt.date(2026, 10, 31),
      "un reel sur Halloween publié après le 31 octobre n'a plus d'objet"),
-    ("S3-F, story Halloween", dt.date(2026, 10, 31), dt.date(2026, 10, 31),
-     "cette story est datée du jour même : elle ne peut pas se décaler"),
+    # Tranché par Laurent le 12 octobre : « laisse la story halloween au
+    # 31 octobre ». Elle est donc dans ANCREES, et ne figure plus ici
+    # comme un conflit : c'est une décision prise, pas une alerte.
     ("n° 16, reel fin d'année", dt.date(2026, 11, 7), dt.date(2026, 12, 24),
      "sa voix off dit la date du jour — elle se décale avec, vérifier le "
      "texte"),
@@ -284,6 +286,13 @@ def main():
     print("\nDATES ANCRÉES, LAISSÉES EN PLACE")
     for fich, brut, pourquoi in sorted(journal["ancrees"]):
         print("  %-28s %-22s %s" % (fich, brut, pourquoi))
+
+    print("\nDÉCISIONS DÉJÀ PRISES")
+    print("  S3-F, story Halloween — reste au samedi 31 octobre, quel que\n"
+          "  soit le décalage. Elle sort donc de sa séquence : à la semaine\n"
+          "  3 avant décalage, elle se retrouve dans une semaine antérieure\n"
+          "  après. C'est voulu — une story est indépendante du carrousel\n"
+          "  du jour.")
 
     print("\nCONTENUS SAISONNIERS À VÉRIFIER")
     souci = False

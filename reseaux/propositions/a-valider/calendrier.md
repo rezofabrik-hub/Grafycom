@@ -80,7 +80,7 @@ automatique du matin.
 | vendredi 30 octobre | 18 h 00 | Fiche Google | post | texte n° 12 |
 | vendredi 30 octobre | 18 h 15 | Story | story | S3-E1 · relais du blog |
 | vendredi 30 octobre | 18 h 20 | Story | story | S3-E2 · teasing du reel |
-| samedi 31 octobre | 11 h 00 | Story | story | S3-F · Halloween |
+| samedi 31 octobre | 11 h 00 | Story | story | S3-F · Halloween — 📌 **date fixe** |
 | | | | | |
 | lundi 2 novembre | 12 h 30 | Instagram + Facebook | Carrousel 7 slides | n° 13 |
 | lundi 2 novembre | 12 h 30 | Fiche Google | post | texte n° 13 |

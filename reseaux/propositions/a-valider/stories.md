@@ -202,13 +202,20 @@ pensent aux couleurs.
 
 ## S3-F — Samedi 31 octobre, 11 h 00 · Halloween
 
+> 📌 **Date fixe.** Tranché le 12 octobre : cette story reste au
+> **samedi 31 octobre**, même si tout le reste du calendrier se
+> décale. Halloween ne se décale pas. Elle sortira donc de sa
+> séquence — c'est voulu : une story est indépendante du carrousel
+> du jour.
+
 | Élément | Contenu |
 |---|---|
 | **Texte exact** | « Halloween, c'est aussi le seul moment de l'année où décorer sa vitrine ne coûte rien et se remarque. Les trois pièges : trop de texte, de l'orange sur du noir illisible, et de l'adhésif qu'on ne pourra pas décoller lundi. » |
 | **Sticker** | *Curseur emoji* 🎃 — « Vous avez décoré votre vitrine cette année ? » |
 | **Arrière-plan** | Photo d'une vitrine décorée, prise de nuit, lumière chaude. À défaut : aplat noir avec un seul aplat corail `#f2585c`, texte blanc. |
 
-**Dimanche 1er novembre : aucune story, et c'est volontaire.** La Toussaint
+**Dimanche 1er novembre : aucune story, et c'est volontaire.**
+📌 Date fixe elle aussi — la Toussaint ne se décale pas. La Toussaint
 n'offre pas d'angle honnête sur le métier, et un contenu commercial ce
 jour-là se remarque pour de mauvaises raisons.
 
