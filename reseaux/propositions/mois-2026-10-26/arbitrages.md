@@ -231,33 +231,29 @@ disponible si vous le voulez l'an prochain.
 
 ---
 
-## 3 bis · Solaire 66 — réglé, sauf le panneau
+## 3 bis · Solaire 66 — complet, rien à trancher
 
-Laurent a transmis le logo et les cartes de visite le 12 octobre. Ils
-remplacent la publication n° 5 du 2 novembre, qui était un exercice de
-style sur des logos fictifs. C'est un gain net : le pilier
-« réalisations » est le plus fort et le plus rare, et c'était le seul que
-ce mois ne servait pas.
+Seul vrai projet client du mois, il remplace l'exercice de style fictif du
+2 novembre. Le pilier « réalisations » est le plus fort et le plus rare, et
+c'était le seul que le mois ne servait pas.
 
-**L'accord client ne se pose pas.** La carte de visite porte « Laurent
-MIENVILLE, Gérant » : Solaire 66 est sa société, et il est aussi le
-commanditaire de ces publications. La règle est satisfaite à la source.
+**L'accord ne se pose pas** : la carte porte « Laurent MIENVILLE, Gérant ».
 
-**Les cinq planches sont produites** et vérifiées au rendu, dans
-`reseaux/visuels/2026-11-02-solaire-66/`.
+**Sept planches produites et relues à l'image**, dans
+`reseaux/visuels/2026-11-02-solaire-66/`. Tout ce qui manquait a été
+fourni : le panneau, les dimensions réelles (120 × 80 cm), et le fichier
+vectoriel qui a remplacé le JPEG du premier envoi.
 
-**Le panneau de chantier est arrivé** et fait la cinquième planche, avec
-la carte de visite posée à côté pour l'écart d'échelle. Le « dessiné en
-grand » est donc montré, plus seulement affirmé.
+**Les trois versions monochromes sont produites** — bleu, noir, blanc —
+dans `reseaux/visuels/sources/`. Elles n'existaient pas ; elles sont
+livrables au client tel quel.
 
-Un complément qui rendrait cette planche nettement plus forte : **les
-dimensions réelles du panneau**. Avec elles, la carte peut être posée à
-l'échelle exacte — un rapport chiffré frappe plus qu'un « plus petit »
-approximatif. Je ne les ai pas inventées.
-
-Deux compléments utiles mais non bloquants : les **fichiers vectoriels**
-du logo, plus nets qu'un JPEG rendu, et les **versions simplifiée et
-monochrome** si elles existent.
+Une seule chose mérite d'être notée, et c'est un compliment : les
+contreformes du logo sont **ajourées et non remplies de blanc**. C'est ce
+qui a permis de produire le monochrome par simple recoloration, et c'est ce
+qui permet de poser le logo sur n'importe quel fond. Beaucoup de logos
+échouent là-dessus et personne ne s'en aperçoit avant le premier devis de
+gravure.
 
 ---
 

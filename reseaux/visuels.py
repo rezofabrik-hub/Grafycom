@@ -681,25 +681,29 @@ GABARITS = {
 
 
 def solaire_66(dossier=None):
-    """Publication n° 5 du 2 novembre : l'identité Solaire 66.
+    """Publication du 2 novembre : l'identité Solaire 66.
 
-    Seul vrai projet client du mois. Solaire 66 est la société de Laurent,
-    qui commande aussi ces publications : l'accord de publication est donc
-    donné à la source, et la règle « aucun projet client sans son accord »
-    est satisfaite sans démarche supplémentaire.
+    Solaire 66 est la société de Laurent, qui commande aussi ces
+    publications : l'accord de publication est acquis à la source.
 
-    Les couleurs du logo viennent de Canet-en-Roussillon, où l'entreprise
-    est installée. C'est l'accroche de la publication, et c'est vrai.
+    Les sources sont vectorielles (LOGO_OK.pdf, rendu à 100 dpi sur une
+    planche de 1000 mm puis recadré sur le dessin) et les cartes viennent
+    du PDF d'impression à 300 dpi.
 
-    Ce que ce gabarit NE fait pas : poser la carte dans une main ou le
-    panneau sur une palissade. Une mise en situation photographique
-    demande une photo de base, et on ne publie pas une image dont les
-    droits ne sont pas clairs. Les planches sont donc des présentations
-    studio : rotation douce, ombre portée, fond de la charte.
+    DIMENSIONS REELLES, fournies par Laurent, jamais devinées :
+      panneau de chantier  120 x 80 cm
+      carte de visite      8,5 x 5,5 cm
+    La planche 5 les pose à l'échelle exacte — 8,5 / 120 = 7,08 %.
+
+    Ce gabarit ne fait pas de mise en situation photographique : la carte
+    n'est pas dans une main, le panneau n'est pas sur une palissade. Ça
+    demanderait une photo de base, et on ne publie pas une image dont les
+    droits ne sont pas clairs.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-02-solaire-66"))
     S = RACINE / "visuels" / "sources"
-    MM = 1052 / 89          # px par mm du rendu 300 dpi des cartes
+    MM = 1052 / 89              # px par mm du rendu 300 dpi des cartes
+    PANNEAU_CM, CARTE_CM = 120.0, 8.5
     faits = []
 
     p = Planche("blanc")
@@ -744,28 +748,47 @@ def solaire_66(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "04.png"))
 
+    # La planche qui porte la demonstration : a l'echelle exacte.
     p = Planche("creme")
-    p.titre("Le même logo," + "\n" + "en grand format.", 86, y=150)
-    p.poser(S / "solaire-66-panneau.png", 520, 700, 900, angle=-3)
-    p.poser(S / "solaire-66-carte-recto.png", 830, 1070, 215, angle=5,
+    p.titre("À l'échelle exacte.", 96, y=140)
+    larg_panneau = 860
+    larg_carte = int(round(larg_panneau * CARTE_CM / PANNEAU_CM))
+    p.poser(S / "solaire-66-panneau.png", 500, 640, larg_panneau, angle=0)
+    p.poser(S / "solaire-66-carte-recto.png", 880, 1010, larg_carte, angle=0,
             rogner_mm=2, mm_par_px=MM)
-    p.y = 1150
-    p.texte("Panneau de chantier et carte de visite : le même dessin.",
-            32, "taupe", 400, avant=0)
+    f = police(600, 30)
+    p.d.text((MARGE, 975), "panneau 120 × 80 cm", font=f, fill=teinte("taupe"))
+    p.d.text((790, 1060), "8,5 cm", font=f, fill=teinte("taupe"))
+    p.y = 1120
+    p.texte("La carte occupe 7 % de la largeur du panneau. Le même dessin "
+            "doit tenir aux deux.", 34, "brun", 400, avant=0)
     p.signature("brun")
     faits.append(p.ecrire(d / "05.png"))
+
+    # Le monochrome : possible parce que les contreformes sont ajourees.
+    p = Planche("creme")
+    p.titre("En une seule couleur.", 80, y=150)
+    p.poser(S / "solaire-66-logo-mono-bleu.png", 540, 450, 620, ombre=0)
+    p.d.rectangle([0, 660, LARGE, 1030], fill=teinte("encre"))
+    p.poser(S / "solaire-66-logo-mono-blanc.png", 540, 845, 620, ombre=0)
+    p.y = 1075
+    p.texte("Gravure, broderie, tampon : une seule encre. Les lettres sont "
+            "ajourées, pas remplies de blanc — c'est ce qui le permet.",
+            33, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
 
     p = Planche("creme").bandeau_bas("violet", 0.34)
     p.titre("Dessiné en grand." + "\n" + "Vérifié en petit.", 92, y=200)
     p.y = 470
-    p.texte("Sur une façade ou un panneau de chantier, il peut tout se "
-            "permettre. Dans un avatar, sur un tampon encreur, brodé sur un "
-            "polo, le détail devient de la bouillie.", 38, "brun", 400, avant=0)
+    p.texte("Sur un panneau de chantier, un logo peut tout se permettre. "
+            "Sur 8,5 centimètres, dans un avatar, brodé sur un polo, le "
+            "détail devient de la bouillie.", 38, "brun", 400, avant=0)
     p.y = 720
     p.texte("C'est pour ça qu'une identité livrée ne contient jamais un "
             "seul fichier.", 40, "encre", 600, avant=0)
     p.signature("blanc")
-    faits.append(p.ecrire(d / "06.png"))
+    faits.append(p.ecrire(d / "07.png"))
 
     return faits
 

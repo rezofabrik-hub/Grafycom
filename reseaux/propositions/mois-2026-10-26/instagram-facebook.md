@@ -361,17 +361,25 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 
 # SEMAINE 2 — du 2 au 8 novembre
 
-## 5 — Lundi 2 novembre, 12 h 30 · Carrousel 6 slides · Pilier « réalisations » · **Solaire 66**
+## 5 — Lundi 2 novembre, 12 h 30 · Carrousel 7 slides · Pilier « réalisations » · **Solaire 66**
 
 > ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
 > est aussi le commanditaire de ces publications — la carte de visite porte
 > « Laurent MIENVILLE, Gérant ». La règle « aucun projet client sans son
 > accord » est donc satisfaite à la source, sans démarche.
 >
-> ✅ **Visuels produits, les 6.** Dans
+> ✅ **Visuels produits, les 7.** Dans
 > `reseaux/visuels/2026-11-02-solaire-66/`, par
 > `python3 reseaux/visuels.py` (gabarit `solaire_66`). Format 1080 × 1350,
 > police Inter du site, pseudo en constante, relus à l'image.
+>
+> ✅ **Sources vectorielles.** Le logo vient de `LOGO_OK.pdf`, rendu puis
+> recadré sur le dessin : bords nets et transparence réelle. Il remplace le
+> JPEG du premier envoi.
+>
+> ✅ **Dimensions réelles, fournies par Laurent :** panneau 120 × 80 cm,
+> carte 8,5 × 5,5 cm. La planche 5 les pose **à l'échelle exacte** —
+> 8,5 / 120 = 7,08 % de la largeur. Aucun chiffre n'est estimé.
 
 **Pourquoi cette publication a remplacé un exercice fictif.** Le cahier des
 charges dit que les réalisations sont le pilier le plus fort et le plus
@@ -399,11 +407,15 @@ idée, il ne la concurrence pas.
   Titre : « Une carte de visite fait 85 millimètres. »
   *Le fond perdu de 2 mm est rogné : on montre l'objet fini, pas le fichier
   d'impression.*
-- **S5** `05.png` — Fond crème. Le panneau de chantier en grand, légèrement
-  tourné, et la carte de visite posée en bas à droite, nettement plus
-  petite. Titre : « Le même logo, en grand format. » Légende : panneau de
-  chantier et carte de visite, le même dessin.
-- **S6** `06.png` — Fond crème, bandeau violet `#a86cd0` en bas. « Dessiné
+- **S5** `05.png` — Fond crème. Le panneau de chantier et la carte de
+  visite **à l'échelle exacte** : la carte fait 7 % de la largeur du
+  panneau, et c'est écrit. Titre : « À l'échelle exacte. » Les deux cotes
+  sont légendées, 120 × 80 cm et 8,5 cm.
+- **S6** `06.png` — Fond crème. Le logo en monochrome bleu sur crème, puis
+  en monochrome blanc sur un bandeau encre. Titre : « En une seule
+  couleur. » Légende : les lettres sont ajourées, pas remplies de blanc,
+  c'est ce qui rend la version possible.
+- **S7** `07.png` — Fond crème, bandeau violet `#a86cd0` en bas. « Dessiné
   en grand. Vérifié en petit. » Puis la règle : une identité livrée ne
   contient jamais un seul fichier.
 
@@ -458,10 +470,14 @@ l'autre jaune doré légendé « le soleil ».
 diagonale sur un fond crème : au recto le logo, au verso un QR code et les
 coordonnées du gérant.
 
-**S5** — Un panneau de chantier Solaire 66 présenté en diagonale, avec une
-carte de visite beaucoup plus petite posée en bas à droite.
+**S5** — Un panneau de chantier Solaire 66 de 120 par 80 centimètres, avec
+une carte de visite de 8,5 centimètres posée à côté, à l'échelle exacte :
+elle occupe à peine un quatorzième de la largeur.
 
-**S6** — Fond crème et bandeau violet, texte « Dessiné en grand. Vérifié en
+**S6** — Le logo Solaire 66 en une seule couleur : en bleu sur fond crème
+au-dessus, en blanc sur un bandeau brun foncé en dessous.
+
+**S7** — Fond crème et bandeau violet, texte « Dessiné en grand. Vérifié en
 petit. »
 
 ### Hashtags — jeu B + 2 locaux
@@ -472,17 +488,14 @@ petit. »
 
 ### À fournir par Sandra
 
-- **Les dimensions réelles du panneau.** Si tu me les donnes, la planche 5
-  peut montrer la carte **à l'échelle exacte** à côté du panneau — un
-  rapport chiffré est beaucoup plus frappant qu'un « plus petit » visuel.
-  Je ne l'ai pas fait parce que je ne les invente pas.
-- **Les fichiers vectoriels** du logo (`.ai`, `.eps`, `.svg`). Les planches
-  actuelles partent d'un JPEG et d'un PDF rendus en 300 dpi : c'est
-  suffisant à cette taille, mais le vectoriel serait plus net.
-- **La version simplifiée et la version monochrome**, si elles existent.
-  Si elles n'existent pas, la slide 5 reste vraie — elle devient même une
-  conversation à avoir.
-- *Aucune photo.* Les cinq planches sont entièrement composées.
+- **Plus rien de bloquant.** Dimensions, vectoriel et monochrome sont
+  fournis ou produits.
+- *Aucune photo.* Les sept planches sont entièrement composées.
+
+**Les trois versions monochromes sont livrées** dans
+`reseaux/visuels/sources/` : bleu `#10638b`, noir `#1d1d1b`, et blanc pour
+les fonds sombres. Elles sont utilisables telles quelles par le client —
+gravure, broderie, tampon.
 
 ---
 
