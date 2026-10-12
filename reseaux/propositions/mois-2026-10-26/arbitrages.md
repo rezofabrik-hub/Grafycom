@@ -246,11 +246,14 @@ commanditaire de ces publications. La règle est satisfaite à la source.
 **Les cinq planches sont produites** et vérifiées au rendu, dans
 `reseaux/visuels/2026-11-02-solaire-66/`.
 
-**Il manque le panneau de chantier.** Le fichier ne m'est pas parvenu :
-l'image s'est affichée dans la conversation mais n'a pas été enregistrée
-sur le disque. Le renvoyer permet d'ajouter une sixième planche — celle
-qui prouve le « dessiné en grand » de la dernière slide, aujourd'hui
-affirmé sans démonstration.
+**Le panneau de chantier est arrivé** et fait la cinquième planche, avec
+la carte de visite posée à côté pour l'écart d'échelle. Le « dessiné en
+grand » est donc montré, plus seulement affirmé.
+
+Un complément qui rendrait cette planche nettement plus forte : **les
+dimensions réelles du panneau**. Avec elles, la carte peut être posée à
+l'échelle exacte — un rapport chiffré frappe plus qu'un « plus petit »
+approximatif. Je ne les ai pas inventées.
 
 Deux compléments utiles mais non bloquants : les **fichiers vectoriels**
 du logo, plus nets qu'un JPEG rendu, et les **versions simplifiée et

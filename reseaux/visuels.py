@@ -744,6 +744,17 @@ def solaire_66(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "04.png"))
 
+    p = Planche("creme")
+    p.titre("Le même logo," + "\n" + "en grand format.", 86, y=150)
+    p.poser(S / "solaire-66-panneau.png", 520, 700, 900, angle=-3)
+    p.poser(S / "solaire-66-carte-recto.png", 830, 1070, 215, angle=5,
+            rogner_mm=2, mm_par_px=MM)
+    p.y = 1150
+    p.texte("Panneau de chantier et carte de visite : le même dessin.",
+            32, "taupe", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
     p = Planche("creme").bandeau_bas("violet", 0.34)
     p.titre("Dessiné en grand." + "\n" + "Vérifié en petit.", 92, y=200)
     p.y = 470
@@ -754,7 +765,7 @@ def solaire_66(dossier=None):
     p.texte("C'est pour ça qu'une identité livrée ne contient jamais un "
             "seul fichier.", 40, "encre", 600, avant=0)
     p.signature("blanc")
-    faits.append(p.ecrire(d / "05.png"))
+    faits.append(p.ecrire(d / "06.png"))
 
     return faits
 

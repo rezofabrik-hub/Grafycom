@@ -361,22 +361,17 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 
 # SEMAINE 2 — du 2 au 8 novembre
 
-## 5 — Lundi 2 novembre, 12 h 30 · Carrousel 5 slides · Pilier « réalisations » · **Solaire 66**
+## 5 — Lundi 2 novembre, 12 h 30 · Carrousel 6 slides · Pilier « réalisations » · **Solaire 66**
 
 > ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
 > est aussi le commanditaire de ces publications — la carte de visite porte
 > « Laurent MIENVILLE, Gérant ». La règle « aucun projet client sans son
 > accord » est donc satisfaite à la source, sans démarche.
 >
-> ✅ **Visuels produits.** Les 5 planches sont dans
-> `reseaux/visuels/2026-11-02-solaire-66/`, faites par
+> ✅ **Visuels produits, les 6.** Dans
+> `reseaux/visuels/2026-11-02-solaire-66/`, par
 > `python3 reseaux/visuels.py` (gabarit `solaire_66`). Format 1080 × 1350,
-> police Inter du site, pseudo en constante.
->
-> ⏳ **Il manque le panneau de chantier.** Le fichier ne m'est pas parvenu :
-> l'image s'est affichée dans la conversation mais n'a pas été enregistrée.
-> Renvoie-le et j'ajoute une sixième planche — c'est elle qui prouvera le
-> « dessiné en grand » de la dernière slide.
+> police Inter du site, pseudo en constante, relus à l'image.
 
 **Pourquoi cette publication a remplacé un exercice fictif.** Le cahier des
 charges dit que les réalisations sont le pilier le plus fort et le plus
@@ -404,7 +399,11 @@ idée, il ne la concurrence pas.
   Titre : « Une carte de visite fait 85 millimètres. »
   *Le fond perdu de 2 mm est rogné : on montre l'objet fini, pas le fichier
   d'impression.*
-- **S5** `05.png` — Fond crème, bandeau violet `#a86cd0` en bas. « Dessiné
+- **S5** `05.png` — Fond crème. Le panneau de chantier en grand, légèrement
+  tourné, et la carte de visite posée en bas à droite, nettement plus
+  petite. Titre : « Le même logo, en grand format. » Légende : panneau de
+  chantier et carte de visite, le même dessin.
+- **S6** `06.png` — Fond crème, bandeau violet `#a86cd0` en bas. « Dessiné
   en grand. Vérifié en petit. » Puis la règle : une identité livrée ne
   contient jamais un seul fichier.
 
@@ -459,7 +458,10 @@ l'autre jaune doré légendé « le soleil ».
 diagonale sur un fond crème : au recto le logo, au verso un QR code et les
 coordonnées du gérant.
 
-**S5** — Fond crème et bandeau violet, texte « Dessiné en grand. Vérifié en
+**S5** — Un panneau de chantier Solaire 66 présenté en diagonale, avec une
+carte de visite beaucoup plus petite posée en bas à droite.
+
+**S6** — Fond crème et bandeau violet, texte « Dessiné en grand. Vérifié en
 petit. »
 
 ### Hashtags — jeu B + 2 locaux
@@ -470,8 +472,10 @@ petit. »
 
 ### À fournir par Sandra
 
-- **Le panneau de chantier**, pour la sixième planche. C'est le seul
-  élément manquant.
+- **Les dimensions réelles du panneau.** Si tu me les donnes, la planche 5
+  peut montrer la carte **à l'échelle exacte** à côté du panneau — un
+  rapport chiffré est beaucoup plus frappant qu'un « plus petit » visuel.
+  Je ne l'ai pas fait parce que je ne les invente pas.
 - **Les fichiers vectoriels** du logo (`.ai`, `.eps`, `.svg`). Les planches
   actuelles partent d'un JPEG et d'un PDF rendus en 300 dpi : c'est
   suffisant à cette taille, mais le vectoriel serait plus net.
