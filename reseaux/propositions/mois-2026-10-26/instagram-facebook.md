@@ -361,87 +361,86 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 
 # SEMAINE 2 — du 2 au 8 novembre
 
-## 5 — Lundi 2 novembre, 12 h 30 · Carrousel · Pilier « réalisations » · **Solaire 66**
+## 5 — Lundi 2 novembre, 12 h 30 · Carrousel 5 slides · Pilier « réalisations » · **Solaire 66**
 
-> 🔒 **Accord client à obtenir avant publication.** Solaire 66 est un vrai
-> client et un vrai projet livré. La règle ne souffre pas d'exception, même
-> si le contrat cède les droits : un client qui se découvre sur Instagram
-> est un client perdu. Un message, une réponse écrite, et on publie.
+> ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
+> est aussi le commanditaire de ces publications — la carte de visite porte
+> « Laurent MIENVILLE, Gérant ». La règle « aucun projet client sans son
+> accord » est donc satisfaite à la source, sans démarche.
 >
-> 🔁 **Repli prêt si le client refuse ou ne répond pas à temps :** l'ancienne
-> version de cette publication — « Je présente toujours trois pistes, deux
-> sont faites pour être écartées », exercice de style sur logos fictifs —
-> est conservée dans l'historique git de ce fichier. Elle tient la même
-> date et le même créneau.
+> ✅ **Visuels produits.** Les 5 planches sont dans
+> `reseaux/visuels/2026-11-02-solaire-66/`, faites par
+> `python3 reseaux/visuels.py` (gabarit `solaire_66`). Format 1080 × 1350,
+> police Inter du site, pseudo en constante.
 >
-> 📁 **Fichier à fournir : le vectoriel.** Le logo transmis est un JPEG :
-> pas de transparence, donc impossible à poser ailleurs que sur du blanc,
-> et il ne s'agrandit pas. Sandra a le `.ai` ou le `.eps`, puisqu'elle l'a
-> dessiné.
+> ⏳ **Il manque le panneau de chantier.** Le fichier ne m'est pas parvenu :
+> l'image s'est affichée dans la conversation mais n'a pas été enregistrée.
+> Renvoie-le et j'ajoute une sixième planche — c'est elle qui prouvera le
+> « dessiné en grand » de la dernière slide.
 
-**Pourquoi cette publication remplace l'exercice fictif.** Le cahier des
-charges le dit : les réalisations sont le pilier le plus fort et le plus
-rare. Un projet réel bat un exercice de style à tous les coups. C'était le
-seul pilier que ce mois ne servait pas.
+**Pourquoi cette publication a remplacé un exercice fictif.** Le cahier des
+charges dit que les réalisations sont le pilier le plus fort et le plus
+rare. Mon contrôle avait relevé que le mois n'en servait aucun : zéro
+projet réel sur seize publications. Un projet livré bat un exercice de
+style à tous les coups.
 
-**L'idée, une seule :** un symbole posé à côté d'un nom reste un symbole à
-côté d'un nom. Intégré dans le mot, il devient le logo. Le `O` de SOLAIRE
-*est* le soleil.
+**L'idée, une seule :** un logo se dessine en grand et se vérifie en petit.
+Le reste — l'origine des couleurs, le symbole intégré au mot — sert cette
+idée, il ne la concurrence pas.
 
-### Direction visuelle — 6 slides
+### Direction visuelle — 5 slides *(produites)*
 
-- **S1.** Fond blanc `#ffffff`. Le logo Solaire 66 en entier, centré,
-  large, respiration généreuse. Aucun texte par-dessus. En bas, petit :
-  « Solaire 66 · logo livré ». Laisser le logo parler le premier.
-- **S2.** Fond crème `#f7f1ef`. À gauche, une version fabriquée pour la
-  démonstration : le mot SOLAIRE en lettres normales, avec un petit soleil
-  **posé à côté**. À droite, le vrai logo. Titre au-dessus :
-  « La différence tient en une lettre. »
-- **S3.** Fond blanc. Zoom serré sur le `O` devenu spirale solaire.
-  Titre : « Le symbole n'est pas à côté du mot. Il **est** une lettre du
-  mot. » Sous-titre gris : « On ne peut plus les séparer — c'est le but. »
-- **S4.** Fond crème. Les trois idées du logo isolées en trois vignettes,
-  chacune avec son mot : la montagne → *le 66*, la spirale → *le soleil*,
-  l'éclair → *l'électricité*. Titre : « Trois informations, une seule
-  image, aucune légende. »
-- **S5.** Fond blanc. Le logo réduit à la taille réelle d'un avatar, posé
-  à côté du logo grand format. Titre : « Et il doit survivre à ça. »
-  Texte : « Un logo se dessine grand et se vérifie petit. Si la spirale se
-  bouche à 48 pixels, c'est une version simplifiée qu'il faut, pas un
-  autre logo. »
-- **S6.** Fond crème, filet violet `#a86cd0` à gauche. « Votre logo passe
-  de la façade au tampon encreur. Il doit tenir aux deux bouts. »
-  Pastille corail `#f2585c` : « Parlons-en » · lien en bio.
-  Pied : `@grafycom.graphiste`
+- **S1** `01.png` — Fond blanc. Le logo seul, grand, centré. En bas,
+  discret : « Solaire 66 — identité livrée ». Le logo parle en premier, on
+  ne lui met rien par-dessus.
+- **S2** `02.png` — Fond crème. Deux disques aux couleurs réelles du logo,
+  `#10638b` et `#f5b32d`, légendés *la mer* et *le soleil*. Titre : « Ces
+  deux couleurs ne sont pas un goût. » Texte : elles viennent de
+  Canet-en-Roussillon, où l'entreprise est installée.
+- **S3** `03.png` — Fond blanc. Titre « Regardez le O. », le logo en
+  dessous, puis l'explication du symbole devenu lettre.
+- **S4** `04.png` — Fond crème. Les deux faces de la carte de visite en
+  présentation studio, légèrement tournées, avec leurs ombres portées.
+  Titre : « Une carte de visite fait 85 millimètres. »
+  *Le fond perdu de 2 mm est rogné : on montre l'objet fini, pas le fichier
+  d'impression.*
+- **S5** `05.png` — Fond crème, bandeau violet `#a86cd0` en bas. « Dessiné
+  en grand. Vérifié en petit. » Puis la règle : une identité livrée ne
+  contient jamais un seul fichier.
+
+> **Ce que ces planches ne sont pas :** des mises en situation
+> photographiques. La carte n'est pas dans une main, le panneau ne sera pas
+> sur une palissade. Ça demanderait une photo de base, et on ne publie pas
+> une image dont les droits ne sont pas clairs. Ce sont des présentations
+> studio — rotation douce, ombre portée, fond de la charte.
 
 ### Accroche
 
-« Regardez le O. »
+« Ces deux couleurs ne sont pas un goût. »
 
 ### Légende
 
-Regardez le `O` de SOLAIRE. Ce n'est pas un `O` avec un soleil posé
-dessus : c'est le soleil qui tient le rôle du `O`.
+Le bleu et le jaune de ce logo ne sortent pas d'une tendance. Ils viennent
+de Canet-en-Roussillon, où l'entreprise est installée : la mer et le
+soleil. Une palette qui vient d'un lieu tient plus longtemps qu'une palette
+qui vient d'une mode — parce que le lieu, lui, ne change pas de saison.
 
-La différence paraît minime. Elle ne l'est pas.
+Regardez maintenant le `O` de SOLAIRE. Ce n'est pas un `O` avec un soleil
+posé dessus : c'est le soleil qui tient le rôle du `O`. La différence paraît
+minime, elle ne l'est pas. Un symbole posé à côté d'un nom peut toujours
+s'en détacher — on finit par l'oublier dans un document, le remplacer par
+une icône, le réduire jusqu'à ce qu'il disparaisse. Devenu une lettre, il ne
+peut plus partir sans emporter le mot avec lui.
 
-Un symbole posé à côté d'un nom peut toujours s'en détacher. On finit par
-l'oublier dans un document, le remplacer par une icône, le réduire jusqu'à
-ce qu'il disparaisse. Un symbole **devenu une lettre** ne peut plus partir
-sans emporter le mot avec lui.
+Et puis il y a la contrainte dont on parle le moins. Sur un panneau de
+chantier, un logo peut tout se permettre. Sur une carte de visite, il
+dispose de 85 millimètres. Dans un avatar, de quelques pixels. Brodé sur un
+polo, le fil ne descend pas en dessous d'une certaine finesse.
 
-Ce logo dit trois choses sans une ligne d'explication : la montagne situe
-le département, la spirale dit le soleil, l'éclair dit l'électricité.
-Quelqu'un qui n'a jamais entendu parler de l'entreprise comprend son métier
-avant d'avoir lu le nom. C'est exactement le travail qu'on demande à un
-logo.
-
-Et il y a la contrainte dont on parle moins : un logo se dessine en grand
-et se vérifie en petit. Sur une façade, sur un camion, il peut tout se
-permettre. Dans un avatar de 48 pixels, sur un tampon encreur, sur un polo
-brodé, la finesse devient de la bouillie. C'est pour ça qu'une identité
-livrée ne contient jamais un seul fichier : il y a la version complète, la
-version simplifiée, et la version en une seule couleur.
+C'est pour ça qu'une identité livrée ne contient jamais un seul fichier :
+une version complète, une version simplifiée pour les petites tailles, une
+version en une seule couleur pour la gravure et la broderie, et les fichiers
+vectoriels qui permettent de tout agrandir sans perte.
 
 Si votre logo n'existe qu'en une seule version, vous ne le découvrirez pas
 aujourd'hui. Vous le découvrirez le jour où un imprimeur vous demandera un
@@ -449,10 +448,19 @@ fichier que vous n'avez pas.
 
 ### Texte alternatif
 
-Logo de Solaire 66 : une chaîne de montagnes bleues en silhouette, un
-soleil dessiné en spirale jaune qui remplace la lettre O du mot SOLAIRE, un
-éclair jaune traversant le relief, et le nombre 66 en jaune. Le mot SOLAIRE
-est découpé dans la masse bleue des montagnes.
+**S1 et S3** — Logo de Solaire 66 : une chaîne de montagnes bleues en
+silhouette, un soleil dessiné en spirale jaune qui remplace la lettre O du
+mot SOLAIRE, un éclair jaune traversant le relief, et le nombre 66 en jaune.
+
+**S2** — Deux disques côte à côte, l'un bleu profond légendé « la mer »,
+l'autre jaune doré légendé « le soleil ».
+
+**S4** — Les deux faces d'une carte de visite Solaire 66 posées en
+diagonale sur un fond crème : au recto le logo, au verso un QR code et les
+coordonnées du gérant.
+
+**S5** — Fond crème et bandeau violet, texte « Dessiné en grand. Vérifié en
+petit. »
 
 ### Hashtags — jeu B + 2 locaux
 
@@ -462,17 +470,15 @@ est découpé dans la masse bleue des montagnes.
 
 ### À fournir par Sandra
 
-- **L'accord écrit de Solaire 66.** Bloquant. Sans lui, on bascule sur le
-  repli.
-- **Le fichier vectoriel du logo** (`.ai`, `.eps`, `.svg` ou `.pdf`). Le
-  JPEG reçu ne suffit pas pour composer : pas de transparence, pas
-  d'agrandissement.
+- **Le panneau de chantier**, pour la sixième planche. C'est le seul
+  élément manquant.
+- **Les fichiers vectoriels** du logo (`.ai`, `.eps`, `.svg`). Les planches
+  actuelles partent d'un JPEG et d'un PDF rendus en 300 dpi : c'est
+  suffisant à cette taille, mais le vectoriel serait plus net.
 - **La version simplifiée et la version monochrome**, si elles existent.
-  Ce sont elles qui font la slide 5. Si elles n'existent pas, la slide se
-  réécrit au conditionnel — et c'est une conversation à avoir avec le
-  client.
-- *Aucune photo.* Les six slides sont des planches composées ; `visuels.py`
-  les dessine à partir du vectoriel.
+  Si elles n'existent pas, la slide 5 reste vraie — elle devient même une
+  conversation à avoir.
+- *Aucune photo.* Les cinq planches sont entièrement composées.
 
 ---
 

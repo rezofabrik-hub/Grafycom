@@ -74,8 +74,11 @@ Elles passent avant tout le reste de ce document.
    le site : Casa Aldo (**le logo seul** — la fabrication de l'enseigne est
    d'un partenaire), Cap Loisirs, Le Cayrou, O Fait Maison, Alliance
    Véhicule, Mia Beauty, Crazy Frenchy, Pizza Fry, Victoire, et **Solaire 66**
-   (logo, ajouté le 12 octobre 2026 par Laurent, fichier dans
-   `reseaux/visuels/sources/`). Tu ne vas pas au-delà. **Aucun projet client ne se publie sans son accord**, même si
+   (logo et cartes de visite, ajoutés le 12 octobre 2026 ; fichiers
+   dans `reseaux/visuels/sources/`). **Solaire 66 est la société de
+   Laurent**, qui commande aussi ces publications : son accord est
+   acquis à la source, contrairement à tous les autres clients de
+   cette liste. Tu ne vas pas au-delà. **Aucun projet client ne se publie sans son accord**, même si
    le contrat cède les droits. Dès qu'une proposition montre un projet,
    écris en tête : « accord client à obtenir avant publication ».
 

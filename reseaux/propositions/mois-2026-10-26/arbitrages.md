@@ -231,32 +231,30 @@ disponible si vous le voulez l'an prochain.
 
 ---
 
-## 3 bis · Solaire 66 — le seul vrai projet client du mois
+## 3 bis · Solaire 66 — réglé, sauf le panneau
 
-Laurent a transmis le logo le 12 octobre. Il remplace la publication n° 5
-du 2 novembre, qui était un exercice de style sur des logos fictifs. C'est
-un gain net : le pilier « réalisations » est le plus fort et le plus rare,
-et c'était le seul que ce mois ne servait pas.
+Laurent a transmis le logo et les cartes de visite le 12 octobre. Ils
+remplacent la publication n° 5 du 2 novembre, qui était un exercice de
+style sur des logos fictifs. C'est un gain net : le pilier
+« réalisations » est le plus fort et le plus rare, et c'était le seul que
+ce mois ne servait pas.
 
-**Deux conditions, et la première est bloquante.**
+**L'accord client ne se pose pas.** La carte de visite porte « Laurent
+MIENVILLE, Gérant » : Solaire 66 est sa société, et il est aussi le
+commanditaire de ces publications. La règle est satisfaite à la source.
 
-1. **L'accord écrit de Solaire 66.** La règle ne souffre pas d'exception,
-   même quand le contrat cède les droits. Un message, une réponse écrite,
-   et on publie. Sans accord, l'ancienne version de la publication est dans
-   l'historique git et reprend la même date.
-2. **Le fichier vectoriel.** Celui qui a été transmis est un JPEG : pas de
-   transparence, donc impossible à poser ailleurs que sur du blanc, et il
-   ne s'agrandit pas. Sandra a le `.ai` ou le `.eps` puisqu'elle l'a
-   dessiné.
+**Les cinq planches sont produites** et vérifiées au rendu, dans
+`reseaux/visuels/2026-11-02-solaire-66/`.
 
-Il faudrait aussi **la version simplifiée et la version monochrome** : ce
-sont elles qui font la cinquième slide. Si elles n'existent pas, la slide
-se réécrit — et c'est une conversation à avoir avec le client, parce qu'une
-identité sans déclinaison se bloque au premier imprimeur qui demande un
-fichier de broderie.
+**Il manque le panneau de chantier.** Le fichier ne m'est pas parvenu :
+l'image s'est affichée dans la conversation mais n'a pas été enregistrée
+sur le disque. Le renvoyer permet d'ajouter une sixième planche — celle
+qui prouve le « dessiné en grand » de la dernière slide, aujourd'hui
+affirmé sans démonstration.
 
-Le texte de fiche Google du même jour **ne nomme pas le client** : il reste
-publiable même si l'accord tarde.
+Deux compléments utiles mais non bloquants : les **fichiers vectoriels**
+du logo, plus nets qu'un JPEG rendu, et les **versions simplifiée et
+monochrome** si elles existent.
 
 ---
 

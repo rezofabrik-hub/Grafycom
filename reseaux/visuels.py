@@ -36,7 +36,7 @@ import argparse
 import pathlib
 import sys
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 RACINE = pathlib.Path(__file__).resolve().parent
 POLICES = RACINE / "polices"
@@ -254,6 +254,43 @@ class Planche:
         return self
 
     # -- sortie ------------------------------------------------------
+    def poser(self, chemin, cx, cy, largeur, angle=0.0, ombre=28,
+              rogner_mm=0.0, mm_par_px=None):
+        """Pose une image plate : carte, panneau, document.
+
+        Pour une MISE EN SITUATION STUDIO, pas photographique : rotation
+        douce et ombre portee, sur le fond de la charte. Une mise en
+        situation sur une vraie palissade ou dans une vraie main demande
+        une photo de base, et la regle est claire — jamais une image dont
+        les droits ne sont pas clairs.
+
+        rogner_mm : un fichier d'impression porte son fond perdu. Le
+        montrer, c'est montrer un fichier de production et non l'objet
+        fini. On rogne donc les 2 mm reglementaires avant de poser.
+        """
+        im = Image.open(chemin).convert("RGBA")
+        if rogner_mm and mm_par_px:
+            r = int(rogner_mm * mm_par_px)
+            im = im.crop((r, r, im.width - r, im.height - r))
+        h = int(im.height * largeur / im.width)
+        im = im.resize((largeur, h), Image.LANCZOS)
+
+        if ombre:
+            # L'ombre est la silhouette de l'objet, pas un rectangle flou
+            # pose dessous : une carte tournee doit avoir une ombre tournee.
+            sil = Image.new("RGBA", im.size, (0, 0, 0, 90))
+            sil.putalpha(im.split()[3].point(lambda a: 90 if a > 8 else 0))
+            sil = sil.rotate(angle, expand=True, resample=Image.BICUBIC)
+            marge = ombre * 3
+            fond = Image.new("RGBA", (sil.width + 2 * marge, sil.height + 2 * marge), (0, 0, 0, 0))
+            fond.paste(sil, (marge, marge))
+            fond = fond.filter(ImageFilter.GaussianBlur(ombre))
+            self.im.paste(fond, (cx - fond.width // 2, cy - fond.height // 2 + ombre // 2), fond)
+
+        tourne = im.rotate(angle, expand=True, resample=Image.BICUBIC)
+        self.im.paste(tourne, (cx - tourne.width // 2, cy - tourne.height // 2), tourne)
+        return self
+
     def ecrire(self, chemin):
         p = pathlib.Path(chemin)
         p.parent.mkdir(parents=True, exist_ok=True)
@@ -640,6 +677,86 @@ GABARITS = {
     "stories": stories,
 }
 
+
+
+
+def solaire_66(dossier=None):
+    """Publication n° 5 du 2 novembre : l'identité Solaire 66.
+
+    Seul vrai projet client du mois. Solaire 66 est la société de Laurent,
+    qui commande aussi ces publications : l'accord de publication est donc
+    donné à la source, et la règle « aucun projet client sans son accord »
+    est satisfaite sans démarche supplémentaire.
+
+    Les couleurs du logo viennent de Canet-en-Roussillon, où l'entreprise
+    est installée. C'est l'accroche de la publication, et c'est vrai.
+
+    Ce que ce gabarit NE fait pas : poser la carte dans une main ou le
+    panneau sur une palissade. Une mise en situation photographique
+    demande une photo de base, et on ne publie pas une image dont les
+    droits ne sont pas clairs. Les planches sont donc des présentations
+    studio : rotation douce, ombre portée, fond de la charte.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-02-solaire-66"))
+    S = RACINE / "visuels" / "sources"
+    MM = 1052 / 89          # px par mm du rendu 300 dpi des cartes
+    faits = []
+
+    p = Planche("blanc")
+    p.poser(S / "solaire-66-logo.png", 540, 620, 960, ombre=0)
+    p.y = 1150
+    p.texte("Solaire 66 — identité livrée", 34, "taupe", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("creme")
+    p.titre("Ces deux couleurs" + "\n" + "ne sont pas un goût.", 92, y=150)
+    for cx, hexa, legende in ((330, "#10638b", "la mer"),
+                              (750, "#f5b32d", "le soleil")):
+        p.d.ellipse([cx - 150, 560, cx + 150, 860], fill=hexa)
+        f = police(600, 40)
+        l = p.d.textlength(legende, font=f)
+        p.d.text((cx - l / 2, 900), legende, font=f, fill=teinte("brun"))
+    p.y = 1000
+    p.texte("Elles viennent de Canet-en-Roussillon, où l'entreprise est "
+            "installée. Une palette qui vient du lieu tient plus longtemps "
+            "qu'une palette qui vient d'une tendance.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("blanc")
+    p.titre("Regardez le O.", 110, y=160)
+    p.poser(S / "solaire-66-logo.png", 540, 560, 880, ombre=0)
+    p.y = 870
+    p.texte("Ce n'est pas un O avec un soleil posé dessus. C'est le soleil "
+            "qui tient le rôle du O. Un symbole posé à côté d'un nom peut "
+            "toujours s'en détacher ; devenu une lettre, il ne peut plus "
+            "partir sans emporter le mot.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("creme")
+    p.titre("Une carte de visite" + "\n" + "fait 85 millimètres.", 88, y=140)
+    p.poser(S / "solaire-66-carte-verso.png", 700, 900, 540, angle=-6,
+            rogner_mm=2, mm_par_px=MM)
+    p.poser(S / "solaire-66-carte-recto.png", 390, 640, 540, angle=6,
+            rogner_mm=2, mm_par_px=MM)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("creme").bandeau_bas("violet", 0.34)
+    p.titre("Dessiné en grand." + "\n" + "Vérifié en petit.", 92, y=200)
+    p.y = 470
+    p.texte("Sur une façade ou un panneau de chantier, il peut tout se "
+            "permettre. Dans un avatar, sur un tampon encreur, brodé sur un "
+            "polo, le détail devient de la bouillie.", 38, "brun", 400, avant=0)
+    p.y = 720
+    p.texte("C'est pour ça qu'une identité livrée ne contient jamais un "
+            "seul fichier.", 40, "encre", 600, avant=0)
+    p.signature("blanc")
+    faits.append(p.ecrire(d / "05.png"))
+
+    return faits
 
 def main():
     a = argparse.ArgumentParser(description=__doc__,
