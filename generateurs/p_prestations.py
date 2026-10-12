@@ -43,7 +43,7 @@ PHOTOS = {
  "menus":        ("presta-menus.webp", "grafycom",
                   "Menu de la pizzeria Pizza Fry ouvert à plat, carte des pizzas et carte des boissons sur fond ardoise"),
  "print":        ("presta-print.webp", "grafycom",
-                  "Dépliant trois volets de Cap Loisirs, déplié, fond violet et plan d'accès"),
+                  "Dépliant trois volets d'une association de loisirs, déplié, fond violet et plan d'accès"),
  "signaletique": ("presta-signaletique.webp", "grafycom",
                   "Enseigne lumineuse du restaurant Le Cayrou, allumée sur une façade à la tombée du jour"),
  "digital":      ("presta-digital.jpg", "illustration",

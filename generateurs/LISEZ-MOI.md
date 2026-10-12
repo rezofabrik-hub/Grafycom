@@ -56,7 +56,7 @@ parce qu'il doit s'afficher correctement depuis n'importe quelle adresse.
 cd generateurs
 for f in p_index p_prestations p_methode p_apropos p_contact p_merci \
          p_legal p_cgv p_realisations p_cibles p_blog zone pays villes villes2 villes3 \
-         villes4 villes5 villes6; do python3 $f.py; done
+         villes4 villes5 villes6 villes7; do python3 $f.py; done
 python3 p_construction.py        # seulement si CONSTRUCTION = True
 ```
 

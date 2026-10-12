@@ -1,15 +1,11 @@
 # Les réalisations du portfolio
 
-Six visuels, tirés du portfolio de Sandra, au format **4/3** et en WebP.
+Deux visuels, tirés du portfolio de Sandra, au format **4/3** et en WebP.
 
 | Fichier | Projet | Ce qu'il montre |
 |---|---|---|
-| `casa-aldo.webp` | Casa Aldo | Logo décliné en enseigne ronde rétroéclairée |
 | `o-fait-maison.webp` | Ô Fait Maison | Enseigne de devanture d'un salon de thé |
-| `alliance-vehicule.webp` | Alliance Peintures | Marquage de véhicule, hayon et flanc |
 | `mia-beauty.webp` | Mia Beauty | Livret de formation ouvert |
-| `cap-loisirs.webp` | Cap Loisirs | Totem numérique d'entrée |
-| `pano-perpignan.webp` | Pano Perpignan | Gabarits de publication pour les réseaux |
 
 ## En ajouter une
 
@@ -36,10 +32,10 @@ qu'elle a créé les visuels, et il ne couvre pas tout :
 |---|---|---|
 | Ô Fait Maison | oui | l'entreprise a fermé |
 | Mia Beauty | oui | — |
-| Casa Aldo | **le logo seulement** | `casa-aldo.webp` montre l'enseigne fabriquée |
-| Alliance Peintures | à confirmer | |
-| Cap Loisirs | à confirmer | |
-| Pano Perpignan | à confirmer | |
+| ~~Casa Aldo~~ | **retiré le 12 octobre** | l'accord porte sur le logo, l'image montrait l'enseigne |
+| ~~Alliance Peintures~~ | **retirés le 12 octobre**, faute d'accord confirmé | |
+| ~~Cap Loisirs~~ | fichiers supprimés, pas seulement déréférencés | |
+| ~~Pano Perpignan~~ | une image déréférencée reste servie à son adresse | |
 
 **Un travail mené pour le compte d'une autre structure ne se présente pas
 comme une commande reçue par Grafycom.** La formule à employer, et la
@@ -51,3 +47,30 @@ seule que l'accord autorise :
 C'est une précaution de fond, pas de forme : un prospect qui découvre que
 « ce client » était celui d'un ancien employeur perd confiance d'un coup,
 et ça se sait vite dans un département.
+
+## Casa Aldo — ce qu'il faut pour le remettre
+
+L'accord porte sur le **logo seul**, et `casa-aldo.webp` montrait
+l'enseigne ronde fabriquée : le visuel dépassait l'accord. Il a été retiré
+et son fichier supprimé.
+
+**Le reconstruire depuis cette photo ne marche pas.** Mesure faite : le
+logo y occupait **205 × 235 px**, vu de biais, dans une image déjà
+compressée. Trois tentatives de détourage l'ont confirmé — le cadrage se
+règle, pas la résolution. Agrandi pour une publication de 1080 px, le
+rouge part en taches et les contours se délitent.
+
+**Ce qu'il faut :** le logo source, dans l'un de ces formats, par ordre de
+préférence —
+
+1. un **PDF vectoriel** ou un `.ai` / `.eps` — comme pour Solaire 66 ;
+2. un **PNG à fond transparent**, 2000 px de large au minimum ;
+3. à défaut, un JPEG du logo seul, le plus grand disponible.
+
+Avec le vectoriel, le mock-up se fait à n'importe quelle taille, en
+monochrome aussi, et il tient en impression.
+
+> Le logo contient le **visage du restaurateur**, dessiné d'après sa
+> photo. C'est le logo public du commerce, donc son usage en portfolio
+> suit l'accord déjà obtenu — mais c'est une raison de plus pour ne jamais
+> le publier recadré ou retouché.

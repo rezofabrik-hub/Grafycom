@@ -8,26 +8,36 @@ def reaz(cat, titre, desc, fichier):
     </article>
 """ % (fichier, titre, cat, titre, desc)
 
+# Casa Aldo est retire en attendant son logo source. L'accord porte sur
+# le LOGO seul, et casa-aldo.webp montre l'enseigne ronde fabriquee :
+# le visuel depassait donc l'accord. Reconstruire le logo depuis cette
+# photo ne marche pas — il y mesure 205 px, de biais et compresse ; un
+# logo flou dans le portfolio d'une graphiste dessert plus qu'il ne sert.
+# Des que le fichier vectoriel arrive, remettre l'entree :
+#     reaz("Identite visuelle", "Casa Aldo",
+#          "Creation du logo d'un restaurant italien, dessine pour tenir "
+#          "dans un cercle lumineux.", "casa-aldo-logo.webp"),
+#
+# Portfolio de Sandra. Ces projets ont ete menes avant Grafycom, au sein
+# d'une precedente structure aujourd'hui fermee : la ligne d'attribution
+# sous le chapeau le dit, et elle n'est pas facultative.
+#
+# Trois projets ont ete retires le 12 octobre faute d'accord confirme, et
+# leurs fichiers supprimes — une image seulement dereferencee reste servie
+# a son adresse. Avant d'en ajouter une, lire
+# assets/img/realisations/LISEZ-MOI.md : l'accord du client y est note
+# projet par projet.
+#
+# Cette note vit ici et non dans un commentaire HTML : build.sh recopie
+# le fichier tel quel, et un commentaire nommant des clients retires
+# serait lisible dans la source de la page publique.
 GALERIE = "".join([
-    reaz("Identité visuelle", "Casa Aldo",
-         "Création du logo d'un restaurant italien, dessiné pour tenir dans "
-         "un cercle lumineux.",
-         "casa-aldo.webp"),
     reaz("Signalétique", "Ô Fait Maison",
          "Enseigne de devanture d'un salon de thé, et la décoration intérieure qui lui répond.",
          "o-fait-maison.webp"),
-    reaz("Véhicule", "Alliance Peintures",
-         "Une identité déclinée sur la flotte, du hayon aux portes latérales.",
-         "alliance-vehicule.webp"),
     reaz("Édition", "Mia Beauty",
          "Livret de formation : couverture, mise en page et gabarit des pages intérieures.",
          "mia-beauty.webp"),
-    reaz("Affichage", "Cap Loisirs",
-         "Affiche tarifaire des prestations proposées, lisible de loin à l'entrée.",
-         "cap-loisirs.webp"),
-    reaz("Réseaux sociaux", "Pano Perpignan",
-         "Gabarits de publication et visuels de campagne, déclinables semaine après semaine.",
-         "pano-perpignan.webp"),
 ])
 BODY = """
 <section class="heros">
@@ -36,13 +46,11 @@ BODY = """
     <h1>Quelques projets,<br><span class="texte-degrade">et ce qu'ils demandaient</span></h1>
     <div class="trait"></div>
     <p class="chapeau">Chaque projet part d'une page blanche et d'une conversation. Voici une sélection de travaux et, pour chacun, ce qu'il fallait résoudre.</p>
+    <p class="chapeau" style="font-size:1rem;opacity:.78;margin-top:14px">Ces projets ont été réalisés par Sandra avant la création de Grafycom, au sein d'une autre structure aujourd'hui fermée, et sont publiés avec l'accord des clients concernés.</p>
   </div>
 </section>
 
 <section>
-  <!-- Réalisations de Grafycom, tirées du portfolio de Sandra. Pour en
-       ajouter une : déposer le fichier dans assets/img/realisations/ et
-       ajouter un appel à reaz() ci-dessus. -->
   <div class="conteneur galerie">
 """ + GALERIE + """  </div>
 </section>

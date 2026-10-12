@@ -208,7 +208,7 @@ cible(
     </ol>
 
     <h2>Un exemple</h2>
-    <p><strong>Alliance Peintures</strong>, peintres en bâtiment, est exactement ce cas : une entreprise installée, une activité qui tourne, et une image qui ne suivait plus. La refonte a repris l'identité complète — logo, enseignes, cartes de visite, marquage des véhicules, flyers — en gardant la lisibilité d'un métier où l'on est jugé sur le sérieux avant le style. Le véhicule est visible sur la page <a href="realisations.html">réalisations</a>.</p>
+    <p>Le cas le plus courant : une entreprise de bâtiment installée depuis quinze ans, une activité qui tourne, et une image qui ne suit plus. La refonte reprend alors l'identité complète — logo, enseignes, cartes de visite, marquage des véhicules, flyers — en gardant la lisibilité d'un métier où l'on est jugé sur le sérieux avant le style. Ce n'est pas un changement de goût : c'est remettre les supports au niveau du travail.</p>
     <p>Si votre image tient encore mais que vos supports partent dans tous les sens, c'est souvent qu'aucune règle n'a jamais été écrite : la <a href="prestations.html#charte">charte graphique</a> les fixe, et elle se commande seule, sur le logo que vous avez déjà. Si c'est le logo lui-même qui ne va plus, voyez la <a href="prestations.html#logo">création de logo</a>. Et si vous venez d'ouvrir, c'est l'autre page qu'il faut lire : <a href="ouverture-commerce-66.html">ouvrir un commerce dans le 66</a>.</p>""",
  "Reprendre son image sans tout perdre",
  [("Faut-il tout changer en même temps&nbsp;?",
@@ -318,8 +318,8 @@ cible(
     <p>Je conçois le visuel et je prépare le fichier aux normes du fabricant. Si vous le souhaitez, je consulte les enseignistes et poseurs avec qui je travaille dans la région, je compare les devis, je vérifie le bon à tirer et je contrôle la conformité à la réception. Vous gardez un seul interlocuteur du premier crayonné à la pose — et si vous avez déjà votre poseur, les fichiers sont prévus pour qu'il travaille avec.</p>
 
     <h2>Des façades, et ce qui les accompagne</h2>
-    <p><strong>Le Cayrou</strong>, restaurant : enseigne lumineuse de façade, un trait simple qui tient de nuit. <strong>Ô Fait Maison</strong> : enseigne de devanture et décoration intérieure conçues ensemble. <strong>Alliance Peintures</strong> : marquage de flotte, du hayon aux portes latérales. Et <strong>Cap Loisirs</strong> : l'affiche tarifaire des prestations, qui relève de la même exigence — être lue de loin, en passant.</p>
-    <p>Tous sur la page <a href="realisations.html">réalisations</a>. Pour une ouverture, voir <a href="ouverture-commerce-66.html">ouvrir un commerce dans le 66</a> ; pour une enseigne fatiguée, <a href="refaire-son-image.html">refaire son image</a>.</p>""",
+    <p><strong>Le Cayrou</strong>, restaurant : enseigne lumineuse de façade, un trait simple qui tient de nuit. <strong>Ô Fait Maison</strong> : enseigne de devanture et décoration intérieure conçues ensemble.</p>
+    <p>Sur la page <a href="realisations.html">réalisations</a>. Pour une ouverture, voir <a href="ouverture-commerce-66.html">ouvrir un commerce dans le 66</a> ; pour une enseigne fatiguée, <a href="refaire-son-image.html">refaire son image</a>.</p>""",
  "Ce qu'on me demande avant de poser",
  [("Combien de temps entre la commande et la pose&nbsp;?",
    "Quatre à six semaines sont courantes pour un caisson ou des lettres découpées, fabrication et pose comprises. Il faut y ajouter le délai d'instruction de l'autorisation préalable quand elle est nécessaire."),
