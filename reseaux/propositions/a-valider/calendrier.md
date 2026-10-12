@@ -2,7 +2,10 @@
 
 Tout ce qui est écrit et non publié, tous canaux, dans l'ordre.
 
-> **Aucune date n'est programmée.** Ce sont des recommandations.
+> **Aucune date n'est programmée.** Ce sont des recommandations, sauf
+> la première : le 12 octobre passe à **18 h 30**, créneau du soir déjà
+> prévu au tableau ci-dessous, parce que celui de midi était passé au
+> moment de la validation. Rien d'autre ne bouge.
 
 ## Les créneaux, et pourquoi ceux-là
 
@@ -27,9 +30,9 @@ automatique du matin.
 
 | Date | Heure | Canal | Format | Contenu |
 |---|---|---|---|---|
-| lundi 12 octobre | 12 h 30 | Instagram + Facebook | Carrousel | n° 1 |
-| lundi 12 octobre | 12 h 30 | Fiche Google | post | texte n° 1 |
-| lundi 12 octobre | 12 h 45 | Story | story | S1-A · teasing du carrousel |
+| lundi 12 octobre | **18 h 30** | Instagram + Facebook | Carrousel | n° 1 |
+| lundi 12 octobre | **18 h 30** | Fiche Google | post | texte n° 1 |
+| lundi 12 octobre | **18 h 45** | Story | story | S1-A · teasing du carrousel |
 | mardi 13 octobre | 8 h 00 | Instagram + Facebook | Carrousel | n° 2 |
 | mardi 13 octobre | 8 h 00 | Fiche Google | post | texte n° 2 |
 | mardi 13 octobre | 8 h 15 | Story | story | S1-B · teasing réglementation |

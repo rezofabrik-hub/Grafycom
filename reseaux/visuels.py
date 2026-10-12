@@ -63,11 +63,59 @@ def police(graisse: int, taille: int) -> ImageFont.FreeTypeFont:
     if not f.exists():
         sys.exit("ERREUR : %s manquante. Voir le commentaire en tête de ce "
                  "fichier : les polices viennent de assets/fonts." % f)
-    return ImageFont.truetype(str(f), taille)
+    fonte = ImageFont.truetype(str(f), taille)
+    fonte.chemin = f
+    return fonte
+
+
+# Inter n'a ni « → » ni « ≠ » ni « ← » : ecrits avec elle, ils sortent en
+# carre vide. C'etait deja arrive — fleche() existe pour cette raison — et
+# c'est rearrive le 12 octobre sur deux fiches de tournage. Un carre vide
+# ne se voit pas dans un diff, seulement sur l'image. On verifie donc, une
+# fois pour toutes, que chaque caractere ecrit existe dans la fonte.
+_CMAP = {}
+
+
+def _manquants(texte, fonte):
+    chemin = getattr(fonte, "chemin", None)
+    if chemin is None:
+        return set()
+    if chemin not in _CMAP:
+        try:
+            from fontTools.ttLib import TTFont
+            _CMAP[chemin] = set(TTFont(str(chemin)).getBestCmap())
+        except Exception:
+            _CMAP[chemin] = None          # verification impossible : on passe
+    couvert = _CMAP[chemin]
+    if couvert is None:
+        return set()
+    return {c for c in texte if c not in "\n\t" and ord(c) not in couvert}
+
+
+def manuscrite(taille: int) -> ImageFont.FreeTypeFont:
+    """Caveat — la seule fonte manuscrite de la charte du site."""
+    f = POLICES / "Caveat.ttf"
+    if not f.exists():
+        sys.exit("ERREUR : %s manquante." % f)
+    fonte = ImageFont.truetype(str(f), taille)
+    fonte.chemin = f
+    return fonte
 
 
 def couper(texte: str, fonte, largeur: int) -> list[str]:
-    """Découpe un texte à la largeur donnée, en respectant les retours forcés."""
+    """Découpe un texte à la largeur donnée, en respectant les retours forcés.
+
+    Vérifie au passage que la fonte sait écrire chaque caractère : un
+    glyphe absent ne produit pas d'erreur, il produit un carré vide qu'on
+    ne voit qu'en ouvrant l'image.
+    """
+    absents = _manquants(texte, fonte)
+    if absents:
+        sys.exit("ERREUR : la fonte %s n'a pas %s — ils sortiraient en carré "
+                 "vide.\n  Texte : %r\n  Pour une flèche, utiliser "
+                 "Planche.fleche(), qui la trace."
+                 % (getattr(fonte, "chemin", "?"),
+                    " ".join("« %s »" % c for c in sorted(absents)), texte))
     lignes = []
     for para in texte.split("\n"):
         mots, courante = para.split(), ""
@@ -388,14 +436,16 @@ class Planche:
         laisser un trou dans le carrousel, on pose une planche qui dit ce
         qui manque. Elle ne se publie jamais telle quelle.
         """
-        self.d.rectangle([MARGE, 300, self.l - MARGE, 1050],
+        haut = int(self.h * 0.22)
+        bas = int(self.h * 0.78)
+        self.d.rectangle([MARGE, haut, self.l - MARGE, bas],
                          outline=teinte("taupe"), width=4)
         f = police(600, 34)
-        self.d.text((MARGE + 40, 350), "PHOTO À FOURNIR", font=f,
+        self.d.text((MARGE + 40, haut + 50), "PHOTO À FOURNIR", font=f,
                     fill=teinte("corail"))
-        self.y = 430
+        self.y = haut + 130
         self.texte(description, 38, "brun", 400, avant=0)
-        self.y = 950
+        self.y = bas - 60
         self.texte("Cette planche ne se publie pas. Elle attend l'image.",
                    30, "taupe", 400, avant=0)
         return self
@@ -840,6 +890,476 @@ def carrousel_blog_rdv(dossier=None):
     return f
 
 
+def dilemme_carte_prix(dossier=None):
+    """Publication n° 11 — la place du prix sur une carte de restaurant.
+
+    Deux images rigoureusement identiques : memes plats, memes prix, meme
+    police, meme corps, memes marges. Le SEUL ecart est la place du prix.
+    C'est la condition de la demonstration — ajouter une couleur ou un
+    cadre a l'image B ferait gagner B pour une autre raison, et le post
+    ne prouverait plus rien.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-29-dilemme-carte"))
+    f = []
+    PLATS = [
+        ("Velouté de potimarron", "Crème de châtaigne, huile de noisette", "9"),
+        ("Œuf parfait", "Poireaux brûlés, comté affiné 24 mois", "12"),
+        ("Encornets à la plancha", "Ail doux, persil plat, citron confit", "16"),
+        ("Épaule d'agneau confite", "Haricots tarbais, jus au romarin", "24"),
+        ("Rouget de roche", "Fenouil rôti, bouillon d'arêtes", "26"),
+        ("Tarte fine aux pommes", "Caramel au beurre salé, glace vanille", "9"),
+    ]
+
+    def carte(p, alignes):
+        fn = police(600, 40)      # le nom du plat
+        fd = police(400, 30)      # la description
+        p.d.text((MARGE, 170), "NOS PLATS", font=police(800, 26),
+                 fill=teinte("taupe"))
+        p.d.line([MARGE, 222, p.l - MARGE, 222], fill=teinte("sable_fonce"),
+                 width=2)
+        y = 280
+        x_prix = p.l - MARGE
+        for nom, desc, prix in PLATS:
+            if alignes:
+                # le nom a gauche, le prix cale a droite, relies par des points
+                p.d.text((MARGE, y), nom, font=fn, fill=teinte("encre"))
+                lp = p.d.textlength(prix + " €", font=fn)
+                p.d.text((x_prix - lp, y), prix + " €", font=fn,
+                         fill=teinte("encre"))
+                x0 = MARGE + p.d.textlength(nom, font=fn) + 14
+                x1 = x_prix - lp - 14
+                xp = x0
+                while xp < x1:
+                    p.d.ellipse([xp, y + 26, xp + 3, y + 29],
+                                fill=teinte("sable_fonce"))
+                    xp += 12
+                p.d.text((MARGE, y + 52), desc, font=fd, fill=teinte("brun"))
+            else:
+                # le prix colle a la fin de la description, au fil du texte
+                p.d.text((MARGE, y), nom, font=fn, fill=teinte("encre"))
+                p.d.text((MARGE, y + 52), desc + " - " + prix + " €",
+                         font=fd, fill=teinte("brun"))
+            y += 148
+        return p
+
+    for lettre, alignes, coul in (("A", False, "bleu"), ("B", True, "corail")):
+        p = Planche("creme")
+        carte(p, alignes)
+        p.pastille(p.l - MARGE - 86, MARGE - 24, lettre, coul, "blanc", 34)
+        p.signature("brun")
+        f.append(p.ecrire(d / ("%s.png" % lettre.lower())))
+    return f
+
+
+def carrousel_retroplanning(dossier=None):
+    """Publication n° 17 — le retroplanning des cartes de voeux.
+
+    La frise de la slide 2 se lit de DROITE a GAUCHE, du 24 decembre vers
+    aujourd'hui. C'est tout le propos : on ne compte pas depuis
+    aujourd'hui, on compte a rebours depuis la boite aux lettres. Une
+    frise dessinee dans l'autre sens dirait le contraire du texte.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-09-retroplanning"))
+    f = []
+
+    p = Planche("sable_chaud")
+    p.filet(y=280)
+    p.titre("Vos cartes de vœux\nde Noël se décident\ncette semaine.", 86,
+            "encre")
+    p.y = 760
+    p.texte("Pas en décembre. Voici pourquoi.", 42, "brun", 400, avant=0)
+    p.fleche("corail", y=1120)
+    p.signature("brun")
+    p.numero(1, 6, "taupe")
+    f.append(p.ecrire(d / "01.png"))
+
+    # S2 — la frise a rebours
+    p = Planche("blanc")
+    p.titre("On compte à rebours.", 76, "encre", y=170)
+    etapes = [("4", "Réception", "24 déc."), ("3", "Impression", "8 jours"),
+              ("2", "Bon à tirer", "4 jours"), ("1", "Création", "10 jours")]
+    cx = [880, 640, 400, 160]          # de droite a gauche
+    cy = 540
+    for i, (n, nom, delai) in enumerate(etapes):
+        x = cx[i]
+        p.d.ellipse([x - 46, cy - 46, x + 46, cy + 46], fill=teinte("corail"))
+        fn = police(800, 44)
+        l = p.d.textlength(n, font=fn)
+        p.d.text((x - l / 2, cy - 30), n, font=fn, fill=teinte("blanc"))
+        for txt, dy, fo, co in ((nom, 70, police(600, 30), "encre"),
+                                (delai, 112, police(400, 26), "taupe")):
+            l = p.d.textlength(txt, font=fo)
+            p.d.text((x - l / 2, cy + dy), txt, font=fo, fill=teinte(co))
+        if i < len(etapes) - 1:        # une fleche vers la gauche
+            xa, xb = x - 62, cx[i + 1] + 62
+            p.d.line([(xa, cy), (xb + 16, cy)], fill=teinte("sable_fonce"),
+                     width=5)
+            p.d.polygon([(xb, cy), (xb + 20, cy - 11), (xb + 20, cy + 11)],
+                        fill=teinte("sable_fonce"))
+    # les deux reperes qui fixent le sens de lecture de la frise
+    for txt, x in (("aujourd'hui", 160), ("la boîte aux lettres", 880)):
+        fo = police(800, 24)
+        l = p.d.textlength(txt, font=fo)
+        p.d.text((x - l / 2, cy - 132), txt, font=fo, fill=teinte("taupe"))
+    p.y = 760
+    p.texte("On ne compte pas à partir d'aujourd'hui.\n"
+            "On compte à rebours depuis la boîte aux lettres.", 42, "encre",
+            600, avant=0)
+    p.y = 960
+    p.texte("Vingt-deux jours ouvrés de production. Dernier jour pour "
+            "lancer la création : mardi 24 novembre.", 36, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    p.numero(2, 6, "taupe")
+    f.append(p.ecrire(d / "02.png"))
+
+    # S3 — les trois etapes qu'on oublie de compter
+    p = Planche("creme")
+    p.titre("Les trois étapes\nqu'on oublie de compter", 68, "encre", y=170)
+    y = 480
+    for txt in ("Le texte à écrire.", "Le fichier à préparer.",
+                "Les adresses à réunir."):
+        p.d.line([(MARGE, y + 26), (MARGE + 52, y + 26)],
+                 fill=teinte("violet"), width=7)
+        p.d.text((MARGE + 80, y), txt, font=police(600, 52),
+                 fill=teinte("encre"))
+        y += 130
+    p.y = 880
+    p.texte("Elles prennent plus de temps que l'impression, et ce sont les "
+            "seules qui ne se sous-traitent pas.", 38, "bleu", 600, avant=0)
+    p.y = 1030
+    p.texte("Ce sont elles qui occupent les deux semaines d'ici au 24 "
+            "novembre. D'où : cette semaine.", 34, "brun", 400, avant=0)
+    p.signature("brun")
+    p.numero(3, 6, "taupe")
+    f.append(p.ecrire(d / "03.png"))
+
+    # S4 — le bon a tirer
+    p = Planche("sable_chaud")
+    t = "Le bon à tirer n'est\npas une formalité."
+    st = "C'est un aller-retour, et parfois deux. Prévoyez-le."
+    p.centrer(p.h_titre(t, 82) + p.h_texte(st, 42, avant=50) + 44)
+    p.filet()
+    p.titre(t, 82, "encre")
+    p.texte(st, 42, "brun", 400, avant=50)
+    p.signature("brun")
+    p.numero(4, 6, "taupe")
+    f.append(p.ecrire(d / "04.png"))
+
+    # S5 — les quatre supports, pictogrammes au trait
+    p = Planche("blanc")
+    p.titre("Tout part chez le même\nimprimeur, au même moment.", 62,
+            "encre", y=170)
+    v, ep = teinte("violet"), 5
+    bx, by, bw, bh = 120, 520, 190, 190
+    def cadre(i):
+        return bx + i * 215, by
+    # 1. une carte
+    x, y = cadre(0)
+    p.d.rectangle([x, y + 40, x + 170, y + 150], outline=v, width=ep)
+    p.d.line([(x + 24, y + 78), (x + 100, y + 78)], fill=v, width=ep)
+    p.d.line([(x + 24, y + 108), (x + 70, y + 108)], fill=v, width=ep)
+    # 2. une etiquette
+    x, y = cadre(1)
+    p.d.polygon([(x + 30, y + 30), (x + 170, y + 30), (x + 170, y + 160),
+                 (x + 30, y + 160), (x + 2, y + 95)], outline=v, width=ep)
+    p.d.ellipse([x + 26, y + 80, x + 56, y + 110], outline=v, width=ep)
+    # 3. un sachet
+    x, y = cadre(2)
+    p.d.rectangle([x + 28, y + 60, x + 160, y + 170], outline=v, width=ep)
+    p.d.arc([x + 62, y + 22, x + 126, y + 86], 180, 360, fill=v, width=ep)
+    # 4. un adhesif de vitrine
+    x, y = cadre(3)
+    p.d.rectangle([x + 20, y + 30, x + 170, y + 170], outline=v, width=ep)
+    p.d.line([(x + 20, y + 110), (x + 170, y + 70)], fill=v, width=ep)
+    p.d.line([(x + 20, y + 140), (x + 170, y + 100)], fill=v, width=ep)
+    for i, lib in enumerate(("Carte", "Étiquette", "Sachet", "Vitrine")):
+        x, _ = cadre(i)
+        fo = police(600, 28)
+        l = p.d.textlength(lib, font=fo)
+        p.d.text((x + 95 - l / 2, by + 200), lib, font=fo, fill=teinte("brun"))
+    p.y = 830
+    p.texte("Décidé ensemble : un seul fichier, un seul délai, un seul "
+            "transport.", 40, "encre", 600, avant=0)
+    p.y = 990
+    p.texte("Décidé séparément : trois relances, et trois fois les frais "
+            "de port.", 40, "corail", 600, avant=0)
+    p.signature("brun")
+    p.numero(5, 6, "taupe")
+    f.append(p.ecrire(d / "05.png"))
+
+    # S6 — l'appel
+    p = Planche("creme")
+    p.filet(y=300)
+    p.titre("Dites-moi ce que vous\nvoulez imprimer\npour les fêtes.", 80,
+            "encre")
+    p.y = 740
+    p.texte("En commentaire. Je vous dis la date limite réelle pour le "
+            "décider — pas celle de l'imprimeur, la vôtre.", 40, "brun",
+            400, avant=0)
+    p.fleche("corail", y=1050)
+    p.signature("brun")
+    p.numero(6, 6, "taupe")
+    f.append(p.ecrire(d / "06.png"))
+    return f
+
+
+def dilemme_voeux(dossier=None):
+    """Publication n° 19 — deux cartes de voeux, meme papier, autre texte.
+
+    Comme pour le dilemme n° 11, le seul ecart entre A et B doit etre
+    celui qu'on demontre : ici le texte et la place du logo. Meme format,
+    meme fond, meme marque, meme signature. Le logo est fictif (la marque
+    generique de _logo_fictif) : on ne met jamais en defaut l'identite
+    d'un client reel dans une demonstration publique.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-12-dilemme-voeux"))
+    f = []
+
+    def carte(p, x, y, w, h):
+        """La carte posee a plat, avec son ombre portee."""
+        om = Image.new("RGBA", (w + 80, h + 80), (0, 0, 0, 0))
+        ImageDraw.Draw(om).rectangle([40, 46, w + 40, h + 44],
+                                     fill=(47, 39, 35, 54))
+        om = om.filter(ImageFilter.GaussianBlur(16))
+        p.im.paste(Image.alpha_composite(
+            p.im.crop((x - 40, y - 40, x + w + 40, y + h + 40)).convert("RGBA"),
+            om).convert("RGB"), (x - 40, y - 40))
+        p.d.rectangle([x, y, x + w, y + h], fill=teinte("blanc"))
+        return p
+
+    X, Y, W, H = 190, 300, 700, 500
+
+    # ---- A : centree, propre, froide -------------------------------
+    p = Planche("creme")
+    carte(p, X, Y, W, H)
+    _logo_fictif(p.d, X + W // 2, Y + 196, 86, detail=False)
+    fo = police(600, 38)
+    t = "Joyeuses fêtes et bonne année"
+    l = p.d.textlength(t, font=fo)
+    p.d.text((X + W / 2 - l / 2, Y + 340), t, font=fo, fill=teinte("encre"))
+    p.pastille(p.l - MARGE - 86, MARGE - 24, "A", "bleu", "blanc", 34)
+    p.y = 900
+    p.texte("Laquelle vous donne envie d'y retourner ?", 40, "brun", 600,
+            avant=0)
+    p.signature("brun")
+    f.append(p.ecrire(d / "a.png"))
+
+    # ---- B : le texte d'abord, la marque en pied --------------------
+    p = Planche("creme")
+    carte(p, X, Y, W, H)
+    # la coupe est mesuree sur la largeur utile de la carte, pas devinee :
+    # ecrites a la main sur trois lignes, elles debordaient de 170 px.
+    fm = manuscrite(54)
+    mot = ("Merci d'avoir poussé notre porte cette année. On rouvre le "
+           "4 janvier, et on vous garde la table du fond.")
+    lignes = couper(mot, fm, W - 80)
+    yy = Y + 78
+    for ligne in lignes:
+        l = p.d.textlength(ligne, font=fm)
+        p.d.text((X + W / 2 - l / 2, yy), ligne, font=fm, fill=teinte("encre"))
+        yy += 66
+    _logo_fictif(p.d, X + W // 2, Y + H - 96, 40, detail=False)
+    p.pastille(p.l - MARGE - 86, MARGE - 24, "B", "violet", "blanc", 34)
+    p.y = 900
+    p.texte("Laquelle vous donne envie d'y retourner ?", 40, "brun", 600,
+            avant=0)
+    p.y = 1010
+    p.texte("Texte inventé pour la démonstration — aucun commerce réel.",
+            28, "taupe", 400, avant=0)
+    p.signature("brun")
+    f.append(p.ecrire(d / "b.png"))
+    return f
+
+
+def quiz_fin_annee(dossier=None):
+    """Publication n° 23 — quatre idees recues sur les impressions de fin
+    d'annee. Les quatre reponses sont verifiees : la dorure a chaud est
+    une feuille metallisee et non une encre, les fonds perdus de 3 mm
+    partent a la coupe, et la signaletique de tri demande une place
+    reservee des le depart. La quatrieme est un « vrai... mais » assume :
+    faux pour l'impression, vrai pour la decision.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-19-quiz-fin-annee"))
+    f = []
+
+    p = Planche("sable_chaud")
+    p.filet(y=260)
+    p.titre("4 idées reçues\nsur vos impressions\nde fin d'année.", 86,
+            "encre")
+    p.y = 760
+    p.texte("Vous en avez combien de justes ?", 46, "brun", 600, avant=0)
+    p.fleche("corail", y=1090)
+    p.signature("brun")
+    p.numero(1, 6, "taupe")
+    f.append(p.ecrire(d / "01.png"))
+
+    p = Planche("creme")
+    p.titre("Vrai ou faux ?", 76, "encre", y=160)
+    p.puces([
+        "Le doré d'une dorure, c'est de l'encre jaune bien saturée.",
+        "Sur un emballage, la signalétique de tri se place à la fin, "
+        "quand le dessin est prêt.",
+        "Les fonds perdus de 3 mm, c'est une marge de confort : on peut "
+        "s'en passer.",
+        "Mi-novembre, c'est trop tard pour une carte de vœux imprimée."],
+        "bleu", 36, "bleu", numerote=True, y=360, interligne=1.5)
+    p.y = 1150
+    p.texte("Répondez en commentaire avant de swiper.", 36, "corail", 600,
+            avant=0)
+    p.signature("brun")
+    p.numero(2, 6, "taupe")
+    f.append(p.ecrire(d / "02.png"))
+
+    reponses = [
+        ("FAUX", "corail", "1. La dorure",
+         "Une dorure à chaud, c'est une feuille métallisée pressée sur le "
+         "papier. Aucune encre jaune ne brille. C'est pour ça que ça se "
+         "voit, et que ça se paie."),
+        # Formule tenue sur le terrain de la mise en page, et non sur
+        # celui de la regle : la taille minimale d'une signaletique de tri
+        # n'a pas ete verifiee a la source, et c'est ce qui bloque deja la
+        # publication n° 18. Ce qui est dit ici est vrai quel que soit le
+        # texte applicable.
+        ("FAUX", "corail", "2. La signalétique de tri",
+         "Elle se place dès la mise en page, avec sa zone de respiration. "
+         "Ajoutée à la fin, elle se colle en travers de ce qu'on avait "
+         "soigné."),
+        ("FAUX", "corail", "3. Les fonds perdus",
+         "Les 3 mm débordent du format et partent à la coupe. Sans eux, un "
+         "liseré blanc apparaît sur un bord. La massicoteuse n'est pas "
+         "précise au dixième."),
+        ("VRAI… mais", "violet", "4. Mi-novembre",
+         "Faux pour l'impression : il reste du temps pour imprimer. Vrai "
+         "pour la décision : il n'en reste plus pour hésiter."),
+    ]
+    for i, (verdict, coul, titre, txt) in enumerate(reponses, 3):
+        p = Planche("blanc")
+        p.d.text((MARGE, 170), titre, font=police(600, 34),
+                 fill=teinte("taupe"))
+        taille = 150 if len(verdict) < 6 else 96
+        p.titre(verdict, taille, coul, y=250)
+        p.y = 560
+        p.texte(txt, 44, "encre", 400, avant=0)
+        p.signature("brun")
+        p.numero(i, 6, "taupe")
+        if i == 6:
+            # la signature est a 1238 : le score se pose au-dessus, pas
+            # dessus.
+            p.fleche("corail", y=1040)
+            p.y = 1110
+            p.texte("Votre score en commentaire.", 36, "brun", 600, avant=0)
+        f.append(p.ecrire(d / ("%02d.png" % i)))
+    return f
+
+
+def _plans_tournage(dossier, titre, plans, numero_total):
+    """Les planches de tournage d'un reel, en 9:16.
+
+    Ce ne sont pas les images du reel : ce sont les fiches que Sandra suit
+    au telephone. Chacune porte le chrono, le cadrage a filmer et le texte
+    incruste tel qu'il apparaitra. visuels.py ne fabrique pas de
+    photographies, et un reel sur la matiere se tourne.
+    """
+    d = pathlib.Path(dossier)
+    f = []
+    for i, (chrono, cadrage, incruste, cloture) in enumerate(plans, 1):
+        if cloture:
+            # le carton de fin, lui, est un vrai visuel : il se publie
+            p = Planche("encre", LARGE_S, HAUT_S)
+            p.centrer(p.h_titre(incruste, 80) + 44, 0.42)
+            p.filet()
+            p.titre(incruste, 80, "blanc")
+            p.y += 40
+            p.texte(cadrage, 42, "creme", 400, avant=20)
+            p.signature("sable")
+            p.d.text((p.l - MARGE - 160, MARGE), chrono, font=police(600, 30),
+                     fill=teinte("sable"))
+        else:
+            p = Planche("creme", LARGE_S, HAUT_S)
+            p.d.text((MARGE, MARGE), titre, font=police(800, 30),
+                     fill=teinte("taupe"))
+            p.d.text((p.l - MARGE - 160, MARGE), chrono,
+                     font=police(600, 30), fill=teinte("corail"))
+            p.d.line([MARGE, MARGE + 60, p.l - MARGE, MARGE + 60],
+                     fill=teinte("sable_fonce"), width=2)
+            p.y = 260
+            p.d.text((MARGE, 230), "À FILMER", font=police(800, 28),
+                     fill=teinte("corail"))
+            p.y = 300
+            p.texte(cadrage, 44, "encre", 400, avant=0)
+            yc = max(p.y + 80, 900)
+            p.d.text((MARGE, yc), "TEXTE INCRUSTÉ", font=police(800, 28),
+                     fill=teinte("violet"))
+            p.y = yc + 80
+            p.encadre(incruste, 52, "blanc", "violet", pad=38, graisse=800,
+                      couleur="encre")
+            p.y = p.h - MARGE - 120
+            p.texte("Plan %d sur %d — fiche de tournage, ne se publie pas."
+                    % (i, numero_total), 30, "taupe", 400, avant=0)
+        f.append(p.ecrire(d / ("plan%d.png" % i)))
+    return f
+
+
+def plans_reel_matieres(dossier=None):
+    """n° 20, vendredi 13 novembre — ce que vos clients sentent avant de lire."""
+    plans = [
+        ("0-3 s",
+         "Macro, lumière rasante venue du côté. Un pouce passe lentement "
+         "sur un motif gaufré. On voit le relief avant de voir le dessin.",
+         "Ce que vos clients sentent avant de lire", False),
+        ("3-8 s",
+         "Deux cartes tombent côte à côte sur une table en bois. L'une se "
+         "plie et ondule, l'autre reste droite et claque.",
+         "120 g / 350 g", False),
+        ("8-14 s",
+         "Plan fixe sur un gaufrage éclairé de côté, puis la même carte "
+         "éclairée de face : le motif disparaît presque.",
+         "Le gaufrage : du relief, pas de l'encre", False),
+        ("14-19 s",
+         "Rotation lente d'une carte sous une lampe. Un trait doré "
+         "s'allume, puis s'éteint selon l'angle.",
+         "La dorure : une feuille, pas du jaune", False),
+        ("19-24 s",
+         "Un beau visuel sur un mauvais papier déçoit. Un visuel simple "
+         "sur un beau papier se garde.",
+         "Choisissez la matière\navant le dessin", True),
+    ]
+    return _plans_tournage(dossier or (SORTIE / "2026-11-13-reel-matieres"),
+                           "REEL 24 s · matières", plans, 5)
+
+
+def plans_reel_bilan(dossier=None):
+    """n° 24, samedi 21 novembre — faut-il refaire son logo en janvier."""
+    plans = [
+        ("0-3 s",
+         "Un carnet de croquis rempli de recherches de logo se ferme d'un "
+         "coup sec. Lumière d'atelier, venue du côté.",
+         "Non, pas en janvier", False),
+        ("3-9 s",
+         "Un calendrier mural : le doigt tourne la page de décembre à "
+         "janvier. Puis un logo clignote entre deux versions presque "
+         "identiques.",
+         "Changer par calendrier,\nce n'est pas changer par besoin", False),
+        ("9-15 s",
+         "Trois cartons posés un par un sur la table, chacun avec une "
+         "question écrite à la main.",
+         "1. Lisible partout ?\n2. Fichiers en main ?\n3. Dit-il ce que vous "
+         "vendez ?", False),
+        ("15-21 s",
+         "Le même logo décliné sur un polo, une carte, un panneau : il "
+         "tient sur deux supports, il se brouille sur le troisième. Zoom "
+         "sur celui qui se brouille.",
+         "Deux « oui », un « non » :\non ajuste", False),
+        ("21-26 s",
+         "Si la réponse est non aux trois, on repart de la feuille "
+         "blanche. Sinon, un problème précis se répare.",
+         "Un bilan,\npas une résolution", True),
+    ]
+    return _plans_tournage(dossier or (SORTIE / "2026-11-21-reel-bilan"),
+                           "REEL 26 s · bilan", plans, 5)
+
+
 def stories(dossier=None):
     """Les dix ecrans de stories du cycle, en 9:16."""
     d = pathlib.Path(dossier or (SORTIE / "stories"))
@@ -887,6 +1407,12 @@ GABARITS = {
     "carrousel-enseigne": carrousel_enseigne,
     "quiz-idees-recues": quiz_idees_recues,
     "carrousel-droits": carrousel_droits,
+    "dilemme-carte-prix": dilemme_carte_prix,
+    "retroplanning-voeux": carrousel_retroplanning,
+    "dilemme-voeux": dilemme_voeux,
+    "quiz-fin-annee": quiz_fin_annee,
+    "plans-reel-matieres": plans_reel_matieres,
+    "plans-reel-bilan": plans_reel_bilan,
     "blog-rendez-vous": carrousel_blog_rdv,
     "plans-reel-cmjn": plans_reel_cmjn,
     "plans-reel-halloween": plans_reel_halloween,

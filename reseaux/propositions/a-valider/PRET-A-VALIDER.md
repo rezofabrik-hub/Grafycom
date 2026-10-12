@@ -13,19 +13,19 @@ autres documents de ce dossier.
 
 | Canal | Écrit | Visuel prêt | Prêt à partir |
 |---|---|---|---|
-| Instagram + Facebook | 25 | 11 | **11** |
+| Instagram + Facebook | 25 | 17 | **17** |
 | Fiche Google | 25 | — *(canal sans visuel)* | **25** |
 | Blog | 7 | pas d'illustration | **7** |
 | Stories | 41 écrans | 10 écrans | **10** |
 | Messages privés | 6 modèles | — | **6** |
 
-**59 éléments sont complets et peuvent être programmés aujourd'hui.**
+**65 éléments sont complets et peuvent être programmés aujourd'hui.**
 Le reste attend soit un visuel que je produis, soit une photo de Sandra,
 soit une vérification réglementaire.
 
 ---
 
-## 1. Instagram & Facebook — 11 publications complètes sur 25
+## 1. Instagram & Facebook — 17 publications complètes sur 25
 
 Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 1080 × 1350 px, dans l'ordre du carrousel.
@@ -42,10 +42,19 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 7 | jeu 22 oct | Quiz vrai/faux | Quatre idées reçues | 5 |
 | 8 | ven 23 oct | Reel 22 s | Halloween & couleurs | 5 |
 | 9 | lun 26 oct | Carrousel | Un logo tient-il en petit | 6 |
+| 11 | jeu 29 oct | Dilemme A/B | La place du prix sur une carte | 2 |
 | 13 | lun 2 nov | Carrousel | **Solaire 66** | 7 |
+| 17 | lun 9 nov | Carrousel | Le rétroplanning des cartes de vœux | 6 |
+| 19 | jeu 12 nov | Dilemme A/B | Deux cartes de vœux | 2 |
+| 20 | ven 13 nov | Reel 24 s | Matières et fabrication | 5 |
+| 23 | jeu 19 nov | Quiz | Impressions de fin d'année | 6 |
+| 24 | sam 21 nov | Reel 26 s | Faut-il refaire son logo | 5 |
 
-**59 planches.** Les n° 4 et 8 sont des reels : les planches sont les
-plans à filmer, pas le montage.
+**85 planches.** Les n° 4, 8, 20 et 24 sont des reels : leurs planches
+sont des **fiches de tournage** — chrono, cadrage à filmer, texte incrusté
+tel qu'il apparaîtra. Elles ne se publient pas, sauf le dernier carton de
+chaque reel, qui est un vrai visuel. `visuels.py` ne fabrique aucune
+photographie : un reel sur la matière se tourne.
 
 ### Une publication ajoutée le 12 octobre
 
@@ -70,13 +79,15 @@ dans le pilier réglementaire, mais sur le terrain de Sandra : la création,
 pas la paperasse du client. L'article du 30 octobre, qui porte le même
 titre, le prolonge dix jours plus tard.
 
-### Les 14 qui ne sont pas prêtes
+### Les 8 qui ne sont pas prêtes
+
+Les six qui ne dépendaient de personne sont faites — n° 11, 17, 19, 20,
+23 et 24. Il reste **huit** publications, toutes pour la même raison :
 
 | | Combien | Ce qui manque |
 |---|---|---|
-| Je produis le visuel, sans rien attendre | 6 — n° 11, 17, 19, 20, 23, 24 | rien, c'est du travail en cours |
 | Attendent une photo de Sandra | 8 — n° 10, 12, 14, 15, 16, 18, 21, 22 | voir `photos-a-prendre.md` |
-| **Bloquées par une vérification** | 3 — n° 14, 18, 22 | voir plus bas |
+| dont **bloquées par une vérification** | 3 — n° 14, 18, 22 | voir plus bas |
 
 ---
 
@@ -183,12 +194,10 @@ graphiste se retourne contre elle.
 Le calendrier commence **aujourd'hui, lundi 12 octobre à 12 h 30**. Au
 moment où tu lis ceci, ce créneau est derrière nous.
 
-Rien à décaler pour autant : le tableau des créneaux prévoit **12 h 30 ou
-18 h 30** le lundi. La publication n° 1 part donc ce soir à 18 h 30, et
-tout le reste du calendrier tient sans bouger d'un jour.
-
-Si tu préfères démarrer demain, tout glisse d'un cran et je refais le
-calendrier — dis-le, c'est cinq minutes.
+**Tranché le 12 octobre : on garde 18 h 30.** Le tableau des créneaux
+prévoyait déjà 12 h 30 **ou** 18 h 30 le lundi, donc rien ne bouge — la
+publication n° 1 part ce soir, sa story quinze minutes plus tard à 18 h 45,
+et tout le reste du calendrier tient sans glisser d'un jour.
 
 ---
 
