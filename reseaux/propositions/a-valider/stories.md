@@ -244,17 +244,29 @@ Ajouter le sticker *Mention du post*.
 > `A-instagram-facebook.md` (publication n° 6) n'ont pas été faites. Ne pas
 > retirer les « serait » à la relecture.
 
+## S4-C — Mardi 10 novembre, 18 h 30 · coulisses
+
+> 🔀 **Décalée le 12 octobre, pas supprimée.** Le mercredi est son jour
+> naturel. Le décalage du cycle l'a amenée sur le **mercredi 11
+> novembre**, où la règle est de ne rien publier. Elle recule donc au
+> mardi soir : la semaine garde son écran de coulisses, et le 11 novembre
+> reste vide.
+
+| Élément | Contenu |
+|---|---|
+| **Texte exact** | « 14 h 40. Une piste de logo qui ne sortira jamais. Elle sert quand même : c'est en la regardant qu'on comprend ce qu'on cherche. » |
+| **Sticker** | Aucun. Un écran sans sticker par semaine, c'est ce qui rend les autres crédibles. |
+| **Arrière-plan** | Photo du plan de travail réel : carnet, crayonnés, écran en arrière-plan flou. Lumière naturelle, pas de retouche. |
+
 ## 🕯️ Mercredi 11 novembre — aucune story
 
-> **Supprimée le 12 octobre, en appliquant le décalage d'une semaine.**
-> La story de coulisses de cette semaine tombait le 4 novembre ; décalée,
-> elle atterrissait le 11. Or la règle posée dans `arbitrages.md` est
-> explicite : **aucune publication, aucune story le 11 novembre.** Un
-> studio de graphisme n'a rien à dire de juste sur l'Armistice, et un
-> contenu de coulisses ce jour-là se remarque pour de mauvaises raisons.
->
-> Cette semaine n'a donc pas de story de coulisses. Elle n'est pas
-> reportée au mercredi suivant : la semaine 5 a déjà la sienne.
+L'Armistice tombe au milieu de la semaine. Un studio de graphisme n'a rien
+à dire de juste sur cette date : un vœu de circonstance en ferait un
+prétexte à visibilité. **Aucune story, aucun sticker, rien.** Le compte
+reprend le jeudi 12.
+
+C'est une ligne de la checklist, pas un oubli : elle est là pour que
+l'absence soit un choix validé, pas un trou dans le planning.
 
 ## S4-D1 — Jeudi 12 novembre, 19 h 00 · le quiz du jeudi
 
@@ -375,18 +387,6 @@ sur le site.
 > n° 2. La formulation est au conditionnel sur la règle, affirmative sur la
 > conséquence métier — c'est volontaire. **À ne pas publier avant la
 > vérification.**
-
----
-
-## 🕯️ Mercredi 11 novembre — aucune story
-
-L'Armistice tombe au milieu de la semaine. Un studio de graphisme n'a rien
-à dire de juste sur cette date : un vœu de circonstance en ferait un
-prétexte à visibilité. **Aucune story, aucun sticker, rien.** Le compte
-reprend le jeudi 12.
-
-C'est une ligne de la checklist, pas un oubli : elle est là pour que
-l'absence soit un choix validé, pas un trou dans le planning.
 
 ---
 

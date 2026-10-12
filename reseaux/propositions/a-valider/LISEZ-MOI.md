@@ -14,6 +14,7 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 | **`photos-a-prendre.md`** | la liste de prises de vue pour Sandra |
 | **`visuels-a-produire.md`** | ce qu'il reste à dessiner |
 | **`acquisition.md`** | **l'objectif : des abonnés, puis des clients** — ce que le plan fait pour ça, mesuré |
+| **`checklist-enseigne.md`** | le document à **donner** en message privé — quatre pages, à relire avant usage |
 | **`arbitrages.md`** | **ce qui demande ta décision** — à lire en premier |
 
 ## Par où commencer

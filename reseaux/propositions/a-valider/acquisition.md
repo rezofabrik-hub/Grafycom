@@ -23,58 +23,74 @@ peu pour l'**acquisition** et la **preuve**. Or on ne devient pas client
 parce qu'on a appris quelque chose : on devient client parce qu'on a vu un
 travail et qu'on s'est dit « c'est ça que je veux ».
 
-## Le trou principal : neuf clients inutilisés
+## Correction du 12 octobre : je me suis trompé de remède
 
-La liste des références publiables compte **dix noms** :
+J'avais écrit qu'il fallait **demander l'accord de trois clients et leurs
+photos**. Tu as répondu que tu as *très très peu de clientèle*. J'ai donc
+vérifié au lieu de supposer, et le constat change.
 
-> Casa Aldo · Cap Loisirs · Le Cayrou · O Fait Maison · Alliance Véhicule
-> · Mia Beauty · Crazy Frenchy · Pizza Fry · Victoire · Solaire 66
+**Le travail existe déjà, et il est déjà public.** Six réalisations sont
+en ligne sur `grafycom.fr/realisations`, avec leurs visuels dans le dépôt
+depuis le 4 octobre :
 
-**Un seul apparaît dans le mois.** Les neuf autres ne sont cités nulle
-part. C'est le gisement le plus rentable du plan, pour deux raisons qui se
-cumulent :
+| Projet | Ce qu'il montre |
+|---|---|
+| Casa Aldo | logo décliné en enseigne ronde rétroéclairée |
+| Ô Fait Maison | enseigne de devanture d'un salon de thé |
+| Alliance Peintures | marquage de véhicule, hayon et flanc |
+| Mia Beauty | livret de formation ouvert |
+| Cap Loisirs | totem numérique d'entrée |
+| Pano Perpignan | gabarits de publication pour les réseaux |
 
-1. **Une réalisation convertit.** C'est la preuve. Un carrousel sur la
-   typographie prouve qu'on sait ; une enseigne posée prouve qu'on livre.
-2. **Une réalisation étend la portée.** Publiée en **collaboration** avec
-   le compte du client — la fonction native d'Instagram, pas un simple
-   tag —, la publication apparaît dans **les deux fils**. L'audience du
-   commerçant, qui est locale et qui achète localement, voit Grafycom
-   sans qu'un euro de publicité soit dépensé.
+Donc le diagnostic tient — **1 réalisation sur 25 publications** — mais le
+remède est bien moins cher que je ne l'ai dit : il n'y a **rien à
+produire** et **personne à solliciter d'abord**. Ces visuels sont déjà
+montrés publiquement, sous la même responsabilité que la page du site.
 
-C'est le seul mécanisme gratuit qui expose le compte à des gens qui ne le
-suivent pas encore. Tout le reste du plan parle à ceux qui suivent déjà.
+Ce qui reste vrai, et qui est écrit noir sur blanc dans
+`assets/img/realisations/LISEZ-MOI.md` : *« le contrat cède les droits sur
+la création, il ne donne pas celui de s'en servir de vitrine »*. Si
+l'accord n'a pas été demandé pour la page du site, il se demande une fois
+pour les deux usages — un message, et c'est rarement refusé.
 
-### Ce que ça demande, et à qui
+### Ce que ça change pour la publication en collaboration
 
-Je ne peux pas le produire seul, et c'est volontaire : la règle de
-`LIGNE-EDITORIALE.md` tient — **jamais une image dont les droits ne sont
-pas clairs**, et `visuels.py` ne fabrique aucune photographie.
+J'avais présenté la **collaboration Instagram** — la publication qui
+paraît dans les deux fils — comme le levier n° 1. Avec peu de clients
+actifs, c'est moins évident : elle suppose que le commerçant ait un compte
+vivant et accepte de co-publier. Ça reste le meilleur coup quand c'est
+possible, mais ce n'est plus la première marche.
 
-Il faut donc, pour chaque réalisation :
+**La première marche est simplement de montrer le travail déjà fait.** Il
+est sur le site, il n'est sur aucun réseau.
 
-- [ ] **L'accord du client**, par écrit, même bref. Un message suffit.
-- [ ] **Son compte Instagram**, pour la collaboration.
-- [ ] **Deux à quatre photos du travail livré**, prises par Sandra.
-- [ ] Idéalement un **avant / après**, qui est le format le plus partagé.
+### Et une chose que peu de clientèle rend plus vraie, pas moins
+
+Quand le portfolio est mince, la pédagogie **est** le moteur
+d'acquisition : c'est elle qui prouve la compétence en l'absence de
+volume. Le plan est donc plus juste que ma première critique ne le
+laissait entendre. Ce qui manque n'est pas tant la preuve que **le chemin
+pour passer d'un lecteur convaincu à une conversation** — et c'est le
+point 4 ci-dessous.
 
 ## Ce que je propose, par ordre de rendement
 
-### 1. Une réalisation toutes les deux semaines — à décider maintenant
+### 1. Publier les six réalisations qui existent déjà
 
-Trois publications pédagogiques du cycle peuvent devenir des études de cas
-sans toucher au rythme ni au calendrier : il s'agit d'échanger le contenu
-d'une case, pas d'en ajouter une.
+Rien à produire, rien à attendre. Six visuels sont dans le dépôt et déjà
+publics sur le site. Un par semaine pendant six semaines, en plus du
+rythme — ce sont des publications simples : le visuel, et deux phrases sur
+le problème qu'il fallait résoudre.
 
-| Case | Aujourd'hui | Deviendrait |
-|---|---|---|
-| n° 9, lundi 2 novembre | Un logo tient-il en petit | **le même propos, sur un vrai logo livré** |
-| n° 17, lundi 16 novembre | Le rétroplanning des vœux | **une commande de fin d'année réelle** |
-| n° 21, lundi 23 novembre | Saisonnalité & valeurs | **une devanture posée, avant / après** |
+Le texte existe aussi : la page `realisations.html` en porte déjà une
+phrase par projet, et les pages métier en disent davantage. Exemple, pour
+Casa Aldo : *« le logo a été dessiné d'emblée pour tenir en enseigne ronde
+— un format qui pardonne peu les détails fins »*. C'est exactement ce qui
+convainc un commerçant.
 
-La démonstration ne perd rien à porter sur du vrai — elle y gagne même,
-puisqu'elle devient vérifiable. Mais elle dépend entièrement des accords
-et des photos ci-dessus.
+**Ce qu'il me faut :** ton feu vert, et la confirmation que l'accord des
+clients couvre bien l'usage réseaux. Je peux produire les six publications
+dans la foulée.
 
 ### 2. L'appel à s'abonner, là où il sert
 
@@ -122,10 +138,16 @@ preuve et la portée, qui manquent.
 
 ## Ce qu'il me faut de toi
 
-- [ ] **Lancer la demande d'accord** auprès de trois clients de la liste,
-      avec leur compte Instagram. C'est ce qui débloque tout le reste.
-- [ ] Dire si j'ajoute l'appel à s'abonner sur les six cartons de reel.
-- [ ] Dire si je rédige la checklist « Avant de commander votre enseigne ».
-- [ ] Dire si les trois cases du tableau ci-dessus deviennent des études
-      de cas, ou si on garde le contenu pédagogique et on ajoute les
-      réalisations ailleurs.
+- [x] ~~Ajouter l'appel à s'abonner sur les cartons de reel~~ — **fait le
+      12 octobre.** Il est sur les quatre cartons de fin déjà dessinés
+      (n° 4, 8, 20, 24), et se posera sur les deux autres quand leurs
+      visuels existeront. Une ligne, au-dessus de la signature, sur le
+      dernier écran seulement.
+- [x] ~~Rédiger la checklist « Avant de commander votre enseigne »~~ —
+      **faite le 12 octobre**, quatre pages, dans
+      `checklist-enseigne.md`. À relire avant de la donner.
+- [ ] **Confirmer que l'accord des clients couvre l'usage réseaux**, et
+      pas seulement la page du site. C'est ce qui débloque les six
+      publications de réalisation.
+- [ ] Dire où insérer ces six publications : en plus du rythme actuel, ou
+      à la place de six publications pédagogiques.

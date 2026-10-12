@@ -233,6 +233,20 @@ class Planche:
         self.y += epaisseur + apres
         return self
 
+    def abonnement(self, couleur="sable", texte=None):
+        """La relance d'abonnement, sur le carton de fin d'un reel.
+
+        Uniquement la : ce sont les reels qui atteignent les gens qui ne
+        suivent pas encore le compte, et une demande repetee sur chaque
+        planche ne se remarque plus. Elle se pose au-dessus de la
+        signature, jamais dessus.
+        """
+        t = texte or "Abonnez-vous : un conseil par semaine."
+        f = police(600, 30)
+        y = self.h - MARGE - 26 - 48
+        self.d.text((MARGE, y), t, font=f, fill=teinte(couleur))
+        return self
+
     def signature(self, couleur="blanc"):
         """Le pseudo, en bas à gauche. Jamais saisi à la main ailleurs."""
         f = police(600, 26)
@@ -804,6 +818,8 @@ def plans_reel_cmjn(dossier=None):
         p.titre(titre, 96, enc)
         if sous:
             p.texte(sous, 46, enc, 400, avant=60)
+        if i == len(plans):          # le carton de fin, et lui seul
+            p.abonnement("sable" if fond == "encre" else "taupe")
         p.signature(enc)
         f.append(p.ecrire(d / ("plan%d.png" % i)))
     return f
@@ -826,6 +842,8 @@ def plans_reel_halloween(dossier=None):
         p.titre(titre, 96, enc)
         if sous:
             p.texte(sous, 46, enc, 400, avant=60)
+        if i == len(plans):          # le carton de fin, et lui seul
+            p.abonnement("sable" if fond == "encre" else "taupe")
         p.signature(enc)
         f.append(p.ecrire(d / ("plan%d.png" % i)))
     return f
@@ -1312,6 +1330,7 @@ def _plans_tournage(dossier, titre, plans, numero_total):
             p.titre(incruste, 80, "blanc")
             p.y += 40
             p.texte(cadrage, 42, "creme", 400, avant=20)
+            p.abonnement("sable")
             p.signature("sable")
             p.d.text((p.l - MARGE - 160, MARGE), chrono, font=police(600, 30),
                      fill=teinte("sable"))

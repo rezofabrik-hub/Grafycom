@@ -18,7 +18,12 @@ Deux garde-fous, et ce sont eux qui justifient le fichier :
    novembre l'Armistice, le 31 octobre Halloween. Décaler ces dates
    produirait des énoncés faux.
 
-2. **Les contenus saisonniers sont signalés.** Un reel sur Halloween publié
+2. **Un créneau qui tombe un jour silencieux se décale, il ne se
+   supprime pas.** Le 11 novembre ne doit rien recevoir, mais la semaine
+   garde son écran : il recule au soir libre le plus proche. Le programme
+   signale le conflit, il ne tranche pas tout seul.
+
+3. **Les contenus saisonniers sont signalés.** Un reel sur Halloween publié
    le 30 octobre garde son sens ; publié le 6 novembre, il n'en a plus. Le
    programme ne tranche pas à ta place : il liste les conflits.
 
@@ -342,7 +347,11 @@ def main():
                     print("  ⚠️ %-22s %s" % (f_.name, ligne.strip()[:86]))
                     print("     %s — rien ne doit paraître ce jour-là."
                           % silencieux[(d.month, d.day)])
-    if not trouve:
+    if trouve:
+        print("\n  → On décale, on ne supprime pas : reculer le créneau au\n"
+              "    soir le plus proche qui soit libre. Le jour silencieux\n"
+              "    reste vide, et la semaine garde son écran.")
+    else:
         print("  Aucun. Les jours silencieux restent vides.")
 
     print("\nDÉCISIONS DÉJÀ PRISES")

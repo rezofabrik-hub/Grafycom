@@ -53,6 +53,15 @@ ORDRE = [
     ("LISEZ-MOI", "Mode d'emploi", "Par où commencer, et comment valider"),
 ]
 
+# Celui-ci n'est pas un document de relecture : c'est le document qu'on
+# DONNE, en message prive, a qui prepare une enseigne. Sa couverture le
+# dit autrement — pas de « a valider », pas de rappel interne.
+LIVRABLES = {
+    "checklist-enseigne": (
+        "Avant de commander votre enseigne",
+        "Six points à vérifier avant de signer"),
+}
+
 
 def _fonte(nom, fichier, graisse, style="normal"):
     b = base64.b64encode((POLICES / fichier).read_bytes()).decode()
@@ -123,6 +132,9 @@ hr{border:0;height:3px;border-radius:3px;background:%(degrade)s;
 /* la case a cocher : on la veut visible et cochable a la main */
 .coche{font-family:'DejaVu Sans',sans-serif;font-size:13pt;
   color:var(--violet);line-height:1;}
+li.tache{list-style:none;margin-left:-1.1em;margin-top:.3em;
+  padding-left:.1em;}
+li.tache .coche{margin-right:.35em;vertical-align:-1px;}
 /* ---- couverture ---- */
 .couv{height:247mm;display:flex;flex-direction:column;
   justify-content:center;break-after:page;page-break-after:always;}
@@ -144,6 +156,20 @@ hr{border:0;height:3px;border-radius:3px;background:%(degrade)s;
 
 
 def couverture(titre, sous, doc, nb_mots):
+    if doc in LIVRABLES:
+        return """<section class="couv">
+  <div class="filet"></div>
+  <div class="marque">Grafycom &middot; Pyrénées-Orientales</div>
+  <h1>%s</h1>
+  <p class="sous">%s</p>
+  <div class="meta">
+    Gratuit, sans contrepartie. Rien à remplir, rien à renvoyer.<br>
+    <b>grafycom.fr</b> &nbsp;·&nbsp; @grafycom.graphiste
+  </div>
+  <div class="rappel">Ce document donne des <b>repères</b>, pas un avis
+  juridique. Les règles locales se vérifient en mairie, qui est la
+  source.</div>
+</section>""" % (titre, sous)
     return """<section class="couv">
   <div class="filet"></div>
   <div class="marque">Grafycom &middot; à valider</div>
@@ -179,6 +205,15 @@ def html(doc, titre, sous):
         # meme paragraphe, c'est exactement ce qu'on veut.
         src, extensions=["tables", "fenced_code", "sane_lists"],
         output_format="html5")
+    # « - [ ] » est une liste de taches : python-markdown ne la connait
+    # pas et la rendait en « [ ] » litteral. On la transforme en vraie
+    # case, de la meme famille que les ☐ deja ecrits dans les documents.
+    corps = re.sub(r"<li>\s*\[ \]\s*",
+                   '<li class="tache"><span class="coche">\u2610</span> ',
+                   corps)
+    corps = re.sub(r"<li>\s*\[[xX]\]\s*",
+                   '<li class="tache"><span class="coche">\u2611</span> ',
+                   corps)
     # les cases a cocher du markdown passent en span stylé
     corps = corps.replace("☐", '<span class="coche">☐</span>')
     # Un filet juste avant un titre de niveau 1 ne sert a rien :
@@ -220,13 +255,14 @@ async def fabrique(choisis, sortie):
                         "left": "18mm", "right": "18mm"},
                 display_header_footer=True,
                 header_template="<div></div>",
-                footer_template=
-                "<div style='width:100%;font-size:7.4pt;color:#a2897c;"
-                "font-family:sans-serif;padding:0 18mm;display:flex;"
-                "justify-content:space-between'><span>Grafycom &middot; "
-                + titre.replace("&", "&amp;") +
-                " &middot; à valider</span>"
-                "<span class='pageNumber'></span></div>")
+                footer_template=(
+                    "<div style='width:100%;font-size:7.4pt;"
+                    "color:#a2897c;font-family:sans-serif;padding:0 18mm;"
+                    "display:flex;justify-content:space-between'>"
+                    "<span>Grafycom &middot; "
+                    + titre.replace("&", "&amp;")
+                    + ("" if doc in LIVRABLES else " &middot; à valider")
+                    + "</span><span class='pageNumber'></span></div>"))
             faits.append(cible)
             print("  %-22s %6.1f ko" % (cible.name,
                                         cible.stat().st_size / 1024))
@@ -242,15 +278,16 @@ def main():
                    help="noms sans .md ; tous si omis")
     a.add_argument("--sortie", default=str(RACINE / "pdf"))
     args = a.parse_args()
-    choisis = ORDRE
+    tous = ORDRE + [(d, n, s) for d, (n, s) in LIVRABLES.items()]
+    choisis = tous
     if args.documents:
         voulus = {d.replace(".md", "") for d in args.documents}
-        choisis = [c for c in ORDRE if c[0] in voulus]
-        inconnus = voulus - {c[0] for c in ORDRE}
+        choisis = [c for c in tous if c[0] in voulus]
+        inconnus = voulus - {c[0] for c in tous}
         if inconnus:
             sys.exit("Document inconnu : %s\nDisponibles : %s"
                      % (", ".join(sorted(inconnus)),
-                        ", ".join(c[0] for c in ORDRE)))
+                        ", ".join(c[0] for c in tous)))
     print("Fabrication des PDF dans %s" % args.sortie)
     faits = asyncio.run(fabrique(choisis, pathlib.Path(args.sortie)))
     total = sum(f.stat().st_size for f in faits) / 1024 / 1024

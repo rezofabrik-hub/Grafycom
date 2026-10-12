@@ -89,6 +89,7 @@ automatique du matin.
 | mardi 10 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 14 |
 | mardi 10 novembre | 8 h 00 | Fiche Google | post | texte n° 14 |
 | mardi 10 novembre | 8 h 15 | Story | story | S4-B1 · quiz langue |
+| mardi 10 novembre | 18 h 30 | Story | story | S4-C · coulisses — 🔀 **décalée du 11** |
 | mercredi 11 novembre | — | — | — | 🕯️ **rien, volontairement** — Armistice |
 | jeudi 12 novembre | 19 h 00 | Instagram + Facebook | Quiz 4 choix | n° 15 |
 | jeudi 12 novembre | 19 h 00 | Fiche Google | post | texte n° 15 |
@@ -142,6 +143,6 @@ automatique du matin.
 |---|---|
 | Publications Instagram + Facebook | **25** |
 | Textes de fiche Google | **25** |
-| Écrans de story | **40** |
+| Écrans de story | **41** |
 | Articles de blog | **7** |
-| **Total à valider** | **97** |
+| **Total à valider** | **98** |
