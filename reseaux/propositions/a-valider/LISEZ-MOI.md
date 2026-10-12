@@ -4,6 +4,7 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 
 | Document | Ce qu'il contient |
 |---|---|
+| **`PRET-A-VALIDER.md`** | **ce qui est terminé et ce qui ne l'est pas** — à lire en premier |
 | **`calendrier.md`** | les 96 éléments datés, tous canaux, dans l'ordre |
 | **`instagram-facebook.md`** | les 24 publications |
 | **`fiche-google.md`** | les 24 textes de fiche |
@@ -16,11 +17,13 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 
 ## Par où commencer
 
-1. **`arbitrages.md`**, section 1 : la question du rythme. Rien n'est
-   publié, 24 publications attendent, et 15 visuels restent à dessiner.
-   C'est la décision qui commande toutes les autres.
-2. **`calendrier.md`** pour voir l'ensemble d'un coup d'œil.
-3. Puis canal par canal, dans l'ordre qui t'arrange.
+1. **`PRET-A-VALIDER.md`** : l'état exact. 57 éléments sont complets et
+   peuvent partir ; le reste attend un visuel, une photo ou une
+   vérification. Trois points y demandent une réponse de ta part.
+2. **`arbitrages.md`**, section 1 : la question du rythme. Rien n'est
+   publié, 24 publications attendent, et 14 visuels restent à dessiner.
+3. **`calendrier.md`** pour voir l'ensemble d'un coup d'œil.
+4. Puis canal par canal, dans l'ordre qui t'arrange.
 
 ## Comment valider
 
