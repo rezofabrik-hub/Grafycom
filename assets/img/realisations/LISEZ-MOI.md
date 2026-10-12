@@ -74,3 +74,39 @@ monochrome aussi, et il tient en impression.
 > photo. C'est le logo public du commerce, donc son usage en portfolio
 > suit l'accord déjà obtenu — mais c'est une raison de plus pour ne jamais
 > le publier recadré ou retouché.
+
+## Toutes les images qui montrent un travail client
+
+Relevé complet du 12 octobre, pour que la question ne se repose pas. Les
+visuels ne sont pas tous dans ce dossier : il y en a aussi dans
+`assets/img/secteurs/` et `assets/img/prestations/`.
+
+| Image | Projet | Statut |
+|---|---|---|
+| `realisations/o-fait-maison.webp` | Ô Fait Maison | accord — entreprise fermée |
+| `realisations/mia-beauty.webp` | Mia Beauty | accord |
+| `secteurs/secteur-restauration.webp` | Ô Fait Maison | accord |
+| `secteurs/secteur-liberales.webp` | Mia Beauty | accord |
+| `prestations/presta-identite.webp` | Crazy Frenchy | **projet personnel de Laurent**, pas une commande client |
+| `prestations/presta-menus.webp` | Pizza Fry | proche de la famille, accord à formaliser |
+| `prestations/presta-signaletique.webp` | Le Cayrou | entreprise fermée |
+| `prestations/presta-digital.jpg`, `presta-projet.jpg` | — | illustrations, aucun client |
+
+### Retirées le 12 octobre
+
+Alliance Peintures, Cap Loisirs, Pano Perpignan et Casa Aldo. Fichiers
+supprimés, pas seulement déréférencés : une image déréférencée reste
+servie à son adresse.
+
+### Deux nuances qui ne sont pas des blocages
+
+**Une entreprise fermée ne cède pas ses droits en fermant.** Ils passent à
+son ancien dirigeant. En pratique, plus personne ne s'y oppose et le
+risque est faible — mais ce n'est pas la même chose qu'un accord, et il
+vaut mieux le savoir que le croire.
+
+**Un projet personnel ne se présente pas comme une commande.** Si
+`presta-identite.webp` montre un travail que Laurent a mené pour
+lui-même, la ligne d'attribution de la page réalisations — « publiés avec
+l'accord des clients concernés » — ne s'y applique pas. À vérifier avant
+de l'y inclure.
