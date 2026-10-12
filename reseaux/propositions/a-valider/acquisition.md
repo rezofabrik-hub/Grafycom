@@ -75,22 +75,67 @@ point 4 ci-dessous.
 
 ## Ce que je propose, par ordre de rendement
 
-### 1. Publier les six réalisations qui existent déjà
+### 1. Publier les réalisations couvertes par un accord — deux et demie, pas six
 
-Rien à produire, rien à attendre. Six visuels sont dans le dépôt et déjà
-publics sur le site. Un par semaine pendant six semaines, en plus du
-rythme — ce sont des publications simples : le visuel, et deux phrases sur
-le problème qu'il fallait résoudre.
+**Deuxième correction, le 12 octobre.** J'avais écrit « six réalisations ».
+Précision de Laurent : ces projets ont été menés **au sein d'une société
+précédente**, et l'accord porte sur le fait de dire que Sandra a créé les
+visuels. Il couvre :
 
-Le texte existe aussi : la page `realisations.html` en porte déjà une
-phrase par projet, et les pages métier en disent davantage. Exemple, pour
-Casa Aldo : *« le logo a été dessiné d'emblée pour tenir en enseigne ronde
-— un format qui pardonne peu les détails fins »*. C'est exactement ce qui
-convainc un commerçant.
+| Projet | Couvert | Réserve |
+|---|---|---|
+| **Ô Fait Maison** | ✅ oui | l'entreprise a fermé |
+| **Mia Beauty** | ✅ oui | — |
+| **Casa Aldo** | ⚠️ le **logo** seulement | le visuel en ligne montre l'enseigne ronde fabriquée, pas le logo seul |
+| Alliance Peintures | ❓ non confirmé | |
+| Cap Loisirs | ❓ non confirmé | |
+| Pano Perpignan | ❓ non confirmé | |
 
-**Ce qu'il me faut :** ton feu vert, et la confirmation que l'accord des
-clients couvre bien l'usage réseaux. Je peux produire les six publications
-dans la foulée.
+Donc **deux visuels utilisables tels quels**, plus le logo de Casa Aldo
+s'il est isolé de la photo d'enseigne. C'est peu, mais c'est vrai — et
+deux réalisations vraies valent mieux que six contestables.
+
+### La formulation, qui n'est pas un détail
+
+Un travail mené pour le compte d'une autre structure ne se présente pas
+comme une commande reçue par Grafycom. Ce n'est pas une nuance juridique
+abstraite : un prospect qui apprend que « son » client était en fait celui
+d'un ancien employeur perd confiance d'un coup, et c'est précisément le
+genre de chose qui se sait dans un département.
+
+La formule juste, et c'est exactement ce que l'accord autorise :
+
+> **Création de Sandra, fondatrice de Grafycom — projet réalisé au sein
+> d'une précédente structure, publié avec l'accord du client.**
+
+Courte, honnête, et elle ne retire rien : ce qui prouve la compétence,
+c'est d'avoir dessiné le logo, pas d'avoir facturé le client. Un portfolio
+de fondatrice se présente comme ça partout.
+
+### ⚠️ Et le site dit autre chose aujourd'hui
+
+`realisations.html` publie les **six** projets, et son chapeau dit :
+*« Chaque projet part d'une page blanche et d'une conversation »*. Le
+commentaire du générateur parle de « réalisations de Grafycom ». Rien n'y
+distingue ce qui précède Grafycom de ce qui lui appartient, et trois des
+six projets n'ont pas d'accord confirmé.
+
+**Deux corrections à faire sur le site, dans cet ordre :**
+
+- [ ] **Retirer, ou faire confirmer l'accord** pour Alliance Peintures,
+      Cap Loisirs et Pano Perpignan.
+- [ ] **Ajouter une ligne d'attribution** sous le chapeau. Texte prêt :
+      *« Certains de ces projets ont été réalisés par Sandra avant la
+      création de Grafycom, au sein d'une autre structure, et sont publiés
+      avec l'accord des clients concernés. »*
+
+Les deux sont prêtes à appliquer, je ne les ai pas faites : c'est ton
+site, et retirer trois projets d'une page publique se décide, ça ne se
+suppose pas.
+
+**Pour les réseaux**, une fois ces points réglés : deux publications de
+réalisation, une par quinzaine, avec la mention d'attribution en légende.
+Le texte existe déjà sur les pages métier.
 
 ### 2. L'appel à s'abonner, là où il sert
 
@@ -146,8 +191,14 @@ preuve et la portée, qui manquent.
 - [x] ~~Rédiger la checklist « Avant de commander votre enseigne »~~ —
       **faite le 12 octobre**, quatre pages, dans
       `checklist-enseigne.md`. À relire avant de la donner.
-- [ ] **Confirmer que l'accord des clients couvre l'usage réseaux**, et
-      pas seulement la page du site. C'est ce qui débloque les six
-      publications de réalisation.
-- [ ] Dire où insérer ces six publications : en plus du rythme actuel, ou
-      à la place de six publications pédagogiques.
+- [ ] **Trancher le sort d'Alliance Peintures, Cap Loisirs et Pano
+      Perpignan** sur le site : accord à confirmer, ou retrait.
+- [ ] **Valider la ligne d'attribution** ci-dessus, et dire si je
+      l'applique au site.
+- [ ] **M'envoyer la publication Instagram** déjà parue sur ces projets —
+      une capture suffit. Je n'ai pas pu la consulter : Instagram refuse
+      les requêtes depuis l'environnement de travail (429, puis
+      redirection vers la page de connexion). Sans elle, je risque de
+      réécrire ce qui existe déjà, ou de le contredire.
+- [ ] Dire où insérer les deux publications de réalisation : en plus du
+      rythme actuel, ou à la place de deux publications pédagogiques.

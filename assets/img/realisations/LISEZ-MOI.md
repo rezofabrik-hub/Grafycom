@@ -25,3 +25,29 @@ leur accord — le contrat cède les droits sur la création, il ne donne pas
 celui de s'en servir de vitrine. Un message suffit, et c'est rarement
 refusé ; mais un client qui se découvre en ligne sans avoir été prévenu est
 un client perdu.
+
+## Provenance — précisé le 12 octobre 2026
+
+Ces projets ont été menés par Sandra **au sein d'une société précédente**,
+pas sous la marque Grafycom. L'accord obtenu porte sur le fait de dire
+qu'elle a créé les visuels, et il ne couvre pas tout :
+
+| Projet | Accord | Réserve |
+|---|---|---|
+| Ô Fait Maison | oui | l'entreprise a fermé |
+| Mia Beauty | oui | — |
+| Casa Aldo | **le logo seulement** | `casa-aldo.webp` montre l'enseigne fabriquée |
+| Alliance Peintures | à confirmer | |
+| Cap Loisirs | à confirmer | |
+| Pano Perpignan | à confirmer | |
+
+**Un travail mené pour le compte d'une autre structure ne se présente pas
+comme une commande reçue par Grafycom.** La formule à employer, et la
+seule que l'accord autorise :
+
+> Création de Sandra, fondatrice de Grafycom — projet réalisé au sein
+> d'une précédente structure, publié avec l'accord du client.
+
+C'est une précaution de fond, pas de forme : un prospect qui découvre que
+« ce client » était celui d'un ancien employeur perd confiance d'un coup,
+et ça se sait vite dans un département.
