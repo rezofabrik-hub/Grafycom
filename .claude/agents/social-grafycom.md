@@ -84,7 +84,7 @@ Elles passent avant tout le reste de ce document.
      société précédente, aujourd'hui fermée.** Ils ne se présentent donc
      pas comme des commandes reçues par Grafycom. La formule est :
      « création de Sandra, fondatrice de Grafycom — projet réalisé au sein
-     d'une précédente structure, publié avec l'accord du client ».
+     d'une précédente structure ».
    - **Une entreprise fermée ne cède pas ses droits en fermant** : ils
      passent à son ancien dirigeant. Le risque est faible, ce n'est pas
      un accord.

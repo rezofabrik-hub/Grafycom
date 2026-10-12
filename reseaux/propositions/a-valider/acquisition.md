@@ -106,7 +106,7 @@ genre de chose qui se sait dans un département.
 La formule juste, et c'est exactement ce que l'accord autorise :
 
 > **Création de Sandra, fondatrice de Grafycom — projet réalisé au sein
-> d'une précédente structure, publié avec l'accord du client.**
+> d'une précédente structure.**
 
 Courte, honnête, et elle ne retire rien : ce qui prouve la compétence,
 c'est d'avoir dessiné le logo, pas d'avoir facturé le client. Un portfolio
@@ -125,9 +125,8 @@ six projets n'ont pas d'accord confirmé.
 - [ ] **Retirer, ou faire confirmer l'accord** pour Alliance Peintures,
       Cap Loisirs et Pano Perpignan.
 - [ ] **Ajouter une ligne d'attribution** sous le chapeau. Texte prêt :
-      *« Certains de ces projets ont été réalisés par Sandra avant la
-      création de Grafycom, au sein d'une autre structure, et sont publiés
-      avec l'accord des clients concernés. »*
+      *« Ces projets ont été réalisés par Sandra avant la création de
+      Grafycom, au sein d'une autre structure aujourd'hui fermée. »*
 
 Les deux sont prêtes à appliquer, je ne les ai pas faites : c'est ton
 site, et retirer trois projets d'une page publique se décide, ça ne se

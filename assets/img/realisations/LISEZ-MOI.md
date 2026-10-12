@@ -42,13 +42,24 @@ comme une commande reçue par Grafycom.** La formule à employer, et la
 seule que l'accord autorise :
 
 > Création de Sandra, fondatrice de Grafycom — projet réalisé au sein
-> d'une précédente structure, publié avec l'accord du client.
+> d'une précédente structure.
 
 C'est une précaution de fond, pas de forme : un prospect qui découvre que
 « ce client » était celui d'un ancien employeur perd confiance d'un coup,
 et ça se sait vite dans un département.
 
-## Casa Aldo — ce qu'il faut pour le remettre
+## Casa Aldo — classé le 12 octobre, ne pas rouvrir
+
+**Le logo vectoriel n'est plus en possession de Laurent.** La seule source
+restante était la photo de l'enseigne, où le logo mesure 205 × 235 px, de
+biais et compressé. Il n'y a donc aucun moyen d'en faire un visuel propre,
+et Casa Aldo ne revient pas sur le site.
+
+Ce qui suit est conservé pour mémoire : si le fichier réapparaissait un
+jour — chez l'ancien employeur, chez le client, dans une sauvegarde —
+voici ce qui serait utilisable.
+
+### Ce qu'il aurait fallu
 
 L'accord porte sur le **logo seul**, et `casa-aldo.webp` montrait
 l'enseigne ronde fabriquée : le visuel dépassait l'accord. Il a été retiré
@@ -110,6 +121,6 @@ vaut mieux le savoir que le croire.
 site web à lui — vérifié le 12 octobre. Il illustre la prestation « logo »
 sur la page prestations, ce qui est honnête : c'est un travail, montré
 comme un travail. Mais il n'a rien à faire sur la page réalisations sous
-la ligne « publiés avec l'accord des clients concernés », et son texte
-alternatif ne parle plus d'un « hall d'entreprise » — le mur est une
-présentation, pas un lieu réel.
+la ligne d'attribution de la page réalisations, et son texte alternatif
+ne parle plus d'un « hall d'entreprise » — le mur est une présentation,
+pas un lieu réel.

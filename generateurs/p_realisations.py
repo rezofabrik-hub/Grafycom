@@ -8,7 +8,10 @@ def reaz(cat, titre, desc, fichier):
     </article>
 """ % (fichier, titre, cat, titre, desc)
 
-# Casa Aldo est retire en attendant son logo source. L'accord porte sur
+# Casa Aldo est retire definitivement : Laurent n'a plus le logo
+# vectoriel, et la seule source restante est la photo de l'enseigne ou il
+# mesure 205 px. Ne pas rouvrir le sujet sans un nouveau fichier.
+# Historique : L'accord porte sur
 # le LOGO seul, et casa-aldo.webp montre l'enseigne ronde fabriquee :
 # le visuel depassait donc l'accord. Reconstruire le logo depuis cette
 # photo ne marche pas — il y mesure 205 px, de biais et compresse ; un
@@ -46,7 +49,7 @@ BODY = """
     <h1>Quelques projets,<br><span class="texte-degrade">et ce qu'ils demandaient</span></h1>
     <div class="trait"></div>
     <p class="chapeau">Chaque projet part d'une page blanche et d'une conversation. Voici une sélection de travaux et, pour chacun, ce qu'il fallait résoudre.</p>
-    <p class="chapeau" style="font-size:1rem;opacity:.78;margin-top:14px">Ces projets ont été réalisés par Sandra avant la création de Grafycom, au sein d'une autre structure aujourd'hui fermée, et sont publiés avec l'accord des clients concernés.</p>
+    <p class="chapeau" style="font-size:1rem;opacity:.78;margin-top:14px">Ces projets ont été réalisés par Sandra avant la création de Grafycom, au sein d'une autre structure aujourd'hui fermée.</p>
   </div>
 </section>
 
