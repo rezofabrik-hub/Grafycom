@@ -49,10 +49,6 @@ sticker et ses options, arrière-plan.
 - ⭐ **À mettre en story à la une** (couverture violette, titre
   « Réglementation »).
 
----
-
----
-
 # 🎬 SEMAINE 2 — du lundi 26 octobre au dimanche 1er novembre
 
 ## S2-A — Lundi 26 octobre, 12 h 45 · teasing typographie
@@ -109,8 +105,6 @@ sticker et ses options, arrière-plan.
 
 ---
 
----
-
 ## ✅ BON À PUBLIER — stories
 
 | ✔ | Écran | Jour | Date | Heure | Contenu | Validé par |
@@ -135,8 +129,6 @@ sticker et ses options, arrière-plan.
 
 **17 écrans à valider.** Chaque écran se valide séparément, y compris les
 écrans de réponse : ce sont ceux qu'on oublie de faire relire.
-
----
 
 # 🎬 SEMAINE 3 — du lundi 2 au dimanche 8 novembre
 
@@ -219,8 +211,6 @@ pensent aux couleurs.
 📌 Date fixe elle aussi — la Toussaint ne se décale pas. La Toussaint
 n'offre pas d'angle honnête sur le métier, et un contenu commercial ce
 jour-là se remarque pour de mauvaises raisons.
-
----
 
 # 🎬 SEMAINE 4 — du lundi 9 au dimanche 15 novembre
 
@@ -342,8 +332,6 @@ sur le site.
 
 **15 lignes, dont une ligne de non-publication.** 14 écrans à produire.
 
----
-
 # 🎬 SEMAINE 5 — du lundi 16 au dimanche 22 novembre
 
 ## S5-A — Lundi 16 novembre, 12 h 45 · teasing du carrousel
@@ -453,8 +441,6 @@ l'absence soit un choix validé, pas un trou dans le planning.
   consultent leur téléphone entre deux clients. Les réponses tombent dans la
   journée.
 
----
-
 # 🎬 SEMAINE 6 — du lundi 23 au dimanche 29 novembre
 
 ## S6-A — Lundi 23 novembre, 18 h 45 · teasing vitrine
@@ -554,8 +540,6 @@ l'absence soit un choix validé, pas un trou dans le planning.
   se regarde, il ne demande rien. Un sticker de trop sur cet écran casse ce
   qu'il raconte.
 - **Puis :** sticker *Mention du post* pour renvoyer au reel.
-
----
 
 # Ce qu'il faut produire pour les stories
 

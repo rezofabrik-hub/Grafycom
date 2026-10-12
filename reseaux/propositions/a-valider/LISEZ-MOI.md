@@ -13,6 +13,7 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 | **`messages-prives.md`** | le message d'accueil et 4 réponses types |
 | **`photos-a-prendre.md`** | la liste de prises de vue pour Sandra |
 | **`visuels-a-produire.md`** | ce qu'il reste à dessiner |
+| **`acquisition.md`** | **l'objectif : des abonnés, puis des clients** — ce que le plan fait pour ça, mesuré |
 | **`arbitrages.md`** | **ce qui demande ta décision** — à lire en premier |
 
 ## Par où commencer
@@ -33,6 +34,17 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
   `statut: à relire` par `statut: validé`. L'article paraîtra **à sa date**,
   tout seul — les deux verrous sont indépendants, tu peux donc tout valider
   d'un coup sans que tout sorte le même jour.
+
+## Les PDF
+
+Les mêmes documents, paginés et prêts à annoter, sont fabriqués par
+`reseaux/pdf.py` dans `reseaux/pdf/`. Ils ne sont pas versionnés —
+ce sont des dérivés, la source reste le markdown.
+
+```bash
+python3 reseaux/pdf.py            # les douze
+python3 reseaux/pdf.py calendrier  # un seul
+```
 
 ## Ce qui n'est pas ici
 

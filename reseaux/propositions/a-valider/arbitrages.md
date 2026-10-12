@@ -108,8 +108,6 @@ en sujet principal : il faut choisir où elle est traitée pour de bon.
 
 ---
 
----
-
 ## 🔀 Deux recoupements avec la quinzaine précédente — à arbitrer
 
 La quinzaine du 2 novembre au 14 novembre a été préparée en parallèle, sans
@@ -154,9 +152,6 @@ sur « quand ça devient une enseigne ». Mon carrousel traite la distinction
 déclaration / autorisation appliquée aux adhésifs de Noël, avec le rappel du
 Cerfa périmé. C'est une redite partielle, assumée : ce rappel mérite d'être
 répété, c'est le piège le plus coûteux du sujet. À vous de voir.
-
----
-
 
 ---
 
@@ -233,9 +228,6 @@ relus mot par mot sur chaque slide.
 
 ---
 
-
----
-
 ## 🕯️ Mercredi 11 novembre — pourquoi il n'y a rien
 
 L'Armistice tombe au milieu de la première semaine. Le pilier « journées et
@@ -254,9 +246,6 @@ La seule autre date du créneau qui offrait une prise sur le métier était le
 et de la signalétique universelle. L'angle est réel, le registre ne va pas
 à un compte qui parle à des chefs d'entreprise. Il est écarté ; il reste
 disponible si vous le voulez l'an prochain.
-
----
-
 
 ---
 

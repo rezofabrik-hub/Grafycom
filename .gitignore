@@ -44,3 +44,7 @@ reseaux/visuels/
 node_modules/
 package.json
 package-lock.json
+
+# Les PDF de relecture sont fabriques par reseaux/pdf.py a partir des
+# documents markdown. Ce sont des derives : on versionne la source.
+reseaux/pdf/

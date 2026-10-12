@@ -40,8 +40,6 @@ ressemblent, et non des aplats saturés que le site n'emploie nulle part.
 **Ce que ça change pour toi :** rien à relire dans les textes, tout dans
 les fonds. Les directions visuelles ci-dessous sont déjà réécrites.
 
----
-
 # SEMAINE 1 — du lundi 19 au dimanche 25 octobre
 
 ## 1 — Lundi 19 octobre, 12 h 30 · Carrousel · Pédagogie couleur
@@ -303,9 +301,6 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
   au téléphone, suffisent.**
 - Les deux animations (superposition RVB, mélange CMJN) peuvent être faites
   en motion simple, ou remplacées par deux schémas fixes animés au zoom.
-
----
-
 
 # SEMAINE 2 — du lundi 26 octobre au dimanche 1er novembre
 
@@ -644,10 +639,6 @@ normal. Ton curieux, pas effrayant.
   mieux qu'une banque d'images, et évite toute question de droits.
 - ⚠️ **Pas de photo trouvée sur internet** pour la séquence 9-15 s : soit
   filmée, soit générée avec le prompt fourni.
-
----
-
----
 
 # SEMAINE 3 — du lundi 2 au dimanche 8 novembre
 
@@ -990,8 +981,6 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 - **À vérifier avant publication :** à partir de quand un habillage de
   vitrine est requalifié en enseigne par la commune. Tant que ce n'est pas
   confirmé, la légende reste au conditionnel comme elle est écrite.
-
----
 
 # SEMAINE 4 — du lundi 9 au dimanche 15 novembre
 
@@ -1407,10 +1396,6 @@ fin novembre, livraison début décembre.
   être confirmés par l'imprimeur partenaire** avant publication. S'ils sont
   plus serrés, le reel se décale d'une semaine en avant, pas en arrière.
 
----
-
----
-
 # SEMAINE 5 — du lundi 16 au dimanche 22 novembre
 
 ## 17 — Lundi 16 novembre, 12 h 30 · Carrousel · Pilier 1, conseils stratégiques
@@ -1749,8 +1734,6 @@ dorée selon l'angle.
 - Si vous n'avez pas de dorure sous la main, le plan 14-19 s se remplace par
   un vernis sélectif, qui se filme de la même façon. Dans ce cas, le texte
   incrusté et la voix off changent : je les réécris.
-
----
 
 # SEMAINE 6 — du lundi 23 au dimanche 29 novembre
 
