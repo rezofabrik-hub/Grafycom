@@ -13,19 +13,19 @@ autres documents de ce dossier.
 
 | Canal | Écrit | Visuel prêt | Prêt à partir |
 |---|---|---|---|
-| Instagram + Facebook | 24 | 10 | **10** |
-| Fiche Google | 24 | — *(canal sans visuel)* | **24** |
+| Instagram + Facebook | 25 | 11 | **11** |
+| Fiche Google | 25 | — *(canal sans visuel)* | **25** |
 | Blog | 7 | pas d'illustration | **7** |
 | Stories | 41 écrans | 10 écrans | **10** |
 | Messages privés | 6 modèles | — | **6** |
 
-**57 éléments sont complets et peuvent être programmés aujourd'hui.**
+**59 éléments sont complets et peuvent être programmés aujourd'hui.**
 Le reste attend soit un visuel que je produis, soit une photo de Sandra,
 soit une vérification réglementaire.
 
 ---
 
-## 1. Instagram & Facebook — 10 publications complètes sur 24
+## 1. Instagram & Facebook — 11 publications complètes sur 25
 
 Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 1080 × 1350 px, dans l'ordre du carrousel.
@@ -36,23 +36,39 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 2 | mar 13 oct | Carrousel | Réglementation enseigne | 7 |
 | 3 | jeu 15 oct | Dilemme A/B | Lisibilité d'une enseigne | 2 |
 | 4 | ven 16 oct | Reel 24 s | Matières & impression | 5 |
+| 4 bis | **sam 17 oct** | Carrousel | **Annonce du blog hebdomadaire** | 4 |
 | 5 | lun 19 oct | Carrousel | Typographie | 6 |
-| 6 | mar 20 oct | Carrousel | Mentions du devis | 6 |
+| 6 | mar 20 oct | Carrousel | Qui possède votre logo ? | 6 |
 | 7 | jeu 22 oct | Quiz vrai/faux | Quatre idées reçues | 5 |
 | 8 | ven 23 oct | Reel 22 s | Halloween & couleurs | 5 |
 | 9 | lun 26 oct | Carrousel | Un logo tient-il en petit | 6 |
 | 13 | lun 2 nov | Carrousel | **Solaire 66** | 7 |
 
-**55 planches.** Les n° 4 et 8 sont des reels : les planches sont les
+**59 planches.** Les n° 4 et 8 sont des reels : les planches sont les
 plans à filmer, pas le montage.
 
-### Une réserve, en plus
+### Une publication ajoutée le 12 octobre
 
-Le carrousel **« Qui possède votre logo ? »** (6 planches) est dessiné et
-n'a pas de texte Instagram attribué — il a été produit pour le 20 octobre,
-date à laquelle le texte écrit parle en fait des mentions d'un devis. Il
-va bien avec l'article de blog du 30 octobre, qui porte le même titre.
-À toi de dire si on lui écrit une publication.
+Tu l'as demandée : « le sujet qui dit que je publie un article blog par
+semaine peut être aussi traité pour prévenir mes followers ». Le manque
+était réel — les stories relaient chaque article à sa sortie, mais rien ne
+disait aux abonnés qu'il y en a un **chaque semaine**.
+
+Elle est numérotée **4 bis** et non 5, pour qu'aucun des 24 numéros
+existants ne bouge. Elle tombe au lendemain du premier article, dans le
+créneau du samedi 10 h 30 déjà prévu : elle annonce ainsi un rendez-vous
+qui a déjà commencé, ce qui vaut mieux qu'une promesse. **À épingler en
+haut du profil.**
+
+### Un sujet remplacé le 12 octobre
+
+La case du 20 octobre portait « les mentions obligatoires d'un devis ».
+Tu l'as écarté : **« je ne m'occupe pas de l'administratif de mes
+clients »** — et c'est juste, c'est le métier d'un comptable. Le carrousel
+**« Qui possède votre logo ? »**, déjà dessiné, prend la place. Il reste
+dans le pilier réglementaire, mais sur le terrain de Sandra : la création,
+pas la paperasse du client. L'article du 30 octobre, qui porte le même
+titre, le prolonge dix jours plus tard.
 
 ### Les 14 qui ne sont pas prêtes
 
@@ -97,6 +113,8 @@ sorte le même jour.
 | ven 13 nov | Vitrine de fin d'année : ce qui se lit depuis le trottoir | 854 | à relire |
 | ven 20 nov | Faut-il refaire son logo pour la nouvelle année ? | 792 | à relire |
 
+Le rendez-vous hebdomadaire est désormais annoncé sur les réseaux : voir la publication **n° 4 bis** ci-dessus.
+
 **Aucun article n'a d'illustration d'en-tête.** Le champ est facultatif et
 l'article s'affiche sans. Si tu en veux, dis-le : c'est une série de sept
 visuels à produire, pas un obstacle.
@@ -136,10 +154,9 @@ avec le Cerfa 14798\*01, périmé depuis le 1er juillet 2026.
 | 18 | mar 10 nov | Signalétique de tri (article L541-10-1) — les sources trouvées ne sont pas officielles |
 | 22 | mar 17 nov | Qualification d'un adhésif de vitrine, et l'extinction nocturne |
 
-La publication n° 6, du 20 octobre, n'est pas bloquée mais porte un
-avertissement : **faire relire les slides 4 et 5** (les mentions de
-l'en-tête et du pied de page) sur service-public.fr ou par un comptable.
-Ce sont les seules affirmations précises du carrousel.
+La publication n° 6 ne porte plus d'avertissement : le sujet du devis,
+qui en demandait un, a été remplacé. Le carrousel sur la propriété d'un
+logo est vérifié, et l'article du 30 octobre cite ses sources.
 
 ### Huit publications attendent une photo
 

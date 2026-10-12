@@ -41,13 +41,15 @@ automatique du matin.
 | vendredi 16 octobre | 18 h 00 | Instagram + Facebook | REEL 24 s | n° 4 |
 | vendredi 16 octobre | 18 h 00 | Fiche Google | post | texte n° 4 |
 | vendredi 16 octobre | 18 h 15 | Story | story | S1-E · relais du blog |
+| samedi 17 octobre | 10 h 30 | Instagram + Facebook | Carrousel | **n° 4 bis · annonce du blog** |
+| samedi 17 octobre | 10 h 30 | Fiche Google | post | texte n° 4 bis |
 | | | | | |
 | lundi 19 octobre | 12 h 30 | Instagram + Facebook | Carrousel | n° 5 |
 | lundi 19 octobre | 12 h 30 | Fiche Google | post | texte n° 5 |
 | lundi 19 octobre | 12 h 45 | Story | story | S2-A · teasing typographie |
 | mardi 20 octobre | 8 h 00 | Instagram + Facebook | Carrousel | n° 6 |
 | mardi 20 octobre | 8 h 00 | Fiche Google | post | texte n° 6 |
-| mardi 20 octobre | 8 h 15 | Story | story | S2-B · teasing devis |
+| mardi 20 octobre | 8 h 15 | Story | story | S2-B · teasing droits |
 | mercredi 21 octobre | 18 h 30 | Story | story | S2-C · coulisses |
 | jeudi 22 octobre | 19 h 00 | Instagram + Facebook | Quiz vrai/faux | n° 7 |
 | jeudi 22 octobre | 19 h 00 | Fiche Google | post | texte n° 7 |
@@ -135,8 +137,8 @@ automatique du matin.
 
 | Canal | Volume |
 |---|---|
-| Publications Instagram + Facebook | **24** |
-| Textes de fiche Google | **24** |
+| Publications Instagram + Facebook | **25** |
+| Textes de fiche Google | **25** |
 | Écrans de story | **41** |
 | Articles de blog | **7** |
-| **Total à valider** | **96** |
+| **Total à valider** | **98** |

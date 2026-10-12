@@ -62,11 +62,12 @@ sticker et ses options, arrière-plan.
 - **Sticker :** *Curseur emoji* 😬 — « Vous choisissez vos polices au
   feeling ? »
 
-## S2-B — Mardi 20 octobre, 8 h 15 · teasing devis
-- **Fond :** photo d'un devis posé sur un bureau, cadrée serrée.
-- **Texte :** « Votre devis est-il lisible en 30 secondes ? »
-- **Sticker :** *Sondage A/B* — « Votre devis actuel, c'est… »
-  → **A : un tableur** · **B : un vrai document**
+## S2-B — Mardi 20 octobre, 8 h 15 · teasing droits
+- **Fond :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre.
+- **Texte :** « Avez-vous un contrat de cession pour votre logo ? »
+- **Sticker :** *Sondage A/B* — « Votre logo, vous le possédez… »
+  → **A : oui, j'ai l'écrit** · **B : aucune idée**
+- Écran déjà dessiné : `reseaux/visuels/stories/20-teasing.png`.
 
 ## S2-C — Mercredi 21 octobre, 18 h 30 · coulisses
 - **Fond :** photo d'un plan de travail — crayonnés, nuancier, écran.

@@ -745,7 +745,7 @@ def plans_reel_cmjn(dossier=None):
         ("blanc", "encre", "RVB", "De la lumière.\nRouge, vert, bleu.\nPlus on en met, plus c'est clair."),
         ("encre", "blanc", "CMJN", "Quatre encres.\nCyan, magenta, jaune, noir.\nChaque couche retire de la lumière."),
         ("creme", "encre", "Le papier\nchange tout", "Un mat absorbe.\nUn couché renvoie."),
-        ("violet", "blanc", "Demandez un BAT.\nToujours.", "C'est gratuit, et ça évite de tout refaire."),
+        ("encre", "blanc", "Demandez un BAT.\nToujours.", "C'est gratuit, et ça évite de tout refaire."),
     ]
     for i, (fond, enc, titre, sous) in enumerate(plans, 1):
         p = Planche(fond, LARGE_S, HAUT_S)
@@ -767,7 +767,7 @@ def plans_reel_halloween(dossier=None):
         ("orange", "encre", "Le contraste\nmaximal", "On le repère avant de comprendre ce qu'on regarde."),
         ("encre", "orange", "La nature\nl'utilise déjà", "Guêpes, serpents, rubans de chantier.\nLe message : attention."),
         ("creme", "encre", "Et pour\nvotre vitrine ?", "Parfait en saisonnier.\nÉpuisant toute l'année."),
-        ("violet", "blanc", "Une couleur\nn'est jamais neutre.", "Elle dit quelque chose avant vous."),
+        ("encre", "blanc", "Une couleur\nn'est jamais neutre.", "Elle dit quelque chose avant vous."),
     ]
     for i, (fond, enc, titre, sous) in enumerate(plans, 1):
         p = Planche(fond, LARGE_S, HAUT_S)
@@ -781,150 +781,62 @@ def plans_reel_halloween(dossier=None):
     return f
 
 
-def carrousel_devis(dossier=None):
-    """Publication n° 6 — ce qui doit figurer sur un devis.
+def carrousel_blog_rdv(dossier=None):
+    """Publication n° 4 bis — annoncer le rendez-vous du blog.
 
-    Le dossier 2026-10-20-droits existait pour cette date, mais il dessine
-    « Qui possede votre logo ? » : un autre sujet que le texte de la
-    publication n° 6. Les deux jeux sont donc distincts, et celui-ci est
-    dessine d'apres la direction visuelle ecrite, slide par slide.
+    Les stories relaient chaque article a sa sortie, mais rien ne disait
+    aux abonnes qu'il y en a un chaque semaine. C'est une annonce, pas un
+    relais : elle ne se republie pas, elle s'epingle.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-20-devis"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-17-blog-rdv"))
     f = []
-    ZONES = [("en-tete", "EN-TÊTE"), ("identite", "IDENTITÉ"),
-             ("corps", "CORPS"), ("pied", "PIED DE PAGE")]
-    TEINTES = {"en-tete": "bleu", "identite": "turquoise",
-               "corps": "violet", "pied": "corail"}
 
-    def feuille(p, x, y, larg, haut, zones=(), etiquettes=False):
-        """Un devis en fil de fer. Les zones nommees se surlignent.
-
-        Les hauteurs sont calculees en parts de la feuille, pas en pixels
-        fixes : le meme dessin sert en grand sur la slide 3 et en vignette
-        sur la slide 5, sans que le corps deborde du cadre.
-        """
-        p.d.rectangle([x, y, x + larg, y + haut], fill=teinte("blanc"),
-                      outline=teinte("sable_fonce"), width=3)
-        pad = int(haut * 0.035)
-        h_ent = int(haut * 0.16)
-        h_ide = int(haut * 0.11)
-        h_pie = int(haut * 0.17)
-        h_cor = haut - h_ent - h_ide - h_pie - 5 * pad
-        y1 = y + pad
-        y2 = y1 + h_ent + pad
-        y3 = y2 + h_ide + pad
-        y4 = y3 + h_cor + pad
-        bandes = {"en-tete": (y1, h_ent), "identite": (y2, h_ide),
-                  "corps": (y3, h_cor), "pied": (y4, h_pie)}
-
-        for nom, _ in ZONES:
-            yy, hh = bandes[nom]
-            if nom in zones:
-                p.d.rectangle([x + pad, yy, x + larg - pad, yy + hh],
-                              fill=teinte(TEINTES[nom]))
-
-        def lignes(yy, hh, pas, l1, decr, claire):
-            n = max(1, int((hh - 8) / pas))
-            coul = "blanc" if claire else "sable_fonce"
-            for i in range(n):
-                ll = int(l1 * (1 - decr * i))
-                p.d.rounded_rectangle(
-                    [x + 2 * pad, yy + 6 + i * pas,
-                     x + 2 * pad + ll, yy + 6 + i * pas + max(6, pas // 4)],
-                    radius=4, fill=teinte(coul))
-
-        ech = larg / 480.0
-        lignes(y1, h_ent, int(30 * ech), larg - int(300 * ech), 0.22,
-               "en-tete" in zones)
-        lignes(y2, h_ide, int(30 * ech), larg - int(420 * ech), 0.30,
-               "identite" in zones)
-        lignes(y3, h_cor, int(42 * ech), larg - int(120 * ech), 0.04,
-               "corps" in zones)
-        lignes(y4, h_pie, int(32 * ech), larg - int(360 * ech), 0.18,
-               "pied" in zones)
-
-        if etiquettes:
-            fe = police(800, 26)
-            for nom, lib in ZONES:
-                yy, hh = bandes[nom]
-                p.d.text((x + larg + 26, yy + hh / 2 - 15), lib, font=fe,
-                         fill=teinte(TEINTES[nom]))
-        return p
-
-    # S1 — l'accroche, le devis et la loupe sur son pied de page
-    p = Planche("creme")
-    feuille(p, 300, 150, 480, 660)
-    cx, cy, r = 740, 740, 92
-    p.d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=teinte("corail"),
-                width=14)
-    p.d.line([cx + 64, cy + 64, cx + 150, cy + 150], fill=teinte("corail"),
-             width=16)
-    p.y = 900
-    p.titre("Ce qui doit figurer\nsur votre devis.", 82, "encre")
+    p = Planche("sable_chaud")
+    p.filet(y=300)
+    p.titre("Un nouvel article\nchaque vendredi matin.", 84, "encre")
+    p.y = 640
+    p.texte("Sur grafycom.fr/blog. Gratuit, sans inscription.", 42, "brun",
+            400, avant=0)
     p.signature("brun")
-    p.numero(1, 6, "taupe")
+    p.numero(1, 4, "taupe")
     f.append(p.ecrire(d / "01.png"))
 
-    # S2 — l'enjeu, en aplat bleu
-    p = Planche("sable_chaud")
-    t = ("Un devis mal renseigné,\nce n'est pas\nun détail "
-         "administratif.")
-    st = "C'est une crédibilité en moins au moment de la signature."
-    p.centrer(p.h_titre(t, 76) + p.h_texte(st, 42, avant=50) + 44)
-    p.filet()
-    p.titre(t, 76, "encre")
-    p.texte(st, 42, "brun", 400, avant=50)
+    p = Planche("creme")
+    p.titre("Ce qu'on y traite", 80, "encre", y=180)
+    p.puces(["La réglementation des enseignes et des vitrines",
+             "L'impression : couleurs, matières, fichiers",
+             "Les droits, la propriété, les fichiers sources",
+             "Les coups de main saisonniers, en avance"],
+            "corail", 40, "brun", y=400, interligne=1.7)
+    p.y = 1080
+    p.texte("Des sujets vérifiés, pas des avis.", 38, "encre", 600,
+            avant=0)
     p.signature("brun")
-    p.numero(2, 6, "taupe")
+    p.numero(2, 4, "taupe")
     f.append(p.ecrire(d / "02.png"))
 
-    # S3 — le squelette, zones surlignees et nommees
-    p = Planche("creme_rose")
-    p.titre("Quatre zones.\nChacune a son rôle.", 72, "encre", y=140)
-    feuille(p, 150, 400, 540, 700,
-            zones=("en-tete", "identite", "corps", "pied"), etiquettes=True)
+    p = Planche("blanc")
+    p.titre("Les quatre prochains", 76, "encre", y=180)
+    p.y = 380
+    p.puces(["16 oct — Enseigne de commerce :\nl'autorisation préalable",
+             "23 oct — Pourquoi vos couleurs imprimées\nne ressemblent jamais à votre écran",
+             "29 oct — Habiller sa vitrine : dépoli,\nmicroperforé ou lettres découpées",
+             "30 oct — Qui possède votre logo ?"],
+            "violet", 36, "brun", interligne=1.55)
     p.signature("brun")
-    p.numero(3, 6, "taupe")
+    p.numero(3, 4, "taupe")
     f.append(p.ecrire(d / "03.png"))
 
-    # S4 — l'en-tete
-    p = Planche("creme")
-    p.titre("Dans l'en-tête", 88, "encre", y=260)
-    p.y = 440
-    p.puces(["La dénomination de l'entreprise",
-             "La forme juridique",
-             "L'adresse de l'établissement",
-             "Le numéro SIREN",
-             "Le numéro de TVA, le cas échéant"],
-            "bleu", 44, "brun")
-    p.signature("brun")
-    p.numero(4, 6, "taupe")
-    f.append(p.ecrire(d / "04.png"))
-
-    # S5 — le pied de page
-    p = Planche("creme")
-    p.titre("En pied de page", 88, "encre", y=170)
-    p.y = 330
-    p.puces(["La durée de validité de l'offre",
-             "Les conditions de règlement",
-             "La case de signature, et la mention\n« Bon pour accord »"],
-            "corail", 44, "brun")
-    feuille(p, 330, 720, 420, 420, zones=("pied",))
-    p.signature("brun")
-    p.numero(5, 6, "taupe")
-    f.append(p.ecrire(d / "05.png"))
-
-    # S6 — la chute, en aplat violet
     p = Planche("encre")
-    t = "Le design d'un devis,\nce n'est pas de la\ndécoration."
-    st = "C'est ce qui le rend lisible — et signé."
-    p.centrer(p.h_titre(t, 80) + p.h_texte(st, 44, avant=56) + 44)
+    t = "grafycom.fr/blog"
+    st = "Le lien est en bio. Activez les notifications pour ne rien rater."
+    p.centrer(p.h_titre(t, 86) + p.h_texte(st, 42, avant=50) + 44)
     p.filet()
-    p.titre(t, 80, "blanc")
-    p.texte(st, 44, "creme", 600, avant=56)
+    p.titre(t, 86, "blanc")
+    p.texte(st, 42, "creme", 400, avant=50)
     p.signature("sable")
-    p.numero(6, 6, "sable")
-    f.append(p.ecrire(d / "06.png"))
+    p.numero(4, 4, "sable")
+    f.append(p.ecrire(d / "04.png"))
     return f
 
 
@@ -975,7 +887,7 @@ GABARITS = {
     "carrousel-enseigne": carrousel_enseigne,
     "quiz-idees-recues": quiz_idees_recues,
     "carrousel-droits": carrousel_droits,
-    "carrousel-devis": carrousel_devis,
+    "blog-rendez-vous": carrousel_blog_rdv,
     "plans-reel-cmjn": plans_reel_cmjn,
     "plans-reel-halloween": plans_reel_halloween,
     "stories": stories,

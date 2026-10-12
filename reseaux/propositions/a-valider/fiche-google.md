@@ -122,6 +122,28 @@ jour qu'elle.
 
 ---
 
+## 4 bis — Samedi 17 octobre, 10 h 30 · Carrousel · Annonce du rendez-vous
+
+> **Un nouvel article chaque vendredi matin**
+>
+> Le blog de Grafycom est en ligne. Un nouvel article y paraît chaque
+> vendredi matin, en accès libre et sans inscription.
+>
+> Les sujets traités : la réglementation des enseignes et des vitrines, les
+> règles d'impression — couleurs, matières, préparation des fichiers —, la
+> propriété des créations et des fichiers sources, et les préparatifs de
+> saison abordés assez tôt pour être utiles.
+>
+> Le premier article explique comment obtenir l'autorisation préalable
+> d'une enseigne de commerce, étape par étape, avec le formulaire en
+> vigueur en 2026.
+>
+> À lire sur grafycom.fr/blog.
+
+**Bouton :** « En savoir plus » → `https://grafycom.fr/blog/`
+
+---
+
 ## 5 — Lundi 19 octobre, 12 h 30 · Carrousel · Typographie
 
 > **Choisir la police de son entreprise : trois questions avant de décider**
@@ -150,28 +172,29 @@ jour qu'elle.
 
 ---
 
-## 6 — Mardi 20 octobre, 8 h 00 · Carrousel · Mentions obligatoires
+## 6 — Mardi 20 octobre, 8 h 00 · Carrousel · Droits et propriété
 
-> **Le devis : le document commercial qu'on néglige le plus**
+> **Qui possède votre logo ?**
 >
-> C'est souvent le premier document qu'un prospect lit en entier. Et c'est
-> celui qu'on soigne le moins.
+> La réponse surprend la plupart des chefs d'entreprise : en droit
+> français, payer une création ne transfère pas les droits d'auteur.
 >
-> Un devis construit dans un tableur, sans hiérarchie visuelle, où le
-> montant total se cherche, envoie un signal avant même d'être lu. Un devis
-> clair se parcourt en trente secondes : on identifie immédiatement qui
-> émet l'offre, ce qu'elle couvre, combien de temps elle reste valable et
-> comment régler.
+> Un logo est une œuvre de l'esprit. Son auteur en détient les droits dès
+> la création, et ces droits ne changent de main que par un écrit qui le
+> prévoit. Une facture ne suffit pas, et une ligne « création de logo » non
+> plus.
 >
-> Au-delà de la mise en page, un devis doit porter les informations qui
-> l'établissent comme document sérieux : identité et forme juridique de
-> l'entreprise, numéro d'identification, durée de validité, conditions de
-> règlement.
+> Une cession valable précise quels droits sont cédés, pour quels supports,
+> sur quel territoire et pour combien de temps. Les droits patrimoniaux se
+> cèdent — exploiter, reproduire, adapter. Le droit moral, lui, reste à
+> l'auteur à vie.
 >
-> Une papeterie cohérente — devis, facture, papier à en-tête — fait partie
-> de l'identité visuelle au même titre que le logo.
+> Cela ne pose aucun problème pendant des années, puis en pose un le jour
+> où l'entreprise se vend, où la marque se dépose, ou simplement où l'on
+> change de prestataire.
 >
-> Grafycom conçoit ces documents pour les entreprises du département.
+> Chez Grafycom, les fichiers sources et les droits d'exploitation sont
+> transmis à la livraison, par écrit.
 
 **Bouton :** « Nous contacter »
 

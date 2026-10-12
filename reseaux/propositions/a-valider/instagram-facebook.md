@@ -311,6 +311,86 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
 
 # SEMAINE 2 — du 19 au 25 octobre
 
+## 4 bis — Samedi 17 octobre, 10 h 30 · Carrousel · Annonce du rendez-vous
+
+> **Ajoutée le 12 octobre, à ta demande :** « le sujet qui dit que je
+> publie un article blog par semaine peut être aussi traité pour prévenir
+> mes followers ». C'était un manque réel — les stories relaient chaque
+> article à sa sortie, mais rien ne disait aux abonnés qu'il y en a un
+> **chaque semaine**.
+>
+> Elle est numérotée **4 bis** et non 5, pour qu'aucun des 24 numéros
+> existants ne bouge : tu valides sur les mêmes repères qu'avant. Elle se
+> place au lendemain du premier article, dans le créneau samedi 10 h 30
+> déjà prévu au calendrier — ainsi elle annonce un rendez-vous qui a déjà
+> commencé, ce qui est toujours plus crédible qu'une promesse.
+>
+> **À épingler en haut du profil**, et à mettre en story à la une
+> (couverture crème, titre « Le blog »).
+
+### Direction visuelle — 4 slides
+
+- **S1.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, filet dégradé :
+  « Un nouvel article chaque vendredi matin. » Dessous, en plus petit :
+  « Sur grafycom.fr/blog. Gratuit, sans inscription. »
+- **S2.** Fond crème. « Ce qu'on y traite », et quatre puces corail : la
+  réglementation des enseignes et des vitrines · l'impression, couleurs,
+  matières, fichiers · les droits, la propriété, les fichiers sources ·
+  les coups de main saisonniers, en avance. En pied : « Des sujets
+  vérifiés, pas des avis. »
+- **S3.** Fond blanc. « Les quatre prochains », avec les dates et les
+  titres réels des 16, 23, 29 et 30 octobre.
+- **S4.** Fond encre `#2f2723`, texte blanc, filet dégradé :
+  « grafycom.fr/blog ». Dessous : « Le lien est en bio. Activez les
+  notifications pour ne rien rater. »
+
+### Accroche
+**« Un nouvel article chaque vendredi matin. »**
+
+### Légende
+
+> Depuis hier, il y a un blog sur grafycom.fr. Et il y aura un nouvel
+> article **chaque vendredi matin**.
+>
+> Pas de newsletter, pas d'inscription, pas de formulaire : on ouvre, on
+> lit, on repart. C'est volontaire.
+>
+> Ce qu'on y traite : la réglementation des enseignes et des vitrines —
+> celle qui coûte cher quand on l'apprend après coup —, l'impression et
+> ses pièges, les droits et la propriété de ce qu'on vous livre, et les
+> sujets de saison assez tôt pour qu'ils servent encore.
+>
+> Ce qu'on n'y traite pas : l'administratif de votre entreprise. Ce n'est
+> pas mon métier, et vous avez un comptable pour ça.
+>
+> Le premier est en ligne depuis hier : comment obtenir l'autorisation
+> d'une enseigne de commerce, étape par étape, avec le bon formulaire —
+> celui de 2026, pas celui qui traîne encore sur la moitié des sites.
+>
+> **Le lien est en bio.** Et si un sujet vous manque, dites-le en
+> commentaire : la liste des prochains articles se construit comme ça.
+
+### Texte alternatif
+Carrousel de quatre visuels annonçant le rendez-vous hebdomadaire du blog
+Grafycom. Il indique qu'un nouvel article paraît chaque vendredi matin sur
+grafycom.fr, énumère les quatre thèmes traités — réglementation,
+impression, droits, sujets de saison — et liste les titres et les dates
+des quatre prochains articles.
+
+### Hashtags — jeu A + 2 locaux
+`#blog #identitevisuelle #designgraphique #enseigne #signaletique #impression #graphismeFrance #conseilsdeco #graphistePerpignan #CommerceLocal66`
+
+### À fournir par Sandra
+- Rien. Les 4 planches sont dessinées, dans
+  `reseaux/visuels/2026-10-17-blog-rdv/`.
+- ⚠️ **Une seule vérification, à faire le jour même :** que le premier
+  article soit bien en ligne. Annoncer un rendez-vous hebdomadaire devant
+  un blog vide est le seul vrai risque de cette publication.
+- La slide 3 cite quatre titres datés. Si l'un d'eux change ou glisse, me
+  le dire : la planche se redessine en une minute.
+
+---
+
 ## 5 — Lundi 19 octobre, 12 h 30 · Carrousel · Typographie
 
 ### Direction visuelle — 6 slides
@@ -378,80 +458,84 @@ lecture, la tenue en petit corps, et les droits d'utilisation commerciale.
 
 ---
 
-## 6 — Mardi 20 octobre, 8 h 00 · Carrousel · Mentions obligatoires
+## 6 — Mardi 20 octobre, 8 h 00 · Carrousel · Droits et propriété
 
-> ⚠️ **À vérifier avant publication.** Les mentions ci-dessous sont celles
-> communément admises pour un devis et une facture. Je n'ai pas vérifié
-> chaque point à la source dans ce cycle : **faire relire la liste sur
-> service-public.fr avant de publier**, ou retirer les slides 4 et 5 qui
-> sont les plus précises.
->
-> J'ai volontairement écarté la mention « Ne pas jeter sur la voie
-> publique » de ce cycle. En vérifiant, je n'ai trouvé aucun texte qui la
-> rende obligatoire — seulement des blogs d'imprimeurs qui l'affirment.
-> Ce qu'impose l'article L541-10-1 du code de l'environnement, c'est une
-> signalétique de tri, ce qui n'est pas la même chose. **Le sujet fera un
-> excellent post** — « la mention que tout le monde croit obligatoire » —
-> mais seulement après vérification sérieuse. Je le garde pour le cycle
-> suivant.
+> **Sujet remplacé le 12 octobre.** Cette case portait « les mentions
+> obligatoires d'un devis ». Laurent : « ne pas faire d'article sur les
+> devis, je ne m'occupe pas de l'administratif de mes clients. » Juste :
+> c'est le métier d'un comptable, pas d'une graphiste, et le positionnement
+> comptait plus que la case. Le carrousel sur la propriété d'un logo, déjà
+> dessiné, prend la place. Il reste dans le pilier réglementaire — mais sur
+> le terrain de Sandra : la création, pas la paperasse du client.
 
 ### Direction visuelle — 6 slides
 
-- **S1.** Fond `#f7f1ef`. Un devis stylisé, avec une loupe corail sur son
-  pied de page. « Ce qui doit figurer sur votre devis. »
-- **S2.** « Un devis mal renseigné, ce n'est pas qu'un détail
-  administratif. C'est une crédibilité en moins au moment de la signature. »
-  Fond `#2f7fc4`, texte blanc.
-- **S3.** Le squelette d'un devis en fil de fer, avec les zones surlignées
-  en violet : en-tête, identité, corps, pied.
-- **S4.** « Dans l'en-tête » : dénomination, forme juridique, adresse,
-  SIREN, numéro de TVA le cas échéant.
-- **S5.** « En pied » : durée de validité, conditions de règlement, et la
-  case de signature avec « Bon pour accord ».
-- **S6.** Fond violet. « Le design d'un devis, ce n'est pas de la
-  décoration. C'est ce qui le rend lisible — et signé. »
+- **S1.** Fond `#f7f1ef`. « Qui possède votre logo ? » en très gros, avec
+  en dessous : « La réponse surprend la plupart des chefs d'entreprise. »
+  Signature `@grafycom.graphiste` en pied.
+- **S2.** Fond dégradé chaud, filet dégradé au-dessus du titre, texte
+  encre : « Vous l'avez payé. Vous ne le possédez pas forcément. » Puis :
+  « Payer une création ne transfère pas les droits d'auteur. Le transfert
+  se fait par écrit, et seulement par écrit. »
+- **S3.** Fond blanc. « Ce qui se cède, et ce qui ne se cède pas. » Les
+  droits patrimoniaux en encre, le droit moral en corail — exploiter,
+  reproduire, adapter se cèdent ; le droit moral reste à l'auteur, à vie.
+- **S4.** Fond crème. « Une cession se précise », et trois pastilles
+  violettes numérotées : pour quels supports · sur quel territoire · pour
+  combien de temps.
+- **S5.** Fond blanc. « Pourquoi ça compte un jour » : le jour où vous
+  vendez l'entreprise, où vous déposez votre marque, où vous changez de
+  prestataire.
+- **S6.** Fond encre `#2f2723`, texte blanc, filet dégradé : « Demandez
+  votre contrat de cession. S'il n'existe pas, c'est le moment de le
+  faire. »
 
 ### Accroche
-**« Ce qui doit figurer sur votre devis. »**
+**« Qui possède votre logo ? »**
 
 ### Légende
 
-> Un devis, c'est un document commercial. Et c'est souvent le premier que
-> votre client lit en entier.
+> Un commerçant me contacte. Il veut décliner son logo sur un véhicule et
+> une enseigne. Le logo a été créé il y a quatre ans par quelqu'un qui
+> n'exerce plus. Il a la facture, il a un fichier JPEG, et c'est tout.
 >
-> On soigne son logo, sa carte, sa devanture — et on envoie un devis fait
-> dans un tableur, sans hiérarchie, où le prix total se cherche.
+> Il croit que le logo lui appartient. Il l'a payé.
 >
-> Pourtant c'est le document qui décide. Il doit porter votre identité, être
-> lisible d'un coup d'œil, et contenir les informations qui font de lui un
-> document sérieux : qui vous êtes, sous quelle forme juridique, sous quel
-> numéro, pour combien de temps l'offre tient, et comment on vous règle.
+> En droit français, **payer une création ne transfère pas les droits
+> d'auteur**. Un logo est une œuvre de l'esprit : son auteur en détient les
+> droits dès la création, et ces droits ne changent de main que par un
+> écrit qui le prévoit.
 >
-> Ce n'est pas de la décoration. Un devis bien construit se lit en trente
-> secondes, et on sait quoi en faire. Un devis confus, on le met de côté
-> « pour y revenir ».
+> Une cession valable dit **quels** droits sont cédés, **pour quoi faire**,
+> **où** et **pendant combien de temps**. Une ligne « création de logo »
+> ne remplit aucune de ces quatre conditions.
 >
-> Et une papeterie cohérente — devis, facture, en-tête, tampon — dit quelque
-> chose que le discours commercial ne dira jamais : que la maison est tenue.
+> Et le droit moral, lui, ne se cède jamais. Il reste à l'auteur, à vie.
 >
-> **Votre devis actuel, vous l'avez fait sur quoi ?** Tableur, logiciel,
-> modèle ? Dites-le en commentaire, sans honte, on est entre nous. 😊
+> Ça ne pose aucun problème pendant des années. Puis arrive le jour où
+> vous vendez l'entreprise, où vous déposez votre marque, ou simplement où
+> vous changez de prestataire — et là, ça en pose un.
+>
+> **Vous avez un contrat de cession pour votre logo ?** Si vous ne savez
+> pas, c'est déjà une réponse. Dites-le en commentaire, on en parle.
 
 ### Texte alternatif
-Carrousel de six visuels sur la construction d'un devis professionnel. Le
-squelette d'un devis apparaît en fil de fer avec ses zones surlignées :
-en-tête contenant l'identité de l'entreprise, corps détaillant les
-prestations, et pied de page portant la durée de validité, les conditions
-de règlement et la case de signature.
+Carrousel de six visuels sur la propriété d'un logo. Il explique que le
+paiement d'une création ne transfère pas les droits d'auteur, distingue
+les droits patrimoniaux — cessibles — du droit moral, qui reste à l'auteur
+à vie, et liste les trois précisions qu'une cession doit porter : les
+supports, le territoire et la durée.
 
 ### Hashtags — jeu B + 2 locaux
-`#printdesign #identitevisuelle #papeterie #designgraphique #charteGraphique #graphismeFrance #entrepreneur #devis #graphistePerpignan #CommerceLocal66`
+`#identitevisuelle #designgraphique #charteGraphique #logo #droitdauteur #propriete #graphismeFrance #entrepreneur #graphistePerpignan #CommerceLocal66`
 
 ### À fournir par Sandra
-- Les 6 slides.
-- ⚠️ **Faire relire les slides 4 et 5** sur service-public.fr, ou par un
-  comptable. Ce sont les seules affirmations précises du carrousel ; la
-  légende, elle, reste sur le terrain du conseil et ne risque rien.
+- Rien. Les 6 planches sont dessinées, dans
+  `reseaux/visuels/2026-10-20-droits/`.
+- 🔎 **Partie vérifiée** : l'absence de transfert automatique des droits
+  par le paiement, l'exigence d'un écrit, l'incessibilité du droit moral,
+  et les mentions qu'une cession doit porter. L'article du 30 octobre
+  développe le même sujet et cite ses sources.
 
 ---
 
