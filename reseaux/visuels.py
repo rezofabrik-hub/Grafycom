@@ -831,6 +831,49 @@ def plans_reel_halloween(dossier=None):
     return f
 
 
+MOIS_COURTS = ["janv", "févr", "mars", "avr", "mai", "juin", "juil",
+               "août", "sept", "oct", "nov", "déc"]
+
+
+def _quatre_prochains_articles(combien=4):
+    """Les titres et dates lus dans reseaux/blog/, pas recopies.
+
+    Cette planche annonce des articles dates. Recopiee a la main, elle
+    devient fausse des que le calendrier se decale — et un decalage de
+    quelques jours etait justement demande le 12 octobre. Elle lit donc
+    l'en-tete des fichiers, qui est la source.
+    """
+    import datetime
+    dossier = RACINE / "blog"
+    arts = []
+    for f in sorted(dossier.glob("*.md")):
+        tete = {}
+        for ligne in f.read_text(encoding="utf-8").split("\n")[1:14]:
+            if ligne.strip() == "---":
+                break
+            if ":" in ligne:
+                k, _, v = ligne.partition(":")
+                tete[k.strip()] = v.strip().strip('"')
+        if "date" not in tete or "titre" not in tete:
+            continue
+        try:
+            d = datetime.date.fromisoformat(tete["date"])
+        except ValueError:
+            continue
+        # titre_seo est la forme courte, ecrite pour tenir : elle dit le
+        # sujet en une ligne la ou le titre complet en fait trois.
+        # Couper le titre long au premier deux-points perdait justement la
+        # moitie informative — « Enseigne de commerce » sans
+        # « l'autorisation prealable ».
+        court = tete.get("titre_seo") or tete["titre"]
+        if len(court) > 52:
+            court = court[:49].rstrip(" ,:") + "…"
+        arts.append((d, "%d %s — %s" % (d.day, MOIS_COURTS[d.month - 1],
+                                            court)))
+    arts.sort()
+    return [t for _, t in arts[:combien]]
+
+
 def carrousel_blog_rdv(dossier=None):
     """Publication n° 4 bis — annoncer le rendez-vous du blog.
 
@@ -868,11 +911,8 @@ def carrousel_blog_rdv(dossier=None):
     p = Planche("blanc")
     p.titre("Les quatre prochains", 76, "encre", y=180)
     p.y = 380
-    p.puces(["16 oct — Enseigne de commerce :\nl'autorisation préalable",
-             "23 oct — Pourquoi vos couleurs imprimées\nne ressemblent jamais à votre écran",
-             "29 oct — Habiller sa vitrine : dépoli,\nmicroperforé ou lettres découpées",
-             "30 oct — Qui possède votre logo ?"],
-            "violet", 36, "brun", interligne=1.55)
+    p.puces(_quatre_prochains_articles(), "violet", 36, "brun",
+            interligne=1.55)
     p.signature("brun")
     p.numero(3, 4, "taupe")
     f.append(p.ecrire(d / "03.png"))
