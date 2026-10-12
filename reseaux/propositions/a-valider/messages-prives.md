@@ -1,4 +1,4 @@
-# Messages privés — du 26 octobre au 21 novembre 2026
+# Messages privés — du 2 novembre au 28 novembre 2026
 
 Cinquième canal du dispositif. Il ne se programme pas : ce sont des
 réponses, écrites d'avance pour ne pas avoir à les improviser un soir de

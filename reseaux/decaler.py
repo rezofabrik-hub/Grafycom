@@ -95,8 +95,9 @@ _JOURS_RE = "|".join(JOURS)
 
 MOTIF = re.compile(
     r"(?P<iso>\b20\d\d-\d\d-\d\d\b)"
+    r"|(?P<periode>\b\d{1,2}(?:er)? (?:%s) au \d{1,2}(?:er)? (?:%s)\b)"
     r"|(?P<intervalle>\b\d{1,2}(?:er)? au \d{1,2}(?:er)? (?:%s)\b)" % (
-        _MOIS_RE,) + r""
+        _MOIS_RE, _MOIS_RE, _MOIS_RE) + r""
     r"|(?P<jourlong>\b(?:%s) \d{1,2}(?:er)? (?:%s)\b)"
     r"|(?P<long>\b\d{1,2}(?:er)? (?:%s)\b)"
     r"|(?P<court>\b\d{1,2} (?:%s)\.?(?![a-zé]))"
@@ -135,6 +136,33 @@ def _decale_intervalle(brut, jours):
     # les bornes ont change de mois : on nomme les deux
     return "%s %s au %s %s" % (g1, MOIS[n1.month - 1], g2,
                                MOIS[n2.month - 1])
+
+
+def _decale_periode(brut, jours):
+    """« du 26 octobre au 1er novembre » : deux dates completes.
+
+    Les bornes d'une periode sont des reperes, pas des evenements : elles
+    se decalent toutes les deux, meme si l'une tombe un jour ancre. Sans
+    ce traitement, l'ancrage de la Toussaint figeait la borne haute et
+    produisait « du 2 novembre au 1er novembre ».
+    """
+    m = re.fullmatch(r"(\d{1,2})(?:er)? ([a-zé]+) au (\d{1,2})(?:er)? ([a-zé]+)",
+                     brut.strip(), re.IGNORECASE)
+    if not m:
+        return None
+    q1, m1, q2, m2 = m.group(1), m.group(2).lower(), m.group(3), m.group(4).lower()
+    if m1 not in MOIS or m2 not in MOIS:
+        return None
+    try:
+        d1 = dt.date(ANNEE, MOIS.index(m1) + 1, int(q1))
+        d2 = dt.date(ANNEE, MOIS.index(m2) + 1, int(q2))
+    except ValueError:
+        return None
+    out = []
+    for d in (d1 + dt.timedelta(days=jours), d2 + dt.timedelta(days=jours)):
+        q = "1er" if d.day == 1 else str(d.day)
+        out.append("%s %s" % (q, MOIS[d.month - 1]))
+    return "%s au %s" % tuple(out)
 
 
 def _lit(txt):
@@ -188,7 +216,13 @@ def _ecrit(d, forme, original):
 def decale(texte, jours, journal, fichier):
     def remplace(m):
         brut = m.group(0)
-        if m.lastgroup == "intervalle" or m.groupdict().get("intervalle"):
+        if m.groupdict().get("periode"):
+            neuf = _decale_periode(brut, jours)
+            if neuf and neuf != brut:
+                journal["change"].append((fichier, brut, neuf))
+                return neuf
+            return brut
+        if m.groupdict().get("intervalle"):
             neuf = _decale_intervalle(brut, jours)
             if neuf and neuf != brut:
                 journal["change"].append((fichier, brut, neuf))
@@ -286,6 +320,30 @@ def main():
     print("\nDATES ANCRÉES, LAISSÉES EN PLACE")
     for fich, brut, pourquoi in sorted(journal["ancrees"]):
         print("  %-28s %-22s %s" % (fich, brut, pourquoi))
+
+    # Un jour peut etre ancre ET silencieux : l'Armistice n'est pas
+    # seulement une date qui ne bouge pas, c'est un jour ou rien ne doit
+    # paraitre. Le decalage du 12 octobre y avait pose une story de
+    # coulisses sans que rien ne le signale.
+    print("\nCRÉNEAUX TOMBANT UN JOUR SILENCIEUX")
+    silencieux = {(11, 11): "l'Armistice", (11, 1): "la Toussaint"}
+    trouve = False
+    for f_ in CIBLES:
+        txt = io.open(f_, encoding="utf-8").read()
+        for ligne in txt.split("\n"):
+            if not ligne.lstrip().startswith("|"):
+                continue
+            for m in MOTIF.finditer(ligne):
+                d, _ = _lit(m.group(0))
+                if d and (d.month, d.day) in silencieux:
+                    if "rien" in ligne or "aucune" in ligne:
+                        continue
+                    trouve = True
+                    print("  ⚠️ %-22s %s" % (f_.name, ligne.strip()[:86]))
+                    print("     %s — rien ne doit paraître ce jour-là."
+                          % silencieux[(d.month, d.day)])
+    if not trouve:
+        print("  Aucun. Les jours silencieux restent vides.")
 
     print("\nDÉCISIONS DÉJÀ PRISES")
     print("  S3-F, story Halloween — reste au samedi 31 octobre, quel que\n"

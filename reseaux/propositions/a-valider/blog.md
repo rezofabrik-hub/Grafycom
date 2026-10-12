@@ -11,7 +11,7 @@ Il y a **deux verrous indépendants**, et c'est voulu.
 1. L'en-tête doit porter **`statut: validé`**, le mot en toutes lettres.
    « rédigé », « à relire » ou « prêt » ne suffisent pas : ils décrivent
    l'état du texte, pas ton accord.
-2. **La date de l'en-tête doit être arrivée.** Un article du 20 novembre ne
+2. **La date de l'en-tête doit être arrivée.** Un article du 27 novembre ne
    sort pas le 13, même validé.
 
 Tu peux donc **tout valider d'un coup** sans que tout sorte le même jour.
@@ -21,13 +21,13 @@ Chaque article paraîtra à sa date, tout seul.
 
 | Date | Titre | Mots | Statut |
 |---|---|---|---|
-| vendredi 16 octobre | Enseigne de commerce : comment obtenir l'autorisation préalabl | 801 | ✅ validé |
-| vendredi 23 octobre | Pourquoi vos couleurs imprimées ne ressemblent jamais à votre  | 647 | ✅ validé |
-| jeudi 29 octobre | Habiller sa vitrine : dépoli, microperforé ou lettres découpée | 904 | ⚠️ à relire |
-| vendredi 30 octobre | Qui possède votre logo ? | 687 | ✅ validé |
-| vendredi 6 novembre | Cartes de vœux et emballages de fête : le rétroplanning à teni | 897 | ⚠️ à relire |
-| vendredi 13 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le trot | 854 | ⚠️ à relire |
-| vendredi 20 novembre | Faut-il refaire son logo pour la nouvelle année ? Trois questi | 792 | ⚠️ à relire |
+| vendredi 23 octobre | Enseigne de commerce : comment obtenir l'autorisation préalabl | 801 | ✅ validé |
+| vendredi 30 octobre | Pourquoi vos couleurs imprimées ne ressemblent jamais à votre  | 647 | ✅ validé |
+| jeudi 5 novembre | Habiller sa vitrine : dépoli, microperforé ou lettres découpée | 904 | ⚠️ à relire |
+| vendredi 6 novembre | Qui possède votre logo ? | 687 | ✅ validé |
+| vendredi 13 novembre | Cartes de vœux et emballages de fête : le rétroplanning à teni | 897 | ⚠️ à relire |
+| vendredi 20 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le trot | 854 | ⚠️ à relire |
+| vendredi 27 novembre | Faut-il refaire son logo pour la nouvelle année ? Trois questi | 792 | ⚠️ à relire |
 
 **4 articles sur 7 attendent ta validation.** Pour en
 valider un : ouvrir son fichier dans `reseaux/blog/`, remplacer la ligne

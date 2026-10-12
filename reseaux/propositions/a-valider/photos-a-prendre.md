@@ -1,4 +1,4 @@
-# Photos à prendre — du 26 octobre au 21 novembre 2026
+# Photos à prendre — du 2 novembre au 28 novembre 2026
 
 Ce que `visuels.py` ne sait pas faire, et ne doit pas faire : les
 photographies. Une devanture, une matière, un plan de travail se
@@ -120,36 +120,36 @@ Relevé publication par publication, à partir des rubriques « à fournir
 par Sandra ». Les publications absentes de cette liste n'ont besoin
 d'aucune image réelle : `visuels.py` les dessine entièrement.
 
-### n° 10 · Mardi 27 octobre, 8 h 00 · Carrousel
+### n° 10 · Mardi 3 novembre, 8 h 00 · Carrousel
 
 - Une photo de rue commerçante à la tombée du jour, enseignes allumées.
 
-### n° 12 · Vendredi 30 octobre, 18 h 00 · REEL 23 s
+### n° 12 · Vendredi 6 novembre, 18 h 00 · REEL 23 s
 
 - Quatre plans de cinq secondes, filmés au téléphone, suffisent** : une
 
-### n° 14 · Mardi 3 novembre, 8 h 00 · Carrousel
+### n° 14 · Mardi 10 novembre, 8 h 00 · Carrousel
 
 - La photo de devanture de la S1 : **recomposée ou floutée**. Ne montrez pas
 
-### n° 15 · Jeudi 5 novembre, 19 h 00 · Quiz 4 choix
+### n° 15 · Jeudi 12 novembre, 19 h 00 · Quiz 4 choix
 
 - Quatre macrophotographies, prises au téléphone en mode portrait sur un
 - La photo de l'alu composite doit montrer **la tranche** : l'âme noire entre
 
-### n° 16 · Samedi 7 novembre, 10 h 30 · REEL 25 s
+### n° 16 · Samedi 14 novembre, 10 h 30 · REEL 25 s
 
 - Les cartes de vœux filmées doivent être **des modèles de démonstration ou
 
-### n° 18 · Mardi 10 novembre, 8 h 00 · Carrousel
+### n° 18 · Mardi 17 novembre, 8 h 00 · Carrousel
 
 - Un sachet ou une boîte cadeau neutre à photographier pour la S1. Pas de
 
-### n° 21 · Lundi 16 novembre, 18 h 30 · Carrousel
+### n° 21 · Lundi 23 novembre, 18 h 30 · Carrousel
 
 - Une photo de vitrine de nuit, prise depuis le trottoir d'en face.
 
-### n° 22 · Mardi 17 novembre, 8 h 00 · Carrousel
+### n° 22 · Mardi 24 novembre, 8 h 00 · Carrousel
 
 - Une photo de vitrine avec adhésifs de fêtes. Si un commerce est
 

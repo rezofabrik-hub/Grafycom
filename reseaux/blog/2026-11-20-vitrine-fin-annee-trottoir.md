@@ -3,7 +3,7 @@ titre: "Vitrine de fin d'année : ce qui se lit vraiment depuis le trottoir d'en
 slug: vitrine-fin-annee-trottoir
 titre_seo: "Vitrine de Noël : ce qui se lit du trottoir"
 liens_retour: enseigne-perpignan.html, prestations.html, graphiste-collioure.html
-date: 2026-11-13
+date: 2026-11-20
 meta: "Hauteur des yeux, verre libre, éclairage, fond : les quatre points qui décident si votre vitrine de fin d'année se lit depuis la rue."
 statut: à relire
 ---

@@ -1,6 +1,6 @@
 # Fiche Google Établissement — les 24 textes à valider
 
-Du 12 octobre au 21 novembre. Un texte par publication, à publier le même
+Du 19 octobre au 28 novembre. Un texte par publication, à publier le même
 jour qu'elle.
 
 > ✅ **La fiche existe et appartient au compte de Sandra**, Laurent y a
@@ -13,7 +13,7 @@ jour qu'elle.
 
 ---
 
-## 1 — Lundi 12 octobre, 12 h 30 · Carrousel · Pédagogie couleur
+## 1 — Lundi 19 octobre, 12 h 30 · Carrousel · Pédagogie couleur
 
 > **Choisir les couleurs de son entreprise : trois réflexes à connaître**
 >
@@ -41,7 +41,7 @@ jour qu'elle.
 
 ---
 
-## 2 — Mardi 13 octobre, 8 h 00 · Carrousel · Réglementation enseigne
+## 2 — Mardi 20 octobre, 8 h 00 · Carrousel · Réglementation enseigne
 
 > **Enseigne de commerce : l'autorisation préalable, mode d'emploi**
 >
@@ -70,7 +70,7 @@ jour qu'elle.
 
 ---
 
-## 3 — Jeudi 15 octobre, 12 h 30 · Dilemme A/B · Interactivité
+## 3 — Jeudi 22 octobre, 12 h 30 · Dilemme A/B · Interactivité
 
 > **Enseigne : le test des vingt mètres**
 >
@@ -95,7 +95,7 @@ jour qu'elle.
 
 ---
 
-## 4 — Vendredi 16 octobre, 18 h 00 · REEL 24 s · Matières & impression
+## 4 — Vendredi 23 octobre, 18 h 00 · REEL 24 s · Matières & impression
 
 > **RVB, CMJN : pourquoi l'impression ne rend jamais comme l'écran**
 >
@@ -122,7 +122,7 @@ jour qu'elle.
 
 ---
 
-## 4 bis — Samedi 17 octobre, 10 h 30 · Carrousel · Annonce du rendez-vous
+## 4 bis — Samedi 24 octobre, 10 h 30 · Carrousel · Annonce du rendez-vous
 
 > **Un nouvel article chaque vendredi matin**
 >
@@ -144,7 +144,7 @@ jour qu'elle.
 
 ---
 
-## 5 — Lundi 19 octobre, 12 h 30 · Carrousel · Typographie
+## 5 — Lundi 26 octobre, 12 h 30 · Carrousel · Typographie
 
 > **Choisir la police de son entreprise : trois questions avant de décider**
 >
@@ -172,7 +172,7 @@ jour qu'elle.
 
 ---
 
-## 6 — Mardi 20 octobre, 8 h 00 · Carrousel · Droits et propriété
+## 6 — Mardi 27 octobre, 8 h 00 · Carrousel · Droits et propriété
 
 > **Qui possède votre logo ?**
 >
@@ -200,7 +200,7 @@ jour qu'elle.
 
 ---
 
-## 7 — Jeudi 22 octobre, 19 h 00 · Quiz vrai/faux · Interactivité
+## 7 — Jeudi 29 octobre, 19 h 00 · Quiz vrai/faux · Interactivité
 
 > **Quatre idées reçues sur l'impression et les enseignes**
 >
@@ -227,7 +227,7 @@ jour qu'elle.
 
 ---
 
-## 8 — Vendredi 23 octobre, 10 h 30 · REEL 22 s · Halloween & couleurs
+## 8 — Vendredi 30 octobre, 10 h 30 · REEL 22 s · Halloween & couleurs
 
 > **Halloween : ce que l'orange et le noir disent de votre vitrine**
 >
@@ -253,7 +253,7 @@ jour qu'elle.
 
 ---
 
-## 9 — Lundi 26 octobre 2026, 12 h 30 · 182 mots
+## 9 — Lundi 2 novembre 2026, 12 h 30 · 182 mots
 
 > **Un logo réussi est un logo qui se décline**
 >
@@ -280,7 +280,7 @@ jour qu'elle.
 
 ---
 
-## 10 — Mardi 27 octobre 2026, 8 h 00 · 190 mots
+## 10 — Mardi 3 novembre 2026, 8 h 00 · 190 mots
 
 > **Enseigne de commerce : ce que l'arrivée de l'hiver change**
 >
@@ -312,7 +312,7 @@ jour qu'elle.
 
 ---
 
-## 11 — Jeudi 29 octobre 2026, 12 h 30 · 189 mots
+## 11 — Jeudi 5 novembre 2026, 12 h 30 · 189 mots
 
 > **Carte de restaurant : où placer les prix change la commande**
 >
@@ -340,7 +340,7 @@ jour qu'elle.
 
 ---
 
-## 12 — Vendredi 30 octobre 2026, 18 h 00 · 204 mots
+## 12 — Vendredi 6 novembre 2026, 18 h 00 · 204 mots
 
 > **Habiller sa vitrine : trois familles d'adhésifs, trois usages**
 >
@@ -368,11 +368,11 @@ jour qu'elle.
 >
 > Grafycom conçoit les habillages de vitrine des commerces du Roussillon.
 
-**Bouton :** « En savoir plus » → l'article du 29 octobre, `https://grafycom.fr/blog-habiller-sa-vitrine-66.html`
+**Bouton :** « En savoir plus » → l'article du 5 novembre, `https://grafycom.fr/blog-habiller-sa-vitrine-66.html`
 
 ---
 
-## 13 — Lundi 2 novembre 2026, 12 h 30 · 215 mots · **Solaire 66**
+## 13 — Lundi 9 novembre 2026, 12 h 30 · 215 mots · **Solaire 66**
 
 > 🔒 Accord client à obtenir. Ce texte ne nomme pas le client : il décrit
 > le métier et la démarche. Il reste publiable même si l'accord tarde,
@@ -406,7 +406,7 @@ jour qu'elle.
 
 **Bouton** : « En savoir plus » → <https://grafycom.fr/prestations.html#logo>
 
-## 14 — Mardi 3 novembre 2026, 8 h 00 · 193 mots
+## 14 — Mardi 10 novembre 2026, 8 h 00 · 193 mots
 
 > **Un slogan en langue étrangère sur vos supports : ce qu'il faut savoir**
 >
@@ -437,7 +437,7 @@ jour qu'elle.
 
 ---
 
-## 15 — Jeudi 5 novembre 2026, 19 h 00 · 189 mots
+## 15 — Jeudi 12 novembre 2026, 19 h 00 · 189 mots
 
 > **Signalétique : quatre supports, quatre usages à ne pas confondre**
 >
@@ -468,7 +468,7 @@ jour qu'elle.
 
 ---
 
-## 16 — Samedi 7 novembre 2026, 10 h 30 · 191 mots
+## 16 — Samedi 14 novembre 2026, 10 h 30 · 191 mots
 
 > **Supports de fin d'année : le calendrier commence maintenant**
 >
@@ -495,7 +495,7 @@ jour qu'elle.
 > Grafycom conçoit les supports de fin d'année des commerces et artisans des
 > Pyrénées-Orientales.
 
-**Bouton :** « En savoir plus » → l'article du 6 novembre, `https://grafycom.fr/blog-supports-fin-annee-66.html`
+**Bouton :** « En savoir plus » → l'article du 13 novembre, `https://grafycom.fr/blog-supports-fin-annee-66.html`
 
 ---
 
@@ -514,7 +514,7 @@ jour qu'elle.
 
 ---
 
-## 17 — Lundi 9 novembre, 12 h 30 — « Décider maintenant ses supports de fin d'année » (197 mots)
+## 17 — Lundi 16 novembre, 12 h 30 — « Décider maintenant ses supports de fin d'année » (197 mots)
 
 > **Supports de fin d'année : la décision se prend maintenant**
 >
@@ -546,7 +546,7 @@ jour qu'elle.
 
 ---
 
-## 18 — Mardi 10 novembre, 8 h 00 — « Emballage de fête et signalétique de tri » (211 mots)
+## 18 — Mardi 17 novembre, 8 h 00 — « Emballage de fête et signalétique de tri » (211 mots)
 
 > **Emballage de fête : prévoir la place des mentions dès le dessin**
 >
@@ -579,7 +579,7 @@ jour qu'elle.
 
 ---
 
-## 19 — Jeudi 12 novembre, 19 h 00 — « À quoi sert vraiment une carte de vœux » (189 mots)
+## 19 — Jeudi 19 novembre, 19 h 00 — « À quoi sert vraiment une carte de vœux » (189 mots)
 
 > **Carte de vœux d'entreprise : ce qui fait qu'elle est gardée**
 >
@@ -610,7 +610,7 @@ jour qu'elle.
 
 ---
 
-## 20 — Vendredi 13 novembre, 18 h 00 — « Grammage, gaufrage, dorure : ce qui se touche » (219 mots)
+## 20 — Vendredi 20 novembre, 18 h 00 — « Grammage, gaufrage, dorure : ce qui se touche » (219 mots)
 
 > **Papier, gaufrage, dorure : la partie du support qui ne se voit pas à l'écran**
 >
@@ -644,7 +644,7 @@ jour qu'elle.
 
 ---
 
-## 21 — Lundi 16 novembre, 18 h 30 — « Une vitrine de fin d'année qui se lit du trottoir » (217 mots)
+## 21 — Lundi 23 novembre, 18 h 30 — « Une vitrine de fin d'année qui se lit du trottoir » (217 mots)
 
 > **Vitrine de fin d'année : quatre points qui changent tout, vus du trottoir**
 >
@@ -673,11 +673,11 @@ jour qu'elle.
 > Grafycom conçoit la vitrophanie et la signalétique des commerces de
 > Perpignan et des Pyrénées-Orientales.
 
-**Bouton :** « En savoir plus » → l'article du 13 novembre sur `grafycom.fr/blog.html`
+**Bouton :** « En savoir plus » → l'article du 20 novembre sur `grafycom.fr/blog.html`
 
 ---
 
-## 22 — Mardi 17 novembre, 8 h 00 — « Décorer sa vitrine et rester dans les règles » (220 mots)
+## 22 — Mardi 24 novembre, 8 h 00 — « Décorer sa vitrine et rester dans les règles » (220 mots)
 
 > **Décor de vitrine : la différence entre une enseigne et une publicité**
 >
@@ -711,7 +711,7 @@ jour qu'elle.
 
 ---
 
-## 23 — Jeudi 19 novembre, 19 h 00 — « Quatre idées reçues sur les impressions de fin d'année » (201 mots)
+## 23 — Jeudi 26 novembre, 19 h 00 — « Quatre idées reçues sur les impressions de fin d'année » (201 mots)
 
 > **Quatre idées reçues sur les impressions de fin d'année**
 >
@@ -742,7 +742,7 @@ jour qu'elle.
 
 ---
 
-## 24 — Samedi 21 novembre, 10 h 30 — « Faut-il refaire son logo pour la nouvelle année » (204 mots)
+## 24 — Samedi 28 novembre, 10 h 30 — « Faut-il refaire son logo pour la nouvelle année » (204 mots)
 
 > **Refaire son logo en janvier : trois questions avant de décider**
 >

@@ -1,4 +1,4 @@
-# À valider — du 12 octobre au 21 novembre 2026
+# À valider — du 19 octobre au 28 novembre 2026
 
 Tout ce qui est écrit et pas encore publié, classé par canal.
 

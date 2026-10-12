@@ -1,4 +1,4 @@
-# Visuels à produire — du 26 octobre au 21 novembre 2026
+# Visuels à produire — du 2 novembre au 28 novembre 2026
 
 Ce que `reseaux/visuels.py` doit dessiner, et ce qui demande une vraie
 photo (voir `photos-a-prendre.md`).
@@ -15,13 +15,13 @@ photo (voir `photos-a-prendre.md`).
 > python3 reseaux/visuels.py --liste    # les gabarits existants
 > ```
 >
-> Les neuf gabarits actuels couvrent le cycle du 12 au 23 octobre. Ceux de
+> Les neuf gabarits actuels couvrent le cycle du 19 au 30 octobre. Ceux de
 > ce mois-ci restent à écrire : on ajoute une fonction par sujet, on ne
 > retourne pas à Canva.
 
 ---
 
-## Quinzaine 1 — du 26 octobre au 7 novembre
+## Quinzaine 1 — du 2 novembre au 14 novembre
 
 # RÉCAPITULATIF DE CE QU'IL FAUT PRODUIRE
 
@@ -39,7 +39,7 @@ photo (voir `photos-a-prendre.md`).
 
 ---
 
-## Quinzaine 2 — du 9 au 21 novembre
+## Quinzaine 2 — du 16 au 28 novembre
 
 # RÉCAPITULATIF DE CE QU'IL FAUT PRODUIRE
 
@@ -51,7 +51,7 @@ photo (voir `photos-a-prendre.md`).
 | Écrans de stories | 14 — détail dans `stories.md` |
 | Photos à prendre | 5 : un sachet cadeau neutre, une vitrine de nuit depuis le trottoir d'en face, une vitrine avec adhésifs de fêtes, un lettrage sur plexi devant deux fonds, des échantillons de papier |
 | Tournages | 2 × 5 plans de 5 s au téléphone |
-| Articles de blog | 2 — **déjà rédigés**, dans `reseaux/blog/`, en `statut: à relire` : `2026-11-13-vitrine-fin-annee-trottoir.md` et `2026-11-20-refaire-son-logo-nouvelle-annee.md` |
+| Articles de blog | 2 — **déjà rédigés**, dans `reseaux/blog/`, en `statut: à relire` : `2026-11-20-vitrine-fin-annee-trottoir.md` et `2026-11-27-refaire-son-logo-nouvelle-annee.md` |
 | Textes fiche Google | 8 — **déjà rédigés et publiables**, après vérification des réglages de la fiche |
 | Gabarits à ajouter dans `visuels.py` | 7 environ — 1 existe déjà (`quiz-idees-recues`), 1 se décline (`carrousel-enseigne`) |
 

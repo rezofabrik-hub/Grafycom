@@ -3,14 +3,14 @@ titre: "Cartes de vœux et emballages de fête : le rétroplanning à tenir"
 slug: supports-fin-annee-66
 titre_seo: "Supports de fin d'année : quand les commander"
 liens_retour: prestations.html, graphiste-restaurant-perpignan.html, realisations.html
-date: 2026-11-06
+date: 2026-11-13
 meta: "Cartes de vœux, bandeaux d'emballage, menus de fêtes : le calendrier réel à tenir en novembre pour être livré avant décembre, sans surcoût."
 statut: à relire
 ---
 
 # Cartes de vœux et emballages de fête : le rétroplanning à tenir
 
-Chaque année, la même conversation a lieu autour du 10 décembre. Un commerçant appelle, il voudrait des cartes de vœux, et il est déjà trop tard pour les avoir sur son comptoir avant Noël — ou alors au prix d'un tirage en express qui coûte le double.
+Chaque année, la même conversation a lieu autour du 17 décembre. Un commerçant appelle, il voudrait des cartes de vœux, et il est déjà trop tard pour les avoir sur son comptoir avant Noël — ou alors au prix d'un tirage en express qui coûte le double.
 
 Ce n'est pas un problème de prestataire, c'est un problème de calendrier. Un support imprimé passe par quatre étapes qui ne se compressent pas : la création, les corrections, le bon à tirer, la fabrication. Et en décembre, les imprimeurs tournent à plein régime : les délais qu'ils annoncent en octobre ne sont plus les mêmes.
 
