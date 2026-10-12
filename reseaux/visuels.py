@@ -82,12 +82,61 @@ def couper(texte: str, fonte, largeur: int) -> list[str]:
     return lignes
 
 
+# Le site n'a aucun aplat sature plein : ses fonds de page sont le creme,
+# le creme rose et ce degrade chaud. Les planches doivent s'y tenir, sinon
+# le feed et le site ne se ressemblent plus. Valeurs lues dans
+# assets/style.css, --degrade-chaud.
+FONDS_DEGRADE = {
+    "sable_chaud": (150.0, [(0.0, "#f7f1ef"), (0.55, "#f1e6e1"),
+                            (1.0, "#e9dcd5")]),
+}
+
+
+def _degrade_lineaire(large, haut, angle, arrets):
+    """Un degrade lineaire a la maniere de CSS, angle en degres.
+
+    Calcule en basse definition puis agrandi : un degrade est lisse par
+    nature, l'agrandissement ne laisse aucun artefact visible et evite
+    1,4 million d'iterations Python par planche.
+    """
+    import math
+    ech = max(1, min(large, haut) // 96)
+    w, h = max(2, large // ech), max(2, haut // ech)
+    a = math.radians(angle)
+    dx, dy = math.sin(a), -math.cos(a)
+    L = abs(w * math.sin(a)) + abs(h * math.cos(a))
+    cx, cy = w / 2.0, h / 2.0
+    arrets = sorted(arrets)
+    rvb = [(p, tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)))
+           for p, c in arrets]
+    im = Image.new("RGB", (w, h))
+    px = im.load()
+    for y in range(h):
+        for x in range(w):
+            t = ((x - cx) * dx + (y - cy) * dy) / L + 0.5
+            t = 0.0 if t < 0 else (1.0 if t > 1 else t)
+            j = 0
+            while j < len(rvb) - 2 and t > rvb[j + 1][0]:
+                j += 1
+            p0, c0 = rvb[j]
+            p1, c1 = rvb[j + 1]
+            k = 0.0 if p1 == p0 else (t - p0) / (p1 - p0)
+            k = 0.0 if k < 0 else (1.0 if k > 1 else k)
+            px[x, y] = (int(c0[0] + (c1[0] - c0[0]) * k),
+                        int(c0[1] + (c1[1] - c0[1]) * k),
+                        int(c0[2] + (c1[2] - c0[2]) * k))
+    return im.resize((large, haut), Image.BICUBIC)
+
+
 class Planche:
     """Une page de carrousel, ou un écran de story."""
 
     def __init__(self, fond="creme", large=LARGE, haut=HAUT):
         self.l, self.h = large, haut
-        self.im = Image.new("RGB", (large, haut), teinte(fond))
+        if fond in FONDS_DEGRADE:
+            self.im = _degrade_lineaire(large, haut, *FONDS_DEGRADE[fond])
+        else:
+            self.im = Image.new("RGB", (large, haut), teinte(fond))
         self.d = ImageDraw.Draw(self.im)
         self.y = MARGE
 
@@ -115,6 +164,25 @@ class Planche:
         for ligne in couper(contenu, f, self.l - 2 * MARGE):
             self.d.text((MARGE, self.y), ligne, font=f, fill=teinte(couleur))
             self.y += int(taille * interligne)
+        return self
+
+    def filet(self, largeur=180, epaisseur=10, y=None, apres=34):
+        """Le filet degrade du site — la regle .trait, a l'echelle.
+
+        C'est l'accent de la charte : le site ne pose jamais un aplat
+        bleu ou violet sur toute une page, il pose ce filet de 4 px sur
+        un fond creme. Les planches font pareil.
+        """
+        if y is not None:
+            self.y = y
+        barre = _degrade_lineaire(largeur, epaisseur, 90.0,
+                                  [(p, h) for p, h in DEGRADE])
+        masque = Image.new("L", (largeur, epaisseur), 0)
+        ImageDraw.Draw(masque).rounded_rectangle(
+            [0, 0, largeur - 1, epaisseur - 1], radius=epaisseur // 2,
+            fill=255)
+        self.im.paste(barre, (MARGE, self.y), masque)
+        self.y += epaisseur + apres
         return self
 
     def signature(self, couleur="blanc"):
@@ -383,9 +451,10 @@ def carrousel_couleurs(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-12-couleurs"))
     faits = []
 
-    p = Planche("creme").bandeau_bas("violet", 0.30)
-    p.titre("Votre couleur dit déjà ce que vous vendez.", 104, y=230)
-    p.signature("blanc")
+    p = Planche("sable_chaud")
+    p.filet(y=230)
+    p.titre("Votre couleur dit déjà ce que vous vendez.", 104)
+    p.signature("brun")
     faits.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")
@@ -400,12 +469,13 @@ def carrousel_couleurs(dossier=None):
     p.titre("Ce ne sont pas des règles.\nCe sont des réflexes.", 66, y=820)
     faits.append(p.ecrire(d / "03.png"))
 
-    p = Planche("violet")
+    p = Planche("sable_chaud")
     t = "Les suivre vous rend crédible.\nLes casser vous rend mémorable."
     st = "Le problème, c'est de le faire sans le savoir."
-    p.centrer(p.h_titre(t, 78) + p.h_texte(st, 40, avant=60))
-    p.titre(t, 78, "blanc")
-    p.texte(st, 40, "blanc", 400, avant=60)
+    p.centrer(p.h_titre(t, 78) + p.h_texte(st, 40, avant=60) + 44)
+    p.filet()
+    p.titre(t, 78, "encre")
+    p.texte(st, 40, "brun", 400, avant=60)
     faits.append(p.ecrire(d / "04.png"))
 
     p = Planche("creme")
@@ -496,9 +566,10 @@ def carrousel_typographie(dossier=None):
     p.devanture(MARGE + 480, 700, 400, 380, "MAISON", 800, 48)
     f.append(p.ecrire(d / "02.png"))
 
-    p = Planche("violet")
+    p = Planche("sable_chaud")
     t = "Trois questions\navant de choisir\nune police."
-    p.centrer(p.h_titre(t, 86)); p.titre(t, 86, "blanc")
+    p.centrer(p.h_titre(t, 86) + 44)
+    p.filet(); p.titre(t, 86, "encre")
     f.append(p.ecrire(d / "03.png"))
 
     p = Planche("blanc")
@@ -518,22 +589,24 @@ def carrousel_typographie(dossier=None):
             "commercial.", 40, "brun", 400, avant=30)
     f.append(p.ecrire(d / "05.png"))
 
-    p = Planche("bleu")
+    p = Planche("encre")
     t = "Une identité,\nc'est deux polices."
     st = "Une pour les titres, une pour le texte. Pas cinq."
-    p.centrer(p.h_titre(t, 88) + p.h_texte(st, 42, avant=50))
-    p.titre(t, 88, "blanc"); p.texte(st, 42, "blanc", 400, avant=50)
-    p.signature("blanc"); f.append(p.ecrire(d / "06.png"))
+    p.centrer(p.h_titre(t, 88) + p.h_texte(st, 42, avant=50) + 44)
+    p.filet()
+    p.titre(t, 88, "blanc"); p.texte(st, 42, "creme", 400, avant=50)
+    p.signature("sable"); f.append(p.ecrire(d / "06.png"))
     return f
 
 
 def carrousel_enseigne(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-13-enseigne"))
     f = []
-    p = Planche("violet")
+    p = Planche("sable_chaud")
     t = "Votre enseigne a besoin\nd'une autorisation.\nPas d'une déclaration."
-    p.centrer(p.h_titre(t, 80)); p.titre(t, 80, "blanc")
-    p.signature("blanc"); f.append(p.ecrire(d / "01.png"))
+    p.centrer(p.h_titre(t, 74) + 44)
+    p.filet(); p.titre(t, 74, "encre")
+    p.signature("brun"); f.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")
     p.titre("La confusion\nla plus répandue", 76, y=200)
@@ -566,31 +639,34 @@ def carrousel_enseigne(dossier=None):
         p.d.text((MARGE + 110, y + 8), txt, font=police(600, 40), fill=C["encre"])
     f.append(p.ecrire(d / "05.png"))
 
-    p = Planche("bleu")
+    p = Planche("sable_chaud")
     t = "À Perpignan, le centre ancien\nest en secteur protégé."
     st = ("L'avis des Architectes des Bâtiments de France s'ajoute au dossier. "
           "Il oriente le choix des matières bien avant celui du logo.")
-    p.centrer(p.h_titre(t, 68) + p.h_texte(st, 40, avant=50))
-    p.titre(t, 68, "blanc"); p.texte(st, 40, "blanc", 400, avant=50)
+    p.centrer(p.h_titre(t, 68) + p.h_texte(st, 40, avant=50) + 44)
+    p.filet()
+    p.titre(t, 68, "encre"); p.texte(st, 40, "brun", 400, avant=50)
     f.append(p.ecrire(d / "06.png"))
 
-    p = Planche("violet")
+    p = Planche("encre")
     t = "Une enseigne se pense\nen amont."
-    p.centrer(p.h_titre(t, 86) + p.h_texte("Pas après le logo.", 50, avant=40))
-    p.titre(t, 86, "blanc"); p.texte("Pas après le logo.", 50, "blanc", 600, avant=40)
-    p.signature("blanc"); f.append(p.ecrire(d / "07.png"))
+    p.centrer(p.h_titre(t, 86) + p.h_texte("Pas après le logo.", 50, avant=40) + 44)
+    p.filet()
+    p.titre(t, 86, "blanc"); p.texte("Pas après le logo.", 50, "creme", 600, avant=40)
+    p.signature("sable"); f.append(p.ecrire(d / "07.png"))
     return f
 
 
 def quiz_idees_recues(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-22-quiz"))
     f = []
-    p = Planche("violet")
+    p = Planche("sable_chaud")
     p.pastille(MARGE, 240, "QUIZ", "corail", "blanc", 30)
+    p.filet(y=330)
     t = "4 idées reçues\nsur l'impression\net les enseignes."
-    p.y = 380; p.titre(t, 84, "blanc")
-    p.texte("Combien allez-vous rater ?", 46, "blanc", 600, avant=40)
-    p.signature("blanc"); f.append(p.ecrire(d / "01.png"))
+    p.titre(t, 84, "encre")
+    p.texte("Combien allez-vous rater ?", 46, "brun", 600, avant=40)
+    p.signature("brun"); f.append(p.ecrire(d / "01.png"))
 
     questions = [
         ("« Une enseigne se déclare\nen mairie. »", "FAUX", "Elle s'autorise. Cerfa 16308*01."),
@@ -620,11 +696,12 @@ def carrousel_droits(dossier=None):
     p.titre(t, 110); p.texte("La réponse surprend la plupart des chefs d'entreprise.", 42, "brun", 400, avant=50)
     p.signature("brun"); f.append(p.ecrire(d / "01.png"))
 
-    p = Planche("bleu")
+    p = Planche("sable_chaud")
     t = "Vous l'avez payé.\nVous ne le possédez\npas forcément."
     st = "Payer une création ne transfère pas les droits d'auteur. Le transfert se fait par écrit, et seulement par écrit."
-    p.centrer(p.h_titre(t, 80) + p.h_texte(st, 40, avant=50))
-    p.titre(t, 80, "blanc"); p.texte(st, 40, "blanc", 400, avant=50)
+    p.centrer(p.h_titre(t, 80) + p.h_texte(st, 40, avant=50) + 44)
+    p.filet()
+    p.titre(t, 80, "encre"); p.texte(st, 40, "brun", 400, avant=50)
     f.append(p.ecrire(d / "02.png"))
 
     p = Planche("blanc")
@@ -649,12 +726,13 @@ def carrousel_droits(dossier=None):
             "Le jour où vous changez de prestataire.", 44, "brun", 400, avant=70)
     f.append(p.ecrire(d / "05.png"))
 
-    p = Planche("violet")
+    p = Planche("encre")
     t = "Demandez votre\ncontrat de cession."
     st = "S'il n'existe pas, c'est le moment de le faire."
-    p.centrer(p.h_titre(t, 88) + p.h_texte(st, 44, avant=50))
-    p.titre(t, 88, "blanc"); p.texte(st, 44, "blanc", 600, avant=50)
-    p.signature("blanc"); f.append(p.ecrire(d / "06.png"))
+    p.centrer(p.h_titre(t, 88) + p.h_texte(st, 44, avant=50) + 44)
+    p.filet()
+    p.titre(t, 88, "blanc"); p.texte(st, 44, "creme", 600, avant=50)
+    p.signature("sable"); f.append(p.ecrire(d / "06.png"))
     return f
 
 
@@ -703,6 +781,153 @@ def plans_reel_halloween(dossier=None):
     return f
 
 
+def carrousel_devis(dossier=None):
+    """Publication n° 6 — ce qui doit figurer sur un devis.
+
+    Le dossier 2026-10-20-droits existait pour cette date, mais il dessine
+    « Qui possede votre logo ? » : un autre sujet que le texte de la
+    publication n° 6. Les deux jeux sont donc distincts, et celui-ci est
+    dessine d'apres la direction visuelle ecrite, slide par slide.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-20-devis"))
+    f = []
+    ZONES = [("en-tete", "EN-TÊTE"), ("identite", "IDENTITÉ"),
+             ("corps", "CORPS"), ("pied", "PIED DE PAGE")]
+    TEINTES = {"en-tete": "bleu", "identite": "turquoise",
+               "corps": "violet", "pied": "corail"}
+
+    def feuille(p, x, y, larg, haut, zones=(), etiquettes=False):
+        """Un devis en fil de fer. Les zones nommees se surlignent.
+
+        Les hauteurs sont calculees en parts de la feuille, pas en pixels
+        fixes : le meme dessin sert en grand sur la slide 3 et en vignette
+        sur la slide 5, sans que le corps deborde du cadre.
+        """
+        p.d.rectangle([x, y, x + larg, y + haut], fill=teinte("blanc"),
+                      outline=teinte("sable_fonce"), width=3)
+        pad = int(haut * 0.035)
+        h_ent = int(haut * 0.16)
+        h_ide = int(haut * 0.11)
+        h_pie = int(haut * 0.17)
+        h_cor = haut - h_ent - h_ide - h_pie - 5 * pad
+        y1 = y + pad
+        y2 = y1 + h_ent + pad
+        y3 = y2 + h_ide + pad
+        y4 = y3 + h_cor + pad
+        bandes = {"en-tete": (y1, h_ent), "identite": (y2, h_ide),
+                  "corps": (y3, h_cor), "pied": (y4, h_pie)}
+
+        for nom, _ in ZONES:
+            yy, hh = bandes[nom]
+            if nom in zones:
+                p.d.rectangle([x + pad, yy, x + larg - pad, yy + hh],
+                              fill=teinte(TEINTES[nom]))
+
+        def lignes(yy, hh, pas, l1, decr, claire):
+            n = max(1, int((hh - 8) / pas))
+            coul = "blanc" if claire else "sable_fonce"
+            for i in range(n):
+                ll = int(l1 * (1 - decr * i))
+                p.d.rounded_rectangle(
+                    [x + 2 * pad, yy + 6 + i * pas,
+                     x + 2 * pad + ll, yy + 6 + i * pas + max(6, pas // 4)],
+                    radius=4, fill=teinte(coul))
+
+        ech = larg / 480.0
+        lignes(y1, h_ent, int(30 * ech), larg - int(300 * ech), 0.22,
+               "en-tete" in zones)
+        lignes(y2, h_ide, int(30 * ech), larg - int(420 * ech), 0.30,
+               "identite" in zones)
+        lignes(y3, h_cor, int(42 * ech), larg - int(120 * ech), 0.04,
+               "corps" in zones)
+        lignes(y4, h_pie, int(32 * ech), larg - int(360 * ech), 0.18,
+               "pied" in zones)
+
+        if etiquettes:
+            fe = police(800, 26)
+            for nom, lib in ZONES:
+                yy, hh = bandes[nom]
+                p.d.text((x + larg + 26, yy + hh / 2 - 15), lib, font=fe,
+                         fill=teinte(TEINTES[nom]))
+        return p
+
+    # S1 — l'accroche, le devis et la loupe sur son pied de page
+    p = Planche("creme")
+    feuille(p, 300, 150, 480, 660)
+    cx, cy, r = 740, 740, 92
+    p.d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=teinte("corail"),
+                width=14)
+    p.d.line([cx + 64, cy + 64, cx + 150, cy + 150], fill=teinte("corail"),
+             width=16)
+    p.y = 900
+    p.titre("Ce qui doit figurer\nsur votre devis.", 82, "encre")
+    p.signature("brun")
+    p.numero(1, 6, "taupe")
+    f.append(p.ecrire(d / "01.png"))
+
+    # S2 — l'enjeu, en aplat bleu
+    p = Planche("sable_chaud")
+    t = ("Un devis mal renseigné,\nce n'est pas\nun détail "
+         "administratif.")
+    st = "C'est une crédibilité en moins au moment de la signature."
+    p.centrer(p.h_titre(t, 76) + p.h_texte(st, 42, avant=50) + 44)
+    p.filet()
+    p.titre(t, 76, "encre")
+    p.texte(st, 42, "brun", 400, avant=50)
+    p.signature("brun")
+    p.numero(2, 6, "taupe")
+    f.append(p.ecrire(d / "02.png"))
+
+    # S3 — le squelette, zones surlignees et nommees
+    p = Planche("creme_rose")
+    p.titre("Quatre zones.\nChacune a son rôle.", 72, "encre", y=140)
+    feuille(p, 150, 400, 540, 700,
+            zones=("en-tete", "identite", "corps", "pied"), etiquettes=True)
+    p.signature("brun")
+    p.numero(3, 6, "taupe")
+    f.append(p.ecrire(d / "03.png"))
+
+    # S4 — l'en-tete
+    p = Planche("creme")
+    p.titre("Dans l'en-tête", 88, "encre", y=260)
+    p.y = 440
+    p.puces(["La dénomination de l'entreprise",
+             "La forme juridique",
+             "L'adresse de l'établissement",
+             "Le numéro SIREN",
+             "Le numéro de TVA, le cas échéant"],
+            "bleu", 44, "brun")
+    p.signature("brun")
+    p.numero(4, 6, "taupe")
+    f.append(p.ecrire(d / "04.png"))
+
+    # S5 — le pied de page
+    p = Planche("creme")
+    p.titre("En pied de page", 88, "encre", y=170)
+    p.y = 330
+    p.puces(["La durée de validité de l'offre",
+             "Les conditions de règlement",
+             "La case de signature, et la mention\n« Bon pour accord »"],
+            "corail", 44, "brun")
+    feuille(p, 330, 720, 420, 420, zones=("pied",))
+    p.signature("brun")
+    p.numero(5, 6, "taupe")
+    f.append(p.ecrire(d / "05.png"))
+
+    # S6 — la chute, en aplat violet
+    p = Planche("encre")
+    t = "Le design d'un devis,\nce n'est pas de la\ndécoration."
+    st = "C'est ce qui le rend lisible — et signé."
+    p.centrer(p.h_titre(t, 80) + p.h_texte(st, 44, avant=56) + 44)
+    p.filet()
+    p.titre(t, 80, "blanc")
+    p.texte(st, 44, "creme", 600, avant=56)
+    p.signature("sable")
+    p.numero(6, 6, "sable")
+    f.append(p.ecrire(d / "06.png"))
+    return f
+
+
 def stories(dossier=None):
     """Les dix ecrans de stories du cycle, en 9:16."""
     d = pathlib.Path(dossier or (SORTIE / "stories"))
@@ -710,11 +935,11 @@ def stories(dossier=None):
     ecrans = [
         ("07-teasing", "creme", "encre", "Nouveau post.\nVotre couleur parle avant vous.",
          "Sondage", ["Le bleu marine évoque plutôt…", "A : la confiance", "B : le luxe"]),
-        ("13-quiz-1", "bleu", "blanc", "Enseigne :\ndéclaration ou autorisation ?",
+        ("13-quiz-1", "sable_chaud", "encre", "Enseigne :\ndéclaration ou autorisation ?",
          "Quiz", ["Déclaration préalable", "Autorisation préalable"]),
-        ("13-quiz-2", "violet", "blanc", "Autorisation.\nCerfa 16308*01, en mairie,\nen trois exemplaires.",
+        ("13-quiz-2", "sable_chaud", "encre", "Autorisation.\nCerfa 16308*01, en mairie,\nen trois exemplaires.",
          "Mention du post", ["Le détail est dans le post du jour"]),
-        ("14-questions", "violet", "blanc",
+        ("14-questions", "sable_chaud", "encre",
          "Une question sur votre\nidentité visuelle ?",
          "Boîte à questions", ["Je réponds à tout.", "Même aux questions bêtes.", "Surtout à celles-là."]),
         ("08-vote-1", "blanc", "encre", "Laquelle se lit\nà vingt mètres ?",
@@ -750,6 +975,7 @@ GABARITS = {
     "carrousel-enseigne": carrousel_enseigne,
     "quiz-idees-recues": quiz_idees_recues,
     "carrousel-droits": carrousel_droits,
+    "carrousel-devis": carrousel_devis,
     "plans-reel-cmjn": plans_reel_cmjn,
     "plans-reel-halloween": plans_reel_halloween,
     "stories": stories,
@@ -856,8 +1082,9 @@ def solaire_66(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "06.png"))
 
-    p = Planche("creme").bandeau_bas("violet", 0.34)
-    p.titre("Dessiné en grand." + "\n" + "Vérifié en petit.", 92, y=200)
+    p = Planche("sable_chaud")
+    p.filet(y=200)
+    p.titre("Dessiné en grand." + "\n" + "Vérifié en petit.", 92)
     p.y = 470
     p.texte("Sur un panneau de chantier, un logo peut tout se permettre. "
             "Sur 8,5 centimètres, dans un avatar, brodé sur un polo, le "
@@ -920,12 +1147,13 @@ def pub09_logo_reduction(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "02.png"))
 
-    p = Planche("bleu")
-    p.titre("Ce qui disparaît" + "\n" + "en premier.", 92, "blanc", y=170)
+    p = Planche("sable_chaud")
+    p.filet(y=170)
+    p.titre("Ce qui disparaît" + "\n" + "en premier.", 92, "encre")
     p.puces(["les dégradés", "les ombres portées", "les contours fins",
              "le texte placé sous le symbole"],
-            "corail", 42, "blanc", y=520, interligne=1.6)
-    p.signature("blanc")
+            "corail", 42, "brun", y=520, interligne=1.6)
+    p.signature("brun")
     faits.append(p.ecrire(d / "03.png"))
 
     p = Planche("creme")
@@ -956,14 +1184,15 @@ def pub09_logo_reduction(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "05.png"))
 
-    p = Planche("violet")
-    p.titre("Faites le test" + "\n" + "ce soir.", 104, "blanc", y=320)
+    p = Planche("encre")
+    p.filet(y=320)
+    p.titre("Faites le test" + "\n" + "ce soir.", 104, "blanc")
     p.y = 640
     p.texte("Réduisez votre logo à la taille d'un ongle. Si vous ne le "
-            "reconnaissez plus, vos clients non plus.", 40, "blanc", 400,
+            "reconnaissez plus, vos clients non plus.", 40, "creme", 400,
             avant=0)
     p.fleche("corail", y=950)
-    p.signature("blanc")
+    p.signature("sable")
     faits.append(p.ecrire(d / "06.png"))
     return faits
 
@@ -994,6 +1223,12 @@ def main():
             print("%-52s %sx%s" % (f, im.size[0], im.size[1]))
         return
     a.print_help()
+
+
+# Les deux gabarits ci-dessous sont definis apres le registre : on les
+# y ajoute ici, sinon --liste et --tout les ignorent en silence.
+GABARITS["solaire-66"] = solaire_66
+GABARITS["logo-reduction"] = pub09_logo_reduction
 
 
 if __name__ == "__main__":

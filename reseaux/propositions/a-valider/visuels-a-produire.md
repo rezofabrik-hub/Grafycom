@@ -31,11 +31,11 @@ photo (voir `photos-a-prendre.md`).
 | Carrousel quiz | 1 (5 slides) |
 | Images simples | 2 (le dilemme A/B du 29) |
 | Reels à monter | 2 (23 s et 25 s) |
-| Écrans de stories | 17 (voir `A-stories.md`) |
+| Écrans de stories | 17 (voir `stories.md`) |
 | Photos et plans à tourner | 1 rue au crépuscule · 4 plans de vitrine · 4 macros de matières · 4 plans de fin d'année |
 | Trois pistes de logo fictives | 1 jeu (publication n° 5) |
 | Articles de blog | 2 — **rédigés**, dans `reseaux/blog/`, en `statut: à relire` |
-| Textes fiche Google | 8 — **rédigés**, non publiables (voir `A-fiche-google.md`) |
+| Textes fiche Google | 8 — **rédigés**, non publiables (voir `fiche-google.md`) |
 
 ---
 
@@ -48,14 +48,14 @@ photo (voir `photos-a-prendre.md`).
 | Carrousels à créer | 5 (6 à 7 slides) + 1 quiz de 6 slides |
 | Images simples | 2 (le dilemme A/B du 12/11) |
 | Reels à monter | 2 (24 s et 26 s) |
-| Écrans de stories | 14 — détail dans `B-stories.md` |
+| Écrans de stories | 14 — détail dans `stories.md` |
 | Photos à prendre | 5 : un sachet cadeau neutre, une vitrine de nuit depuis le trottoir d'en face, une vitrine avec adhésifs de fêtes, un lettrage sur plexi devant deux fonds, des échantillons de papier |
 | Tournages | 2 × 5 plans de 5 s au téléphone |
 | Articles de blog | 2 — **déjà rédigés**, dans `reseaux/blog/`, en `statut: à relire` : `2026-11-13-vitrine-fin-annee-trottoir.md` et `2026-11-20-refaire-son-logo-nouvelle-annee.md` |
 | Textes fiche Google | 8 — **déjà rédigés et publiables**, après vérification des réglages de la fiche |
 | Gabarits à ajouter dans `visuels.py` | 7 environ — 1 existe déjà (`quiz-idees-recues`), 1 se décline (`carrousel-enseigne`) |
 
-**Deux vérifications réglementaires bloquent deux publications** : la n° 2
-(signalétique de tri) et la n° 6 (adhésif de vitrine, extinction nocturne).
+**Deux vérifications réglementaires bloquent deux publications** : la n° 18
+(signalétique de tri) et la n° 22 (adhésif de vitrine, extinction nocturne).
 Elles sont détaillées dans leurs rubriques « À fournir par Sandra ». Rien
 ne part sur ces deux sujets avant.

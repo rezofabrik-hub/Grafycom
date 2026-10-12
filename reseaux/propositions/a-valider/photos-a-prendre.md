@@ -120,43 +120,43 @@ Relevé publication par publication, à partir des rubriques « à fournir
 par Sandra ». Les publications absentes de cette liste n'ont besoin
 d'aucune image réelle : `visuels.py` les dessine entièrement.
 
-### n° 2 · Mardi 27 octobre, 8 h 00 · Carrousel
+### n° 10 · Mardi 27 octobre, 8 h 00 · Carrousel
 
 - Une photo de rue commerçante à la tombée du jour, enseignes allumées.
 
-### n° 4 · Vendredi 30 octobre, 18 h 00 · REEL 23 s
+### n° 12 · Vendredi 30 octobre, 18 h 00 · REEL 23 s
 
 - Quatre plans de cinq secondes, filmés au téléphone, suffisent** : une
 
-### n° 6 · Mardi 3 novembre, 8 h 00 · Carrousel
+### n° 14 · Mardi 3 novembre, 8 h 00 · Carrousel
 
 - La photo de devanture de la S1 : **recomposée ou floutée**. Ne montrez pas
 
-### n° 7 · Jeudi 5 novembre, 19 h 00 · Quiz 4 choix
+### n° 15 · Jeudi 5 novembre, 19 h 00 · Quiz 4 choix
 
 - Quatre macrophotographies, prises au téléphone en mode portrait sur un
 - La photo de l'alu composite doit montrer **la tranche** : l'âme noire entre
 
-### n° 8 · Samedi 7 novembre, 10 h 30 · REEL 25 s
+### n° 16 · Samedi 7 novembre, 10 h 30 · REEL 25 s
 
 - Les cartes de vœux filmées doivent être **des modèles de démonstration ou
 
-### n° 10 · Mardi 10 novembre, 8 h 00 · Carrousel
+### n° 18 · Mardi 10 novembre, 8 h 00 · Carrousel
 
 - Un sachet ou une boîte cadeau neutre à photographier pour la S1. Pas de
 
-### n° 13 · Lundi 16 novembre, 18 h 30 · Carrousel
+### n° 21 · Lundi 16 novembre, 18 h 30 · Carrousel
 
 - Une photo de vitrine de nuit, prise depuis le trottoir d'en face.
 
-### n° 14 · Mardi 17 novembre, 8 h 00 · Carrousel
+### n° 22 · Mardi 17 novembre, 8 h 00 · Carrousel
 
 - Une photo de vitrine avec adhésifs de fêtes. Si un commerce est
 
 > **À photographier en priorité**, parce que ces images servent
 > plusieurs fois : une rue commerçante enseignes allumées à la tombée du
-> jour (n° 2, et réutilisable en n° 6 et 13), et une vitrine de nuit prise
-> depuis le trottoir d'en face (n° 13 et 14). Une seule sortie, en fin
+> jour (n° 10, et réutilisable en n° 14 et 21), et une vitrine de nuit prise
+> depuis le trottoir d'en face (n° 21 et 22). Une seule sortie, en fin
 > d'après-midi vers 17 h 30 à cette saison, couvre les deux.
 ---
 

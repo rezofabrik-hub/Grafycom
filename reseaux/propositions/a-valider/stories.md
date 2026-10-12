@@ -7,6 +7,10 @@ sticker et ses options, arrière-plan.
 
 ---
 
+> **Couleurs :** fonds beiges, couleur en accent, filet dégradé.
+> La règle complète est en tête de `instagram-facebook.md` ; les
+> arrière-plans ci-dessous y sont déjà conformes.
+
 ### Séquence SEMAINE 1 (12 au 18 octobre)
 
 ## S1-A — Lundi 12 octobre, 12 h 45 · teasing du carrousel
@@ -25,7 +29,7 @@ sticker et ses options, arrière-plan.
   Le détail est dans le post. »
 
 ## S1-C — Mercredi 14 octobre, 18 h 30 · boîte à questions
-- **Fond :** aplat violet `#a86cd0`, texte blanc centré.
+- **Fond :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré.
 - **Texte :** « Une question sur votre identité visuelle ? Je réponds à
   tout, même aux questions bêtes. Surtout à celles-là. »
 - **Sticker :** *Boîte à questions* — « Posez votre question »
@@ -146,7 +150,7 @@ pensent aux couleurs.
 |---|---|
 | **Texte exact** | « Réponse : oui, probablement. Du point de vue de l'administration, éclairer une enseigne, c'est la modifier — une nouvelle autorisation serait donc nécessaire. À confirmer auprès de votre mairie avant de commander le caisson. Le détail est dans le post du matin. » |
 | **Sticker** | *Mention du post* vers le carrousel du 27. Pas de sticker interactif : l'écran sert à corriger, pas à faire voter. |
-| **Arrière-plan** | Aplat violet `#a86cd0`, texte blanc centré dans le tiers central. |
+| **Arrière-plan** | Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré dans le tiers central. |
 
 > ⚠️ Cet écran contient un point réglementaire **non vérifié**. Le
 > conditionnel « serait » est volontaire et ne doit pas être retiré à la
@@ -158,7 +162,7 @@ pensent aux couleurs.
 |---|---|
 | **Texte exact** | « Une question sur votre enseigne, vos supports imprimés ou votre logo ? Je réponds à tout, même aux questions qui paraissent bêtes. Surtout à celles-là. » |
 | **Sticker** | *Boîte à questions* — « Posez votre question » |
-| **Arrière-plan** | Aplat bleu profond `#2f7fc4`, texte blanc centré. Signature `@grafycom.graphiste` en pied. |
+| **Arrière-plan** | Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré. Signature `@grafycom.graphiste` en pied. |
 
 ## S3-D1 — Jeudi 29 octobre, 12 h 30 · le vote du jeudi
 
@@ -357,7 +361,7 @@ sur le site.
 
 ### Écran 2 — 10 h 15, deux heures après le premier
 
-- **Arrière-plan :** aplat violet `#a86cd0`, texte blanc centré dans le
+- **Arrière-plan :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré dans le
   tiers central.
 - **Texte exact :** « Avant de dessiner. Elle a besoin d'une place, d'une
   taille minimale et d'une zone propre autour. Prévue à la fin, elle se
@@ -425,7 +429,7 @@ l'absence soit un choix validé, pas un trou dans le planning.
 
 ## S5-E — Samedi 14 novembre, 11 h 00 · boîte à questions
 
-- **Arrière-plan :** aplat violet `#a86cd0`, texte blanc centré. Aucun
+- **Arrière-plan :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré. Aucun
   visuel : c'est un écran de conversation, pas de démonstration.
 - **Texte exact :** « Vous préparez quelque chose pour les fêtes et vous
   bloquez sur un point ? Posez la question, même celles qui vous semblent
@@ -489,7 +493,7 @@ l'absence soit un choix validé, pas un trou dans le planning.
 
 ### Écran 1 — 19 h 00
 
-- **Arrière-plan :** aplat violet `#a86cd0`, texte blanc. Un échantillon de
+- **Arrière-plan :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre. Un échantillon de
   papier doré en bande basse, hors du tiers central.
 - **Texte exact :** « Le quiz du jeudi. Le doré d'une dorure à chaud, c'est
   quoi exactement ? »

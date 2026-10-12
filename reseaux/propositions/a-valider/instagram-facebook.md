@@ -15,14 +15,41 @@ dans `calendrier.md`, et ce qui demande ta décision dans `arbitrages.md`.
 
 ---
 
+## La règle de couleur, posée une fois pour toutes
+
+Corrigée le 12 octobre, à la demande de Laurent, et vérifiée dans
+`assets/style.css` : **le site n'a aucun aplat bleu ou violet plein.**
+Ses fonds de page sont `#f7f1ef`, `#f3eae9` et le dégradé chaud
+`#f7f1ef → #e9dcd5`. Le bleu, le violet, le corail n'y existent qu'en
+accent — le filet de 4 px sous les titres, le dégradé d'un bouton, une
+pastille de pictogramme, un chiffre.
+
+Les planches suivent désormais exactement cela :
+
+| | Fond | Texte |
+|---|---|---|
+| Planche courante | `#f7f1ef` ou le dégradé chaud | encre `#2f2723` |
+| Planche qui doit frapper | le dégradé chaud, avec le filet dégradé | encre |
+| Planche de clôture, une par carrousel | encre `#2f2723` | blanc |
+| Schéma, pastille, chiffre, filet | la couleur, en aplat | blanc ou encre |
+
+Le filet dégradé — la règle `.trait` du site, à l'échelle de la planche —
+est ce qui porte la couleur. C'est lui qui fait que le feed et le site se
+ressemblent, et non des aplats saturés que le site n'emploie nulle part.
+
+**Ce que ça change pour toi :** rien à relire dans les textes, tout dans
+les fonds. Les directions visuelles ci-dessous sont déjà réécrites.
+
+---
+
 # SEMAINE 1 — du 12 au 18 octobre
 
 ## 1 — Lundi 12 octobre, 12 h 30 · Carrousel · Pédagogie couleur
 
 ### Direction visuelle — 6 slides
 
-- **S1.** Fond `#f7f1ef`. Aplat violet `#a86cd0` sur le tiers bas. En gros,
-  au-dessus : « Votre couleur dit déjà ce que vous vendez. » Signature
+- **S1.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, filet dégradé sous la
+  marge haute. En gros, au-dessous : « Votre couleur dit déjà ce que vous vendez. » Signature
   `@grafycom.graphiste` en pied, discrète.
 - **S2.** Trois pastilles côte à côte, sans légende : vert sapin, bleu
   `#2f7fc4`, rose `#e75ba6`. Sous-titre : « Avant même de lire votre nom, le
@@ -232,7 +259,7 @@ illisible, la sans-serif reste lisible.
 | 3-9 s | Animation : trois faisceaux de lumière rouge, vert, bleu qui se superposent et deviennent blanc. | RVB : de la **lumière** | Un écran fabrique les couleurs avec de la lumière. Il additionne du rouge, du vert et du bleu. Plus il en met, plus c'est lumineux. |
 | 9-15 s | Animation : quatre gouttes d'encre cyan, magenta, jaune, noir qui se mélangent sur du papier et s'assombrissent. | CMJN : de l'**encre** | Une imprimante fait l'inverse. Elle dépose de l'encre sur du papier blanc. Chaque couche retire de la lumière. |
 | 15-20 s | Nuancier posé sur une table, main qui le feuillette, lumière rasante sur un papier texturé. | Le papier change tout | Et le papier compte autant que l'encre. Un mat absorbe. Un couché renvoie. Le même fichier donne deux résultats. |
-| 20-24 s | Logo Grafycom sur fond `#a86cd0`, signature `@grafycom.graphiste`. | **Demandez un BAT. Toujours.** | Alors ne validez jamais une couleur sur un écran. Demandez un bon à tirer. C'est gratuit, et ça évite de tout refaire. |
+| 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Demandez un BAT. Toujours.** | Alors ne validez jamais une couleur sur un écran. Demandez un bon à tirer. C'est gratuit, et ça évite de tout refaire. |
 
 **Prompt d'arrière-plan 0-3 s** (si génération nécessaire) :
 `Close-up macro shot of a computer screen displaying vivid electric blue graphic, shallow depth of field, soft studio lighting, then cut to the same design printed on matte paper lying on a wooden desk, muted colors, natural window light, 4K, photorealistic`
@@ -299,7 +326,7 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
   20 m, avec la même police qui se dégrade.
 - **S5.** « 2. Tient-elle en tout petit ? » Le même mot à 6 pt, 10 pt, 24 pt.
   « 3. Avez-vous le droit de l'utiliser ? » — mention licence commerciale.
-- **S6.** Fond `#2f7fc4`. « Une identité, c'est deux polices. Une pour les
+- **S6.** Fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre. « Une identité, c'est deux polices. Une pour les
   titres, une pour le texte. Pas cinq. »
 
 ### Accroche
@@ -432,7 +459,7 @@ de règlement et la case de signature.
 
 ### Direction visuelle — carrousel 5 slides
 
-- **S1.** Fond violet `#a86cd0`. « 4 idées reçues sur l'impression et les
+- **S1.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre. « 4 idées reçues sur l'impression et les
   enseignes. Combien allez-vous rater ? » Pastille corail « QUIZ ».
 - **S2 à S5.** Une affirmation par slide, en gros, sur fond blanc cassé.
   En bas, deux pastilles **VRAI** (bleu) et **FAUX** (corail). La réponse
@@ -554,7 +581,7 @@ normal. Ton curieux, pas effrayant.
 - **S2.** Fond blanc. Trois cercles de 4 cm, 1,5 cm et 0,8 cm alignés,
   contenant le même logo. Sous-titre : « Le test se fait en trois secondes :
   on réduit, et on regarde ce qui disparaît en premier. »
-- **S3.** Aplat bleu profond `#2f7fc4`, texte blanc : « Ce qui disparaît
+- **S3.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre : « Ce qui disparaît
   d'abord : les dégradés, les ombres, les contours fins, le texte en
   dessous. » Les quatre items en liste, chacun précédé d'une pastille
   corail `#f2585c`.
@@ -566,7 +593,7 @@ normal. Ton curieux, pas effrayant.
   une carte de visite, un polo brodé, un flanc de camionnette, un panneau
   de chantier, une favicon de navigateur. Titre : « Le même, cinq fois,
   sans retouche. » Les mentions de support en violet `#a86cd0`.
-- **S6.** Fond violet `#a86cd0` plein, texte blanc, flèche corail.
+- **S6.** Fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, flèche corail.
   « Postez votre logo en commentaire. Je vous dis ce qu'il perd à 1 cm. »
 
 ### Accroche
@@ -940,7 +967,7 @@ idée, il ne la concurrence pas.
   en monochrome blanc sur un bandeau encre. Titre : « En une seule
   couleur. » Légende : les lettres sont ajourées, pas remplies de blanc,
   c'est ce qui rend la version possible.
-- **S7** `07.png` — Fond crème, bandeau violet `#a86cd0` en bas. « Dessiné
+- **S7** `07.png` — Fond dégradé chaud, filet dégradé en tête. « Dessiné
   en grand. Vérifié en petit. » Puis la règle : une identité livrée ne
   contient jamais un seul fichier.
 
@@ -1052,7 +1079,7 @@ gravure, broderie, tampon.
   anglais, et dessous, en plus petit, la même promesse en français.
   Légende : « La parade est graphique, pas juridique : on ne retire rien,
   on ajoute une ligne. »
-- **S5.** Fond violet `#a86cd0`, texte blanc. « Et le catalan ? » Réponse :
+- **S5.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre. « Et le catalan ? » Réponse :
   « Une carte bilingue français/catalan **ne pose pas le même problème** :
   le français y est présent. C'est l'unilingue étranger qui expose. »
 - **S6.** Fond blanc, flèche corail. « Vous avez un slogan en anglais ?
@@ -1144,7 +1171,7 @@ français en plus petit dessous.
   résine*.
 - **S4.** Carré 3 en plein cadre. *Verre sablé · adhésif dépoli ·
   film solaire · peinture*.
-- **S5.** Fond violet `#a86cd0`, texte blanc : les quatre réponses d'un coup,
+- **S5.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre : les quatre réponses d'un coup,
   chacune avec une ligne d'usage — « alu composite : le panneau extérieur qui
   ne gondole pas » · « plexi : l'intérieur, les lettres, la plaque
   professionnelle » · « adhésif dépoli : la vitrine, et ça se retire » ·
@@ -1308,8 +1335,8 @@ fin novembre, livraison début décembre.
 
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
-- **S1.** Fond blanc cassé chaud `#f7f1ef`. Aplat violet `#a86cd0` sur le
-  tiers bas. En gros titrage sans-serif géométrique, au-dessus de l'aplat :
+- **S1.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, filet dégradé sous la
+  marge haute. En gros titrage sans-serif géométrique, au-dessous :
   « Vos cartes de vœux de Noël se décident **cette semaine**. » Signature
   `@grafycom.graphiste` en pied, discrète. Flèche corail `#f2585c` « Swipe »
   en bas à droite.
@@ -1323,7 +1350,7 @@ fin novembre, livraison début décembre.
   adresses à réunir. » Sous-titre bleu profond `#2f7fc4` : « Les trois
   étapes qu'on oublie de compter. Elles prennent plus de temps que
   l'impression. »
-- **S4.** Fond bleu profond `#2f7fc4`, texte blanc : « Le bon à tirer n'est
+- **S4.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre : « Le bon à tirer n'est
   pas une formalité. C'est un aller-retour, et parfois deux. Prévoyez-le. »
 - **S5.** Fond blanc. Quatre pictogrammes alignés, trait fin violet : une
   carte, une étiquette, un sachet, un adhésif de vitrine. Légende : « Tout
@@ -1417,14 +1444,14 @@ chez le même imprimeur au même moment.
 - **S4.** Fond `#f7f1ef`. Deux colonnes. À gauche, barré en corail : « On
   dessine, puis on cherche où la mettre. » À droite, entouré en violet :
   « On réserve la zone, puis on dessine autour. »
-- **S5.** Fond bleu profond `#2f7fc4`, texte blanc : « Un emballage dessiné
+- **S5.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre : « Un emballage dessiné
   sans cette place se refait. Et un emballage de Noël qui se refait, c'est
   un emballage qui arrive en janvier. »
 - **S6.** Fond blanc. Trois pastilles numérotées corail : « 1. Votre
   éco-organisme dit ce que vous devez afficher. » / « 2. Votre imprimeur dit
   à quelle taille c'est lisible. » / « 3. Le graphiste place les deux dans le
   dessin. » Sous-titre : « Dans cet ordre. »
-- **S7.** Fond violet `#a86cd0`, texte blanc. « Vous préparez un emballage
+- **S7.** Fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre. « Vous préparez un emballage
   pour les fêtes ? Dites-moi en commentaire ce que vous vendez : je vous dis
   quelles questions poser, et à qui. »
 
@@ -1579,7 +1606,7 @@ incrusté : **« Ce que vos clients sentent avant de lire. »**
 | 3-8 s | Deux cartes tombent côte à côte sur une table en bois. L'une se plie et ondule, l'autre reste droite et claque. | 120 g / 350 g | Le grammage, c'est le poids du papier. Un cent vingt grammes se plie. Un trois cent cinquante grammes tient droit et fait du bruit. Le prix change peu. La sensation change tout. |
 | 8-14 s | Plan fixe sur un gaufrage éclairé de côté, puis la même carte éclairée de face : le motif disparaît presque. | Le gaufrage : du relief, pas de l'encre | Le gaufrage, c'est du relief pressé dans le papier. Pas d'encre, pas de couleur. Il n'existe que si la lumière vient de côté. C'est un détail qu'on sent plus qu'on ne voit. |
 | 14-19 s | Rotation lente d'une carte sous une lampe. Un trait doré s'allume, puis s'éteint selon l'angle. | La dorure : une feuille, pas du jaune | La dorure à chaud, c'est une feuille métallisée pressée sur le papier. Ça ne s'imprime pas en jaune. C'est pour ça que ça brille, et c'est pour ça que ça se paie. |
-| 19-24 s | Les trois cartes alignées sur fond `#a86cd0`. Signature `@grafycom.graphiste` en pied. | **Choisissez la matière avant le dessin** | Alors choisissez la matière avant le dessin. Un beau visuel sur un mauvais papier déçoit. Un visuel simple sur un beau papier se garde. |
+| 19-24 s | Les trois cartes alignées sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre. Signature `@grafycom.graphiste` en pied. | **Choisissez la matière avant le dessin** | Alors choisissez la matière avant le dessin. Un beau visuel sur un mauvais papier déçoit. Un visuel simple sur un beau papier se garde. |
 
 **Prompt d'arrière-plan 0-3 s** (si un fond doit être généré) :
 `Extreme macro shot of a thumb slowly sliding across a blind-embossed pattern on thick cream cotton paper, raking side light revealing the relief, shallow depth of field, warm neutral tones, no text, no logo, photorealistic, 4K`
@@ -1662,7 +1689,7 @@ dorée selon l'angle.
   libre au centre. Sous-titre bleu profond : « On entre pour ce qu'on voit à
   l'intérieur. Un décor qui bouche la vue protège votre boutique des
   regards — et des clients. »
-- **S4.** Fond bleu profond `#2f7fc4`, texte blanc : « À 17 h en décembre,
+- **S4.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre : « À 17 h en décembre,
   il fait nuit. Si l'intérieur n'est pas éclairé, votre vitrine devient un
   miroir et votre client s'y voit lui-même. »
 - **S5.** Deux détails agrandis : un texte blanc collé devant un rayonnage
@@ -1857,7 +1884,7 @@ en vigueur est le Cerfa 16308\*01 et que le 14798\*01 est périmé.
 
 ### Direction visuelle — carrousel 6 slides, 1080 × 1350 px
 
-- **S1.** Fond violet `#a86cd0`, texte blanc en très gros : « 4 idées reçues
+- **S1.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, en très gros : « 4 idées reçues
   sur vos impressions de fin d'année. Vous en avez combien de justes ? »
   Flèche corail « Swipe ».
 - **S2.** Fond `#f7f1ef`. Les quatre affirmations numérotées, sans réponse,
@@ -1953,7 +1980,7 @@ Texte incrusté : **« Non, pas en janvier. »**
 | 3-9 s | Un calendrier mural, le doigt qui tourne la page de décembre à janvier. Puis un logo neutre qui clignote entre deux versions presque identiques. | Changer par calendrier ≠ changer par besoin | Changer d'image parce que l'année change, ce n'est pas une raison. C'est une date. Un logo qui marche n'a pas à être renouvelé comme un abonnement. |
 | 9-15 s | Trois cartons posés un par un sur la table, chacun avec une question manuscrite. | 1. Lisible partout ? 2. Fichiers en main ? 3. Dit-il ce que vous vendez aujourd'hui ? | Avant de redessiner, trois questions. Votre logo est-il lisible sur tous vos supports, du polo brodé au panneau. Avez-vous les fichiers d'origine. Et dit-il encore ce que vous vendez aujourd'hui. |
 | 15-21 s | Le même logo décliné sur un polo, une carte, un panneau : il tient sur deux supports, il se brouille sur le troisième. Zoom sur celui qui se brouille. | Deux « oui », un « non » → on ajuste | Si la réponse est non à une seule des trois, le problème est précis. Et un problème précis se répare. On ajuste, on redessine un détail, on prépare les fichiers manquants. |
-| 21-26 s | Fond `#a86cd0`. Le logo reparaît, propre, sur trois supports. Signature `@grafycom.graphiste`. | **Un bilan, pas une résolution** | Si la réponse est non aux trois, là, on repart de la feuille blanche. Faites le bilan de l'année. Pas une résolution. |
+| 21-26 s | Fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre. Le logo reparaît, propre, sur trois supports. Signature `@grafycom.graphiste`. | **Un bilan, pas une résolution** | Si la réponse est non aux trois, là, on repart de la feuille blanche. Faites le bilan de l'année. Pas une résolution. |
 
 **Prompt d'arrière-plan 0-3 s** (si un fond doit être généré) :
 `Close-up of a hand snapping shut a sketchbook filled with hand-drawn logo explorations, on a worn wooden studio table, warm workshop light from the side, shallow depth of field, no readable text, no brand, photorealistic, 4K`
