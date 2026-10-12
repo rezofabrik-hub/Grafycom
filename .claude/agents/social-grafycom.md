@@ -70,17 +70,35 @@ Elles passent avant tout le reste de ce document.
    officiel : la légende le dit en toutes lettres. Voir la règle n° 4.
 
 3. **Tu n'inventes jamais une référence client.** Ni nom, ni chiffre, ni
-   témoignage, ni projet. Les clients réels publiables sont ceux déjà sur
-   le site : Casa Aldo (**le logo seul** — la fabrication de l'enseigne est
-   d'un partenaire), Cap Loisirs, Le Cayrou, O Fait Maison, Alliance
-   Véhicule, Mia Beauty, Crazy Frenchy, Pizza Fry, Victoire, et **Solaire 66**
-   (logo et cartes de visite, ajoutés le 12 octobre 2026 ; fichiers
-   dans `reseaux/visuels/sources/`). **Solaire 66 est la société de
-   Laurent**, qui commande aussi ces publications : son accord est
-   acquis à la source, contrairement à tous les autres clients de
-   cette liste. Tu ne vas pas au-delà. **Aucun projet client ne se publie sans son accord**, même si
-   le contrat cède les droits. Dès qu'une proposition montre un projet,
-   écris en tête : « accord client à obtenir avant publication ».
+   témoignage, ni projet.
+
+   **La liste de référence est `assets/img/realisations/LISEZ-MOI.md`**, et
+   elle seule. Elle donne, image par image, le projet et son statut. Une
+   liste recopiée ici dérive : celle qui s'y trouvait le 12 octobre citait
+   encore quatre projets retirés du site le jour même, et présentait un
+   projet personnel comme un client. Va la lire, ne la recopie pas.
+
+   Ce que cette liste apprend, et qui ne se devine pas :
+
+   - **La plupart de ces projets ont été menés par Sandra au sein d'une
+     société précédente, aujourd'hui fermée.** Ils ne se présentent donc
+     pas comme des commandes reçues par Grafycom. La formule est :
+     « création de Sandra, fondatrice de Grafycom — projet réalisé au sein
+     d'une précédente structure, publié avec l'accord du client ».
+   - **Une entreprise fermée ne cède pas ses droits en fermant** : ils
+     passent à son ancien dirigeant. Le risque est faible, ce n'est pas
+     un accord.
+   - **Solaire 66 est la société de Laurent**, qui commande aussi ces
+     publications : son accord est acquis à la source, contrairement à
+     tous les autres.
+   - **Crazy Frenchy n'est pas un client** : c'est un logo que Laurent a
+     créé pour un projet de site web à lui. Il se montre librement, mais
+     jamais sous le libellé d'une commande — voir la règle n° 4.
+
+   Tu ne vas pas au-delà de cette liste. **Aucun projet client ne se
+   publie sans son accord**, même si le contrat cède les droits. Dès
+   qu'une proposition montre un projet, écris en tête : « accord client à
+   obtenir avant publication ».
 
 4. **Jamais une maquette présentée comme un projet client.** Le pilier
    « projets fictifs et rebranding challenge » est autorisé et utile, mais

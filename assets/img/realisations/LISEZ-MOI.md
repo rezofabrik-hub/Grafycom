@@ -87,7 +87,7 @@ visuels ne sont pas tous dans ce dossier : il y en a aussi dans
 | `realisations/mia-beauty.webp` | Mia Beauty | accord |
 | `secteurs/secteur-restauration.webp` | Ô Fait Maison | accord |
 | `secteurs/secteur-liberales.webp` | Mia Beauty | accord |
-| `prestations/presta-identite.webp` | Crazy Frenchy | **projet personnel de Laurent**, pas une commande client |
+| `prestations/presta-identite.webp` | Crazy Frenchy | **logo créé par Laurent pour un projet de site web à lui.** Pas un client. Se montre librement, jamais comme une commande |
 | `prestations/presta-menus.webp` | Pizza Fry | proche de la famille, accord à formaliser |
 | `prestations/presta-signaletique.webp` | Le Cayrou | entreprise fermée |
 | `prestations/presta-digital.jpg`, `presta-projet.jpg` | — | illustrations, aucun client |
@@ -105,8 +105,11 @@ son ancien dirigeant. En pratique, plus personne ne s'y oppose et le
 risque est faible — mais ce n'est pas la même chose qu'un accord, et il
 vaut mieux le savoir que le croire.
 
-**Un projet personnel ne se présente pas comme une commande.** Si
-`presta-identite.webp` montre un travail que Laurent a mené pour
-lui-même, la ligne d'attribution de la page réalisations — « publiés avec
-l'accord des clients concernés » — ne s'y applique pas. À vérifier avant
-de l'y inclure.
+**Un projet personnel ne se présente pas comme une commande.**
+`presta-identite.webp` est le logo que Laurent a créé pour un projet de
+site web à lui — vérifié le 12 octobre. Il illustre la prestation « logo »
+sur la page prestations, ce qui est honnête : c'est un travail, montré
+comme un travail. Mais il n'a rien à faire sur la page réalisations sous
+la ligne « publiés avec l'accord des clients concernés », et son texte
+alternatif ne parle plus d'un « hall d'entreprise » — le mur est une
+présentation, pas un lieu réel.

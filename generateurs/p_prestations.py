@@ -33,8 +33,12 @@ BLOC = """<section class="{fond}" id="{ancre}">
 # assets/img/prestations/, remplacer None par son nom, écrire le texte
 # alternatif, régénérer.
 PHOTOS = {
+ # Crazy Frenchy n'est pas une commande : c'est un logo cree par Laurent
+ # pour un projet de site web a lui. Il se montre librement — c'est meme
+ # utile quand le portfolio est mince — mais jamais sous le libelle d'une
+ # commande client. Le mur est une presentation, pas un hall reel.
  "logo":         ("presta-identite.webp", "grafycom",
-                  "Logo Crazy Frenchy, lettrage doré et tour Eiffel, appliqué en grand sur le mur d'un hall d'entreprise"),
+                  "Logo Crazy Frenchy, lettrage doré et tour Eiffel, présenté en grand sur un mur"),
  # La charte n'a pas encore sa photo. L'emplacement reserve vaut mieux
  # qu'une image empruntee a une autre prestation : il dit ce qu'il
  # manque, au lieu de faire passer le logo d'un client pour une charte.
