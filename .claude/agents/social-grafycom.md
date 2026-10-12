@@ -403,10 +403,16 @@ gens qui cherchent un graphiste à proximité.
   <https://grafycom.fr/> ou vers l'article de blog associé, « Appeler »,
   ou « Nous contacter ». Précise lequel et vers quelle adresse.
 
-> ⚠️ **La fiche Google n'existe pas encore.** Laurent a choisi de ne pas la
-> créer pour l'instant. Produis quand même ces textes — ils seront prêts le
-> jour où la fiche ouvrira — mais rappelle une fois par cycle, en une ligne,
-> qu'ils ne sont pas publiables tant que la fiche n'est pas créée.
+> ✅ **Corrigé le 12 octobre 2026 : la fiche Google existe.** Elle
+> appartient au compte de Sandra, et Laurent y a accès. Ces textes sont
+> donc **publiables**, et ne portent plus la réserve qui précédait.
+>
+> Une réserve subsiste, mais elle est d'une autre nature : la fiche n'a
+> jamais été corrigée depuis sa création. Avant d'y publier quoi que ce
+> soit, vérifier dans cet ordre la catégorie principale, le fait que ce
+> soit bien une fiche de zone desservie avec adresse masquée, le nom, et
+> le site web. La marche à suivre complète est dans
+> `outils/FICHE-GOOGLE.md`.
 
 ### C. Vidéo — reels, TikTok, shorts (15 à 30 s)
 
