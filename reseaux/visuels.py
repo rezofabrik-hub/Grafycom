@@ -254,6 +254,84 @@ class Planche:
         return self
 
     # -- sortie ------------------------------------------------------
+    def puces(self, items, pastille="corail", taille=40, couleur="brun",
+              numerote=False, y=None, interligne=1.5, diam=22):
+        """Une liste a pastilles. Les items passent a la ligne proprement."""
+        if y is not None:
+            self.y = y
+        f = police(400, taille)
+        for i, it in enumerate(items, 1):
+            cx, cy = MARGE + diam // 2, self.y + taille // 2
+            if numerote:
+                self.d.ellipse([cx - diam, cy - diam, cx + diam, cy + diam],
+                               fill=teinte(pastille))
+                fn = police(800, int(diam * 1.1))
+                n = str(i)
+                l = self.d.textlength(n, font=fn)
+                self.d.text((cx - l / 2, cy - diam * 0.72), n, font=fn,
+                            fill=teinte("blanc"))
+            else:
+                r = diam // 2
+                self.d.ellipse([cx - r, cy - r, cx + r, cy + r],
+                               fill=teinte(pastille))
+            x = MARGE + diam * 2 + 18
+            for ligne in couper(it, f, self.l - x - MARGE):
+                self.d.text((x, self.y), ligne, font=f, fill=teinte(couleur))
+                self.y += int(taille * 1.3)
+            self.y += int(taille * (interligne - 1.3))
+        return self
+
+    def chiffre(self, texte, taille=260, couleur="bleu", y=None, centre=False):
+        """Un grand nombre, seul. Pour une heure, un prix, une mesure."""
+        if y is not None:
+            self.y = y
+        f = police(800, taille)
+        l = self.d.textlength(texte, font=f)
+        x = (self.l - l) / 2 if centre else MARGE
+        self.d.text((x, self.y), texte, font=f, fill=teinte(couleur))
+        self.y += int(taille * 1.08)
+        return self
+
+    def encadre(self, texte, taille=40, fond="creme_rose", filet="violet",
+                y=None, pad=34, graisse=400, couleur="brun"):
+        """Un bloc de texte dans un cadre a filet lateral."""
+        if y is not None:
+            self.y = y
+        f = police(graisse, taille)
+        lignes = couper(texte, f, self.l - 2 * MARGE - 2 * pad - 10)
+        h = len(lignes) * int(taille * 1.36) + 2 * pad
+        self.d.rectangle([MARGE, self.y, self.l - MARGE, self.y + h],
+                         fill=teinte(fond))
+        self.d.rectangle([MARGE, self.y, MARGE + 10, self.y + h],
+                         fill=teinte(filet))
+        yy = self.y + pad
+        for ligne in lignes:
+            self.d.text((MARGE + pad + 10, yy), ligne, font=f,
+                        fill=teinte(couleur))
+            yy += int(taille * 1.36)
+        self.y += h
+        return self
+
+    def photo_a_fournir(self, description):
+        """Une planche d'attente, explicite.
+
+        visuels.py ne fabrique pas de photographies : une devanture, une
+        matiere, un plan de travail se photographient. Plutot que de
+        laisser un trou dans le carrousel, on pose une planche qui dit ce
+        qui manque. Elle ne se publie jamais telle quelle.
+        """
+        self.d.rectangle([MARGE, 300, self.l - MARGE, 1050],
+                         outline=teinte("taupe"), width=4)
+        f = police(600, 34)
+        self.d.text((MARGE + 40, 350), "PHOTO À FOURNIR", font=f,
+                    fill=teinte("corail"))
+        self.y = 430
+        self.texte(description, 38, "brun", 400, avant=0)
+        self.y = 950
+        self.texte("Cette planche ne se publie pas. Elle attend l'image.",
+                   30, "taupe", 400, avant=0)
+        return self
+
     def poser(self, chemin, cx, cy, largeur, angle=0.0, ombre=28,
               rogner_mm=0.0, mm_par_px=None):
         """Pose une image plate : carte, panneau, document.
@@ -790,6 +868,103 @@ def solaire_66(dossier=None):
     p.signature("blanc")
     faits.append(p.ecrire(d / "07.png"))
 
+    return faits
+
+
+# ---------------------------------------------------------------------
+# Un logo fictif, dessine, pour les demonstrations de reduction.
+# Il n'imite aucune marque existante : c'est un exercice, et la legende
+# de la publication le dit.
+# ---------------------------------------------------------------------
+def _logo_fictif(d, cx, cy, r, detail=True):
+    from PIL import ImageDraw
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=teinte("bleu"))
+    d.ellipse([cx - r * .72, cy - r * .72, cx + r * .72, cy + r * .72],
+              fill=teinte("bleu_vif"))
+    d.ellipse([cx - r * .44, cy - r * .44, cx + r * .44, cy + r * .44],
+              fill=teinte("creme"))
+    if detail and r > 26:
+        for i in range(10):          # les contours fins, premiers a disparaitre
+            a = r * (.80 + i * .012)
+            d.arc([cx - a, cy - a, cx + a, cy + a], 200 + i * 14, 250 + i * 14,
+                  fill=teinte("blanc"), width=max(1, int(r / 60)))
+        f = police(600, max(8, int(r * .17)))
+        t = "ATELIER DU PONT"
+        l = d.textlength(t, font=f)
+        d.text((cx - l / 2, cy + r * 1.12), t, font=f, fill=teinte("encre"))
+
+
+def pub09_logo_reduction(dossier=None):
+    """n° 9, lundi 26 octobre — un logo tient-il en petit."""
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-26-logo-reduction"))
+    faits = []
+
+    p = Planche("creme")
+    p.titre("Votre logo tient-il" + "\n" + "sur un stylo ?", 96, y=150)
+    _logo_fictif(p.d, 400, 760, 210)
+    _logo_fictif(p.d, 790, 760, 26)
+    f = police(400, 30)
+    p.d.text((742, 830), "même logo, 8 mm", font=f, fill=teinte("taupe"))
+    p.y = 1120
+    p.texte("Exercice de style — logo non commandé.", 30, "taupe", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("blanc")
+    p.titre("On réduit, et on regarde.", 86, y=150)
+    for cx, r in ((280, 180), (640, 86), (870, 44)):
+        _logo_fictif(p.d, cx, 640, r)
+    p.y = 920
+    p.texte("Le test prend trois secondes : on réduit, et on regarde ce qui "
+            "disparaît en premier.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("bleu")
+    p.titre("Ce qui disparaît" + "\n" + "en premier.", 92, "blanc", y=170)
+    p.puces(["les dégradés", "les ombres portées", "les contours fins",
+             "le texte placé sous le symbole"],
+            "corail", 42, "blanc", y=520, interligne=1.6)
+    p.signature("blanc")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("creme")
+    p.titre("Un logo doit exister" + "\n" + "en une seule couleur.", 84, y=150)
+    _logo_fictif(p.d, 300, 700, 150)
+    p.d.ellipse([570, 550, 870, 850], fill=teinte("encre"))
+    p.d.ellipse([570 + 42, 550 + 42, 870 - 42, 850 - 42], fill=teinte("creme"))
+    p.d.ellipse([570 + 84, 550 + 84, 870 - 84, 850 - 84], fill=teinte("encre"))
+    p.y = 930
+    p.texte("Tampon, broderie, gravure, fax du comptable : tout ça n'a "
+            "qu'une encre.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("creme")
+    p.titre("Le même, cinq fois," + "\n" + "sans retouche.", 88, y=150)
+    supports = [("carte de visite", 240, 560), ("polo brodé", 560, 560),
+                ("flanc de camionnette", 880, 560), ("panneau", 320, 850),
+                ("favicon", 760, 850)]
+    f = police(600, 26)
+    for nom, cx, cy in supports:
+        _logo_fictif(p.d, cx, cy, 72)
+        l = p.d.textlength(nom, font=f)
+        p.d.text((cx - l / 2, cy + 92), nom, font=f, fill=teinte("violet"))
+    p.y = 1030
+    p.texte("Si l'un des cinq demande une retouche, c'est le logo qu'il "
+            "faut revoir, pas le support.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("violet")
+    p.titre("Faites le test" + "\n" + "ce soir.", 104, "blanc", y=320)
+    p.y = 640
+    p.texte("Réduisez votre logo à la taille d'un ongle. Si vous ne le "
+            "reconnaissez plus, vos clients non plus.", 40, "blanc", 400,
+            avant=0)
+    p.fleche("corail", y=950)
+    p.signature("blanc")
+    faits.append(p.ecrire(d / "06.png"))
     return faits
 
 def main():
