@@ -134,37 +134,39 @@
 
 ---
 
-## 5 — Lundi 2 novembre 2026, 12 h 30 · 195 mots
+## 5 — Lundi 2 novembre 2026, 12 h 30 · 215 mots · **Solaire 66**
 
-> **Pourquoi présenter trois pistes de logo, et non une seule**
->
-> Lors de la création d'une identité visuelle, trois propositions distinctes
-> sont présentées. Une seule partira en production. Les deux autres ne sont ni
-> du remplissage ni des faire-valoir : elles remplissent une fonction précise.
->
-> La première piste est la plus rassurante : classique, solide, lisible dans
-> dix ans. C'est fréquemment la bonne réponse, et rarement celle qui
-> enthousiasme en réunion.
->
-> La deuxième est plus distinctive. Elle se remarque davantage, prend plus de
-> risques, et vieillit parfois moins bien. Selon le secteur et la concurrence,
-> c'est exactement ce qu'il faut.
->
-> La troisième n'est pas recommandée, et elle est présentée comme telle. Elle
-> existe pour permettre un refus argumenté, car c'est souvent en écartant une
-> proposition que l'on comprend ce que l'on cherche. Un dirigeant à qui l'on
-> ne soumet qu'une seule piste ne choisit pas : il accepte.
->
-> La question posée n'est d'ailleurs pas « laquelle préférez-vous », mais
-> « laquelle ressemble le plus à vos clients ». Ce n'est pas la même, et c'est
-> là que se joue le travail.
->
-> Grafycom conçoit à Perpignan les identités visuelles des créateurs
-> d'entreprise et des entreprises en refonte.
+> 🔒 Accord client à obtenir. Ce texte ne nomme pas le client : il décrit
+> le métier et la démarche. Il reste publiable même si l'accord tarde,
+> **à condition que le carrousel du même jour ne soit pas publié** — sans
+> lui, le texte perd son illustration mais garde son sens.
 
-**Bouton :** « En savoir plus » → `https://grafycom.fr/refaire-son-image.html`
+> **Un logo se dessine en grand et se vérifie en petit**
+>
+> Un logo réussi raconte le métier avant qu'on ait lu le nom. Pour une
+> entreprise d'énergie solaire des Pyrénées-Orientales, trois éléments
+> suffisent : une silhouette de montagne qui situe le département, un
+> soleil, un éclair. Aucune légende n'est nécessaire.
+>
+> La finesse du dessin se joue ailleurs. Le symbole intégré dans le mot —
+> une lettre remplacée par le signe — ne peut plus se détacher du nom, là
+> où un pictogramme posé à côté finit toujours par être oublié dans un
+> document ou remplacé par une icône.
+>
+> Reste la contrainte dont on parle rarement : la réduction. Sur une façade
+> ou un véhicule, un logo peut tout se permettre. Dans un avatar de réseau
+> social, sur un tampon encreur ou brodé sur un vêtement de travail, le
+> détail devient illisible. C'est pourquoi une identité livrée ne contient
+> jamais un seul fichier : une version complète, une version simplifiée
+> pour les petites tailles, une version en une seule couleur pour la
+> gravure et la broderie, et les fichiers vectoriels qui permettent de tout
+> agrandir sans perte.
+>
+> Grafycom crée des identités visuelles à Perpignan et dans les
+> Pyrénées-Orientales, livrées avec leurs déclinaisons et leurs fichiers
+> sources.
 
----
+**Bouton** : « En savoir plus » → <https://grafycom.fr/prestations.html#logo>
 
 ## 6 — Mardi 3 novembre 2026, 8 h 00 · 193 mots
 

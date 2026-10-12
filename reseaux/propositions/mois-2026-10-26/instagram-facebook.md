@@ -361,88 +361,118 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 
 # SEMAINE 2 — du 2 au 8 novembre
 
-## 5 — Lundi 2 novembre, 12 h 30 · Carrousel · Pilier 7, démarche studio
+## 5 — Lundi 2 novembre, 12 h 30 · Carrousel · Pilier « réalisations » · **Solaire 66**
 
-> ⚠️ **Exercice de style, projet non commandé.** La mention figure sur la
-> slide 1 **et** en première ligne de la légende. Aucune marque existante
-> n'est redessinée, aucun nom réel n'apparaît.
+> 🔒 **Accord client à obtenir avant publication.** Solaire 66 est un vrai
+> client et un vrai projet livré. La règle ne souffre pas d'exception, même
+> si le contrat cède les droits : un client qui se découvre sur Instagram
+> est un client perdu. Un message, une réponse écrite, et on publie.
+>
+> 🔁 **Repli prêt si le client refuse ou ne répond pas à temps :** l'ancienne
+> version de cette publication — « Je présente toujours trois pistes, deux
+> sont faites pour être écartées », exercice de style sur logos fictifs —
+> est conservée dans l'historique git de ce fichier. Elle tient la même
+> date et le même créneau.
+>
+> 📁 **Fichier à fournir : le vectoriel.** Le logo transmis est un JPEG :
+> pas de transparence, donc impossible à poser ailleurs que sur du blanc,
+> et il ne s'agrandit pas. Sandra a le `.ai` ou le `.eps`, puisqu'elle l'a
+> dessiné.
+
+**Pourquoi cette publication remplace l'exercice fictif.** Le cahier des
+charges le dit : les réalisations sont le pilier le plus fort et le plus
+rare. Un projet réel bat un exercice de style à tous les coups. C'était le
+seul pilier que ce mois ne servait pas.
+
+**L'idée, une seule :** un symbole posé à côté d'un nom reste un symbole à
+côté d'un nom. Intégré dans le mot, il devient le logo. Le `O` de SOLAIRE
+*est* le soleil.
 
 ### Direction visuelle — 6 slides
 
-- **S1.** Fond `#f7f1ef`. Trois vignettes de logo côte à côte, numérotées 1,
-  2, 3, toutes abouties, toutes différentes. Titre : « Je présente toujours
-  trois pistes. Deux sont faites pour être écartées. » Et, en petit mais
-  lisible, en bas : « Exercice de style — projet non commandé. »
-- **S2.** Fond blanc. Texte seul, grand : « Ce n'est pas un choix de
-  client. C'est une méthode de travail. » Sous-titre en gris : « Et ça
-  change ce qu'on vous demande de regarder. »
-- **S3.** Zoom sur la piste 1, avec trois mots-clés en violet `#a86cd0` :
-  *rassurante · classique · tiendra dix ans*. Sous le logo, un fragment de
-  carte de visite et un fragment d'enseigne dans la même piste.
-- **S4.** Idem pour la piste 2, mots-clés en bleu vif `#35a9dd` :
-  *distinctive · plus risquée · se remarque en rayon*.
-- **S5.** Idem pour la piste 3, mots-clés en corail `#f2585c` :
-  *la piste que je ne recommande pas · elle existe pour que vous sachiez
-  pourquoi*.
-- **S6.** Fond violet plein, texte blanc. « Une seule part en production.
-  Les deux autres ont servi à savoir laquelle. » Flèche corail : « Laquelle
-  auriez-vous gardée ? En commentaire. »
+- **S1.** Fond blanc `#ffffff`. Le logo Solaire 66 en entier, centré,
+  large, respiration généreuse. Aucun texte par-dessus. En bas, petit :
+  « Solaire 66 · logo livré ». Laisser le logo parler le premier.
+- **S2.** Fond crème `#f7f1ef`. À gauche, une version fabriquée pour la
+  démonstration : le mot SOLAIRE en lettres normales, avec un petit soleil
+  **posé à côté**. À droite, le vrai logo. Titre au-dessus :
+  « La différence tient en une lettre. »
+- **S3.** Fond blanc. Zoom serré sur le `O` devenu spirale solaire.
+  Titre : « Le symbole n'est pas à côté du mot. Il **est** une lettre du
+  mot. » Sous-titre gris : « On ne peut plus les séparer — c'est le but. »
+- **S4.** Fond crème. Les trois idées du logo isolées en trois vignettes,
+  chacune avec son mot : la montagne → *le 66*, la spirale → *le soleil*,
+  l'éclair → *l'électricité*. Titre : « Trois informations, une seule
+  image, aucune légende. »
+- **S5.** Fond blanc. Le logo réduit à la taille réelle d'un avatar, posé
+  à côté du logo grand format. Titre : « Et il doit survivre à ça. »
+  Texte : « Un logo se dessine grand et se vérifie petit. Si la spirale se
+  bouche à 48 pixels, c'est une version simplifiée qu'il faut, pas un
+  autre logo. »
+- **S6.** Fond crème, filet violet `#a86cd0` à gauche. « Votre logo passe
+  de la façade au tampon encreur. Il doit tenir aux deux bouts. »
+  Pastille corail `#f2585c` : « Parlons-en » · lien en bio.
+  Pied : `@grafycom.graphiste`
 
 ### Accroche
-**« Je présente toujours trois pistes. Deux sont faites pour être écartées. »**
+
+« Regardez le O. »
 
 ### Légende
 
-> Exercice de style, projet non commandé : les trois logos de ce carrousel
-> n'appartiennent à personne, et aucune marque existante n'a été redessinée.
->
-> Quand je présente une identité visuelle, il y a trois pistes sur la table.
-> Une seule partira en production. Les deux autres ne sont pas du remplissage,
-> et ce ne sont pas non plus des faire-valoir ratés exprès — ça se verrait.
->
-> Voici à quoi elles servent.
->
-> **La piste rassurante.** Classique, solide, lisible dans dix ans. C'est
-> souvent la bonne réponse, et presque jamais celle qui enthousiasme en
-> réunion.
->
-> **La piste distinctive.** Plus marquée, plus risquée, elle se remarque en
-> rayon et vieillit moins bien. Parfois c'est exactement ce qu'il faut.
->
-> **La piste que je ne recommande pas.** Celle-là mérite une explication.
-> Elle existe pour que vous puissiez dire « pas ça » — et c'est souvent en la
-> rejetant qu'on comprend ce qu'on veut vraiment. Un client qui n'a vu qu'une
-> proposition ne choisit pas : il accepte.
->
-> Ce que je ne fais pas, en revanche : vous demander laquelle vous préférez.
-> La question utile, c'est laquelle ressemble le plus à vos clients. Ce n'est
-> pas la même, et c'est tout le travail.
->
-> **Laquelle auriez-vous gardée, 1, 2 ou 3 ?** Et dites pourquoi : c'est la
-> partie intéressante.
+Regardez le `O` de SOLAIRE. Ce n'est pas un `O` avec un soleil posé
+dessus : c'est le soleil qui tient le rôle du `O`.
+
+La différence paraît minime. Elle ne l'est pas.
+
+Un symbole posé à côté d'un nom peut toujours s'en détacher. On finit par
+l'oublier dans un document, le remplacer par une icône, le réduire jusqu'à
+ce qu'il disparaisse. Un symbole **devenu une lettre** ne peut plus partir
+sans emporter le mot avec lui.
+
+Ce logo dit trois choses sans une ligne d'explication : la montagne situe
+le département, la spirale dit le soleil, l'éclair dit l'électricité.
+Quelqu'un qui n'a jamais entendu parler de l'entreprise comprend son métier
+avant d'avoir lu le nom. C'est exactement le travail qu'on demande à un
+logo.
+
+Et il y a la contrainte dont on parle moins : un logo se dessine en grand
+et se vérifie en petit. Sur une façade, sur un camion, il peut tout se
+permettre. Dans un avatar de 48 pixels, sur un tampon encreur, sur un polo
+brodé, la finesse devient de la bouillie. C'est pour ça qu'une identité
+livrée ne contient jamais un seul fichier : il y a la version complète, la
+version simplifiée, et la version en une seule couleur.
+
+Si votre logo n'existe qu'en une seule version, vous ne le découvrirez pas
+aujourd'hui. Vous le découvrirez le jour où un imprimeur vous demandera un
+fichier que vous n'avez pas.
 
 ### Texte alternatif
-Carrousel de six visuels sur la méthode des trois pistes. Trois propositions
-de logo fictives, numérotées et abouties, sont présentées côte à côte, avec la
-mention « exercice de style, projet non commandé ». Chaque piste est ensuite
-détaillée avec trois mots-clés et un fragment de carte de visite et
-d'enseigne. Le dernier visuel, sur fond violet, indique qu'une seule piste
-part en production.
 
-### Hashtags — jeu B + 2 secteur
-`#identitevisuelle #creationlogo #designgraphique #directionArtistique #charteGraphique #graphismeFrance #ouvertureCommerce #nouvelleEntreprise`
+Logo de Solaire 66 : une chaîne de montagnes bleues en silhouette, un
+soleil dessiné en spirale jaune qui remplace la lettre O du mot SOLAIRE, un
+éclair jaune traversant le relief, et le nombre 66 en jaune. Le mot SOLAIRE
+est découpé dans la masse bleue des montagnes.
+
+### Hashtags — jeu B + 2 locaux
+
+`#creationlogo` `#identitevisuelle` `#designgraphique` `#directionArtistique`
+`#brandingLocal` `#logodesign` `#charteGraphique` `#printdesign`
+`#graphistePerpignan` `#PyreneesOrientales`
 
 ### À fournir par Sandra
-- **Trois pistes de logo réellement différentes, sur une marque fictive.**
-  C'est le point sensible du post : si les trois pistes sont trois variantes
-  de la même idée, le carrousel se retourne contre vous.
-- La piste 3 doit être **bonne et assumée**, pas bâclée. Le propos est
-  qu'elle est écartée pour une raison, pas qu'elle est mauvaise.
-- **Aucun projet client, même avec accord.** Ce post montre des pistes
-  rejetées : c'est exactement ce qu'un client n'a pas envie de voir en
-  ligne.
-- La mention « exercice de style — projet non commandé » doit être lisible
-  sur la S1 sans zoomer.
+
+- **L'accord écrit de Solaire 66.** Bloquant. Sans lui, on bascule sur le
+  repli.
+- **Le fichier vectoriel du logo** (`.ai`, `.eps`, `.svg` ou `.pdf`). Le
+  JPEG reçu ne suffit pas pour composer : pas de transparence, pas
+  d'agrandissement.
+- **La version simplifiée et la version monochrome**, si elles existent.
+  Ce sont elles qui font la slide 5. Si elles n'existent pas, la slide se
+  réécrit au conditionnel — et c'est une conversation à avoir avec le
+  client.
+- *Aucune photo.* Les six slides sont des planches composées ; `visuels.py`
+  les dessine à partir du vectoriel.
 
 ---
 

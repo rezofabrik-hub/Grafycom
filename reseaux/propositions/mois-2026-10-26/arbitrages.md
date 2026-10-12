@@ -231,6 +231,35 @@ disponible si vous le voulez l'an prochain.
 
 ---
 
+## 3 bis · Solaire 66 — le seul vrai projet client du mois
+
+Laurent a transmis le logo le 12 octobre. Il remplace la publication n° 5
+du 2 novembre, qui était un exercice de style sur des logos fictifs. C'est
+un gain net : le pilier « réalisations » est le plus fort et le plus rare,
+et c'était le seul que ce mois ne servait pas.
+
+**Deux conditions, et la première est bloquante.**
+
+1. **L'accord écrit de Solaire 66.** La règle ne souffre pas d'exception,
+   même quand le contrat cède les droits. Un message, une réponse écrite,
+   et on publie. Sans accord, l'ancienne version de la publication est dans
+   l'historique git et reprend la même date.
+2. **Le fichier vectoriel.** Celui qui a été transmis est un JPEG : pas de
+   transparence, donc impossible à poser ailleurs que sur du blanc, et il
+   ne s'agrandit pas. Sandra a le `.ai` ou le `.eps` puisqu'elle l'a
+   dessiné.
+
+Il faudrait aussi **la version simplifiée et la version monochrome** : ce
+sont elles qui font la cinquième slide. Si elles n'existent pas, la slide
+se réécrit — et c'est une conversation à avoir avec le client, parce qu'une
+identité sans déclinaison se bloque au premier imprimeur qui demande un
+fichier de broderie.
+
+Le texte de fiche Google du même jour **ne nomme pas le client** : il reste
+publiable même si l'accord tarde.
+
+---
+
 ## 4 · Ce qu'il manque, et que personne ne peut inventer
 
 - **Vos délais d'imprimeur réels pour décembre.** Aucun nombre de jours n'a

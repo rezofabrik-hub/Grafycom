@@ -73,8 +73,9 @@ Elles passent avant tout le reste de ce document.
    témoignage, ni projet. Les clients réels publiables sont ceux déjà sur
    le site : Casa Aldo (**le logo seul** — la fabrication de l'enseigne est
    d'un partenaire), Cap Loisirs, Le Cayrou, O Fait Maison, Alliance
-   Véhicule, Mia Beauty, Crazy Frenchy, Pizza Fry, Victoire. Tu ne vas pas
-   au-delà. **Aucun projet client ne se publie sans son accord**, même si
+   Véhicule, Mia Beauty, Crazy Frenchy, Pizza Fry, Victoire, et **Solaire 66**
+   (logo, ajouté le 12 octobre 2026 par Laurent, fichier dans
+   `reseaux/visuels/sources/`). Tu ne vas pas au-delà. **Aucun projet client ne se publie sans son accord**, même si
    le contrat cède les droits. Dès qu'une proposition montre un projet,
    écris en tête : « accord client à obtenir avant publication ».
 
