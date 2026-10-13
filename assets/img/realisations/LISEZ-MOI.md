@@ -129,9 +129,9 @@ pas un lieu réel.
 
 | Projet | Publiable en réalisation | Note |
 |---|---|---|
-| **SR Coiffure** | oui | logo — fichier à récupérer |
-| **B.F Plomberie** | oui | logo — fichier à récupérer |
-| **Social Miroir** | oui | logo — fichier à récupérer |
+| **SR Coiffure** | oui | forme vectorisée depuis la capture, **le filet doré manque** — demander le fichier au client |
+| **B.F Plomberie** | oui | **non récupérable** depuis la capture : nom en blanc sur beige, dégradé, texture |
+| **Social Miroir** | oui | ⏳ **Laurent doit envoyer le logo** — demandé le 13 octobre |
 | **La Casquette Bleue** | **non** | Sandra n'a pas créé son identité : impression de cartes de visite uniquement |
 
 ### La Casquette Bleue : cliente, pas réalisation
