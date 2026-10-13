@@ -170,3 +170,34 @@ d'aucune image réelle : `visuels.py` les dessine entièrement.
   un logo de fournisseur, une enseigne voisine au second plan.
 - **Un visage reconnaissable** sans accord de la personne.
 - **Un projet client non livré ou non validé.** Même flouté, même de loin.
+- **Une image générée.** Voir ci-dessous — c'est arrivé le 13 octobre.
+
+## Une image générée n'est pas une photo
+
+Deux images ont été proposées le 13 octobre comme étant les deux prises de
+vue demandées. Elles ne l'étaient pas : c'étaient des images générées.
+
+**Comment ça se voit, en dix secondes.** Il suffit d'agrandir une
+enseigne, une affiche, une étiquette. Sur les deux images, **tous** les
+textes étaient des pseudo-lettres : « S A.CKS », « Tïvllts », « nmcces »,
+et sur l'auvent du commerce une suite de signes illisibles. Un modèle
+génératif dessine la forme d'un texte sans savoir l'écrire. Aucune des
+deux n'avait non plus de données EXIF — ni appareil, ni objectif, ni date
+de prise de vue. Un téléphone en laisse toujours.
+
+**Pourquoi c'est disqualifiant ici**, au-delà de la règle de
+`LIGNE-EDITORIALE.md` :
+
+1. **Ce n'est pas Perpignan.** Les deux scènes montrent des rues qui
+   n'existent pas. Tout l'intérêt d'une photo locale est d'être locale ;
+   un commerçant de Saint-Estève reconnaît sa rue, ou ne reconnaît rien.
+2. **Une graphiste qui publie une enseigne au texte illisible pour parler
+   de lisibilité d'enseigne se contredit dans la même image.** C'est le
+   genre de détail qu'un confrère repère, et qu'il montre.
+3. **Les droits ne sont pas clairs**, et c'est exactement ce que la règle
+   interdit : ni photo trouvée, ni visuel de banque sans licence.
+
+**Ce qui reste vrai :** les deux sorties décrites plus haut prennent une
+heure, au téléphone, et débloquent six publications. Il n'y a pas de
+raccourci — c'est la raison d'être de ce document.
+
