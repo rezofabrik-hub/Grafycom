@@ -124,3 +124,33 @@ comme un travail. Mais il n'a rien à faire sur la page réalisations sous
 la ligne d'attribution de la page réalisations, et son texte alternatif
 ne parle plus d'un « hall d'entreprise » — le mur est une présentation,
 pas un lieu réel.
+
+## Statuts précisés le 13 octobre
+
+| Projet | Publiable en réalisation | Note |
+|---|---|---|
+| **SR Coiffure** | oui | logo — fichier à récupérer |
+| **B.F Plomberie** | oui | logo — fichier à récupérer |
+| **Social Miroir** | oui | logo — fichier à récupérer |
+| **La Casquette Bleue** | **non** | Sandra n'a pas créé son identité : impression de cartes de visite uniquement |
+
+### La Casquette Bleue : cliente, pas réalisation
+
+La distinction compte, et elle est facile à perdre de vue. Ludivine Le
+Blay est une **cliente réelle** dont l'avis figure sur la page
+réalisations — c'est légitime, elle parle du service rendu. Mais son
+identité visuelle n'est pas une création de Sandra : **son logo et ses
+visuels n'ont rien à faire dans le portfolio**, ni sur le site ni sur les
+réseaux.
+
+Un avis client et une référence de création sont deux choses séparées.
+Confondre les deux, c'est s'attribuer un travail qu'on n'a pas fait — la
+faute la plus coûteuse du métier.
+
+### Les trois logos à récupérer
+
+SR Coiffure, B.F Plomberie et Social Miroir apparaissent dans la
+publication Instagram du 19 janvier. Il faut leurs **fichiers sources**,
+pas une capture du carrousel : vectoriel de préférence, sinon un PNG à
+fond transparent d'au moins 2000 px. Même exigence que pour Casa Aldo, et
+pour la même raison.

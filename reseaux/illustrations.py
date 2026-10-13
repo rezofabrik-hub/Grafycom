@@ -217,10 +217,169 @@ def illu_droits():
     return im
 
 
+
+# ------------------------------------------------------------- vitrine
+
+def illu_vitrine():
+    """Les trois habillages, dans le meme cadre de vitrine.
+
+    L'article compare depoli, microperfore et lettres decoupees. Montres
+    cote a cote dans trois vitrines identiques, l'ecart se lit d'un coup :
+    le depoli masque, le microperfore laisse voir de l'interieur, les
+    lettres ne couvrent presque rien.
+    """
+    im, d = fond()
+    x0, y, larg, haut = 90, 110, 320, 300
+    for i, (titre, desc) in enumerate([
+            ("Dépoli", "masque tout, laisse la lumière"),
+            ("Microperforé", "opaque dehors, transparent dedans"),
+            ("Lettres découpées", "on ne couvre que le dessin")]):
+        x = x0 + i * 345
+        # la vitre
+        d.rectangle([x, y, x + larg, y + haut], fill=rvb("blanc"),
+                    outline=rvb("sable_fonce"), width=3)
+        d.rectangle([x, y + haut, x + larg, y + haut + 14],
+                    fill=rvb("encre"))
+        if i == 0:
+            d.rectangle([x + 3, y + 3, x + larg - 3, y + haut - 3],
+                        fill=rvb("sable"))
+        elif i == 1:
+            # la trame de perforation, dessinee point par point
+            for py in range(y + 10, y + haut - 8, 9):
+                for px in range(x + 10, x + larg - 8, 9):
+                    d.ellipse([px, py, px + 4, py + 4], fill=rvb("taupe"))
+        else:
+            f = police("Playfair-800", 86)
+            mot = "NOM"
+            d.text((x + (larg - f.getlength(mot)) / 2, y + haut / 2 - 60),
+                   mot, font=f, fill=rvb("encre"))
+        legende(d, x + larg / 2, y + haut + 36, titre, 24, "encre",
+                centre=True)
+        legende(d, x + larg / 2, y + haut + 66, desc, 19, "taupe",
+                centre=True)
+    titre_bas(d, "Trois façons de couvrir une vitre. Trois effets.")
+    return im
+
+
+# --------------------------------------------------------- retroplanning
+
+def illu_retroplanning():
+    """Le compte a rebours, lu de droite a gauche.
+
+    Tout le propos : on ne compte pas depuis aujourd'hui, on compte
+    depuis la boite aux lettres. La frise est donc flechee vers la
+    gauche, et les deux reperes nomment ses extremites.
+    """
+    im, d = fond()
+    etapes = [("Création", "10 j"), ("Bon à tirer", "4 j"),
+              ("Impression", "8 j"), ("Réception", "24 déc.")]
+    cy = 250
+    xs = [170, 450, 730, 1010]
+    for i, (nom, delai) in enumerate(etapes):
+        x = xs[i]
+        d.ellipse([x - 42, cy - 42, x + 42, cy + 42], fill=rvb("corail"))
+        fn = police("Inter-800", 38)
+        n = str(i + 1)
+        d.text((x - fn.getlength(n) / 2, cy - 26), n, font=fn,
+               fill=rvb("blanc"))
+        legende(d, x, cy + 64, nom, 23, "encre", centre=True)
+        legende(d, x, cy + 94, delai, 20, "taupe", centre=True)
+        if i < 3:                       # une fleche, vers la gauche
+            xa, xb = xs[i + 1] - 58, x + 58
+            d.line([(xa, cy), (xb + 18, cy)], fill=rvb("sable_fonce"),
+                   width=5)
+            d.polygon([(xb, cy), (xb + 22, cy - 12), (xb + 22, cy + 12)],
+                      fill=rvb("sable_fonce"))
+    legende(d, 170, cy - 92, "aujourd'hui", 20, "taupe", centre=True)
+    legende(d, 1010, cy - 92, "la boîte aux lettres", 20, "taupe",
+            centre=True)
+    titre_bas(d, "22 jours ouvrés. On compte à rebours, pas en avant.")
+    return im
+
+
+# ------------------------------------------------------------ trottoir
+
+def illu_trottoir():
+    """Ce qui reste lisible a mesure qu'on s'eloigne.
+
+    La meme vitrine, vue de 3, 10 et 20 metres. Le detail disparait, le
+    contraste reste : c'est exactement ce que l'article demande de
+    hierarchiser avant de decorer.
+    """
+    im, d = fond()
+    from PIL import ImageFilter
+    for i, (dist, flou, lignes) in enumerate([("3 m", 0, 3), ("10 m", 2, 2),
+                                              ("20 m", 5, 1)]):
+        x, y, larg, haut = 90 + i * 345, 115, 320, 290
+        vitre = Image.new("RGB", (larg, haut), rvb("encre"))
+        dv = ImageDraw.Draw(vitre)
+        f = police("Playfair-800", 54)
+        mot = "NOËL"
+        dv.text(((larg - f.getlength(mot)) / 2, 46), mot, font=f,
+                fill=rvb("jaune"))
+        fp = police("Inter-400", 21)
+        petits = ["ouvert le dimanche", "idées cadeaux à partir de 12 €",
+                  "emballage offert"]
+        for j in range(3):
+            if j < 3 - i:
+                dv.text(((larg - fp.getlength(petits[j])) / 2, 140 + j * 34),
+                        petits[j], font=fp, fill=rvb("creme"))
+        if flou:
+            vitre = vitre.filter(ImageFilter.GaussianBlur(flou))
+        im.paste(vitre, (x, y))
+        d.rectangle([x, y, x + larg, y + haut], outline=rvb("sable_fonce"),
+                    width=3)
+        legende(d, x + larg / 2, y + haut + 30, dist, 24, "encre",
+                centre=True)
+        legende(d, x + larg / 2, y + haut + 60,
+                "%d ligne%s lisible%s" % (lignes, "s" if lignes > 1 else "",
+                                          "s" if lignes > 1 else ""),
+                19, "taupe", centre=True)
+    titre_bas(d, "À vingt mètres, il ne reste qu'un mot. Choisissez-le.")
+    return im
+
+
+# --------------------------------------------------------------- bilan
+
+def illu_bilan():
+    """Trois questions, et ce que repond chaque combinaison.
+
+    L'article refuse la refonte par calendrier et propose un diagnostic.
+    Le schema est ce diagnostic : trois cases, puis la conclusion.
+    """
+    im, d = fond()
+    questions = ["Lisible partout ?", "Fichiers en main ?",
+                 "Dit-il ce que vous vendez ?"]
+    for i, q in enumerate(questions):
+        x, y, larg, haut = 90, 100 + i * 96, 700, 72
+        d.rounded_rectangle([x, y, x + larg, y + haut], radius=10,
+                            fill=rvb("blanc"), outline=rvb("sable"), width=2)
+        d.ellipse([x + 22, y + 20, x + 54, y + 52], fill=rvb("violet"))
+        fn = police("Inter-800", 20)
+        d.text((x + 32, y + 26), str(i + 1), font=fn, fill=rvb("blanc"))
+        legende(d, x + 74, y + 24, q, 24, "encre")
+    # la conclusion, a droite
+    bx = 840
+    d.rounded_rectangle([bx, 100, bx + 270, 196], radius=10,
+                        fill=rvb("creme_rose"))
+    legende(d, bx + 135, 124, "Un « non »", 23, "encre", centre=True)
+    legende(d, bx + 135, 154, "on ajuste", 21, "turquoise", centre=True)
+    d.rounded_rectangle([bx, 292, bx + 270, 388], radius=10,
+                        fill=rvb("encre"))
+    legende(d, bx + 135, 316, "Trois « non »", 23, "blanc", centre=True)
+    legende(d, bx + 135, 346, "on redessine", 21, "jaune", centre=True)
+    titre_bas(d, "Un bilan, pas une résolution.")
+    return im
+
+
 ILLUSTRATIONS = {
     "autorisation-enseigne-perpignan": ("enseigne.png", illu_enseigne),
     "couleurs-impression-ecran-cmjn": ("cmjn.png", illu_cmjn),
     "qui-possede-votre-logo": ("droits.png", illu_droits),
+    "habiller-sa-vitrine-66": ("vitrine.png", illu_vitrine),
+    "supports-fin-annee-66": ("retroplanning.png", illu_retroplanning),
+    "vitrine-fin-annee-trottoir": ("trottoir.png", illu_trottoir),
+    "refaire-son-logo-nouvelle-annee": ("bilan.png", illu_bilan),
 }
 
 # Là où une vraie photo vaudrait mieux qu'un schéma. Sandra les prend ;

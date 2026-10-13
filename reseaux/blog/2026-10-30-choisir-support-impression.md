@@ -5,8 +5,8 @@ titre_seo: "Couleurs : pourquoi l'impression diffère"
 liens_retour: prestations.html, realisations.html, graphiste-cerdagne.html
 date: 2026-10-30
 meta: "RVB, CMJN, choix du papier : comprendre pourquoi l'impression diffère de l'écran, et comment éviter les mauvaises surprises."
-illustration: pantone-photo.webp
-illustration_alt: "Deux personnes consultent ensemble des nuanciers Pantone déployés en éventail ; chaque bande porte ses teintes et leurs codes imprimés."
+illustration: cmjn.png
+illustration_alt: "Comparaison des deux procédés : à gauche la synthèse additive de la lumière en rouge, vert et bleu ; à droite les quatre encres cyan, magenta, jaune et noir qui se superposent sur le papier."
 statut: validé
 ---
 

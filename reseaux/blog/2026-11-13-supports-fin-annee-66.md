@@ -5,6 +5,8 @@ titre_seo: "Supports de fin d'année : quand les commander"
 liens_retour: prestations.html, graphiste-restaurant-perpignan.html, realisations.html
 date: 2026-11-13
 meta: "Cartes de vœux, bandeaux d'emballage, menus de fêtes : le calendrier réel à tenir en novembre pour être livré avant décembre, sans surcoût."
+illustration: retroplanning.png
+illustration_alt: "Frise du rétroplanning lue de droite à gauche, du 24 décembre vers aujourd'hui : réception, impression en huit jours, bon à tirer en quatre, création en dix."
 statut: à relire
 ---
 
