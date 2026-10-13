@@ -99,7 +99,7 @@ visuels ne sont pas tous dans ce dossier : il y en a aussi dans
 | `secteurs/secteur-restauration.webp` | Ô Fait Maison | accord |
 | `secteurs/secteur-liberales.webp` | Mia Beauty | accord |
 | `prestations/presta-identite.webp` | Crazy Frenchy | **logo créé par Laurent pour un projet de site web à lui.** Pas un client. Se montre librement, jamais comme une commande |
-| `prestations/presta-menus.webp` | Pizza Fry | proche de la famille, accord à formaliser |
+| `prestations/presta-menus.webp` | Pizza Fry | **accord confirmé le 13 octobre** |
 | `prestations/presta-signaletique.webp` | Le Cayrou | entreprise fermée |
 | `prestations/presta-digital.jpg`, `presta-projet.jpg` | — | illustrations, aucun client |
 
