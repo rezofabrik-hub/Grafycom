@@ -254,9 +254,26 @@ travail sur le site. Google fournit un lien de demande d'avis : le
 donner aux clients satisfaits, un par un, au moment où ils sont
 contents — pas trois mois après.
 
-**Ce que je fais de mon côté**, une fois la fiche en ligne : relier les
-données structurées du site à la fiche, pour que Google rapproche les
-deux sans avoir à le deviner. Me prévenir à ce moment-là.
+**Le balisage du site — fait le 13 octobre.** Les données structurées de
+`index.html` portent désormais un bloc `sameAs` qui déclare les profils
+Instagram et Facebook, et l'adresse e-mail. C'est ce qui permet à Google
+de rapprocher le site, la fiche et les réseaux sans le deviner.
+
+> **Il manque une entrée dans `sameAs` : l'adresse de la fiche Google
+> elle-même.** Elle se récupère dans le profil d'établissement, bouton
+> « Partager » — c'est une adresse courte en `g.page/…` ou un lien Maps.
+> Me la donner et je l'ajoute ; c'est la ligne qui ferme la boucle.
+
+### L'adresse du site : `https://grafycom.fr/`, sans www
+
+Vérifié dans le dépôt : la balise canonique de toutes les pages déclare
+`https://grafycom.fr/`, et la constante `SITE` du générateur vaut la même
+chose. **La fiche doit donc pointer sur `https://grafycom.fr/`**, pas sur
+la version avec `www`.
+
+Ce n'est pas du pinaillage : deux adresses pour un même site divisent les
+signaux, et une redirection ajoutée au milieu d'un parcours fait perdre
+un peu de ce qu'on vient de gagner.
 
 ## Ce qui ne peut pas être fait depuis une session Claude
 
