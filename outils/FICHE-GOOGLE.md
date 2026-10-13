@@ -203,6 +203,49 @@ visuel de banque sans licence commerciale — la règle de
 `reseaux/LIGNE-EDITORIALE.md` vaut ici aussi, et une fiche Google est
 publique et traçable.
 
+### Les deux premiers avis sont arrivés — 13 octobre 2026
+
+**Social Miroir** et **Solaire 66** ont laissé un avis. Les textes ne sont
+pas encore dans le dépôt : ils ne sont pas lisibles depuis
+l'environnement de travail (voir plus bas), et c'est à Laurent de les
+copier depuis la fiche.
+
+Deux choses à faire avec, dans cet ordre :
+
+1. **Les reprendre sur le site.** Social Miroir est le seul **client
+   actuel de Grafycom** du portfolio — tous les autres avis viennent de
+   la structure précédente et portent la mention qui va avec. Le sien
+   prouve que Grafycom, aujourd'hui, livre et satisfait. C'est le plus
+   utile des quatre.
+2. **Récupérer le lien de demande d'avis** dans la fiche, et le donner au
+   client suivant **le jour de la livraison**. C'est le seul moment où
+   l'on dit oui sans y penser.
+
+> ⚠️ Une remarque sur Solaire 66, sans dramatiser : c'est la société de
+> Laurent, qui commande aussi ces publications. Le travail est réel et
+> l'avis est sincère, donc il est légitime. Mais Google filtre
+> automatiquement les avis qu'il juge liés — même appareil, même réseau,
+> comptes associés. S'il disparaît un jour, ce sera ça, et non une
+> erreur. La parade est la même dans tous les cas : du volume venant de
+> clients sans lien.
+
+### Pourquoi je ne peux pas les lire d'ici
+
+Tenté le 13 octobre, sans succès : la recherche web de l'environnement ne
+couvre pas les fiches locales françaises ; Google Maps ne renvoie qu'une
+page vide sans JavaScript ; `google.com/search` répond par une
+redirection JavaScript ; et un vrai Chromium se fait refuser par la
+protection anti-robot de Google. Seul DuckDuckGo répond, et il ne liste
+pas la fiche.
+
+Ce n'est pas un blocage de l'environnement — le proxy ne filtre rien
+ici. C'est Google qui refuse le trafic automatisé, et c'est normal.
+
+**Les avis se copient depuis la fiche en trente secondes**, et c'est la
+seule voie fiable.
+
+---
+
 **Les avis.** C'est, de loin, le premier facteur de classement dans le
 bloc de cartes. Dix avis de vrais clients pèsent plus que six mois de
 travail sur le site. Google fournit un lien de demande d'avis : le
