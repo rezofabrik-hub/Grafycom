@@ -34,6 +34,7 @@ Depuis un script :
 """
 import argparse
 import pathlib
+import re
 import sys
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -89,7 +90,27 @@ def _manquants(texte, fonte):
     couvert = _CMAP[chemin]
     if couvert is None:
         return set()
-    return {c for c in texte if c not in "\n\t" and ord(c) not in couvert}
+    return {c for c in texte if c not in "\n\t\u00a0"
+            and ord(c) not in couvert}
+
+
+def titrage(taille: int, graisse: int = 700) -> ImageFont.FreeTypeFont:
+    """Playfair — la fonte de titrage du site, et celle du feed.
+
+    La feuille de style du site compose tous les h1 a h4 en Playfair
+    Display ; les publications deja parues font pareil. Les planches
+    etaient en Inter 800, une sans-serif geometrique : correctes, mais
+    elles ne ressemblaient pas au compte. Laurent l'a dit le 13 octobre,
+    et la feuille de style lui donne raison.
+
+    Inter reste la fonte du texte courant, comme sur le site.
+    """
+    f = POLICES / ("Playfair-%d.ttf" % graisse)
+    if not f.exists():
+        sys.exit("ERREUR : %s manquante." % f)
+    fonte = ImageFont.truetype(str(f), taille)
+    fonte.chemin = f
+    return fonte
 
 
 def manuscrite(taille: int) -> ImageFont.FreeTypeFont:
@@ -102,6 +123,20 @@ def manuscrite(taille: int) -> ImageFont.FreeTypeFont:
     return fonte
 
 
+def typographie(texte: str) -> str:
+    """Les espaces insecables de la typographie francaise.
+
+    Avant « ? ! ; : » et a l'interieur des guillemets, l'usage francais
+    demande une espace insecable. Ce n'est pas qu'une question de gout :
+    sans elle, le point d'interrogation part seul a la ligne suivante, et
+    c'est arrive deux fois en passant les titres en Playfair.
+    """
+    t = texte.replace("\u00a0", " ")
+    t = re.sub(r" +([?!;:»])", "\u00a0\\1", t)
+    t = re.sub(r"(«) +", "\\1\u00a0", t)
+    return t
+
+
 def couper(texte: str, fonte, largeur: int) -> list[str]:
     """Découpe un texte à la largeur donnée, en respectant les retours forcés.
 
@@ -109,6 +144,7 @@ def couper(texte: str, fonte, largeur: int) -> list[str]:
     glyphe absent ne produit pas d'erreur, il produit un carré vide qu'on
     ne voit qu'en ouvrant l'image.
     """
+    texte = typographie(texte)
     absents = _manquants(texte, fonte)
     if absents:
         sys.exit("ERREUR : la fonte %s n'a pas %s — ils sortiraient en carré "
@@ -118,7 +154,10 @@ def couper(texte: str, fonte, largeur: int) -> list[str]:
                     " ".join("« %s »" % c for c in sorted(absents)), texte))
     lignes = []
     for para in texte.split("\n"):
-        mots, courante = para.split(), ""
+        # on ne coupe que sur l'espace ordinaire : l'insecable doit
+        # justement empecher la coupe, et str.split() la traite comme
+        # n'importe quel blanc.
+        mots, courante = [m for m in re.split(r"[ \t]+", para) if m], ""
         for mot in mots:
             essai = (courante + " " + mot).strip()
             if fonte.getlength(essai) <= largeur or not courante:
@@ -196,13 +235,73 @@ class Planche:
         return self
 
     # -- texte -------------------------------------------------------
-    def titre(self, texte, taille=96, couleur="encre", interligne=1.06, y=None):
-        f = police(800, taille)
+    def titre(self, texte, taille=96, couleur="encre", interligne=1.16,
+              y=None, centre=False):
+        """Le titrage, en Playfair comme sur le site et dans le feed.
+
+        L'interligne passe de 1.06 a 1.16 : une serif a jambages a besoin
+        de plus d'air qu'une sans-serif, sinon les hampes du dessus
+        touchent les accents du dessous.
+        """
+        f = titrage(taille)
         if y is not None:
             self.y = y
         for ligne in couper(texte, f, self.l - 2 * MARGE):
-            self.d.text((MARGE, self.y), ligne, font=f, fill=teinte(couleur))
+            x = MARGE
+            if centre:
+                x = (self.l - self.d.textlength(ligne, font=f)) / 2
+            self.d.text((x, self.y), ligne, font=f, fill=teinte(couleur))
             self.y += int(taille * interligne)
+        self._deborde()
+        self._orphelin(texte, f)
+        return self
+
+    def _orphelin(self, texte, fonte):
+        """Signale une derniere ligne reduite a un mot court.
+
+        Le passage en Playfair a change toutes les coupes d'un coup : la
+        ou Inter tenait, la serif deborde d'un caractere et renvoie « ? »
+        ou « pas » seul a la ligne. C'est le defaut typographique le plus
+        visible, et le plus facile a rater sur 95 planches.
+        """
+        for para in texte.split("\n"):
+            lignes = couper(para, fonte, self.l - 2 * MARGE)
+            if len(lignes) > 1 and len(lignes[-1].strip()) <= 3:
+                self.orphelins = getattr(self, "orphelins", [])
+                self.orphelins.append(lignes[-1].strip())
+        return self
+
+    def surtitre(self, texte, couleur="taupe", taille=26, y=None, centre=False):
+        """Le petit label en capitales espacees, au-dessus du titre.
+
+        C'est la signature de mise en page du compte : « QUI SUIS-JE ? »,
+        « CRÉATION DE LOGO ». Il situe la publication avant qu'on lise le
+        titre, et il coute trois mots.
+        """
+        if y is not None:
+            self.y = y
+        f = police(800, taille)
+        t = texte.upper()
+        esp = max(2, taille // 8)
+        larg = sum(self.d.textlength(c, font=f) + esp for c in t) - esp
+        x = (self.l - larg) / 2 if centre else MARGE
+        for c in t:
+            self.d.text((x, self.y), c, font=f, fill=teinte(couleur))
+            x += self.d.textlength(c, font=f) + esp
+        self.y += int(taille * 1.5)
+        return self
+
+    def _deborde(self):
+        """Previent si le texte descend sous la ligne de signature.
+
+        Le passage en Playfair change toutes les metriques d'un coup :
+        une coupe qui tenait sur trois lignes peut en faire quatre. Sans
+        ce controle, le debordement ne se verrait qu'en ouvrant les 95
+        images une par une.
+        """
+        plancher = self.h - MARGE - 26
+        if self.y > plancher:
+            self.debordements = getattr(self, "debordements", 0) + 1
         return self
 
     def texte(self, contenu, taille=38, couleur="brun", graisse=400,
@@ -212,6 +311,7 @@ class Planche:
         for ligne in couper(contenu, f, self.l - 2 * MARGE):
             self.d.text((MARGE, self.y), ligne, font=f, fill=teinte(couleur))
             self.y += int(taille * interligne)
+        self._deborde()
         return self
 
     def filet(self, largeur=180, epaisseur=10, y=None, apres=34):
@@ -326,8 +426,8 @@ class Planche:
     # et on le pose au centre optique : legerement au-dessus du milieu
     # geometrique, parce que l'oeil place le centre plus haut qu'il n'est.
 
-    def h_titre(self, texte, taille=96, interligne=1.06):
-        f = police(800, taille)
+    def h_titre(self, texte, taille=96, interligne=1.16):
+        f = titrage(taille)
         return len(couper(texte, f, self.l - 2 * MARGE)) * int(taille * interligne)
 
     def h_texte(self, contenu, taille=38, interligne=1.38, avant=22, graisse=400):
@@ -502,6 +602,14 @@ class Planche:
         return self
 
     def ecrire(self, chemin):
+        if getattr(self, "orphelins", None):
+            print("   ORPHELIN  %-22s %s seul(s) en fin de ligne"
+                  % (pathlib.Path(chemin).name,
+                     ", ".join("« %s »" % o for o in self.orphelins)))
+        if getattr(self, "debordements", 0):
+            print("   ATTENTION %s : %d bloc(s) descendent sous la "
+                  "signature" % (pathlib.Path(chemin).name,
+                                 self.debordements))
         p = pathlib.Path(chemin)
         p.parent.mkdir(parents=True, exist_ok=True)
         self.im.save(p, "PNG")
@@ -516,7 +624,8 @@ def carrousel_couleurs(dossier=None):
     faits = []
 
     p = Planche("sable_chaud")
-    p.filet(y=230)
+    p.surtitre("Identité visuelle", y=200)
+    p.filet()
     p.titre("Votre couleur dit déjà ce que vous vendez.", 104)
     p.signature("brun")
     faits.append(p.ecrire(d / "01.png"))
@@ -618,7 +727,8 @@ def carrousel_typographie(dossier=None):
     f = []
     p = Planche("blanc")
     t = "Cette police est magnifique."
-    p.centrer(p.h_titre(t, 92) + p.h_texte("Et elle va vous coûter des clients.", 44, avant=40))
+    p.centrer(p.h_titre(t, 92) + p.h_texte("Et elle va vous coûter des clients.", 44, avant=40) + 39)
+    p.surtitre("Typographie")
     p.titre(t, 92)
     p.texte("Et elle va vous coûter des clients.", 44, "corail", 600, avant=40)
     p.signature("brun"); f.append(p.ecrire(d / "01.png"))
@@ -668,7 +778,8 @@ def carrousel_enseigne(dossier=None):
     f = []
     p = Planche("sable_chaud")
     t = "Votre enseigne a besoin\nd'une autorisation.\nPas d'une déclaration."
-    p.centrer(p.h_titre(t, 74) + 44)
+    p.centrer(p.h_titre(t, 74) + 44 + 39)
+    p.surtitre("Réglementation")
     p.filet(); p.titre(t, 74, "encre")
     p.signature("brun"); f.append(p.ecrire(d / "01.png"))
 
@@ -756,7 +867,8 @@ def carrousel_droits(dossier=None):
     f = []
     p = Planche("creme")
     t = "Qui possède\nvotre logo ?"
-    p.centrer(p.h_titre(t, 110) + p.h_texte("La réponse surprend la plupart des chefs d'entreprise.", 42, avant=50))
+    p.centrer(p.h_titre(t, 110) + p.h_texte("La réponse surprend la plupart des chefs d'entreprise.", 42, avant=50) + 39)
+    p.surtitre("Droits & propriété")
     p.titre(t, 110); p.texte("La réponse surprend la plupart des chefs d'entreprise.", 42, "brun", 400, avant=50)
     p.signature("brun"); f.append(p.ecrire(d / "01.png"))
 
@@ -903,7 +1015,8 @@ def carrousel_blog_rdv(dossier=None):
     f = []
 
     p = Planche("sable_chaud")
-    p.filet(y=300)
+    p.surtitre("Le blog", y=270)
+    p.filet()
     p.titre("Un nouvel article\nchaque vendredi matin.", 84, "encre")
     p.y = 640
     p.texte("Sur grafycom.fr/blog. Gratuit, sans inscription.", 42, "brun",
@@ -1021,7 +1134,8 @@ def carrousel_retroplanning(dossier=None):
     f = []
 
     p = Planche("sable_chaud")
-    p.filet(y=280)
+    p.surtitre("Fin d'année", y=250)
+    p.filet()
     p.titre("Vos cartes de vœux\nde Noël se décident\ncette semaine.", 86,
             "encre")
     p.y = 760
@@ -1242,7 +1356,8 @@ def quiz_fin_annee(dossier=None):
     f = []
 
     p = Planche("sable_chaud")
-    p.filet(y=260)
+    p.surtitre("Quiz", y=230)
+    p.filet()
     p.titre("4 idées reçues\nsur vos impressions\nde fin d'année.", 86,
             "encre")
     p.y = 760
@@ -1484,8 +1599,10 @@ GABARITS = {
 def solaire_66(dossier=None):
     """Publication du 2 novembre : l'identité Solaire 66.
 
-    Solaire 66 est la société de Laurent, qui commande aussi ces
-    publications : l'accord de publication est acquis à la source.
+    Solaire 66 et Grafycom sont deux entreprises distinctes, dirigées par
+    deux personnes distinctes — precision de Laurent le 13 octobre. C'est
+    donc un client comme un autre, dont l'accord de publication est acquis
+    a la source puisqu'il commande aussi ces publications.
 
     Les sources sont vectorielles (LOGO_OK.pdf, rendu à 100 dpi sur une
     planche de 1000 mm puis recadré sur le dessin) et les cartes viennent
@@ -1508,7 +1625,8 @@ def solaire_66(dossier=None):
     faits = []
 
     p = Planche("blanc")
-    p.poser(S / "solaire-66-logo.png", 540, 620, 960, ombre=0)
+    p.surtitre("Réalisation", y=140, centre=True)
+    p.poser(S / "solaire-66-logo.png", 540, 640, 960, ombre=0)
     p.y = 1150
     p.texte("Solaire 66 — identité livrée", 34, "taupe", 400, avant=0)
     p.signature("brun")
@@ -1624,7 +1742,8 @@ def pub09_logo_reduction(dossier=None):
     faits = []
 
     p = Planche("creme")
-    p.titre("Votre logo tient-il" + "\n" + "sur un stylo ?", 96, y=150)
+    p.surtitre("Conseil", y=130)
+    p.titre("Votre logo tient-il" + "\n" + "sur un stylo ?", 96)
     _logo_fictif(p.d, 400, 760, 210)
     _logo_fictif(p.d, 790, 760, 26)
     f = police(400, 30)

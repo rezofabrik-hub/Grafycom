@@ -164,8 +164,6 @@ le même sur bleu marine, parfaitement lisible.
 >
 > C'est pour ça qu'une enseigne se pense en amont, pas après le logo.
 >
-> **Votre rue en commentaire**, je vous dis quelle procédure s'applique.
->
 > Partagez à quelqu'un qui ouvre bientôt.
 
 ### Texte alternatif
@@ -285,9 +283,7 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
 > couché brillant renvoie et sature. Le même fichier donne deux résultats
 > différents selon le support.
 >
-> La seule parade tient en trois lettres : le BAT, le bon à tirer. Un
-> exemplaire réel, imprimé sur le vrai papier, validé avant le lancement de
-> la série.
+> La seule parade tient en trois lettres : le BAT, le bon à tirer.
 >
 > **Vous avez déjà eu une mauvaise surprise à la livraison ?** Racontez en
 > commentaire.
@@ -352,9 +348,6 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
 > celle qui coûte cher quand on l'apprend après coup —, l'impression et
 > ses pièges, les droits et la propriété de ce qu'on vous livre, et les
 > sujets de saison assez tôt pour qu'ils servent encore.
->
-> Ce qu'on n'y traite pas : l'administratif de votre entreprise. Ce n'est
-> pas mon métier, et vous avez un comptable pour ça.
 >
 > Le premier est en ligne depuis hier : comment obtenir l'autorisation
 > d'une enseigne de commerce, étape par étape, avec le bon formulaire —
