@@ -16,7 +16,7 @@ autres documents de ce dossier.
 | Instagram + Facebook | 25 | 17 | **17** |
 | Fiche Google | 25 | — *(canal sans visuel)* | **25** |
 | Blog | 7 | pas d'illustration | **7** |
-| Stories | 41 écrans | 10 écrans | **10** |
+| Stories | 44 écrans | **44 écrans** | **44** |
 | Messages privés | 6 modèles | — | **6** |
 
 **65 éléments sont complets et peuvent être programmés aujourd'hui.**
@@ -132,7 +132,7 @@ visuels à produire, pas un obstacle.
 
 ---
 
-## 4. Stories — 10 écrans produits sur 41
+## 4. Stories — les 44 écrans sont dessinés
 
 Les 41 écrans sont écrits dans `stories.md`, texte exact et sticker
 compris. Dix sont dessinés : les séquences **S1** (19 au 23 octobre, cinq

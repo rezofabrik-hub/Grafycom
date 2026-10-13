@@ -1,5 +1,11 @@
 # Stories — les 6 séquences hebdomadaires à valider
 
+> **44 écrans, pas 41.** Le compte précédent oubliait le second écran
+> de S1-B, S1-D et S2-D : leur texte en décrit deux, le calendrier n'en
+> listait qu'un. Les trois lignes manquantes y sont, et les écrans de
+> réponse sont dessinés. Les codes des séquences à deux écrans portent
+> désormais tous un chiffre : S1-B1 et S1-B2, S1-D1 et S1-D2, etc.
+
 Du 19 octobre au 28 novembre. Chaque écran est détaillé : texte exact,
 sticker et ses options, arrière-plan.
 

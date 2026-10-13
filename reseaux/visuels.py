@@ -1535,43 +1535,209 @@ def plans_reel_bilan(dossier=None):
 
 
 def stories(dossier=None):
-    """Les dix ecrans de stories du cycle, en 9:16."""
+    """Les 41 ecrans de stories du cycle, en 9:16, nommes par leur code.
+
+    Les dix ecrans precedents portaient des noms herites d'un cycle
+    anterieur — 07-teasing, 13-quiz-1 — qui ne correspondaient plus a
+    rien dans le document de validation. Ils portent maintenant leur code
+    S1-A, S1-B, et ainsi de suite : on retrouve l'ecran a partir du
+    planning sans avoir a deviner.
+
+    Tous sont typographiques. Le document decrit parfois une photo en
+    arriere-plan ; visuels.py n'en fabrique pas, et Laurent a dit le 13
+    octobre que les prises de vue sont difficiles a caser. Un ecran
+    typographique propre vaut mieux qu'un ecran qui attend une photo qui
+    ne viendra pas — et il reste publiable tel quel.
+    """
     d = pathlib.Path(dossier or (SORTIE / "stories"))
     f = []
-    ecrans = [
-        ("07-teasing", "creme", "encre", "Nouveau post.\nVotre couleur parle avant vous.",
-         "Sondage", ["Le bleu marine évoque plutôt…", "A : la confiance", "B : le luxe"]),
-        ("13-quiz-1", "sable_chaud", "encre", "Enseigne :\ndéclaration ou autorisation ?",
-         "Quiz", ["Déclaration préalable", "Autorisation préalable"]),
-        ("13-quiz-2", "sable_chaud", "encre", "Autorisation.\nCerfa 16308*01, en mairie,\nen trois exemplaires.",
-         "Mention du post", ["Le détail est dans le post du jour"]),
-        ("14-questions", "sable_chaud", "encre",
-         "Une question sur votre\nidentité visuelle ?",
-         "Boîte à questions", ["Je réponds à tout.", "Même aux questions bêtes.", "Surtout à celles-là."]),
-        ("08-vote-1", "blanc", "encre", "Laquelle se lit\nà vingt mètres ?",
-         "Sondage", ["A", "B"]),
-        ("08-vote-2", "creme", "encre", "Réponse : B.\nÀ vingt mètres, une typo\ndevient une silhouette.",
-         "Curseur emoji", ["Vous aviez deviné ?"]),
-        ("09-blog", "creme", "encre", "Nouvel article :\nl'autorisation d'enseigne,\nétape par étape.",
-         "Sticker Lien", ["grafycom.fr/blog"]),
-        ("12-teasing", "creme", "encre", "Cette police est magnifique.\nEt pourtant…",
-         "Curseur emoji", ["Vous choisissez vos polices au feeling ?"]),
-        ("20-teasing", "blanc", "encre", "Avez-vous un contrat de cession\npour votre logo ?",
-         "Sondage", ["A : oui, je l'ai", "B : aucune idée"]),
-        ("21-coulisses", "creme", "encre",
-         "Trois pistes pour un même logo.\nDeux finiront à la corbeille.",
-         "", ["C'est normal. C'est même le travail."]),
+    # code, fond, encre, surtitre, texte, titre du sticker, lignes
+    E = [
+     ("S1-A", "sable_chaud", "encre", "Nouveau post",
+      "Votre couleur parle avant vous.",
+      "Sondage", ["Le bleu marine évoque plutôt…", "A : la confiance", "B : le luxe"]),
+     ("S1-B1", "sable_chaud", "encre", "Réglementation",
+      "Enseigne : déclaration ou autorisation ?",
+      "Quiz", ["Pour poser une enseigne, il faut…",
+               "Une déclaration préalable", "Une autorisation préalable"]),
+     ("S1-B2", "sable_chaud", "encre", "La réponse",
+      "Autorisation.\nCerfa 16308*01, en mairie, en trois exemplaires.",
+      "Mention du post", ["Le détail est dans le post du jour."]),
+     ("S1-C", "sable_chaud", "encre", "Boîte à questions",
+      "Une question sur votre identité visuelle ?",
+      "Boîte à questions", ["Je réponds à tout.", "Même aux questions bêtes.",
+                            "Surtout à celles-là."]),
+     ("S1-D1", "creme", "encre", "Le vote du jeudi",
+      "Laquelle se lit à vingt mètres ?", "Sondage", ["A", "B"]),
+     ("S1-D2", "sable_chaud", "encre", "La réponse",
+      "Réponse : B.\nÀ vingt mètres, une typo devient une silhouette.",
+      "Curseur emoji", ["Vous aviez deviné ?"]),
+     ("S1-E", "creme", "encre", "Nouvel article",
+      "L'autorisation d'enseigne, étape par étape.",
+      "Lien", ["grafycom.fr/blog"]),
+     ("S2-A", "sable_chaud", "encre", "Nouveau post",
+      "Cette police est magnifique.\nEt pourtant…",
+      "Curseur emoji", ["Vous choisissez vos polices au feeling ?"]),
+     ("S2-B", "sable_chaud", "encre", "Droits & propriété",
+      "Avez-vous un contrat de cession pour votre logo ?",
+      "Sondage", ["Votre logo, vous le possédez…",
+                  "A : oui, j'ai l'écrit", "B : aucune idée"]),
+     ("S2-C", "creme", "encre", "Coulisses",
+      "Trois pistes pour un même logo.\nDeux finiront à la corbeille.",
+      "", ["C'est normal. C'est même le travail."]),
+     ("S2-D1", "sable_chaud", "encre", "Le quiz du jeudi",
+      "4 idées reçues. Testez-vous.",
+      "Quiz 4 choix", ["Laquelle est VRAIE ?", "Une enseigne se déclare",
+                       "Un logo doit tenir en noir et blanc",
+                       "300 DPI convient à tout",
+                       "Une police gratuite est libre"]),
+     ("S2-D2", "sable_chaud", "encre", "La réponse",
+      "Un logo doit tenir en noir et blanc.",
+      "Mention du post", ["Les trois autres sont fausses.",
+                          "Le détail est dans le post."]),
+     ("S2-E", "creme", "encre", "Nouvel article",
+      "Choisir le bon support d'impression.",
+      "Lien", ["grafycom.fr/blog"]),
+     ("S2-F", "encre", "blanc", "Halloween",
+      "Décorer sa vitrine ne coûte rien, et se remarque.",
+      "Curseur emoji", ["Les trois pièges : trop de texte,",
+                        "orange sur noir illisible,",
+                        "adhésif qu'on ne décollera pas lundi."]),
+     ("S3-A", "creme", "encre", "Nouveau post",
+      "Votre logo tient-il sur un stylo ?",
+      "Sondage", ["Qu'est-ce qui disparaît en premier ?",
+                  "A : les couleurs", "B : le texte sous le symbole"]),
+     ("S3-B1", "sable_chaud", "encre", "Quiz enseigne",
+      "Vous éclairez votre enseigne existante.\nFaut-il refaire une démarche ?",
+      "Quiz", ["Non, elle est déjà autorisée", "Oui, probablement"]),
+     ("S3-B2", "sable_chaud", "encre", "La réponse",
+      "Oui, probablement.",
+      "Mention du post", ["Éclairer une enseigne, c'est la modifier.",
+                          "Une nouvelle autorisation serait due.",
+                          "À confirmer en mairie."]),
+     ("S3-C", "sable_chaud", "encre", "Boîte à questions",
+      "Une question sur votre enseigne, vos imprimés, votre logo ?",
+      "Boîte à questions", ["Je réponds à tout,",
+                            "même aux questions qui paraissent bêtes.",
+                            "Surtout à celles-là."]),
+     ("S3-D1", "creme", "encre", "Le vote du jeudi",
+      "Même carte, mêmes prix.\nLaquelle fait commander le plat ?",
+      "Sondage", ["A : prix au fil du texte", "B : prix alignés à droite"]),
+     ("S3-D2", "sable_chaud", "encre", "La réponse",
+      "A.",
+      "Curseur emoji", ["Une colonne de prix se lit de haut en bas :",
+                        "le client compare six chiffres,",
+                        "et choisit un chiffre."]),
+     ("S3-E1", "creme", "encre", "Nouvel article",
+      "Habiller sa vitrine : dépoli, microperforé, lettres découpées.",
+      "Lien", ["grafycom.fr/blog"]),
+     ("S3-E2", "sable_chaud", "encre", "Le reel est en ligne",
+      "Votre vitrine fait 6 m².",
+      "Mention du post", ["Le reel du jour"]),
+     ("S4-A", "creme", "encre", "Nouveau post",
+      "Je présente toujours trois pistes.\nDeux sont faites pour être écartées.",
+      "Curseur emoji", ["Vous trouvez ça logique ?"]),
+     ("S4-B1", "sable_chaud", "encre", "Quiz langue",
+      "« Sunset Coffee », et sur le store « Best coffee in town ».\nLequel pose question ?",
+      "Quiz", ["Le nom", "Le slogan"]),
+     ("S4-B2", "sable_chaud", "encre", "La réponse",
+      "Le slogan.",
+      "Mention du post", ["Ce qui vous nomme resterait libre.",
+                          "Ce qui informe le client serait attendu",
+                          "en français, ou accompagné."]),
+     ("S4-C", "creme", "encre", "Coulisses",
+      "14 h 40. Une piste de logo qui ne sortira jamais.",
+      "", ["Elle sert quand même : c'est en la regardant",
+           "qu'on comprend ce qu'on cherche."]),
+     ("S4-D1", "sable_chaud", "encre", "Le quiz du jeudi",
+      "Quatre matières en gros plan.\nCelle-ci, c'est quoi ?",
+      "Quiz 4 choix", ["Alu composite", "Plexiglas", "PVC expansé",
+                       "Inox brossé"]),
+     ("S4-D2", "creme", "encre", "Les quatre réponses",
+      "Chaque matière a son emploi.",
+      "Mention du post", ["Alu composite : le panneau qui ne gondole pas.",
+                          "Plexi : l'intérieur, les lettres.",
+                          "Dépoli : la vitrine qu'on masque.",
+                          "Papier gaufré : la carte qu'on garde."]),
+     ("S4-E", "creme", "encre", "Nouvel article",
+      "Les supports de fin d'année se commandent maintenant.",
+      "Lien", ["grafycom.fr/blog"]),
+     ("S4-F", "sable_chaud", "encre", "Le reel du jour",
+      "Pour Noël, vous êtes déjà en retard.",
+      "Compte à rebours", ["Bon à tirer de fin d'année",
+                           "réglé au 7 décembre"]),
+     ("S5-A", "sable_chaud", "encre", "Nouveau post",
+      "Vos cartes de vœux de Noël se décident cette semaine.",
+      "Sondage", ["Pour vos supports de fin d'année…",
+                  "A : déjà commandé", "B : j'y pense depuis septembre"]),
+     ("S5-B1", "sable_chaud", "encre", "Réglementation",
+      "Votre emballage de fête a une mention à porter.",
+      "Quiz", ["La signalétique de tri se place…",
+               "Quand le dessin est prêt", "Avant de dessiner"]),
+     ("S5-B2", "sable_chaud", "encre", "La réponse",
+      "Avant de dessiner.",
+      "Mention du post", ["Elle a besoin d'une place",
+                          "et d'une zone de respiration.",
+                          "Ajoutée à la fin, elle se colle en travers."]),
+     ("S5-C1", "creme", "encre", "Le vote du jeudi",
+      "Deux cartes de vœux. Même papier, même logo.",
+      "Sondage", ["Laquelle garderiez-vous ?", "A : Joyeuses fêtes",
+                  "B : Merci d'être venu"]),
+     ("S5-C2", "sable_chaud", "encre", "La réponse",
+      "La B.",
+      "Curseur emoji", ["Pas parce qu'elle est plus belle :",
+                        "parce qu'elle parle à quelqu'un."]),
+     ("S5-D", "creme", "encre", "Nouvel article",
+      "Votre vitrine de fin d'année, vue du trottoir.",
+      "Lien", ["grafycom.fr/blog"]),
+     ("S5-E", "sable_chaud", "encre", "Boîte à questions",
+      "Vous préparez quelque chose pour les fêtes ?",
+      "Boîte à questions", ["Votre question, et j'y réponds."]),
+     ("S6-A", "encre", "blanc", "Nouveau post",
+      "Votre vitrine de Noël est faite pour celui qui passe.",
+      "Curseur emoji", ["Votre vitrine, vous la regardez",
+                        "depuis le trottoir d'en face ?"]),
+     ("S6-B1", "sable_chaud", "encre", "Quiz réglementation",
+      "Un sticker « -30 % » sur votre vitrine : on le déclare ou on l'autorise ?",
+      "Quiz", ["Pour une enseigne, il faut…",
+               "Une déclaration préalable", "Une autorisation préalable"]),
+     ("S6-B2", "blanc", "encre", "La réponse",
+      "Une autorisation.",
+      "Mention du post", ["Une enseigne dit qui vous êtes : on l'autorise.",
+                          "Une publicité dit ce que vous vendez :",
+                          "on la déclare."]),
+     ("S6-C1", "sable_chaud", "encre", "Le quiz du jeudi",
+      "Le doré d'une dorure à chaud, c'est quoi ?",
+      "Quiz 4 choix", ["De l'encre jaune très saturée",
+                       "Une feuille métallisée pressée à chaud",
+                       "Un vernis teinté",
+                       "Une quadrichromie renforcée"]),
+     ("S6-C2", "encre", "blanc", "La réponse",
+      "Une feuille métallisée, pressée à chaud.",
+      "Mention du post", ["Aucune encre ne brille.",
+                          "C'est pour ça que ça se voit,",
+                          "et que ça se paie."]),
+     ("S6-D", "creme", "encre", "Nouvel article",
+      "Faut-il refaire son logo pour la nouvelle année ?",
+      "Lien", ["grafycom.fr/blog"]),
+     ("S6-E", "creme", "encre", "Coulisses du reel",
+      "Cinq plans de cinq secondes, un carnet et une lampe.",
+      "", ["Le tournage du jour."]),
     ]
-    for nom, fond, enc, titre, st, lignes in ecrans:
+    for code, fond, enc, sur, titre, st, lignes in E:
         p = Planche(fond, LARGE_S, HAUT_S)
-        p.titre(titre, 72, enc, y=460)
+        p.surtitre(sur, "taupe" if enc == "encre" else "sable", y=300)
+        p.filet()
+        p.titre(titre, 76, enc)
         if st:
-            p.sticker(st, lignes, y=HAUT_S - 700)
+            p.sticker(st, lignes, y=HAUT_S - 760)
         else:
-            p.texte(lignes[0], 44, enc, 400, avant=60)
-        p.signature(enc)
-        f.append(p.ecrire(d / ("%s.png" % nom)))
+            p.y += 40
+            p.texte("\n".join(lignes), 42, enc, 400, avant=20)
+        p.signature(enc if enc != "encre" else "brun")
+        f.append(p.ecrire(d / ("%s.png" % code)))
     return f
+
 
 
 GABARITS = {

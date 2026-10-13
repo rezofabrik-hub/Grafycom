@@ -35,11 +35,13 @@ automatique du matin.
 | lundi 19 octobre | **18 h 45** | Story | story | S1-A · teasing du carrousel |
 | mardi 20 octobre | 8 h 00 | Instagram + Facebook | Carrousel | n° 2 |
 | mardi 20 octobre | 8 h 00 | Fiche Google | post | texte n° 2 |
-| mardi 20 octobre | 8 h 15 | Story | story | S1-B · teasing réglementation |
+| mardi 20 octobre | 8 h 15 | Story | story | S1-B1 · teasing réglementation |
+| mardi 20 octobre | 10 h 15 | Story | story | S1-B2 · la réponse |
 | mercredi 21 octobre | 18 h 30 | Story | story | S1-C · boîte à questions |
 | jeudi 22 octobre | 12 h 30 | Instagram + Facebook | Dilemme A/B | n° 3 |
 | jeudi 22 octobre | 12 h 30 | Fiche Google | post | texte n° 3 |
-| jeudi 22 octobre | 12 h 30 | Story | story | S1-D · le vote du jeudi |
+| jeudi 22 octobre | 12 h 30 | Story | story | S1-D1 · le vote du jeudi |
+| jeudi 22 octobre | 14 h 30 | Story | story | S1-D2 · la réponse |
 | vendredi 23 octobre | 08 h 00 | Blog | article | Enseigne de commerce : comment obtenir l'autorisation préa |
 | vendredi 23 octobre | 18 h 00 | Instagram + Facebook | REEL 24 s | n° 4 |
 | vendredi 23 octobre | 18 h 00 | Fiche Google | post | texte n° 4 |
@@ -56,7 +58,8 @@ automatique du matin.
 | mercredi 28 octobre | 18 h 30 | Story | story | S2-C · coulisses |
 | jeudi 29 octobre | 19 h 00 | Instagram + Facebook | Quiz vrai/faux | n° 7 |
 | jeudi 29 octobre | 19 h 00 | Fiche Google | post | texte n° 7 |
-| jeudi 29 octobre | 19 h 00 | Story | story | S2-D · le quiz du jeudi |
+| jeudi 29 octobre | 19 h 00 | Story | story | S2-D1 · le quiz du jeudi |
+| jeudi 29 octobre | 21 h 00 | Story | story | S2-D2 · la réponse |
 | vendredi 30 octobre | 08 h 00 | Blog | article | Pourquoi vos couleurs imprimées ne ressemblent jamais à vo |
 | vendredi 30 octobre | 10 h 30 | Instagram + Facebook | REEL 22 s | n° 8 |
 | vendredi 30 octobre | 10 h 30 | Fiche Google | post | texte n° 8 |
@@ -143,6 +146,6 @@ automatique du matin.
 |---|---|
 | Publications Instagram + Facebook | **25** |
 | Textes de fiche Google | **25** |
-| Écrans de story | **41** |
+| Écrans de story | **44** |
 | Articles de blog | **7** |
-| **Total à valider** | **98** |
+| **Total à valider** | **101** |
