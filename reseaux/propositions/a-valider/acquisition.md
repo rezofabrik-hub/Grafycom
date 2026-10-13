@@ -169,7 +169,66 @@ story et sous les publications réglementaires, on l'envoie à la demande.
 d'enseigne a un projet d'enseigne. Le modèle de réponse existe déjà dans
 `messages-prives.md`.
 
-Je peux rédiger et mettre en page cette checklist dès que tu le dis.
+**Écrite et mise en page le 12 octobre** : `checklist-enseigne.md`, quatre pages, livrée en PDF avec sa propre couverture. Elle attend ta relecture, pas ton feu vert pour être écrite.
+
+---
+
+## Décisions du 13 octobre
+
+| Point | Décision |
+|---|---|
+| Cap Loisirs | **publiable** — remis sur le site, la maquette est annoncée comme telle |
+| Alliance Peintures, Pano Perpignan | oubliés |
+| Ligne d'attribution | posée, dans ton texte exact |
+| Abonnement sur les reels | validé, en place sur les cartons de fin |
+| Checklist enseigne | écrite, quatre pages, à relire |
+| Les deux publications de réalisation | **en plus** du rythme actuel |
+
+---
+
+## Ce qui change tout, et qui était sous nos yeux
+
+Tes captures Instagram contiennent **trois témoignages clients signés**,
+publiés le 14 janvier :
+
+- **Sarah Otman**, Ô Fait Maison
+- **Ludivine Le Blay**, La Casquette Bleue
+- **Jade Lopez**, Mia Beauty
+
+Pendant ce temps, la page réalisations du site annonce : *« Les avis,
+bientôt ici. Cet espace est volontairement vide. »*
+
+**Un avis client signé est le levier de conversion le plus fort qui
+existe**, devant la réalisation et très loin devant la pédagogie. Il
+répond à la seule question que se pose un commerçant qui hésite : est-ce
+que ça se passe bien avec elle. Trois y répondent déjà, publiquement, et
+le site dit qu'il n'en a pas.
+
+C'est la correction la moins chère et la plus rentable du dossier : le
+texte existe, les personnes ont accepté de le donner, il n'y a qu'à le
+poser.
+
+**Ce qu'il me faut :** ton accord pour les reprendre sur le site. Je ne
+les ai pas écrits dans le dépôt sans te demander — ce sont des noms de
+personnes, et un avis donné pour Instagram n'a pas forcément été donné
+pour un site. Un mot à chacune, ou ton feu vert si tu considères que
+l'accord couvre les deux.
+
+### Deux noms de clients que je n'avais pas
+
+Les captures en montrent d'autres : **La Casquette Bleue**, **SR
+Coiffure**, **B.F Plomberie**, **Social Miroir**. Aucun n'est dans la
+liste de référence. S'ils sont publiables, ils élargissent d'autant le
+portfolio — dis-moi lesquels.
+
+### Et le logo de Casa Aldo existe quelque part
+
+Ta publication du 19 janvier montre le logo Casa Aldo **propre, détouré,
+sur fond beige** — pas la photo de l'enseigne. Donc un fichier correct
+existait en janvier. Il est peut-être encore dans l'outil qui a servi à
+monter ce carrousel, ou dans tes fichiers de cette période. Ça vaut le
+coup de chercher : c'est la différence entre un portfolio à trois projets
+et un portfolio à quatre.
 
 ---
 

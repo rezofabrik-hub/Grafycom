@@ -46,11 +46,8 @@ PHOTOS = {
                   "une charte graphique ouverte : palette, polices et règles d'usage du logo"),
  "menus":        ("presta-menus.webp", "grafycom",
                   "Menu de la pizzeria Pizza Fry ouvert à plat, carte des pizzas et carte des boissons sur fond ardoise"),
- # Le depliant montrait le travail fait pour Cap Loisirs, retire du site
- # le 12 octobre faute d'accord confirme. Emplacement reserve, comme pour
- # la charte : il dit ce qui manque.
- "print":        ("", "grafycom",
-                  "une sélection de supports imprimés"),
+ "print":        ("presta-print.webp", "grafycom",
+                  "Dépliant trois volets de Cap Loisirs, déplié, fond violet et plan d'accès"),
  "signaletique": ("presta-signaletique.webp", "grafycom",
                   "Enseigne lumineuse du restaurant Le Cayrou, allumée sur une façade à la tombée du jour"),
  "digital":      ("presta-digital.jpg", "illustration",

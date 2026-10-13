@@ -25,7 +25,7 @@ def reaz(cat, titre, desc, fichier):
 # d'une precedente structure aujourd'hui fermee : la ligne d'attribution
 # sous le chapeau le dit, et elle n'est pas facultative.
 #
-# Trois projets ont ete retires le 12 octobre faute d'accord confirme, et
+# Alliance Peintures et Pano Perpignan ont ete retires le 12 octobre, et
 # leurs fichiers supprimes — une image seulement dereferencee reste servie
 # a son adresse. Avant d'en ajouter une, lire
 # assets/img/realisations/LISEZ-MOI.md : l'accord du client y est note
@@ -35,6 +35,11 @@ def reaz(cat, titre, desc, fichier):
 # le fichier tel quel, et un commentaire nommant des clients retires
 # serait lisible dans la source de la page publique.
 GALERIE = "".join([
+    reaz("Affichage", "Cap Loisirs",
+         "Affiche tarifaire des activités — bowling, laser game, formules. "
+         "Présentée ici en maquette : l'original est affiché à l'intérieur "
+         "de l'établissement.",
+         "cap-loisirs.webp"),
     reaz("Signalétique", "Ô Fait Maison",
          "Enseigne de devanture d'un salon de thé, et la décoration intérieure qui lui répond.",
          "o-fait-maison.webp"),
