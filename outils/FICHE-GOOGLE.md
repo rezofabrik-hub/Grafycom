@@ -221,13 +221,15 @@ Deux choses à faire avec, dans cet ordre :
    client suivant **le jour de la livraison**. C'est le seul moment où
    l'on dit oui sans y penser.
 
-> ⚠️ Une remarque sur Solaire 66, sans dramatiser : c'est la société de
-> Laurent, qui commande aussi ces publications. Le travail est réel et
-> l'avis est sincère, donc il est légitime. Mais Google filtre
-> automatiquement les avis qu'il juge liés — même appareil, même réseau,
-> comptes associés. S'il disparaît un jour, ce sera ça, et non une
-> erreur. La parade est la même dans tous les cas : du volume venant de
-> clients sans lien.
+> **Mise au point du 13 octobre.** J'avais signalé un risque de filtrage
+> sur l'avis de Solaire 66, en le présentant comme un avis « lié ». C'était
+> faux, et la correction vient de Laurent : **Grafycom et Solaire 66 sont
+> deux entreprises distinctes, dirigées par deux personnes distinctes.**
+> Solaire 66 est donc un client comme un autre, et son avis un avis de
+> client. Rien à surveiller.
+>
+> Ce qui reste vrai, et qui vaut pour tous : Google demande du volume. Deux
+> avis ne font pas encore un signal.
 
 ### Pourquoi je ne peux pas les lire d'ici
 

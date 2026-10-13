@@ -125,6 +125,16 @@ les filtres de répétition.
   c'est surtout la moitié de l'intérêt d'être là.
 - **Les liens dans la bio, pas dans les légendes** : Instagram ne les rend
   pas cliquables.
+- **Ni nom de famille, ni adresse postale.** Sandra travaille sans local
+  recevant du public, et c'est une discrétion voulue. Dans les
+  publications, sur le site, sur la fiche Google : « Sandra », point.
+
+  **Une exception, et elle n'est pas négociable non plus :** les
+  **mentions légales** et les **CGV** portent son identité complète et son
+  SIRET, parce que la loi l'impose à un entrepreneur individuel. Ces deux
+  pages ne se « nettoient » pas — les y retirer serait une infraction, pas
+  une précaution. La fiche Google, elle, reste en zone desservie avec
+  adresse masquée : c'est le réglage prévu pour exactement ce cas.
 
 ## Relancer l'assistant chaque mois
 
