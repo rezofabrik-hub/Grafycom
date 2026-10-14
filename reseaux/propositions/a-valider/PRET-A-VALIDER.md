@@ -1,6 +1,6 @@
 # Ce qui est terminé, et ce qui ne l'est pas
 
-État au **lundi 19 octobre 2026**. Ce document ne contient aucun texte à
+État au **mercredi 14 octobre 2026**. Ce document ne contient aucun texte à
 relire : il dit seulement, canal par canal, ce qui est prêt à partir et ce
 qui attend encore quelque chose. Les textes eux-mêmes sont dans les huit
 autres documents de ce dossier.
@@ -13,19 +13,23 @@ autres documents de ce dossier.
 
 | Canal | Écrit | Visuel prêt | Prêt à partir |
 |---|---|---|---|
-| Instagram + Facebook | 25 | 17 | **17** |
+| Instagram + Facebook | 25 | **25** | **22** *(3 attendent une vérification)* |
 | Fiche Google | 25 | — *(canal sans visuel)* | **25** |
-| Blog | 7 | pas d'illustration | **7** |
+| Blog | 7 | **7 illustrations** | **7** |
 | Stories | 44 écrans | **44 écrans** | **44** |
 | Messages privés | 6 modèles | — | **6** |
 
-**65 éléments sont complets et peuvent être programmés aujourd'hui.**
-Le reste attend soit un visuel que je produis, soit une photo de Sandra,
-soit une vérification réglementaire.
+**104 éléments peuvent être programmés aujourd'hui** : 22 publications,
+25 textes de fiche, 7 articles, 44 écrans de story, 6 modèles de message.
+
+**Plus rien n'attend une image.** Les 133 planches Instagram et les 44
+écrans de story sont dessinés, les 7 articles sont illustrés. Il ne reste
+qu'un seul type de blocage, et il ne dépend pas d'un visuel : **trois
+vérifications réglementaires**, détaillées plus bas.
 
 ---
 
-## 1. Instagram & Facebook — 17 publications complètes sur 25
+## 1. Instagram & Facebook — les 25 publications sont complètes
 
 Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 1080 × 1350 px, dans l'ordre du carrousel.
@@ -42,19 +46,32 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 7 | jeu 29 oct | Quiz vrai/faux | Quatre idées reçues | 5 |
 | 8 | ven 30 oct | Reel 22 s | Halloween & couleurs | 5 |
 | 9 | lun 2 nov | Carrousel | Un logo tient-il en petit | 6 |
+| 10 | mar 3 nov | Carrousel | L'enseigne quand la nuit tombe à 17 h | 7 |
 | 11 | jeu 5 nov | Dilemme A/B | La place du prix sur une carte | 2 |
+| 12 | ven 6 nov | Reel 23 s | Les adhésifs de vitrine | 5 |
 | 13 | lun 9 nov | Carrousel | **Solaire 66** | 7 |
+| 14 | mar 10 nov | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
+| 15 | jeu 12 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
+| 16 | sam 14 nov | Reel 25 s | Décembre se décide en novembre | 5 |
 | 17 | lun 16 nov | Carrousel | Le rétroplanning des cartes de vœux | 6 |
+| 18 | mar 17 nov | Carrousel | La place à réserver sur un emballage | 7 |
 | 19 | jeu 19 nov | Dilemme A/B | Deux cartes de vœux | 2 |
 | 20 | ven 20 nov | Reel 24 s | Matières et fabrication | 5 |
+| 21 | lun 23 nov | Carrousel | La vitrine vue du trottoir d'en face | 7 |
+| 22 | mar 24 nov | Carrousel | Enseigne, publicité, ou rien du tout ? | 6 |
 | 23 | jeu 26 nov | Quiz | Impressions de fin d'année | 6 |
 | 24 | sam 28 nov | Reel 26 s | Faut-il refaire son logo | 5 |
 
-**85 planches.** Les n° 4, 8, 20 et 24 sont des reels : leurs planches
-sont des **fiches de tournage** — chrono, cadrage à filmer, texte incrusté
-tel qu'il apparaîtra. Elles ne se publient pas, sauf le dernier carton de
-chaque reel, qui est un vrai visuel. `visuels.py` ne fabrique aucune
-photographie : un reel sur la matière se tourne.
+**133 planches**, dans `reseaux/visuels/`, un dossier par publication —
+et le dossier porte **la date réelle de parution**. Il portait jusqu'au
+14 octobre la date d'avant le décalage du calendrier, soit sept jours
+d'écart : un dossier ouvert au hasard faisait publier une semaine trop
+tôt. C'est corrigé.
+
+**Les six reels sont dessinés eux aussi.** Leurs planches ne sont plus des
+fiches de tournage mais des **écrans finis** : le montage consiste à les
+enchaîner avec la voix off, sans rien filmer. Le détail de ce que ce choix
+gagne et de ce qu'il coûte est dans `photos-a-prendre.md`.
 
 ### Une publication ajoutée le 12 octobre
 
@@ -79,22 +96,27 @@ dans le pilier réglementaire, mais sur le terrain de Sandra : la création,
 pas la paperasse du client. L'article du 6 novembre, qui porte le même
 titre, le prolonge dix jours plus tard.
 
-### Les 8 qui ne sont pas prêtes
+### Les 3 qui ne peuvent pas partir en l'état
 
-Les six qui ne dépendaient de personne sont faites — n° 11, 17, 19, 20,
-23 et 24. Il reste **huit** publications, toutes pour la même raison :
+Les huit qui attendaient une photo sont dessinées. Il reste **trois**
+publications bloquées, toutes pour la même raison, et aucune n'attend un
+visuel :
 
 | | Combien | Ce qui manque |
 |---|---|---|
-| Attendent une photo de Sandra | 8 — n° 10, 12, 14, 15, 16, 18, 21, 22 | voir `photos-a-prendre.md` |
-| dont **bloquées par une vérification** | 3 — n° 14, 18, 22 | voir plus bas |
+| Bloquées par une vérification réglementaire | 3 — n° 14, 18, 22 | voir plus bas |
+
+Leurs visuels sont prêts et leurs textes sont écrits au conditionnel :
+le jour où la vérification tombe, il n'y a qu'à lever le conditionnel.
 
 ---
 
-## 2. Fiche Google — 24 textes, tous prêts
+## 2. Fiche Google — 25 textes, tous prêts
 
-C'est le canal le plus simple : pas de visuel obligatoire. Les 24 textes
-sont dans `fiche-google.md`, numérotés comme les publications.
+C'est le canal le plus simple : pas de visuel obligatoire. Les 25 textes
+sont dans `fiche-google.md`, numérotés comme les publications — 1 à 24,
+plus la 4 bis. *(Ce paragraphe annonçait 24 textes alors que le tableau
+du haut en annonçait 25 : c'est 25.)*
 
 **Une condition préalable, et une seule :** la fiche doit d'abord être
 corrigée. Elle existe et appartient à Sandra, tu y as accès. La marche à
@@ -126,20 +148,22 @@ sorte le même jour.
 
 Le rendez-vous hebdomadaire est désormais annoncé sur les réseaux : voir la publication **n° 4 bis** ci-dessus.
 
-**Aucun article n'a d'illustration d'en-tête.** Le champ est facultatif et
-l'article s'affiche sans. Si tu en veux, dis-le : c'est une série de sept
-visuels à produire, pas un obstacle.
+**Les sept articles ont leur illustration d'en-tête**, produite par
+`reseaux/illustrations.py` — des compositions géométriques dans la charte,
+pas des photographies. Deux images de banque qui traînaient ont été
+retirées au passage.
 
 ---
 
 ## 4. Stories — les 44 écrans sont dessinés
 
-Les 41 écrans sont écrits dans `stories.md`, texte exact et sticker
-compris. Dix sont dessinés : les séquences **S1** (19 au 23 octobre, cinq
-écrans dont le quiz en deux temps) et le début de **S2**.
+Les 44 écrans sont écrits dans `stories.md`, texte exact et sticker
+compris, **et tous les 44 sont dessinés** — dans `reseaux/visuels/stories/`,
+nommés par leur code de séquence (S1-A, S1-B1, S1-B2…) et non par un
+numéro d'ordre, pour qu'un écran ajouté ne décale pas les autres.
 
-Les 31 autres suivent les publications auxquelles ils renvoient : un
-teasing ne peut pas précéder un carrousel qui n'existe pas encore.
+Il y en avait trois de plus que prévu : S1-B2, S1-D2 et S2-D2 manquaient
+au décompte initial de 41.
 
 ---
 
@@ -169,35 +193,36 @@ La publication n° 6 ne porte plus d'avertissement : le sujet du devis,
 qui en demandait un, a été remplacé. Le carrousel sur la propriété d'un
 logo est vérifié, et l'article du 6 novembre cite ses sources.
 
-### Huit publications attendent une photo
+### Plus aucune publication n'attend d'image
 
-Le détail est dans `photos-a-prendre.md`, désormais numéroté comme le
-calendrier. Deux sorties suffisent à couvrir l'essentiel :
+Huit publications attendaient une photo, et deux reels un tournage. Tu as
+dit que les prises de vue étaient très compliquées ; les douze sont
+redessinées. Le détail, et surtout **ce que ce choix coûte**, sont dans
+`photos-a-prendre.md`.
 
-- **une rue commerçante, enseignes allumées, à la tombée du jour** — sert
-  aux n° 10, 14 et 21 ;
-- **une vitrine de nuit depuis le trottoir d'en face** — sert aux n° 21
-  et 22.
+La règle, elle, ne bouge pas : **jamais une image dont les droits ne sont
+pas clairs.** Ni photo trouvée, ni banque d'images sans licence
+commerciale, **ni image générée** — c'est précisément pour ça que les
+publications sont dessinées et non générées. Un dessin ne prétend pas être
+une photo ; une image générée, si, et elle se trahit sur les enseignes.
 
-Vers 17 h 30 à cette saison, une seule sortie couvre les deux.
-
-La règle ne bouge pas : **jamais une image dont les droits ne sont pas
-clairs.** Ni photo trouvée, ni banque d'images sans licence commerciale.
-C'est pour cela que `visuels.py` ne fabrique aucune photographie — une
-devanture se photographie, et une photo inventée sur le compte d'une
-graphiste se retourne contre elle.
+Ce document reste une réserve utile : le jour où une vraie photo est
+disponible, elle remplace une planche sans toucher aux autres. Deux
+familles y gardent tout leur intérêt — les matières en lumière rasante
+(une dorure, un gaufrage) et les réalisations en situation, où une photo
+est une preuve là où un dessin n'est qu'une maquette.
 
 ---
 
-## Le premier créneau est déjà passé
+## Le premier créneau est dans cinq jours
 
-Le calendrier commence **aujourd'hui, lundi 19 octobre à 12 h 30**. Au
-moment où tu lis ceci, ce créneau est derrière nous.
+Le calendrier commence **lundi 19 octobre**. Rien n'est programmé : la
+publication n° 1 ne partira que si tu la valides d'ici là.
 
 **Tranché le 12 octobre : on garde 18 h 30.** Le tableau des créneaux
 prévoyait déjà 12 h 30 **ou** 18 h 30 le lundi, donc rien ne bouge — la
-publication n° 1 part ce soir, sa story quinze minutes plus tard à 18 h 45,
-et tout le reste du calendrier tient sans glisser d'un jour.
+publication n° 1 part le lundi soir, sa story quinze minutes plus tard à
+18 h 45, et tout le reste du calendrier tient sans glisser d'un jour.
 
 ---
 

@@ -8,22 +8,25 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 | **`calendrier.md`** | les 96 éléments datés, tous canaux, dans l'ordre |
 | **`instagram-facebook.md`** | les 24 publications |
 | **`fiche-google.md`** | les 24 textes de fiche |
-| **`stories.md`** | les 6 séquences hebdomadaires, 41 écrans |
+| **`stories.md`** | les 6 séquences hebdomadaires, 44 écrans |
 | **`blog.md`** | l'index des 7 articles — les textes sont dans `reseaux/blog/` |
 | **`messages-prives.md`** | le message d'accueil et 4 réponses types |
-| **`photos-a-prendre.md`** | la liste de prises de vue pour Sandra |
-| **`visuels-a-produire.md`** | ce qu'il reste à dessiner |
+| **`photos-a-prendre.md`** | **plus rien à photographier** — la réserve de prises de vue, et pourquoi les douze publications concernées sont dessinées |
+| **`visuels-a-produire.md`** | le récapitulatif de ce qui a été produit |
 | **`acquisition.md`** | **l'objectif : des abonnés, puis des clients** — ce que le plan fait pour ça, mesuré |
 | **`checklist-enseigne.md`** | le document à **donner** en message privé — quatre pages, à relire avant usage |
 | **`arbitrages.md`** | **ce qui demande ta décision** — à lire en premier |
 
 ## Par où commencer
 
-1. **`PRET-A-VALIDER.md`** : l'état exact. 57 éléments sont complets et
-   peuvent partir ; le reste attend un visuel, une photo ou une
-   vérification. Trois points y demandent une réponse de ta part.
+1. **`PRET-A-VALIDER.md`** : l'état exact. 104 éléments sont complets et
+   peuvent partir. **Plus rien n'attend une image** — 133 planches, 44
+   écrans de story et 7 illustrations d'article sont dessinés. Il ne reste
+   qu'un seul type de blocage : trois vérifications réglementaires.
 2. **`arbitrages.md`**, section 1 : la question du rythme. Rien n'est
-   publié, 24 publications attendent, et 14 visuels restent à dessiner.
+   publié, 25 publications attendent ton accord. *(Ce document date du
+   12 octobre : là où il parle de visuels restant à dessiner, c'est
+   périmé — ils le sont tous.)*
 3. **`calendrier.md`** pour voir l'ensemble d'un coup d'œil.
 4. Puis canal par canal, dans l'ordre qui t'arrange.
 
@@ -43,11 +46,19 @@ Les mêmes documents, paginés et prêts à annoter, sont fabriqués par
 ce sont des dérivés, la source reste le markdown.
 
 ```bash
-python3 reseaux/pdf.py            # les douze
+python3 reseaux/pdf.py            # les treize
 python3 reseaux/pdf.py calendrier  # un seul
 ```
 
 ## Ce qui n'est pas ici
 
 Les textes complets des articles, qui vivent dans `reseaux/blog/`, un
-fichier par article. Et les visuels produits, dans `reseaux/visuels/`.
+fichier par article. Et les visuels produits, dans `reseaux/visuels/` —
+un dossier par publication, nommé à **la date réelle de parution**.
+
+Pour les relire sans ouvrir 177 fichiers un par un :
+
+```bash
+python3 reseaux/planche-contact.py          # une page A4 par publication
+python3 reseaux/planche-contact.py 2026-11  # un seul mois
+```
