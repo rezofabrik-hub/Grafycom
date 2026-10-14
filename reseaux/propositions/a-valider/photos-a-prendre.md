@@ -133,6 +133,8 @@ dans `reseaux/visuels/`, et il n'y a rien à photographier pour les sortir.
 
 | # | Date | Ce qui était demandé | Ce qui est livré |
 |---|---|---|---|
+| 4 | 23 oct | cinq plans à filmer, dont deux animations | **cinq écrans finis** : écran contre papier, synthèse RVB et synthèse CMJN **calculées**, le même bleu sur mat et sur couché |
+| 8 | 30 oct | quatre plans à filmer, dont une séquence sans issue propre | **cinq écrans finis** : citrouille, contraste orange/noir, quatre pictogrammes d'alerte, deux devantures comparées |
 | 10 | 3 nov | une rue commerçante au crépuscule | une rue dessinée, six façades, enseignes allumées avec leur halo — plus un schéma de formulaire à la place de la capture du Cerfa |
 | 12 | 6 nov | quatre plans à filmer | **cinq écrans finis** : vitrine nue cotée, dépoli, microperforé vu des deux côtés, lettres contre pavé blanc, vitrine de nuit |
 | 14 | 10 nov | une devanture floutée | une devanture fictive, slogan anglais **lisible**, puis la même avec la ligne française ajoutée |
@@ -174,10 +176,10 @@ Deux familles, et les listes plus haut restent entières pour elles :
   une macro en lumière rasante garde quelque chose qu'un tracé n'a pas. Les
   écrans se remplacent un par un.
 
-- **Les deux reels d'octobre, n° 4 et n° 8**, gardent leurs fiches de
-  tournage : ce sont les deux seuls du cycle qui demandent encore de
-  filmer, et ce sont les premiers à partir — les 23 et 30 octobre. Dis-moi
-  si je les redessine comme les quatre autres.
+**Plus aucune publication du cycle ne demande de filmer.** Les six reels
+sont dessinés. Les fiches de tournage ont disparu de `visuels.py` avec
+elles — une fonction sans appelant ne casse pas, elle pourrit ; l'historique
+git les conserve si le besoin revient.
 - **Les réalisations en situation.** Un support en situation photographié,
   c'est une preuve ; dessiné, c'est une maquette. La distinction compte
   pour le pilier « réalisations », pas pour les publications pédagogiques.

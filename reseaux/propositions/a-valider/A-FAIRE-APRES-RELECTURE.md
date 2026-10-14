@@ -47,9 +47,10 @@ différents est exactement ce qui finit par rester.
       la n° 21 gagne une septième planche au passage. Détail et
       justification dans `photos-a-prendre.md`. Les reels **n° 20 et
       n° 24** sont redessinés à leur tour, sur ta demande : dix écrans
-      finis de plus. Restent les reels **n° 4 et n° 8**, les deux
-      d'octobre, qui gardent leurs fiches de tournage — et qui sont les
-      premiers à partir.
+      finis de plus. Puis les reels **n° 4 et n° 8**, les deux d'octobre,
+      sur ta demande également. **Les six reels du cycle sont dessinés et
+      plus aucune publication n'attend d'image** : 177 planches, 26
+      gabarits, rien à photographier ni à filmer.
 
 ## Périmé dans le document d'arbitrages
 

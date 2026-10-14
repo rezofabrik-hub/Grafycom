@@ -188,6 +188,17 @@ def verifier():
     Parcourt les scripts du dépôt — pas les pages HTML, qui sont
     produites par les générateurs et dont les quelques couleurs en ligne
     viennent déjà des variables CSS.
+
+    UNE EXCEPTION CONNUE, et ce contrôle ne la voit pas. Les schémas RVB
+    et CMJN de la publication n° 4 (reseaux/visuels.py, PRIMAIRES_LUMIERE
+    et PRIMAIRES_ENCRE) utilisent les primaires physiques d'un écran et
+    des quatre encres d'imprimerie. Ce ne sont pas des couleurs choisies
+    mais les valeurs dont la publication parle : les remplacer par des
+    couleurs de la charte rendrait les schémas faux. Elles sont écrites
+    en triplets RVB, pas en hexadécimal — donc invisibles pour l'expression
+    ci-dessous, et c'est volontaire : un triplet dit « canal », un
+    hexadécimal dit « teinte ». Si une autre exception apparaît un jour,
+    elle doit être écrite ici avant d'être écrite dans le code.
     """
     souci = 0
     valeurs = set(C.values())

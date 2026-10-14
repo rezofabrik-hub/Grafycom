@@ -249,6 +249,25 @@ illisible, la sans-serif reste lisible.
 
 ### Découpage
 
+> **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
+> `visuels.py`, gabarit `reel-cmjn`, dans
+> `reseaux/visuels/2026-10-23-reel-cmjn/`.
+>
+> **C'est la publication du cycle où le dessin est le plus clairement
+> supérieur au tournage.** La synthèse additive et la synthèse
+> soustractive sont des schémas, pas des scènes : elles se filment mal et
+> se dessinent bien. Et ici elles ne sont même pas dessinées, elles sont
+> **calculées** — chaque primaire est posée sur son propre calque, et les
+> calques sont combinés par addition pour la lumière, par multiplication
+> pour l'encre. Le blanc au centre du schéma RVB et le presque-noir du
+> schéma CMJ ne sont donc pas décidés : ils tombent. Un schéma de synthèse
+> dont on choisit les intersections ne démontre rien.
+>
+> Les deux papiers de 15-20 s partent de la **même valeur d'encre** : le
+> mat est rabattu vers le gris du papier et grainé, le couché garde sa
+> saturation et porte une bande de lumière. C'est exactement ce que la
+> voix off affirme, et rien de plus.
+
 | Chrono | Visuel / action | Texte incrusté | Voix off |
 |---|---|---|---|
 | 0-3 s | Gros plan sur un écran affichant un visuel en bleu électrique éclatant. Transition brutale vers le même visuel imprimé, terne. | **« Pourquoi ce n'est jamais la même couleur »** | Vous validez un bleu éclatant à l'écran. Vous recevez l'impression. Ce n'est pas la même couleur. |
@@ -260,8 +279,7 @@ illisible, la sans-serif reste lisible.
 **Pas de prompt d'arrière-plan.** Il y en avait un ici. Les cinq prompts du
 cahier des charges sont retirés : `reseaux/LIGNE-EDITORIALE.md` interdit une
 image dont les droits ne sont pas clairs, et c'est une règle, pas une
-préférence. Ce reel garde ses fiches de tournage — **c'est, avec le n° 8,
-l'un des deux seuls qui demandent encore de filmer.**
+préférence.
 
 **Voix de synthèse suggérée :** féminine française, calme et professionnelle,
 débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
@@ -295,11 +313,14 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
 `#printdesign #cmjn #impression #designgraphique #identitevisuelle #charteGraphique #graphismeFrance #bonatirer #graphistePerpignan #ArtisanDuRoussillon`
 
 ### À fournir par Sandra
-- Le tournage : un écran, une impression du même visuel, un nuancier, un
-  papier texturé en lumière rasante. **Quatre plans de cinq secondes, filmés
-  au téléphone, suffisent.**
-- Les deux animations (superposition RVB, mélange CMJN) peuvent être faites
-  en motion simple, ou remplacées par deux schémas fixes animés au zoom.
+- **Rien à filmer.** Les cinq écrans sont dessinés et prêts.
+- Une précision sur l'écran 1, parce qu'elle compte : le bleu « imprimé »
+  n'est pas une conversion colorimétrique. Il n'y a ni profil ni moteur ICC
+  dans `visuels.py`, et prétendre le contraire serait malhonnête. C'est une
+  approximation volontairement simple — on rapproche la teinte de son gris
+  et on l'assombrit — qui reproduit ce qu'on constate sur un bleu électrique
+  imprimé en quadri : **il perd son éclat avant de perdre sa teinte.** La
+  légende ne promet rien de plus que ce constat.
 
 # SEMAINE 2 — du lundi 26 octobre au dimanche 1er novembre
 
@@ -594,9 +615,7 @@ faux, la réponse apparaissant sur le visuel suivant.
 | 15-19 s | Une devanture de commerce passe du blanc au orange et noir, puis revient. | Et pour votre commerce ? | Ce contraste attire l'œil. Mais il crie. Utilisé toute l'année, il fatigue. Pour une vitrine saisonnière, il est parfait. |
 | 19-22 s | Logo Grafycom sur `#a86cd0`. Signature `@grafycom.graphiste`. | **Une couleur n'est jamais neutre.** | Une couleur n'est jamais neutre. Elle dit quelque chose avant vous. |
 
-**Pas de prompt d'arrière-plan.** Retiré, comme les quatre autres. Ce reel
-garde ses fiches de tournage — **c'est, avec le n° 4, l'un des deux seuls
-qui demandent encore de filmer.**
+**Pas de prompt d'arrière-plan.** Retiré, comme les quatre autres.
 
 **Voix de synthèse suggérée :** féminine française, posée, légèrement plus
 grave que d'habitude, débit lent sur les deux premières phrases puis
@@ -631,11 +650,20 @@ normal. Ton curieux, pas effrayant.
 `#graphistePerpignan #Perpignan #PyreneesOrientales #CommerceLocal66 #ArtisanDuRoussillon #Halloween #vitrine #psychologiedescouleurs #identitevisuelle #designgraphique`
 
 ### À fournir par Sandra
-- Les quatre plans. Les images de signalisation peuvent être filmées en
-  ville en dix minutes — un ruban de chantier, un panneau — ce qui vaut
-  mieux qu'une banque d'images, et évite toute question de droits.
-- ⚠️ **Pas de photo trouvée sur internet** pour la séquence 9-15 s : soit
-  filmée, soit générée avec le prompt fourni.
+- **Rien à filmer.** Les cinq écrans sont dessinés et prêts —
+  `visuels.py`, gabarit `reel-halloween`, dans
+  `reseaux/visuels/2026-10-30-reel-halloween/`.
+- L'avertissement qui était ici — « pas de photo trouvée sur internet pour
+  la séquence 9-15 s » — n'a plus d'objet, et c'est tant mieux : c'était le
+  seul endroit du cycle qui n'offrait aucune issue propre. Filmer demandait
+  une sortie, chercher était interdit, générer aussi. Les quatre objets
+  sont maintenant dessinés : un ruban de chantier, un panneau de danger,
+  une guêpe, une salamandre. Libres de droits par construction.
+- **Et la démonstration y gagne.** Ce que cette séquence doit montrer n'est
+  pas *un* panneau : c'est le **code** commun à quatre choses qui n'ont
+  rien à voir entre elles. Un pictogramme le dit mieux qu'une photographie,
+  qui porterait en plus une marque, une rue et une météo dont le sujet n'a
+  que faire.
 
 # SEMAINE 3 — du lundi 2 au dimanche 8 novembre
 

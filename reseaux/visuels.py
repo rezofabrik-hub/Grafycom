@@ -913,55 +913,6 @@ def carrousel_droits(dossier=None):
     return f
 
 
-def plans_reel_cmjn(dossier=None):
-    """n° 4, vendredi 23 octobre — les cinq plans du reel, en 9:16."""
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-cmjn"))
-    f = []
-    plans = [
-        ("creme", "encre", "Pourquoi ce n'est jamais\nla même couleur", ""),
-        ("blanc", "encre", "RVB", "De la lumière.\nRouge, vert, bleu.\nPlus on en met, plus c'est clair."),
-        ("encre", "blanc", "CMJN", "Quatre encres.\nCyan, magenta, jaune, noir.\nChaque couche retire de la lumière."),
-        ("creme", "encre", "Le papier\nchange tout", "Un mat absorbe.\nUn couché renvoie."),
-        ("encre", "blanc", "Demandez un BAT.\nToujours.", "C'est gratuit, et ça évite de tout refaire."),
-    ]
-    for i, (fond, enc, titre, sous) in enumerate(plans, 1):
-        p = Planche(fond, LARGE_S, HAUT_S)
-        h = p.h_titre(titre, 96) + (p.h_texte(sous, 46, avant=60) if sous else 0)
-        p.centrer(h, 0.44)
-        p.titre(titre, 96, enc)
-        if sous:
-            p.texte(sous, 46, enc, 400, avant=60)
-        if i == len(plans):          # le carton de fin, et lui seul
-            p.abonnement("sable" if fond == "encre" else "taupe")
-        p.signature(enc)
-        f.append(p.ecrire(d / ("plan%d.png" % i)))
-    return f
-
-
-def plans_reel_halloween(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-30-reel-halloween"))
-    f = []
-    plans = [
-        ("encre", "orange", "Pourquoi Halloween\nest orange et noir", ""),
-        ("orange", "encre", "Le contraste\nmaximal", "On le repère avant de comprendre ce qu'on regarde."),
-        ("encre", "orange", "La nature\nl'utilise déjà", "Guêpes, serpents, rubans de chantier.\nLe message : attention."),
-        ("creme", "encre", "Et pour\nvotre vitrine ?", "Parfait en saisonnier.\nÉpuisant toute l'année."),
-        ("encre", "blanc", "Une couleur\nn'est jamais neutre.", "Elle dit quelque chose avant vous."),
-    ]
-    for i, (fond, enc, titre, sous) in enumerate(plans, 1):
-        p = Planche(fond, LARGE_S, HAUT_S)
-        h = p.h_titre(titre, 96) + (p.h_texte(sous, 46, avant=60) if sous else 0)
-        p.centrer(h, 0.44)
-        p.titre(titre, 96, enc)
-        if sous:
-            p.texte(sous, 46, enc, 400, avant=60)
-        if i == len(plans):          # le carton de fin, et lui seul
-            p.abonnement("sable" if fond == "encre" else "taupe")
-        p.signature(enc)
-        f.append(p.ecrire(d / ("plan%d.png" % i)))
-    return f
-
-
 MOIS_COURTS = ["janv", "févr", "mars", "avr", "mai", "juin", "juil",
                "août", "sept", "oct", "nov", "déc"]
 
@@ -1427,55 +1378,6 @@ def quiz_fin_annee(dossier=None):
     return f
 
 
-def _plans_tournage(dossier, titre, plans, numero_total):
-    """Les planches de tournage d'un reel, en 9:16.
-
-    Ce ne sont pas les images du reel : ce sont les fiches que Sandra suit
-    au telephone. Chacune porte le chrono, le cadrage a filmer et le texte
-    incruste tel qu'il apparaitra. visuels.py ne fabrique pas de
-    photographies, et un reel sur la matiere se tourne.
-    """
-    d = pathlib.Path(dossier)
-    f = []
-    for i, (chrono, cadrage, incruste, cloture) in enumerate(plans, 1):
-        if cloture:
-            # le carton de fin, lui, est un vrai visuel : il se publie
-            p = Planche("encre", LARGE_S, HAUT_S)
-            p.centrer(p.h_titre(incruste, 80) + 44, 0.42)
-            p.filet()
-            p.titre(incruste, 80, "blanc")
-            p.y += 40
-            p.texte(cadrage, 42, "creme", 400, avant=20)
-            p.abonnement("sable")
-            p.signature("sable")
-            p.d.text((p.l - MARGE - 160, MARGE), chrono, font=police(600, 30),
-                     fill=teinte("sable"))
-        else:
-            p = Planche("creme", LARGE_S, HAUT_S)
-            p.d.text((MARGE, MARGE), titre, font=police(800, 30),
-                     fill=teinte("taupe"))
-            p.d.text((p.l - MARGE - 160, MARGE), chrono,
-                     font=police(600, 30), fill=teinte("corail"))
-            p.d.line([MARGE, MARGE + 60, p.l - MARGE, MARGE + 60],
-                     fill=teinte("sable_fonce"), width=2)
-            p.y = 260
-            p.d.text((MARGE, 230), "À FILMER", font=police(800, 28),
-                     fill=teinte("corail"))
-            p.y = 300
-            p.texte(cadrage, 44, "encre", 400, avant=0)
-            yc = max(p.y + 80, 900)
-            p.d.text((MARGE, yc), "TEXTE INCRUSTÉ", font=police(800, 28),
-                     fill=teinte("violet"))
-            p.y = yc + 80
-            p.encadre(incruste, 52, "blanc", "violet", pad=38, graisse=800,
-                      couleur="encre")
-            p.y = p.h - MARGE - 120
-            p.texte("Plan %d sur %d — fiche de tournage, ne se publie pas."
-                    % (i, numero_total), 30, "taupe", 400, avant=0)
-        f.append(p.ecrire(d / ("plan%d.png" % i)))
-    return f
-
-
 def stories(dossier=None):
     """Les 41 ecrans de stories du cycle, en 9:16, nommes par leur code.
 
@@ -1694,8 +1596,6 @@ GABARITS = {
     "dilemme-voeux": dilemme_voeux,
     "quiz-fin-annee": quiz_fin_annee,
     "blog-rendez-vous": carrousel_blog_rdv,
-    "plans-reel-cmjn": plans_reel_cmjn,
-    "plans-reel-halloween": plans_reel_halloween,
     "stories": stories,
 }
 
@@ -2190,6 +2090,17 @@ def _sapin(d, cx, cy, h, couleur):
                 fill=teinte(couleur))
 
 
+def _citrouille_plate(d, cx, cy, larg, couleur):
+    """Une citrouille en silhouette, d'une seule couleur : un motif."""
+    h = larg * 0.82
+    for dx, l in ((0.0, 1.0), (-0.24, 0.72), (0.24, 0.72)):
+        d.ellipse([cx + larg * dx - larg * l / 2, cy - h / 2,
+                   cx + larg * dx + larg * l / 2, cy + h / 2], fill=couleur)
+    d.rectangle([cx - larg * 0.05, cy - h / 2 - larg * 0.16,
+                 cx + larg * 0.05, cy - h / 2 + larg * 0.04], fill=couleur)
+    return d
+
+
 def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
              fascia=True, couverture=0.0, bandeau=0.0, oeil=False,
              encombre=False, reflet=False, lettres=None, stickers=None,
@@ -2303,7 +2214,11 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
         for i in range(n):
             cx = x + larg * (0.5 + (i - (n - 1) / 2) * 0.9 / n)
             cy = (dy0 + dy1) / 2
-            if decor == "sapins":
+            if decor == "citrouilles":
+                _citrouille_plate(p.d, cx, cy,
+                                  min(larg * 0.062, (dy1 - dy0) * 0.58),
+                                  teinte("encre"))
+            elif decor == "sapins":
                 _sapin(p.d, cx, cy, min(gh * 0.22, (dy1 - dy0) * 0.74),
                        couleur_decor)
             else:
@@ -4180,6 +4095,473 @@ def pub24_reel_bilan(dossier=None):
     return faits
 
 
+# ---------------------------------------------------------------------
+# RVB et CMJN — n° 4. Le seul endroit du fichier ou la charte ne
+# s'applique pas, et c'est deliberе.
+# ---------------------------------------------------------------------
+# Un schema RVB doit etre fait avec le rouge, le vert et le bleu d'un
+# ecran, c'est-a-dire les trois canaux a fond. Un schema CMJN doit etre
+# fait avec les quatre encres d'imprimerie. Ce ne sont pas des couleurs
+# choisies : ce sont les valeurs physiques dont la publication parle.
+# Les remplacer par des couleurs de la charte rendrait le schema FAUX —
+# on expliquerait la synthese additive avec des teintes qui ne sont pas
+# des primaires.
+#
+# Elles sont donc ecrites en RVB et pas en hexadecimal, pour qu'on voie
+# du premier coup d'oeil que ce sont des canaux et non des teintes, et
+# elles ne servent QUE dans les deux schemas ci-dessous. Elles n'ont
+# rien a faire dans le reste du fichier, ni dans la charte du site.
+PRIMAIRES_LUMIERE = [("R", (255, 0, 0)), ("V", (0, 255, 0)), ("B", (0, 0, 255))]
+PRIMAIRES_ENCRE = [("C", (0, 174, 239)), ("M", (236, 0, 140)),
+                   ("J", (255, 241, 0)), ("N", (35, 31, 32))]
+
+
+def _synthese(p, x, y, cote, additive=True):
+    """Les primaires qui se superposent, melangees pour de vrai.
+
+    Les recouvrements ne sont PAS dessines a la main : chaque disque est
+    pose sur son propre calque, et les calques sont combines par le
+    melange qui correspond au procede — addition pour la lumiere,
+    multiplication pour l'encre. Le blanc au centre du schema RVB et le
+    presque-noir du schema CMJ sont donc calcules, pas decides. Un
+    schema de synthese dont on choisit les intersections ne demontre
+    rien du tout.
+    """
+    from PIL import ImageChops
+    cote = int(cote)
+    fond = (0, 0, 0) if additive else (255, 255, 255)
+    melange = Image.new("RGB", (cote, cote), fond)
+    primaires = PRIMAIRES_LUMIERE if additive else PRIMAIRES_ENCRE[:3]
+    r = cote * 0.30
+    centres = [(cote * 0.50, cote * 0.36),
+               (cote * 0.36, cote * 0.60),
+               (cote * 0.64, cote * 0.60)]
+    for (nom, rvb), (cx, cy) in zip(primaires, centres):
+        calque = Image.new("RGB", (cote, cote), fond)
+        ImageDraw.Draw(calque).ellipse([cx - r, cy - r, cx + r, cy + r],
+                                       fill=rvb)
+        melange = (ImageChops.add(melange, calque) if additive
+                   else ImageChops.multiply(melange, calque))
+    p.im.paste(melange, (int(x), int(y)))
+    p.d = ImageDraw.Draw(p.im)
+    p.d.rectangle([x, y, x + cote, y + cote],
+                  outline=_melange("taupe", "creme", 0.4), width=3)
+    f = police(800, max(20, int(cote * 0.075)))
+    for (nom, _), (cx, cy) in zip(primaires, centres):
+        dx = (cx - cote / 2) * 1.75
+        dy = (cy - cote * 0.52) * 1.75
+        tx, ty = x + cote / 2 + dx, y + cote * 0.52 + dy
+        p.d.text((tx - p.d.textlength(nom, font=f) / 2, ty - f.size * 0.6),
+                 nom, font=f, fill=teinte("blanc" if additive else "encre"))
+    return p
+
+
+def _hors_gamme(rvb, force=0.30):
+    """Ce que devient une couleur d'ecran passee en encre — approche.
+
+    Ce n'est PAS une conversion colorimetrique : il n'y a ni profil ni
+    moteur ICC ici, et pretendre le contraire serait malhonnete. C'est
+    une approximation volontairement simple — on rapproche la teinte de
+    son gris et on l'assombrit un peu — qui reproduit ce qu'on constate
+    sur un bleu electrique imprime en quadri : il perd son eclat avant
+    de perdre sa teinte. La legende de la publication ne promet rien de
+    plus que ce constat.
+    """
+    gris = sum(rvb) / 3
+    return tuple(int(c + (gris - c) * force * 1.6) * 90 // 100 for c in rvb)
+
+
+def _ecran(p, cx, cy, larg, couleur):
+    """Un moniteur, son pied, et un aplat de couleur dedans."""
+    haut = larg * 0.62
+    p.d.rounded_rectangle([cx - larg / 2, cy - haut / 2, cx + larg / 2,
+                           cy + haut / 2], radius=int(larg * 0.035),
+                          fill=_melange("encre", "brun", 0.25))
+    m = larg * 0.035
+    p.d.rectangle([cx - larg / 2 + m, cy - haut / 2 + m,
+                   cx + larg / 2 - m, cy + haut / 2 - m * 1.6], fill=couleur)
+    p.d.rectangle([cx - larg * 0.07, cy + haut / 2, cx + larg * 0.07,
+                   cy + haut / 2 + larg * 0.10],
+                  fill=_melange("encre", "brun", 0.35))
+    p.d.rounded_rectangle([cx - larg * 0.22, cy + haut / 2 + larg * 0.09,
+                           cx + larg * 0.22, cy + haut / 2 + larg * 0.14],
+                          radius=8, fill=_melange("encre", "brun", 0.35))
+    return p
+
+
+def _feuille_imprimee(p, cx, cy, larg, couleur, angle=-4):
+    """La meme couleur, posee sur du papier."""
+    haut = larg * 0.70
+    im = Image.new("RGBA", (int(larg), int(haut)), teinte("blanc") + "ff")
+    d = ImageDraw.Draw(im)
+    m = larg * 0.09
+    d.rectangle([m, m, larg - m, haut - m], fill=couleur)
+    sil = Image.new("RGBA", im.size, (0, 0, 0, 70)).rotate(
+        angle, expand=True, resample=Image.BICUBIC)
+    marge = 60
+    fo = Image.new("RGBA", (sil.width + 2 * marge, sil.height + 2 * marge),
+                   (0, 0, 0, 0))
+    fo.paste(sil, (marge, marge))
+    fo = fo.filter(ImageFilter.GaussianBlur(20))
+    p.im.paste(fo, (int(cx - fo.width / 2), int(cy - fo.height / 2 + 10)), fo)
+    t = im.rotate(angle, expand=True, resample=Image.BICUBIC)
+    p.im.paste(t, (int(cx - t.width / 2), int(cy - t.height / 2)), t)
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
+def _papier_rendu(p, x, y, larg, haut, couleur, couche, legende):
+    """Le meme aplat sur un mat et sur un couche brillant.
+
+    Le mat absorbe : la couleur est legerement rabattue et le grain du
+    papier se voit. Le couche renvoie : la couleur reste saturee et une
+    bande de lumiere traverse l'aplat. Les deux partent de la MEME
+    valeur d'encre — c'est ce que la voix off affirme.
+    """
+    if couche:
+        p.d.rectangle([x, y, x + larg, y + haut], fill=couleur)
+        bande = Image.new("RGBA", (int(larg), int(haut)), (0, 0, 0, 0))
+        ImageDraw.Draw(bande).polygon(
+            [(larg * 0.10, haut), (larg * 0.42, 0), (larg * 0.62, 0),
+             (larg * 0.30, haut)], fill=teinte("blanc") + "4e")
+        bande = bande.filter(ImageFilter.GaussianBlur(int(larg * 0.035)))
+        p.im = Image.alpha_composite(
+            p.im.convert("RGBA"),
+            Image.new("RGBA", p.im.size, (0, 0, 0, 0))).convert("RGB")
+        p.im.paste(bande, (int(x), int(y)), bande)
+        p.d = ImageDraw.Draw(p.im)
+    else:
+        # le mat absorbe : la couleur est rabattue vers le gris du
+        # papier, et le grain de la fibre casse l'aplat. L'ecart avec le
+        # couche doit se voir en vignette, sinon la planche ne demontre
+        # rien — c'est tout ce qu'on lui demande.
+        mat = tuple(int(c + (196 - c) * 0.26) for c in couleur)
+        p.d.rectangle([x, y, x + larg, y + haut], fill=mat)
+        import random
+        al = random.Random(4)
+        clair = tuple(min(255, c + 30) for c in mat)
+        sombre = tuple(max(0, c - 22) for c in mat)
+        for _ in range(int(larg * haut / 90)):
+            gx = al.uniform(x + 3, x + larg - 3)
+            gy = al.uniform(y + 3, y + haut - 3)
+            r = al.choice((1, 1, 2))
+            p.d.ellipse([gx - r, gy - r, gx + r, gy + r],
+                        fill=clair if al.random() > 0.45 else sombre)
+    p.d.rectangle([x, y, x + larg, y + haut],
+                  outline=_melange("taupe", "creme", 0.4), width=3)
+    f = police(600, max(20, int(larg * 0.085)))
+    p.d.text((x + larg / 2 - p.d.textlength(legende, font=f) / 2,
+              y + haut + 18), legende, font=f, fill=teinte("brun"))
+    return p
+
+
+def pub04_reel_cmjn(dossier=None):
+    """n° 4, vendredi 23 octobre — pourquoi ce n'est jamais la meme couleur.
+
+    Remplace les fiches de tournage par cinq ecrans finis. C'est la
+    publication du cycle ou le dessin est le plus clairement SUPERIEUR
+    au tournage : la synthese additive et la synthese soustractive sont
+    des schemas, pas des scenes. Elles se filment mal, elles se
+    dessinent bien — et ici elles ne sont meme pas dessinees, elles sont
+    CALCULEES : les recouvrements sortent d'une addition et d'une
+    multiplication de calques.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-cmjn"))
+    faits = []
+    vif = (53, 169, 221)                     # le bleu vif de la charte
+    terne = _hors_gamme(vif)
+
+    p = Planche("sable_chaud", LARGE_S, HAUT_S)
+    p.surtitre("Reel · 0-3 s", "taupe", y=190)
+    p.titre("Pourquoi ce n'est\njamais la même\ncouleur.", 98, y=270)
+    _ecran(p, p.l / 2, 860, 620, vif)
+    _feuille_imprimee(p, p.l / 2, 1430, 440, terne)
+    f = police(600, 32)
+    for y, lib in ((1170, "à l'écran"), (1610, "imprimé")):
+        p.d.text((p.l / 2 - p.d.textlength(lib, font=f) / 2, y), lib,
+                 font=f, fill=teinte("taupe"))
+    p.y = 1660
+    p.texte("Vous validez un bleu éclatant à l'écran. Vous recevez "
+            "l'impression.", 40, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran1.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("3-9 s", "taupe", y=190)
+    p.titre("RVB : de la lumière.", 100, y=260)
+    _synthese(p, 140, 620, 800, additive=True)
+    p.y = 1520
+    p.texte("Un écran fabrique les couleurs avec de la lumière. Il "
+            "additionne du rouge, du vert et du bleu. Plus il en met, plus "
+            "c'est lumineux — au centre, c'est blanc.", 40, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran2.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("9-15 s", "taupe", y=190)
+    p.titre("CMJN : de l'encre.", 100, y=260)
+    _synthese(p, 140, 620, 800, additive=False)
+    p.y = 1520
+    p.texte("Une imprimante fait l'inverse. Elle dépose de l'encre sur du "
+            "papier blanc, et chaque couche retire de la lumière — au "
+            "centre, c'est presque noir.", 40, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran3.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("15-20 s", "taupe", y=190)
+    p.titre("Le papier\nchange tout.", 104, y=260)
+    _papier_rendu(p, 90, 760, 420, 420, vif, False, "mat")
+    _papier_rendu(p, 570, 760, 420, 420, vif, True, "couché brillant")
+    p.y = 1340
+    p.texte("La même encre, deux papiers. Un mat absorbe et adoucit. Un "
+            "couché renvoie et sature. Le même fichier donne deux "
+            "résultats.", 40, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran4.png"))
+
+    p = Planche("encre", LARGE_S, HAUT_S)
+    _ecran(p, 330, 620, 400, vif)
+    _feuille_imprimee(p, 760, 640, 340, terne, angle=5)
+    p.y = 1000
+    p.filet()
+    p.titre("Demandez un BAT.\nToujours.", 98, "blanc")
+    p.y += 30
+    p.texte("Ne validez jamais une couleur sur un écran. Un bon à tirer, "
+            "c'est gratuit, et ça évite de tout refaire.", 40, "creme", 400,
+            avant=20)
+    p.abonnement("sable")
+    p.signature("sable")
+    faits.append(p.ecrire(d / "ecran5.png"))
+    return faits
+
+
+# ---------------------------------------------------------------------
+# Orange et noir — n° 8.
+# ---------------------------------------------------------------------
+# C'est le plan 9-15 s qui rendait ce reel difficile : « images rapides,
+# panneau de danger, ruban de chantier, guepe, signalisation routiere ».
+# Trouvees sur internet, elles sont interdites par la ligne editoriale.
+# Filmees, elles demandent une sortie. Generees, c'est la meme
+# interdiction. Dessinees, elles sont a la fois libres de droits et plus
+# justes : ce que la publication montre n'est pas UN panneau, c'est le
+# CODE commun a quatre objets qui n'ont rien a voir entre eux. Un
+# pictogramme le dit mieux qu'une photographie, qui porterait en plus
+# une marque, une rue, une meteo dont on n'a que faire.
+
+def _ruban_chantier(p, x, y, larg, haut, pas=None):
+    """Un ruban de chantier : des bandes a 45 degres, orange et noir."""
+    pas = pas or max(28, int(haut * 0.52))
+    p.d.rectangle([x, y, x + larg, y + haut], fill=teinte("orange"))
+    bande = Image.new("RGB", (int(larg), int(haut)), teinte("orange"))
+    db = ImageDraw.Draw(bande)
+    for i in range(-int(haut), int(larg) + int(haut), pas * 2):
+        db.polygon([(i, haut), (i + pas, haut), (i + pas + haut, 0), (i + haut, 0)],
+                   fill=teinte("encre"))
+    p.im.paste(bande, (int(x), int(y)))
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
+def _panneau_danger(p, cx, cy, cote):
+    """Le triangle de danger : noir sur orange, point d'exclamation trace."""
+    h = cote * 0.87
+    r = cote * 0.07
+    p.d.polygon([(cx, cy - h / 2), (cx - cote / 2, cy + h / 2),
+                 (cx + cote / 2, cy + h / 2)], fill=teinte("orange"))
+    p.d.polygon([(cx, cy - h / 2 + r * 1.9), (cx - cote / 2 + r * 2.2, cy + h / 2 - r),
+                 (cx + cote / 2 - r * 2.2, cy + h / 2 - r)],
+                outline=teinte("encre"), width=max(5, int(cote * 0.055)))
+    # le point d'exclamation : trace, pas ecrit — aucune fonte en jeu
+    l = max(6, int(cote * 0.075))
+    p.d.polygon([(cx - l, cy - cote * 0.12), (cx + l, cy - cote * 0.12),
+                 (cx + l * 0.6, cy + cote * 0.16),
+                 (cx - l * 0.6, cy + cote * 0.16)], fill=teinte("encre"))
+    p.d.ellipse([cx - l, cy + cote * 0.24, cx + l, cy + cote * 0.24 + l * 2],
+                fill=teinte("encre"))
+    return p
+
+
+def _guepe(p, cx, cy, larg):
+    """Une guepe, de dessus : tete et thorax noirs, abdomen raye.
+
+    Trois cents millions d'annees avant la signalisation routiere, le
+    meme message avec les memes deux couleurs. C'est tout l'argument de
+    la publication, et il tient dans cette silhouette.
+    """
+    ha = larg * 0.34
+    ep = max(3, int(larg * 0.012))
+    # les ailes d'abord, pour qu'elles passent sous le corps
+    for s in (-1, 1):
+        aile = Image.new("RGBA", (int(larg * 0.32), int(ha * 0.26)),
+                         (0, 0, 0, 0))
+        ImageDraw.Draw(aile).ellipse(
+            [0, 0, aile.width - 1, aile.height - 1],
+            fill=teinte("blanc") + "9a",
+            outline=_melange("taupe", "brun", 0.25), width=2)
+        aile = aile.rotate(s * 16, expand=True, resample=Image.BICUBIC)
+        p.im.paste(aile, (int(cx - larg * 0.16),
+                          int(cy + s * ha * 0.52 - aile.height / 2)), aile)
+    p.d = ImageDraw.Draw(p.im)
+    # tete et thorax
+    p.d.ellipse([cx - larg * 0.46, cy - ha * 0.26,
+                 cx - larg * 0.28, cy + ha * 0.26], fill=teinte("encre"))
+    p.d.ellipse([cx - larg * 0.30, cy - ha * 0.34,
+                 cx - larg * 0.04, cy + ha * 0.34], fill=teinte("encre"))
+    # l'abdomen raye : c'est lui, le signal
+    al, ah = int(larg * 0.52), int(ha * 0.72)
+    abd = Image.new("RGBA", (al, ah), (0, 0, 0, 0))
+    da = ImageDraw.Draw(abd)
+    da.ellipse([0, 0, al - 1, ah - 1], fill=teinte("orange"))
+    for k in range(4):
+        da.rectangle([al * (0.10 + k * 0.21), 0, al * (0.20 + k * 0.21), ah],
+                     fill=teinte("encre"))
+    masque = Image.new("L", abd.size, 0)
+    ImageDraw.Draw(masque).ellipse([0, 0, al - 1, ah - 1], fill=255)
+    abd.putalpha(masque)
+    p.im.paste(abd, (int(cx - larg * 0.06), int(cy - ah / 2)), abd)
+    p.d = ImageDraw.Draw(p.im)
+    # les antennes
+    for s in (-1, 1):
+        p.d.line([(cx - larg * 0.42, cy + s * ha * 0.14),
+                  (cx - larg * 0.58, cy + s * ha * 0.50)],
+                 fill=teinte("encre"), width=ep)
+    return p
+
+
+def _batracien(p, cx, cy, larg):
+    """Une salamandre, tachee d'orange sur noir. Meme code, autre regne."""
+    h = larg * 0.30
+    p.d.ellipse([cx - larg * 0.42, cy - h * 0.46, cx + larg * 0.30, cy + h * 0.46],
+                fill=teinte("encre"))
+    p.d.polygon([(cx + larg * 0.26, cy - h * 0.20), (cx + larg * 0.50, cy),
+                 (cx + larg * 0.26, cy + h * 0.20)], fill=teinte("encre"))
+    for gx, gy, gr in ((-0.26, -0.12, 0.085), (-0.06, 0.10, 0.070),
+                       (0.10, -0.14, 0.060), (-0.34, 0.14, 0.055)):
+        p.d.ellipse([cx + larg * gx - larg * gr, cy + h * gy - larg * gr,
+                     cx + larg * gx + larg * gr, cy + h * gy + larg * gr],
+                    fill=teinte("orange"))
+    for s in (-1, 1):
+        for dx in (-0.30, 0.08):
+            p.d.line([(cx + larg * dx, cy + s * h * 0.30),
+                      (cx + larg * (dx - 0.06), cy + s * h * 0.78)],
+                     fill=teinte("encre"), width=max(4, int(larg * 0.022)))
+    return p
+
+
+def _citrouille(p, cx, cy, larg):
+    """Une citrouille, sur fond noir."""
+    h = larg * 0.84
+    for i, (dx, l) in enumerate(((0.0, 1.0), (-0.26, 0.74), (0.26, 0.74),
+                                 (-0.44, 0.46), (0.44, 0.46))):
+        c = teinte("orange") if i == 0 else _melange("orange", "encre",
+                                                     0.10 + 0.06 * (i > 2))
+        p.d.ellipse([cx + larg * dx - larg * l / 2, cy - h / 2,
+                     cx + larg * dx + larg * l / 2, cy + h / 2], fill=c)
+    p.d.ellipse([cx - larg * 0.50, cy - h / 2, cx + larg * 0.50, cy + h / 2],
+                outline=_melange("orange", "encre", 0.35), width=5)
+    # la queue
+    p.d.rounded_rectangle([cx - larg * 0.045, cy - h / 2 - larg * 0.17,
+                           cx + larg * 0.045, cy - h / 2 + larg * 0.04],
+                          radius=int(larg * 0.03),
+                          fill=_melange("brun", "encre", 0.30))
+    return p
+
+
+def pub08_reel_halloween(dossier=None):
+    """n° 8, vendredi 30 octobre — pourquoi Halloween est orange et noir.
+
+    Remplace les fiches de tournage par cinq ecrans finis. Le plan
+    9-15 s etait le seul du cycle a porter un avertissement explicite —
+    « pas de photo trouvee sur internet » — avec, pour seule porte de
+    sortie, un prompt d'image generee. Les deux options tombaient sous
+    la meme regle. Dessines, les quatre objets sont libres de droits, et
+    la demonstration gagne : ce qu'on montre n'est pas un panneau, c'est
+    le CODE commun a quatre choses qui n'ont rien a voir entre elles.
+    Une photographie porterait en plus une marque, une rue, une meteo
+    dont le sujet n'a que faire.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-30-reel-halloween"))
+    faits = []
+
+    p = Planche("encre", LARGE_S, HAUT_S)
+    p.surtitre("Reel · 0-3 s", "orange", y=200)
+    p.titre("Pourquoi Halloween\nest orange\net noir.", 96, "blanc", y=280)
+    _citrouille(p, p.l / 2, 1130, 620)
+    p.y = 1560
+    p.texte("Orange et noir. Pourquoi ces deux couleurs, et pas d'autres ?",
+            42, "creme", 400, avant=0)
+    p.signature("sable")
+    faits.append(p.ecrire(d / "ecran1.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("3-9 s", "taupe", y=190)
+    p.titre("Le contraste\nmaximal.", 110, y=260)
+    # la demonstration : le meme mot sur les deux aplats, dans l'autre
+    # couleur. Si on trichait sur l'un des deux, elle ne vaudrait rien.
+    f = police(800, 92)
+    for i, (fond, texte_c) in enumerate((("encre", "orange"),
+                                         ("orange", "encre"))):
+        y0 = 620 + i * 330
+        p.d.rectangle([90, y0, 990, y0 + 290], fill=teinte(fond))
+        l = p.d.textlength("ATTENTION", font=f)
+        p.d.text((540 - l / 2, y0 + 95), "ATTENTION", font=f,
+                 fill=teinte(texte_c))
+    p.y = 1340
+    p.texte("C'est l'un des contrastes les plus violents que l'œil humain "
+            "sache traiter. On le repère avant même d'avoir compris ce "
+            "qu'on regarde.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran2.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("9-15 s", "taupe", y=190)
+    p.titre("La nature\nl'utilise déjà.", 104, y=260)
+    _ruban_chantier(p, 90, 640, 420, 300)
+    _panneau_danger(p, 780, 790, 330)
+    _guepe(p, 300, 1120, 420)
+    _batracien(p, 760, 1120, 400)
+    f = police(600, 30)
+    for cx, y, lib in ((300, 970, "ruban de chantier"), (780, 970, "panneau"),
+                       (300, 1300, "guêpe"), (760, 1300, "salamandre")):
+        p.d.text((cx - p.d.textlength(lib, font=f) / 2, y), lib, font=f,
+                 fill=teinte("taupe"))
+    p.y = 1420
+    p.texte("La nature s'en sert pour dire « attention ». La signalisation "
+            "aussi. Halloween n'a rien inventé : elle a emprunté le code "
+            "de l'alerte.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran3.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("15-19 s", "taupe", y=190)
+    p.titre("Et pour\nvotre commerce ?", 100, y=260)
+    _vitrine(p, 90, 680, 900, 420, eclairee=True, enseigne="VOTRE NOM")
+    _vitrine(p, 90, 1160, 900, 420, eclairee=True, enseigne="VOTRE NOM",
+             bandeau=0.46, couleur_decor="orange", decor="citrouilles",
+             opacite_decor=0xf2)
+    f = police(600, 32)
+    for y, lib in ((1118, "toute l'année"), (1598, "en octobre")):
+        p.d.text((90, y), lib, font=f, fill=teinte("taupe"))
+    p.y = 1660
+    p.texte("Il attire l'œil, mais il crie. Pour une vitrine saisonnière, "
+            "c'est parfait.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran4.png"))
+
+    p = Planche("violet", LARGE_S, HAUT_S)
+    p.filet(y=740)
+    p.titre("Une couleur\nn'est jamais\nneutre.", 112, "blanc")
+    p.y += 40
+    p.texte("Elle dit quelque chose avant vous — et parfois autre chose que "
+            "ce que vous vouliez dire.", 42, "creme", 400, avant=20)
+    p.abonnement("sable")
+    p.signature("creme")
+    faits.append(p.ecrire(d / "ecran5.png"))
+    return faits
+
+
 def main():
     a = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -4230,6 +4612,8 @@ GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
 GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
 GABARITS["reel-matieres"] = pub20_reel_matieres
 GABARITS["reel-bilan"] = pub24_reel_bilan
+GABARITS["reel-cmjn"] = pub04_reel_cmjn
+GABARITS["reel-halloween"] = pub08_reel_halloween
 
 
 if __name__ == "__main__":

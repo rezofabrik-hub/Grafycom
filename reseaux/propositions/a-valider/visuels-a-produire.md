@@ -21,8 +21,9 @@ photo (voir `photos-a-prendre.md`).
 > redessinées — voir `photos-a-prendre.md`, section « Les photos
 > spécifiques au mois ». Les récapitulatifs ci-dessous décrivent donc ce
 > qui **a été** produit, et non ce qui reste à faire ; les deux lignes
-> « Photos » et « Tournages » ne valent plus que pour les reels n° 4 et
-> n° 8, en octobre, les deux seuls qui demandent encore de filmer.
+> les lignes « Photos » et « Tournages » ne valent plus du tout : **les six
+> reels du cycle sont dessinés**, et plus aucune publication n'attend
+> d'image.
 
 > **Les dossiers de `reseaux/visuels/` portent désormais la vraie date de
 > publication.** Ils étaient restés aux dates d'avant le décalage du
