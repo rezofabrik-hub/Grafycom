@@ -1978,6 +1978,1829 @@ def pub09_logo_reduction(dossier=None):
     faits.append(p.ecrire(d / "06.png"))
     return faits
 
+# =====================================================================
+# LES SCENES DESSINEES
+# ---------------------------------------------------------------------
+# Huit publications du cycle de novembre attendaient une photographie :
+# une rue au crepuscule, deux devantures, quatre matieres en macro, un
+# emballage, une vitrine de nuit, un calendrier. Sandra a dit que les
+# prises de vue etaient tres difficiles pour elle. Plutot que de laisser
+# huit trous dans le calendrier, ces huit publications sont redessinees.
+#
+# Ce n'est pas un pis-aller, et surtout ce n'est pas la meme chose que
+# demander l'image a un modele generatif :
+#
+# 1. Un dessin ne pretend pas etre une photo. Une image generee, si — et
+#    elle se trahit sur les enseignes, en pseudo-lettres. Le 13 octobre,
+#    deux images proposees ici portaient « S A.CKS » et « Tïvllts » sur
+#    leurs devantures. Une facade dessinee de loin porte des barres
+#    abstraites : personne ne lit un texte qui n'est pas ecrit, et quand
+#    un lettrage doit se lire, il est compose avec Inter, accents inclus.
+# 2. Les droits sont clairs : le trace sort de ce fichier.
+# 3. Aucun commerce reel n'est reconnaissable. Quatre de ces huit
+#    publications parlent de non-conformite ; aucune ne peut illustrer
+#    le sujet avec la vitrine de quelqu'un, meme floutee.
+# 4. Sur deux sujets, le dessin montre mieux que la photo. La coupe d'un
+#    alu composite fait voir l'ame noire entre les deux peaux, qu'aucune
+#    macro ne donne aussi nettement ; et la meme vitrine redessinee a
+#    trois distances fait une demonstration qu'aucun cadrage unique ne
+#    rend.
+#
+# Ce que le dessin ne remplace pas, et ou la liste de
+# photos-a-prendre.md reste entiere : les matieres en lumiere rasante
+# (une dorure, un gaufrage, un vernis selectif) et les realisations en
+# situation. Ces deux familles se photographient le jour ou ce sera
+# possible ; les planches dessinees tiennent d'ici la.
+# =====================================================================
+
+HAUTEUR_DEVANTURE_M = 3.2     # hauteur de reference d'une devanture, en
+                              # metres : c'est elle qui place la bande
+                              # des yeux a 1,40-1,70 m dans les dessins.
+
+
+def _melange(a, b, k):
+    """Un ton intermediaire entre deux couleurs de la charte.
+
+    La nuit, une facade n'est pas de la couleur de la charte : elle en
+    est une version assombrie. Plutot que d'ecrire des valeurs en dur —
+    ce que charte.py --verifier refuse, et avec raison — on interpole
+    entre deux couleurs qui viennent, elles, de la feuille de style.
+    """
+    ca, cb = teinte(a), teinte(b)
+    return tuple(int(int(ca[i:i + 2], 16)
+                     + (int(cb[i:i + 2], 16) - int(ca[i:i + 2], 16)) * k)
+                 for i in (1, 3, 5))
+
+
+def _halo(p, cx, cy, rx, ry, couleur, force=110, flou=46):
+    """Une lueur, pour une enseigne allumee ou une vitrine eclairee.
+
+    Un aplat net ne fait pas une lumiere : c'est le degrade au bord qui
+    la fait. On dessine donc l'ellipse sur un calque, on la floute, et
+    on la compose par transparence.
+    """
+    calque = Image.new("RGBA", p.im.size, (0, 0, 0, 0))
+    ImageDraw.Draw(calque).ellipse([cx - rx, cy - ry, cx + rx, cy + ry],
+                                   fill=teinte(couleur) + "%02x" % force)
+    calque = calque.filter(ImageFilter.GaussianBlur(flou))
+    p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
+def _bloc(p, x, y, texte, taille=34, couleur="brun", graisse=400,
+          largeur=None, interligne=1.34, centre=False):
+    """Un paragraphe pose a une abscisse libre, pour les mises en colonnes.
+
+    Planche.texte() ecrit toujours a la marge : c'est ce qu'il faut pour
+    une page de carrousel, et ce qui ne marche pas pour deux colonnes
+    cote a cote. Renvoie l'ordonnee atteinte, pour enchainer.
+    """
+    f = police(graisse, taille)
+    largeur = largeur or (p.l - x - MARGE)
+    for ligne in couper(texte, f, largeur):
+        xx = x + (largeur - p.d.textlength(ligne, font=f)) / 2 if centre else x
+        p.d.text((xx, y), ligne, font=f, fill=teinte(couleur))
+        y += int(taille * interligne)
+    return y
+
+
+def _bandeau_travers(p, texte, couleur="violet", y=None, taille=56,
+                     sous_titre=None, couleur_texte="blanc"):
+    """Le bandeau plein en travers de l'image, la S1 de quatre carrousels.
+
+    Il sert a poser le titre sur une scene : sans aplat derriere, un
+    texte blanc sur un dessin se lit mal des que le dessin a du detail.
+    """
+    f = police(800, taille)
+    lignes = couper(texte, f, p.l - 2 * MARGE)
+    fs = police(400, 32)
+    lignes_s = couper(sous_titre, fs, p.l - 2 * MARGE) if sous_titre else []
+    haut = (40 + len(lignes) * int(taille * 1.2)
+            + (len(lignes_s) * 44 + 16 if lignes_s else 0) + 40)
+    y = int(p.h * 0.50 - haut / 2) if y is None else y
+    p.d.rectangle([0, y, p.l, y + haut], fill=teinte(couleur))
+    yy = y + 40
+    for ligne in lignes:
+        p.d.text((MARGE, yy), ligne, font=f, fill=teinte(couleur_texte))
+        yy += int(taille * 1.2)
+    if lignes_s:
+        yy += 16
+        for ligne in lignes_s:
+            p.d.text((MARGE, yy), ligne, font=fs, fill=teinte(couleur_texte))
+            yy += 44
+    p.y = y + haut + 30
+    return p
+
+
+# ---------------------------------------------------------------------
+# La rue au crepuscule — n° 10, et reemployee en n° 14 et 21.
+# ---------------------------------------------------------------------
+def _enseigne_lointaine(p, x, y, larg, haut, couleur, allumee=True,
+                        barres=3):
+    """Une enseigne vue de loin : un caisson et des barres, pas un mot.
+
+    C'est le choix qui distingue ce dessin d'une image generee. A cette
+    echelle, un oeil ne lit pas une enseigne de l'autre cote de la rue,
+    il voit un bandeau clair et le rythme de ses lettres. Des barres
+    disent cela exactement, et ne pretendent pas ecrire un nom.
+    """
+    p.d.rounded_rectangle([x, y, x + larg, y + haut], radius=max(2, haut // 5),
+                          fill=teinte(couleur) if allumee
+                          else _melange(couleur, "encre", 0.72))
+    f = _melange("blanc", couleur, 0.15) if allumee else _melange("encre", couleur, 0.25)
+    ep = max(2, haut // 6)
+    marge = larg * 0.12
+    util = larg - 2 * marge
+    pas = util / barres
+    for i in range(barres):
+        bx = x + marge + i * pas
+        p.d.rectangle([bx, y + haut / 2 - ep / 2,
+                       bx + pas * 0.62, y + haut / 2 + ep / 2], fill=f)
+    return p
+
+
+def _facade_rue(p, x, y_sol, larg, haut_total, teinte_mur, allumee=True,
+                etages=2, couleur_enseigne="corail", nuit=0.62):
+    """Une facade d'immeuble de centre ancien, en elevation.
+
+    Rez-de-chaussee commercial, enseigne en bandeau, un ou deux etages
+    de fenetres au-dessus. Le parametre nuit dose l'assombrissement :
+    0 en plein jour, 0,62 au crepuscule.
+    """
+    y_haut = y_sol - haut_total
+    mur = _melange(teinte_mur, "encre", nuit)
+    p.d.rectangle([x, y_haut, x + larg, y_sol], fill=mur)
+    # la corniche, qui donne l'epaisseur du bati
+    p.d.rectangle([x - 4, y_haut, x + larg + 4, y_haut + max(5, haut_total // 42)],
+                  fill=_melange(teinte_mur, "encre", min(1.0, nuit + 0.14)))
+
+    h_rdc = int(haut_total * 0.38)
+    y_rdc = y_sol - h_rdc
+    h_bandeau = int(h_rdc * 0.30)
+
+    # les fenetres des etages : eclairees au hasard regulier, pas toutes
+    if etages:
+        h_zone = haut_total - h_rdc - max(5, haut_total // 42)
+        h_f = int(h_zone / etages * 0.52)
+        l_f = int(larg * 0.20)
+        for e in range(etages):
+            yy = y_haut + max(5, haut_total // 42) + int(h_zone / etages * (e + 0.26))
+            for i in range(2):
+                xx = x + larg * (0.16 + i * 0.46)
+                vive = (e + i) % 3 != 1
+                p.d.rectangle([xx, yy, xx + l_f, yy + h_f],
+                              fill=_melange("jaune", "encre",
+                                            0.34 if vive else 0.78))
+
+    # la vitrine du rez-de-chaussee, et sa porte
+    y_vit, y_pied = y_rdc + h_bandeau, y_sol - haut_total * 0.018
+    p.d.rectangle([x + larg * 0.07, y_vit, x + larg * 0.93, y_pied],
+                  fill=_melange("jaune", "encre", 0.30 if allumee else 0.84))
+    p.d.line([(x + larg * 0.36, y_vit), (x + larg * 0.36, y_pied)],
+             fill=_melange(teinte_mur, "encre", 0.84), width=max(2, larg // 110))
+    p.d.rectangle([x + larg * 0.70, y_vit + (y_pied - y_vit) * 0.10,
+                   x + larg * 0.88, y_pied],
+                  fill=_melange("orange", "encre", 0.40 if allumee else 0.88))
+    p.d.line([(x + larg * 0.66, y_vit), (x + larg * 0.66, y_pied)],
+             fill=_melange(teinte_mur, "encre", 0.86), width=max(2, larg // 90))
+    # le bandeau d'enseigne
+    p.d.rectangle([x, y_rdc, x + larg, y_rdc + h_bandeau],
+                  fill=_melange(teinte_mur, "encre", min(1.0, nuit + 0.22)))
+    _enseigne_lointaine(p, x + larg * 0.14, y_rdc + h_bandeau * 0.22,
+                        larg * 0.72, h_bandeau * 0.56, couleur_enseigne,
+                        allumee, barres=3 if larg > 150 else 2)
+    return (x + larg / 2, y_rdc + h_bandeau * 0.5, larg * 0.5, h_bandeau * 0.9)
+
+
+def _rue_crepuscule(p, y_haut, y_bas, nuit=0.54):
+    """Une rue commercante a la tombee du jour, enseignes allumees.
+
+    C'est l'image que la n° 10 demandait en photo, et celle que la liste
+    de prises de vue signalait comme « a photographier en priorite,
+    parce qu'elle sert trois fois ». Elle sert trois fois ici aussi,
+    sans sortie a 17 h 30.
+    """
+    y_sol = int(y_bas - (y_bas - y_haut) * 0.14)
+    ciel = _degrade_lineaire(p.l, y_sol - y_haut, 180.0,
+                             [(0.0, C["bleu"]), (0.42, C["violet"]),
+                              (0.78, C["corail"]), (1.0, C["jaune"])])
+    p.im.paste(ciel, (0, y_haut))
+    p.d = ImageDraw.Draw(p.im)
+
+    # la rue : le trottoir d'en face, la bordure, puis la chaussee. Le
+    # reflet des vitrines sur le bitume mouille d'automne n'est pas un
+    # effet : sans lui, le bas de l'image est un aplat mort.
+    p.d.rectangle([0, y_sol, p.l, y_bas], fill=_melange("taupe", "encre", 0.82))
+    h_trot = (y_bas - y_sol) * 0.34
+    p.d.rectangle([0, y_sol, p.l, y_sol + h_trot],
+                  fill=_melange("taupe", "encre", 0.68))
+    p.d.line([(0, y_sol + h_trot), (p.l, y_sol + h_trot)],
+             fill=_melange("taupe", "encre", 0.52), width=4)
+
+    # six facades de largeurs et de hauteurs differentes : une rue reguliere
+    # ne ressemble a rien, et un centre ancien n'est jamais regulier.
+    bati = [(0.00, 0.19, 0.74, "sable", "corail", 2, True, 0.00),
+            (0.19, 0.15, 0.90, "sable_fonce", "jaune", 2, True, 0.05),
+            (0.34, 0.21, 0.66, "creme_rose", "turquoise", 1, True, -0.05),
+            (0.55, 0.13, 0.84, "brun_clair", "violet", 2, False, 0.07),
+            (0.68, 0.18, 0.72, "sable", "orange", 1, True, 0.02),
+            (0.86, 0.14, 0.95, "sable_fonce", "bleu_vif", 2, True, -0.03)]
+    haut_max = (y_sol - y_haut) * 0.92
+    lueurs = []
+    for gx, gl, gh, mur, coul, et, on, ecart in bati:
+        res = _facade_rue(p, int(p.l * gx), y_sol, int(p.l * gl),
+                          int(haut_max * gh), mur, on, et, coul,
+                          min(0.9, max(0.0, nuit + ecart)))
+        if on:
+            lueurs.append((res, coul))
+    for (cx, cy, rx, ry), coul in lueurs:
+        _halo(p, cx, cy, rx * 1.12, ry * 1.9, coul, 74, 20)
+    return p
+
+
+# ---------------------------------------------------------------------
+# La vitrine — n° 12, n° 21, n° 22. Dessinee une fois, declinee.
+# ---------------------------------------------------------------------
+def _flocon(d, cx, cy, r, couleur, ep=3):
+    for a in (0, 60, 120):
+        import math
+        dx, dy = math.cos(math.radians(a)) * r, math.sin(math.radians(a)) * r
+        d.line([(cx - dx, cy - dy), (cx + dx, cy + dy)],
+               fill=teinte(couleur), width=ep)
+
+
+def _sapin(d, cx, cy, h, couleur):
+    for i in range(3):
+        l = h * (0.46 - i * 0.11)
+        yy = cy - h * 0.5 + i * h * 0.26
+        d.polygon([(cx, yy), (cx - l, yy + h * 0.34), (cx + l, yy + h * 0.34)],
+                  fill=teinte(couleur))
+    d.rectangle([cx - h * 0.06, cy + h * 0.34, cx + h * 0.06, cy + h * 0.46],
+                fill=teinte(couleur))
+
+
+def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
+             fascia=True, couverture=0.0, bandeau=0.0, oeil=False,
+             encombre=False, reflet=False, lettres=None, stickers=None,
+             echelle=False, decor="flocons", zone_vide=False,
+             couleur_decor="violet", opacite_decor=0x9e,
+             enseigne=None, sous_enseigne=None):
+    """Une devanture en elevation, vue d'en face.
+
+    Une seule fonction pour les trois publications qui demandaient une
+    photo de vitrine, parce que c'est la meme vitrine : la n° 12 la
+    montre nue puis habillee, la n° 21 la montre de nuit et a hauteur
+    des yeux, la n° 22 lui colle deux adhesifs de fetes. Les redessiner
+    separement, c'est se garantir trois vitrines differentes dans un
+    meme feed.
+
+    Les hauteurs sont en metres via HAUTEUR_DEVANTURE_M : c'est ce qui
+    permet de placer la bande des yeux a 1,40-1,70 m sans la deviner.
+    """
+    ep = max(4, int(larg // 52))
+    cadre = "brun" if trait else "encre"
+    hf = haut * 0.17 if fascia else 0
+    hp = haut * 0.055                      # le soubassement
+    gy0, gy1 = y + hf, y + haut - hp       # la zone vitree
+    gh = gy1 - gy0
+    px_par_m = haut / HAUTEUR_DEVANTURE_M
+
+    # -- le vitrage -------------------------------------------------
+    if trait:
+        p.d.rectangle([x, gy0, x + larg, gy1], fill=teinte("blanc"),
+                      outline=teinte(cadre), width=ep)
+    else:
+        if eclairee:
+            interieur = _degrade_lineaire(int(larg), int(gh), 180.0,
+                                          [(0.0, C["jaune"]), (0.62, C["orange"]),
+                                           (1.0, C["corail"])])
+            p.im.paste(Image.blend(interieur,
+                                   Image.new("RGB", interieur.size,
+                                             _melange("jaune", "creme", 0.55)),
+                                   0.52), (int(x), int(gy0)))
+            p.d = ImageDraw.Draw(p.im)
+        else:
+            p.d.rectangle([x, gy0, x + larg, gy1],
+                          fill=_melange("encre", "bleu", 0.22))
+
+    # -- ce qu'il y a derriere la vitre -----------------------------
+    if encombre and not trait:
+        # un rayonnage charge : c'est le fond contre lequel un texte
+        # colle sur le verre devra se lire, et il bouge toute la journee.
+        for r in range(3):
+            yy = gy0 + gh * (0.22 + r * 0.26)
+            p.d.rectangle([x + larg * 0.06, yy, x + larg * 0.94, yy + gh * 0.035],
+                          fill=_melange("brun", "encre", 0.35))
+            for i in range(7):
+                bl = larg * (0.07 + (i % 3) * 0.012)
+                bx = x + larg * (0.08 + i * 0.122)
+                bh = gh * (0.10 + ((i + r) % 4) * 0.022)
+                p.d.rectangle([bx, yy - bh, bx + bl, yy],
+                              fill=_melange(["corail", "turquoise", "jaune",
+                                             "violet", "bleu_vif"][(i + r) % 5],
+                                            "encre", 0.40 if eclairee else 0.66))
+
+    if reflet and not trait:
+        # vitrine eteinte la nuit : le verre renvoie la rue d'en face.
+        # C'est exactement ce que la legende decrit, et ca ne se montre
+        # qu'en dessinant le reflet — une photo de miroir ne se lit pas.
+        for i, (gx, gl, gh2) in enumerate(((0.04, 0.17, 0.42), (0.23, 0.13, 0.56),
+                                           (0.38, 0.19, 0.36), (0.60, 0.15, 0.48),
+                                           (0.78, 0.18, 0.40))):
+            bx, bl = x + larg * gx, larg * gl
+            bh = gh * gh2
+            p.d.rectangle([bx, gy1 - bh, bx + bl, gy1],
+                          fill=_melange("bleu", "encre", 0.58 + (i % 3) * 0.05))
+        p.d.ellipse([x + larg * 0.70, gy0 + gh * 0.12,
+                     x + larg * 0.78, gy0 + gh * 0.24],
+                    fill=_melange("jaune", "encre", 0.52))
+        # les trainees de lumiere sur le verre : en transparence, sinon
+        # elles rayent le dessin au lieu de le vitrer.
+        calque = Image.new("RGBA", p.im.size, (0, 0, 0, 0))
+        dc = ImageDraw.Draw(calque)
+        for i in range(5):
+            xx = x + larg * (0.02 + i * 0.21)
+            dc.line([(xx, gy1), (xx + larg * 0.22, gy0)],
+                    fill=teinte("blanc") + "2a", width=max(4, ep * 2))
+            dc.line([(xx + larg * 0.05, gy1), (xx + larg * 0.25, gy0)],
+                    fill=teinte("blanc") + "18", width=max(2, ep))
+        masque = Image.new("L", p.im.size, 0)
+        ImageDraw.Draw(masque).rectangle([x, gy0, x + larg, gy1], fill=255)
+        calque.putalpha(Image.composite(calque.split()[3],
+                                        Image.new("L", p.im.size, 0), masque))
+        p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
+        p.d = ImageDraw.Draw(p.im)
+
+    # -- le decor de fetes ------------------------------------------
+    if couverture > 0 or bandeau > 0:
+        if couverture > 0:
+            dy0, dy1 = gy0, gy0 + gh * couverture
+        else:
+            dy0 = gy0 + gh * 0.30
+            dy1 = dy0 + gh * bandeau
+        # l'adhesif laisse passer la lumiere : un aplat opaque eteindrait
+        # la vitrine, et c'est justement ce que la publication reproche
+        # aux decors qui couvrent tout.
+        calque = Image.new("RGBA", p.im.size, (0, 0, 0, 0))
+        ImageDraw.Draw(calque).rectangle([x, dy0, x + larg, dy1],
+                                         fill=teinte(couleur_decor)
+                                         + ("46" if trait
+                                            else "%02x" % opacite_decor))
+        p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
+        p.d = ImageDraw.Draw(p.im)
+        n = max(3, int(larg / 110))
+        for i in range(n):
+            cx = x + larg * (0.5 + (i - (n - 1) / 2) * 0.9 / n)
+            cy = (dy0 + dy1) / 2
+            if decor == "sapins":
+                _sapin(p.d, cx, cy, min(gh * 0.22, (dy1 - dy0) * 0.74),
+                       couleur_decor)
+            else:
+                _flocon(p.d, cx, cy, min(larg * 0.045, (dy1 - dy0) * 0.34),
+                        couleur_decor, max(3, ep - 1))
+
+    # -- la porte et les meneaux ------------------------------------
+    xp = x + larg * 0.72
+    p.d.rectangle([xp, gy0 + gh * 0.06, x + larg, gy1],
+                  outline=teinte(cadre), width=ep)
+    p.d.ellipse([xp + larg * 0.02, gy0 + gh * 0.56,
+                 xp + larg * 0.042, gy0 + gh * 0.60], fill=teinte(cadre))
+    p.d.line([(x + larg * 0.36, gy0), (x + larg * 0.36, gy1)],
+             fill=teinte(cadre), width=ep)
+    p.d.line([(xp - ep / 2, gy0), (xp - ep / 2, gy1)],
+             fill=teinte(cadre), width=ep)
+
+    # -- la bande des yeux ------------------------------------------
+    if oeil:
+        y140 = y + haut - 1.40 * px_par_m
+        y170 = y + haut - 1.70 * px_par_m
+        calque = Image.new("RGBA", p.im.size, (0, 0, 0, 0))
+        ImageDraw.Draw(calque).rectangle([x, y170, x + larg, y140],
+                                         fill=teinte("corail") + "3c")
+        p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
+        p.d = ImageDraw.Draw(p.im)
+        for yy in (y140, y170):
+            p.d.line([(x - 18, yy), (x + larg + 18, yy)], fill=teinte("corail"),
+                     width=3)
+
+    # -- le lettrage adhesif ----------------------------------------
+    if lettres:
+        f = police(600, int(px_par_m * 0.17))
+        yy = y + haut - 1.66 * px_par_m
+        for ligne in lettres.split("\n"):
+            l = p.d.textlength(ligne, font=f)
+            p.d.text((x + (larg - l) / 2, yy), ligne, font=f,
+                     fill=teinte("blanc" if not trait else "encre"))
+            yy += int(px_par_m * 0.22)
+
+    # -- les adhesifs promotionnels ---------------------------------
+    for st in (stickers or []):
+        texte, couleur, (rx, ry), taille = st
+        f = police(800, taille)
+        l = p.d.textlength(texte, font=f)
+        cx, cy = x + larg * rx, gy0 + gh * ry
+        p.d.rounded_rectangle([cx - l / 2 - 26, cy - taille * 0.80,
+                               cx + l / 2 + 26, cy + taille * 0.80],
+                              radius=int(taille * 0.8), fill=teinte(couleur))
+        p.d.text((cx - l / 2, cy - taille * 0.62), texte, font=f,
+                 fill=teinte("blanc"))
+
+    # -- la zone reservee, vide et cernee ---------------------------
+    if zone_vide:
+        zx, zy = x + larg * 0.08, gy1 - gh * 0.30
+        p.d.rectangle([zx, zy, zx + larg * 0.26, zy + gh * 0.20],
+                      outline=teinte("corail"), width=4)
+
+    # -- le cadre, le bandeau d'enseigne, le soubassement -----------
+    if fascia:
+        p.d.rectangle([x - ep, y, x + larg + ep, y + hf],
+                      fill=teinte("blanc") if trait else _melange("encre", "brun", 0.30),
+                      outline=teinte(cadre), width=ep if trait else 0)
+    p.d.rectangle([x - ep, gy1, x + larg + ep, y + haut],
+                  fill=teinte("blanc") if trait else _melange("brun", "encre", 0.45),
+                  outline=teinte(cadre) if trait else None,
+                  width=ep if trait else 0)
+    p.d.rectangle([x - ep, y, x + larg + ep, y + haut], outline=teinte(cadre),
+                  width=ep)
+
+    # -- le nom sur le bandeau, et la ligne ajoutee dessous ---------
+    if enseigne and fascia:
+        fe = police(800, int(hf * 0.46))
+        le = p.d.textlength(enseigne, font=fe)
+        if le > larg * 0.88:
+            fe = police(800, int(hf * 0.46 * larg * 0.88 / le))
+            le = p.d.textlength(enseigne, font=fe)
+        p.d.text((x + (larg - le) / 2, y + hf * 0.26), enseigne, font=fe,
+                 fill=teinte("encre" if trait else "creme"))
+    if sous_enseigne:
+        # la ligne secondaire va sur un bandeau a elle, pas sur le verre :
+        # un texte clair pose sur une vitrine eclairee ne se lit pas, et
+        # cette publication-ci se joue entierement sur ce qui se lit.
+        bh2 = hf * 0.82
+        by2 = y + hf
+        p.d.rectangle([x - ep, by2, x + larg + ep, by2 + bh2],
+                      fill=teinte("blanc") if trait
+                      else _melange("encre", "violet", 0.18))
+        fs = police(600, int(bh2 * 0.42))
+        ls = p.d.textlength(sous_enseigne, font=fs)
+        if ls > larg * 0.92:
+            fs = police(600, int(bh2 * 0.42 * larg * 0.92 / ls))
+            ls = p.d.textlength(sous_enseigne, font=fs)
+        p.d.text((x + (larg - ls) / 2, by2 + bh2 * 0.22), sous_enseigne,
+                 font=fs, fill=teinte("encre" if trait else "creme"))
+        p.d.rectangle([x - ep, by2, x + larg + ep, by2 + bh2],
+                      outline=teinte(cadre), width=ep)
+
+    # -- l'echelle en metres ----------------------------------------
+    if echelle:
+        xe = x - 44
+        p.d.line([(xe, y), (xe, y + haut)], fill=teinte("taupe"), width=3)
+        f = police(600, 22)
+        for m in range(0, int(HAUTEUR_DEVANTURE_M) + 1):
+            yy = y + haut - m * px_par_m
+            p.d.line([(xe - 12, yy), (xe + 12, yy)], fill=teinte("taupe"), width=3)
+            t = "%d m" % m
+            p.d.text((xe - 14 - p.d.textlength(t, font=f), yy - 13), t,
+                     font=f, fill=teinte("taupe"))
+    return (x, gy0, x + larg, gy1)
+
+
+# ---------------------------------------------------------------------
+# Les quatre matieres, dessinees en coupe — n° 15.
+# ---------------------------------------------------------------------
+# Le quiz demandait quatre macrophotographies. La coupe dessinee change
+# la nature de l'exercice, et sur trois des quatre matieres elle montre
+# plus : l'ame noire d'un alu composite entre ses deux peaux ne se voit
+# sur une photo que si la tranche est parfaitement eclairee, alors
+# qu'elle est l'information meme. En echange, le gaufrage et le dépoli
+# perdent ce que seule la lumiere rasante donne. C'est dit dans la
+# legende de la publication : on montre des coupes, pas des photos.
+
+MATIERES = {
+    "alu": ("Alu composite", "le panneau extérieur qui ne gondole pas"),
+    "plexi": ("Plexiglas", "l'intérieur, les lettres, la plaque professionnelle"),
+    "depoli": ("Adhésif dépoli", "la vitrine, et ça se retire"),
+    "gaufre": ("Papier gaufré", "la carte qu'on garde"),
+}
+
+
+def _matiere(p, x, y, cote, genre, epaisseur=0.16):
+    """Un echantillon vu de trois quarts, sa tranche tournee vers nous.
+
+    L'epaisseur est volontairement exageree : a l'echelle reelle, trois
+    millimetres d'alu composite sur un panneau d'un metre ne font pas un
+    pixel. Un dessin technique grossit toujours ce qu'il explique.
+    """
+    e = cote * epaisseur
+    biais = e * 0.9
+    haut = cote - e
+
+    def face(couleur, decal=0):
+        p.d.rectangle([x, y + e + decal, x + cote - biais, y + cote + decal],
+                      fill=couleur)
+
+    if genre == "alu":
+        face(_melange("sable", "taupe", 0.30))
+        # la tranche : peau, ame noire, peau. C'est toute l'information.
+        p.d.polygon([(x, y + e), (x + biais, y), (x + cote, y),
+                     (x + cote - biais, y + e)],
+                    fill=_melange("sable", "blanc", 0.55))
+        # la tranche de droite, en trois couches empilees
+        for h0, h1, c in ((0.00, 0.22, _melange("blanc", "taupe", 0.26)),
+                          (0.22, 0.78, _melange("encre", "brun", 0.10)),
+                          (0.78, 1.00, _melange("blanc", "taupe", 0.34))):
+            p.d.polygon([(x + cote - biais, y + e + haut * h0),
+                         (x + cote, y + haut * h0),
+                         (x + cote, y + haut * h1),
+                         (x + cote - biais, y + e + haut * h1)], fill=c)
+        f = police(600, max(16, int(cote * 0.062)))
+        p.d.text((x + cote * 0.08, y + cote * 0.70), "3 mm", font=f,
+                 fill=_melange("encre", "sable", 0.35))
+
+    elif genre == "plexi":
+        face(_melange("blanc", "turquoise", 0.16))
+        p.d.polygon([(x, y + e), (x + biais, y), (x + cote, y),
+                     (x + cote - biais, y + e)],
+                    fill=_melange("blanc", "turquoise", 0.30))
+        # la tranche polie : c'est elle qui conduit la lumiere, et c'est
+        # a ca qu'on reconnait le plexi d'un verre ou d'un PVC.
+        p.d.polygon([(x + cote - biais, y + e), (x + cote, y),
+                     (x + cote, y + haut), (x + cote - biais, y + cote)],
+                    fill=teinte("turquoise"))
+        _halo(p, x + cote - biais / 2, y + cote * 0.5, biais * 1.4, haut * 0.52,
+              "turquoise", 86, 22)
+        for i in range(3):
+            xx = x + cote * (0.16 + i * 0.22)
+            p.d.line([(xx, y + cote), (xx + cote * 0.22, y + e)],
+                     fill=_melange("blanc", "turquoise", 0.55),
+                     width=max(3, int(cote * 0.016)))
+
+    elif genre == "depoli":
+        # la vitre, et derriere elle un rayonnage. En haut le verre est
+        # nu, en bas l'adhesif brouille la forme sans eteindre la lumiere.
+        sous = Image.new("RGB", (int(cote), int(haut)),
+                         _melange("jaune", "creme", 0.62))
+        ds = ImageDraw.Draw(sous)
+        for i, (gx, gl, gh2, c) in enumerate(((0.08, 0.20, 0.46, "corail"),
+                                              (0.34, 0.16, 0.62, "turquoise"),
+                                              (0.56, 0.22, 0.38, "violet"),
+                                              (0.80, 0.14, 0.54, "orange"))):
+            ds.rectangle([cote * gx, haut * (1 - gh2), cote * (gx + gl), haut],
+                         fill=_melange(c, "creme", 0.30))
+        ds.rectangle([0, haut * 0.70, cote, haut * 0.74],
+                     fill=_melange("brun", "creme", 0.40))
+        bas = sous.crop((0, int(haut * 0.42), int(cote), int(haut)))
+        bas = bas.filter(ImageFilter.GaussianBlur(int(cote * 0.035)))
+        bas = Image.blend(bas, Image.new("RGB", bas.size, teinte("blanc")), 0.46)
+        sous.paste(bas, (0, int(haut * 0.42)))
+        p.im.paste(sous, (int(x), int(y + e)))
+        p.d = ImageDraw.Draw(p.im)
+        p.d.line([(x, y + e + haut * 0.42), (x + cote, y + e + haut * 0.42)],
+                 fill=_melange("blanc", "taupe", 0.25), width=max(3, int(cote * 0.014)))
+        p.d.rectangle([x, y + e, x + cote, y + cote],
+                      outline=_melange("encre", "brun", 0.30),
+                      width=max(3, int(cote * 0.018)))
+
+    elif genre == "gaufre":
+        # un gaufrage n'a pas de couleur : il n'a qu'une ombre et une
+        # lumiere. On le dessine donc en deux traits decales, comme il
+        # se voit en lumiere rasante venant de la gauche.
+        p.d.rectangle([x, y + e, x + cote, y + cote], fill=teinte("creme"))
+        d = max(3, int(cote * 0.016))
+        cx, cy, r = x + cote * 0.50, y + e + cote * 0.44, cote * 0.21
+        for decal, c in ((-d, teinte("blanc")),
+                         (d, _melange("taupe", "brun", 0.30))):
+            p.d.ellipse([cx - r + decal, cy - r + decal,
+                         cx + r + decal, cy + r + decal],
+                        outline=c, width=max(4, int(cote * 0.026)))
+            p.d.line([(cx - r * 0.42 + decal, cy + r * 0.52 + decal),
+                      (cx + r * 0.42 + decal, cy + r * 0.52 + decal)],
+                     fill=c, width=max(4, int(cote * 0.022)))
+        p.d.rectangle([x, y + e, x + cote, y + cote],
+                      outline=_melange("taupe", "creme", 0.35),
+                      width=max(2, int(cote * 0.010)))
+    return p
+
+
+def _grille_matieres(p, y, genres, cote=None, ecart=28, numeros=True):
+    """Les quatre echantillons en grille 2x2, numerotes."""
+    cote = cote or (p.l - 2 * MARGE - ecart) // 2
+    for i, g in enumerate(genres):
+        x = MARGE + (i % 2) * (cote + ecart)
+        yy = y + (i // 2) * (cote + ecart)
+        _matiere(p, x, yy, cote, g)
+        if numeros:
+            p.pastille(x + 16, yy + cote - 62, str(i + 1), "corail", taille=28)
+    return y + 2 * cote + ecart
+
+
+# ---------------------------------------------------------------------
+# Le calendrier, l'emballage, le formulaire — n° 16, n° 18, n° 10 et 22.
+# ---------------------------------------------------------------------
+def _bande_jours(p, x, y, larg, debut, fin, jalons=None, haut_case=None):
+    """Les jours du 14 novembre au 24 decembre, en une seule grille.
+
+    Le plan du reel demandait un doigt qui remonte les cases d'un
+    calendrier. Dessine, le geste devient meilleur : on voit les six
+    semaines d'un coup, le 24 decembre au bout, et les trois jalons
+    poses dessus. Un calendrier filme ne montre qu'un mois a la fois.
+    """
+    import datetime
+    jalons = jalons or {}
+    cote = larg / 7.0
+    haut_case = haut_case or cote * 0.84
+    # on part du lundi de la semaine du debut, sinon la grille ment
+    depart = debut - datetime.timedelta(days=debut.weekday())
+    f = police(600, int(cote * 0.30))
+    fm = police(800, int(cote * 0.19))
+    jour = depart
+    ligne = 0
+    while jour <= fin:
+        col = jour.weekday()
+        cx = x + col * cote
+        cy = y + ligne * haut_case
+        dans = debut <= jour <= fin
+        marque = jalons.get(jour)
+        if marque:
+            coul, _ = marque
+            p.d.rounded_rectangle([cx + 3, cy + 3, cx + cote - 3, cy + haut_case - 3],
+                                  radius=int(cote * 0.14), fill=teinte(coul))
+            enc = "blanc"
+        elif dans:
+            p.d.rounded_rectangle([cx + 3, cy + 3, cx + cote - 3, cy + haut_case - 3],
+                                  radius=int(cote * 0.14),
+                                  fill=_melange("blanc", "sable", 0.35))
+            enc = "brun"
+        else:
+            p.d.rounded_rectangle([cx + 3, cy + 3, cx + cote - 3, cy + haut_case - 3],
+                                  radius=int(cote * 0.14),
+                                  outline=_melange("sable", "taupe", 0.40), width=2)
+            enc = "sable_fonce"
+        t = str(jour.day)
+        p.d.text((cx + cote / 2 - p.d.textlength(t, font=f) / 2,
+                  cy + haut_case * 0.26), t, font=f, fill=teinte(enc))
+        if jour.day == 1 or jour == depart:
+            m = ["JANV", "FÉVR", "MARS", "AVR", "MAI", "JUIN", "JUIL",
+                 "AOÛT", "SEPT", "OCT", "NOV", "DÉC"][jour.month - 1]
+            p.d.text((cx + cote / 2 - p.d.textlength(m, font=fm) / 2,
+                      cy + haut_case * 0.70), m, font=fm,
+                     fill=teinte("taupe" if not marque else "blanc"))
+        jour += datetime.timedelta(days=1)
+        if jour.weekday() == 0:
+            ligne += 1
+    return y + (ligne + 1) * haut_case
+
+
+def _sachet(p, cx, y, larg, haut, trait=False, zone=False, bandeau=True,
+            logo=True, couleur="violet"):
+    """Un sachet cadeau en elevation, avec ou sans sa zone reservee.
+
+    La n° 18 demandait deux images du meme sachet : soigne, puis au
+    trait avec un rectangle vide au dos. Dessiner les deux garantit que
+    c'est bien le meme sachet — photographie, il ne l'aurait jamais ete.
+    """
+    x0, x1 = cx - larg / 2, cx + larg / 2
+    ep = max(3, int(larg * 0.016))
+    corps = teinte("blanc") if trait else _melange("sable", "creme", 0.45)
+    p.d.rectangle([x0, y, x1, y + haut], fill=corps,
+                  outline=teinte("brun" if trait else "taupe"), width=ep)
+    # le soufflet de cote et le pli du haut : deux traits, et le
+    # rectangle devient un sac. Sans eux, c'est une boite.
+    p.d.line([(x0 + larg * 0.17, y), (x0 + larg * 0.17, y + haut)],
+             fill=_melange("taupe", "creme", 0.45 if not trait else 0.0)
+             if not trait else teinte("brun"), width=max(2, ep - 1))
+    p.d.line([(x0, y + haut * 0.12), (x1, y + haut * 0.12)],
+             fill=teinte("brun") if trait else _melange("taupe", "creme", 0.30),
+             width=max(2, ep - 1))
+    # les deux anses
+    for s in (-1, 1):
+        ax = cx + s * larg * 0.22
+        p.d.arc([ax - larg * 0.11, y - haut * 0.16, ax + larg * 0.11, y + haut * 0.12],
+                180, 360, fill=teinte("brun" if trait else "taupe"), width=ep + 1)
+    if bandeau:
+        by = y + haut * 0.40
+        bh = haut * 0.20
+        if trait:
+            p.d.rectangle([x0, by, x1, by + bh],
+                          fill=_melange(couleur, "blanc", 0.86))
+        else:
+            p.d.rectangle([x0, by, x1, by + bh], fill=teinte(couleur))
+        if not trait:
+            for i in range(5):
+                _flocon(p.d, x0 + larg * (0.12 + i * 0.19), by + bh / 2,
+                        larg * 0.035, "blanc", max(2, ep - 1))
+    if logo:
+        r = larg * 0.085
+        ly = y + haut * 0.74
+        p.d.ellipse([cx - r, ly - r, cx + r, ly + r],
+                    fill=teinte("blanc") if trait else teinte("corail"),
+                    outline=teinte("brun") if trait else None,
+                    width=ep if trait else 0)
+        if not trait:
+            p.d.ellipse([cx - r * 0.52, ly - r * 0.52, cx + r * 0.52, ly + r * 0.52],
+                        fill=teinte("creme"))
+    if zone:
+        zl, zh = larg * 0.34, haut * 0.15
+        zx, zy = x1 - zl - larg * 0.09, y + haut - zh - haut * 0.09
+        p.d.rectangle([zx, zy, zx + zl, zy + zh], outline=teinte("corail"),
+                      width=max(4, ep + 1))
+        f = police(600, max(15, int(larg * 0.048)))
+        lib = "cette place"
+        p.d.text((zx + zl / 2 - p.d.textlength(lib, font=f) / 2, zy + zh + 10),
+                 lib, font=f, fill=teinte("corail"))
+    return p
+
+
+def _feuille_formulaire(p, cx, y, larg, haut, numero, titre, lignes=5):
+    """Une feuille de formulaire, SCHEMATISEE et dite comme telle.
+
+    La publication demandait « une capture du haut du Cerfa ». On ne
+    reproduit pas un document administratif : ni emblème, ni mise en
+    page officielle, rien qui puisse circuler comme s'il s'agissait du
+    vrai. Ce qui compte est le numero, et il est exact — c'est
+    justement le sujet de la publication. La feuille dessinee le porte,
+    et porte aussi la mention qui dit ce qu'elle est.
+    """
+    x0 = cx - larg / 2
+    p.d.rectangle([x0 + 10, y + 12, x0 + larg + 10, y + haut + 12],
+                  fill=_melange("taupe", "creme", 0.55))
+    p.d.rectangle([x0, y, x0 + larg, y + haut], fill=teinte("blanc"),
+                  outline=teinte("taupe"), width=3)
+    p.d.rectangle([x0, y, x0 + larg, y + haut * 0.20],
+                  fill=_melange("bleu", "blanc", 0.86))
+    f = police(800, int(larg * 0.075))
+    p.d.text((x0 + larg * 0.07, y + haut * 0.055), numero, font=f,
+             fill=teinte("bleu"))
+    ft = police(600, int(larg * 0.047))
+    yy = y + haut * 0.26
+    for ligne in couper(titre, ft, larg * 0.86):
+        p.d.text((x0 + larg * 0.07, yy), ligne, font=ft, fill=teinte("encre"))
+        yy += int(larg * 0.047 * 1.3)
+    yy += haut * 0.03
+    for i in range(lignes):
+        p.d.rectangle([x0 + larg * 0.07, yy, x0 + larg * 0.14, yy + larg * 0.042],
+                      outline=teinte("taupe"), width=2)
+        p.d.line([(x0 + larg * 0.18, yy + larg * 0.034),
+                  (x0 + larg * (0.93 - (i % 3) * 0.12), yy + larg * 0.034)],
+                 fill=_melange("taupe", "blanc", 0.45), width=3)
+        yy += larg * 0.075
+    f2 = police(400, max(15, int(larg * 0.040)))
+    p.d.text((x0 + larg * 0.07, y + haut - larg * 0.075), "schéma", font=f2,
+             fill=teinte("taupe"))
+    return p
+
+
+def _horloge(p, cx, cy, r, couleur="corail", heure=17, minute=0):
+    p.d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=teinte(couleur),
+                width=max(4, int(r * 0.10)))
+    import math
+    for n in range(12):
+        a = math.radians(n * 30 - 90)
+        p.d.line([(cx + math.cos(a) * r * 0.82, cy + math.sin(a) * r * 0.82),
+                  (cx + math.cos(a) * r * 0.92, cy + math.sin(a) * r * 0.92)],
+                 fill=teinte(couleur), width=max(2, int(r * 0.05)))
+    ah = math.radians((heure % 12) * 30 + minute * 0.5 - 90)
+    am = math.radians(minute * 6 - 90)
+    p.d.line([(cx, cy), (cx + math.cos(ah) * r * 0.48, cy + math.sin(ah) * r * 0.48)],
+             fill=teinte(couleur), width=max(4, int(r * 0.09)))
+    p.d.line([(cx, cy), (cx + math.cos(am) * r * 0.74, cy + math.sin(am) * r * 0.74)],
+             fill=teinte(couleur), width=max(3, int(r * 0.06)))
+    return p
+
+
+# ---------------------------------------------------------------------
+# Les trois demonstrations — n° 12 et n° 21.
+# ---------------------------------------------------------------------
+def _microperfore(p, x, y, larg, haut):
+    """Le microperfore, vu des deux cotes dans la meme image.
+
+    C'est le plan que le reel demandait de filmer en passant la camera
+    de l'exterieur a l'interieur. Un dessin coupe en deux le montre
+    mieux qu'un mouvement de camera, parce que les deux etats sont
+    visibles en meme temps — et c'est la comparaison qui explique, pas
+    le mouvement.
+    """
+    mi = x + larg / 2
+    # a gauche, vu de la rue : une image pleine
+    aff = _degrade_lineaire(int(larg / 2), int(haut), 150.0,
+                            [(0.0, C["violet"]), (0.5, C["magenta"]),
+                             (1.0, C["corail"])])
+    p.im.paste(aff, (int(x), int(y)))
+    p.d = ImageDraw.Draw(p.im)
+    f = police(800, int(haut * 0.10))
+    t = "SOLDES"
+    p.d.text((x + larg / 4 - p.d.textlength(t, font=f) / 2, y + haut * 0.42),
+             t, font=f, fill=teinte("blanc"))
+
+    # a droite, vu de l'interieur : la rue, a travers les perforations
+    p.d.rectangle([mi, y, x + larg, y + haut],
+                  fill=_melange("bleu", "creme", 0.76))
+    for i, (gx, gl, gh) in enumerate(((0.04, 0.16, 0.44), (0.24, 0.13, 0.60),
+                                      (0.40, 0.18, 0.38), (0.62, 0.14, 0.52),
+                                      (0.80, 0.16, 0.42))):
+        p.d.rectangle([mi + larg / 2 * gx, y + haut * (1 - gh),
+                       mi + larg / 2 * (gx + gl), y + haut],
+                      fill=_melange("taupe", "creme", 0.45 + (i % 3) * 0.08))
+    # la trame : des points d'encre, et du jour entre eux
+    pas = max(7, int(haut * 0.034))
+    r = pas * 0.21
+    for yy in range(int(y + r), int(y + haut - r), pas):
+        for xx in range(int(mi + r), int(x + larg - r), pas):
+            p.d.ellipse([xx - r, yy - r, xx + r, yy + r],
+                        fill=_melange("violet", "magenta", 0.4))
+
+    p.d.line([(mi, y), (mi, y + haut)], fill=teinte("blanc"), width=6)
+    p.d.rectangle([x, y, x + larg, y + haut], outline=teinte("encre"), width=5)
+    fl = police(600, max(20, int(haut * 0.062)))
+    for cx, lib in ((x + larg / 4, "de la rue"),
+                    (mi + larg / 4, "de l'intérieur")):
+        l = p.d.textlength(lib, font=fl)
+        p.d.rounded_rectangle([cx - l / 2 - 16, y + haut + 14,
+                               cx + l / 2 + 16, y + haut + 14 + haut * 0.10],
+                              radius=14, fill=teinte("encre"))
+        p.d.text((cx - l / 2, y + haut + 18), lib, font=fl, fill=teinte("creme"))
+    return y + haut + 20 + haut * 0.10
+
+
+def _depoli(p, x, y, larg, haut):
+    """Le depoli : on cache le bas, la lumiere passe quand meme."""
+    sous = Image.new("RGB", (int(larg), int(haut)),
+                     _melange("jaune", "creme", 0.55))
+    ds = ImageDraw.Draw(sous)
+    # les formes traversent la ligne de depoli : c'est le meme objet
+    # qu'on voit net en haut et brouille en bas. Sans ce recouvrement,
+    # la demonstration ne demontre rien.
+    for gx, gl, gh, c in ((0.06, 0.18, 0.74, "corail"), (0.30, 0.14, 0.88, "turquoise"),
+                          (0.50, 0.20, 0.66, "violet"), (0.76, 0.16, 0.80, "orange")):
+        ds.rectangle([larg * gx, haut * (1 - gh), larg * (gx + gl), haut],
+                     fill=_melange(c, "creme", 0.22))
+    ds.rectangle([0, haut * 0.32, larg, haut * 0.36],
+                 fill=_melange("brun", "creme", 0.35))
+    bas = sous.crop((0, int(haut * 0.46), int(larg), int(haut)))
+    bas = bas.filter(ImageFilter.GaussianBlur(int(larg * 0.022)))
+    bas = Image.blend(bas, Image.new("RGB", bas.size, teinte("blanc")), 0.50)
+    sous.paste(bas, (0, int(haut * 0.46)))
+    p.im.paste(sous, (int(x), int(y)))
+    p.d = ImageDraw.Draw(p.im)
+    p.d.line([(x, y + haut * 0.46), (x + larg, y + haut * 0.46)],
+             fill=teinte("blanc"), width=5)
+    p.d.rectangle([x, y, x + larg, y + haut], outline=teinte("encre"), width=5)
+    f = police(600, max(18, int(haut * 0.058)))
+    p.d.text((x + 22, y + haut * 0.46 - int(haut * 0.058) - 16),
+             "verre nu", font=f, fill=teinte("encre"))
+    p.d.text((x + 22, y + haut * 0.46 + 16), "dépoli", font=f,
+             fill=teinte("encre"))
+    return p
+
+
+def _lettres_sur_verre(p, x, y, larg, haut):
+    """Lettres decoupees contre pave blanc : la comparaison du reel."""
+    demi = larg / 2 - 14
+    for i, plein in enumerate((True, False)):
+        xx = x + i * (demi + 28)
+        fond = Image.new("RGB", (int(demi), int(haut)),
+                         _melange("jaune", "creme", 0.48))
+        df = ImageDraw.Draw(fond)
+        for gx, gl, gh, c in ((0.08, 0.22, 0.42, "turquoise"),
+                              (0.40, 0.18, 0.56, "corail"),
+                              (0.66, 0.24, 0.38, "violet")):
+            df.rectangle([demi * gx, haut * (1 - gh), demi * (gx + gl), haut],
+                         fill=_melange(c, "creme", 0.30))
+        p.im.paste(fond, (int(xx), int(y)))
+        p.d = ImageDraw.Draw(p.im)
+        f = police(800, int(haut * 0.11))
+        lignes = ["MAISON", "BERNAT"]
+        if plein:
+            lh = len(lignes) * int(haut * 0.135) + 26
+            p.d.rectangle([xx + demi * 0.08, y + haut * 0.30,
+                           xx + demi * 0.92, y + haut * 0.30 + lh],
+                          fill=teinte("blanc"))
+        yy = y + haut * 0.30 + 14
+        for ligne in lignes:
+            l = p.d.textlength(ligne, font=f)
+            p.d.text((xx + demi / 2 - l / 2, yy), ligne, font=f,
+                     fill=teinte("encre"))
+            yy += int(haut * 0.135)
+        p.d.rectangle([xx, y, xx + demi, y + haut], outline=teinte("encre"),
+                      width=5)
+        fl = police(600, max(18, int(haut * 0.055)))
+        lib = "pavé blanc" if plein else "lettres découpées"
+        p.d.text((xx + demi / 2 - p.d.textlength(lib, font=fl) / 2,
+                  y + haut + 16), lib, font=fl, fill=teinte("brun"))
+    return p
+
+
+def _trois_distances(p, y, echelles=((2, 0.44), (8, 0.27), (25, 0.15))):
+    """La meme vitrine a trois distances — la demonstration de la n° 21.
+
+    Aucune photographie ne fait cela en une image : il faudrait trois
+    prises de vue au meme instant, au meme endroit, a trois reculs
+    differents. Dessinee, la devanture est rigoureusement la meme et
+    seule l'echelle change — c'est ce qui rend la demonstration
+    honnete. Les trois sont alignees sur le sol, comme elles le sont
+    dans la rue : alignees sur leur milieu, elles flotteraient.
+    """
+    utile = p.l - 2 * MARGE
+    largeurs = [utile * e for _, e in echelles]
+    ecart = (utile - sum(largeurs)) / (len(largeurs) - 1)
+    y_sol = y + largeurs[0] * 0.58
+    x = MARGE
+    f = police(600, 30)
+    for (m, _), larg in zip(echelles, largeurs):
+        haut = larg * 0.58
+        _vitrine(p, x, y_sol - haut, larg, haut, trait=True,
+                 lettres="MAISON BERNAT\n9 h – 19 h")
+        t = "%d m" % m
+        p.d.text((x + larg / 2 - p.d.textlength(t, font=f) / 2, y_sol + 26),
+                 t, font=f, fill=teinte("corail"))
+        x += larg + ecart
+    return y_sol + 26 + 40
+
+
+def _carte(p, cx, cy, larg, haut, angle=0.0, fond="creme", gaufre=False,
+           texte=None, ombre=20):
+    """Une carte imprimee posee a plat, legerement tournee.
+
+    Planche.poser() fait cela a partir d'un fichier ; ici il n'y a pas
+    de fichier, la carte est dessinee. Meme principe : l'ombre est la
+    silhouette tournee de l'objet, pas un rectangle flou pose dessous.
+    """
+    l, h = int(larg), int(haut)
+    im = Image.new("RGBA", (l, h), teinte(fond) + "ff")
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, l - 1, h - 1], outline=_melange("taupe", "creme", 0.45),
+                width=2)
+    if gaufre:
+        # le gaufrage : deux traits decales, lumiere venant de la gauche
+        dd = max(2, int(l * 0.012))
+        r = l * 0.17
+        ccx, ccy = l / 2, h * 0.40
+        for decal, c in ((-dd, teinte("blanc")),
+                         (dd, _melange("taupe", "brun", 0.35))):
+            d.ellipse([ccx - r + decal, ccy - r + decal,
+                       ccx + r + decal, ccy + r + decal], outline=c,
+                      width=max(3, int(l * 0.022)))
+    if texte:
+        ft = manuscrite(int(h * 0.15))
+        lt = d.textlength(texte, font=ft)
+        d.text((l / 2 - lt / 2, h * 0.68), texte, font=ft, fill=teinte("brun"))
+    if ombre:
+        sil = Image.new("RGBA", im.size, (0, 0, 0, 80))
+        sil = sil.rotate(angle, expand=True, resample=Image.BICUBIC)
+        marge = ombre * 3
+        fo = Image.new("RGBA", (sil.width + 2 * marge, sil.height + 2 * marge),
+                       (0, 0, 0, 0))
+        fo.paste(sil, (marge, marge))
+        fo = fo.filter(ImageFilter.GaussianBlur(ombre))
+        p.im.paste(fo, (int(cx - fo.width / 2), int(cy - fo.height / 2 + ombre / 2)), fo)
+    tourne = im.rotate(angle, expand=True, resample=Image.BICUBIC)
+    p.im.paste(tourne, (int(cx - tourne.width / 2), int(cy - tourne.height / 2)),
+               tourne)
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
+def _emballage_kraft(p, cx, cy, larg, haut, bandeau=True, pastille=True):
+    """Un paquet en papier kraft, son bandeau imprime et sa pastille."""
+    x0, y0 = cx - larg / 2, cy - haut / 2
+    e = haut * 0.14
+    # la face du dessus, en biais : sans elle, un paquet est un rectangle
+    p.d.polygon([(x0, y0 + e), (x0 + larg * 0.14, y0),
+                 (x0 + larg, y0), (x0 + larg - larg * 0.14, y0 + e)],
+                fill=_melange("sable_fonce", "orange", 0.08))
+    p.d.rectangle([x0, y0 + e, x0 + larg - larg * 0.14, y0 + haut],
+                  fill=_melange("sable_fonce", "orange", 0.22))
+    p.d.polygon([(x0 + larg - larg * 0.14, y0 + e), (x0 + larg, y0),
+                 (x0 + larg, y0 + haut - e),
+                 (x0 + larg - larg * 0.14, y0 + haut)],
+                fill=_melange("sable_fonce", "brun", 0.26))
+    larg = larg - larg * 0.14
+    haut = haut - e
+    y0 = y0 + e
+    # les plis du papier, qui font la difference entre un paquet et un carre
+    for gx in (0.30, 0.68):
+        p.d.line([(x0 + larg * gx, y0), (x0 + larg * gx, y0 + haut)],
+                 fill=_melange("sable_fonce", "brun", 0.30), width=3)
+    if bandeau:
+        by, bh = y0 + haut * 0.44, haut * 0.22
+        p.d.rectangle([x0 - 6, by, x0 + larg + 6, by + bh], fill=teinte("violet"))
+        for i in range(4):
+            _flocon(p.d, x0 + larg * (0.16 + i * 0.23), by + bh / 2,
+                    larg * 0.042, "blanc", 4)
+    if pastille:
+        r = larg * 0.10
+        p.d.ellipse([cx + larg * 0.26 - r, y0 + haut * 0.80 - r,
+                     cx + larg * 0.26 + r, y0 + haut * 0.80 + r],
+                    fill=teinte("corail"))
+        p.d.ellipse([cx + larg * 0.26 - r * 0.5, y0 + haut * 0.80 - r * 0.5,
+                     cx + larg * 0.26 + r * 0.5, y0 + haut * 0.80 + r * 0.5],
+                    fill=teinte("creme"))
+    return p
+
+
+def _fond_du_texte(p, x, y, larg, haut):
+    """Le meme texte sur verre, devant deux fonds — n° 21, S5.
+
+    A gauche un rayonnage charge, a droite un panneau uni. Le texte est
+    rigoureusement identique : c'est le fond qui le rend lisible ou non,
+    et c'est ce que la legende affirme.
+    """
+    demi = larg / 2 - 16
+    for i, encombre in enumerate((True, False)):
+        xx = x + i * (demi + 32)
+        sous = Image.new("RGB", (int(demi), int(haut)),
+                         _melange("jaune", "creme", 0.50))
+        ds = ImageDraw.Draw(sous)
+        if encombre:
+            for r in range(3):
+                yy = haut * (0.26 + r * 0.26)
+                ds.rectangle([0, yy, demi, yy + haut * 0.022],
+                             fill=_melange("brun", "creme", 0.30))
+                for k in range(5):
+                    bl = demi * (0.11 + (k % 3) * 0.02)
+                    bx = demi * (0.04 + k * 0.19)
+                    bh = haut * (0.13 + ((k + r) % 4) * 0.03)
+                    ds.rectangle([bx, yy - bh, bx + bl, yy],
+                                 fill=_melange(["corail", "turquoise", "jaune",
+                                                "violet", "orange"][(k + r) % 5],
+                                               "creme", 0.18))
+        else:
+            ds.rectangle([0, 0, demi, haut], fill=_melange("encre", "brun", 0.22))
+        p.im.paste(sous, (int(xx), int(y)))
+        p.d = ImageDraw.Draw(p.im)
+        f = police(800, int(haut * 0.11))
+        for k, ligne in enumerate(("OUVERT", "le dimanche")):
+            fk = f if k == 0 else police(600, int(haut * 0.072))
+            l = p.d.textlength(ligne, font=fk)
+            p.d.text((xx + demi / 2 - l / 2, y + haut * (0.34 + k * 0.15)),
+                     ligne, font=fk, fill=teinte("blanc"))
+        p.d.rectangle([xx, y, xx + demi, y + haut], outline=teinte("encre"),
+                      width=5)
+        fl = police(600, max(18, int(haut * 0.058)))
+        lib = "devant le rayonnage" if encombre else "devant un panneau uni"
+        p.d.text((xx + demi / 2 - p.d.textlength(lib, font=fl) / 2,
+                  y + haut + 16), lib, font=fl, fill=teinte("brun"))
+    return y + haut + 16 + 40
+
+
+def _trottoir_den_face(p, y_haut, y_bas):
+    """La vitrine vue depuis le trottoir d'en face, de nuit — n° 21, S1.
+
+    Ce n'est pas la meme image que la rue du crepuscule : ici une seule
+    devanture, vue de face, avec la chaussee au premier plan. C'est le
+    point de vue que la publication reclame — celui du passant, pas
+    celui du commercant qui recule de deux metres dans sa boutique.
+    """
+    H = y_bas - y_haut
+    ciel = _degrade_lineaire(p.l, int(H * 0.44), 180.0,
+                             [(0.0, C["encre"]), (0.6, C["bleu"]),
+                              (1.0, C["violet"])])
+    p.im.paste(ciel, (0, y_haut))
+    p.d = ImageDraw.Draw(p.im)
+    y_sol = y_haut + H * 0.74
+    p.d.rectangle([0, y_haut + H * 0.44, p.l, y_sol],
+                  fill=_melange("taupe", "encre", 0.74))
+    larg = p.l * 0.78
+    haut = larg * 0.52
+    _vitrine(p, (p.l - larg) / 2, y_sol - haut, larg, haut, eclairee=True,
+             enseigne="MAISON BERNAT", couverture=0.0)
+    _halo(p, p.l / 2, y_sol - haut * 0.45, larg * 0.58, haut * 0.62,
+          "jaune", 58, 48)
+    # la chaussee, et la bordure du trottoir d'ou l'on regarde
+    p.d.rectangle([0, y_sol, p.l, y_bas], fill=_melange("taupe", "encre", 0.86))
+    p.d.line([(0, y_sol), (p.l, y_sol)], fill=_melange("taupe", "encre", 0.56),
+             width=5)
+    p.d.rectangle([0, y_bas - (y_bas - y_sol) * 0.22, p.l, y_bas],
+                  fill=_melange("taupe", "encre", 0.68))
+    for i in range(5):
+        xx = p.l * (0.05 + i * 0.21)
+        p.d.rectangle([xx, y_sol + (y_bas - y_sol) * 0.34,
+                       xx + p.l * 0.11, y_sol + (y_bas - y_sol) * 0.42],
+                      fill=_melange("blanc", "taupe", 0.45))
+    # le reflet de la vitrine sur la chaussee : c'est lui qui dit que la
+    # scene est de nuit, et que la lumiere vient de la boutique.
+    _halo(p, p.l / 2, y_sol + (y_bas - y_sol) * 0.30, larg * 0.40,
+          (y_bas - y_sol) * 0.34, "jaune", 40, 40)
+    return p
+
+
+# =====================================================================
+# LES HUIT PUBLICATIONS REDESSINEES
+# =====================================================================
+def pub10_enseigne_hiver(dossier=None):
+    """n° 10, mardi 3 novembre — l'enseigne quand la nuit tombe a 17 h.
+
+    La S1 demandait une photo de rue commercante au crepuscule, cadree
+    « sans qu'aucune enseigne ne soit identifiable » — contrainte que le
+    dessin satisfait par construction. La S5 demandait une capture du
+    Cerfa : on dessine un schema de formulaire, on ne reproduit pas un
+    document administratif.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-03-enseigne-hiver"))
+    faits = []
+
+    p = Planche("sable_chaud")
+    _rue_crepuscule(p, 0, 880)
+    _bandeau_travers(p, "Depuis dimanche, votre enseigne s'allume une "
+                        "heure plus tôt.", "violet", y=170, taille=54)
+    p.y = 960
+    p.texte("Le changement d'heure a rallongé d'une heure par jour le "
+            "moment où elle travaille toute seule.", 36, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("creme")
+    p.surtitre("Enseigne", y=150)
+    p.chiffre("17 h", 230, "bleu", y=260)
+    p.y = 580
+    p.texte("C'est l'heure à laquelle votre devanture devient votre seul "
+            "support de communication.\n\nJusqu'en mars.", 46, "encre", 600,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("blanc")
+    p.titre("Trois questions,\ndans cet ordre.", 78, y=160)
+    p.puces(["Elle est lisible, ou elle ne sert à rien.",
+             "Elle est éclairée, ou elle n'existe pas.",
+             "Elle est autorisée, ou elle se démonte."],
+            "corail", 42, "brun", numerote=True, y=520, interligne=1.7)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("creme")
+    p.titre("Éclairer une enseigne,\nc'est la modifier.", 76, y=170)
+    p.y = 520
+    p.encadre("Passer d'un panneau peint à un caisson lumineux "
+              "nécessiterait une nouvelle autorisation. À vérifier auprès "
+              "de votre mairie.", 40, "creme_rose", "violet", pad=36)
+    p.y += 40
+    p.texte("Le conditionnel est volontaire : ce point n'est pas vérifié à "
+            "la source, et je préfère vous le dire.", 32, "taupe", 400)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("blanc")
+    p.titre("Une autorisation,\npas une déclaration.", 72, y=140)
+    _feuille_formulaire(p, p.l / 2, 480, 520, 560, "Cerfa n° 16308*01",
+                        "Autorisation préalable — enseigne, en mairie",
+                        lignes=6)
+    p.y = 1090
+    p.texte("Une déclaration, on la dépose. Une autorisation, on l'attend.",
+            36, "brun", 600, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("sable_chaud")
+    _horloge(p, p.l / 2, 420, 170, "corail", 21, 30)
+    p.y = 660
+    p.filet()
+    p.texte("Les enseignes lumineuses seraient soumises à des plages "
+            "d'extinction nocturne, et le Règlement Local de Publicité de "
+            "votre commune peut les durcir.\n\nPerpignan a son RLP ; le "
+            "centre ancien est en secteur protégé.", 38, "brun", 400,
+            avant=10)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("violet")
+    p.filet(y=360)
+    p.titre("Votre rue\nen commentaire.", 96, "blanc")
+    p.y += 40
+    p.texte("Je vous dis quelles pièces réunir avant de commander quoi que "
+            "ce soit.", 40, "creme", 400, avant=20)
+    p.fleche("corail", y=1040)
+    p.signature("creme")
+    faits.append(p.ecrire(d / "07.png"))
+    return faits
+
+
+def pub12_reel_vitrophanie(dossier=None):
+    """n° 12, vendredi 6 novembre — les trois familles d'adhesifs.
+
+    Le decoupage demandait quatre plans tournes au telephone et proposait,
+    en secours, un prompt d'image generee pour le plan d'ouverture. Les
+    deux sont ecartes : le tournage parce qu'il ne se fera pas, le prompt
+    parce que LIGNE-EDITORIALE.md l'interdit et qu'une vitrine inventee
+    sur le compte d'une graphiste de vitrophanie est exactement le genre
+    d'image qui se retourne contre elle.
+
+    Ce sont donc cinq ECRANS FINIS, pas des fiches de tournage : le reel
+    se monte en les enchainant avec la voix off, sans rien filmer. Les
+    deux demonstrations centrales — le microperfore vu des deux cotes,
+    les lettres decoupees contre le pave blanc — montrent d'ailleurs plus
+    que le plan qu'elles remplacent, parce qu'elles mettent les deux
+    etats dans la meme image au lieu de les separer par un mouvement de
+    camera.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-06-reel-vitrophanie"))
+    faits = []
+
+    p = Planche("sable_chaud", LARGE_S, HAUT_S)
+    p.surtitre("Reel · 0-3 s", "taupe", y=200)
+    p.titre("Vous avez un panneau\nde 6 m².\nIl est vide.", 94, y=300)
+    _vitrine(p, 120, 900, 840, 480, trait=True, enseigne="VOTRE NOM")
+    f = police(600, 34)
+    p.d.text((120, 1430), "6 m² de verre, et rien dessus", font=f,
+             fill=teinte("corail"))
+    # la cote, dessinee comme sur un plan
+    p.d.line([(120, 1500), (960, 1500)], fill=teinte("corail"), width=4)
+    for xx in (120, 960):
+        p.d.line([(xx, 1482), (xx, 1518)], fill=teinte("corail"), width=4)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran1.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("3-8 s", "taupe", y=200)
+    p.titre("Dépoli :\non cache, on garde\nla lumière.", 86, y=280)
+    _depoli(p, 90, 700, 900, 620)
+    p.y = 1430
+    p.texte("Il masque le bas de la vitrine — les cartons, le dos des "
+            "présentoirs — sans assombrir la boutique.", 42, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran2.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("8-13 s", "taupe", y=200)
+    p.titre("Microperforé :\nplein dehors,\ntransparent dedans.", 82, y=280)
+    _microperfore(p, 90, 760, 900, 560)
+    p.y = 1480
+    p.texte("Des milliers de trous d'un millimètre. Une image pleine vue de "
+            "la rue, la rue vue de l'intérieur.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran3.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("13-18 s", "taupe", y=200)
+    p.titre("Lettres découpées :\nsobre, et ça dure.", 86, y=280)
+    _lettres_sur_verre(p, 90, 740, 900, 560)
+    p.y = 1420
+    p.texte("Pas de rectangle blanc qui jaunit autour du texte. C'est ce "
+            "qui vieillit le mieux.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran4.png"))
+
+    p = Planche("encre", LARGE_S, HAUT_S)
+    _vitrine(p, 120, 420, 840, 480, eclairee=True, enseigne="VOTRE NOM",
+             bandeau=0.26, couleur_decor="violet")
+    p.y = 1060
+    p.filet()
+    p.titre("Et ça se décolle.", 92, "blanc")
+    p.y += 30
+    p.texte("Un adhésif de vitrine n'est pas une enseigne. Vous changez "
+            "d'avis au printemps, la vitre est intacte.", 40, "creme", 400,
+            avant=20)
+    p.abonnement("sable")
+    p.signature("sable")
+    faits.append(p.ecrire(d / "ecran5.png"))
+    return faits
+
+
+def pub14_francais_devanture(dossier=None):
+    """n° 14, mardi 10 novembre — le slogan en anglais sur la devanture.
+
+    La S1 demandait « une photo de devanture avec un slogan en anglais,
+    floutee ou recomposee ». Dessinee, la devanture n'a pas besoin
+    d'etre floutee : elle n'appartient a personne. Et surtout le slogan
+    se lit — ce qui est la condition pour que la publication fonctionne,
+    puisqu'elle parle de ce qui est ecrit dessus.
+
+    La S4 demande la meme devanture avec la ligne francaise ajoutee.
+    C'est le meme appel de fonction avec un argument de plus : la
+    demonstration est donc rigoureusement « on n'a rien retire ».
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-10-francais-devanture"))
+    faits = []
+
+    p = Planche("sable_chaud")
+    p.d.rectangle([0, 0, p.l, 760], fill=_melange("sable", "creme", 0.30))
+    _vitrine(p, 110, 250, 860, 460, eclairee=True, enseigne="SUNSET COFFEE",
+             sous_enseigne="Best coffee in town — open all day")
+    _bandeau_travers(p, "Votre slogan en anglais\nest-il légal ?", "bleu",
+                     y=800, taille=58,
+                     sous_titre="La réponse est oui. Avec une condition.")
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("creme")
+    p.surtitre("La règle, en une phrase", y=170)
+    p.titre("Ce qui informe le client\ndoit être compréhensible\nen français.",
+            72, y=280)
+    p.y = 740
+    p.filet()
+    p.texte("Ce qui vous nomme ne serait pas concerné de la même façon.",
+            42, "brun", 600, avant=10)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("blanc")
+    p.titre("Nommer, ou informer.", 72, y=150)
+    col = (p.l - 2 * MARGE - 36) / 2
+    for i, (titre_c, items, coul, verdict) in enumerate((
+            ("NOMMER", ["un nom de marque", "une dénomination",
+                        "une enseigne"], "turquoise", "Ce serait votre identité."),
+            ("INFORMER", ["un slogan", "un descriptif", "une promotion",
+                          "une mention de service"], "corail",
+             "Là, le français serait attendu."))):
+        x = MARGE + i * (col + 36)
+        p.d.rounded_rectangle([x, 340, x + col, 980], radius=26,
+                              fill=_melange(coul, "blanc", 0.88))
+        p.pastille(x + 26, 372, titre_c, coul, taille=26)
+        yy = 470
+        for it in items:
+            p.d.ellipse([x + 32, yy + 12, x + 46, yy + 26], fill=teinte(coul))
+            yy = _bloc(p, x + 62, yy, it, 34, "encre", 400, col - 90)
+            yy += 14
+        _bloc(p, x + 32, 860, verdict, 32, "brun", 600, col - 64)
+    p.y = 1030
+    p.texte("La ligne de partage est écrite au conditionnel : elle n'est "
+            "pas vérifiée à la source.", 30, "taupe", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("creme")
+    p.titre("On ne retire rien.\nOn ajoute une ligne.", 72, y=140)
+    _vitrine(p, 110, 480, 860, 460, eclairee=True, enseigne="SUNSET COFFEE",
+             sous_enseigne="Le meilleur café de la ville — ouvert toute la journée")
+    p.y = 1020
+    p.texte("Le nom reste en grand. La promesse se lit en français dessous, "
+            "dans un corps plus petit. La parade est graphique, pas "
+            "juridique.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("sable_chaud")
+    p.filet(y=280)
+    p.titre("Et le catalan ?", 100, "encre")
+    p.y += 50
+    p.texte("Une carte bilingue français/catalan ne pose pas le même "
+            "problème : le français y est présent.\n\nC'est l'unilingue "
+            "étranger qui expose.", 42, "brun", 400, avant=20)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("blanc")
+    p.titre("Vous avez un slogan\nen anglais ?", 86, y=280)
+    p.y += 30
+    p.texte("Postez-le en commentaire : je vous propose la ligne française "
+            "qui va dessous sans alourdir le visuel.", 40, "brun", 400,
+            avant=20)
+    p.fleche("corail", y=940)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+    return faits
+
+
+def pub15_quiz_matieres(dossier=None):
+    """n° 15, jeudi 12 novembre — reconnaitre quatre supports.
+
+    Le quiz demandait quatre macrophotographies. Ce sont des coupes
+    dessinees, et la legende de la publication le dit : « quatre
+    matieres dessinees en coupe » et non « photographiees de tres
+    pres ». Le jeu reste le meme — nommer la matiere — mais il devient
+    plus facile sur l'alu composite, dont la coupe EST la reponse, et
+    plus difficile sur le gaufrage, qui perd la lumiere rasante.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-12-quiz-matieres"))
+    faits = []
+    ordre = ["alu", "plexi", "depoli", "gaufre"]
+    reponses = {
+        "alu": ["alu composite", "plexi", "PVC expansé", "inox brossé"],
+        "plexi": ["plexi coulé", "verre", "polycarbonate", "résine"],
+        "depoli": ["verre sablé", "adhésif dépoli", "film solaire", "peinture"],
+    }
+
+    p = Planche("sable_chaud")
+    p.surtitre("Quiz", y=130)
+    p.titre("Quatre supports.\nVous en reconnaissez\ncombien ?", 72, y=210)
+    _grille_matieres(p, 590, ordre, cote=290)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    for n, genre in enumerate(ordre[:3], 1):
+        p = Planche("creme")
+        p.pastille(MARGE, 120, "N° %d" % n, "corail", taille=30)
+        cote = 520
+        _matiere(p, (p.l - cote) / 2, 230, cote, genre)
+        yy = 230 + cote + 56
+        f = police(600, 40)
+        for rep in reponses[genre]:
+            p.d.rounded_rectangle([MARGE, yy, p.l - MARGE, yy + 82],
+                                  radius=20, fill=teinte("blanc"))
+            p.d.text((MARGE + 34, yy + 20), rep, font=f, fill=teinte("encre"))
+            yy += 96
+        p.signature("brun")
+        faits.append(p.ecrire(d / ("0%d.png" % (n + 1))))
+
+    p = Planche("sable_chaud")
+    p.filet(y=130)
+    p.titre("Les quatre réponses.", 78, "encre")
+    yy = 360
+    for genre in ordre:
+        nom, usage = MATIERES[genre]
+        _matiere(p, MARGE, yy, 150, genre)
+        _bloc(p, MARGE + 190, yy + 18, nom, 40, "encre", 600, 640)
+        _bloc(p, MARGE + 190, yy + 70, usage, 32, "brun", 400, 640)
+        yy += 190
+    p.fleche("corail", y=1150)
+    p.d.text((MARGE + 110, 1156), "Votre score en commentaire.",
+             font=police(600, 34), fill=teinte("brun"))
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+    return faits
+
+
+def pub16_reel_fin_annee(dossier=None):
+    """n° 16, reel de fin d'annee — decembre se decide en novembre.
+
+    Le decoupage demandait cinq plans tournes, dont une table de famille
+    avec « des mains de plusieurs generations », et proposait un prompt
+    d'image generee pour ce dernier plan. Le prompt est ecarte, comme
+    pour la n° 12. Les mains le sont aussi : un plan de mains dessine
+    serait soit maladroit, soit une illustration de banque d'images
+    deguisee. La table reste, vue de dessus, avec ce qu'il y a dessus —
+    c'est ce que le plan devait montrer.
+
+    Ce sont des ECRANS FINIS : le reel se monte en les enchainant.
+
+    ATTENTION : l'arbitrage n° 1 de A-FAIRE-APRES-RELECTURE.md deplace
+    cette publication au samedi 21 novembre. Le dossier porte encore la
+    date du 14 ; il sera renomme avec le reste quand l'arbitrage sera
+    applique.
+    """
+    import datetime
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-14-reel-fin-annee"))
+    faits = []
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("Reel · 0-3 s", "taupe", y=180)
+    p.titre("Pour Noël,\nvous êtes déjà\nen retard.", 100, y=260)
+    _bande_jours(p, 90, 760, 900, datetime.date(2026, 11, 14),
+                 datetime.date(2026, 12, 24),
+                 {datetime.date(2026, 12, 24): ("encre", "")},
+                 haut_case=116)
+    p.y = 1600
+    p.texte("Six semaines. C'est tout ce qui reste.", 46, "brun", 600,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran1.png"))
+
+    p = Planche("sable_chaud", LARGE_S, HAUT_S)
+    p.surtitre("3-9 s", "taupe", y=180)
+    p.titre("Une carte imprimée\nse garde.\nUn mail se ferme.", 86, y=250)
+    # la carte qui porte le texte passe par-dessus : dessinee en
+    # premier, l'autre lui mangeait la moitie du mot.
+    _carte(p, 700, 1100, 360, 480, -7, gaufre=True)
+    _carte(p, 390, 1030, 360, 480, 9, gaufre=True, texte="Bonne année")
+    p.y = 1480
+    p.texte("Une carte reste sur un bureau trois semaines. Ce n'est pas de "
+            "la nostalgie, c'est de la durée d'exposition.", 42, "brun",
+            400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran2.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("9-15 s", "taupe", y=180)
+    p.titre("Un bandeau suffit.\nPas un packaging\nentier.", 86, y=250)
+    _emballage_kraft(p, p.l / 2, 1050, 760, 560)
+    p.y = 1480
+    p.texte("Un bandeau imprimé et un adhésif au logo transforment un "
+            "papier kraft. Le client photographie ça.", 42, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran3.png"))
+
+    p = Planche("blanc", LARGE_S, HAUT_S)
+    p.surtitre("15-21 s", "taupe", y=180)
+    p.titre("Création · BAT ·\nLivraison", 92, y=250)
+    jalons = [("mi-novembre", "création", "violet"),
+              ("fin novembre", "bon à tirer", "bleu"),
+              ("début décembre", "livraison", "corail")]
+    yy = 700
+    for quand, quoi, coul in jalons:
+        p.d.ellipse([MARGE, yy, MARGE + 46, yy + 46], fill=teinte(coul))
+        if quand != jalons[-1][0]:
+            p.d.line([(MARGE + 23, yy + 46), (MARGE + 23, yy + 220)],
+                     fill=_melange(coul, "blanc", 0.55), width=6)
+        _bloc(p, MARGE + 86, yy - 4, quoi, 52, "encre", 600, 760)
+        _bloc(p, MARGE + 86, yy + 62, quand, 36, "taupe", 400, 760)
+        yy += 220
+    p.y = 1480
+    p.texte("Un jour de retard au début, c'est une semaine de retard à la "
+            "fin : en décembre les imprimeurs travaillent à plein.", 42,
+            "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran4.png"))
+
+    p = Planche("encre", LARGE_S, HAUT_S)
+    # la table vue de dessus : un plateau de bois, et ce qu'on y a pose.
+    p.d.rectangle([0, 420, p.l, 1340], fill=_melange("brun", "encre", 0.42))
+    for i in range(8):
+        yy = 420 + i * 124
+        p.d.line([(0, yy), (p.l, yy)], fill=_melange("brun", "encre", 0.52),
+                 width=4)
+    _carte(p, 690, 800, 300, 400, -9, fond="creme", gaufre=True)
+    _carte(p, 330, 720, 300, 400, 14, fond="creme", gaufre=True,
+           texte="Bonne année")
+    _emballage_kraft(p, 520, 1120, 460, 320)
+    p.y = 1430
+    p.filet()
+    p.titre("Décembre se décide\nen novembre.", 78, "blanc")
+    p.abonnement("sable")
+    p.signature("sable")
+    faits.append(p.ecrire(d / "ecran5.png"))
+    return faits
+
+
+def pub18_emballage_tri(dossier=None):
+    """n° 18, mardi 17 novembre — la place a reserver sur un emballage.
+
+    La S1 demandait une photo de sachet cadeau, la S2 le meme sachet en
+    dessin au trait. Les deux sont dessines : c'est la seule facon de
+    garantir que c'est le MEME sachet, ce que la demonstration exige.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-17-emballage-tri"))
+    faits = []
+
+    p = Planche("creme")
+    _sachet(p, p.l / 2, 180, 460, 620)
+    _bandeau_travers(p, "Votre bel emballage de fête\na une mention à "
+                        "porter.", "violet", y=880, taille=52)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("blanc")
+    p.titre("Il lui faut cette place.", 72, y=140)
+    _sachet(p, p.l / 2, 330, 460, 620, trait=True, zone=True)
+    p.y = 1030
+    p.texte("La question est de savoir qui la réserve, et quand.", 40,
+            "brun", 600, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("blanc")
+    p.surtitre("Le principe", y=150)
+    p.titre("Un emballage destiné\nau grand public devrait\nporter une "
+            "signalétique\nde tri.", 64, y=240)
+    p.y = 740
+    p.texte("Le pictogramme accompagné de la consigne, élément par élément.",
+            42, "brun", 400, avant=0)
+    p.y = 1070
+    p.texte("Cadre généralement cité : loi AGEC de 2020. À confirmer auprès "
+            "de votre éco-organisme.", 30, "bleu", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("creme")
+    p.titre("Dans quel ordre ?", 76, y=150)
+    col = (p.l - 2 * MARGE - 36) / 2
+    for i, (texte_c, coul, barre) in enumerate((
+            ("On dessine, puis on cherche où la mettre.", "corail", True),
+            ("On réserve la zone, puis on dessine autour.", "violet", False))):
+        x = MARGE + i * (col + 36)
+        fonte = police(600, 38)
+        lignes = couper(texte_c, fonte, col - 68)
+        hc = 70 + len(lignes) * int(38 * 1.34) + 70
+        p.d.rounded_rectangle([x, 430, x + col, 430 + hc], radius=26,
+                              fill=teinte("blanc"),
+                              outline=teinte(coul), width=0 if barre else 5)
+        yy = 430 + 70
+        for ligne in lignes:
+            p.d.text((x + 34, yy), ligne, font=fonte, fill=teinte("encre"))
+            if barre:
+                # chaque ligne est barree : un seul trait au milieu du bloc
+                # ne barre que la ligne du milieu, et ca se voit.
+                lw = p.d.textlength(ligne, font=fonte)
+                p.d.line([(x + 30, yy + 26), (x + 38 + lw, yy + 26)],
+                         fill=teinte("corail"), width=4)
+            yy += int(38 * 1.34)
+    p.y = 880
+    p.texte("Le second ordre coûte dix minutes. Le premier coûte une "
+            "réimpression.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("sable_chaud")
+    p.filet(y=300)
+    p.titre("Un emballage dessiné\nsans cette place\nse refait.", 84, "encre")
+    p.y += 50
+    p.texte("Et un emballage de Noël qui se refait, c'est un emballage qui "
+            "arrive en janvier.", 42, "brun", 400, avant=20)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("blanc")
+    p.titre("Trois interlocuteurs,\ndans cet ordre.", 72, y=150)
+    p.puces(["Votre éco-organisme dit ce que vous devez afficher.",
+             "Votre imprimeur dit à quelle taille c'est lisible.",
+             "Le graphiste place les deux dans le dessin."],
+            "corail", 40, "brun", numerote=True, y=520, interligne=1.7)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("encre")
+    p.filet(y=330)
+    p.titre("Vous préparez\nun emballage\npour les fêtes ?", 92, "blanc")
+    p.y += 40
+    p.texte("Dites-moi en commentaire ce que vous vendez : je vous dis "
+            "quelles questions poser, et à qui.", 40, "creme", 400, avant=20)
+    p.fleche("corail", y=1120)
+    p.signature("sable")
+    faits.append(p.ecrire(d / "07.png"))
+    return faits
+
+
+def pub21_vitrine_trottoir(dossier=None):
+    """n° 21, lundi 23 novembre — la vitrine vue du trottoir d'en face.
+
+    Sept planches au lieu des six prevues. La septieme est la meme
+    devanture redessinee a 2, 8 et 25 metres : c'est la demonstration
+    que la publication reclame sans pouvoir la faire en photo, puisqu'il
+    faudrait trois prises de vue au meme instant. Le texte alternatif de
+    la publication est a mettre a jour en consequence.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-23-vitrine-trottoir"))
+    faits = []
+
+    p = Planche("creme")
+    _trottoir_den_face(p, 0, 830)
+    _bandeau_travers(p, "Votre vitrine de Noël est faite\npour celui qui "
+                        "passe. Pas pour\ncelui qui est dedans.", "violet",
+                     y=880, taille=46)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("blanc")
+    p.titre("La hauteur des yeux.", 76, y=140)
+    _vitrine(p, 170, 380, 780, 500, trait=True, oeil=True, echelle=True,
+             enseigne="VOTRE NOM")
+    p.y = 980
+    p.texte("Entre 1,40 m et 1,70 m : c'est la seule zone vraiment lue. Le "
+            "reste est deviné.", 40, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("creme")
+    p.titre("Couvrir, ou laisser voir.", 70, y=130)
+    _vitrine(p, 90, 380, 430, 300, eclairee=True, couverture=0.96,
+             couleur_decor="corail", decor="sapins", opacite_decor=0xee)
+    _vitrine(p, 560, 380, 430, 300, eclairee=True, bandeau=0.30,
+             couleur_decor="corail", decor="sapins")
+    f = police(600, 30)
+    for x, lib in ((90, "le verre couvert"), (560, "un bandeau, du verre libre")):
+        p.d.text((x, 710), lib, font=f, fill=teinte("brun"))
+    p.y = 800
+    p.texte("On entre pour ce qu'on voit à l'intérieur. Un décor qui bouche "
+            "la vue protège votre boutique des regards — et des clients.",
+            38, "bleu", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("sable_chaud")
+    p.filet(y=240)
+    p.titre("À 17 h en décembre,\nil fait nuit.", 88, "encre")
+    _vitrine(p, 240, 620, 600, 340, eclairee=False, reflet=True,
+             enseigne="VOTRE NOM")
+    p.y = 1020
+    p.texte("Si l'intérieur n'est pas éclairé, votre vitrine devient un "
+            "miroir et votre client s'y voit lui-même.", 40, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("blanc")
+    p.titre("Un texte sur verre se lit\ncontre ce qu'il y a derrière.",
+            58, y=140)
+    _fond_du_texte(p, MARGE, 400, p.l - 2 * MARGE, 460)
+    p.y = 960
+    p.texte("Et ce qu'il y a derrière bouge toute la journée.", 40, "brun",
+            600, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("creme")
+    p.titre("La même vitrine,\ntrois reculs.", 74, y=140)
+    _trois_distances(p, 460)
+    p.y = 840
+    p.texte("À 2 m tout se lit. À 8 m les horaires sont déjà partis. À "
+            "25 m il ne reste que la forme — et c'est à 25 m qu'on décide "
+            "de traverser.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("creme")
+    p.titre("Photographiez votre vitrine\ndepuis le trottoir d'en face.",
+            60, y=300)
+    p.y += 30
+    p.texte("Envoyez-la-moi en message : je vous dis ce qui se lit et ce "
+            "qui se perd.", 40, "brun", 400, avant=20)
+    p.fleche("corail", y=940)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "07.png"))
+    return faits
+
+
+def pub22_sticker_enseigne(dossier=None):
+    """n° 22, mardi 24 novembre — un sticker de Noel, c'est quoi au juste.
+
+    La S1 demandait la photo d'une vitrine portant deux adhesifs. Elle
+    est dessinee, et c'est preferable ici plus qu'ailleurs : la
+    publication explique qu'un de ces deux adhesifs pourrait etre
+    requalifie. Illustrer ca avec la vitrine d'un commerce reel, c'est
+    le designer comme le mauvais eleve.
+
+    L'arbitrage n° 2 de A-FAIRE-APRES-RELECTURE.md fait de « quand ca
+    devient une enseigne » le sujet principal de cette publication.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-24-sticker-enseigne"))
+    faits = []
+
+    p = Planche("creme")
+    p.d.rectangle([0, 0, p.l, 820], fill=_melange("sable", "creme", 0.35))
+    _vitrine(p, 100, 230, 880, 470, eclairee=True, enseigne="VOTRE NOM",
+             stickers=[("Joyeuses fêtes", "violet", (0.30, 0.26), 38),
+                       ("-30 %", "bleu", (0.62, 0.66), 52)])
+    _bandeau_travers(p, "Un sticker de Noël sur votre vitrine :\nenseigne, "
+                        "publicité, ou rien du tout ?", "violet", y=860,
+                     taille=46)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("creme_rose")
+    p.titre("Ce n'est pas\ndu vocabulaire.", 76, y=140)
+    col = (p.l - 2 * MARGE - 36) / 2
+    for i, (mot, quoi, verbe, coul) in enumerate((
+            ("Enseigne", "elle dit qui vous êtes et où.", "On l'autorise.",
+             "violet"),
+            ("Publicité", "elle dit ce que vous vendez à quel prix.",
+             "On la déclare.", "bleu"))):
+        x = MARGE + i * (col + 36)
+        p.d.rounded_rectangle([x, 420, x + col, 920], radius=26,
+                              fill=teinte("blanc"), outline=teinte(coul),
+                              width=5)
+        _bloc(p, x + 34, 470, mot, 52, coul, 800, col - 68)
+        _bloc(p, x + 34, 560, quoi, 34, "brun", 400, col - 68)
+        _bloc(p, x + 34, 800, verbe, 38, "encre", 600, col - 68)
+    p.y = 980
+    p.texte("Une déclaration, on la dépose. Une autorisation, on l'attend.",
+            38, "brun", 600, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("creme")
+    p.titre("L'un décore.\nL'autre vend.", 86, y=150)
+    for i, (texte_b, coul) in enumerate((("Joyeuses fêtes", "violet"),
+                                         ("-30 % jusqu'au 24", "bleu"))):
+        fb = police(800, 54)
+        lb = p.d.textlength(texte_b, font=fb)
+        yy = 480 + i * 200
+        p.d.rounded_rectangle([MARGE, yy, MARGE + lb + 80, yy + 118],
+                              radius=58, fill=teinte(coul))
+        p.d.text((MARGE + 40, yy + 28), texte_b, font=fb, fill=teinte("blanc"))
+    p.y = 920
+    p.texte("Le premier décore. Le second vend. Ce ne sont probablement pas "
+            "les mêmes règles.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("bleu")
+    p.filet(y=280)
+    p.titre("C'est votre commune\nqui tranche.", 88, "blanc")
+    p.y += 40
+    p.texte("Le Règlement Local de Publicité et le PLU fixent les surfaces, "
+            "la durée, l'éclairage.\n\nÀ trois kilomètres de distance, la "
+            "réponse change.", 40, "creme", 400, avant=20)
+    p.signature("creme")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("blanc")
+    p.titre("Et surtout :\npas le 14798*01.", 72, y=130)
+    _feuille_formulaire(p, p.l / 2, 420, 480, 500, "Cerfa n° 16308*01",
+                        "Le formulaire en vigueur, en mairie", lignes=5)
+    p.y = 920
+    p.encadre("Le 14798*01 est périmé. Un dossier déposé avec l'ancien "
+              "formulaire est considéré comme incomplet depuis le "
+              "1er juillet 2026 — et il remonte encore dans les recherches.",
+              36, "blanc", "corail", pad=32)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("violet")
+    p.filet(y=320)
+    p.titre("Dites-moi votre commune\nen commentaire.", 72, "blanc")
+    p.y += 40
+    p.texte("Je vous dis quelle question poser. Un appel au service "
+            "urbanisme coûte dix minutes, et c'est gratuit.", 40, "creme",
+            400, avant=20)
+    p.fleche("corail", y=1060)
+    p.signature("creme")
+    faits.append(p.ecrire(d / "06.png"))
+    return faits
+
+
 def main():
     a = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -2011,6 +3834,21 @@ def main():
 # y ajoute ici, sinon --liste et --tout les ignorent en silence.
 GABARITS["solaire-66"] = solaire_66
 GABARITS["logo-reduction"] = pub09_logo_reduction
+
+# Les huit publications redessinees. Elles sont enregistrees ICI, et pas
+# dans le dictionnaire plus haut, pour la meme raison que les deux
+# precedentes : elles sont definies apres lui. Une fonction ajoutee au
+# dictionnaire avant d'exister leve une NameError ; une fonction oubliee
+# du dictionnaire ne leve rien du tout et ne sort jamais — c'est arrive
+# a solaire-66 et a logo-reduction, qui etaient restes muets.
+GABARITS["enseigne-hiver"] = pub10_enseigne_hiver
+GABARITS["reel-vitrophanie"] = pub12_reel_vitrophanie
+GABARITS["francais-devanture"] = pub14_francais_devanture
+GABARITS["quiz-matieres"] = pub15_quiz_matieres
+GABARITS["reel-fin-annee"] = pub16_reel_fin_annee
+GABARITS["emballage-tri"] = pub18_emballage_tri
+GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
+GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
 
 
 if __name__ == "__main__":

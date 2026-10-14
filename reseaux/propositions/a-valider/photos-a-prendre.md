@@ -1,13 +1,23 @@
 # Photos à prendre — du 2 novembre au 28 novembre 2026
 
+> **Aucune publication du mois n'attend plus d'image.** Les huit qui en
+> demandaient une sont redessinées — le détail est plus bas, dans « Les
+> photos spécifiques au mois ». Ce document reste, et il garde tout son
+> sens : il n'est plus une liste de courses, c'est **la réserve dans
+> laquelle on puise** quand une occasion se présente, et le mode d'emploi
+> pour que la photo prise ce jour-là soit utilisable.
+
 Ce que `visuels.py` ne sait pas faire, et ne doit pas faire : les
 photographies. Une devanture, une matière, un plan de travail se
 photographient. Une image inventée sur le compte d'une graphiste se
-retourne contre elle.
+retourne contre elle. Ce que `visuels.py` sait faire, en revanche, c'est
+**dessiner** — et sur un schéma, une coupe ou une comparaison, le dessin
+vaut mieux que la photo. C'est la ligne de partage, et elle est nette :
+on dessine ce qui s'explique, on photographie ce qui se prouve.
 
-Cette liste existe pour que Sandra photographie **par lots**, à l'avance,
-plutôt qu'une image à la fois la veille de chaque publication. Une
-séance d'une heure couvre un mois.
+Quand une photo se prend, elle se prend **par lots**, à l'avance, plutôt
+qu'une image à la fois la veille d'une publication. Une séance d'une
+heure remplit la réserve pour longtemps.
 
 ---
 
@@ -114,50 +124,59 @@ apparaître.
 
 ---
 
-## Les photos spécifiques au mois
+## Les photos spécifiques au mois — il n'y en a plus
 
-Relevé publication par publication, à partir des rubriques « à fournir
-par Sandra ». Les publications absentes de cette liste n'ont besoin
-d'aucune image réelle : `visuels.py` les dessine entièrement.
+**Les huit publications qui attendaient une image sont redessinées.** Tu as
+dit que les prises de vue étaient très compliquées pour toi ; huit trous
+dans le calendrier auraient été pires. Les visuels sont faits, ils sont
+dans `reseaux/visuels/`, et il n'y a rien à photographier pour les sortir.
 
-### n° 10 · Mardi 3 novembre, 8 h 00 · Carrousel
+| # | Date | Ce qui était demandé | Ce qui est livré |
+|---|---|---|---|
+| 10 | 3 nov | une rue commerçante au crépuscule | une rue dessinée, six façades, enseignes allumées avec leur halo — plus un schéma de formulaire à la place de la capture du Cerfa |
+| 12 | 6 nov | quatre plans à filmer | **cinq écrans finis** : vitrine nue cotée, dépoli, microperforé vu des deux côtés, lettres contre pavé blanc, vitrine de nuit |
+| 14 | 10 nov | une devanture floutée | une devanture fictive, slogan anglais **lisible**, puis la même avec la ligne française ajoutée |
+| 15 | 12 nov | quatre macrophotographies | quatre matières **dessinées en coupe** |
+| 16 | 14 nov | cinq plans à filmer, dont des mains | **cinq écrans finis** : calendrier de six semaines, cartes gaufrées, paquet kraft, rétroplanning, table vue de dessus |
+| 18 | 17 nov | un sachet à photographier | un sachet dessiné, puis **le même** au trait avec sa zone réservée |
+| 21 | 23 nov | une vitrine de nuit du trottoir d'en face | la scène dessinée — **et une septième planche** : la même devanture à 2, 8 et 25 m |
+| 22 | 24 nov | une vitrine avec adhésifs de fêtes | une vitrine dessinée portant les deux adhésifs |
 
-- Une photo de rue commerçante à la tombée du jour, enseignes allumées.
+### Pourquoi un dessin, et pas une image générée
 
-### n° 12 · Vendredi 6 novembre, 18 h 00 · REEL 23 s
+C'est la question qui se pose, et elle mérite une réponse nette.
 
-- Quatre plans de cinq secondes, filmés au téléphone, suffisent** : une
+1. **Un dessin ne prétend pas être une photo.** Une image générée, si — et
+   elle se trahit sur les enseignes, en pseudo-lettres. C'est exactement ce
+   qui s'est passé le 13 octobre, plus bas dans ce document. Une façade
+   dessinée de loin porte des barres : personne ne lit un texte qui n'est
+   pas écrit. Et quand un lettrage doit se lire — « SUNSET COFFEE », le
+   numéro de Cerfa — il est composé en Inter, accents compris.
+2. **Les droits sont clairs.** Le tracé sort de `reseaux/visuels.py`.
+3. **Aucun commerce réel n'est reconnaissable.** Quatre de ces huit
+   publications parlent de non-conformité. Aucune ne peut illustrer son
+   sujet avec la vitrine de quelqu'un, même floutée.
+4. **Sur deux sujets le dessin montre mieux.** La coupe d'un alu composite
+   fait voir l'âme noire entre les deux peaux, qu'aucune macro ne donne
+   aussi nettement. Et la même vitrine redessinée à trois distances fait
+   une démonstration qu'aucun cadrage unique ne rend.
 
-### n° 14 · Mardi 10 novembre, 8 h 00 · Carrousel
+### Ce que le dessin ne remplace pas
 
-- La photo de devanture de la S1 : **recomposée ou floutée**. Ne montrez pas
+Deux familles, et les listes plus haut restent entières pour elles :
 
-### n° 15 · Jeudi 12 novembre, 19 h 00 · Quiz 4 choix
+- **Les matières en lumière rasante** — une dorure, un gaufrage, un vernis
+  sélectif. Le dessin les suggère, il ne les rend pas. C'est ce que les
+  reels n° 20 et n° 24 demandent encore de filmer : si ce n'est pas
+  possible non plus, dis-le-moi, je les redessine comme les deux autres.
+- **Les réalisations en situation.** Un support en situation photographié,
+  c'est une preuve ; dessiné, c'est une maquette. La distinction compte
+  pour le pilier « réalisations », pas pour les publications pédagogiques.
 
-- Quatre macrophotographies, prises au téléphone en mode portrait sur un
-- La photo de l'alu composite doit montrer **la tranche** : l'âme noire entre
+Ces deux familles se photographient le jour où ce sera possible, et les
+planches dessinées tiennent d'ici là. Le remplacement se fait case par
+case, sans toucher au reste du carrousel.
 
-### n° 16 · Samedi 14 novembre, 10 h 30 · REEL 25 s
-
-- Les cartes de vœux filmées doivent être **des modèles de démonstration ou
-
-### n° 18 · Mardi 17 novembre, 8 h 00 · Carrousel
-
-- Un sachet ou une boîte cadeau neutre à photographier pour la S1. Pas de
-
-### n° 21 · Lundi 23 novembre, 18 h 30 · Carrousel
-
-- Une photo de vitrine de nuit, prise depuis le trottoir d'en face.
-
-### n° 22 · Mardi 24 novembre, 8 h 00 · Carrousel
-
-- Une photo de vitrine avec adhésifs de fêtes. Si un commerce est
-
-> **À photographier en priorité**, parce que ces images servent
-> plusieurs fois : une rue commerçante enseignes allumées à la tombée du
-> jour (n° 10, et réutilisable en n° 14 et 21), et une vitrine de nuit prise
-> depuis le trottoir d'en face (n° 21 et 22). Une seule sortie, en fin
-> d'après-midi vers 17 h 30 à cette saison, couvre les deux.
 ---
 
 ## Ce qui rend une photo inutilisable

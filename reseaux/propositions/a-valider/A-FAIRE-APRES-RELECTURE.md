@@ -40,8 +40,14 @@ différents est exactement ce qui finit par rester.
       Illisibles depuis ici, voir `outils/FICHE-GOOGLE.md`.
 - [ ] **Le logo de SR Coiffure**, à demander au salon. La forme est
       vectorisée depuis ta capture, le filet doré manque.
-- [ ] **Le choix sur les photos** : je te propose six remplacements sans
-      photo dès que tu as fini de lire.
+- [x] **Le choix sur les photos** : fait, et sans attendre — tu avais dit
+      que les prises de vue étaient très compliquées, laisser huit trous
+      dans le calendrier l'aurait été davantage. Les **huit** publications
+      concernées (n° 10, 12, 14, 15, 16, 18, 21, 22) sont redessinées, et
+      la n° 21 gagne une septième planche au passage. Détail et
+      justification dans `photos-a-prendre.md`. Deux reels, le n° 20 et le
+      n° 24, demandent encore de filmer : dis-moi si je les redessine
+      aussi.
 
 ## Périmé dans le document d'arbitrages
 

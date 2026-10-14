@@ -15,9 +15,14 @@ photo (voir `photos-a-prendre.md`).
 > python3 reseaux/visuels.py --liste    # les gabarits existants
 > ```
 >
-> Les neuf gabarits actuels couvrent le cycle du 19 au 30 octobre. Ceux de
-> ce mois-ci restent à écrire : on ajoute une fonction par sujet, on ne
-> retourne pas à Canva.
+> **À jour au 14 octobre : 26 gabarits, 177 planches.** Tout le cycle du
+> 19 octobre au 28 novembre est produit, les 44 écrans de stories compris.
+> Les huit publications qui attendaient une photographie ont été
+> redessinées — voir `photos-a-prendre.md`, section « Les photos
+> spécifiques au mois ». Les récapitulatifs ci-dessous décrivent donc ce
+> qui **a été** produit, et non ce qui reste à faire ; les deux lignes
+> « Photos » et « Tournages » ne valent plus que pour les reels n° 20 et
+> n° 24, les deux seuls qui demandent encore de filmer.
 
 ---
 
@@ -53,7 +58,7 @@ photo (voir `photos-a-prendre.md`).
 | Tournages | 2 × 5 plans de 5 s au téléphone |
 | Articles de blog | 2 — **déjà rédigés**, dans `reseaux/blog/`, en `statut: à relire` : `2026-11-20-vitrine-fin-annee-trottoir.md` et `2026-11-27-refaire-son-logo-nouvelle-annee.md` |
 | Textes fiche Google | 8 — **déjà rédigés et publiables**, après vérification des réglages de la fiche |
-| Gabarits à ajouter dans `visuels.py` | 7 environ — 1 existe déjà (`quiz-idees-recues`), 1 se décline (`carrousel-enseigne`) |
+| Gabarits dans `visuels.py` | **tous écrits** — 26 au total, `python3 reseaux/visuels.py --liste` |
 
 **Deux vérifications réglementaires bloquent deux publications** : la n° 18
 (signalétique de tri) et la n° 22 (adhésif de vitrine, extinction nocturne).

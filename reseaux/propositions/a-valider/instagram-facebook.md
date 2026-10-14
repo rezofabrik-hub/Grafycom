@@ -729,10 +729,13 @@ visite, polo brodé, flanc de camionnette, panneau de chantier, favicon.
 
 ### Direction visuelle — 7 slides
 
-- **S1.** Photo d'une rue commerçante à la tombée du jour, enseignes
-  allumées. Bandeau violet `#a86cd0` en travers, texte blanc :
-  « Depuis dimanche, votre enseigne s'allume une heure plus tôt. »
-  Signature en pied.
+- **S1.** **Dessinée** — `visuels.py`, gabarit `enseigne-hiver`. Une rue
+  commerçante à la tombée du jour, six façades, enseignes allumées avec
+  leur halo. Les enseignes portent des barres, pas des mots : à cette
+  distance l'œil ne lit pas un nom, il voit un rythme — et aucun commerce
+  n'est identifiable, ce que la publication exige puisqu'elle parle de
+  conformité. Bandeau violet `#a86cd0` en travers, texte blanc : « Depuis
+  dimanche, votre enseigne s'allume une heure plus tôt. » Signature en pied.
 - **S2.** Fond `#f7f1ef`. Grand chiffre « 17 h » en bleu profond `#2f7fc4`.
   Texte : « C'est l'heure à laquelle votre devanture devient votre seul
   support de communication. Jusqu'en mars. »
@@ -743,9 +746,12 @@ visite, polo brodé, flanc de camionnette, panneau de chantier, favicon.
   Sous-titre : « Passer d'un panneau peint à un caisson lumineux
   **nécessiterait une nouvelle autorisation**. À vérifier auprès de votre
   mairie. » Le conditionnel est assumé et visible.
-- **S5.** Le formulaire. « Autorisation préalable — Cerfa n° 16308\*01, en
-  mairie. » Mention en plus petit : « Ce n'est pas une déclaration. Une
-  déclaration, on la dépose ; une autorisation, on l'attend. »
+- **S5.** Le formulaire, **dessiné en schéma**. « Autorisation préalable —
+  Cerfa n° 16308\*01, en mairie. » La feuille porte le numéro, exact, et la
+  mention « schéma » : on ne reproduit pas un document administratif, ni
+  son emblème ni sa mise en page. Mention en plus petit : « Ce n'est pas
+  une déclaration. Une déclaration, on la dépose ; une autorisation, on
+  l'attend. »
 - **S6.** Fond `#f7f1ef`. Pictogramme d'horloge en corail. « Les enseignes
   lumineuses **seraient soumises à des plages d'extinction nocturne**, et le
   Règlement Local de Publicité de votre commune peut les durcir. Perpignan a
@@ -817,11 +823,9 @@ soumises à des plages d'extinction nocturne fixées par la commune.
      et ce qu'il durcit. À demander au service urbanisme.
   Si l'une des trois n'est pas confirmée, **gardez le conditionnel tel qu'il
   est écrit** : le carrousel fonctionne ainsi.
-- Une photo de rue commerçante à la tombée du jour, enseignes allumées.
-  Perpignan, Thuir ou Céret. **Cadrez sans qu'aucune enseigne ne soit
-  identifiable** : la publication parle de conformité, personne n'a envie
-  d'illustrer le sujet.
-- Une capture du haut du Cerfa 16308\*01.
+- ~~Une photo de rue commerçante~~ et ~~une capture du Cerfa~~ : **plus
+  rien à fournir**. Les sept planches sont dessinées et prêtes, dans
+  `reseaux/visuels/2026-11-03-enseigne-hiver/`.
 
 ---
 
@@ -899,10 +903,20 @@ typographie sont identiques.
 ## 12 — Vendredi 6 novembre, 18 h 00 · REEL 23 s · Pilier 3, supports & matières
 
 ### Accroche 0-3 s
-Plan serré sur une vitrine vide, reflets de rue dedans. Texte incrusté :
-**« Vous avez un panneau publicitaire de 6 m². Et il est vide. »**
+**Écran dessiné**, pas de tournage. Une vitrine nue en élévation, avec sa
+cote de 6 m² tracée dessous. Texte : **« Vous avez un panneau de 6 m². Il
+est vide. »**
 
 ### Découpage
+
+> **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
+> `visuels.py`, gabarit `reel-vitrophanie`, dans
+> `reseaux/visuels/2026-11-06-reel-vitrophanie/`. Le montage consiste à
+> les enchaîner avec la voix off. Deux des cinq montrent d'ailleurs plus
+> que le plan filmé qu'ils remplacent, parce qu'ils mettent les deux
+> états dans la même image au lieu de les séparer par un mouvement de
+> caméra : le microperforé vu de la rue **et** de l'intérieur, les
+> lettres découpées **à côté** du pavé blanc.
 
 | Chrono | Visuel / action | Texte incrusté | Script voix off |
 |---|---|---|---|
@@ -912,8 +926,12 @@ Plan serré sur une vitrine vide, reflets de rue dedans. Texte incrusté :
 | 13-18 s | Gros plan sur des **lettres découpées** posées une à une sur la vitre, puis plan large : horaires et nom en lettres adhésives à hauteur d'œil. | Lettres découpées : sobre, et ça dure | Les lettres découpées une à une, sans fond : c'est le plus sobre, et c'est ce qui vieillit le mieux. Pas de rectangle blanc qui jaunit. |
 | 18-23 s | Plan fixe de la vitrine finie, de nuit, éclairée de l'intérieur. Logo Grafycom sur aplat violet `#a86cd0`, signature `@grafycom.graphiste`. | **« Et ça se décolle. »** | Et le meilleur argument : ça se retire. Un adhésif de vitrine, ce n'est pas une enseigne. Vous changez d'avis au printemps, la vitre est intacte. |
 
-**Prompt d'arrière-plan** (plan 0-3 s, si une génération est nécessaire) :
-`Empty shop window of a small town storefront seen straight on, clean glass reflecting a quiet street and pale autumn sky, no people visible inside, soft overcast daylight, muted warm tones, shallow depth of field, photorealistic, 4K`
+**Pas de prompt d'arrière-plan.** Il y en avait un ici, pour le cas où le
+plan d'ouverture devrait être généré. Il est retiré :
+`reseaux/LIGNE-EDITORIALE.md` interdit « une image dont les droits ne sont
+pas clairs », et une vitrine inventée sur le compte d'une graphiste qui
+habille des vitrines est précisément l'image qui se retourne contre elle.
+L'écran dessiné la remplace.
 
 **Voix de synthèse suggérée :** féminine française, calme et professionnelle,
 débit dynamique sans précipitation, articulation nette. Pas d'intonation
@@ -962,15 +980,11 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 `#graphistePerpignan #Perpignan #PyreneesOrientales #PaysCatalan #CommerceLocal66 #ArtisanDuRoussillon #vitrophanie #signaletique`
 
 ### À fournir par Sandra
-- **Quatre plans de cinq secondes, filmés au téléphone, suffisent** : une
-  vitrine nue, une pose d'adhésif au plioir, un microperforé en contre-jour
-  vu des deux côtés, des lettres découpées posées une à une.
-- Les échantillons : un morceau de dépoli, un de microperforé, un jeu de
-  lettres. **À demander au poseur partenaire** — c'est aussi l'occasion de
-  filmer chez lui, ce qui vaut mieux que du mockup.
-- **Si un plan est tourné dans la vitrine d'une cliente : accord client à
-  obtenir avant publication**, et cadrez sans que l'établissement soit
-  identifiable si l'accord n'arrive pas à temps.
+- **Rien à filmer.** Les cinq écrans sont dessinés et prêts.
+- *Si un jour l'occasion se présente* : les échantillons physiques — un
+  morceau de dépoli, un de microperforé, un jeu de lettres — restent le
+  meilleur contenu possible sur ce sujet, à demander au poseur partenaire.
+  C'est un bonus, plus un prérequis.
 - **À vérifier avant publication :** à partir de quand un habillage de
   vitrine est requalifié en enseigne par la commune. Tant que ce n'est pas
   confirmé, la légende reste au conditionnel comme elle est écrite.
@@ -1127,10 +1141,14 @@ gravure, broderie, tampon.
 
 ### Direction visuelle — 6 slides
 
-- **S1.** Photo d'une devanture avec un slogan en anglais, floutée ou
-  recomposée. Bandeau bleu profond `#2f7fc4`, texte blanc : « Votre slogan
-  en anglais est-il légal ? » En petit : « La réponse est oui. Avec une
-  condition. »
+- **S1.** **Dessinée** — `visuels.py`, gabarit `francais-devanture`. Une
+  devanture fictive, « SUNSET COFFEE », avec sa ligne anglaise en bandeau
+  sous l'enseigne : « Best coffee in town — open all day ». Dessinée, elle
+  n'a pas besoin d'être floutée, elle n'appartient à personne — et surtout
+  le slogan **se lit**, ce qui est la condition pour que la publication
+  fonctionne, puisqu'elle parle de ce qui est écrit dessus. Bandeau bleu
+  profond `#2f7fc4`, texte blanc : « Votre slogan en anglais est-il
+  légal ? » En petit : « La réponse est oui. Avec une condition. »
 - **S2.** Fond `#f7f1ef`. Texte grand : « La règle, en une phrase : ce qui
   **informe** le client doit être compréhensible en français. »
   Sous-titre : « Ce qui vous **nomme** ne serait pas concerné de la même
@@ -1139,10 +1157,12 @@ gravure, broderie, tampon.
   dénomination, une enseigne* → « Ce serait votre identité. » À droite,
   pastille corail `#f2585c` : *un slogan, un descriptif, une promotion, une
   mention de service* → « Là, le français serait attendu. »
-- **S4.** Mise en situation : une devanture fictive. Le nom en grand en
-  anglais, et dessous, en plus petit, la même promesse en français.
-  Légende : « La parade est graphique, pas juridique : on ne retire rien,
-  on ajoute une ligne. »
+- **S4.** **La même devanture**, au pixel près : c'est le même appel de
+  fonction avec un seul argument changé, la ligne du bandeau. « SUNSET
+  COFFEE » en grand, et dessous « Le meilleur café de la ville — ouvert
+  toute la journée ». La démonstration est donc littéralement « on n'a
+  rien retiré ». Légende : « La parade est graphique, pas juridique : on
+  ne retire rien, on ajoute une ligne. »
 - **S5.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre. « Et le catalan ? » Réponse :
   « Une carte bilingue français/catalan **ne pose pas le même problème** :
   le français y est présent. C'est l'unilingue étranger qui expose. »
@@ -1211,8 +1231,9 @@ français en plus petit dessous.
      lisibilité équivalente ?).
   Chaque point confirmé peut passer de « serait » à « est » dans la légende
   et sur les slides. **Chaque point non confirmé reste au conditionnel.**
-- La photo de devanture de la S1 : **recomposée ou floutée**. Ne montrez pas
-  un commerce identifiable sur une publication qui parle de non-conformité.
+- ~~La photo de devanture de la S1~~ : **plus rien à fournir**. Les six
+  planches sont dessinées, dans
+  `reseaux/visuels/2026-11-10-francais-devanture/`.
 - Quand les trois points seront confirmés, **ajoutez-les à la liste des faits
   réglementaires vérifiés** du cahier des charges, avec leur date.
 
@@ -1222,12 +1243,20 @@ français en plus petit dessous.
 
 ### Direction visuelle — carrousel 5 slides
 
-- **S1.** Fond `#f7f1ef`. Quatre carrés de macrophotographie en grille 2×2,
-  très serrés, sans légende : tranche d'un **alu composite** (on voit les
-  deux peaux et l'âme noire), bord d'un **plexiglas** poli (tranche
-  lumineuse), surface d'un **adhésif dépoli** sur verre, et un **papier
-  gaufré** en lumière rasante. Titre : « Quatre supports. Vous en reconnaissez
-  combien ? » Signature en pied.
+- **S1.** **Dessinée** — `visuels.py`, gabarit `quiz-matieres`. Fond
+  `#f7f1ef`. Quatre échantillons **dessinés en coupe**, en grille 2×2, sans
+  légende : un **alu composite** vu de trois quarts, tranche vers nous, les
+  deux peaux et l'âme noire visibles ; un **plexiglas** et sa tranche polie
+  qui conduit la lumière ; un **adhésif dépoli** sur verre, les formes
+  nettes au-dessus de la ligne et brouillées dessous ; un **papier gaufré**
+  en deux traits décalés, comme il se voit en lumière rasante. Titre :
+  « Quatre supports. Vous en reconnaissez combien ? » Signature en pied.
+
+  > L'épaisseur des échantillons est **volontairement exagérée** : trois
+  > millimètres d'alu sur un panneau d'un mètre ne feraient pas un pixel.
+  > Un dessin technique grossit toujours ce qu'il explique. En échange de
+  > quoi la coupe montre l'âme noire mieux qu'aucune macro, et le gaufrage
+  > y perd ce que seule la lumière rasante donne.
 - **S2.** Le carré 1 en plein cadre, numéroté en corail. Quatre réponses
   proposées, dont une bonne : *alu composite · plexi · PVC expansé · inox
   brossé*. Réponse cachée.
@@ -1247,9 +1276,9 @@ français en plus petit dessous.
 
 ### Légende
 
-> Quatre matières photographiées de très près. Ce sont les quatre que je
-> commande le plus souvent, et c'est à peu près la seule chose qui sépare
-> un devis de signalétique d'un autre.
+> Quatre matières dessinées en coupe. Ce sont les quatre que je commande
+> le plus souvent, et c'est à peu près la seule chose qui sépare un devis
+> de signalétique d'un autre.
 >
 > Jouez d'abord, les réponses sont sur la dernière slide. Et surtout, ce qui
 > compte n'est pas le nom : c'est à quoi chacune sert.
@@ -1279,27 +1308,28 @@ français en plus petit dessous.
 > vous ignorez la matière, décrivez-le : je vous dis ce que c'est.
 
 ### Texte alternatif
-Carrousel quiz de cinq visuels. Quatre macrophotographies de matériaux sont
-d'abord présentées en grille sans légende : la tranche d'un panneau en
-aluminium composite où l'on voit l'âme noire entre deux peaux de métal, la
-tranche polie et lumineuse d'une plaque de plexiglas, la surface granuleuse
-d'un adhésif dépoli sur une vitre, et un papier gaufré en lumière rasante.
-Chaque matière est ensuite présentée seule avec quatre réponses possibles, puis
-le dernier visuel donne les quatre réponses et leur usage.
+Carrousel quiz de cinq visuels. Quatre matériaux dessinés en coupe sont
+d'abord présentés en grille sans légende : un panneau en aluminium composite
+vu de trois quarts, où l'on voit l'âme noire entre deux peaux de métal, une
+plaque de plexiglas dont la tranche polie capte la lumière, un adhésif dépoli
+sur une vitre où les formes du fond sont nettes au-dessus de la ligne et
+brouillées dessous, et un papier gaufré dont le relief est rendu par une
+ombre et une lumière décalées. Chaque matière est ensuite présentée seule avec
+quatre réponses possibles, puis le dernier visuel donne les quatre réponses et
+leur usage.
 
 ### Hashtags — jeu C + 2 locaux
 `#signaletique #enseigne #printdesign #commercantsPerpignan #ouvertureCommerce #carteDeRestaurant #ArtisanDuRoussillon #PyreneesOrientales`
 
 ### À fournir par Sandra
-- **Quatre macrophotographies, prises au téléphone en mode portrait sur un
-  fond neutre.** Les échantillons sont à demander à l'enseigniste et à
-  l'imprimeur partenaires — c'est dix minutes sur place, et c'est la
-  publication la moins chère du cycle à produire.
-- La photo de l'alu composite doit montrer **la tranche** : l'âme noire entre
-  les deux peaux est ce qui le rend reconnaissable. Même chose pour le plexi,
-  dont la tranche capte la lumière.
-- Le papier gaufré veut une **lumière rasante** : de face, le relief
-  disparaît.
+- **Rien à photographier.** Les cinq planches sont dessinées, dans
+  `reseaux/visuels/2026-11-12-quiz-matieres/`.
+- *Le jour où l'occasion se présente* : quatre macros des vrais échantillons,
+  à demander à l'enseigniste et à l'imprimeur partenaires, resteraient
+  meilleures **sur deux des quatre** — le dépoli et surtout le gaufrage, dont
+  le relief ne se voit qu'en lumière rasante. Sur l'alu composite et le
+  plexi, la coupe dessinée montre plus que la photo. Le gabarit accepte les
+  deux : on remplace une case sans toucher aux autres.
 - Aucun accord client nécessaire : ce sont des échantillons, pas des projets.
 
 ---
@@ -1307,11 +1337,22 @@ le dernier visuel donne les quatre réponses et leur usage.
 ## 16 — Samedi 14 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
 
 ### Accroche 0-3 s
-Gros plan sur un calendrier de novembre, un doigt qui remonte du 24 décembre
-vers le 14 novembre en suivant les cases. Texte incrusté :
-**« Pour Noël, vous êtes déjà en retard. »**
+**Écran dessiné**, pas de tournage. Les six semaines du 14 novembre au
+24 décembre en une seule grille — pas deux mois côte à côte, une bande
+continue, le 24 décembre noir au bout. Texte : **« Pour Noël, vous êtes déjà
+en retard. »**
 
 ### Découpage
+
+> **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
+> `visuels.py`, gabarit `reel-fin-annee`, dans
+> `reseaux/visuels/2026-11-14-reel-fin-annee/`. Deux écarts assumés par
+> rapport au découpage filmé : le doigt qui remonte le calendrier devient
+> une grille unique, ce qui montre les six semaines d'un coup au lieu d'un
+> mois à la fois ; et les mains de plusieurs générations disparaissent. Un
+> plan de mains dessiné serait soit maladroit, soit une illustration de
+> banque d'images déguisée. La table reste, vue de dessus, avec ce qu'il y
+> a dessus — c'est ce que le plan devait montrer.
 
 | Chrono | Visuel / action | Texte incrusté | Script voix off |
 |---|---|---|---|
@@ -1321,8 +1362,11 @@ vers le 14 novembre en suivant les cases. Texte incrusté :
 | 15-21 s | Rétroplanning animé, trois jalons en violet `#a86cd0`, bleu `#2f7fc4`, corail `#f2585c` : *mi-novembre : création* → *fin novembre : bon à tirer* → *début décembre : livraison*. | Création · BAT · Livraison | Le calendrier est serré. La création à la mi-novembre. Le bon à tirer validé fin novembre. La livraison début décembre. Un jour de retard au début, c'est une semaine de retard à la fin. |
 | 21-25 s | Table de famille, cartes et emballages posés au milieu, mains de plusieurs générations. Fondu sur le logo Grafycom, signature `@grafycom.graphiste`. | **« Décembre se décide en novembre. »** | Décembre se décide en novembre. Et c'est le seul mois de l'année où un support imprimé se garde pour autre chose que son utilité. |
 
-**Prompt d'arrière-plan** (plan 21-25 s, si une génération est nécessaire) :
-`Warm family dinner table seen from above, wooden surface, folded kraft paper gift wraps and printed greeting cards arranged in the centre, several pairs of hands of different ages reaching in, soft late afternoon window light, shallow depth of field, no faces visible, photorealistic, 4K`
+**Pas de prompt d'arrière-plan.** Il y en avait un ici pour le dernier
+plan. Il est retiré, pour la même raison qu'au n° 12 :
+`reseaux/LIGNE-EDITORIALE.md` interdit une image dont les droits ne sont pas
+clairs, et une table de famille inventée vaudrait exactement ce que vaut une
+photo de banque — rien, et le risque en plus.
 
 **Voix de synthèse suggérée :** féminine française, chaleureuse et posée,
 débit calme, sans emphase. C'est le seul contenu du cycle où le ton se permet
@@ -1363,28 +1407,25 @@ d'être affectif — la voix ne doit pas pour autant devenir publicitaire.
 > commentaire, même si c'est « rien pour l'instant ».
 
 ### Texte alternatif
-Reel de 25 secondes sur la préparation des supports de fin d'année. Un doigt
-remonte les cases d'un calendrier du 24 décembre vers le 14 novembre. Trois
-cartes de vœux imprimées sont posées en éventail sur une table en bois, le
-relief d'un gaufrage visible en lumière rasante. Des mains plient un emballage
-en papier kraft fermé par un bandeau imprimé et un adhésif au logo. Un
-rétroplanning en trois jalons indique création à la mi-novembre, bon à tirer
-fin novembre, livraison début décembre.
+Reel de 25 secondes sur la préparation des supports de fin d'année. Un
+calendrier dessiné montre les six semaines du 14 novembre au 24 décembre en
+une seule grille. Deux cartes de vœux posées à plat portent un gaufrage rendu
+par une ombre et une lumière décalées, et l'une d'elles la mention
+manuscrite « Bonne année ». Un paquet en papier kraft est fermé par un bandeau
+imprimé à flocons et un adhésif rond au logo. Un rétroplanning en trois jalons
+indique création à la mi-novembre, bon à tirer fin novembre, livraison début
+décembre. Le dernier écran montre la table vue de dessus avec les cartes et le
+paquet posés dessus.
 
 ### Hashtags — jeu B + 2 locaux
 `#printdesign #identitevisuelle #charteGraphique #designgraphique #graphismeFrance #cartedevoeux #CommerceLocal66 #graphistePerpignan`
 
 ### À fournir par Sandra
-- **Quatre plans courts suffisent** : le calendrier, les cartes en éventail
-  en lumière rasante, le pliage de l'emballage kraft, la table de famille.
-- Les cartes de vœux filmées doivent être **des modèles de démonstration ou
-  des cartes d'années passées anonymisées**. Si une carte client est
-  reconnaissable : **accord client à obtenir avant publication**.
-- Le bandeau et l'adhésif rond : deux impressions d'essai, à faire chez
-  l'imprimeur partenaire. Ça sert deux fois — le reel, puis la proposition
-  commerciale de fin d'année.
-- Le dernier plan, mains de plusieurs générations : **pas de visage**, et
-  l'accord des personnes filmées, même de la famille.
+- **Rien à filmer.** Les cinq écrans sont dessinés et prêts.
+- *Reste utile si l'occasion se présente* : le bandeau et l'adhésif rond en
+  impression d'essai chez l'imprimeur partenaire. Ça sert deux fois — le
+  visuel, puis la proposition commerciale de fin d'année. Aucun accord client
+  n'est en jeu, ce sont des modèles de démonstration.
 - **Les délais annoncés (mi-novembre, fin novembre, début décembre) doivent
   être confirmés par l'imprimeur partenaire** avant publication. S'ils sont
   plus serrés, le reel se décale d'une semaine en avant, pas en arrière.
@@ -1490,12 +1531,17 @@ chez le même imprimeur au même moment.
 
 ### Direction visuelle — 7 slides, 1080 × 1350 px
 
-- **S1.** Fond `#f7f1ef`. Photo ou mise en situation d'un sachet cadeau
-  soigné, vu de face. Bandeau violet `#a86cd0` en travers, texte blanc :
-  « Votre bel emballage de fête a une mention à porter. »
-- **S2.** Le même sachet, en dessin au trait. Un rectangle vide, cerné de
-  corail `#f2585c`, posé au dos. Légende : « Il lui faut cette place. La
-  question est de savoir qui la réserve, et quand. »
+- **S1.** **Dessinée** — `visuels.py`, gabarit `emballage-tri`. Fond
+  `#f7f1ef`. Un sachet cadeau soigné vu de face : anses, pli du haut,
+  soufflet de côté, bandeau imprimé à flocons, pastille au logo. Bandeau
+  violet `#a86cd0` en travers, texte blanc : « Votre bel emballage de fête
+  a une mention à porter. »
+- **S2.** **Le même sachet**, au trait — c'est le même appel de fonction
+  avec `trait=True`, donc rigoureusement le même objet, ce que la
+  démonstration exige et qu'une photo suivie d'un dessin n'aurait jamais
+  donné. Un rectangle vide, cerné de corail `#f2585c`, posé au dos.
+  Légende : « Il lui faut cette place. La question est de savoir qui la
+  réserve, et quand. »
 - **S3.** Fond blanc. Gros titre : « Le principe ». Texte : « Un emballage
   destiné au grand public devrait porter une signalétique de tri : le
   pictogramme accompagné de la consigne, élément par élément. »
@@ -1571,11 +1617,9 @@ une méthode validée, « on réserve la zone puis on dessine autour ».
   qui n'est pas forcément celle d'un produit vendu en grande surface. Si la
   vérification contredit le carrousel, la slide 3 et le troisième paragraphe
   de la légende se réécrivent — pas le reste.
-- Les 7 slides, en 1080 × 1350. Gabarit à ajouter dans
-  `reseaux/visuels.py` — il peut dériver de `carrousel-enseigne`, qui a déjà
-  la structure « titre + blocs numérotés ».
-- Un sachet ou une boîte cadeau neutre à photographier pour la S1. Pas de
-  marque visible, ou alors la vôtre.
+- ~~Les 7 slides~~ et ~~un sachet à photographier~~ : **faits**. Gabarit
+  `emballage-tri`, sept planches dans
+  `reseaux/visuels/2026-11-17-emballage-tri/`.
 
 ---
 
@@ -1734,10 +1778,21 @@ dorée selon l'angle.
 
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
-- **S1.** Photo d'une vitrine vue depuis le trottoir d'en face, de nuit,
-  légèrement assombrie. Bandeau violet `#a86cd0`, texte blanc : « Votre
-  vitrine de Noël est faite pour celui qui passe. Pas pour celui qui est
-  dedans. »
+> **Sept planches, pas six.** La septième est ajoutée : la même devanture
+> redessinée à 2, 8 et 25 mètres. C'est la démonstration que cette
+> publication réclame sans pouvoir la faire en photo — il faudrait trois
+> prises de vue au même instant, au même endroit, à trois reculs
+> différents. Dessinée, la devanture est rigoureusement la même et seule
+> l'échelle change : ce n'est donc pas le cadrage qui fait disparaître les
+> horaires, c'est la distance.
+
+- **S1.** **Dessinée** — `visuels.py`, gabarit `vitrine-trottoir`. Une
+  devanture éclairée vue de face depuis le trottoir d'en face, de nuit :
+  ciel sombre, chaussée et bordure au premier plan, le reflet de la vitrine
+  sur le bitume. C'est le point de vue que la publication réclame — celui
+  du passant, pas celui du commerçant qui recule de deux mètres dans sa
+  boutique. Bandeau violet `#a86cd0`, texte blanc : « Votre vitrine de Noël
+  est faite pour celui qui passe. Pas pour celui qui est dedans. »
 - **S2.** Dessin au trait d'une vitrine, vue de face. Une bande horizontale
   surlignée en corail `#f2585c` entre 1,40 m et 1,70 m du sol. Légende :
   « La hauteur des yeux. C'est la seule zone vraiment lue. Le reste est
@@ -1754,7 +1809,11 @@ dorée selon l'angle.
   encombré, illisible, et le même texte collé devant un panneau uni.
   Légende : « Un texte sur verre se lit contre ce qu'il y a derrière. Et ce
   qu'il y a derrière bouge toute la journée. »
-- **S6.** Fond `#f7f1ef`. Flèche corail. « Photographiez votre vitrine
+- **S6.** **Nouvelle.** La même devanture au trait à trois échelles,
+  alignées sur le sol, légendées 2 m, 8 m, 25 m. « À 2 m tout se lit. À 8 m
+  les horaires sont déjà partis. À 25 m il ne reste que la forme — et c'est
+  à 25 m qu'on décide de traverser. »
+- **S7.** Fond `#f7f1ef`. Flèche corail. « Photographiez votre vitrine
   depuis le trottoir d'en face et envoyez-la-moi en message : je vous dis ce
   qui se lit et ce qui se perd. »
 
@@ -1799,29 +1858,29 @@ dorée selon l'angle.
 > envoyez-la-moi en message** : je vous dis ce qui se lit et ce qui se perd.
 
 ### Texte alternatif
-Carrousel de six visuels sur la lisibilité d'une vitrine de fin d'année vue
-depuis le trottoir. Un dessin surligne en corail la bande de hauteur des
-yeux, entre un mètre quarante et un mètre soixante-dix. Deux vitrines sont
-comparées, l'une couverte de décor jusqu'en haut, l'autre avec un bandeau
-décoré et du verre libre au centre. Un détail montre un texte blanc
-illisible devant un rayonnage encombré, puis lisible devant un panneau uni.
+Carrousel de sept visuels sur la lisibilité d'une vitrine de fin d'année vue
+depuis le trottoir. Une devanture éclairée est dessinée de nuit, vue depuis
+le trottoir d'en face. Un dessin au trait, avec une échelle en mètres,
+surligne en corail la bande de hauteur des yeux entre un mètre quarante et un
+mètre soixante-dix. Deux vitrines sont comparées, l'une couverte de décor
+jusqu'en haut, l'autre avec un bandeau décoré et du verre libre au centre. Un
+détail montre un texte blanc illisible devant un rayonnage encombré, puis
+lisible devant un panneau uni. Le dernier dessin montre la même devanture à
+deux, huit et vingt-cinq mètres : les horaires disparaissent avant le nom.
 
 ### Hashtags — jeu C + 2 locaux
 `#enseigne #signaletique #commercantsPerpignan #restaurateur66 #ouvertureCommerce #vitrine #carteDeRestaurant #graphistePerpignan #CommerceLocal66 #PaysCatalan`
 
 ### À fournir par Sandra
-- **Une photo de vitrine de nuit, prise depuis le trottoir d'en face.**
-  C'est le plan qui porte toute la publication. Une vitrine quelconque de
-  Perpignan suffit, mais si un commerce est reconnaissable, il faut son
-  accord — et dans ce cas, mention « accord client à obtenir avant
-  publication ».
-- Les deux détails de la S5 se fabriquent en studio : un lettrage blanc sur
-  un plexi, photographié devant une étagère encombrée puis devant un carton
-  uni.
-- Les 6 slides, en 1080 × 1350. Gabarit à ajouter dans
-  `reseaux/visuels.py`. Les slides S2, S3 et S5 reposent sur des dessins au
-  trait et des photos, pas sur du texte mis en page : ce sont les deux
-  seules à préparer à la main.
+- **Rien à fournir.** Les sept planches sont dessinées, dans
+  `reseaux/visuels/2026-11-23-vitrine-trottoir/`. La vitrine de nuit, les
+  deux détails de la S5 et la démonstration des trois distances sortent du
+  même gabarit, donc de la même devanture : c'est ce qui rend les
+  comparaisons honnêtes.
+- La seule chose qui reste de l'ancienne liste : **si** un jour une vraie
+  vitrine de nuit est photographiée, elle remplacera la S1 sans toucher au
+  reste. Et dans ce cas seulement, l'accord du commerce redevient
+  nécessaire.
 
 ---
 
@@ -1840,9 +1899,14 @@ illisible devant un rayonnage encombré, puis lisible devant un panneau uni.
 
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
-- **S1.** Photo d'une vitrine avec un grand adhésif « Joyeuses fêtes » et un
-  second « -30 % ». Bandeau violet, texte blanc : « Un sticker de Noël sur
-  votre vitrine : enseigne, publicité, ou rien du tout ? »
+- **S1.** **Dessinée** — `visuels.py`, gabarit `sticker-enseigne`. Une
+  vitrine éclairée portant deux adhésifs : « Joyeuses fêtes » en pastille
+  violette, « -30 % » en pastille bleue. Dessinée, et ici plus qu'ailleurs :
+  la publication explique qu'un de ces deux adhésifs pourrait être
+  requalifié, et illustrer ça avec la vitrine d'un commerce réel, c'est le
+  désigner comme le mauvais élève. Bandeau violet, texte blanc : « Un
+  sticker de Noël sur votre vitrine : enseigne, publicité, ou rien du
+  tout ? »
 - **S2.** Fond blanc cassé. Deux blocs nettement séparés. À gauche,
   encadré violet : « **Enseigne** — elle dit qui vous êtes et où. On
   l'**autorise**. » À droite, encadré bleu profond : « **Publicité** — elle
@@ -1927,14 +1991,11 @@ en vigueur est le Cerfa 16308\*01 et que le 14798\*01 est périmé.
   nocturne applicables localement. Ce sont les deux seuls points du
   carrousel au conditionnel ; si la réponse est claire, on peut remplacer le
   conditionnel par du factuel, et la publication gagne beaucoup.
-- Une photo de vitrine avec adhésifs de fêtes. Si un commerce est
-  reconnaissable : **accord client à obtenir avant publication.** Une
-  vitrine neutre ou une mise en situation évite la question — dans ce cas,
-  la légende doit dire qu'il s'agit d'une mise en situation.
-- Les 6 slides, en 1080 × 1350. Le gabarit `carrousel-enseigne` existe
-  déjà et porte le même sujet : il devrait se décliner plutôt que se
-  réécrire. Contrôler que l'astérisque du numéro de Cerfa sort bien —
-  `16308*01` — parce qu'un numéro tronqué est pire qu'un numéro absent.
+- ~~Une photo de vitrine avec adhésifs de fêtes~~ et ~~les 6 slides~~ :
+  **faits**. Gabarit `sticker-enseigne`, six planches dans
+  `reseaux/visuels/2026-11-24-sticker-enseigne/`. L'astérisque du numéro de
+  Cerfa a été contrôlée sur l'image : `16308*01` sort entier, sur la S5 et
+  dans le texte de la S5.
 
 ---
 

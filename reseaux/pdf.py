@@ -106,6 +106,7 @@ li{margin:.22em 0}
 strong{font-weight:800}
 em{font-style:italic;color:var(--brun)}
 a{color:var(--bleu);text-decoration:none}
+del{text-decoration:line-through;color:var(--taupe);}
 code{font-family:'DejaVu Sans Mono',monospace;font-size:8.6pt;
   background:var(--creme-rose);padding:1px 4px;border-radius:3px;
   color:var(--brun);}
@@ -198,6 +199,10 @@ def html(doc, titre, sous):
                  r"(\d{1,2}(?:er)?) (janvier|février|mars|avril|mai|juin|"
                  r"juillet|août|septembre|octobre|novembre|décembre)\b",
                  "\\1\u00a0\\2\u00a0\\3", src, flags=re.IGNORECASE)
+    # « ~~barré~~ » : python-markdown ne connait pas la syntaxe et sortait
+    # les tildes en clair — « ~~Une photo de rue~~ » imprime tel quel, ce
+    # qui est pire que pas de barre du tout. On la convertit avant.
+    src = re.sub(r"~~(.+?)~~", r"<del>\1</del>", src, flags=re.S)
     corps = markdown.markdown(
         # Pas de nl2br : les documents sont coupes a 76 colonnes dans le
         # depot, et chaque retour devenait un retour visuel — les phrases
