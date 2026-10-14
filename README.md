@@ -155,16 +155,31 @@ Téléphone et courriel sont en place partout :
 | | |
 |---|---|
 | **07 82 92 19 81** | pied de page des huit pages, page contact, mentions légales, données structurées. Cliquable sur mobile (`tel:+33782921981`) |
-| **sandra.grafycom@gmail.com** | pied de page, page contact, mentions légales, politique de confidentialité, et destinataire du formulaire |
+| **contact@grafycom.fr** | pied de page, page contact, mentions légales, politique de confidentialité, expéditeur du formulaire |
 
-Le jour où une adresse au nom de domaine existe (`contact@grafycom.fr` ou
-équivalent), elle inspirera plus confiance qu'une adresse Gmail sur un site
-professionnel. La plupart des hébergeurs en fournissent une avec le domaine.
-Pour basculer :
+### L'adresse au nom de domaine — fait le 14 octobre 2026
 
-```bash
-grep -rl 'sandra.grafycom@gmail.com' . | xargs sed -i 's/sandra\.grafycom@gmail\.com/contact@grafycom.fr/g'
-```
+Le site affichait `sandra.grafycom@gmail.com`. Il affiche désormais
+**`contact@grafycom.fr`** partout : 121 occurrences remplacées, dans les
+générateurs, les pages, les outils de prospection et la documentation.
+
+Vérifié avant de basculer, et pas supposé : les trois enregistrements MX
+de `grafycom.fr` pointent sur `route1`, `route2` et `route3.mx.cloudflare.net`,
+et le SPF déclare `include:_spf.mx.cloudflare.net`. Cloudflare Email
+Routing est donc actif, et l'adresse reçoit.
+
+> **Une exception, délibérée : `CONTACT_TO` dans `wrangler.toml` reste la
+> boîte Gmail.** `contact@grafycom.fr` est une adresse de routage — elle
+> ne stocke rien, elle fait suivre. L'expéditeur du formulaire est déjà
+> `contact@grafycom.fr` ; mettre la même adresse en expéditeur **et** en
+> destinataire ferait partir un message de `contact@` vers `contact@`,
+> qui reviendrait au même endroit par un détour de plus. Et un envoi
+> d'une adresse vers elle-même est exactement ce que les filtres traitent
+> en boucle.
+>
+> Expéditeur au nom de domaine, destinataire réel : c'est la raison d'être
+> de ces deux variables séparées. La même note est dans `wrangler.toml`,
+> à l'endroit où le piège se présente.
 
 ### 4. Nom de domaine — fait
 

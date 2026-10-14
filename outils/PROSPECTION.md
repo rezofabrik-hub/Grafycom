@@ -26,7 +26,7 @@ Pour l'envoi automatique du matin à Sandra, voir `VEILLE-QUOTIDIENNE.md` :
 
 ```bash
 python3 outils/veille-entreprises.py --quotidien --adresses \
-        --envoyer sandra.grafycom@gmail.com
+        --envoyer contact@grafycom.fr
 ```
 
 Deux fichiers sortent dans `outils/prospects/` : un `.csv` à ouvrir dans un
@@ -166,7 +166,7 @@ Texte de départ, à réécrire avec ses mots :
 > qui me semble utile, ou inutile.
 >
 > Sandra — Grafycom
-> 07 82 92 19 81 · sandra.grafycom@gmail.com · grafycom.fr
+> 07 82 92 19 81 · contact@grafycom.fr · grafycom.fr
 >
 > *Vous recevez ce courrier parce que votre immatriculation a été publiée
 > au BODACC. Dites-le-moi d'un mot et je retire votre entreprise de ma

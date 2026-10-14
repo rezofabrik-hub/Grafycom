@@ -25,7 +25,7 @@ sys.path.insert(0, str(RACINE / "outils"))
 from courriel import envoyer, liste  # noqa: E402
 
 PROPOSITIONS = RACINE / "reseaux" / "propositions"
-A_DEFAUT = "sandra.grafycom@gmail.com"
+A_DEFAUT = "contact@grafycom.fr"
 COPIE_DEFAUT = "rezofabrik@gmail.com"
 
 

@@ -24,7 +24,7 @@ ENVOI_FORMULAIRE = "/api/contact"
 GOOGLE_VERIF = ""
 # La racine du dépôt : le dossier qui contient celui-ci.
 OUT = str(pathlib.Path(__file__).resolve().parent.parent)
-MAIL = "sandra.grafycom@gmail.com"
+MAIL = "contact@grafycom.fr"
 TEL = "07 82 92 19 81"
 TEL_URI = "+33782921981"
 

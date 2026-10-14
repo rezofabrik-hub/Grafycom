@@ -471,4 +471,4 @@ soumettre `https://grafycom.fr/sitemap.xml`.
 | AAAA (IPv6) | `2606:50c0:8000::153` à `2606:50c0:8003::153` |
 | État | Mode chantier jusqu'au 16 octobre 2026 |
 | À faire en priorité | Les `A` et `AAAA` sur l'apex, dans Route 53 |
-| Contact | Sandra — 07 82 92 19 81 — sandra.grafycom@gmail.com |
+| Contact | Sandra — 07 82 92 19 81 — contact@grafycom.fr |

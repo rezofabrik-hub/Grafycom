@@ -14,7 +14,7 @@ JSONLD = """{
   "priceRange": "€€",
   "address": { "@type": "PostalAddress", "addressLocality": "Perpignan", "postalCode": "66000", "addressRegion": "Pyrénées-Orientales", "addressCountry": "FR" },
   "areaServed": [ "Perpignan", "Pyrénées-Orientales", "Occitanie", "France" ],
-  "email": "sandra.grafycom@gmail.com",
+  "email": "contact@grafycom.fr",
   "knowsLanguage": [ "fr", "es" ],
   "sameAs": [
     "https://www.instagram.com/grafycom.graphiste/",

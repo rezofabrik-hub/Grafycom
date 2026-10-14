@@ -40,7 +40,7 @@ SORTIE = RACINE / "prospects"
 EXPEDITEUR = {
     "nom": "Sandra — Grafycom",
     "tel": "07 82 92 19 81",
-    "mail": "sandra.grafycom@gmail.com",
+    "mail": "contact@grafycom.fr",
     "site": "grafycom.fr",
 }
 

@@ -57,6 +57,21 @@ destination_address = "sandra.grafycom@gmail.com"
 
 [vars]
 # Doit etre la meme que destination_address ci-dessus.
+#
+# CETTE ADRESSE NE SUIT PAS LA MIGRATION DU 14 OCTOBRE. Le site affiche
+# desormais contact@grafycom.fr partout, mais la DESTINATION du formulaire
+# reste la boite Gmail, et c'est voulu.
+#
+# contact@grafycom.fr est une adresse de routage Cloudflare : elle ne
+# stocke rien, elle fait suivre vers cette boite. L'expediteur
+# (CONTACT_FROM) est deja contact@grafycom.fr. Mettre la meme adresse en
+# expediteur ET en destinataire ferait partir un message de contact@ vers
+# contact@, qui reviendrait ici par un detour de plus — et un envoi d'une
+# adresse vers elle-meme est exactement ce que les filtres anti-spam
+# traitent en boucle.
+#
+# Expediteur au nom de domaine, destinataire reel : c'est la raison d'etre
+# de ces deux variables separees.
 CONTACT_TO = "sandra.grafycom@gmail.com"
 # Le domaine doit etre integre au service d'envoi de Cloudflare, sinon
 # l'envoi est refuse. La boite n'a pas besoin d'exister pour autant :

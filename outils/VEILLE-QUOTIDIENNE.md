@@ -5,7 +5,7 @@ se créer dans les Pyrénées-Orientales, triées par intérêt pour son métier
 
 ```bash
 python3 outils/veille-entreprises.py --quotidien --adresses \
-        --envoyer sandra.grafycom@gmail.com --copie rezofabrik@gmail.com
+        --envoyer contact@grafycom.fr --copie rezofabrik@gmail.com
 ```
 
 ---
