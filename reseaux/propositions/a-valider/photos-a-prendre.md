@@ -138,6 +138,8 @@ dans `reseaux/visuels/`, et il n'y a rien à photographier pour les sortir.
 | 14 | 10 nov | une devanture floutée | une devanture fictive, slogan anglais **lisible**, puis la même avec la ligne française ajoutée |
 | 15 | 12 nov | quatre macrophotographies | quatre matières **dessinées en coupe** |
 | 16 | 14 nov | cinq plans à filmer, dont des mains | **cinq écrans finis** : calendrier de six semaines, cartes gaufrées, paquet kraft, rétroplanning, table vue de dessus |
+| 20 | 20 nov | cinq plans à filmer | **cinq écrans finis** : gaufrage, deux grammages sur la tranche, gaufrage de côté **et** de face, dorure allumée **et** éteinte |
+| 24 | 28 nov | cinq plans à filmer | **cinq écrans finis** : deux pages de calendrier, deux versions du logo, trois questions, le logo sur trois supports |
 | 18 | 17 nov | un sachet à photographier | un sachet dessiné, puis **le même** au trait avec sa zone réservée |
 | 21 | 23 nov | une vitrine de nuit du trottoir d'en face | la scène dessinée — **et une septième planche** : la même devanture à 2, 8 et 25 m |
 | 22 | 24 nov | une vitrine avec adhésifs de fêtes | une vitrine dessinée portant les deux adhésifs |
@@ -166,9 +168,16 @@ C'est la question qui se pose, et elle mérite une réponse nette.
 Deux familles, et les listes plus haut restent entières pour elles :
 
 - **Les matières en lumière rasante** — une dorure, un gaufrage, un vernis
-  sélectif. Le dessin les suggère, il ne les rend pas. C'est ce que les
-  reels n° 20 et n° 24 demandent encore de filmer : si ce n'est pas
-  possible non plus, dis-le-moi, je les redessine comme les deux autres.
+  sélectif. Le dessin les suggère, il ne les rend pas. Le reel n° 20 est
+  désormais dessiné lui aussi, mais c'est **le seul visuel du cycle que je
+  referais en priorité** le jour où les échantillons seront sous la main :
+  une macro en lumière rasante garde quelque chose qu'un tracé n'a pas. Les
+  écrans se remplacent un par un.
+
+- **Les deux reels d'octobre, n° 4 et n° 8**, gardent leurs fiches de
+  tournage : ce sont les deux seuls du cycle qui demandent encore de
+  filmer, et ce sont les premiers à partir — les 23 et 30 octobre. Dis-moi
+  si je les redessine comme les quatre autres.
 - **Les réalisations en situation.** Un support en situation photographié,
   c'est une preuve ; dessiné, c'est une maquette. La distinction compte
   pour le pilier « réalisations », pas pour les publications pédagogiques.

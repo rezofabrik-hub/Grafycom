@@ -257,8 +257,11 @@ illisible, la sans-serif reste lisible.
 | 15-20 s | Nuancier posé sur une table, main qui le feuillette, lumière rasante sur un papier texturé. | Le papier change tout | Et le papier compte autant que l'encre. Un mat absorbe. Un couché renvoie. Le même fichier donne deux résultats. |
 | 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Demandez un BAT. Toujours.** | Alors ne validez jamais une couleur sur un écran. Demandez un bon à tirer. C'est gratuit, et ça évite de tout refaire. |
 
-**Prompt d'arrière-plan 0-3 s** (si génération nécessaire) :
-`Close-up macro shot of a computer screen displaying vivid electric blue graphic, shallow depth of field, soft studio lighting, then cut to the same design printed on matte paper lying on a wooden desk, muted colors, natural window light, 4K, photorealistic`
+**Pas de prompt d'arrière-plan.** Il y en avait un ici. Les cinq prompts du
+cahier des charges sont retirés : `reseaux/LIGNE-EDITORIALE.md` interdit une
+image dont les droits ne sont pas clairs, et c'est une règle, pas une
+préférence. Ce reel garde ses fiches de tournage — **c'est, avec le n° 8,
+l'un des deux seuls qui demandent encore de filmer.**
 
 **Voix de synthèse suggérée :** féminine française, calme et professionnelle,
 débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
@@ -591,8 +594,9 @@ faux, la réponse apparaissant sur le visuel suivant.
 | 15-19 s | Une devanture de commerce passe du blanc au orange et noir, puis revient. | Et pour votre commerce ? | Ce contraste attire l'œil. Mais il crie. Utilisé toute l'année, il fatigue. Pour une vitrine saisonnière, il est parfait. |
 | 19-22 s | Logo Grafycom sur `#a86cd0`. Signature `@grafycom.graphiste`. | **Une couleur n'est jamais neutre.** | Une couleur n'est jamais neutre. Elle dit quelque chose avant vous. |
 
-**Prompt d'arrière-plan 9-15 s** (si génération nécessaire) :
-`Fast sequence of high-contrast orange and black warning patterns: industrial hazard tape, road warning sign, macro shot of a wasp, construction barrier. Cinematic, sharp focus, dramatic side lighting, 4K`
+**Pas de prompt d'arrière-plan.** Retiré, comme les quatre autres. Ce reel
+garde ses fiches de tournage — **c'est, avec le n° 4, l'un des deux seuls
+qui demandent encore de filmer.**
 
 **Voix de synthèse suggérée :** féminine française, posée, légèrement plus
 grave que d'habitude, débit lent sur les deux premières phrases puis
@@ -1699,10 +1703,26 @@ personnel.
 ## 20 — Vendredi 20 novembre, 18 h 00 · REEL 24 s · Pilier 3, matières & fabrication
 
 ### Accroche 0-3 s
-Gros plan, lumière rasante, sur un pouce qui passe sur un gaufrage. Texte
-incrusté : **« Ce que vos clients sentent avant de lire. »**
+**Écran dessiné**, pas de tournage. Un gaufrage en plein cadre, rendu par une
+ombre et une lumière décalées — comme il se voit quand la lampe est posée
+presque à plat. Texte : **« Ce que vos clients sentent avant de lire. »**
 
 ### Découpage
+
+> **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
+> `visuels.py`, gabarit `reel-matieres`, dans
+> `reseaux/visuels/2026-11-20-reel-matieres/`.
+>
+> **C'est le sujet où le dessin perd le plus, et il faut le dire.** Une
+> dorure, un gaufrage, un papier qui ondule se *sentent* ; une photo en
+> lumière rasante en garde quelque chose qu'un tracé n'a pas. En échange,
+> le dessin met les deux états **côte à côte** là où le tournage les
+> séparait par un mouvement de caméra : gaufrage de côté **et** de face,
+> dorure allumée **et** éteinte. Or le sujet de ce reel est précisément
+> qu'une matière n'existe que sous un certain angle — et une paire le
+> démontre mieux qu'une rotation. Les deux images de chaque paire sortent
+> du même code avec un seul paramètre changé : impossible d'exagérer l'une
+> des deux.
 
 | Chrono | Visuel / action | Texte incrusté | Script voix off |
 |---|---|---|---|
@@ -1712,8 +1732,11 @@ incrusté : **« Ce que vos clients sentent avant de lire. »**
 | 14-19 s | Rotation lente d'une carte sous une lampe. Un trait doré s'allume, puis s'éteint selon l'angle. | La dorure : une feuille, pas du jaune | La dorure à chaud, c'est une feuille métallisée pressée sur le papier. Ça ne s'imprime pas en jaune. C'est pour ça que ça brille, et c'est pour ça que ça se paie. |
 | 19-24 s | Les trois cartes alignées sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre. Signature `@grafycom.graphiste` en pied. | **Choisissez la matière avant le dessin** | Alors choisissez la matière avant le dessin. Un beau visuel sur un mauvais papier déçoit. Un visuel simple sur un beau papier se garde. |
 
-**Prompt d'arrière-plan 0-3 s** (si un fond doit être généré) :
-`Extreme macro shot of a thumb slowly sliding across a blind-embossed pattern on thick cream cotton paper, raking side light revealing the relief, shallow depth of field, warm neutral tones, no text, no logo, photorealistic, 4K`
+**Pas de prompt d'arrière-plan.** Retiré, comme ceux des n° 12, 16 et 24 :
+`reseaux/LIGNE-EDITORIALE.md` interdit une image dont les droits ne sont pas
+clairs. Et sur ce sujet-ci, une matière générée serait le comble — une
+graphiste qui parle de ce qui se touche, en montrant quelque chose qui
+n'existe pas.
 
 **Voix de synthèse suggérée :** féminine française, calme et
 professionnelle, débit posé, articulation nette, courtes respirations entre
@@ -1749,28 +1772,26 @@ les phrases. Pas d'intonation commerciale.
 > **Lequel des trois vous attire le plus ?** Dites-le en commentaire.
 
 ### Texte alternatif
-Vidéo courte sur les matières d'une carte imprimée. Un pouce passe sur un
-motif gaufré en lumière rasante, deux cartes de grammages différents tombent
-sur une table — l'une ondule, l'autre reste droite — et une carte tourne
-sous une lampe pour faire apparaître puis disparaître un trait de dorure
-dorée selon l'angle.
+Vidéo courte sur les matières d'une carte imprimée. Un motif gaufré est
+dessiné en lumière rasante, puis montré deux fois côte à côte, éclairé de
+côté puis de face — de face le relief disparaît presque. Deux feuilles vues
+sur la tranche montrent qu'un cent vingt grammes s'affaisse là où un trois
+cent cinquante grammes reste droit. Un filet de dorure est montré deux fois,
+brillant sous un angle et sombre sous un autre.
 
 ### Hashtags — jeu A + 2 métier
 `#graphistePerpignan #Perpignan #PyreneesOrientales #PaysCatalan #CommerceLocal66 #ArtisanDuRoussillon #Occitanie #IdentiteVisuelle #printdesign #charteGraphique`
 
 ### À fournir par Sandra
-- **Le tournage : cinq plans de cinq secondes au téléphone suffisent.** Un
-  gaufrage en lumière rasante, deux cartes de grammages différents qui
-  tombent, un gaufrage de face puis de côté, une carte en rotation sous une
-  lampe, trois cartes alignées.
-- Les échantillons : un papier léger, un papier épais, un gaufrage, une
-  dorure. Vos imprimeurs partenaires en ont des chutes, et ils les donnent.
-- **La lumière rasante est le seul point technique du tournage.** Une lampe
-  posée presque à plat sur la table, pas au plafond. Sans ça, le gaufrage ne
-  se voit pas et le plan ne raconte rien.
-- Si vous n'avez pas de dorure sous la main, le plan 14-19 s se remplace par
-  un vernis sélectif, qui se filme de la même façon. Dans ce cas, le texte
-  incrusté et la voix off changent : je les réécris.
+- **Rien à filmer.** Les cinq écrans sont dessinés et prêts.
+- *C'est le reel que je referais en priorité le jour où ce sera possible*,
+  et c'est le seul dont je le dise. Les échantillons — un papier léger, un
+  papier épais, un gaufrage, une dorure — vos imprimeurs partenaires en ont
+  des chutes et ils les donnent. Le seul point technique est **la lumière
+  rasante** : une lampe posée presque à plat sur la table, pas au plafond.
+  Sans ça le gaufrage ne se voit pas, et le plan ne raconte rien.
+- Les écrans se remplacent **un par un** : une vraie macro de gaufrage peut
+  prendre la place de l'écran 1 sans toucher aux quatre autres.
 
 # SEMAINE 6 — du lundi 23 au dimanche 29 novembre
 
@@ -2088,10 +2109,28 @@ violet pour la dernière.
 ## 24 — Samedi 28 novembre, 10 h 30 · REEL 26 s · Pilier 7, démarche studio
 
 ### Accroche 0-3 s
-Un carnet de croquis qui se ferme d'un coup sec sur une table en bois.
-Texte incrusté : **« Non, pas en janvier. »**
+**Écran dessiné**, pas de tournage. Deux pages de calendrier mural côte à
+côte, décembre 2026 et janvier 2027, rigoureusement identiques sauf le nom
+du mois. Texte : **« Non, pas en janvier. »**
 
 ### Découpage
+
+> **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
+> `visuels.py`, gabarit `reel-bilan`, dans
+> `reseaux/visuels/2026-11-28-reel-bilan/`.
+>
+> **Un écart assumé : le carnet de croquis qui se ferme disparaît.** Un
+> carnet dessiné ne se ferme pas — c'est un plan qui n'existe qu'en
+> mouvement. Il est remplacé par ce que ce plan voulait dire : deux pages
+> de calendrier, décembre et janvier, identiques à un mot près. L'argument
+> de la publication est donc posé dès la première seconde au lieu d'arriver
+> à la deuxième.
+>
+> **Et un gain :** à 15-21 s, le logo qui « se brouille » sur le polo n'est
+> pas dessiné flou. Il est dessiné net, puis **réellement dégradé** —
+> flouté et réduit en paliers, comme une aiguille qui ne sait pas rendre un
+> contour fin. On voit donc disparaître exactement ce qui disparaît en
+> broderie, et pas ce qu'un illustrateur aurait choisi de faire disparaître.
 
 | Chrono | Visuel / action | Texte incrusté | Script voix off |
 |---|---|---|---|
@@ -2101,8 +2140,7 @@ Texte incrusté : **« Non, pas en janvier. »**
 | 15-21 s | Le même logo décliné sur un polo, une carte, un panneau : il tient sur deux supports, il se brouille sur le troisième. Zoom sur celui qui se brouille. | Deux « oui », un « non » → on ajuste | Si la réponse est non à une seule des trois, le problème est précis. Et un problème précis se répare. On ajuste, on redessine un détail, on prépare les fichiers manquants. |
 | 21-26 s | Fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre. Le logo reparaît, propre, sur trois supports. Signature `@grafycom.graphiste`. | **Un bilan, pas une résolution** | Si la réponse est non aux trois, là, on repart de la feuille blanche. Faites le bilan de l'année. Pas une résolution. |
 
-**Prompt d'arrière-plan 0-3 s** (si un fond doit être généré) :
-`Close-up of a hand snapping shut a sketchbook filled with hand-drawn logo explorations, on a worn wooden studio table, warm workshop light from the side, shallow depth of field, no readable text, no brand, photorealistic, 4K`
+**Pas de prompt d'arrière-plan.** Retiré, comme ceux des n° 12, 16 et 20.
 
 **Voix de synthèse suggérée :** féminine française, calme, un peu plus basse
 et plus lente que d'habitude — c'est un reel d'avis, pas de pédagogie.
@@ -2144,12 +2182,13 @@ Articulation nette, pas d'intonation commerciale.
 > Vous en êtes où sur les trois questions ? Dites-le-moi en commentaire.
 
 ### Texte alternatif
-Vidéo courte sur l'opportunité de refaire son logo en début d'année. Un
-carnet de croquis de recherches de logo se ferme, un calendrier passe de
-décembre à janvier, puis trois cartons manuscrits posent trois questions :
-le logo est-il lisible partout, les fichiers d'origine sont-ils disponibles,
-dit-il encore ce que l'entreprise vend aujourd'hui. Un logo neutre est
-décliné sur un polo, une carte et un panneau.
+Vidéo courte sur l'opportunité de refaire son logo en début d'année. Deux
+pages de calendrier dessinées, décembre et janvier, sont posées côte à côte.
+Un logo neutre est montré en deux versions presque identiques. Trois
+questions manuscrites s'affichent : le logo est-il lisible partout, les
+fichiers d'origine sont-ils disponibles, dit-il encore ce que l'entreprise
+vend aujourd'hui. Le même logo est ensuite décliné sur une carte de visite,
+un panneau et un polo brodé, où il devient une tache grossière.
 
 ### Hashtags — jeu A + 2 métier
 `#graphistePerpignan #Perpignan #PyreneesOrientales #PaysCatalan #CommerceLocal66 #ArtisanDuRoussillon #Occitanie #IdentiteVisuelle #creationlogo #refonteLogo`
@@ -2166,8 +2205,6 @@ décliné sur un polo, une carte et un panneau.
   légende doit porter en toutes lettres « exercice de style, projet non
   commandé ». Dans ce cas, prévenez-moi : la légende se réécrit, cette
   mention ne se glisse pas en pied.
-- Le tournage : cinq plans au téléphone. Un carnet qui se ferme, une page de
-  calendrier, trois cartons manuscrits posés un par un, un logo sur trois
-  supports, un plan final sur fond violet.
+- **Rien à filmer.** Les cinq écrans sont dessinés et prêts.
 
 ---

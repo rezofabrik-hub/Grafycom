@@ -620,7 +620,7 @@ class Planche:
 # Le carrousel du 12 octobre, en exemple complet et reproductible.
 # ---------------------------------------------------------------------
 def carrousel_couleurs(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-12-couleurs"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-19-couleurs"))
     faits = []
 
     p = Planche("sable_chaud")
@@ -669,7 +669,8 @@ def carrousel_couleurs(dossier=None):
 
 
 def dilemme_enseigne(dossier=None):
-    """Le test A/B du 15 octobre. La seconde planche est la premiere, floutee.
+    """n° 3, jeudi 22 octobre — le test A/B. La seconde planche est la
+    premiere, floutee.
 
     Le flou n'illustre pas, il demontre. Il est applique par le script a la
     planche nette : les deux images sont donc rigoureusement identiques
@@ -684,7 +685,7 @@ def dilemme_enseigne(dossier=None):
     lecture, pas des elements de la scene : les flouter les rendrait
     inutiles.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-15-dilemme"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-22-dilemme"))
     faits = []
     LARG, HAUTF, ECART = 420, 430, 60
     X0 = (LARGE - 2 * LARG - ECART) // 2
@@ -723,7 +724,7 @@ def dilemme_enseigne(dossier=None):
 
 
 def carrousel_typographie(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-19-typographie"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-26-typographie"))
     f = []
     p = Planche("blanc")
     t = "Cette police est magnifique."
@@ -774,7 +775,7 @@ def carrousel_typographie(dossier=None):
 
 
 def carrousel_enseigne(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-13-enseigne"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-20-enseigne"))
     f = []
     p = Planche("sable_chaud")
     t = "Votre enseigne a besoin\nd'une autorisation.\nPas d'une déclaration."
@@ -833,7 +834,7 @@ def carrousel_enseigne(dossier=None):
 
 
 def quiz_idees_recues(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-22-quiz"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-29-quiz"))
     f = []
     p = Planche("sable_chaud")
     p.pastille(MARGE, 240, "QUIZ", "corail", "blanc", 30)
@@ -863,7 +864,7 @@ def quiz_idees_recues(dossier=None):
 
 
 def carrousel_droits(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-20-droits"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-27-droits"))
     f = []
     p = Planche("creme")
     t = "Qui possède\nvotre logo ?"
@@ -913,8 +914,8 @@ def carrousel_droits(dossier=None):
 
 
 def plans_reel_cmjn(dossier=None):
-    """Les cinq plans du reel du 16 octobre, en 9:16, a enchainer au montage."""
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-16-reel-cmjn"))
+    """n° 4, vendredi 23 octobre — les cinq plans du reel, en 9:16."""
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-cmjn"))
     f = []
     plans = [
         ("creme", "encre", "Pourquoi ce n'est jamais\nla même couleur", ""),
@@ -938,7 +939,7 @@ def plans_reel_cmjn(dossier=None):
 
 
 def plans_reel_halloween(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-halloween"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-30-reel-halloween"))
     f = []
     plans = [
         ("encre", "orange", "Pourquoi Halloween\nest orange et noir", ""),
@@ -1011,7 +1012,7 @@ def carrousel_blog_rdv(dossier=None):
     aux abonnes qu'il y en a un chaque semaine. C'est une annonce, pas un
     relais : elle ne se republie pas, elle s'epingle.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-17-blog-rdv"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-24-blog-rdv"))
     f = []
 
     p = Planche("sable_chaud")
@@ -1070,7 +1071,7 @@ def dilemme_carte_prix(dossier=None):
     cadre a l'image B ferait gagner B pour une autre raison, et le post
     ne prouverait plus rien.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-29-dilemme-carte"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-05-dilemme-carte"))
     f = []
     PLATS = [
         ("Velouté de potimarron", "Crème de châtaigne, huile de noisette", "9"),
@@ -1130,7 +1131,7 @@ def carrousel_retroplanning(dossier=None):
     aujourd'hui, on compte a rebours depuis la boite aux lettres. Une
     frise dessinee dans l'autre sens dirait le contraire du texte.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-09-retroplanning"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-16-retroplanning"))
     f = []
 
     p = Planche("sable_chaud")
@@ -1285,7 +1286,7 @@ def dilemme_voeux(dossier=None):
     generique de _logo_fictif) : on ne met jamais en defaut l'identite
     d'un client reel dans une demonstration publique.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-12-dilemme-voeux"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-19-dilemme-voeux"))
     f = []
 
     def carte(p, x, y, w, h):
@@ -1352,7 +1353,7 @@ def quiz_fin_annee(dossier=None):
     reservee des le depart. La quatrieme est un « vrai... mais » assume :
     faux pour l'impression, vrai pour la decision.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-19-quiz-fin-annee"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-26-quiz-fin-annee"))
     f = []
 
     p = Planche("sable_chaud")
@@ -1473,65 +1474,6 @@ def _plans_tournage(dossier, titre, plans, numero_total):
                     % (i, numero_total), 30, "taupe", 400, avant=0)
         f.append(p.ecrire(d / ("plan%d.png" % i)))
     return f
-
-
-def plans_reel_matieres(dossier=None):
-    """n° 20, vendredi 13 novembre — ce que vos clients sentent avant de lire."""
-    plans = [
-        ("0-3 s",
-         "Macro, lumière rasante venue du côté. Un pouce passe lentement "
-         "sur un motif gaufré. On voit le relief avant de voir le dessin.",
-         "Ce que vos clients sentent avant de lire", False),
-        ("3-8 s",
-         "Deux cartes tombent côte à côte sur une table en bois. L'une se "
-         "plie et ondule, l'autre reste droite et claque.",
-         "120 g / 350 g", False),
-        ("8-14 s",
-         "Plan fixe sur un gaufrage éclairé de côté, puis la même carte "
-         "éclairée de face : le motif disparaît presque.",
-         "Le gaufrage : du relief, pas de l'encre", False),
-        ("14-19 s",
-         "Rotation lente d'une carte sous une lampe. Un trait doré "
-         "s'allume, puis s'éteint selon l'angle.",
-         "La dorure : une feuille, pas du jaune", False),
-        ("19-24 s",
-         "Un beau visuel sur un mauvais papier déçoit. Un visuel simple "
-         "sur un beau papier se garde.",
-         "Choisissez la matière\navant le dessin", True),
-    ]
-    return _plans_tournage(dossier or (SORTIE / "2026-11-13-reel-matieres"),
-                           "REEL 24 s · matières", plans, 5)
-
-
-def plans_reel_bilan(dossier=None):
-    """n° 24, samedi 21 novembre — faut-il refaire son logo en janvier."""
-    plans = [
-        ("0-3 s",
-         "Un carnet de croquis rempli de recherches de logo se ferme d'un "
-         "coup sec. Lumière d'atelier, venue du côté.",
-         "Non, pas en janvier", False),
-        ("3-9 s",
-         "Un calendrier mural : le doigt tourne la page de décembre à "
-         "janvier. Puis un logo clignote entre deux versions presque "
-         "identiques.",
-         "Changer par calendrier,\nce n'est pas changer par besoin", False),
-        ("9-15 s",
-         "Trois cartons posés un par un sur la table, chacun avec une "
-         "question écrite à la main.",
-         "1. Lisible partout ?\n2. Fichiers en main ?\n3. Dit-il ce que vous "
-         "vendez ?", False),
-        ("15-21 s",
-         "Le même logo décliné sur un polo, une carte, un panneau : il "
-         "tient sur deux supports, il se brouille sur le troisième. Zoom "
-         "sur celui qui se brouille.",
-         "Deux « oui », un « non » :\non ajuste", False),
-        ("21-26 s",
-         "Si la réponse est non aux trois, on repart de la feuille "
-         "blanche. Sinon, un problème précis se répare.",
-         "Un bilan,\npas une résolution", True),
-    ]
-    return _plans_tournage(dossier or (SORTIE / "2026-11-21-reel-bilan"),
-                           "REEL 26 s · bilan", plans, 5)
 
 
 def stories(dossier=None):
@@ -1751,8 +1693,6 @@ GABARITS = {
     "retroplanning-voeux": carrousel_retroplanning,
     "dilemme-voeux": dilemme_voeux,
     "quiz-fin-annee": quiz_fin_annee,
-    "plans-reel-matieres": plans_reel_matieres,
-    "plans-reel-bilan": plans_reel_bilan,
     "blog-rendez-vous": carrousel_blog_rdv,
     "plans-reel-cmjn": plans_reel_cmjn,
     "plans-reel-halloween": plans_reel_halloween,
@@ -1763,7 +1703,7 @@ GABARITS = {
 
 
 def solaire_66(dossier=None):
-    """Publication du 2 novembre : l'identité Solaire 66.
+    """n° 13, lundi 9 novembre : l'identité Solaire 66.
 
     Solaire 66 et Grafycom sont deux entreprises distinctes, dirigées par
     deux personnes distinctes — precision de Laurent le 13 octobre. C'est
@@ -1784,7 +1724,7 @@ def solaire_66(dossier=None):
     demanderait une photo de base, et on ne publie pas une image dont les
     droits ne sont pas clairs.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-02-solaire-66"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-09-solaire-66"))
     S = RACINE / "visuels" / "sources"
     MM = 1052 / 89              # px par mm du rendu 300 dpi des cartes
     PANNEAU_CM, CARTE_CM = 120.0, 8.5
@@ -1884,12 +1824,22 @@ def solaire_66(dossier=None):
 # Il n'imite aucune marque existante : c'est un exercice, et la legende
 # de la publication le dit.
 # ---------------------------------------------------------------------
-def _logo_fictif(d, cx, cy, r, detail=True):
+def _logo_fictif(d, cx, cy, r, detail=True, variante=0.0):
+    """Le logo d'exercice. variante decale legerement les deux anneaux.
+
+    La n° 24 doit montrer « deux versions presque identiques » : si elles
+    etaient rigoureusement identiques, on croirait a une erreur de
+    montage ; si elles differaient vraiment, la demonstration tomberait.
+    Un ecart de quelques pourcents sur les anneaux est exactement ce que
+    produit une refonte faite par calendrier.
+    """
     from PIL import ImageDraw
     d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=teinte("bleu"))
-    d.ellipse([cx - r * .72, cy - r * .72, cx + r * .72, cy + r * .72],
+    m = .72 + variante
+    i = .44 - variante * 0.6
+    d.ellipse([cx - r * m, cy - r * m, cx + r * m, cy + r * m],
               fill=teinte("bleu_vif"))
-    d.ellipse([cx - r * .44, cy - r * .44, cx + r * .44, cy + r * .44],
+    d.ellipse([cx - r * i, cy - r * i, cx + r * i, cy + r * i],
               fill=teinte("creme"))
     if detail and r > 26:
         for i in range(10):          # les contours fins, premiers a disparaitre
@@ -1903,8 +1853,8 @@ def _logo_fictif(d, cx, cy, r, detail=True):
 
 
 def pub09_logo_reduction(dossier=None):
-    """n° 9, lundi 26 octobre — un logo tient-il en petit."""
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-26-logo-reduction"))
+    """n° 9, lundi 2 novembre — un logo tient-il en petit."""
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-02-logo-reduction"))
     faits = []
 
     p = Planche("creme")
@@ -3801,6 +3751,435 @@ def pub22_sticker_enseigne(dossier=None):
     return faits
 
 
+# ---------------------------------------------------------------------
+# Les matieres en main — n° 20.
+# ---------------------------------------------------------------------
+# Ces trois dessins sont les seuls du lot qui remplacent une photo par
+# quelque chose de MOINS riche. Une dorure, un gaufrage, un papier qui
+# ondule se sentent ; une photo en lumiere rasante en garde quelque
+# chose, un trace non. En echange, le dessin met les deux etats cote a
+# cote — gaufrage de cote ET de face, dorure allumee ET eteinte — la ou
+# le tournage les separait par un mouvement de camera. C'est ce qui est
+# demontre qui change, pas seulement ce qui est montre : le sujet de ce
+# reel est precisement que la matiere n'existe que sous un certain
+# angle, et une paire le dit mieux qu'une rotation.
+
+def _carte_tranche(p, x, y, larg, haut, etiquette):
+    """Une carte epaisse vue legerement de trois quarts, sa tranche visible.
+
+    Le grammage ne se montre pas de face : il se montre par l'epaisseur.
+    Trois millimetres grossis, comme pour les matieres du quiz.
+    """
+    e = haut * 0.10
+    biais = e * 0.9
+    p.d.polygon([(x, y + e), (x + biais, y), (x + larg, y),
+                 (x + larg - biais, y + e)],
+                fill=_melange("blanc", "creme", 0.35))
+    p.d.rectangle([x, y + e, x + larg - biais, y + haut],
+                  fill=teinte("creme"))
+    p.d.polygon([(x + larg - biais, y + e), (x + larg, y),
+                 (x + larg, y + haut - e), (x + larg - biais, y + haut)],
+                fill=_melange("creme", "taupe", 0.42))
+    f = police(600, max(20, int(haut * 0.11)))
+    p.d.text((x + larg / 2 - p.d.textlength(etiquette, font=f) / 2,
+              y + haut + 18), etiquette, font=f, fill=teinte("creme"))
+    return p
+
+
+def _papier_profil(p, x, y, larg, affaissement, etiquette, couleur="corail"):
+    """Une feuille vue sur la tranche, tenue a gauche, qui s'affaisse.
+
+    C'est le test que tout imprimeur fait sans y penser : on pince une
+    carte par un bord et on regarde si l'autre bord tombe. Un 120 g
+    s'affaisse, un 350 g reste droit. Dessine de profil, le grammage
+    devient visible — ce qu'une photo de face ne montre jamais.
+    """
+    ep = max(5, int(larg * 0.014))
+    pince = larg * 0.16
+    p.d.rounded_rectangle([x, y - 22, x + pince, y + 22], radius=10,
+                          fill=teinte("taupe"))
+    pts_haut, pts_bas = [], []
+    n = 40
+    for i in range(n + 1):
+        t = i / n
+        xx = x + pince + (larg - pince) * t
+        yy = y + affaissement * t * t
+        pts_haut.append((xx, yy - ep / 2))
+        pts_bas.append((xx, yy + ep / 2))
+    p.d.polygon(pts_haut + list(reversed(pts_bas)),
+                fill=_melange("creme", "blanc", 0.6),
+                outline=teinte("brun"))
+    for pts in (pts_haut, pts_bas):
+        p.d.line(pts, fill=teinte("brun"), width=max(2, ep // 3))
+    f = police(800, max(26, int(larg * 0.075)))
+    l = p.d.textlength(etiquette, font=f)
+    p.d.text((x + larg - l, y + affaissement + 48), etiquette, font=f,
+             fill=teinte(couleur))
+    return p
+
+
+def _gaufrage(p, x, y, cote, rasante=True, legende=None,
+              couleur_legende="brun"):
+    """Un gaufrage, eclaire de cote ou de face.
+
+    Un gaufrage n'a pas de couleur : il n'a qu'une ombre et une lumiere.
+    En lumiere rasante, les deux sont decalees et le relief apparait ;
+    de face, elles se superposent et il ne reste presque rien. Les deux
+    dessins sortent du meme code, avec un seul parametre de decalage —
+    donc on ne peut pas tricher en exagerant l'un des deux.
+    """
+    p.d.rectangle([x, y, x + cote, y + cote], fill=teinte("creme"),
+                  outline=_melange("taupe", "creme", 0.40), width=3)
+    ep = max(4, int(cote * 0.030))
+    cx, cy, r = x + cote * 0.50, y + cote * 0.44, cote * 0.21
+    if rasante:
+        d = max(3, int(cote * 0.018))
+        paires = ((-d, teinte("blanc")),
+                  (d, _melange("taupe", "brun", 0.40)))
+    else:
+        # de face, l'ombre et la lumiere se superposent : il ne reste
+        # qu'un trace presque efface. C'est le sujet du plan, il ne faut
+        # donc pas tricher en en laissant un peu « pour qu'on voie ».
+        paires = ((0, _melange("creme", "taupe", 0.10)),)
+    for decal, c in paires:
+        p.d.ellipse([cx - r + decal, cy - r + decal,
+                     cx + r + decal, cy + r + decal], outline=c, width=ep)
+        p.d.line([(cx - r * 0.44 + decal, cy + r * 0.56 + decal),
+                  (cx + r * 0.44 + decal, cy + r * 0.56 + decal)],
+                 fill=c, width=ep)
+    if legende:
+        f = police(600, max(20, int(cote * 0.072)))
+        p.d.text((x + cote / 2 - p.d.textlength(legende, font=f) / 2,
+                  y + cote + 18), legende, font=f,
+                 fill=teinte(couleur_legende))
+    return p
+
+
+def _dorure(p, x, y, larg, haut, allume=True, legende=None,
+            couleur_legende="brun"):
+    """Un filet de dorure a chaud, qui accroche ou non la lumiere.
+
+    Ce n'est pas du jaune : c'est une feuille metallisee. Allumee, elle
+    porte un degrade qui va du brun sombre a l'or blanc et revient ;
+    eteinte, elle est plus sombre que le papier. C'est exactement ce que
+    le plan filme devait montrer en tournant la carte.
+    """
+    p.d.rectangle([x, y, x + larg, y + haut], fill=teinte("creme"),
+                  outline=_melange("taupe", "creme", 0.40), width=3)
+    bx, bl = x + larg * 0.12, larg * 0.76
+    bh = max(10, int(haut * 0.085))
+    by = y + haut * 0.46
+    if allume:
+        barre = _degrade_lineaire(int(bl), bh, 90.0,
+                                  [(0.0, C["brun"]), (0.26, C["orange"]),
+                                   (0.46, C["jaune"]), (0.58, C["blanc"]),
+                                   (0.74, C["jaune"]), (1.0, C["brun"])])
+        p.im.paste(barre, (int(bx), int(by)))
+        p.d = ImageDraw.Draw(p.im)
+        _halo(p, bx + bl / 2, by + bh / 2, bl * 0.34, bh * 2.4, "jaune", 64, 26)
+    else:
+        p.d.rectangle([bx, by, bx + bl, by + bh],
+                      fill=_melange("brun", "encre", 0.42))
+    if legende:
+        fl = police(600, max(20, int(haut * 0.13)))
+        p.d.text((x + larg / 2 - p.d.textlength(legende, font=fl) / 2,
+                  y + haut + 18), legende, font=fl,
+                 fill=teinte(couleur_legende))
+    return p
+
+
+def pub20_reel_matieres(dossier=None):
+    """n° 20, vendredi 20 novembre — ce que vos clients sentent avant de lire.
+
+    Remplace les fiches de tournage par cinq ecrans finis, comme les
+    n° 12 et n° 16. Le prompt d'image generee du plan d'ouverture est
+    retire pour la meme raison qu'ailleurs.
+
+    Reserve honnete, ecrite aussi dans photos-a-prendre.md : c'est le
+    sujet ou le dessin perd le plus. Une dorure photographiee en lumiere
+    rasante garde quelque chose que le trace n'a pas. Si un jour les
+    echantillons sont sous la main, ces ecrans se remplacent un par un.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-20-reel-matieres"))
+    faits = []
+
+    p = Planche("sable_chaud", LARGE_S, HAUT_S)
+    p.surtitre("Reel · 0-3 s", "taupe", y=200)
+    p.titre("Ce que vos clients\nsentent\navant de lire.", 100, y=280)
+    _gaufrage(p, 180, 840, 720, rasante=True)
+    p.y = 1640
+    p.texte("Avant de lire votre carte, votre client la touche. Et il a "
+            "déjà une opinion.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran1.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("3-8 s", "taupe", y=200)
+    p.titre("120 g / 350 g", 110, y=280)
+    _papier_profil(p, 110, 760, 860, 300, "120 g", "corail")
+    _papier_profil(p, 110, 1290, 860, 8, "350 g", "bleu")
+    p.y = 1560
+    p.texte("Le grammage, c'est le poids du papier. Le prix change peu. La "
+            "sensation change tout.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran2.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("8-14 s", "taupe", y=200)
+    p.titre("Le gaufrage :\ndu relief,\npas de l'encre.", 92, y=270)
+    _gaufrage(p, 90, 900, 420, True, "lumière de côté")
+    _gaufrage(p, 570, 900, 420, False, "lumière de face")
+    p.y = 1480
+    p.texte("Le même relief, deux éclairages. De face, il disparaît presque "
+            "— c'est pour ça qu'on l'oublie au moment de choisir, et qu'on "
+            "le remarque toujours en main.", 40, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran3.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("14-19 s", "taupe", y=200)
+    p.titre("La dorure :\nune feuille,\npas du jaune.", 92, y=270)
+    _dorure(p, 90, 900, 420, 300, True, "sous un angle")
+    _dorure(p, 570, 900, 420, 300, False, "sous un autre")
+    p.y = 1340
+    p.texte("Une feuille métallisée pressée à chaud. Elle réfléchit la "
+            "lumière, elle change selon l'angle, et elle coûte un passage "
+            "de plus en atelier.", 40, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran4.png"))
+
+    p = Planche("encre", LARGE_S, HAUT_S)
+    _gaufrage(p, 90, 470, 280, True, "gaufrage", "sable")
+    _dorure(p, 400, 470, 280, 280, True, "dorure", "sable")
+    _carte_tranche(p, 710, 470, 280, 280, "350 g")
+    p.y = 920
+    p.filet()
+    p.titre("Choisissez la matière\navant le dessin.", 84, "blanc")
+    p.y += 30
+    p.texte("Un beau visuel sur un mauvais papier déçoit. Un visuel simple "
+            "sur un beau papier se garde.", 40, "creme", 400, avant=20)
+    p.abonnement("sable")
+    p.signature("sable")
+    faits.append(p.ecrire(d / "ecran5.png"))
+    return faits
+
+
+# ---------------------------------------------------------------------
+# Le bilan de fin d'annee — n° 24.
+# ---------------------------------------------------------------------
+def _page_calendrier(p, x, y, larg, haut, mois, annee, dernier=None,
+                     couleur="violet"):
+    """Une page de calendrier mural, avec sa spirale et son mois en grand.
+
+    Le plan filme voulait un doigt qui tourne la page de decembre a
+    janvier. Deux pages cote a cote disent la meme chose, et disent en
+    plus ce que le mouvement cachait : que rien n'a change entre les
+    deux, sauf le nom du mois.
+    """
+    import calendar
+    p.d.rectangle([x, y, x + larg, y + haut], fill=teinte("blanc"),
+                  outline=_melange("taupe", "blanc", 0.4), width=3)
+    hb = haut * 0.26
+    p.d.rectangle([x, y, x + larg, y + hb], fill=teinte(couleur))
+    f = police(800, int(hb * 0.46))
+    nom = ["JANVIER", "FÉVRIER", "MARS", "AVRIL", "MAI", "JUIN", "JUILLET",
+           "AOÛT", "SEPTEMBRE", "OCTOBRE", "NOVEMBRE", "DÉCEMBRE"][mois - 1]
+    p.d.text((x + larg / 2 - p.d.textlength(nom, font=f) / 2, y + hb * 0.18),
+             nom, font=f, fill=teinte("blanc"))
+    fa = police(600, int(hb * 0.22))
+    p.d.text((x + larg / 2 - p.d.textlength(str(annee), font=fa) / 2,
+              y + hb * 0.68), str(annee), font=fa,
+             fill=_melange("blanc", couleur, 0.35))
+    # la spirale, qui fait que c'est un calendrier et pas une affiche
+    for i in range(6):
+        cx = x + larg * (0.12 + i * 0.152)
+        p.d.ellipse([cx - 9, y - 16, cx + 9, y + 16],
+                    outline=teinte("taupe"), width=4)
+    # la grille des jours, sans chiffres : ce n'est pas elle qu'on lit
+    cols, lignes = 7, 5
+    gx, gy = x + larg * 0.07, y + hb + haut * 0.08
+    cw = (larg * 0.86) / cols
+    ch = (haut - hb - haut * 0.16) / lignes
+    fd = police(400, max(12, int(ch * 0.42)))
+    jour = 1
+    total = calendar.monthrange(annee, mois)[1]
+    debut = calendar.monthrange(annee, mois)[0]
+    for r in range(lignes):
+        for c in range(cols):
+            if r * 7 + c < debut or jour > total:
+                continue
+            xx, yy = gx + c * cw, gy + r * ch
+            t = str(jour)
+            p.d.text((xx + cw / 2 - p.d.textlength(t, font=fd) / 2,
+                      yy + ch * 0.2), t, font=fd,
+                     fill=teinte("taupe" if jour != dernier else "corail"))
+            jour += 1
+    return p
+
+
+def _support_logo(p, cx, cy, taille, genre, brouille=False,
+                  couleur_legende="taupe"):
+    """Le meme logo pose sur un polo, une carte ou un panneau.
+
+    Le plan filme devait montrer un logo qui tient sur deux supports et
+    se brouille sur le troisieme. Dessine, le brouillage n'est pas une
+    licence : le logo est rendu puis REELLEMENT degrade — floute et
+    reduit en paliers, comme une broderie qui ne sait pas rendre un
+    contour fin. On voit donc disparaitre exactement ce qui disparait.
+    """
+    t = taille
+    if genre == "polo":
+        # une silhouette de polo : deux epaules, deux manches, un col
+        p.d.rounded_rectangle([cx - t * .46, cy - t * .40, cx + t * .46,
+                               cy + t * .52], radius=int(t * .07),
+                              fill=_melange("bleu", "encre", 0.28))
+        for s in (-1, 1):
+            p.d.polygon([(cx + s * t * .46, cy - t * .36),
+                         (cx + s * t * .72, cy - t * .10),
+                         (cx + s * t * .58, cy + t * .06),
+                         (cx + s * t * .46, cy - t * .12)],
+                        fill=_melange("bleu", "encre", 0.36))
+        p.d.polygon([(cx - t * .13, cy - t * .40), (cx, cy - t * .18),
+                     (cx + t * .13, cy - t * .40)],
+                    fill=_melange("bleu", "blanc", 0.22))
+    elif genre == "carte":
+        p.d.rectangle([cx - t * .62, cy - t * .36, cx + t * .62, cy + t * .36],
+                      fill=teinte("creme"),
+                      outline=_melange("taupe", "creme", 0.4), width=3)
+    else:                                    # panneau
+        p.d.rectangle([cx - t * .62, cy - t * .44, cx + t * .62, cy + t * .30],
+                      fill=_melange("sable", "taupe", 0.30),
+                      outline=_melange("taupe", "brun", 0.40), width=3)
+        for s in (-1, 1):
+            p.d.rectangle([cx + s * t * .36 - t * .035, cy + t * .30,
+                           cx + s * t * .36 + t * .035, cy + t * .56],
+                          fill=_melange("taupe", "encre", 0.45))
+
+    r = int(t * (0.13 if genre == "polo" else 0.17))
+    lx, ly = (cx, cy + t * .04) if genre == "polo" else (cx, cy - t * .04)
+    if brouille:
+        # le logo est dessine en grand, puis reduit comme le ferait une
+        # aiguille : floute, puis quantifie. Rien n'est « dessine flou ».
+        cote = r * 6
+        vignette = Image.new("RGB", (cote, cote),
+                             _melange("bleu", "encre", 0.28))
+        dv = ImageDraw.Draw(vignette)
+        _logo_fictif(dv, cote // 2, cote // 2, int(cote * 0.42), detail=True)
+        vignette = vignette.filter(ImageFilter.GaussianBlur(cote * 0.018))
+        vignette = vignette.resize((max(5, cote // 14), max(5, cote // 14)),
+                                   Image.BILINEAR)
+        vignette = vignette.resize((int(r * 2.4), int(r * 2.4)),
+                                   Image.NEAREST)
+        p.im.paste(vignette, (int(lx - r * 1.2), int(ly - r * 1.2)))
+        p.d = ImageDraw.Draw(p.im)
+    else:
+        _logo_fictif(p.d, lx, ly, r, detail=True)
+
+    f = police(600, max(18, int(t * 0.10)))
+    lib = {"polo": "polo brodé", "carte": "carte de visite",
+           "panneau": "panneau"}[genre]
+    p.d.text((cx - p.d.textlength(lib, font=f) / 2, cy + t * .66), lib,
+             font=f, fill=teinte(couleur_legende))
+    return p
+
+
+def pub24_reel_bilan(dossier=None):
+    """n° 24, samedi 28 novembre — faut-il refaire son logo en janvier.
+
+    Comme les n° 12, 16 et 20 : cinq ecrans finis a la place des fiches
+    de tournage, et le prompt d'image generee du plan d'ouverture retire.
+
+    Le carnet de croquis qui se ferme disparait — un carnet dessine qui
+    se ferme ne se ferme pas, c'est un plan qui n'existe qu'en mouvement.
+    Il est remplace par ce que le plan voulait dire : deux pages de
+    calendrier, decembre et janvier, rigoureusement identiques sauf le
+    nom du mois. C'est l'argument de la publication, pose d'emblee.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-28-reel-bilan"))
+    faits = []
+
+    p = Planche("sable_chaud", LARGE_S, HAUT_S)
+    p.surtitre("Reel · 0-3 s", "taupe", y=200)
+    p.titre("Non,\npas en janvier.", 116, y=290)
+    _page_calendrier(p, 110, 820, 400, 520, 12, 2026, couleur="bleu")
+    _page_calendrier(p, 580, 820, 400, 520, 1, 2027, couleur="violet")
+    p.fleche("corail", y=1420)
+    p.y = 1520
+    p.texte("Chaque mois de janvier, on me demande de refaire un logo. Et "
+            "souvent, je réponds non.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran1.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("3-9 s", "taupe", y=200)
+    p.titre("Changer par calendrier,\nce n'est pas changer\npar besoin.",
+            80, y=280)
+    _logo_fictif(p.d, 330, 980, 190, detail=True)
+    _logo_fictif(p.d, 760, 980, 190, detail=True, variante=0.045)
+    f = police(600, 32)
+    for x, lib in ((330, "version actuelle"), (760, "« nouvelle » version")):
+        p.d.text((x - p.d.textlength(lib, font=f) / 2, 1270), lib, font=f,
+                 fill=teinte("taupe"))
+    p.y = 1400
+    p.texte("Un logo qui marche n'a pas à être renouvelé comme un "
+            "abonnement. La mémorisation est lente — c'est précisément ce "
+            "qu'on achète.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran2.png"))
+
+    p = Planche("blanc", LARGE_S, HAUT_S)
+    p.surtitre("9-15 s", "taupe", y=200)
+    p.titre("Trois questions,\navant de redessiner.", 88, y=280)
+    questions = ["Lisible partout ?", "Fichiers en main ?",
+                 "Dit-il ce que vous\nvendez aujourd'hui ?"]
+    y = 700
+    for i, q in enumerate(questions, 1):
+        fm = manuscrite(62)
+        lignes = q.split("\n")
+        h = 150 + (len(lignes) - 1) * 72
+        p.d.rounded_rectangle([MARGE, y, p.l - MARGE, y + h], radius=22,
+                              fill=teinte("creme"),
+                              outline=_melange("taupe", "creme", 0.4), width=3)
+        p.pastille(MARGE + 30, y + 28, str(i), "corail", taille=30)
+        yy = y + 24
+        for ligne in lignes:
+            p.d.text((MARGE + 140, yy), ligne, font=fm, fill=teinte("encre"))
+            yy += 72
+        y += h + 38
+    p.y = 1520
+    p.texte("Elles se posent en fin d'année, quand on a du recul, et elles "
+            "coûtent dix minutes.", 42, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran3.png"))
+
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.surtitre("15-21 s", "taupe", y=200)
+    p.titre("Deux « oui »,\nun « non » :\non ajuste.", 96, y=280)
+    for cx, genre, flou in ((190, "carte", False), (540, "panneau", False),
+                            (890, "polo", True)):
+        _support_logo(p, cx, 1040, 230, genre, brouille=flou)
+    p.y = 1420
+    p.texte("Le même logo : il tient sur deux supports, il se brouille sur "
+            "le troisième. Un problème précis se répare.", 42, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "ecran4.png"))
+
+    p = Planche("encre", LARGE_S, HAUT_S)
+    for cx, genre in ((190, "carte"), (540, "panneau"), (890, "polo")):
+        _support_logo(p, cx, 700, 230, genre, couleur_legende="sable")
+    p.y = 1080
+    p.filet()
+    p.titre("Un bilan,\npas une résolution.", 92, "blanc")
+    p.y += 20
+    p.texte("Trois « non », on repart de la feuille blanche — et ça se "
+            "décide en connaissance de cause.", 40, "creme", 400, avant=20)
+    p.abonnement("sable")
+    p.signature("sable")
+    faits.append(p.ecrire(d / "ecran5.png"))
+    return faits
+
+
 def main():
     a = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -3849,6 +4228,8 @@ GABARITS["reel-fin-annee"] = pub16_reel_fin_annee
 GABARITS["emballage-tri"] = pub18_emballage_tri
 GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
 GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
+GABARITS["reel-matieres"] = pub20_reel_matieres
+GABARITS["reel-bilan"] = pub24_reel_bilan
 
 
 if __name__ == "__main__":

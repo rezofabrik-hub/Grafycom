@@ -21,8 +21,15 @@ photo (voir `photos-a-prendre.md`).
 > redessinées — voir `photos-a-prendre.md`, section « Les photos
 > spécifiques au mois ». Les récapitulatifs ci-dessous décrivent donc ce
 > qui **a été** produit, et non ce qui reste à faire ; les deux lignes
-> « Photos » et « Tournages » ne valent plus que pour les reels n° 20 et
-> n° 24, les deux seuls qui demandent encore de filmer.
+> « Photos » et « Tournages » ne valent plus que pour les reels n° 4 et
+> n° 8, en octobre, les deux seuls qui demandent encore de filmer.
+
+> **Les dossiers de `reseaux/visuels/` portent désormais la vraie date de
+> publication.** Ils étaient restés aux dates d'avant le décalage du
+> calendrier au 19 octobre : le carrousel du lundi 19 était rangé dans
+> `2026-10-12-couleurs`, le reel du 20 novembre dans `2026-11-13-…`. Les
+> vingt-cinq dossiers sont renommés, et chaque gabarit porte maintenant
+> son numéro de publication dans son commentaire.
 
 ---
 

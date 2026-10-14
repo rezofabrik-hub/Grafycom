@@ -45,9 +45,11 @@ différents est exactement ce qui finit par rester.
       dans le calendrier l'aurait été davantage. Les **huit** publications
       concernées (n° 10, 12, 14, 15, 16, 18, 21, 22) sont redessinées, et
       la n° 21 gagne une septième planche au passage. Détail et
-      justification dans `photos-a-prendre.md`. Deux reels, le n° 20 et le
-      n° 24, demandent encore de filmer : dis-moi si je les redessine
-      aussi.
+      justification dans `photos-a-prendre.md`. Les reels **n° 20 et
+      n° 24** sont redessinés à leur tour, sur ta demande : dix écrans
+      finis de plus. Restent les reels **n° 4 et n° 8**, les deux
+      d'octobre, qui gardent leurs fiches de tournage — et qui sont les
+      premiers à partir.
 
 ## Périmé dans le document d'arbitrages
 
