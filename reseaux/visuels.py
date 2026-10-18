@@ -33,6 +33,7 @@ Depuis un script :
     from visuels import Planche, LARGE, HAUT
 """
 import argparse
+import os
 import pathlib
 import re
 import sys
@@ -235,10 +236,26 @@ def _fonds_couleur():
         "magenta_corail": (140.0, ("magenta", "corail")),
         "bleu_vif_violet": (185.0, ("bleu_vif", "violet")),
     }
+    # Les teintes de la charte sont faites pour de petits accents sur
+    # du creme. A pleine page sous du texte, elles sont trop claires :
+    # mesure faite, aucune encre de la charte n'atteint 4,5:1 sur un
+    # turquoise ou un orange purs, et le controle de contraste le dit
+    # planche apres planche. On les approfondit donc vers l'encre — qui
+    # est elle aussi dans la charte, comme pour tous les _melange() du
+    # fichier. La teinte reste reconnaissable, le texte passe.
     fonds = {}
     for nom, (angle, (a, b)) in paires.items():
         fonds[nom] = (angle, [(0.0, C[a]), (1.0, C[b])])
     return fonds
+
+
+def _vers_encre(hexa, k):
+    """Une teinte de la charte, approfondie vers l'encre de la charte."""
+    enc = C["encre"]
+    a = [int(hexa[i:i + 2], 16) for i in (1, 3, 5)]
+    e = [int(enc[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#%02x%02x%02x" % tuple(int(a[i] + (e[i] - a[i]) * k)
+                                   for i in range(3))
 
 
 FONDS_DEGRADE.update(_fonds_couleur())
@@ -253,7 +270,8 @@ def _sombre(nom):
             r, g, b = (int(h[i:i + 2], 16) for i in (1, 3, 5))
             vals.append(0.2126 * r + 0.7152 * g + 0.0722 * b)
         return sum(vals) / len(vals) < 150
-    r, g, b = teinte(nom)
+    hx = teinte(nom)
+    r, g, b = (int(hx[i:i + 2], 16) for i in (1, 3, 5))
     return 0.2126 * r + 0.7152 * g + 0.0722 * b < 150
 
 
@@ -293,6 +311,162 @@ def _degrade_lineaire(large, haut, angle, arrets):
     return im.resize((large, haut), Image.BICUBIC)
 
 
+class _Dessin:
+    """Un ImageDraw qui retient les textes qu'on lui demande d'écrire.
+
+    Pourquoi : la couleur du fond est devenue automatique, mais les
+    gabarits ecrivent aussi en direct — « p.d.text(...) » — avec des
+    couleurs choisies contre l'ancien fond clair. Un menu de restaurant
+    en creme sur du magenta ne se lit plus, et rien ne le signalait.
+
+    On ne peut pas relire 300 appels a la main a chaque changement de
+    direction. On enregistre donc ce qui est ecrit, et _contraste() le
+    mesure a l'enregistrement : la lisibilite devient un controle, au
+    meme titre que le chevauchement et le debordement.
+    """
+
+    # Le contraire de chaque encre de la charte. Pas un inverse
+    # calcule : un choix, pour que « discret » reste discret des deux
+    # cotes — taupe sur creme et creme sur violet jouent le meme role.
+    # Deux escaliers d'encre, du plus discret au plus franc. Quand une
+    # encre ne tient pas sur son fond, on monte l'escalier d'en face
+    # jusqu'a ce que le rapport passe — et on s'arrete la. « Discret »
+    # reste discret tant que c'est lisible, et devient franc quand il
+    # faut : c'est l'arbitrage qu'un oeil ferait, rendu mesurable.
+    CLAIRES = ["creme", "sable", "blanc"]
+    FONCEES = ["taupe", "brun", "encre"]
+
+    def __init__(self, im):
+        self._im = im
+        self._d = ImageDraw.Draw(im)
+        self.textes = []
+        self.rattrapes = []
+
+    def __getattr__(self, nom):
+        return getattr(self._d, nom)
+
+    def _fond_sous(self, xy, texte, fonte):
+        """La luminance médiane de ce qui se trouve sous ces glyphes."""
+        try:
+            b = self._d.textbbox(xy, texte, font=fonte)
+        except Exception:
+            return None
+        x0, y0, x1, y1 = (int(v) for v in b)
+        x0, y0 = max(0, x0), max(0, y0)
+        x1 = min(self._im.width, max(x0 + 1, x1))
+        y1 = min(self._im.height, max(y0 + 1, y1))
+        if x1 <= x0 or y1 <= y0:
+            return None
+        vals = sorted(self._im.crop((x0, y0, x1, y1)).convert("L").getdata())
+        if not vals:
+            return None
+        return _luminance((vals[len(vals) // 2],) * 3)
+
+    # Le seuil depend du role, pas seulement du corps. WCAG demande
+    # 4,5:1 pour de la matiere a lire ; le pseudo en pied de planche et
+    # le « 3/6 » du coin sont des MARQUES — on sait d'avance ce qu'elles
+    # disent, on ne les lit pas, on les repere. 3:1 y suffit, et exiger
+    # 4,5 obligerait a mettre du blanc pur sur des fonds moyens ou rien
+    # d'autre ne passe : on gagnerait un chiffre et on perdrait la
+    # discretion qui est tout l'interet de ces deux signes.
+    def text(self, xy, texte, *a, role=None, **kw):
+        """Écrit — et change l'encre si le fond la rend illisible.
+
+        Les 125 planches passent des couleurs en dur, choisies quand
+        tous les fonds etaient clairs. Les relire une par une a chaque
+        changement de direction est exactement ce qui finit par laisser
+        passer un menu creme sur magenta.
+
+        Alors on mesure : la luminance de ce qui est DEJA dessine sous
+        les glyphes, le rapport WCAG avec l'encre demandee, et si le
+        rapport ne tient pas on prend le contraire de cette encre —
+        quand il fait mieux. Jamais une couleur inventee : le contraire
+        est lui aussi dans la charte.
+        """
+        fonte = kw.get("font") or (a[0] if a else None)
+        fill = kw.get("fill") or (a[1] if len(a) > 1 else None)
+        if texte and str(texte).strip() and fill and fonte is not None:
+            nom = next((k for k, v in C.items()
+                        if isinstance(fill, str) and fill.lower() == v.lower()),
+                       None)
+            fondl = self._fond_sous(xy, texte, fonte)
+            connue = nom in self.CLAIRES or nom in self.FONCEES
+            if nom and fondl is not None and connue:
+                corps = getattr(fonte, "size", 40)
+                exige = 3.0 if (corps >= 54 or role == "marque") else 4.5
+                r = _rapport(_luminance(fill), fondl)
+                if r < exige:
+                    # Les deux escaliers, et on garde le meilleur. Sur
+                    # un fond moyen — un violet, un corail — ni le clair
+                    # ni le fonce ne gagne d'avance : seule la mesure le
+                    # dit, et un escalier choisi par avance se trompe
+                    # exactement la.
+                    autre, r2 = nom, r
+                    for cand in self.CLAIRES + self.FONCEES:
+                        rc = _rapport(_luminance(cand), fondl)
+                        if rc > r2:
+                            autre, r2 = cand, rc
+                        if r2 >= exige:
+                            break
+                    if autre != nom and r2 > r:
+                        self.rattrapes.append((str(texte)[:30], nom, autre,
+                                               round(r, 2), round(r2, 2)))
+                        fill = teinte(autre)
+                        if "fill" in kw:
+                            kw["fill"] = fill
+                        else:
+                            a = list(a)
+                            if len(a) > 1:
+                                a[1] = fill
+                            else:
+                                kw["fill"] = fill
+                            a = tuple(a)
+            self.textes.append((xy, str(texte), fonte, fill, role))
+        return self._d.text(xy, texte, *a, **kw)
+
+
+def _luminance(couleur):
+    """La luminance relative WCAG d'une couleur, nom de charte ou RVB."""
+    if isinstance(couleur, str):
+        hx = couleur if couleur.startswith("#") else teinte(couleur)
+        rvb = tuple(int(hx[i:i + 2], 16) for i in (1, 3, 5))
+    else:
+        rvb = tuple(couleur[:3])
+    c = []
+    for v in rvb:
+        v /= 255.0
+        c.append(v / 12.92 if v <= 0.04045 else ((v + 0.055) / 1.055) ** 2.4)
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+
+
+def _rapport(a, b):
+    """Le rapport de contraste WCAG entre deux luminances."""
+    clair, sombre = max(a, b), min(a, b)
+    return (clair + 0.05) / (sombre + 0.05)
+
+
+def _grouper(soucis):
+    """Recolle les lettres d'un surtitre en un seul signalement.
+
+    surtitre() ecrit caractere par caractere, pour l'interlettrage.
+    Signaler « I », « D », « E »... fait seize lignes pour un defaut.
+    """
+    sortie, tampon = [], []
+    for t, r, e in soucis:
+        if len(t) == 1:
+            tampon.append((t, r, e))
+            continue
+        if tampon:
+            sortie.append(("".join(x[0] for x in tampon),
+                           min(x[1] for x in tampon), tampon[0][2]))
+            tampon = []
+        sortie.append((t, r, e))
+    if tampon:
+        sortie.append(("".join(x[0] for x in tampon),
+                       min(x[1] for x in tampon), tampon[0][2]))
+    return sortie
+
+
 def _etiquette(chemin):
     """« dossier/fichier », parce que « 02.png » revient vingt-cinq fois."""
     c = pathlib.Path(chemin)
@@ -308,8 +482,14 @@ class Planche:
             self.im = _degrade_lineaire(large, haut, *FONDS_DEGRADE[fond])
         else:
             self.im = Image.new("RGB", (large, haut), teinte(fond))
-        self.d = ImageDraw.Draw(self.im)
+        self.d = _Dessin(self.im)
         self._y = MARGE
+        # Le fond decide de la couleur du texte, et il la decide tout
+        # seul. Le faire a la main, c'est 125 appels a relire a chaque
+        # changement de direction, et un oubli qui sort illisible. La
+        # luminance est CALCULEE depuis la charte, comme le reste.
+        self.fond = fond
+        self.sombre = _sombre(fond)
 
     # Le curseur vertical passe par une propriete, et pas par un simple
     # attribut. Raison : les gabarits ecrivent souvent « p.y = 640 » pour
@@ -339,7 +519,22 @@ class Planche:
         return self
 
     # -- texte -------------------------------------------------------
-    def titre(self, texte, taille=96, couleur="encre", interligne=None,
+    def _redessiner(self):
+        """Repointe le crayon sur la nouvelle image, sans perdre le relevé."""
+        anciens = getattr(self.d, "textes", [])
+        rattrapes = getattr(self.d, "rattrapes", [])
+        self.d = _Dessin(self.im)
+        self.d.textes = anciens
+        self.d.rattrapes = rattrapes
+        return self
+
+    def _encre(self, demande, clair="blanc", fonce="encre"):
+        """La couleur demandée, ou celle que le fond impose."""
+        if demande is not None:
+            return demande
+        return clair if self.sombre else fonce
+
+    def titre(self, texte, taille=96, couleur=None, interligne=None,
               y=None, centre=False, echelle=True):
         """Le titrage, en Playfair comme sur le site et dans le feed.
 
@@ -351,6 +546,7 @@ class Planche:
             taille = int(taille * TITRE_ECHELLE)
         if interligne is None:
             interligne = TITRE_INTERLIGNE
+        couleur = self._encre(couleur)
         f = titrage(taille)
         poses = []
         if y is not None:
@@ -419,7 +615,7 @@ class Planche:
                 self.orphelins.append(lignes[-1].strip())
         return self
 
-    def surtitre(self, texte, couleur="taupe", taille=26, y=None, centre=False,
+    def surtitre(self, texte, couleur=None, taille=26, y=None, centre=False,
                  bandeau=False):
         """Le label en capitales espacees, sur un bandeau sombre en tete.
 
@@ -438,6 +634,7 @@ class Planche:
         le veut, c'est sur la premiere ET la derniere planche de chaque
         carrousel — l'accroche et l'appel — et nulle part ailleurs.
         """
+        couleur = self._encre(couleur, "creme", "taupe")
         if bandeau:
             h = 230
             self.d.rectangle([0, 0, self.l, h], fill=teinte("encre"))
@@ -495,8 +692,9 @@ class Planche:
             self.debordements = getattr(self, "debordements", 0) + 1
         return self
 
-    def texte(self, contenu, taille=38, couleur="brun", graisse=400,
+    def texte(self, contenu, taille=38, couleur=None, graisse=400,
               interligne=1.38, avant=22):
+        couleur = self._encre(couleur, "creme", "brun")
         f = police(graisse, taille)
         self.y += avant
         for ligne in couper(contenu, f, self.l - 2 * MARGE):
@@ -581,7 +779,7 @@ class Planche:
                 d.line([(0, i), (self.l, i)], fill=(r, v, b, a))
             self.im.paste(calque, (0, self.h - h), calque)
 
-        self.d = ImageDraw.Draw(self.im)
+        self._redessiner()
         self.sur_photo = True
         return self
 
@@ -605,8 +803,8 @@ class Planche:
         import random
         noms = teintes or ["bleu_vif", "turquoise", "violet", "rose",
                            "corail", "jaune"]
-        cx = self.l // 2 if cx is None else cx
-        cy = self.h // 2 if cy is None else cy
+        cx = int(self.l * 0.64) if cx is None else cx
+        cy = int(self.h * 0.62) if cy is None else cy
         R = rayon or int(min(self.l, self.h) * 0.46)
         al = random.Random(5)
 
@@ -638,10 +836,10 @@ class Planche:
 
         fond = self.im.convert("RGBA")
         self.im = Image.alpha_composite(fond, tache).convert("RGB")
-        self.d = ImageDraw.Draw(self.im)
+        self._redessiner()
         return self
 
-    def abonnement(self, couleur="sable", texte=None):
+    def abonnement(self, couleur=None, texte=None):
         """La relance d'abonnement, sur le carton de fin d'un reel.
 
         Uniquement la : ce sont les reels qui atteignent les gens qui ne
@@ -649,24 +847,27 @@ class Planche:
         planche ne se remarque plus. Elle se pose au-dessus de la
         signature, jamais dessus.
         """
+        couleur = self._encre(couleur, "sable", "brun")
         t = texte or "Abonnez-vous : un conseil par semaine."
         f = police(600, 30)
         y = self.h - MARGE - 26 - 48
         self.d.text((MARGE, y), t, font=f, fill=teinte(couleur))
         return self
 
-    def signature(self, couleur="blanc"):
+    def signature(self, couleur=None):
         """Le pseudo, en bas à gauche. Jamais saisi à la main ailleurs."""
+        couleur = self._encre(couleur, "creme", "brun")
         f = police(600, 26)
         self.d.text((MARGE, self.h - MARGE - 26), PSEUDO, font=f,
-                    fill=teinte(couleur))
+                    fill=teinte(couleur), role="marque")
         return self
 
-    def numero(self, n, total, couleur="brun"):
+    def numero(self, n, total, couleur=None):
+        couleur = self._encre(couleur, "creme", "brun")
         f = police(600, 24)
         t = "%d/%d" % (n, total)
         self.d.text((self.l - MARGE - f.getlength(t), MARGE - 30), t,
-                    font=f, fill=teinte(couleur))
+                    font=f, fill=teinte(couleur), role="marque")
         return self
 
     # -- formes ------------------------------------------------------
@@ -782,7 +983,7 @@ class Planche:
     def flouter(self, rayon=14):
         from PIL import ImageFilter
         self.im = self.im.filter(ImageFilter.GaussianBlur(rayon))
-        self.d = ImageDraw.Draw(self.im)
+        self._redessiner()
         return self
 
     def sticker(self, titre, lignes, y=None, fond="blanc"):
@@ -958,8 +1159,49 @@ class Planche:
         fusion = ImageChops.overlay(self.im.convert("RGB"),
                                     Image.merge("RGB", (bruit, bruit, bruit)))
         self.im = Image.blend(self.im.convert("RGB"), fusion, 0.5)
-        self.d = ImageDraw.Draw(self.im)
+        self._redessiner()
         return self
+
+    def _contraste(self, seuil=None):
+        """Mesure la lisibilité de chaque texte écrit sur la planche.
+
+        Pour chaque texte releve : la luminance de son encre est connue,
+        celle de son fond est relevee sur l'image finale dans une
+        couronne autour des glyphes — le fond REEL, degrade, lavis et
+        photo compris, et pas celui qu'on croit. Le rapport WCAG en
+        decoule. Sous 3, un texte de titre ne se lit plus ; on signale.
+        """
+        souci = []
+        for xy, texte, fonte, fill, role in getattr(self.d, "textes", []):
+            if fonte is None:
+                continue
+            # Le seuil depend de la taille, comme dans WCAG : un gros
+            # titre tient a 3:1, une ligne de legende non. Et sur un
+            # feed, une legende est vue en vignette — on prend 4,5.
+            corps = getattr(fonte, "size", 40)
+            exige = seuil if seuil else (
+                3.0 if (corps >= 54 or role == "marque") else 4.5)
+            m = Image.new("L", (self.l, self.h), 0)
+            ImageDraw.Draw(m).text(xy, texte, font=fonte, fill=255)
+            boite = m.getbbox()
+            if not boite:
+                continue
+            glyphes = m.point(lambda v: 255 if v > 140 else 0)
+            autour = ImageChops.subtract(
+                m.filter(ImageFilter.MaxFilter(9)).point(
+                    lambda v: 255 if v > 40 else 0), glyphes)
+            if not autour.getbbox():
+                continue
+            gris = self.im.convert("L")
+            vals = [v for v, a in zip(gris.getdata(), autour.getdata()) if a]
+            if not vals:
+                continue
+            vals.sort()
+            fondl = _luminance((vals[len(vals) // 2],) * 3)
+            r = _rapport(_luminance(fill), fondl)
+            if r < exige:
+                souci.append((texte[:34], round(r, 2), round(exige, 1)))
+        return souci
 
     def ecrire(self, chemin):
         n = self._titre_recouvert()
@@ -976,6 +1218,10 @@ class Planche:
                   % (_etiquette(chemin),
                      ", ".join("%s recouvert de %d px" % (q, d)
                                for q, d in self.chevauchements)))
+        for t, r, e in (_grouper(self._contraste())
+                        if os.environ.get("GRAFYCOM_CONTRASTE") else []):
+            print("   CONTRASTE %-28s %.2f:1 (il faut %.1f)  « %s »"
+                  % (_etiquette(chemin), r, e, t))
         if getattr(self, "debordements", 0):
             print("   ATTENTION %s : %d bloc(s) descendent sous la "
                   "signature" % (_etiquette(chemin),
@@ -1078,6 +1324,7 @@ def dilemme_enseigne(dossier=None):
         return p
 
     p = Planche("creme")
+    p.filet(y=116)
     p.titre("Laquelle se lit depuis\nle trottoir d'en face ?", 58, y=180)
     facades(p); reperes(p)
     p.signature("brun")
@@ -1100,6 +1347,7 @@ def carrousel_typographie(dossier=None):
     t = "Cette police est magnifique."
     p.centrer(p.h_titre(t, 92) + p.h_texte("Et elle va vous coûter des clients.", 44, avant=40) + 39)
     p.surtitre("Typographie")
+    p.filet()
     p.titre(t, 92)
     p.texte("Et elle va vous coûter des clients.", 44, "corail", 600, avant=40)
     p.signature("brun"); f.append(p.ecrire(d / "01.png"))
@@ -1240,6 +1488,7 @@ def carrousel_droits(dossier=None):
     t = "Qui possède\nvotre logo ?"
     p.centrer(p.h_titre(t, 110) + p.h_texte("La réponse surprend la plupart des chefs d'entreprise.", 42, avant=50) + 39)
     p.surtitre("Droits & propriété")
+    p.filet()
     p.titre(t, 110); p.texte("La réponse surprend la plupart des chefs d'entreprise.", 42, "brun", 400, avant=50)
     p.signature("brun"); f.append(p.ecrire(d / "01.png"))
 
@@ -2129,6 +2378,7 @@ def pub09_logo_reduction(dossier=None):
 
     p = Planche("creme")
     p.surtitre("Conseil", y=130)
+    p.filet()
     p.titre("Votre logo tient-il" + "\n" + "sur un stylo ?", 78)
     _logo_fictif(p.d, 400, 760, 210)
     _logo_fictif(p.d, 790, 760, 26)
@@ -2268,6 +2518,51 @@ def _melange(a, b, k):
 # Elles s'appliquent aux objets dessines, jamais au fond de la planche
 # ni au texte : un titre grene est un titre sale.
 # ---------------------------------------------------------------------
+def pose(flou=20, force=78, bas=15, cote=6):
+    """Décorateur : l'objet dessiné reçoit l'ombre de sa propre silhouette.
+
+    L'ombre rectangulaire de _ombre_contact() suppose que l'objet
+    remplit sa boite. C'est vrai d'une devanture, faux d'un sachet, d'une
+    carte tournee ou d'un logo rond — et une ombre carree sous un objet
+    rond est pire que pas d'ombre du tout.
+
+    Ici on ne suppose rien : on photographie la planche avant l'appel,
+    on laisse la fonction dessiner, et on compare. Les pixels qui ont
+    change SONT la silhouette de l'objet. On la floute, on la decale,
+    on la pose sur l'etat d'avant, puis on remet l'objet par-dessus.
+    L'ombre est donc exacte quoi que la fonction ait trace, et le jour
+    ou une fonction change de forme, l'ombre suit sans qu'on y touche.
+    """
+    def enveloppe(fn):
+        import functools
+
+        @functools.wraps(fn)
+        def appel(p, *a, **kw):
+            avant = p.im.copy()
+            r = fn(p, *a, **kw)
+            if not GRAIN and not force:
+                return r
+            diff = ImageChops.difference(p.im.convert("RGB"),
+                                         avant.convert("RGB")).convert("L")
+            silhouette = diff.point(lambda v: 255 if v > 16 else 0)
+            if not silhouette.getbbox():
+                return r
+            ombre = Image.new("RGBA", p.im.size, (0, 0, 0, 0))
+            teint = Image.new("RGBA", p.im.size, (32, 26, 22, 255))
+            decale = Image.new("L", p.im.size, 0)
+            decale.paste(silhouette, (cote, bas))
+            ombre.paste(teint, (0, 0),
+                        decale.point(lambda v: int(v * force / 255)))
+            ombre = ombre.filter(ImageFilter.GaussianBlur(flou))
+            fond = Image.alpha_composite(avant.convert("RGBA"), ombre)
+            fond.paste(p.im.convert("RGBA"), (0, 0), silhouette)
+            p.im = fond.convert("RGB")
+            p._redessiner()
+            return r
+        return appel
+    return enveloppe
+
+
 def _ombre_contact(p, boite, flou=22, force=86, bas=16, cote=6):
     """L'ombre portée d'un objet posé, decalee vers le bas.
 
@@ -2282,7 +2577,7 @@ def _ombre_contact(p, boite, flou=22, force=86, bas=16, cote=6):
         radius=max(2, int((x1 - x0) * 0.02)), fill=(32, 26, 22, force))
     calque = calque.filter(ImageFilter.GaussianBlur(flou))
     p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
@@ -2311,7 +2606,7 @@ def _modele(p, boite, couleur, angle=138.0, amplitude=0.16, rayon=0):
         p.im.paste(deg, (x0, y0), m)
     else:
         p.im.paste(deg, (x0, y0))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
@@ -2328,7 +2623,7 @@ def _grain_matiere(p, boite, force=9, echelle=2):
     zone = p.im.crop((x0, y0, x1, y1)).convert("RGB")
     fusion = ImageChops.overlay(zone, Image.merge("RGB", (bruit,) * 3))
     p.im.paste(Image.blend(zone, fusion, 0.55), (x0, y0))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
@@ -2348,7 +2643,7 @@ def _reflet_verre(p, boite, force=52, largeur=0.26, angle=-22):
     calque = calque.filter(ImageFilter.GaussianBlur(max(2, lx // 90)))
     zone = p.im.crop((x0, y0, x1, y1)).convert("RGBA")
     p.im.paste(Image.alpha_composite(zone, calque).convert("RGB"), (x0, y0))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
@@ -2364,7 +2659,7 @@ def _halo(p, cx, cy, rx, ry, couleur, force=110, flou=46):
                                    fill=teinte(couleur) + "%02x" % force)
     calque = calque.filter(ImageFilter.GaussianBlur(flou))
     p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
@@ -2506,7 +2801,7 @@ def _rue_crepuscule(p, y_haut, y_bas, nuit=0.54):
                              [(0.0, C["bleu"]), (0.42, C["violet"]),
                               (0.78, C["corail"]), (1.0, C["jaune"])])
     p.im.paste(ciel, (0, y_haut))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
 
     # la rue : le trottoir d'en face, la bordure, puis la chaussee. Le
     # reflet des vitrines sur le bitume mouille d'automne n'est pas un
@@ -2571,6 +2866,7 @@ def _citrouille_plate(d, cx, cy, larg, couleur):
     return d
 
 
+@pose(flou=26, force=72, bas=18, cote=8)
 def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
              fascia=True, couverture=0.0, bandeau=0.0, oeil=False,
              encombre=False, reflet=False, lettres=None, stickers=None,
@@ -2590,11 +2886,6 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
     permet de placer la bande des yeux a 1,40-1,70 m sans la deviner.
     """
     p._place(y, "vitrine")
-    if not trait:
-        # avant tout le reste : une devanture sans ombre flotte sur le
-        # fond, et c'est ce qui la faisait lire comme un pictogramme.
-        _ombre_contact(p, (x, y, x + larg, y + haut), flou=26, force=74,
-                       bas=18, cote=8)
     ep = max(4, int(larg // 52))
     cadre = "brun" if trait else "encre"
     hf = haut * 0.17 if fascia else 0
@@ -2616,7 +2907,7 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
                                    Image.new("RGB", interieur.size,
                                              _melange("jaune", "creme", 0.55)),
                                    0.52), (int(x), int(gy0)))
-            p.d = ImageDraw.Draw(p.im)
+            p._redessiner()
         else:
             p.d.rectangle([x, gy0, x + larg, gy1],
                           fill=_melange("encre", "bleu", 0.22))
@@ -2667,7 +2958,7 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
         calque.putalpha(Image.composite(calque.split()[3],
                                         Image.new("L", p.im.size, 0), masque))
         p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
 
     # -- le decor de fetes ------------------------------------------
     if couverture > 0 or bandeau > 0:
@@ -2685,7 +2976,7 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
                                          + ("46" if trait
                                             else "%02x" % opacite_decor))
         p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
         n = max(3, int(larg / 110))
         for i in range(n):
             cx = x + larg * (0.5 + (i - (n - 1) / 2) * 0.9 / n)
@@ -2720,7 +3011,7 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
         ImageDraw.Draw(calque).rectangle([x, y170, x + larg, y140],
                                          fill=teinte("corail") + "3c")
         p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
         for yy in (y140, y170):
             p.d.line([(x - 18, yy), (x + larg + 18, yy)], fill=teinte("corail"),
                      width=3)
@@ -2833,6 +3124,7 @@ MATIERES = {
 }
 
 
+@pose(flou=14, force=72, bas=10, cote=5)
 def _matiere(p, x, y, cote, genre, epaisseur=0.16):
     """Un echantillon vu de trois quarts, sa tranche tournee vers nous.
 
@@ -2904,7 +3196,7 @@ def _matiere(p, x, y, cote, genre, epaisseur=0.16):
         bas = Image.blend(bas, Image.new("RGB", bas.size, teinte("blanc")), 0.46)
         sous.paste(bas, (0, int(haut * 0.42)))
         p.im.paste(sous, (int(x), int(y + e)))
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
         p.d.line([(x, y + e + haut * 0.42), (x + cote, y + e + haut * 0.42)],
                  fill=_melange("blanc", "taupe", 0.25), width=max(3, int(cote * 0.014)))
         p.d.rectangle([x, y + e, x + cote, y + cote],
@@ -3001,6 +3293,7 @@ def _bande_jours(p, x, y, larg, debut, fin, jalons=None, haut_case=None):
     return y + (ligne + 1) * haut_case
 
 
+@pose(flou=20, force=76, bas=14, cote=6)
 def _sachet(p, cx, y, larg, haut, trait=False, zone=False, bandeau=True,
             logo=True, couleur="violet"):
     """Un sachet cadeau en elevation, avec ou sans sa zone reservee.
@@ -3062,6 +3355,7 @@ def _sachet(p, cx, y, larg, haut, trait=False, zone=False, bandeau=True,
     return p
 
 
+@pose(flou=16, force=70, bas=11, cote=5)
 def _feuille_formulaire(p, cx, y, larg, haut, numero, titre, lignes=5):
     """Une feuille de formulaire, SCHEMATISEE et dite comme telle.
 
@@ -3123,6 +3417,7 @@ def _horloge(p, cx, cy, r, couleur="corail", heure=17, minute=0):
 # ---------------------------------------------------------------------
 # Les trois demonstrations — n° 12 et n° 21.
 # ---------------------------------------------------------------------
+@pose(flou=18, force=66, bas=12, cote=5)
 def _microperfore(p, x, y, larg, haut):
     """Le microperfore, vu des deux cotes dans la meme image.
 
@@ -3138,7 +3433,7 @@ def _microperfore(p, x, y, larg, haut):
                             [(0.0, C["violet"]), (0.5, C["magenta"]),
                              (1.0, C["corail"])])
     p.im.paste(aff, (int(x), int(y)))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     f = police(800, int(haut * 0.10))
     t = "SOLDES"
     p.d.text((x + larg / 4 - p.d.textlength(t, font=f) / 2, y + haut * 0.42),
@@ -3174,6 +3469,7 @@ def _microperfore(p, x, y, larg, haut):
     return y + haut + 20 + haut * 0.10
 
 
+@pose(flou=18, force=66, bas=12, cote=5)
 def _depoli(p, x, y, larg, haut):
     """Le depoli : on cache le bas, la lumiere passe quand meme."""
     sous = Image.new("RGB", (int(larg), int(haut)),
@@ -3193,7 +3489,7 @@ def _depoli(p, x, y, larg, haut):
     bas = Image.blend(bas, Image.new("RGB", bas.size, teinte("blanc")), 0.50)
     sous.paste(bas, (0, int(haut * 0.46)))
     p.im.paste(sous, (int(x), int(y)))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     p.d.line([(x, y + haut * 0.46), (x + larg, y + haut * 0.46)],
              fill=teinte("blanc"), width=5)
     p.d.rectangle([x, y, x + larg, y + haut], outline=teinte("encre"), width=5)
@@ -3205,6 +3501,7 @@ def _depoli(p, x, y, larg, haut):
     return p
 
 
+@pose(flou=18, force=66, bas=12, cote=5)
 def _lettres_sur_verre(p, x, y, larg, haut):
     """Lettres decoupees contre pave blanc : la comparaison du reel."""
     demi = larg / 2 - 14
@@ -3219,7 +3516,7 @@ def _lettres_sur_verre(p, x, y, larg, haut):
             df.rectangle([demi * gx, haut * (1 - gh), demi * (gx + gl), haut],
                          fill=_melange(c, "creme", 0.30))
         p.im.paste(fond, (int(xx), int(y)))
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
         f = police(800, int(haut * 0.11))
         lignes = ["MAISON", "BERNAT"]
         if plein:
@@ -3269,6 +3566,7 @@ def _trois_distances(p, y, echelles=((2, 0.44), (8, 0.27), (25, 0.15))):
     return y_sol + 26 + 40
 
 
+@pose(flou=18, force=80, bas=12, cote=6)
 def _carte(p, cx, cy, larg, haut, angle=0.0, fond="creme", gaufre=False,
            texte=None, ombre=20):
     """Une carte imprimee posee a plat, legerement tournee.
@@ -3308,10 +3606,11 @@ def _carte(p, cx, cy, larg, haut, angle=0.0, fond="creme", gaufre=False,
     tourne = im.rotate(angle, expand=True, resample=Image.BICUBIC)
     p.im.paste(tourne, (int(cx - tourne.width / 2), int(cy - tourne.height / 2)),
                tourne)
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
+@pose(flou=20, force=78, bas=14, cote=7)
 def _emballage_kraft(p, cx, cy, larg, haut, bandeau=True, pastille=True):
     """Un paquet en papier kraft, son bandeau imprime et sa pastille."""
     x0, y0 = cx - larg / 2, cy - haut / 2
@@ -3379,7 +3678,7 @@ def _fond_du_texte(p, x, y, larg, haut):
         else:
             ds.rectangle([0, 0, demi, haut], fill=_melange("encre", "brun", 0.22))
         p.im.paste(sous, (int(xx), int(y)))
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
         f = police(800, int(haut * 0.11))
         for k, ligne in enumerate(("OUVERT", "le dimanche")):
             fk = f if k == 0 else police(600, int(haut * 0.072))
@@ -3408,7 +3707,7 @@ def _trottoir_den_face(p, y_haut, y_bas):
                              [(0.0, C["encre"]), (0.6, C["bleu"]),
                               (1.0, C["violet"])])
     p.im.paste(ciel, (0, y_haut))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     y_sol = y_haut + H * 0.74
     p.d.rectangle([0, y_haut + H * 0.44, p.l, y_sol],
                   fill=_melange("taupe", "encre", 0.74))
@@ -3551,6 +3850,7 @@ def pub12_reel_vitrophanie(dossier=None):
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=200)
+    p.filet()
     p.titre("Vous avez un panneau\nde 6 m².\nIl est vide.", 94, y=300)
     _vitrine(p, 120, 900, 840, 480, trait=True, enseigne="VOTRE NOM")
     f = police(600, 34)
@@ -4165,6 +4465,7 @@ def pub22_sticker_enseigne(dossier=None):
 # reel est precisement que la matiere n'existe que sous un certain
 # angle, et une paire le dit mieux qu'une rotation.
 
+@pose(flou=14, force=70, bas=9, cote=4)
 def _carte_tranche(p, x, y, larg, haut, etiquette):
     """Une carte epaisse vue legerement de trois quarts, sa tranche visible.
 
@@ -4187,6 +4488,7 @@ def _carte_tranche(p, x, y, larg, haut, etiquette):
     return p
 
 
+@pose(flou=14, force=66, bas=9, cote=4)
 def _papier_profil(p, x, y, larg, affaissement, etiquette, couleur="corail"):
     """Une feuille vue sur la tranche, tenue a gauche, qui s'affaisse.
 
@@ -4219,6 +4521,7 @@ def _papier_profil(p, x, y, larg, affaissement, etiquette, couleur="corail"):
     return p
 
 
+@pose(flou=16, force=70, bas=10, cote=5)
 def _gaufrage(p, x, y, cote, rasante=True, legende=None,
               couleur_legende="brun"):
     """Un gaufrage, eclaire de cote ou de face.
@@ -4257,6 +4560,7 @@ def _gaufrage(p, x, y, cote, rasante=True, legende=None,
     return p
 
 
+@pose(flou=16, force=70, bas=10, cote=5)
 def _dorure(p, x, y, larg, haut, allume=True, legende=None,
             couleur_legende="brun"):
     """Un filet de dorure a chaud, qui accroche ou non la lumiere.
@@ -4278,7 +4582,7 @@ def _dorure(p, x, y, larg, haut, allume=True, legende=None,
                                    (0.46, C["jaune"]), (0.58, C["blanc"]),
                                    (0.74, C["jaune"]), (1.0, C["brun"])])
         p.im.paste(barre, (int(bx), int(by)))
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
         _halo(p, bx + bl / 2, by + bh / 2, bl * 0.34, bh * 2.4, "jaune", 64, 26)
     else:
         p.d.rectangle([bx, by, bx + bl, by + bh],
@@ -4308,6 +4612,7 @@ def pub20_reel_matieres(dossier=None):
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=200)
+    p.filet()
     p.titre("Ce que vos clients\nsentent\navant de lire.", 84, y=280)
     _gaufrage(p, 180, 900, 700, rasante=True)
     p.y = 1640
@@ -4370,6 +4675,7 @@ def pub20_reel_matieres(dossier=None):
 # ---------------------------------------------------------------------
 # Le bilan de fin d'annee — n° 24.
 # ---------------------------------------------------------------------
+@pose(flou=18, force=74, bas=12, cote=6)
 def _page_calendrier(p, x, y, larg, haut, mois, annee, dernier=None,
                      couleur="violet"):
     """Une page de calendrier mural, avec sa spirale et son mois en grand.
@@ -4420,6 +4726,7 @@ def _page_calendrier(p, x, y, larg, haut, mois, annee, dernier=None,
     return p
 
 
+@pose(flou=14, force=64, bas=9, cote=4)
 def _support_logo(p, cx, cy, taille, genre, brouille=False,
                   couleur_legende="taupe"):
     """Le meme logo pose sur un polo, une carte ou un panneau.
@@ -4474,7 +4781,7 @@ def _support_logo(p, cx, cy, taille, genre, brouille=False,
         vignette = vignette.resize((int(r * 2.4), int(r * 2.4)),
                                    Image.NEAREST)
         p.im.paste(vignette, (int(lx - r * 1.2), int(ly - r * 1.2)))
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
     else:
         _logo_fictif(p.d, lx, ly, r, detail=True)
 
@@ -4503,6 +4810,7 @@ def pub24_reel_bilan(dossier=None):
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=200)
+    p.filet()
     p.titre("Non,\npas en janvier.", 116, y=290)
     _page_calendrier(p, 110, 820, 400, 520, 12, 2026, couleur="bleu")
     _page_calendrier(p, 580, 820, 400, 520, 1, 2027, couleur="violet")
@@ -4631,7 +4939,7 @@ def _synthese(p, x, y, cote, additive=True):
         melange = (ImageChops.add(melange, calque) if additive
                    else ImageChops.multiply(melange, calque))
     p.im.paste(melange, (int(x), int(y)))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     p.d.rectangle([x, y, x + cote, y + cote],
                   outline=_melange("taupe", "creme", 0.4), width=3)
     f = police(800, max(20, int(cote * 0.075)))
@@ -4659,6 +4967,7 @@ def _hors_gamme(rvb, force=0.30):
     return tuple(int(c + (gris - c) * force * 1.6) * 90 // 100 for c in rvb)
 
 
+@pose(flou=24, force=86, bas=18, cote=7)
 def _ecran(p, cx, cy, larg, couleur):
     """Un moniteur, son pied, et un aplat de couleur dedans."""
     p._place(cy - larg * 0.31, "écran")
@@ -4678,6 +4987,7 @@ def _ecran(p, cx, cy, larg, couleur):
     return p
 
 
+@pose(flou=16, force=72, bas=11, cote=5)
 def _feuille_imprimee(p, cx, cy, larg, couleur, angle=-4):
     """La meme couleur, posee sur du papier."""
     haut = larg * 0.70
@@ -4695,10 +5005,11 @@ def _feuille_imprimee(p, cx, cy, larg, couleur, angle=-4):
     p.im.paste(fo, (int(cx - fo.width / 2), int(cy - fo.height / 2 + 10)), fo)
     t = im.rotate(angle, expand=True, resample=Image.BICUBIC)
     p.im.paste(t, (int(cx - t.width / 2), int(cy - t.height / 2)), t)
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
+@pose(flou=16, force=70, bas=10, cote=5)
 def _papier_rendu(p, x, y, larg, haut, couleur, couche, legende):
     """Le meme aplat sur un mat et sur un couche brillant.
 
@@ -4718,7 +5029,7 @@ def _papier_rendu(p, x, y, larg, haut, couleur, couche, legende):
             p.im.convert("RGBA"),
             Image.new("RGBA", p.im.size, (0, 0, 0, 0))).convert("RGB")
         p.im.paste(bande, (int(x), int(y)), bande)
-        p.d = ImageDraw.Draw(p.im)
+        p._redessiner()
     else:
         # le mat absorbe : la couleur est rabattue vers le gris du
         # papier, et le grain de la fibre casse l'aplat. L'ecart avec le
@@ -4762,6 +5073,7 @@ def pub04_reel_cmjn(dossier=None):
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=190)
+    p.filet()
     p.titre("Pourquoi ce n'est\njamais la même\ncouleur.", 76, y=260)
     _ecran(p, p.l / 2, 880, 600, vif)
     _feuille_imprimee(p, p.l / 2, 1430, 440, terne)
@@ -4849,7 +5161,7 @@ def _ruban_chantier(p, x, y, larg, haut, pas=None):
         db.polygon([(i, haut), (i + pas, haut), (i + pas + haut, 0), (i + haut, 0)],
                    fill=teinte("encre"))
     p.im.paste(bande, (int(x), int(y)))
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     return p
 
 
@@ -4892,7 +5204,7 @@ def _guepe(p, cx, cy, larg):
         aile = aile.rotate(s * 16, expand=True, resample=Image.BICUBIC)
         p.im.paste(aile, (int(cx - larg * 0.16),
                           int(cy + s * ha * 0.52 - aile.height / 2)), aile)
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     # tete et thorax
     p.d.ellipse([cx - larg * 0.46, cy - ha * 0.26,
                  cx - larg * 0.28, cy + ha * 0.26], fill=teinte("encre"))
@@ -4910,7 +5222,7 @@ def _guepe(p, cx, cy, larg):
     ImageDraw.Draw(masque).ellipse([0, 0, al - 1, ah - 1], fill=255)
     abd.putalpha(masque)
     p.im.paste(abd, (int(cx - larg * 0.06), int(cy - ah / 2)), abd)
-    p.d = ImageDraw.Draw(p.im)
+    p._redessiner()
     # les antennes
     for s in (-1, 1):
         p.d.line([(cx - larg * 0.42, cy + s * ha * 0.14),
@@ -4976,6 +5288,7 @@ def pub08_reel_halloween(dossier=None):
 
     p = Planche("encre", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "orange", y=200)
+    p.filet()
     p.titre("Pourquoi Halloween\nest orange\net noir.", 96, "blanc", y=280)
     _citrouille(p, p.l / 2, 1130, 620)
     p.y = 1560
