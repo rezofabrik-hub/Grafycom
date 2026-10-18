@@ -980,6 +980,13 @@ indiqué par le surtitre de chaque écran.
 | 20 | ven 20 nov | 24 s | 5 | 0-3 · 3-8 · 8-14 · 14-19 · 19-24 |
 | 24 | sam 28 nov | 26 s | 5 | 0-3 · 3-9 · 9-15 · 15-21 · 21-26 |
 
+**Les six MP4 sont livrés montés**, en 1080 × 1920, H.264, 30 i/s, avec
+un fondu enchaîné de 0,35 s entre les écrans et la durée exacte du
+découpage. Ils sont produits par `reseaux/reels.py`, qui lit les chronos
+et le texte de la voix dans le cahier des charges — rien n'y est recopié.
+Ils sortent **muets** tant qu'aucune clé de synthèse vocale n'est posée,
+et le script de la voix accompagne chaque fichier en `.txt`.
+
 **La voix off** est écrite intégralement dans `instagram-facebook.md`,
 colonne « Script voix off » ou « Voix off » de chaque découpage. Voix
 féminine française, calme et professionnelle, articulation nette, **pas

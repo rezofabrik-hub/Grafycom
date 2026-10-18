@@ -39,6 +39,10 @@ reseaux/propositions/*-apercu.html
 # secondes à partir du script : les versionner alourdirait le dépôt sans
 # rien apporter.
 reseaux/visuels/
+
+# Reels montés par reseaux/reels.py — même raison, et le dépôt est
+# public : des MP4 d'une mégaoctet chacun n'y ont rien à faire.
+reseaux/reels/
 .dev.vars
 .wrangler/
 node_modules/

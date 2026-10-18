@@ -62,3 +62,13 @@ Pour les relire sans ouvrir 177 fichiers un par un :
 python3 reseaux/planche-contact.py          # une page A4 par publication
 python3 reseaux/planche-contact.py 2026-11  # un seul mois
 ```
+
+Et les six reels se montent tout seuls, à partir des écrans et du
+découpage écrit — aucune durée n'est recopiée, elles sont lues dans le
+cahier des charges :
+
+```bash
+python3 reseaux/reels.py --liste
+python3 reseaux/reels.py --tout         # six MP4 muets, aux bons chronos
+python3 reseaux/reels.py --tout --voix  # avec la voix de synthèse
+```

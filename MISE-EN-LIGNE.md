@@ -306,6 +306,33 @@ formulaire du site reste pour l'instant en mode « ouvre le logiciel de
 messagerie » : il ne sera basculé sur `/api/contact` qu'une fois les secrets en
 place et un envoi réel vérifié.
 
+### 2 ter. La voix off des reels — deux variables d'environnement
+
+Elles ne vivent pas chez Cloudflare : `reseaux/reels.py` tourne en local,
+et il les lit dans l'environnement du poste.
+
+| Nom | Valeur |
+|---|---|
+| `GRAFYCOM_TTS_CLE` | la clé d'API du fournisseur de synthèse vocale |
+| `GRAFYCOM_TTS_VOIX` | l'identifiant de la voix française retenue |
+
+Sans elles, `reels.py` monte quand même les six reels, **aux bons
+chronos, mais muets** — et il écrit à côté de chaque MP4 le script de la
+voix, plan par plan, prêt à coller dans n'importe quel outil. La voix
+n'est donc jamais un point bloquant, seulement une étape de plus.
+
+Pour les poser, sur le poste qui monte les vidéos :
+
+```bash
+export GRAFYCOM_TTS_CLE='…'
+export GRAFYCOM_TTS_VOIX='…'
+python3 reseaux/reels.py --tout --voix
+```
+
+**Ces deux valeurs ne se tapent jamais dans une conversation**, ici pas
+plus qu'ailleurs. Elles se posent dans le terminal, ou dans un fichier
+d'environnement que git ignore.
+
 ### 3. Rattacher le domaine
 
 Un domaine personnalisé sur un Worker exige que **la zone `grafycom.fr` soit
