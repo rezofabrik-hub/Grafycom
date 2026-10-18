@@ -134,7 +134,7 @@ automatique du matin.
 | jeudi 3 décembre | 21 h 00 | Story | story | S6-C écran 2 |
 | vendredi 4 décembre | 08 h 00 | Blog | article | Faut-il refaire son logo pour la nouvelle année ? Trois qu ⚠️ |
 | vendredi 4 décembre | 18 h 15 | Story | story | S6-D · relais du blog |
-| samedi 5 décembre | 10 h 30 | Instagram + Facebook | REEL 26 s | n° 24 |
+| samedi 5 décembre | 10 h 30 | Instagram + Facebook | REEL 30 s | n° 24 |
 | samedi 5 décembre | 10 h 30 | Fiche Google | post | texte n° 24 |
 | samedi 5 décembre | 10 h 45 | Story | story | S6-E · coulisses du reel |
 

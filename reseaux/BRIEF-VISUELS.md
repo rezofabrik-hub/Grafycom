@@ -379,7 +379,7 @@ Notation : `fond` / `surtitre` / **titre** / corps / éléments dessinés.
 
 ---
 
-### n° 1 · lundi 26 octobre · Carrousel 6 planches · Pédagogie couleur
+### n° 1 · lundi 26 octobre · Carrousel 7 planches · Pédagogie couleur
 
 1. `sable chaud` · surtitre « IDENTITÉ VISUELLE » · filet · **« Votre
    couleur dit déjà ce que vous vendez. »** (104 px) · signature.
@@ -401,6 +401,14 @@ Notation : `fond` / `surtitre` / **titre** / corps / éléments dessinés.
    ne se devine pas. »**
 6. `blanc` · **« Votre secteur en commentaire. »** (86 px) · texte · flèche
    corail · signature.
+
+**Planche 7 — photographie.** La seule du carrousel. Sandra à son poste,
+un nuancier Pantone déployé, le liège et le logo derrière elle. Recadrée
+en 4:5. Un voile encre monte du bas sur 56 % de la hauteur, en rampe
+puis plateau — sans le plateau, un titre posé aux deux tiers reste sur
+une zone claire. Titre blanc, trois lignes : « Je choisis les couleurs
+d'après votre métier, pas d'après la mode. » Puis « Sandra, Grafycom —
+Perpignan. » en crème, et la signature.
 
 ### n° 2 · mardi 10 novembre · Carrousel 7 planches · Réglementation enseigne
 
@@ -664,7 +672,7 @@ Tarte fine aux pommes 9 €.
    filet · **« Et ça se décolle. »** (92 px, blanc) · relance
    d'abonnement.
 
-### n° 13 · lundi 16 novembre · Carrousel 7 planches · Solaire 66
+### n° 13 · lundi 16 novembre · Carrousel 8 planches · Solaire 66
 
 **La seule publication qui montre un vrai client, avec son accord.** Elle
 utilise les couleurs de la marque Solaire 66 (`#10638b` et `#f5b32d`),
@@ -681,6 +689,12 @@ qui ne sont pas celles de Grafycom : c'est normal et voulu.
 6. `crème` · **« En une seule couleur. »** (80 px) · le logo en
    monochrome.
 7. `sable chaud` · **« Dessiné en grand. / Vérifié en petit. »** (92 px).
+
+**Planche 8 — photographie.** Sandra de profil devant son écran, le mur
+de liège et les nuanciers derrière. Recadrée en 4:5, voile encre sur
+54 %. Titre blanc : « Trois semaines, et un logo qui tient sur un
+stylo. » C'est la planche qui relie le travail livré à la personne qui
+l'a livré — la seule publication du cycle qui montre un vrai client.
 
 ### n° 14 · mardi 17 novembre · Carrousel 6 planches · Loi Toubon
 
@@ -932,7 +946,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    « VRAI… mais »**, puis l'explication en 44 px encre. La planche 6 porte
    en plus la flèche et « Votre score en commentaire. »
 
-### n° 24 · samedi 5 décembre · REEL 26 s · 5 écrans 9:16 · Refaire son logo
+### n° 24 · samedi 5 décembre · REEL 30 s · 6 écrans 9:16 · Refaire son logo
 
 1. `sable chaud` · surtitre « REEL · 0-3 S » · **« Non, / pas en
    janvier. »** (116 px) · **deux pages de calendrier mural** côte à côte,
@@ -1131,3 +1145,9 @@ points sont éliminatoires.
 
 *Brief rédigé le 18 octobre 2026. En cas de contradiction entre ce
 document et une planche livrée, c'est la planche qui fait foi.*
+
+**Écran 6 — photographie.** Format 9:16. Sandra de face, souriante,
+nuancier en main. Voile encre sur 46 %. Titre blanc, deux lignes : « Si
+votre logo vous gêne, parlons-en. » Relance d'abonnement et signature en
+pied. C'est la boucle du cycle : la première publication s'ouvrait sur
+la même personne, un nuancier à la main.

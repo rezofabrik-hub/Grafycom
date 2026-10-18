@@ -1338,6 +1338,19 @@ def carrousel_couleurs(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "06.png"))
 
+    # Pilier « la personne ». La planche de clôture du premier carrousel
+    # du cycle : le compte s'ouvre sur une démonstration de couleur, il
+    # se referme sur la personne qui l'a faite, un nuancier à la main.
+    # C'est le même sujet, vu par la fenêtre d'à côté.
+    p = Planche("creme")
+    p.photo("sandra-nuancier", ancrage="haut", voile="encre", part=0.56)
+    p.y = 830
+    p.titre("Je choisis les couleurs\nd'après votre métier,\npas d'après la mode.",
+            58, "blanc")
+    p.texte("Sandra, Grafycom — Perpignan.", 34, "creme", 600, avant=26)
+    p.signature("creme")
+    faits.append(p.ecrire(d / "07.png"))
+
     return faits
 
 
@@ -2403,6 +2416,17 @@ def solaire_66(dossier=None):
             "seul fichier.", 40, "encre", 600, avant=0)
     p.signature("blanc")
     faits.append(p.ecrire(d / "07.png"))
+
+    # Pilier « la personne », sur la seule publication du cycle qui
+    # montre un vrai client. Un travail livré se raconte mieux avec la
+    # personne qui l'a livré.
+    p = Planche("creme")
+    p.photo("sandra-ecran", ancrage="centre", voile="encre", part=0.54)
+    p.y = 856
+    p.titre("Trois semaines,\net un logo qui tient\nsur un stylo.", 60, "blanc")
+    p.texte("Sandra, Grafycom — Perpignan.", 34, "creme", 600, avant=26)
+    p.signature("creme")
+    faits.append(p.ecrire(d / "08.png"))
 
     return faits
 
@@ -4998,6 +5022,17 @@ def pub24_reel_bilan(dossier=None):
     p.abonnement("sable")
     p.signature("sable")
     faits.append(p.ecrire(d / "ecran5.png"))
+    # Dernier écran du dernier reel du cycle : le pilier « la personne »
+    # ferme la boucle ouverte par la première publication.
+    p = Planche("creme", LARGE_S, HAUT_S)
+    p.photo("sandra-sourire", ancrage="centre", voile="encre", part=0.46)
+    p.y = 1280
+    p.titre("Si votre logo vous gêne,\nparlons-en.", 62, "blanc")
+    p.texte("Sandra, Grafycom — Perpignan.", 36, "creme", 600, avant=24)
+    p.abonnement("sable")
+    p.signature("creme")
+    faits.append(p.ecrire(d / "ecran6.png"))
+
     return faits
 
 

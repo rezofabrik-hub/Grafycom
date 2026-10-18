@@ -108,9 +108,14 @@ le même sur bleu marine, parfaitement lisible.
 `#identitevisuelle #creationlogo #designgraphique #charteGraphique #directionArtistique #printdesign #psychologiedescouleurs #graphistePerpignan #PyreneesOrientales #brandingLocal`
 
 ### À fournir par Sandra
-- Les 6 slides. Le contraste de la S5 doit être **réellement** vrai à l'œil :
-  la démonstration perd tout si elle est truquée.
-- Rien d'autre. Pas de photo, pas d'accord client.
+- Les 6 premières slides. Le contraste de la S5 doit être **réellement**
+  vrai à l'œil : la démonstration perd tout si elle est truquée.
+- **La S7 est une photographie de toi**, celle au nuancier, recadrée en
+  4:5 et validée le 18 octobre. Pilier « la personne » : le carrousel
+  ouvre sur une démonstration de couleur et se referme sur qui l'a
+  faite. Si tu préfères la retirer, la planche se supprime seule — le
+  carrousel retombe à 6 et tient sans elle.
+- Rien d'autre. Pas d'accord client.
 
 ---
 
@@ -540,7 +545,7 @@ supports, le territoire et la durée.
 `#identitevisuelle #designgraphique #charteGraphique #logo #droitdauteur #propriete #graphismeFrance #entrepreneur #graphistePerpignan #CommerceLocal66`
 
 ### À fournir par Sandra
-- Rien. Les 6 planches sont dessinées, dans
+- Rien. Les 7 planches sont dessinées, la septième photographique, dans
   `reseaux/visuels/2026-11-03-droits/`.
 - 🔎 **Partie vérifiée** : l'absence de transfert automatique des droits
   par le paiement, l'exigence d'un écrit, l'incessibilité du droit moral,
@@ -1023,7 +1028,7 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 
 # SEMAINE 4 — du lundi 9 au dimanche 22 novembre
 
-## 13 — Lundi 16 novembre, 12 h 30 · Carrousel 7 slides · Pilier « réalisations » · **Solaire 66**
+## 13 — Lundi 16 novembre, 12 h 30 · Carrousel 8 slides · Pilier « réalisations » · **Solaire 66**
 
 > ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
 > est aussi le commanditaire de ces publications — la carte de visite porte
@@ -1152,7 +1157,10 @@ petit. »
 
 - **Plus rien de bloquant.** Dimensions, vectoriel et monochrome sont
   fournis ou produits.
-- *Aucune photo.* Les sept planches sont entièrement composées.
+- Les sept premières planches sont entièrement composées. **La huitième
+  est une photographie de toi devant l'écran**, recadrée en 4:5 et
+  validée le 18 octobre : un travail livré se raconte mieux avec la
+  personne qui l'a livré. Elle se supprime seule si tu la retires.
 
 **Les trois versions monochromes sont livrées** dans
 `reseaux/visuels/sources/` : bleu `#10638b`, noir `#1d1d1b`, et blanc pour
@@ -2134,7 +2142,7 @@ violet pour la dernière.
 
 ---
 
-## 24 — Samedi 5 décembre, 10 h 30 · REEL 26 s · Pilier 7, démarche studio
+## 24 — Samedi 5 décembre, 10 h 30 · REEL 30 s · Pilier 7, démarche studio
 
 ### Accroche 0-3 s
 **Écran dessiné**, pas de tournage. Deux pages de calendrier mural côte à
@@ -2167,6 +2175,7 @@ du mois. Texte : **« Non, pas en janvier. »**
 | 9-15 s | Trois cartons posés un par un sur la table, chacun avec une question manuscrite. | 1. Lisible partout ? 2. Fichiers en main ? 3. Dit-il ce que vous vendez aujourd'hui ? | Avant de redessiner, trois questions. Votre logo est-il lisible sur tous vos supports, du polo brodé au panneau. Avez-vous les fichiers d'origine. Et dit-il encore ce que vous vendez aujourd'hui. |
 | 15-21 s | Le même logo décliné sur un polo, une carte, un panneau : il tient sur deux supports, il se brouille sur le troisième. Zoom sur celui qui se brouille. | Deux « oui », un « non » → on ajuste | Si la réponse est non à une seule des trois, le problème est précis. Et un problème précis se répare. On ajuste, on redessine un détail, on prépare les fichiers manquants. |
 | 21-26 s | Fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre. Le logo reparaît, propre, sur trois supports. Signature `@grafycom.graphiste`. | **Un bilan, pas une résolution** | Si la réponse est non aux trois, là, on repart de la feuille blanche. Faites le bilan de l'année. Pas une résolution. |
+| 26-30 s | **Photographie**, la seule du reel : Sandra à son poste, nuancier en main, voile sombre sur le bas pour le texte. | **« Si votre logo vous gêne, parlons-en. »** | Et si le vôtre vous gêne, parlons-en. |
 
 **Pas de prompt d'arrière-plan.** Retiré, comme ceux des n° 12, 16 et 20.
 
