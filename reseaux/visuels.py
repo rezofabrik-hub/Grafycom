@@ -2252,6 +2252,106 @@ def _melange(a, b, k):
                  for i in (1, 3, 5))
 
 
+# ---------------------------------------------------------------------
+# Le rendu des objets : ce qui separe un schema d'un objet pose quelque
+# part. Trois choses, et aucune ne coute un centime :
+#
+#   1. une ombre de contact. Un objet sans ombre flotte, et c'est le
+#      premier signe qui fait lire « illustration » plutot que « chose
+#      photographiee » ;
+#   2. un modele de lumiere. Un aplat uni n'existe pas dans le monde :
+#      une surface prend plus de lumiere d'un cote que de l'autre ;
+#   3. un grain de matiere. Le papier, le kraft, le beton ont un bruit
+#      propre ; le verre n'en a pas, et c'est ce contraste qui dit
+#      « verre ».
+#
+# Elles s'appliquent aux objets dessines, jamais au fond de la planche
+# ni au texte : un titre grene est un titre sale.
+# ---------------------------------------------------------------------
+def _ombre_contact(p, boite, flou=22, force=86, bas=16, cote=6):
+    """L'ombre portée d'un objet posé, decalee vers le bas.
+
+    Decalee vers le bas et a peine sur le cote : la lumiere des
+    planches vient d'en haut a gauche, comme celle d'une fenetre, et
+    une ombre qui partirait dans un autre sens se remarque aussitot.
+    """
+    x0, y0, x1, y1 = boite
+    calque = Image.new("RGBA", p.im.size, (0, 0, 0, 0))
+    ImageDraw.Draw(calque).rounded_rectangle(
+        [x0 + cote, y0 + bas, x1 + cote, y1 + bas],
+        radius=max(2, int((x1 - x0) * 0.02)), fill=(32, 26, 22, force))
+    calque = calque.filter(ImageFilter.GaussianBlur(flou))
+    p.im = Image.alpha_composite(p.im.convert("RGBA"), calque).convert("RGB")
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
+def _modele(p, boite, couleur, angle=138.0, amplitude=0.16, rayon=0):
+    """Une surface éclairée, au lieu d'un aplat uni.
+
+    La couleur donnee reste la couleur de l'objet : on l'eclaircit d'un
+    cote et on l'assombrit de l'autre, autour d'elle. L'objet garde donc
+    sa valeur de charte, et gagne un volume.
+    """
+    x0, y0, x1, y1 = (int(v) for v in boite)
+    lx, ly = max(1, x1 - x0), max(1, y1 - y0)
+    base = teinte(couleur) if isinstance(couleur, str) else None
+    if base is None:
+        rvb = couleur
+    else:
+        rvb = tuple(int(base[i:i + 2], 16) for i in (1, 3, 5))
+    clair = tuple(min(255, int(c + 255 * amplitude * 0.55)) for c in rvb)
+    sombre = tuple(max(0, int(c - 255 * amplitude * 0.45)) for c in rvb)
+    hx = lambda c: "#%02x%02x%02x" % c
+    deg = _degrade_lineaire(lx, ly, angle, [(0.0, hx(clair)), (1.0, hx(sombre))])
+    if rayon:
+        m = Image.new("L", (lx, ly), 0)
+        ImageDraw.Draw(m).rounded_rectangle([0, 0, lx - 1, ly - 1],
+                                            radius=rayon, fill=255)
+        p.im.paste(deg, (x0, y0), m)
+    else:
+        p.im.paste(deg, (x0, y0))
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
+def _grain_matiere(p, boite, force=9, echelle=2):
+    """Le grain propre d'une matière, sur la seule surface concernée."""
+    import random
+    x0, y0, x1, y1 = (int(v) for v in boite)
+    lx, ly = max(1, x1 - x0), max(1, y1 - y0)
+    al = random.Random(3)
+    petit = Image.new("L", (max(1, lx // echelle), max(1, ly // echelle)))
+    petit.putdata([128 + al.randint(-force, force)
+                   for _ in range(petit.width * petit.height)])
+    bruit = petit.resize((lx, ly), Image.BILINEAR)
+    zone = p.im.crop((x0, y0, x1, y1)).convert("RGB")
+    fusion = ImageChops.overlay(zone, Image.merge("RGB", (bruit,) * 3))
+    p.im.paste(Image.blend(zone, fusion, 0.55), (x0, y0))
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
+def _reflet_verre(p, boite, force=52, largeur=0.26, angle=-22):
+    """La bande spéculaire d'une vitre. C'est elle qui dit « c'est du verre »."""
+    import math
+    x0, y0, x1, y1 = (int(v) for v in boite)
+    lx, ly = max(1, x1 - x0), max(1, y1 - y0)
+    calque = Image.new("RGBA", (lx, ly), (0, 0, 0, 0))
+    d = ImageDraw.Draw(calque)
+    w = int(lx * largeur)
+    dec = int(ly * math.tan(math.radians(abs(angle))))
+    for i, (ox, a) in enumerate(((0.10, force), (0.44, int(force * 0.45)))):
+        bx = int(lx * ox)
+        d.polygon([(bx, 0), (bx + w, 0), (bx + w - dec, ly), (bx - dec, ly)],
+                  fill=(255, 255, 255, a))
+    calque = calque.filter(ImageFilter.GaussianBlur(max(2, lx // 90)))
+    zone = p.im.crop((x0, y0, x1, y1)).convert("RGBA")
+    p.im.paste(Image.alpha_composite(zone, calque).convert("RGB"), (x0, y0))
+    p.d = ImageDraw.Draw(p.im)
+    return p
+
+
 def _halo(p, cx, cy, rx, ry, couleur, force=110, flou=46):
     """Une lueur, pour une enseigne allumee ou une vitrine eclairee.
 
@@ -2490,6 +2590,11 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
     permet de placer la bande des yeux a 1,40-1,70 m sans la deviner.
     """
     p._place(y, "vitrine")
+    if not trait:
+        # avant tout le reste : une devanture sans ombre flotte sur le
+        # fond, et c'est ce qui la faisait lire comme un pictogramme.
+        _ombre_contact(p, (x, y, x + larg, y + haut), flou=26, force=74,
+                       bas=18, cote=8)
     ep = max(4, int(larg // 52))
     cadre = "brun" if trait else "encre"
     hf = haut * 0.17 if fascia else 0
@@ -2699,6 +2804,13 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
             t = "%d m" % m
             p.d.text((xe - 14 - p.d.textlength(t, font=f), yy - 13), t,
                      font=f, fill=teinte("taupe"))
+
+    # -- la peau du verre, en dernier -------------------------------
+    # Pose avant le lettrage, elle le voilerait ; pose apres, elle passe
+    # dessus comme un reflet passe sur un adhesif — ce qui est le cas.
+    if not trait:
+        _reflet_verre(p, (x, gy0, x + larg, gy1),
+                      force=38 if eclairee else 58)
     return (x, gy0, x + larg, gy1)
 
 
