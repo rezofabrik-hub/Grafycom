@@ -534,14 +534,17 @@ sur le site.
 
 ---
 
-## S6-E — Samedi 28 novembre, 10 h 45 · coulisses du reel
+## S6-E — Samedi 28 novembre, 10 h 45 · coulisses
 
-- **Arrière-plan :** plan du tournage du reel du jour — le carnet de
-  croquis ouvert sur la table, le téléphone sur son support, la lampe posée
-  presque à plat. Photo brute, non retouchée, c'est le propos.
-- **Texte exact :** « Le tournage du jour : cinq plans de cinq secondes, un
-  carnet, une lampe posée presque à plat sur la table. C'est tout le
-  matériel. »
+> **Réécrit le 18 octobre.** Cet écran annonçait les coulisses du tournage
+> du reel du jour — « un carnet, une lampe posée presque à plat ». Le reel
+> n° 24 ne se tourne plus, il est dessiné : une story qui promet un
+> tournage qui n'existe pas se voit tout de suite. Les coulisses montrent
+> maintenant l'idée du reel, ce qui est au moins aussi intéressant.
+
+- **Arrière-plan :** écran typographique sur fond crème, comme les autres.
+- **Texte exact :** « Deux pages de calendrier, décembre et janvier.
+  Identiques à un mot près. C'est tout l'argument du reel du jour. »
 - **Sticker :** aucun sticker interactif. C'est un écran de coulisses — il
   se regarde, il ne demande rien. Un sticker de trop sur cet écran casse ce
   qu'il raconte.

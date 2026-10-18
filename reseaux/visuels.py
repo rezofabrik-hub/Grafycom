@@ -1564,9 +1564,13 @@ def stories(dossier=None):
      ("S6-D", "creme", "encre", "Nouvel article",
       "Faut-il refaire son logo pour la nouvelle année ?",
       "Lien", ["grafycom.fr/blog"]),
-     ("S6-E", "creme", "encre", "Coulisses du reel",
-      "Cinq plans de cinq secondes, un carnet et une lampe.",
-      "", ["Le tournage du jour."]),
+     # S6-E annoncait « cinq plans, un carnet et une lampe » : le reel
+     # n° 24 ne se tourne plus, il est dessine. Une story qui promet des
+     # coulisses de tournage qui n'existent pas se voit tout de suite.
+     ("S6-E", "creme", "encre", "Coulisses",
+      "Deux pages de calendrier, décembre et janvier.",
+      "", ["Identiques à un mot près.",
+           "C'est tout l'argument du reel du jour."]),
     ]
     for code, fond, enc, sur, titre, st, lignes in E:
         p = Planche(fond, LARGE_S, HAUT_S)
