@@ -74,9 +74,9 @@ PSEUDO = "@grafycom.graphiste"
 # jour ou le fichier change de nom.
 SOURCES = pathlib.Path(__file__).resolve().parent / "visuels" / "sources"
 PHOTOS = {
-    "sandra-nuancier":   SOURCES / "atelier" / "03-pseudo-corrige.png",
+    "sandra-nuancier":   SOURCES / "atelier" / "03-pseudo-corrige-logo.png",
     "sandra-ecran":      SOURCES / "atelier" / "05-recadre-4x5.png",
-    "sandra-sourire":    SOURCES / "atelier" / "01-recadre-4x5.png",
+    "sandra-sourire":    SOURCES / "atelier" / "01-recadre-4x5-logo.png",
     "sandra-carte":      SOURCES / "atelier" / "04-recadre-4x5.png",
     "sandra-ecran-large": SOURCES / "atelier" / "05-profil-ecran-solaire66.jpg",
 }    # avec le point. C'est une constante

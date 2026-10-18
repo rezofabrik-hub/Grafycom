@@ -298,3 +298,150 @@ if __name__ == "__main__":
     for f in (carte_voeux, pseudo):
         r = f(voir=o.voir)
         print("  %-18s %s" % (f.__name__, r.name if r else "—"))
+
+
+# ---------------------------------------------------------------------
+# Le vrai logo, incrusté en perspective sur l'affiche du mur
+# ---------------------------------------------------------------------
+def _coeffs_perspective(cible, source):
+    """Les 8 coefficients d'une transformation perspective pour PIL.
+
+    PIL applique la transformation À L'ENVERS : pour chaque pixel de
+    l'image produite, elle demande d'où le lire dans la source. Les
+    coefficients vont donc de la CIBLE vers la SOURCE, et c'est dans ce
+    sens qu'on résout le système — l'inverse donne une image vide, et
+    c'est l'erreur classique de cette fonction.
+    """
+    A, B = [], []
+    for (xc, yc), (xs, ys) in zip(cible, source):
+        A.append([xc, yc, 1, 0, 0, 0, -xs * xc, -xs * yc])
+        A.append([0, 0, 0, xc, yc, 1, -ys * xc, -ys * yc])
+        B += [xs, ys]
+    # resolution par elimination de Gauss, sans dependance exterieure
+    n = 8
+    M = [A[i][:] + [B[i]] for i in range(n)]
+    for i in range(n):
+        piv = max(range(i, n), key=lambda r: abs(M[r][i]))
+        M[i], M[piv] = M[piv], M[i]
+        d = M[i][i]
+        M[i] = [v / d for v in M[i]]
+        for r in range(n):
+            if r != i and M[r][i]:
+                f = M[r][i]
+                M[r] = [a - f * b for a, b in zip(M[r], M[i])]
+    return [M[i][n] for i in range(n)]
+
+
+def _incruster(photo, quad, dessin, lumiere=True):
+    """Pose `dessin` dans le quadrilatère `quad` de `photo`.
+
+    `quad` : les quatre coins de l'affiche dans la photo, dans l'ordre
+    haut-gauche, haut-droit, bas-droit, bas-gauche.
+
+    Le report de lumière est ce qui fait la différence entre une
+    incrustation et un collage : l'affiche de la photo n'est pas
+    uniformément éclairée — elle s'assombrit vers la gauche et porte
+    l'ombre du mur. On relève donc ce dégradé SUR LA PHOTO, très flouté
+    pour ne garder que la lumière et pas le dessin qu'on remplace, et on
+    le multiplie sur le nouveau calque.
+    """
+    l, h = photo.size
+    sw, sh = dessin.size
+    coeffs = _coeffs_perspective(quad, [(0, 0), (sw, 0), (sw, sh), (0, sh)])
+    calque = dessin.convert("RGB").transform((l, h), Image.PERSPECTIVE,
+                                             coeffs, Image.BICUBIC)
+    # Le masque est tracé à 4× puis réduit. Un polygone tracé à la
+    # définition finale donne un bord en escalier sur les côtés obliques
+    # — et les quatre côtés d'une affiche en perspective sont obliques.
+    # Le suréchantillonnage est ce qui distingue une incrustation d'un
+    # découpage aux ciseaux.
+    k = 4
+    gros = Image.new("L", (l * k, h * k), 0)
+    ImageDraw.Draw(gros).polygon([(x * k, y * k) for x, y in quad], fill=255)
+    masque = gros.resize((l, h), Image.LANCZOS)
+    masque = masque.filter(ImageFilter.GaussianBlur(0.8))
+
+    if lumiere:
+        champ = photo.convert("L").filter(ImageFilter.GaussianBlur(26))
+        # recale la moyenne du champ sur le blanc : on veut la VARIATION
+        # de lumiere, pas son niveau absolu, sinon tout s'assombrit.
+        vals = [v for v, m in zip(champ.getdata(), masque.getdata()) if m > 200]
+        moy = sum(vals) / max(1, len(vals))
+        champ = champ.point(lambda v: max(0, min(255, int(128 + (v - moy)))))
+        calque = ImageChops.overlay(calque,
+                                    Image.merge("RGB", (champ,) * 3))
+
+    photo.paste(calque, (0, 0), masque)
+    return photo
+
+
+def _affiche_logo(largeur, hauteur, logo, papier=(252, 251, 250)):
+    """Une feuille portant le vrai logo, aux proportions de l'affiche.
+
+    `papier` est relevé sur la photo, pas choisi : une feuille d'un blanc
+    pur posée dans une pièce éclairée à la fenêtre se voit comme un
+    rectangle découpé. Le papier d'une photo n'est jamais 255.
+    """
+    feuille = Image.new("RGB", (largeur, hauteur), papier)
+    im = logo.convert("RGB")
+    # le fichier porte de larges marges blanches : on les retire, sinon
+    # la tache sort trois fois trop petite une fois posee sur l'affiche.
+    gris = im.convert("L").point(lambda v: 0 if v > 244 else 255)
+    boite = gris.getbbox()
+    if boite:
+        im = im.crop(boite)
+    lmax = int(largeur * 0.86)
+    hmax = int(hauteur * 0.74)
+    k = min(lmax / im.width, hmax / im.height)
+    im = im.resize((max(1, int(im.width * k)), max(1, int(im.height * k))),
+                   Image.LANCZOS)
+    # Le logo se pose en MULTIPLICATION, pas en collage. Le fichier a un
+    # fond blanc pur ; collé tel quel sur un papier relevé dans la photo
+    # — qui n'est jamais blanc pur — il dessinait un rectangle blanc au
+    # milieu de la feuille. En multiplication, le blanc ne change rien,
+    # l'encre assombrit, et l'aquarelle teinte le papier en le laissant
+    # transparaître. C'est exactement ce que fait de l'encre sur du
+    # papier.
+    couche = Image.new("RGB", (largeur, hauteur), (255, 255, 255))
+    couche.paste(im, ((largeur - im.width) // 2,
+                      int(hauteur * 0.50 - im.height / 2)))
+    return ImageChops.multiply(feuille, couche)
+
+
+# Les quatre coins de l'affiche, relevés sur chaque photo, dans l'ordre
+# haut-gauche, haut-droit, bas-droit, bas-gauche.
+AFFICHES = {
+    "03-pseudo-corrige.png": [(985, 188), (1538, 112), (1556, 552), (990, 592)],
+    "01-recadre-4x5.png":    [(579, 116), (959, 90), (964, 365), (585, 391)],
+}
+
+
+def logo_mural(voir=False):
+    """Remplace la reconstitution du logo par le vrai fichier."""
+    logo = Image.open(RACINE.parent / "assets" / "img" / "logo-grafycom.jpg")
+    faits = []
+    for nom, quad in AFFICHES.items():
+        src = ATELIER / nom
+        if not src.exists():
+            print("   absente :", nom); continue
+        im = Image.open(src).convert("RGB")
+        avant = im.copy()
+        larg = int(max(abs(quad[1][0] - quad[0][0]), abs(quad[2][0] - quad[3][0])))
+        haut = int(max(abs(quad[3][1] - quad[0][1]), abs(quad[2][1] - quad[1][1])))
+        # le ton du papier, relevé dans la zone claire de l'affiche
+        zone = im.crop((min(x for x, _ in quad), min(y for _, y in quad),
+                        max(x for x, _ in quad), max(y for _, y in quad)))
+        clairs = [px for px in zone.convert("RGB").getdata()
+                  if min(px) > 200]
+        papier = (tuple(sum(c[i] for c in clairs) // len(clairs)
+                        for i in range(3)) if clairs else (252, 251, 250))
+        feuille = _affiche_logo(larg * 3, haut * 3, logo, papier)
+        _incruster(im, quad, feuille)
+        dst = ATELIER / nom.replace(".png", "-logo.png").replace(".jpg", "-logo.png")
+        im.save(dst)
+        faits.append(dst)
+        if voir:
+            xs = [p[0] for p in quad]; ys = [p[1] for p in quad]
+            _comparer(avant, im, (min(xs), min(ys), max(xs), max(ys)), 30,
+                      "logo-" + nom[:2])
+    return faits
