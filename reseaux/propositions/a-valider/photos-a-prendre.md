@@ -118,9 +118,20 @@ apparaître.
 
 ### La personne — une fois par mois, pas plus
 
+> **Ce pilier n'est plus vide.** Cinq portraits d'atelier sont arrivés le
+> 18 octobre, validés par Sandra. Ils sont dans
+> `reseaux/visuels/sources/atelier/`, avec leur mode d'emploi et les trois
+> corrections à faire avant publication. Le dossier n'est pas versionné :
+> le dépôt est public.
+>
+> C'est le pilier que le dessin ne remplace pas, et le meilleur levier de
+> l'objectif du cycle — **on s'abonne à une personne, pas à un compte.**
+
 - Sandra **au travail**, de trois-quarts ou de dos, pas de portrait posé.
+  → couvert par `05-profil-ecran-solaire66.jpg`.
 - Les **mains** en train de dessiner, de trier des échantillons.
-- Le **bureau** en fin de journée.
+  → toujours à faire.
+- Le **bureau** en fin de journée. → toujours à faire.
 
 ---
 

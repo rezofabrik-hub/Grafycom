@@ -81,13 +81,38 @@ générique utilisé est **« MAISON BERNAT »** ou **« VOTRE NOM »** ; la
 marque fictive des démonstrations de logo s'appelle **« ATELIER DU
 PONT »**, et pour la publication sur la loi Toubon, **« SUNSET COFFEE »**.
 
-### 1.4 Ni visage, ni main
+### 1.3 bis Le travail d'un client se montre avec SON fichier
 
-Aucune personne reconnaissable, et **pas de mains** non plus : un plan de
+Quand un visuel montre le travail livré à un client — un logo à l'écran,
+une carte imprimée, une enseigne posée — c'est **le fichier réel** qui est
+incrusté, jamais une reconstitution.
+
+Le cas s'est présenté le 18 octobre : deux photos d'atelier montraient le
+logo Solaire 66 ouvert sur un écran. Le rendu était proche, et faux — le
+dessin des montagnes, la spirale du soleil dans le O et les lettres
+différaient de l'original. Publier une approximation du logo d'un client
+sur le compte de la graphiste qui l'a dessiné, c'est le seul endroit où
+une erreur de ce genre se voit immédiatement, et par la personne la plus
+mal placée pour ne pas la voir.
+
+Les fichiers clients disponibles sont dans
+`reseaux/visuels/sources/` — Solaire 66 (logo couleur, trois monochromes,
+carte recto-verso, panneau), Social Miroir, SR Coiffure. Ce dossier n'est
+**pas versionné** : le dépôt est public.
+
+### 1.4 Ni visage inventé, ni main dessinée
+
+Dans les **planches dessinées** : aucune personne, et **pas de mains** : un plan de
 mains dessiné est soit maladroit, soit une illustration de banque d'images
 déguisée. Là où le découpage d'origine prévoyait des mains (une table de
 famille, un doigt sur un calendrier), elles ont été retirées et remplacées
 par ce que le plan devait montrer.
+
+**Les photographies de Sandra font exception**, évidemment : elle est la
+graphiste, c'est son compte, et les portraits d'atelier validés le
+18 octobre la montrent de face et au travail. La règle vise les figurants
+inventés dans un visuel pédagogique, pas la personne qui tient le
+studio.
 
 ### 1.5 La typographie française
 
