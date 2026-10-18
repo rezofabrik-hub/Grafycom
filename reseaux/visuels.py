@@ -66,7 +66,19 @@ TITRE_INTERLIGNE = 1.12   # resserre, mais pas en dessous : Playfair a des
                           # accents de la ligne du dessous.
 GRAIN = 11                # l'ecart-type du bruit. Zero pour l'eteindre.
 
-PSEUDO = "@grafycom.graphiste"    # avec le point. C'est une constante
+PSEUDO = "@grafycom.graphiste"
+
+# Les photographies d'atelier. Le registre est ici et nulle part
+# ailleurs : un chemin recopie dans un gabarit se perime en silence le
+# jour ou le fichier change de nom.
+SOURCES = pathlib.Path(__file__).resolve().parent / "visuels" / "sources"
+PHOTOS = {
+    "sandra-nuancier":   SOURCES / "atelier" / "03-pseudo-corrige.png",
+    "sandra-ecran":      SOURCES / "atelier" / "05-recadre-4x5.png",
+    "sandra-sourire":    SOURCES / "atelier" / "01-recadre-4x5.png",
+    "sandra-carte":      SOURCES / "atelier" / "04-recadre-4x5.png",
+    "sandra-ecran-large": SOURCES / "atelier" / "05-profil-ecran-solaire66.jpg",
+}    # avec le point. C'est une constante
                                   # justement pour qu'il ne se perde plus.
 
 # La charte n'est plus recopiee ici : elle est LUE dans la feuille de
@@ -197,6 +209,52 @@ FONDS_DEGRADE = {
     "sable_chaud": (150.0, [(0.0, "#f7f1ef"), (0.55, "#f1e6e1"),
                             (1.0, "#e9dcd5")]),
 }
+
+
+def _fonds_couleur():
+    """Les fonds pleine page, construits depuis la charte et pas à côté.
+
+    Le feed etait a 45 % de creme, de blanc et d'encre, et a 0,5 % de
+    couleur. Or la marque EST un aquarelle arc-en-ciel : le logo porte
+    six teintes sur une seule tache. Un feed qui n'en montre aucune ne
+    ressemble pas a l'enseigne qu'il represente.
+
+    Chaque fond est un degrade de deux voisins du cercle chromatique de
+    la charte — jamais une couleur inventee, jamais un melange hors
+    charte : les arrets sont les valeurs lues dans style.css. L'angle
+    change d'un fond a l'autre pour que deux planches voisines ne se
+    ressemblent pas.
+    """
+    paires = {
+        "violet_encre":   (160.0, ("violet", "bleu")),
+        "bleu_turquoise": (135.0, ("bleu", "turquoise")),
+        "turquoise_bleu": (200.0, ("turquoise", "bleu_vif")),
+        "rose_violet":    (150.0, ("rose", "violet")),
+        "corail_orange":  (120.0, ("corail", "orange")),
+        "orange_jaune":   (170.0, ("orange", "jaune")),
+        "magenta_corail": (140.0, ("magenta", "corail")),
+        "bleu_vif_violet": (185.0, ("bleu_vif", "violet")),
+    }
+    fonds = {}
+    for nom, (angle, (a, b)) in paires.items():
+        fonds[nom] = (angle, [(0.0, C[a]), (1.0, C[b])])
+    return fonds
+
+
+FONDS_DEGRADE.update(_fonds_couleur())
+
+# Les fonds ou le texte doit passer en clair. Calcule, pas recopie : la
+# luminance releve du fond, pas de l'avis du developpeur.
+def _sombre(nom):
+    if nom in FONDS_DEGRADE:
+        arrets = FONDS_DEGRADE[nom][1]
+        vals = []
+        for _, h in arrets:
+            r, g, b = (int(h[i:i + 2], 16) for i in (1, 3, 5))
+            vals.append(0.2126 * r + 0.7152 * g + 0.0722 * b)
+        return sum(vals) / len(vals) < 150
+    r, g, b = teinte(nom)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b < 150
 
 
 def _degrade_lineaire(large, haut, angle, arrets):
@@ -464,6 +522,123 @@ class Planche:
             fill=255)
         self.im.paste(barre, (MARGE, self.y), masque)
         self.y += epaisseur + apres
+        return self
+
+    def photo(self, nom, ancrage="centre", voile=None, part=0.62,
+              grisaille=0.0, opacite=232):
+        """Une photographie en fond perdu, et de quoi écrire dessus.
+
+        C'est le levier qui manquait. Un dessin au trait, si juste
+        soit-il, se lit comme un schema ; une photographie se lit comme
+        une preuve. Les cinq images d'atelier existent, Sandra les a
+        validees, et le pilier « la personne » de photos-a-prendre.md
+        etait vide.
+
+        `voile` pose un degrade sombre du bas vers le haut, sur `part`
+        de la hauteur. Ce n'est pas une decoration : sans lui, un titre
+        clair pose sur une photographie devient illisible des que la
+        photo s'eclaircit, et on ne le voit qu'une fois publie.
+
+        Les photos vivent dans visuels/sources/, qui n'est pas versionne
+        — le depot est public, et les portraits de Sandra n'ont pas a y
+        etre avant qu'elle ait choisi lesquels sortent. Une photo
+        absente ne fait donc pas tomber la production : la planche sort
+        sur son fond de couleur, et l'absence est signalee.
+        """
+        chemin = PHOTOS.get(nom, SOURCES / "atelier" / nom)
+        if not pathlib.Path(chemin).exists():
+            self.photos_absentes = getattr(self, "photos_absentes", [])
+            self.photos_absentes.append(nom)
+            return self
+
+        im = Image.open(chemin).convert("RGB")
+        # remplir sans deformer : on couvre, puis on recadre
+        k = max(self.l / im.width, self.h / im.height)
+        im = im.resize((max(1, int(im.width * k)), max(1, int(im.height * k))),
+                       Image.LANCZOS)
+        dx = (im.width - self.l) // 2
+        dy = {"haut": 0, "bas": im.height - self.h,
+              "centre": (im.height - self.h) // 2}[ancrage]
+        self.im.paste(im.crop((dx, dy, dx + self.l, dy + self.h)), (0, 0))
+
+        if grisaille:
+            gris = self.im.convert("L").convert("RGB")
+            self.im = Image.blend(self.im, gris, grisaille)
+
+        if voile:
+            h = int(self.h * part)
+            calque = Image.new("RGBA", (self.l, h), (0, 0, 0, 0))
+            d = ImageDraw.Draw(calque)
+            hx = teinte(voile)
+            r, v, b = (int(hx[i:i + 2], 16) for i in (1, 3, 5))
+            for i in range(h):
+                # Rampe douce sur la premiere moitie, puis PLATEAU. Une
+                # rampe qui monte jusqu'en bas n'est opaque qu'au tout
+                # dernier pixel : le titre, pose aux deux tiers, restait
+                # sur une photo claire et devenait illisible.
+                t = i / h
+                a = int(opacite * min(1.0, (t / 0.55) ** 1.5))
+                d.line([(0, i), (self.l, i)], fill=(r, v, b, a))
+            self.im.paste(calque, (0, self.h - h), calque)
+
+        self.d = ImageDraw.Draw(self.im)
+        self.sur_photo = True
+        return self
+
+    def lavis(self, teintes=None, cx=None, cy=None, rayon=None, force=0.52):
+        """La tache d'aquarelle du logo, en grand, derrière le texte.
+
+        Le logo Grafycom est une tache aquarellee qui porte six teintes.
+        Les planches n'en montraient aucune.
+
+        Premiere tentative : des disques superposes en mode ecran. Rate,
+        et pour une raison physique — l'aquarelle est un pigment
+        TRANSLUCIDE sur du papier, elle assombrit ce qu'elle couvre ;
+        le mode ecran eclaircit, et la tache sortait blanche sur le
+        creme. Ici chaque teinte est posee en alpha, l'une sur l'autre,
+        et les recouvrements foncent comme deux lavis qui se melangent.
+
+        Le bord est un contour irregulier a 40 sommets, pas un cercle :
+        c'est lui, et pas la couleur, qui fait lire « aquarelle ».
+        """
+        import math
+        import random
+        noms = teintes or ["bleu_vif", "turquoise", "violet", "rose",
+                           "corail", "jaune"]
+        cx = self.l // 2 if cx is None else cx
+        cy = self.h // 2 if cy is None else cy
+        R = rayon or int(min(self.l, self.h) * 0.46)
+        al = random.Random(5)
+
+        tache = Image.new("RGBA", (self.l, self.h), (0, 0, 0, 0))
+        for i, nom in enumerate(noms):
+            a = 2 * math.pi * i / len(noms) + 0.6
+            x = cx + int(math.cos(a) * R * 0.44)
+            y = cy + int(math.sin(a) * R * 0.36)
+            r = int(R * al.uniform(0.54, 0.74))
+            hx = teinte(nom)
+            rvb = tuple(int(hx[j:j + 2], 16) for j in (1, 3, 5))
+            c = Image.new("RGBA", (self.l, self.h), rvb + (0,))
+            m = Image.new("L", (self.l, self.h), 0)
+            ImageDraw.Draw(m).ellipse([x - r, y - r, x + r, y + r], fill=210)
+            c.putalpha(m.filter(ImageFilter.GaussianBlur(R * 0.24)))
+            tache = Image.alpha_composite(tache, c)
+
+        bord = Image.new("L", (self.l, self.h), 0)
+        pts = []
+        for i in range(40):
+            a = 2 * math.pi * i / 40
+            rr = R * al.uniform(0.80, 1.08)
+            pts.append((cx + math.cos(a) * rr, cy + math.sin(a) * rr * 0.88))
+        ImageDraw.Draw(bord).polygon(pts, fill=255)
+        bord = bord.filter(ImageFilter.GaussianBlur(R * 0.07))
+
+        alpha = ImageChops.multiply(tache.getchannel("A"), bord)
+        tache.putalpha(alpha.point(lambda v: int(v * force)))
+
+        fond = self.im.convert("RGBA")
+        self.im = Image.alpha_composite(fond, tache).convert("RGB")
+        self.d = ImageDraw.Draw(self.im)
         return self
 
     def abonnement(self, couleur="sable", texte=None):
