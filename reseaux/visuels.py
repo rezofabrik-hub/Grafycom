@@ -2588,7 +2588,8 @@ def _melange(a, b, k):
 # Elles s'appliquent aux objets dessines, jamais au fond de la planche
 # ni au texte : un titre grene est un titre sale.
 # ---------------------------------------------------------------------
-def pose(flou=20, force=78, bas=15, cote=6):
+def pose(flou=20, force=78, bas=15, cote=6, modele=0.26,
+         grain=9):
     """Décorateur : l'objet dessiné reçoit l'ombre de sa propre silhouette.
 
     L'ombre rectangulaire de _ombre_contact() suppose que l'objet
@@ -2625,7 +2626,36 @@ def pose(flou=20, force=78, bas=15, cote=6):
                         decale.point(lambda v: int(v * force / 255)))
             ombre = ombre.filter(ImageFilter.GaussianBlur(flou))
             fond = Image.alpha_composite(avant.convert("RGBA"), ombre)
-            fond.paste(p.im.convert("RGBA"), (0, 0), silhouette)
+
+            # L'ombre decolle l'objet du fond ; elle ne lui donne pas de
+            # volume. Un aplat uni reste un aplat uni, et c'est le second
+            # signe qui fait lire « schema » : dans le monde, une surface
+            # prend plus de lumiere d'un cote que de l'autre, et une
+            # matiere a un grain. Les deux se posent ICI, sur la seule
+            # silhouette de l'objet — jamais sur le fond de la planche,
+            # jamais sur le texte des gabarits.
+            objet = p.im.convert("RGB")
+            if modele:
+                rampe = _degrade_lineaire(p.l, p.h, 138.0,
+                                          [(0.0, "#ffffff"), (1.0, "#000000")])
+                gris = rampe.convert("L").point(
+                    lambda v: int(128 + (v - 128) * modele))
+                objet = ImageChops.overlay(
+                    objet, Image.merge("RGB", (gris,) * 3))
+            if grain:
+                import random
+                al = random.Random(13)
+                pt = (max(1, p.l // 3), max(1, p.h // 3))
+                petit = Image.new("L", pt)
+                petit.putdata([128 + al.randint(-grain, grain)
+                               for _ in range(pt[0] * pt[1])])
+                bruit = petit.resize((p.l, p.h), Image.BILINEAR)
+                objet = Image.blend(
+                    objet, ImageChops.overlay(objet,
+                                              Image.merge("RGB", (bruit,) * 3)),
+                    0.5)
+
+            fond.paste(objet.convert("RGBA"), (0, 0), silhouette)
             p.im = fond.convert("RGB")
             p._redessiner()
             return r
