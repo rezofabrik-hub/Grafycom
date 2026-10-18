@@ -46,6 +46,26 @@ SORTIE = RACINE / "visuels"
 LARGE, HAUT = 1080, 1350          # format 4:5, le post Instagram
 LARGE_S, HAUT_S = 1080, 1920      # format 9:16, la story
 MARGE = 86
+
+# ---------------------------------------------------------------------
+# La direction « typo pleine page », choisie le 18 octobre 2026.
+# ---------------------------------------------------------------------
+# Le diagnostic etait net : le titre occupait un quart de la planche la
+# ou un carrousel d'aujourd'hui en remplit les deux tiers, le contraste
+# brun-sur-creme etait aimable mais ne s'arretait pas dans un feed, et
+# les 177 planches partageaient le meme squelette sans une variation
+# d'echelle.
+#
+# Trois reglages corrigent l'essentiel, et ils sont ICI plutot que dans
+# chaque gabarit : une direction artistique qui se decide a 177 endroits
+# n'en est pas une, et le jour ou elle change il faut la rechanger 177
+# fois.
+TITRE_ECHELLE = 1.35      # le titre, en plus grand
+TITRE_INTERLIGNE = 1.12   # resserre, mais pas en dessous : Playfair a des
+                          # jambages, et sous 1,10 les hampes touchent les
+                          # accents de la ligne du dessous.
+GRAIN = 11                # l'ecart-type du bruit. Zero pour l'eteindre.
+
 PSEUDO = "@grafycom.graphiste"    # avec le point. C'est une constante
                                   # justement pour qu'il ne se perde plus.
 
@@ -225,7 +245,27 @@ class Planche:
         else:
             self.im = Image.new("RGB", (large, haut), teinte(fond))
         self.d = ImageDraw.Draw(self.im)
-        self.y = MARGE
+        self._y = MARGE
+
+    # Le curseur vertical passe par une propriete, et pas par un simple
+    # attribut. Raison : les gabarits ecrivent souvent « p.y = 640 » pour
+    # poser le bloc suivant a une ordonnee choisie a la main. Quand les
+    # titres ont grossi, plusieurs de ces 640 se sont retrouves AU-DESSUS
+    # du bas du titre, et le texte est venu se poser dessus. Aucun
+    # controle ne le voyait : ni _deborde(), qui ne regarde que le bas de
+    # planche, ni _place(), qu'une affectation directe contourne.
+    #
+    # Le setter attrape donc tout recul du curseur, d'ou qu'il vienne.
+    @property
+    def y(self):
+        return self._y
+
+    @y.setter
+    def y(self, valeur):
+        if valeur < getattr(self, "_y", 0) - 20:
+            self.chevauchements = getattr(self, "chevauchements", [])
+            self.chevauchements.append(("bloc", int(self._y - valeur)))
+        self._y = valeur
 
     # -- fonds -------------------------------------------------------
     def bandeau_bas(self, couleur="violet", part=0.33):
@@ -235,16 +275,21 @@ class Planche:
         return self
 
     # -- texte -------------------------------------------------------
-    def titre(self, texte, taille=96, couleur="encre", interligne=1.16,
-              y=None, centre=False):
+    def titre(self, texte, taille=96, couleur="encre", interligne=None,
+              y=None, centre=False, echelle=True):
         """Le titrage, en Playfair comme sur le site et dans le feed.
 
         L'interligne passe de 1.06 a 1.16 : une serif a jambages a besoin
         de plus d'air qu'une sans-serif, sinon les hampes du dessus
         touchent les accents du dessous.
         """
+        if echelle:
+            taille = int(taille * TITRE_ECHELLE)
+        if interligne is None:
+            interligne = TITRE_INTERLIGNE
         f = titrage(taille)
         if y is not None:
+            self._place(y, "titre")
             self.y = y
         for ligne in couper(texte, f, self.l - 2 * MARGE):
             x = MARGE
@@ -271,13 +316,38 @@ class Planche:
                 self.orphelins.append(lignes[-1].strip())
         return self
 
-    def surtitre(self, texte, couleur="taupe", taille=26, y=None, centre=False):
-        """Le petit label en capitales espacees, au-dessus du titre.
+    def surtitre(self, texte, couleur="taupe", taille=26, y=None, centre=False,
+                 bandeau=False):
+        """Le label en capitales espacees, sur un bandeau sombre en tete.
 
-        C'est la signature de mise en page du compte : « QUI SUIS-JE ? »,
-        « CRÉATION DE LOGO ». Il situe la publication avant qu'on lise le
-        titre, et il coute trois mots.
+        C'etait un petit mot taupe qui flottait au-dessus du titre. Il
+        est devenu un bandeau pleine largeur : il ancre la planche, il
+        donne le contraste dur qui manquait, et il laisse au titre toute
+        la hauteur en dessous — c'est lui qui rend la « typo pleine
+        page » possible sans que la planche parte en l'air.
+
+        L'argument `y` est ignore quand le bandeau est actif.
+
+        Il est hors service par defaut, et ce n'est pas un renoncement :
+        essaye le 18 octobre, il n'apparaissait que sur la planche qui
+        appelle surtitre(), soit UNE sur sept. Un carrousel avec un seul
+        bandeau sombre est moins tenu qu'un carrousel sans. Le jour ou on
+        le veut, c'est sur la premiere ET la derniere planche de chaque
+        carrousel — l'accroche et l'appel — et nulle part ailleurs.
         """
+        if bandeau:
+            h = 230
+            self.d.rectangle([0, 0, self.l, h], fill=teinte("encre"))
+            f = police(800, taille + 8)
+            t = texte.upper()
+            esp = max(3, (taille + 8) // 7)
+            x = MARGE
+            for c in t:
+                self.d.text((x, h - taille - 46), c, font=f,
+                            fill=teinte("creme"))
+                x += self.d.textlength(c, font=f) + esp
+            self.y = h + 80
+            return self
         if y is not None:
             self.y = y
         f = police(800, taille)
@@ -290,6 +360,24 @@ class Planche:
             x += self.d.textlength(c, font=f) + esp
         self.y += int(taille * 1.5)
         return self
+
+    def _place(self, y, quoi=""):
+        """Signale un element pose au-dessus de ce qui precede.
+
+        _deborde() ne surveillait que le bas de planche. Le passage en
+        typo pleine page a casse autre chose : un titre qui fait
+        desormais quatre lignes la ou il en faisait deux vient recouvrir
+        le dessin pose a une ordonnee fixe en dessous. Le fichier sort,
+        aucune alerte, et le defaut ne se voit qu'en ouvrant l'image.
+
+        On compare donc chaque ordonnee explicite au bas du bloc
+        precedent. Vingt pixels de tolerance : certains gabarits
+        chevauchent volontairement de quelques pixels.
+        """
+        if y is not None and y < self.y - 20:
+            self.chevauchements = getattr(self, "chevauchements", [])
+            self.chevauchements.append((quoi or "élément", int(self.y - y)))
+        return y
 
     def _deborde(self):
         """Previent si le texte descend sous la ligne de signature.
@@ -364,7 +452,7 @@ class Planche:
     # -- formes ------------------------------------------------------
     def disques(self, couleurs, legendes=None, y=None, diam=230):
         """Trois pastilles de couleur, avec une légende facultative."""
-        y = self.y if y is None else y
+        y = self.y if y is None else self._place(y, "disques")
         n = len(couleurs)
         espace = (self.l - 2 * MARGE - n * diam) // max(n - 1, 1)
         x = MARGE
@@ -387,7 +475,7 @@ class Planche:
         Le texte est écrit dans la même couleur sur les deux : c'est tout
         l'intérêt. Si on trichait, la démonstration ne vaudrait rien.
         """
-        y = self.y if y is None else y
+        y = self.y if y is None else self._place(y, "deux cartes")
         f = police(800, 118)
         ecart = self.l - 2 * MARGE - 2 * larg
         for i, fond in enumerate((gauche, droite)):
@@ -426,7 +514,13 @@ class Planche:
     # et on le pose au centre optique : legerement au-dessus du milieu
     # geometrique, parce que l'oeil place le centre plus haut qu'il n'est.
 
-    def h_titre(self, texte, taille=96, interligne=1.16):
+    def h_titre(self, texte, taille=96, interligne=None, echelle=True):
+        """La hauteur qu'occupera titre() — memes reglages, sinon
+        centrer() centrerait un bloc qui n'est pas celui qu'on dessine."""
+        if echelle:
+            taille = int(taille * TITRE_ECHELLE)
+        if interligne is None:
+            interligne = TITRE_INTERLIGNE
         f = titrage(taille)
         return len(couper(texte, f, self.l - 2 * MARGE)) * int(taille * interligne)
 
@@ -443,6 +537,7 @@ class Planche:
     def devanture(self, x, y, larg, haut, mot, graisse, taille,
                   fond="sable", bandeau="encre", texte_couleur="creme"):
         """Une facade schematique avec son enseigne, pour le test A/B."""
+        self._place(y, "devanture")
         self.d.rectangle([x, y, x + larg, y + haut], fill=teinte(fond))
         hb = int(haut * 0.26)
         self.d.rectangle([x, y, x + larg, y + hb], fill=teinte(bandeau))
@@ -488,6 +583,7 @@ class Planche:
               numerote=False, y=None, interligne=1.5, diam=22):
         """Une liste a pastilles. Les items passent a la ligne proprement."""
         if y is not None:
+            self._place(y, "puces")
             self.y = y
         f = police(400, taille)
         for i, it in enumerate(items, 1):
@@ -511,10 +607,19 @@ class Planche:
             self.y += int(taille * (interligne - 1.3))
         return self
 
-    def chiffre(self, texte, taille=260, couleur="bleu", y=None, centre=False):
-        """Un grand nombre, seul. Pour une heure, un prix, une mesure."""
+    def chiffre(self, texte, taille=260, couleur="bleu", y=None, centre=False,
+                echelle=True):
+        """Un grand nombre, seul. Pour une heure, un prix, une mesure.
+
+        Il suit l'echelle du titre : sans ca, le passage en typo pleine
+        page laissait le chiffre seul en petit au milieu d'une planche
+        dont tout le reste avait grossi.
+        """
         if y is not None:
+            self._place(y, "chiffre")
             self.y = y
+        if echelle:
+            taille = int(taille * TITRE_ECHELLE)
         f = police(800, taille)
         l = self.d.textlength(texte, font=f)
         x = (self.l - l) / 2 if centre else MARGE
@@ -526,6 +631,7 @@ class Planche:
                 y=None, pad=34, graisse=400, couleur="brun"):
         """Un bloc de texte dans un cadre a filet lateral."""
         if y is not None:
+            self._place(y, "encadré")
             self.y = y
         f = police(graisse, taille)
         lignes = couper(texte, f, self.l - 2 * MARGE - 2 * pad - 10)
@@ -601,11 +707,50 @@ class Planche:
         self.im.paste(tourne, (cx - tourne.width // 2, cy - tourne.height // 2), tourne)
         return self
 
+    def _grain(self):
+        """Un bruit fin sur toute la planche.
+
+        C'est ce qui separe le plus vite un aplat de 2019 d'un visuel
+        d'aujourd'hui, et ca coute trois lignes. Calcule au tiers de la
+        definition puis agrandi : le grain reste visible, et on evite
+        deux millions de tirages aleatoires par planche.
+        """
+        if not GRAIN:
+            return self
+        import random
+        from PIL import ImageChops
+        al = random.Random(7)
+        p = (self.l // 3, self.h // 3)
+        bruit = Image.new("L", p)
+        bruit.putdata([int(al.gauss(128, GRAIN)) for _ in range(p[0] * p[1])])
+        bruit = bruit.resize((self.l, self.h), Image.BILINEAR)
+        # En FUSION (overlay) et pas en transparence. La premiere version
+        # composait ce bruit gris a 9 % par-dessus la planche : chaque
+        # teinte etait tiree vers le gris, et le creme #f7f1ef sortait a
+        # #ece7e5. Onze points sur chaque canal, sur les 177 planches,
+        # pour un effet cense ne rien changer aux couleurs.
+        #
+        # La fusion, elle, laisse le pixel intact la ou le bruit vaut
+        # exactement 128, eclaircit au-dessus et assombrit en dessous :
+        # la moyenne est conservee, donc la charte aussi. C'est la seule
+        # facon honnete de grainer un aplat dont la valeur est imposee.
+        fusion = ImageChops.overlay(self.im.convert("RGB"),
+                                    Image.merge("RGB", (bruit, bruit, bruit)))
+        self.im = Image.blend(self.im.convert("RGB"), fusion, 0.5)
+        self.d = ImageDraw.Draw(self.im)
+        return self
+
     def ecrire(self, chemin):
+        self._grain()
         if getattr(self, "orphelins", None):
             print("   ORPHELIN  %-22s %s seul(s) en fin de ligne"
                   % (pathlib.Path(chemin).name,
                      ", ".join("« %s »" % o for o in self.orphelins)))
+        if getattr(self, "chevauchements", None):
+            print("   CHEVAUCHE %-22s %s"
+                  % (pathlib.Path(chemin).name,
+                     ", ".join("%s recouvert de %d px" % (q, d)
+                               for q, d in self.chevauchements)))
         if getattr(self, "debordements", 0):
             print("   ATTENTION %s : %d bloc(s) descendent sous la "
                   "signature" % (pathlib.Path(chemin).name,
@@ -652,8 +797,8 @@ def carrousel_couleurs(dossier=None):
     faits.append(p.ecrire(d / "04.png"))
 
     p = Planche("creme")
-    p.titre("Le même prix. Deux fonds.", 62, y=170)
-    p.deux_cartes("jaune", "bleu", "12 €", y=330)
+    p.titre("Le même prix. Deux fonds.", 58, y=150)
+    p.deux_cartes("jaune", "bleu", "12 €", y=360)
     p.titre("Le contraste se vérifie.\nIl ne se devine pas.", 62, y=900)
     faits.append(p.ecrire(d / "05.png"))
 
@@ -708,7 +853,7 @@ def dilemme_enseigne(dossier=None):
         return p
 
     p = Planche("creme")
-    p.titre("Laquelle se lit\ndepuis le trottoir d'en face ?", 72, y=190)
+    p.titre("Laquelle se lit depuis\nle trottoir d'en face ?", 58, y=180)
     facades(p); reperes(p)
     p.signature("brun")
     faits.append(p.ecrire(d / "01.png"))
@@ -717,8 +862,8 @@ def dilemme_enseigne(dossier=None):
     facades(p)
     p.flouter(8)
     reperes(p)                      # nets : ce sont des reperes
-    p.titre("À vingt mètres,\nce n'est plus une typo.", 72, y=190)
-    p.titre("C'est une silhouette.", 76, "corail", y=1120)
+    p.titre("À vingt mètres,\nce n'est plus une typo.", 68, y=170)
+    p.titre("C'est une silhouette.", 64, "corail", y=1130)
     faits.append(p.ecrire(d / "02.png"))
     return faits
 
@@ -882,9 +1027,9 @@ def carrousel_droits(dossier=None):
     f.append(p.ecrire(d / "02.png"))
 
     p = Planche("blanc")
-    p.titre("Ce qui se cède,\net ce qui ne se cède pas", 66, y=200)
+    p.titre("Ce qui se cède,\net ce qui ne\nse cède pas.", 66, y=180)
     p.texte("Les droits patrimoniaux se cèdent : exploiter, reproduire, adapter.", 42, "encre", 600, avant=70)
-    p.texte("Le droit moral, jamais. Il reste à l'auteur, à vie.", 42, "corail", 600, avant=40)
+    p.texte("Le droit moral, jamais.\nIl reste à l'auteur, à vie.", 42, "corail", 600, avant=40)
     f.append(p.ecrire(d / "03.png"))
 
     p = Planche("creme")
@@ -969,10 +1114,9 @@ def carrousel_blog_rdv(dossier=None):
     p = Planche("sable_chaud")
     p.surtitre("Le blog", y=270)
     p.filet()
-    p.titre("Un nouvel article\nchaque vendredi matin.", 84, "encre")
-    p.y = 640
+    p.titre("Un nouvel article\nchaque vendredi matin.", 78, "encre")
     p.texte("Sur grafycom.fr/blog. Gratuit, sans inscription.", 42, "brun",
-            400, avant=0)
+            400, avant=56)
     p.signature("brun")
     p.numero(1, 4, "taupe")
     f.append(p.ecrire(d / "01.png"))
@@ -992,8 +1136,8 @@ def carrousel_blog_rdv(dossier=None):
     f.append(p.ecrire(d / "02.png"))
 
     p = Planche("blanc")
-    p.titre("Les quatre prochains", 76, "encre", y=180)
-    p.y = 380
+    p.titre("Les quatre prochains", 70, "encre", y=180)
+    p.y = 430
     p.puces(_quatre_prochains_articles(), "violet", 36, "brun",
             interligne=1.55)
     p.signature("brun")
@@ -1090,8 +1234,7 @@ def carrousel_retroplanning(dossier=None):
     p.filet()
     p.titre("Vos cartes de vœux\nde Noël se décident\ncette semaine.", 86,
             "encre")
-    p.y = 760
-    p.texte("Pas en décembre. Voici pourquoi.", 42, "brun", 400, avant=0)
+    p.texte("Pas en décembre. Voici pourquoi.", 42, "brun", 400, avant=56)
     p.fleche("corail", y=1120)
     p.signature("brun")
     p.numero(1, 6, "taupe")
@@ -1217,10 +1360,9 @@ def carrousel_retroplanning(dossier=None):
     p.filet(y=300)
     p.titre("Dites-moi ce que vous\nvoulez imprimer\npour les fêtes.", 80,
             "encre")
-    p.y = 740
     p.texte("En commentaire. Je vous dis la date limite réelle pour le "
             "décider — pas celle de l'imprimeur, la vôtre.", 40, "brun",
-            400, avant=0)
+            400, avant=56)
     p.fleche("corail", y=1050)
     p.signature("brun")
     p.numero(6, 6, "taupe")
@@ -1312,8 +1454,7 @@ def quiz_fin_annee(dossier=None):
     p.filet()
     p.titre("4 idées reçues\nsur vos impressions\nde fin d'année.", 86,
             "encre")
-    p.y = 760
-    p.texte("Vous en avez combien de justes ?", 46, "brun", 600, avant=0)
+    p.texte("Vous en avez combien de justes ?", 46, "brun", 600, avant=56)
     p.fleche("corail", y=1090)
     p.signature("brun")
     p.numero(1, 6, "taupe")
@@ -1476,7 +1617,7 @@ def stories(dossier=None):
       "Habiller sa vitrine : dépoli, microperforé, lettres découpées.",
       "Lien", ["grafycom.fr/blog"]),
      ("S3-E2", "sable_chaud", "encre", "Le reel est en ligne",
-      "Votre vitrine fait 6 m².",
+      "Votre vitrine\nfait 6 m².",
       "Mention du post", ["Le reel du jour"]),
      ("S4-A", "creme", "encre", "Nouveau post",
       "Je présente toujours trois pistes.\nDeux sont faites pour être écartées.",
@@ -1658,7 +1799,7 @@ def solaire_66(dossier=None):
     faits.append(p.ecrire(d / "02.png"))
 
     p = Planche("blanc")
-    p.titre("Regardez le O.", 110, y=160)
+    p.titre("Regardez\nle O.", 110, y=160)
     p.poser(S / "solaire-66-logo.png", 540, 560, 880, ombre=0)
     p.y = 870
     p.texte("Ce n'est pas un O avec un soleil posé dessus. C'est le soleil "
@@ -1709,8 +1850,8 @@ def solaire_66(dossier=None):
 
     p = Planche("sable_chaud")
     p.filet(y=200)
-    p.titre("Dessiné en grand." + "\n" + "Vérifié en petit.", 92)
-    p.y = 470
+    p.titre("Dessiné en grand." + "\n" + "Vérifié en petit.", 78)
+    p.y = 520
     p.texte("Sur un panneau de chantier, un logo peut tout se permettre. "
             "Sur 8,5 centimètres, dans un avatar, brodé sur un polo, le "
             "détail devient de la bouillie.", 38, "brun", 400, avant=0)
@@ -1788,7 +1929,7 @@ def pub09_logo_reduction(dossier=None):
     p.titre("Ce qui disparaît" + "\n" + "en premier.", 92, "encre")
     p.puces(["les dégradés", "les ombres portées", "les contours fins",
              "le texte placé sous le symbole"],
-            "corail", 42, "brun", y=520, interligne=1.6)
+            "corail", 42, "brun", y=640, interligne=1.6)
     p.signature("brun")
     faits.append(p.ecrire(d / "03.png"))
 
@@ -1822,8 +1963,8 @@ def pub09_logo_reduction(dossier=None):
 
     p = Planche("encre")
     p.filet(y=320)
-    p.titre("Faites le test" + "\n" + "ce soir.", 104, "blanc")
-    p.y = 640
+    p.titre("Faites le test" + "\n" + "ce soir.", 92, "blanc")
+    p.y = 700
     p.texte("Réduisez votre logo à la taille d'un ongle. Si vous ne le "
             "reconnaissez plus, vos clients non plus.", 40, "creme", 400,
             avant=0)
@@ -2123,6 +2264,7 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
     Les hauteurs sont en metres via HAUTEUR_DEVANTURE_M : c'est ce qui
     permet de placer la bande des yeux a 1,40-1,70 m sans la deviner.
     """
+    p._place(y, "vitrine")
     ep = max(4, int(larg // 52))
     cadre = "brun" if trait else "encre"
     hf = haut * 0.17 if fascia else 0
@@ -2361,6 +2503,7 @@ def _matiere(p, x, y, cote, genre, epaisseur=0.16):
     millimetres d'alu composite sur un panneau d'un metre ne font pas un
     pixel. Un dessin technique grossit toujours ce qu'il explique.
     """
+    p._place(y, "matière")
     e = cote * epaisseur
     biais = e * 0.9
     haut = cote - e
@@ -2529,6 +2672,7 @@ def _sachet(p, cx, y, larg, haut, trait=False, zone=False, bandeau=True,
     trait avec un rectangle vide au dos. Dessiner les deux garantit que
     c'est bien le meme sachet — photographie, il ne l'aurait jamais ete.
     """
+    p._place(y, "sachet")
     x0, x1 = cx - larg / 2, cx + larg / 2
     ep = max(3, int(larg * 0.016))
     corps = teinte("blanc") if trait else _melange("sable", "creme", 0.45)
@@ -2591,6 +2735,7 @@ def _feuille_formulaire(p, cx, y, larg, haut, numero, titre, lignes=5):
     justement le sujet de la publication. La feuille dessinee le porte,
     et porte aussi la mention qui dit ce qu'elle est.
     """
+    p._place(y, "formulaire")
     x0 = cx - larg / 2
     p.d.rectangle([x0 + 10, y + 12, x0 + larg + 10, y + haut + 12],
                   fill=_melange("taupe", "creme", 0.55))
@@ -3035,12 +3180,12 @@ def pub10_enseigne_hiver(dossier=None):
     faits.append(p.ecrire(d / "06.png"))
 
     p = Planche("violet")
-    p.filet(y=360)
-    p.titre("Votre rue\nen commentaire.", 96, "blanc")
-    p.y += 40
+    p.filet(y=300)
+    p.titre("Votre rue\nen commentaire.", 86, "blanc")
+    p.y += 30
     p.texte("Je vous dis quelles pièces réunir avant de commander quoi que "
             "ce soit.", 40, "creme", 400, avant=20)
-    p.fleche("corail", y=1040)
+    p.fleche("corail", y=1060)
     p.signature("creme")
     faits.append(p.ecrire(d / "07.png"))
     return faits
@@ -3157,8 +3302,8 @@ def pub14_francais_devanture(dossier=None):
     p = Planche("creme")
     p.surtitre("La règle, en une phrase", y=170)
     p.titre("Ce qui informe le client\ndoit être compréhensible\nen français.",
-            72, y=280)
-    p.y = 740
+            62, y=280)
+    p.y = 760
     p.filet()
     p.texte("Ce qui vous nomme ne serait pas concerné de la même façon.",
             42, "brun", 600, avant=10)
@@ -3244,8 +3389,8 @@ def pub15_quiz_matieres(dossier=None):
 
     p = Planche("sable_chaud")
     p.surtitre("Quiz", y=130)
-    p.titre("Quatre supports.\nVous en reconnaissez\ncombien ?", 72, y=210)
-    _grille_matieres(p, 590, ordre, cote=290)
+    p.titre("Quatre supports.\nVous en reconnaissez\ncombien ?", 60, y=200)
+    _grille_matieres(p, 600, ordre, cote=285)
     p.signature("brun")
     faits.append(p.ecrire(d / "01.png"))
 
@@ -3266,8 +3411,8 @@ def pub15_quiz_matieres(dossier=None):
 
     p = Planche("sable_chaud")
     p.filet(y=130)
-    p.titre("Les quatre réponses.", 78, "encre")
-    yy = 360
+    p.titre("Les quatre réponses.", 70, "encre")
+    yy = 430
     for genre in ordre:
         nom, usage = MATIERES[genre]
         _matiere(p, MARGE, yy, 150, genre)
@@ -3375,9 +3520,9 @@ def pub16_reel_fin_annee(dossier=None):
     _carte(p, 330, 720, 300, 400, 14, fond="creme", gaufre=True,
            texte="Bonne année")
     _emballage_kraft(p, 520, 1120, 460, 320)
-    p.y = 1430
+    p.y = 1380
     p.filet()
-    p.titre("Décembre se décide\nen novembre.", 78, "blanc")
+    p.titre("Décembre se décide\nen novembre.", 68, "blanc")
     p.abonnement("sable")
     p.signature("sable")
     faits.append(p.ecrire(d / "ecran5.png"))
@@ -3402,8 +3547,8 @@ def pub18_emballage_tri(dossier=None):
     faits.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")
-    p.titre("Il lui faut cette place.", 72, y=140)
-    _sachet(p, p.l / 2, 330, 460, 620, trait=True, zone=True)
+    p.titre("Il lui faut cette place.", 62, y=140)
+    _sachet(p, p.l / 2, 350, 450, 600, trait=True, zone=True)
     p.y = 1030
     p.texte("La question est de savoir qui la réserve, et quand.", 40,
             "brun", 600, avant=0)
@@ -3413,8 +3558,8 @@ def pub18_emballage_tri(dossier=None):
     p = Planche("blanc")
     p.surtitre("Le principe", y=150)
     p.titre("Un emballage destiné\nau grand public devrait\nporter une "
-            "signalétique\nde tri.", 64, y=240)
-    p.y = 740
+            "signalétique\nde tri.", 54, y=230)
+    p.y = 760
     p.texte("Le pictogramme accompagné de la consigne, élément par élément.",
             42, "brun", 400, avant=0)
     p.y = 1070
@@ -3530,8 +3675,8 @@ def pub21_vitrine_trottoir(dossier=None):
 
     p = Planche("sable_chaud")
     p.filet(y=240)
-    p.titre("À 17 h en décembre,\nil fait nuit.", 88, "encre")
-    _vitrine(p, 240, 620, 600, 340, eclairee=False, reflet=True,
+    p.titre("À 17 h en décembre,\nil fait nuit.", 72, "encre")
+    _vitrine(p, 240, 660, 600, 330, eclairee=False, reflet=True,
              enseigne="VOTRE NOM")
     p.y = 1020
     p.texte("Si l'intérieur n'est pas éclairé, votre vitrine devient un "
@@ -3747,6 +3892,7 @@ def _gaufrage(p, x, y, cote, rasante=True, legende=None,
     dessins sortent du meme code, avec un seul parametre de decalage —
     donc on ne peut pas tricher en exagerant l'un des deux.
     """
+    p._place(y, "gaufrage")
     p.d.rectangle([x, y, x + cote, y + cote], fill=teinte("creme"),
                   outline=_melange("taupe", "creme", 0.40), width=3)
     ep = max(4, int(cote * 0.030))
@@ -3783,6 +3929,7 @@ def _dorure(p, x, y, larg, haut, allume=True, legende=None,
     eteinte, elle est plus sombre que le papier. C'est exactement ce que
     le plan filme devait montrer en tournant la carte.
     """
+    p._place(y, "dorure")
     p.d.rectangle([x, y, x + larg, y + haut], fill=teinte("creme"),
                   outline=_melange("taupe", "creme", 0.40), width=3)
     bx, bl = x + larg * 0.12, larg * 0.76
@@ -3824,8 +3971,8 @@ def pub20_reel_matieres(dossier=None):
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=200)
-    p.titre("Ce que vos clients\nsentent\navant de lire.", 100, y=280)
-    _gaufrage(p, 180, 840, 720, rasante=True)
+    p.titre("Ce que vos clients\nsentent\navant de lire.", 84, y=280)
+    _gaufrage(p, 180, 900, 700, rasante=True)
     p.y = 1640
     p.texte("Avant de lire votre carte, votre client la touche. Et il a "
             "déjà une opinion.", 42, "brun", 400, avant=0)
@@ -4177,6 +4324,7 @@ def _hors_gamme(rvb, force=0.30):
 
 def _ecran(p, cx, cy, larg, couleur):
     """Un moniteur, son pied, et un aplat de couleur dedans."""
+    p._place(cy - larg * 0.31, "écran")
     haut = larg * 0.62
     p.d.rounded_rectangle([cx - larg / 2, cy - haut / 2, cx + larg / 2,
                            cy + haut / 2], radius=int(larg * 0.035),
@@ -4277,8 +4425,8 @@ def pub04_reel_cmjn(dossier=None):
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=190)
-    p.titre("Pourquoi ce n'est\njamais la même\ncouleur.", 98, y=270)
-    _ecran(p, p.l / 2, 860, 620, vif)
+    p.titre("Pourquoi ce n'est\njamais la même\ncouleur.", 76, y=260)
+    _ecran(p, p.l / 2, 880, 600, vif)
     _feuille_imprimee(p, p.l / 2, 1430, 440, terne)
     f = police(600, 32)
     for y, lib in ((1170, "à l'écran"), (1610, "imprimé")):
@@ -4540,8 +4688,8 @@ def pub08_reel_halloween(dossier=None):
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("15-19 s", "taupe", y=190)
-    p.titre("Et pour\nvotre commerce ?", 100, y=260)
-    _vitrine(p, 90, 680, 900, 420, eclairee=True, enseigne="VOTRE NOM")
+    p.titre("Et pour\nvotre commerce ?", 84, y=250)
+    _vitrine(p, 90, 700, 900, 410, eclairee=True, enseigne="VOTRE NOM")
     _vitrine(p, 90, 1160, 900, 420, eclairee=True, enseigne="VOTRE NOM",
              bandeau=0.46, couleur_decor="orange", decor="citrouilles",
              opacite_decor=0xf2)
