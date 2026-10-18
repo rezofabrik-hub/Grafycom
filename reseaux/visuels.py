@@ -37,7 +37,7 @@ import pathlib
 import re
 import sys
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 RACINE = pathlib.Path(__file__).resolve().parent
 POLICES = RACINE / "polices"
@@ -235,6 +235,12 @@ def _degrade_lineaire(large, haut, angle, arrets):
     return im.resize((large, haut), Image.BICUBIC)
 
 
+def _etiquette(chemin):
+    """« dossier/fichier », parce que « 02.png » revient vingt-cinq fois."""
+    c = pathlib.Path(chemin)
+    return "%s/%s" % (c.parent.name, c.name)
+
+
 class Planche:
     """Une page de carrousel, ou un écran de story."""
 
@@ -288,6 +294,7 @@ class Planche:
         if interligne is None:
             interligne = TITRE_INTERLIGNE
         f = titrage(taille)
+        poses = []
         if y is not None:
             self._place(y, "titre")
             self.y = y
@@ -296,10 +303,48 @@ class Planche:
             if centre:
                 x = (self.l - self.d.textlength(ligne, font=f)) / 2
             self.d.text((x, self.y), ligne, font=f, fill=teinte(couleur))
+            poses.append((x, self.y, ligne))
             self.y += int(taille * interligne)
+        self._empreinte(poses, f)
         self._deborde()
         self._orphelin(texte, f)
         return self
+
+    def _empreinte(self, poses, fonte):
+        """Releve l'encre du titre, pour savoir ensuite si on a ecrit dessus.
+
+        Les deux gardes precedentes raisonnent sur le curseur : elles
+        voient un bloc pose trop haut, pas un dessin pose a une ordonnee
+        fixe que le titre, en grossissant, est venu rejoindre. Le disque
+        de « Votre logo tient-il sur un stylo ? » traversait la
+        troisieme ligne, et rien ne l'a signale.
+
+        On garde donc deux choses : le masque des glyphes du titre, et
+        la planche telle qu'elle etait juste apres l'avoir ecrit. A
+        l'enregistrement, tout pixel du masque qui a change entre-temps
+        est un element dessine par-dessus le texte.
+        """
+        masque = Image.new("L", (self.l, self.h), 0)
+        md = ImageDraw.Draw(masque)
+        for x, y, ligne in poses:
+            md.text((x, y), ligne, font=fonte, fill=255)
+        ancien = getattr(self, "_masque_titre", None)
+        self._masque_titre = masque if ancien is None \
+            else ImageChops.lighter(ancien, masque)
+        self._apres_titre = self.im.copy()
+        return self
+
+    def _titre_recouvert(self):
+        """Compte les pixels de titre repeints depuis qu'il a ete ecrit."""
+        masque = getattr(self, "_masque_titre", None)
+        if masque is None or getattr(self, "_apres_titre", None) is None:
+            return 0
+        ecart = ImageChops.difference(self.im.convert("RGB"),
+                                      self._apres_titre.convert("RGB"))
+        ecart = ecart.convert("L").point(lambda v: 255 if v > 30 else 0)
+        touche = ImageChops.multiply(ecart, masque.point(
+            lambda v: 255 if v > 120 else 0))
+        return sum(touche.histogram()[128:])
 
     def _orphelin(self, texte, fonte):
         """Signale une derniere ligne reduite a un mot court.
@@ -704,6 +749,7 @@ class Planche:
             self.im.paste(fond, (cx - fond.width // 2, cy - fond.height // 2 + ombre // 2), fond)
 
         tourne = im.rotate(angle, expand=True, resample=Image.BICUBIC)
+        self._place(cy - tourne.height // 2, "image")
         self.im.paste(tourne, (cx - tourne.width // 2, cy - tourne.height // 2), tourne)
         return self
 
@@ -741,19 +787,23 @@ class Planche:
         return self
 
     def ecrire(self, chemin):
+        n = self._titre_recouvert()
+        if n > 400:
+            self.chevauchements = getattr(self, "chevauchements", [])
+            self.chevauchements.append(("titre", n))
         self._grain()
         if getattr(self, "orphelins", None):
             print("   ORPHELIN  %-22s %s seul(s) en fin de ligne"
-                  % (pathlib.Path(chemin).name,
+                  % (_etiquette(chemin),
                      ", ".join("« %s »" % o for o in self.orphelins)))
         if getattr(self, "chevauchements", None):
             print("   CHEVAUCHE %-22s %s"
-                  % (pathlib.Path(chemin).name,
+                  % (_etiquette(chemin),
                      ", ".join("%s recouvert de %d px" % (q, d)
                                for q, d in self.chevauchements)))
         if getattr(self, "debordements", 0):
             print("   ATTENTION %s : %d bloc(s) descendent sous la "
-                  "signature" % (pathlib.Path(chemin).name,
+                  "signature" % (_etiquette(chemin),
                                  self.debordements))
         p = pathlib.Path(chemin)
         p.parent.mkdir(parents=True, exist_ok=True)
@@ -1784,7 +1834,7 @@ def solaire_66(dossier=None):
     faits.append(p.ecrire(d / "01.png"))
 
     p = Planche("creme")
-    p.titre("Ces deux couleurs" + "\n" + "ne sont pas un goût.", 92, y=150)
+    p.titre("Ces deux couleurs" + "\n" + "ne sont pas un goût.", 72, y=150)
     for cx, hexa, legende in ((330, "#10638b", "la mer"),
                               (750, "#f5b32d", "le soleil")):
         p.d.ellipse([cx - 150, 560, cx + 150, 860], fill=hexa)
@@ -1799,9 +1849,9 @@ def solaire_66(dossier=None):
     faits.append(p.ecrire(d / "02.png"))
 
     p = Planche("blanc")
-    p.titre("Regardez\nle O.", 110, y=160)
-    p.poser(S / "solaire-66-logo.png", 540, 560, 880, ombre=0)
-    p.y = 870
+    p.titre("Regardez\nle O.", 100, y=160)
+    p.poser(S / "solaire-66-logo.png", 540, 680, 880, ombre=0)
+    p.y = 900
     p.texte("Ce n'est pas un O avec un soleil posé dessus. C'est le soleil "
             "qui tient le rôle du O. Un symbole posé à côté d'un nom peut "
             "toujours s'en détacher ; devenu une lettre, il ne peut plus "
@@ -1810,7 +1860,7 @@ def solaire_66(dossier=None):
     faits.append(p.ecrire(d / "03.png"))
 
     p = Planche("creme")
-    p.titre("Une carte de visite" + "\n" + "fait 85 millimètres.", 88, y=140)
+    p.titre("Une carte de visite" + "\n" + "fait 85 millimètres.", 74, y=140)
     p.poser(S / "solaire-66-carte-verso.png", 700, 900, 540, angle=-6,
             rogner_mm=2, mm_par_px=MM)
     p.poser(S / "solaire-66-carte-recto.png", 390, 640, 540, angle=6,
@@ -1820,7 +1870,7 @@ def solaire_66(dossier=None):
 
     # La planche qui porte la demonstration : a l'echelle exacte.
     p = Planche("creme")
-    p.titre("À l'échelle exacte.", 96, y=140)
+    p.titre("À l'échelle exacte.", 80, y=140)
     larg_panneau = 860
     larg_carte = int(round(larg_panneau * CARTE_CM / PANNEAU_CM))
     p.poser(S / "solaire-66-panneau.png", 500, 640, larg_panneau, angle=0)
@@ -1837,7 +1887,7 @@ def solaire_66(dossier=None):
 
     # Le monochrome : possible parce que les contreformes sont ajourees.
     p = Planche("creme")
-    p.titre("En une seule couleur.", 80, y=150)
+    p.titre("En une seule couleur.", 68, y=150)
     p.poser(S / "solaire-66-logo-mono-bleu.png", 540, 450, 620, ombre=0)
     p.d.rectangle([0, 660, LARGE, 1030], fill=teinte("encre"))
     p.poser(S / "solaire-66-logo-mono-blanc.png", 540, 845, 620, ombre=0)
@@ -1904,7 +1954,7 @@ def pub09_logo_reduction(dossier=None):
 
     p = Planche("creme")
     p.surtitre("Conseil", y=130)
-    p.titre("Votre logo tient-il" + "\n" + "sur un stylo ?", 96)
+    p.titre("Votre logo tient-il" + "\n" + "sur un stylo ?", 78)
     _logo_fictif(p.d, 400, 760, 210)
     _logo_fictif(p.d, 790, 760, 26)
     f = police(400, 30)
@@ -1934,7 +1984,7 @@ def pub09_logo_reduction(dossier=None):
     faits.append(p.ecrire(d / "03.png"))
 
     p = Planche("creme")
-    p.titre("Un logo doit exister" + "\n" + "en une seule couleur.", 84, y=150)
+    p.titre("Un logo doit exister" + "\n" + "en une seule couleur.", 64, y=150)
     _logo_fictif(p.d, 300, 700, 150)
     p.d.ellipse([570, 550, 870, 850], fill=teinte("encre"))
     p.d.ellipse([570 + 42, 550 + 42, 870 - 42, 850 - 42], fill=teinte("creme"))
@@ -1946,7 +1996,7 @@ def pub09_logo_reduction(dossier=None):
     faits.append(p.ecrire(d / "04.png"))
 
     p = Planche("creme")
-    p.titre("Le même, cinq fois," + "\n" + "sans retouche.", 88, y=150)
+    p.titre("Le même, cinq fois," + "\n" + "sans retouche.", 72, y=150)
     supports = [("carte de visite", 240, 560), ("polo brodé", 560, 560),
                 ("flanc de camionnette", 880, 560), ("panneau", 320, 850),
                 ("favicon", 760, 850)]
@@ -3228,7 +3278,7 @@ def pub12_reel_vitrophanie(dossier=None):
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("3-8 s", "taupe", y=200)
-    p.titre("Dépoli :\non cache, on garde\nla lumière.", 86, y=280)
+    p.titre("Dépoli :\non cache, on garde\nla lumière.", 76, y=280)
     _depoli(p, 90, 700, 900, 620)
     p.y = 1430
     p.texte("Il masque le bas de la vitrine — les cartons, le dos des "
@@ -3239,7 +3289,7 @@ def pub12_reel_vitrophanie(dossier=None):
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("8-13 s", "taupe", y=200)
-    p.titre("Microperforé :\nplein dehors,\ntransparent dedans.", 82, y=280)
+    p.titre("Microperforé :\nplein dehors,\ntransparent dedans.", 66, y=280)
     _microperfore(p, 90, 760, 900, 560)
     p.y = 1480
     p.texte("Des milliers de trous d'un millimètre. Une image pleine vue de "
@@ -3249,7 +3299,7 @@ def pub12_reel_vitrophanie(dossier=None):
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("13-18 s", "taupe", y=200)
-    p.titre("Lettres découpées :\nsobre, et ça dure.", 86, y=280)
+    p.titre("Lettres découpées :\nsobre, et ça dure.", 70, y=280)
     _lettres_sur_verre(p, 90, 740, 900, 560)
     p.y = 1420
     p.texte("Pas de rectangle blanc qui jaunit autour du texte. C'est ce "
@@ -3320,16 +3370,16 @@ def pub14_francais_devanture(dossier=None):
                           "une mention de service"], "corail",
              "Là, le français serait attendu."))):
         x = MARGE + i * (col + 36)
-        p.d.rounded_rectangle([x, 340, x + col, 980], radius=26,
+        p.d.rounded_rectangle([x, 400, x + col, 1000], radius=26,
                               fill=_melange(coul, "blanc", 0.88))
-        p.pastille(x + 26, 372, titre_c, coul, taille=26)
-        yy = 470
+        p.pastille(x + 26, 432, titre_c, coul, taille=26)
+        yy = 526
         for it in items:
             p.d.ellipse([x + 32, yy + 12, x + 46, yy + 26], fill=teinte(coul))
             yy = _bloc(p, x + 62, yy, it, 34, "encre", 400, col - 90)
             yy += 14
-        _bloc(p, x + 32, 860, verdict, 32, "brun", 600, col - 64)
-    p.y = 1030
+        _bloc(p, x + 32, 884, verdict, 32, "brun", 600, col - 64)
+    p.y = 1046
     p.texte("La ligne de partage est écrite au conditionnel : elle n'est "
             "pas vérifiée à la source.", 30, "taupe", 400, avant=0)
     p.signature("brun")
@@ -3464,7 +3514,7 @@ def pub16_reel_fin_annee(dossier=None):
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("3-9 s", "taupe", y=180)
-    p.titre("Une carte imprimée\nse garde.\nUn mail se ferme.", 86, y=250)
+    p.titre("Une carte imprimée\nse garde.\nUn mail se ferme.", 70, y=250)
     # la carte qui porte le texte passe par-dessus : dessinee en
     # premier, l'autre lui mangeait la moitie du mot.
     _carte(p, 700, 1100, 360, 480, -7, gaufre=True)
@@ -3478,7 +3528,7 @@ def pub16_reel_fin_annee(dossier=None):
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("9-15 s", "taupe", y=180)
-    p.titre("Un bandeau suffit.\nPas un packaging\nentier.", 86, y=250)
+    p.titre("Un bandeau suffit.\nPas un packaging\nentier.", 78, y=250)
     _emballage_kraft(p, p.l / 2, 1050, 760, 560)
     p.y = 1480
     p.texte("Un bandeau imprimé et un adhésif au logo transforment un "
@@ -4179,7 +4229,7 @@ def pub24_reel_bilan(dossier=None):
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("3-9 s", "taupe", y=200)
     p.titre("Changer par calendrier,\nce n'est pas changer\npar besoin.",
-            80, y=280)
+            72, y=280)
     _logo_fictif(p.d, 330, 980, 190, detail=True)
     _logo_fictif(p.d, 760, 980, 190, detail=True, variante=0.045)
     f = police(600, 32)
