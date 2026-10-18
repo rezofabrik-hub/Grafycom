@@ -261,6 +261,12 @@ def _fill(c):
     return c if isinstance(c, str) and c.startswith("#") else teinte(c)
 
 
+# Ce que le controle de contraste laisse passer, pour que le total soit
+# lisible en fin de cycle et pas noye dans la sortie. Vingt lignes
+# eparpillees entre cent quatre-vingts planches ne se comptent pas a
+# l'oeil, et un residu qu'on ne compte pas est un residu qui grossit.
+RESIDU = []
+
 _ACCENT = None
 
 
@@ -278,7 +284,7 @@ def accent(nom=None):
     return _ACCENT
 
 
-def _accent_lisible(nom, fond_lum, exige=4.5, pas=0.06):
+def _accent_lisible(nom, fond_lum, exige=4.5, pas=0.06, marge=0.4):
     """La teinte d'accent, approfondie juste assez pour se lire.
 
     Une teinte de la charte en petit corps sur du creme ne passe pas :
@@ -291,11 +297,39 @@ def _accent_lisible(nom, fond_lum, exige=4.5, pas=0.06):
     reste le plus violet qu'un surtitre lisible autorise, et pas un
     cran de plus.
     """
+    # La marge existe pour la même raison que dans _assez_fonce : le
+    # calcul porte sur la teinte nue, la mesure finale se fait après le
+    # grain et sur la médiane d'une couronne autour des glyphes. Viser
+    # le seuil exact laissait les cotes « 2 m » à 4,33.
     base = C.get(nom, nom)
     for i in range(14):
         teint = _vers_encre(base, i * pas)
-        if _rapport(_luminance(teint), fond_lum) >= exige:
+        if _rapport(_luminance(teint), fond_lum) >= exige + marge:
             return teint
+    return _vers_encre(base, 13 * pas)
+
+
+def _assez_fonce(fond, encre, exige=4.9, pas=0.06):
+    """Une teinte de la charte, approfondie jusqu'à porter son texte.
+
+    Le pendant de _accent_lisible() : là on cherchait une encre lisible
+    sur un fond donné, ici on cherche un fond qui porte une encre
+    donnée. Même méthode, même garde-fou — on s'arrête au premier pas
+    qui passe, et la teinte reste la plus franche que la lisibilité
+    autorise.
+
+    La cible est 4,9 et non 4,5 : le calcul porte sur l'aplat nu, alors
+    que la mesure finale se fait APRÈS le grain et sur la médiane d'une
+    couronne autour des glyphes, qui inclut leurs bords adoucis. Viser
+    exactement le seuil laissait la planche à 4,48 — passer de justesse
+    sur le papier, c'est échouer à l'écran.
+    """
+    base = C.get(fond, fond)
+    le = _luminance(C.get(encre, encre))
+    for i in range(14):
+        t = _vers_encre(base, i * pas)
+        if _rapport(le, _luminance(t)) >= exige:
+            return t
     return _vers_encre(base, 13 * pas)
 
 
@@ -440,7 +474,7 @@ class _Dessin:
                         if isinstance(fill, str) and fill.lower() == v.lower()),
                        None)
             fondl = self._fond_sous(xy, texte, fonte)
-            connue = nom in self.CLAIRES or nom in self.FONCEES
+            connue = nom in C
             if nom and fondl is not None and connue:
                 corps = getattr(fonte, "size", 40)
                 exige = 3.0 if (corps >= 54 or role == "marque") else 4.5
@@ -451,6 +485,32 @@ class _Dessin:
                     # ni le fonce ne gagne d'avance : seule la mesure le
                     # dit, et un escalier choisi par avance se trompe
                     # exactement la.
+                    # Une teinte d'accent — un bleu, un corail — ne se
+                    # remplace pas par une encre neutre : on perdrait la
+                    # couleur, qui est l'intention. On l'APPROFONDIT,
+                    # comme pour les surtitres, jusqu'au premier pas qui
+                    # passe. C'est la même règle, appliquée au même
+                    # endroit pour tout le fichier : « bleu » écrit dans
+                    # un gabarit reste bleu, et devient lisible.
+                    if nom not in self.CLAIRES + self.FONCEES:
+                        teint = _accent_lisible(nom, fondl, exige)
+                        if _rapport(_luminance(teint), fondl) > r:
+                            self.rattrapes.append(
+                                (str(texte)[:30], nom, teint, round(r, 2),
+                                 round(_rapport(_luminance(teint), fondl), 2)))
+                            fill = teint
+                            if "fill" in kw:
+                                kw["fill"] = fill
+                            else:
+                                a = list(a)
+                                if len(a) > 1:
+                                    a[1] = fill
+                                else:
+                                    kw["fill"] = fill
+                                a = tuple(a)
+                            self.textes.append((xy, str(texte), fonte, fill,
+                                                role))
+                            return self._d.text(xy, texte, *a, **kw)
                     autre, r2 = nom, r
                     for cand in self.CLAIRES + self.FONCEES:
                         rc = _rapport(_luminance(cand), fondl)
@@ -1028,10 +1088,20 @@ class Planche:
         return self
 
     def pastille(self, x, y, texte, fond, couleur="blanc", taille=30, pad=16):
+        """Une étiquette ronde : un mot court sur une teinte de la charte.
+
+        Le fond est approfondi jusqu'à porter son texte. Mesure : du
+        blanc sur le corail de la charte donne 4,07:1, et il en faut
+        4,5 — « QUIZ », « FAUX », « B » et les numéros de planche
+        étaient tous juste en dessous. Approfondir l'étiquette plutôt
+        que l'écriture est le seul choix possible ici : le texte est
+        déjà blanc, il n'y a pas plus clair.
+        """
         f = police(800, taille)
         w = f.getlength(texte)
         self.d.rounded_rectangle([x, y, x + w + pad * 2, y + taille + pad],
-                                 radius=(taille + pad) // 2, fill=teinte(fond))
+                                 radius=(taille + pad) // 2,
+                                 fill=_assez_fonce(fond, couleur))
         self.d.text((x + pad, y + pad / 2 - 2), texte, font=f,
                     fill=teinte(couleur))
         return w + pad * 2
@@ -1276,6 +1346,7 @@ class Planche:
                                for q, d in self.chevauchements)))
         for t, r, e in (_grouper(self._contraste())
                         if os.environ.get("GRAFYCOM_CONTRASTE") else []):
+            RESIDU.append((_etiquette(chemin), r, e, t))
             print("   CONTRASTE %-28s %.2f:1 (il faut %.1f)  « %s »"
                   % (_etiquette(chemin), r, e, t))
         if getattr(self, "debordements", 0):
@@ -2818,7 +2889,14 @@ def _bandeau_travers(p, texte, couleur="violet", y=None, taille=56,
     haut = (40 + len(lignes) * int(taille * 1.2)
             + (len(lignes_s) * 44 + 16 if lignes_s else 0) + 40)
     y = int(p.h * 0.50 - haut / 2) if y is None else y
-    p.d.rectangle([0, y, p.l, y + haut], fill=teinte(couleur))
+    # Le bandeau est APPROFONDI juste assez pour que son texte passe.
+    # Mesure : du crème sur le violet de la charte donne 4,13:1, et le
+    # seuil d'un texte de légende est 4,5. Les teintes de la charte sont
+    # faites pour de petits accents sur du crème, pas pour porter du
+    # texte en aplat — c'est le même constat que pour les surtitres, et
+    # la même réponse : on s'arrête au premier pas qui passe.
+    fonce = _assez_fonce(couleur, couleur_texte)
+    p.d.rectangle([0, y, p.l, y + haut], fill=fonce)
     yy = y + 40
     for ligne in lignes:
         p.d.text((MARGE, yy), ligne, font=f, fill=teinte(couleur_texte))
@@ -3052,6 +3130,22 @@ def _vitrine(p, x, y, larg, haut, *, trait=False, eclairee=True,
                               fill=_melange(["corail", "turquoise", "jaune",
                                              "violet", "bleu_vif"][(i + r) % 5],
                                             "encre", 0.40 if eclairee else 0.66))
+
+    if encombre and not trait:
+        # Le rayonnage est derrière la vitre ; le lettrage sera dessus.
+        # Les flouter pareil, c'est les mettre sur le même plan, et
+        # c'est ce qui empêchait la vitre de se lire comme une surface.
+        #
+        # Ce n'est pas un effet d'appareil photo — visuels.py ne fait
+        # pas de photographies, et un dessin ne doit pas prétendre en
+        # être une. C'est la règle de dessin la plus ancienne qui soit :
+        # ce qui est loin se traite avec moins de netteté que ce qui est
+        # près. Deux pixels suffisent à le dire.
+        gx0, gx1 = int(x), int(x + larg)
+        gy0i, gy1i = int(gy0), int(gy1)
+        zone = p.im.crop((gx0, gy0i, gx1, gy1i))
+        p.im.paste(zone.filter(ImageFilter.GaussianBlur(2.4)), (gx0, gy0i))
+        p._redessiner()
 
     if reflet and not trait:
         # vitrine eteinte la nuit : le verre renvoie la rue d'en face.
@@ -3679,10 +3773,23 @@ def _trois_distances(p, y, echelles=((2, 0.44), (8, 0.27), (25, 0.15))):
     y_sol = y + largeurs[0] * 0.58
     x = MARGE
     f = police(600, 30)
-    for (m, _), larg in zip(echelles, largeurs):
+    # La perspective atmosphérique, et pas un flou d'objectif. Ce qui
+    # est loin perd du contraste avant de perdre de la netteté : c'est
+    # vrai dans une rue, et c'est la convention de dessin qui le dit
+    # depuis toujours. On fond donc chaque devanture vers le fond de la
+    # planche, d'autant plus qu'elle est loin. Le trait reste net — un
+    # dessin flouté prétendrait être une photographie, et visuels.py
+    # n'en fait pas.
+    recul = {0: 0.0, 1: 0.20, 2: 0.42}
+    for i, ((m, _), larg) in enumerate(zip(echelles, largeurs)):
         haut = larg * 0.58
+        avant = p.im.copy()
         _vitrine(p, x, y_sol - haut, larg, haut, trait=True,
                  lettres="MAISON BERNAT\n9 h – 19 h")
+        if recul.get(i):
+            p.im = Image.blend(p.im.convert("RGB"), avant.convert("RGB"),
+                               recul[i])
+            p._redessiner()
         t = "%d m" % m
         p.d.text((x + larg / 2 - p.d.textlength(t, font=f) / 2, y_sol + 26),
                  t, font=f, fill=teinte("corail"))
@@ -3801,6 +3908,14 @@ def _fond_du_texte(p, x, y, larg, haut):
                                                "creme", 0.18))
         else:
             ds.rectangle([0, 0, demi, haut], fill=_melange("encre", "brun", 0.22))
+        # Le rayonnage est DERRIÈRE la vitre, les lettres seront DESSUS.
+        # Les traiter avec la même netteté, c'est les mettre sur le même
+        # plan — et toute la démonstration de cette planche tient sur le
+        # fait qu'ils n'y sont pas. Deux pixels de flou suffisent à le
+        # dire, et le panneau uni d'en face n'en reçoit pas : il est à
+        # la même distance, mais il n'a rien à perdre.
+        if encombre:
+            sous = sous.filter(ImageFilter.GaussianBlur(demi * 0.009))
         p.im.paste(sous, (int(xx), int(y)))
         p._redessiner()
         f = police(800, int(haut * 0.11))
@@ -3813,6 +3928,12 @@ def _fond_du_texte(p, x, y, larg, haut):
                       width=5)
         fl = police(600, max(18, int(haut * 0.058)))
         lib = "devant le rayonnage" if encombre else "devant un panneau uni"
+        # le reflet se pose APRÈS le lettrage : un reflet passe sur un
+        # adhésif, il ne passe pas dessous. Faible, et seulement sur le
+        # panneau encombré — l'autre est un panneau plein, pas du verre.
+        if encombre:
+            _reflet_verre(p, (xx, y, xx + demi, y + haut), force=34,
+                          largeur=0.24, angle=-20)
         p.d.text((xx + demi / 2 - p.d.textlength(lib, font=fl) / 2,
                   y + haut + 16), lib, font=fl, fill=teinte("brun"))
     return y + haut + 16 + 40
@@ -4456,8 +4577,8 @@ def pub21_vitrine_trottoir(dossier=None):
     p = Planche("blanc")
     p.titre("Un texte sur verre se lit\ncontre ce qu'il y a derrière.",
             58, y=140)
-    _fond_du_texte(p, MARGE, 400, p.l - 2 * MARGE, 460)
-    p.y = 960
+    _fond_du_texte(p, MARGE, 448, p.l - 2 * MARGE, 460)
+    p.y = 982
     p.texte("Et ce qu'il y a derrière bouge toute la journée.", 40, "brun",
             600, avant=0)
     p.signature("brun")
@@ -5129,6 +5250,13 @@ def _ecran(p, cx, cy, larg, couleur):
     p.d.rounded_rectangle([cx - larg * 0.22, cy + haut / 2 + larg * 0.09,
                            cx + larg * 0.22, cy + haut / 2 + larg * 0.14],
                           radius=8, fill=_melange("encre", "brun", 0.35))
+    # La dalle est du verre : sans sa bande spéculaire, elle se lit
+    # comme un rectangle de couleur, ce qui est précisément le défaut
+    # que la publication dénonce — on croit voir la couleur, on voit un
+    # écran. Faible, parce qu'un écran allumé réfléchit peu.
+    _reflet_verre(p, (cx - larg / 2 + m, cy - haut / 2 + m,
+                      cx + larg / 2 - m, cy + haut / 2 - m * 1.6),
+                  force=30, largeur=0.30, angle=-18)
     return p
 
 
@@ -5531,6 +5659,18 @@ def main():
             total += len(faits)
             print("%-26s %2d planches" % (nom, len(faits)))
         print("\n%d visuels produits dans %s" % (total, SORTIE))
+        if RESIDU:
+            pire = min(r for _, r, _, _ in RESIDU)
+            print("\n%d texte(s) sous le seuil de contraste, du plus "
+                  "faible %.2f:1 au plus proche %.2f:1."
+                  % (len(RESIDU), pire, max(r for _, r, _, _ in RESIDU)))
+            print("Ce sont des légendes courtes posées SUR un objet "
+                  "dessiné — « 3 mm » sur un échantillon d'alu, « 2026 » "
+                  "sur une page de calendrier. L'encre y est déjà allée "
+                  "au bout de la charte ; aller plus loin voudrait dire "
+                  "changer la couleur de l'objet, qui porte un sens.")
+        elif os.environ.get("GRAFYCOM_CONTRASTE"):
+            print("\nContraste : aucun texte sous le seuil.")
         return
     if args.exemple:
         for f in carrousel_couleurs():
