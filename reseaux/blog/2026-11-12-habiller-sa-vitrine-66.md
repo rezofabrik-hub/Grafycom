@@ -3,7 +3,7 @@ titre: "Habiller sa vitrine : dépoli, microperforé ou lettres découpées ?"
 slug: habiller-sa-vitrine-66
 titre_seo: "Adhésif de vitrine : lequel choisir dans le 66"
 liens_retour: enseigne-perpignan.html, ouverture-commerce-66.html, graphiste-restaurant-perpignan.html
-date: 2026-11-05
+date: 2026-11-12
 meta: "Dépoli, microperforé, lettres découpées : quel adhésif de vitrine pour quel usage, ce que ça coûte en lumière, et quand ça devient une enseigne."
 illustration: vitrine.png
 illustration_alt: "Trois vitrines identiques montrant les trois habillages : le dépoli qui masque tout, le microperforé en trame de points, et les lettres découpées qui ne couvrent que le dessin."

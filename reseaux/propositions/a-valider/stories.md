@@ -6,7 +6,7 @@
 > réponse sont dessinés. Les codes des séquences à deux écrans portent
 > désormais tous un chiffre : S1-B1 et S1-B2, S1-D1 et S1-D2, etc.
 
-Du 19 octobre au 28 novembre. Chaque écran est détaillé : texte exact,
+Du 26 octobre au 5 décembre. Chaque écran est détaillé : texte exact,
 sticker et ses options, arrière-plan.
 
 > **Chaque écran se valide**, y compris un simple teasing. Sans exception.
@@ -17,16 +17,16 @@ sticker et ses options, arrière-plan.
 > La règle complète est en tête de `instagram-facebook.md` ; les
 > arrière-plans ci-dessous y sont déjà conformes.
 
-# 🎬 SEMAINE 1 — du lundi 19 au dimanche 25 octobre
+# 🎬 SEMAINE 1 — du lundi 19 au dimanche 1er novembre
 
-## S1-A — Lundi 19 octobre, 12 h 45 · teasing du carrousel
+## S1-A — Lundi 26 octobre, 12 h 45 · teasing du carrousel
 - **Fond :** nuancier de trois couleurs sur fond `#f7f1ef`.
 - **Texte :** « Nouveau post. Votre couleur parle avant vous. »
 - **Sticker :** *Sondage A/B* — « Le bleu marine évoque plutôt… »
   → **A : la confiance** · **B : le luxe**
 - Puis sticker *Mention du post* pour renvoyer au carrousel.
 
-## S1-B — Mardi 20 octobre, 8 h 15 · teasing réglementation
+## S1-B — Mardi 27 octobre, 8 h 15 · teasing réglementation
 - **Fond :** photo d'une enseigne en façade, assombrie, texte en blanc.
 - **Texte :** « Enseigne : déclaration ou autorisation ? »
 - **Sticker :** *Quiz à 2 choix* — « Pour poser une enseigne, il faut… »
@@ -34,20 +34,20 @@ sticker et ses options, arrière-plan.
 - **Écran 2 :** « Autorisation. Cerfa 16308*01, en mairie, en 3 exemplaires.
   Le détail est dans le post. »
 
-## S1-C — Mercredi 21 octobre, 18 h 30 · boîte à questions
+## S1-C — Mercredi 28 octobre, 18 h 30 · boîte à questions
 - **Fond :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré.
 - **Texte :** « Une question sur votre identité visuelle ? Je réponds à
   tout, même aux questions bêtes. Surtout à celles-là. »
 - **Sticker :** *Boîte à questions* — « Posez votre question »
 
-## S1-D — Jeudi 22 octobre, 12 h 30 · le vote du jeudi
+## S1-D — Jeudi 29 octobre, 12 h 30 · le vote du jeudi
 - **Écran 1.** Les deux enseignes côte à côte. « Laquelle se lit à 20 m ? »
   **Sticker *Sondage A/B*** — A · B
 - **Écran 2** (2 h plus tard). Les deux versions floutées. « Réponse : B.
   À 20 mètres, une typo devient une silhouette. »
   **Sticker *Curseur emoji* 😲** — « Vous aviez deviné ? »
 
-## S1-E — Vendredi 23 octobre, 18 h 15 · relais du blog
+## S1-E — Vendredi 30 octobre, 18 h 15 · relais du blog
 - **Fond :** capture du haut de l'article, sur fond `#f7f1ef`.
 - **Texte :** « Nouvel article : l'autorisation d'enseigne, étape par
   étape. »
@@ -55,30 +55,30 @@ sticker et ses options, arrière-plan.
 - ⭐ **À mettre en story à la une** (couverture violette, titre
   « Réglementation »).
 
-# 🎬 SEMAINE 2 — du lundi 26 octobre au dimanche 1er novembre
+# 🎬 SEMAINE 2 — du lundi 2 novembre au dimanche 1er novembre
 
-## S2-A — Lundi 26 octobre, 12 h 45 · teasing typographie
+## S2-A — Lundi 2 novembre, 12 h 45 · teasing typographie
 - **Fond :** la phrase « Cette police est magnifique » en grand, typo fine,
   sur `#f7f1ef`.
 - **Texte :** « Nouveau post. Et pourtant elle va vous coûter des clients. »
 - **Sticker :** *Curseur emoji* 😬 — « Vous choisissez vos polices au
   feeling ? »
 
-## S2-B — Mardi 27 octobre, 8 h 15 · teasing droits
+## S2-B — Mardi 3 novembre, 8 h 15 · teasing droits
 - **Fond :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre.
 - **Texte :** « Avez-vous un contrat de cession pour votre logo ? »
 - **Sticker :** *Sondage A/B* — « Votre logo, vous le possédez… »
   → **A : oui, j'ai l'écrit** · **B : aucune idée**
 - Écran déjà dessiné : `reseaux/visuels/stories/20-teasing.png`.
 
-## S2-C — Mercredi 28 octobre, 18 h 30 · coulisses
+## S2-C — Mercredi 4 novembre, 18 h 30 · coulisses
 - **Fond :** photo d'un plan de travail — crayonnés, nuancier, écran.
 - **Texte :** « Trois pistes pour un même logo. Deux finiront à la
   corbeille. C'est normal, et c'est même le travail. »
 - **Sticker :** aucun. Une story sans sollicitation de temps en temps, ça
   repose, et ça humanise.
 
-## S2-D — Jeudi 29 octobre, 19 h 00 · le quiz du jeudi
+## S2-D — Jeudi 5 novembre, 19 h 00 · le quiz du jeudi
 - **Écran 1.** « 4 idées reçues. Testez-vous. »
   **Sticker *Quiz 4 choix*** — « Laquelle est VRAIE ? »
   → Une enseigne se déclare · Un logo doit tenir en noir et blanc ·
@@ -88,7 +88,7 @@ sticker et ses options, arrière-plan.
   autres sont fausses — le détail est dans le post. »
   **Sticker *Mention du post***
 
-## S2-E — Vendredi 30 octobre, 10 h 45 · relais du blog
+## S2-E — Vendredi 6 novembre, 10 h 45 · relais du blog
 - **Fond :** capture du haut du second article sur `#f7f1ef`.
 - **Texte :** « Nouvel article : choisir le bon support d'impression. »
 - **Sticker :** *Lien* → l'article sur grafycom.fr
@@ -136,9 +136,9 @@ sticker et ses options, arrière-plan.
 **17 écrans à valider.** Chaque écran se valide séparément, y compris les
 écrans de réponse : ce sont ceux qu'on oublie de faire relire.
 
-# 🎬 SEMAINE 3 — du lundi 2 au dimanche 8 novembre
+# 🎬 SEMAINE 3 — du lundi 2 au dimanche 15 novembre
 
-## S3-A — Lundi 2 novembre, 12 h 45 · teasing du carrousel
+## S3-A — Lundi 9 novembre, 12 h 45 · teasing du carrousel
 
 | Élément | Contenu |
 |---|---|
@@ -150,7 +150,7 @@ Ajouter ensuite le sticker *Mention du post* pour renvoyer au carrousel.
 Réponse attendue : **B**, et c'est l'erreur la plus courante — les gens
 pensent aux couleurs.
 
-## S3-B1 — Mardi 3 novembre, 8 h 15 · quiz enseigne
+## S3-B1 — Mardi 10 novembre, 8 h 15 · quiz enseigne
 
 | Élément | Contenu |
 |---|---|
@@ -158,7 +158,7 @@ pensent aux couleurs.
 | **Sticker** | *Quiz à 2 choix* — **« Non, elle est déjà autorisée »** · **« Oui, probablement »** |
 | **Arrière-plan** | Photo d'une enseigne allumée à la tombée du jour, assombrie à 60 %, texte en blanc dans le tiers central. L'enseigne n'est pas identifiable. |
 
-## S3-B2 — Mardi 3 novembre, 10 h 15 · la réponse
+## S3-B2 — Mardi 10 novembre, 10 h 15 · la réponse
 
 | Élément | Contenu |
 |---|---|
@@ -170,7 +170,7 @@ pensent aux couleurs.
 > conditionnel « serait » est volontaire et ne doit pas être retiré à la
 > relecture. S'il est confirmé entre-temps, il peut passer à l'affirmatif.
 
-## S3-C — Mercredi 4 novembre, 18 h 30 · boîte à questions
+## S3-C — Mercredi 11 novembre, 18 h 30 · boîte à questions
 
 | Élément | Contenu |
 |---|---|
@@ -178,7 +178,7 @@ pensent aux couleurs.
 | **Sticker** | *Boîte à questions* — « Posez votre question » |
 | **Arrière-plan** | Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré. Signature `@grafycom.graphiste` en pied. |
 
-## S3-D1 — Jeudi 5 novembre, 12 h 30 · le vote du jeudi
+## S3-D1 — Jeudi 12 novembre, 12 h 30 · le vote du jeudi
 
 | Élément | Contenu |
 |---|---|
@@ -186,7 +186,7 @@ pensent aux couleurs.
 | **Sticker** | *Sondage A/B* — **A : prix au fil du texte** · **B : prix alignés à droite** |
 | **Arrière-plan** | Les deux pages de carte du post, côte à côte, en vertical, sur fond `#f7f1ef`. Pastilles « A » bleue et « B » corail. |
 
-## S3-D2 — Jeudi 5 novembre, 14 h 30 · la réponse
+## S3-D2 — Jeudi 12 novembre, 14 h 30 · la réponse
 
 | Élément | Contenu |
 |---|---|
@@ -194,18 +194,18 @@ pensent aux couleurs.
 | **Sticker** | *Curseur emoji* 😮 — « Vous aviez deviné ? » |
 | **Arrière-plan** | La version B, avec une flèche corail `#f2585c` qui descend le long de la colonne de prix pour montrer le sens de lecture. |
 
-## S3-E1 — Vendredi 6 novembre, 18 h 15 · relais du blog
+## S3-E1 — Vendredi 13 novembre, 18 h 15 · relais du blog
 
 | Élément | Contenu |
 |---|---|
 | **Texte exact** | « Nouvel article : habiller sa vitrine. Dépoli, microperforé, lettres découpées — lequel pour quoi. » |
-| **Sticker** | *Lien* → l'article du 5 novembre sur grafycom.fr (`blog-habiller-sa-vitrine-66.html`) |
+| **Sticker** | *Lien* → l'article du 12 novembre sur grafycom.fr (`blog-habiller-sa-vitrine-66.html`) |
 | **Arrière-plan** | Photo d'une vitrine avec un adhésif dépoli en bas, prise de trois quarts. Bandeau blanc cassé `#f7f1ef` dans le tiers central pour porter le texte. |
 
 ⭐ **À mettre en story à la une**, couverture chartée violette, titre
 « Vitrines ».
 
-## S3-E2 — Vendredi 6 novembre, 18 h 20 · teasing du reel
+## S3-E2 — Vendredi 13 novembre, 18 h 20 · teasing du reel
 
 | Élément | Contenu |
 |---|---|
@@ -218,9 +218,9 @@ pensent aux couleurs.
 n'offre pas d'angle honnête sur le métier, et un contenu commercial ce
 jour-là se remarque pour de mauvaises raisons.
 
-# 🎬 SEMAINE 4 — du lundi 9 au dimanche 15 novembre
+# 🎬 SEMAINE 4 — du lundi 9 au dimanche 22 novembre
 
-## S4-A — Lundi 9 novembre, 12 h 45 · teasing du carrousel
+## S4-A — Lundi 16 novembre, 12 h 45 · teasing du carrousel
 
 | Élément | Contenu |
 |---|---|
@@ -230,7 +230,7 @@ jour-là se remarque pour de mauvaises raisons.
 
 Ajouter le sticker *Mention du post*.
 
-## S4-B1 — Mardi 10 novembre, 8 h 15 · quiz langue
+## S4-B1 — Mardi 17 novembre, 8 h 15 · quiz langue
 
 | Élément | Contenu |
 |---|---|
@@ -238,7 +238,7 @@ Ajouter le sticker *Mention du post*.
 | **Sticker** | *Quiz à 2 choix* — **« Le nom »** · **« Le slogan »** |
 | **Arrière-plan** | Devanture fictive recomposée, nom en grand et slogan sur le store, sur fond de ciel clair. Aucun commerce réel. |
 
-## S4-B2 — Mardi 10 novembre, 10 h 15 · la réponse
+## S4-B2 — Mardi 17 novembre, 10 h 15 · la réponse
 
 | Élément | Contenu |
 |---|---|
@@ -250,7 +250,7 @@ Ajouter le sticker *Mention du post*.
 > `A-instagram-facebook.md` (publication n° 6) n'ont pas été faites. Ne pas
 > retirer les « serait » à la relecture.
 
-## S4-C — Mardi 10 novembre, 18 h 30 · coulisses
+## S4-C — Mardi 17 novembre, 18 h 30 · coulisses
 
 > 🔀 **Décalée le 12 octobre, pas supprimée.** Le mercredi est son jour
 > naturel. Le décalage du cycle l'a amenée sur le **mercredi 11
@@ -274,7 +274,7 @@ reprend le jeudi 12.
 C'est une ligne de la checklist, pas un oubli : elle est là pour que
 l'absence soit un choix validé, pas un trou dans le planning.
 
-## S4-D1 — Jeudi 12 novembre, 19 h 00 · le quiz du jeudi
+## S4-D1 — Jeudi 19 novembre, 19 h 00 · le quiz du jeudi
 
 | Élément | Contenu |
 |---|---|
@@ -282,7 +282,7 @@ l'absence soit un choix validé, pas un trou dans le planning.
 | **Sticker** | *Quiz à 4 choix* — **« Alu composite »** (bonne réponse) · **« Plexiglas »** · **« PVC expansé »** · **« Inox brossé »** |
 | **Arrière-plan** | La macrophotographie de la tranche d'alu composite, plein cadre, l'âme noire bien visible entre les deux peaux de métal. |
 
-## S4-D2 — Jeudi 12 novembre, 21 h 00 · les quatre réponses
+## S4-D2 — Jeudi 19 novembre, 21 h 00 · les quatre réponses
 
 | Élément | Contenu |
 |---|---|
@@ -293,21 +293,21 @@ l'absence soit un choix validé, pas un trou dans le planning.
 ⭐ **À mettre en story à la une**, couverture chartée bleu profond, titre
 « Supports ».
 
-## S4-E — Vendredi 13 novembre, 18 h 15 · relais du blog
+## S4-E — Vendredi 20 novembre, 18 h 15 · relais du blog
 
 | Élément | Contenu |
 |---|---|
 | **Texte exact** | « Nouvel article : les supports de fin d'année se commandent maintenant. Le rétroplanning, semaine par semaine. » |
-| **Sticker** | *Lien* → l'article du 13 novembre sur grafycom.fr (`blog-supports-fin-annee-66.html`) |
+| **Sticker** | *Lien* → l'article du 20 novembre sur grafycom.fr (`blog-supports-fin-annee-66.html`) |
 | **Arrière-plan** | Trois cartes de vœux imprimées posées en éventail sur une table en bois, lumière rasante sur le relief. |
 
-## S4-F — Samedi 14 novembre, 10 h 45 · teasing du reel
+## S4-F — Samedi 21 novembre, 10 h 45 · teasing du reel
 
 | Élément | Contenu |
 |---|---|
 | **Texte exact** | « Le reel du jour : pour Noël, vous êtes déjà en retard. Création à la mi-novembre, bon à tirer fin novembre, livraison début décembre. » |
-| **Sticker** | *Compte à rebours* — nommé « Bon à tirer de fin d'année », réglé sur le **7 décembre 2026**. Les abonnés peuvent s'y abonner et seront prévenus. Plus le sticker *Mention du post* vers le reel. |
-| **Arrière-plan** | Le plan du calendrier du reel, le doigt sur la case du 14 novembre, lumière chaude de matin. |
+| **Sticker** | *Compte à rebours* — nommé « Bon à tirer de fin d'année », réglé sur le **14 décembre 2026**. Les abonnés peuvent s'y abonner et seront prévenus. Plus le sticker *Mention du post* vers le reel. |
+| **Arrière-plan** | Le plan du calendrier du reel, le doigt sur la case du 21 novembre, lumière chaude de matin. |
 
 ---
 
@@ -321,8 +321,8 @@ l'absence soit un choix validé, pas un trou dans le planning.
 | Couvertures de story à la une | 2 — « Vitrines » (violet), « Supports » (bleu profond) |
 
 **Les deux relais d'article dépendent du sticker Lien**, et donc de la mise
-en ligne effective des deux articles aux dates prévues (5 novembre et
-13 novembre). Si un article n'est pas validé à temps, l'écran correspondant
+en ligne effective des deux articles aux dates prévues (12 novembre et
+20 novembre). Si un article n'est pas validé à temps, l'écran correspondant
 tombe : il ne se remplace pas par un teasing sans lien, ça n'envoie personne
 sur le site.
 
@@ -350,9 +350,9 @@ sur le site.
 
 **15 lignes, dont une ligne de non-publication.** 14 écrans à produire.
 
-# 🎬 SEMAINE 5 — du lundi 16 au dimanche 22 novembre
+# 🎬 SEMAINE 5 — du lundi 16 au dimanche 29 novembre
 
-## S5-A — Lundi 16 novembre, 12 h 45 · teasing du carrousel
+## S5-A — Lundi 23 novembre, 12 h 45 · teasing du carrousel
 
 - **Arrière-plan :** aplat blanc cassé chaud `#f7f1ef`. En bas de l'écran,
   hors du tiers central, une photo recadrée de cartes de vœux empilées, en
@@ -366,7 +366,7 @@ sur le site.
 
 ---
 
-## S5-B — Mardi 17 novembre · teasing réglementation, 2 écrans
+## S5-B — Mardi 24 novembre · teasing réglementation, 2 écrans
 
 ### Écran 1 — 8 h 15
 
@@ -396,7 +396,7 @@ sur le site.
 
 ---
 
-## S5-C — Jeudi 19 novembre · le vote du jeudi, 2 écrans
+## S5-C — Jeudi 26 novembre · le vote du jeudi, 2 écrans
 
 ### Écran 1 — 19 h 00
 
@@ -420,13 +420,13 @@ sur le site.
 
 ---
 
-## S5-D — Vendredi 20 novembre, 18 h 15 · relais du blog
+## S5-D — Vendredi 27 novembre, 18 h 15 · relais du blog
 
 - **Arrière-plan :** capture du haut de l'article, désaturée, posée sur un
   fond `#f7f1ef` avec une marge généreuse.
 - **Texte exact :** « Nouvel article : votre vitrine de fin d'année, vue
   depuis le trottoir d'en face. Quatre points qui changent tout. »
-- **Sticker :** *Lien* → l'article du 20 novembre sur `grafycom.fr/blog.html`.
+- **Sticker :** *Lien* → l'article du 27 novembre sur `grafycom.fr/blog.html`.
   Le sticker Lien ne dépend d'aucun seuil d'abonnés : il est disponible dès
   maintenant.
 - ⭐ **À mettre en story à la une**, dans une collection « Vitrines », avec
@@ -434,7 +434,7 @@ sur le site.
 
 ---
 
-## S5-E — Samedi 21 novembre, 11 h 00 · boîte à questions
+## S5-E — Samedi 28 novembre, 11 h 00 · boîte à questions
 
 - **Arrière-plan :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré. Aucun
   visuel : c'est un écran de conversation, pas de démonstration.
@@ -447,9 +447,9 @@ sur le site.
   consultent leur téléphone entre deux clients. Les réponses tombent dans la
   journée.
 
-# 🎬 SEMAINE 6 — du lundi 23 au dimanche 29 novembre
+# 🎬 SEMAINE 6 — du lundi 23 au dimanche 6 décembre
 
-## S6-A — Lundi 23 novembre, 18 h 45 · teasing vitrine
+## S6-A — Lundi 30 novembre, 18 h 45 · teasing vitrine
 
 - **Arrière-plan :** la photo de vitrine de nuit, prise depuis le trottoir
   d'en face, assombrie, texte blanc dans le tiers central.
@@ -494,7 +494,7 @@ sur le site.
 
 ---
 
-## S6-C — Jeudi 26 novembre · le quiz du jeudi, 2 écrans
+## S6-C — Jeudi 3 décembre · le quiz du jeudi, 2 écrans
 
 ### Écran 1 — 19 h 00
 
@@ -520,13 +520,13 @@ sur le site.
 
 ---
 
-## S6-D — Vendredi 27 novembre, 18 h 15 · relais du blog
+## S6-D — Vendredi 4 décembre, 18 h 15 · relais du blog
 
 - **Arrière-plan :** capture du haut de l'article, désaturée, sur fond
   `#f7f1ef`, marge généreuse.
 - **Texte exact :** « Nouvel article : faut-il refaire son logo pour la
   nouvelle année ? Trois questions avant de décider. »
-- **Sticker :** *Lien* → l'article du 27 novembre sur `grafycom.fr/blog.html`.
+- **Sticker :** *Lien* → l'article du 4 décembre sur `grafycom.fr/blog.html`.
 - ⭐ **À mettre en story à la une**, collection « Identité », couverture
   bleu profond `#2f7fc4`.
 - **Cet écran prépare le reel du lendemain**, qui est la version courte du
@@ -534,7 +534,7 @@ sur le site.
 
 ---
 
-## S6-E — Samedi 28 novembre, 10 h 45 · coulisses
+## S6-E — Samedi 5 décembre, 10 h 45 · coulisses
 
 > **Réécrit le 18 octobre.** Cet écran annonçait les coulisses du tournage
 > du reel du jour — « un carnet, une lampe posée presque à plat ». Le reel

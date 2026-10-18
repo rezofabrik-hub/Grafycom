@@ -36,31 +36,31 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 
 | N° | Date | Format | Sujet | Planches |
 |---|---|---|---|---|
-| 1 | lun 19 oct | Carrousel | Pédagogie couleur | 6 |
-| 2 | mar 20 oct | Carrousel | Réglementation enseigne | 7 |
-| 3 | jeu 22 oct | Dilemme A/B | Lisibilité d'une enseigne | 2 |
-| 4 | ven 23 oct | Reel 24 s | Matières & impression | 5 |
-| 4 bis | **sam 24 oct** | Carrousel | **Annonce du blog hebdomadaire** | 4 |
-| 5 | lun 26 oct | Carrousel | Typographie | 6 |
-| 6 | mar 27 oct | Carrousel | Qui possède votre logo ? | 6 |
-| 7 | jeu 29 oct | Quiz vrai/faux | Quatre idées reçues | 5 |
-| 8 | ven 30 oct | Reel 22 s | Halloween & couleurs | 5 |
-| 9 | lun 2 nov | Carrousel | Un logo tient-il en petit | 6 |
-| 10 | mar 3 nov | Carrousel | L'enseigne quand la nuit tombe à 17 h | 7 |
-| 11 | jeu 5 nov | Dilemme A/B | La place du prix sur une carte | 2 |
-| 12 | ven 6 nov | Reel 23 s | Les adhésifs de vitrine | 5 |
-| 13 | lun 9 nov | Carrousel | **Solaire 66** | 7 |
-| 14 | mar 10 nov | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
-| 15 | jeu 12 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
-| 16 | sam 14 nov | Reel 25 s | Décembre se décide en novembre | 5 |
-| 17 | lun 16 nov | Carrousel | Le rétroplanning des cartes de vœux | 6 |
-| 18 | mar 17 nov | Carrousel | La place à réserver sur un emballage | 7 |
-| 19 | jeu 19 nov | Dilemme A/B | Deux cartes de vœux | 2 |
-| 20 | ven 20 nov | Reel 24 s | Matières et fabrication | 5 |
-| 21 | lun 23 nov | Carrousel | La vitrine vue du trottoir d'en face | 7 |
+| 1 | lun 26 oct | Carrousel | Pédagogie couleur | 6 |
+| 2 | mar 27 oct | Carrousel | Réglementation enseigne | 7 |
+| 3 | jeu 29 oct | Dilemme A/B | Lisibilité d'une enseigne | 2 |
+| 4 | ven 30 oct | Reel 24 s | Matières & impression | 5 |
+| 4 bis | **sam 31 oct** | Carrousel | **Annonce du blog hebdomadaire** | 4 |
+| 5 | lun 2 nov | Carrousel | Typographie | 6 |
+| 6 | mar 3 nov | Carrousel | Qui possède votre logo ? | 6 |
+| 7 | jeu 5 nov | Quiz vrai/faux | Quatre idées reçues | 5 |
+| 8 | ven 6 nov | Reel 22 s | Halloween & couleurs | 5 |
+| 9 | lun 9 nov | Carrousel | Un logo tient-il en petit | 6 |
+| 10 | mar 10 nov | Carrousel | L'enseigne quand la nuit tombe à 17 h | 7 |
+| 11 | jeu 12 nov | Dilemme A/B | La place du prix sur une carte | 2 |
+| 12 | ven 13 nov | Reel 23 s | Les adhésifs de vitrine | 5 |
+| 13 | lun 16 nov | Carrousel | **Solaire 66** | 7 |
+| 14 | mar 17 nov | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
+| 15 | jeu 19 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
+| 16 | sam 21 nov | Reel 25 s | Décembre se décide en novembre | 5 |
+| 17 | lun 23 nov | Carrousel | Le rétroplanning des cartes de vœux | 6 |
+| 18 | mar 24 nov | Carrousel | La place à réserver sur un emballage | 7 |
+| 19 | jeu 26 nov | Dilemme A/B | Deux cartes de vœux | 2 |
+| 20 | ven 27 nov | Reel 24 s | Matières et fabrication | 5 |
+| 21 | lun 30 nov | Carrousel | La vitrine vue du trottoir d'en face | 7 |
 | 22 | mar 24 nov | Carrousel | Enseigne, publicité, ou rien du tout ? | 6 |
-| 23 | jeu 26 nov | Quiz | Impressions de fin d'année | 6 |
-| 24 | sam 28 nov | Reel 26 s | Faut-il refaire son logo | 5 |
+| 23 | jeu 3 déc | Quiz | Impressions de fin d'année | 6 |
+| 24 | sam 5 déc | Reel 26 s | Faut-il refaire son logo | 5 |
 
 **133 planches**, dans `reseaux/visuels/`, un dossier par publication —
 et le dossier porte **la date réelle de parution**. Il portait jusqu'au
@@ -88,12 +88,12 @@ haut du profil.**
 
 ### Un sujet remplacé le 12 octobre
 
-La case du 27 octobre portait « les mentions obligatoires d'un devis ».
+La case du 3 novembre portait « les mentions obligatoires d'un devis ».
 Tu l'as écarté : **« je ne m'occupe pas de l'administratif de mes
 clients »** — et c'est juste, c'est le métier d'un comptable. Le carrousel
 **« Qui possède votre logo ? »**, déjà dessiné, prend la place. Il reste
 dans le pilier réglementaire, mais sur le terrain de Sandra : la création,
-pas la paperasse du client. L'article du 6 novembre, qui porte le même
+pas la paperasse du client. L'article du 13 novembre, qui porte le même
 titre, le prolonge dix jours plus tard.
 
 ### Les 3 qui ne peuvent pas partir en l'état
@@ -138,13 +138,13 @@ sorte le même jour.
 
 | Date | Titre | Mots | État |
 |---|---|---|---|
-| ven 23 oct | Enseigne de commerce : l'autorisation préalable | 801 | validé |
-| ven 30 oct | Pourquoi vos couleurs imprimées ne ressemblent jamais à votre écran | 647 | validé |
-| jeu 5 nov | Habiller sa vitrine : dépoli, microperforé ou lettres découpées | 904 | à relire |
-| ven 6 nov | Qui possède votre logo ? | 687 | validé |
-| ven 13 nov | Cartes de vœux et emballages de fête : le rétroplanning | 897 | à relire |
-| ven 20 nov | Vitrine de fin d'année : ce qui se lit depuis le trottoir | 854 | à relire |
-| ven 27 nov | Faut-il refaire son logo pour la nouvelle année ? | 792 | à relire |
+| ven 30 oct | Enseigne de commerce : l'autorisation préalable | 801 | validé |
+| ven 6 nov | Pourquoi vos couleurs imprimées ne ressemblent jamais à votre écran | 647 | validé |
+| jeu 12 nov | Habiller sa vitrine : dépoli, microperforé ou lettres découpées | 904 | à relire |
+| ven 13 nov | Qui possède votre logo ? | 687 | validé |
+| ven 20 nov | Cartes de vœux et emballages de fête : le rétroplanning | 897 | à relire |
+| ven 27 nov | Vitrine de fin d'année : ce qui se lit depuis le trottoir | 854 | à relire |
+| ven 4 déc | Faut-il refaire son logo pour la nouvelle année ? | 792 | à relire |
 
 Le rendez-vous hebdomadaire est désormais annoncé sur les réseaux : voir la publication **n° 4 bis** ci-dessus.
 
@@ -185,13 +185,13 @@ avec le Cerfa 14798\*01, périmé depuis le 1er juillet 2026.
 
 | N° | Date | Sujet à vérifier |
 |---|---|---|
-| 14 | mar 10 nov | Loi Toubon : application à une devanture, une marque déposée, une carte bilingue |
-| 18 | mar 17 nov | Signalétique de tri (article L541-10-1) — les sources trouvées ne sont pas officielles |
+| 14 | mar 17 nov | Loi Toubon : application à une devanture, une marque déposée, une carte bilingue |
+| 18 | mar 24 nov | Signalétique de tri (article L541-10-1) — les sources trouvées ne sont pas officielles |
 | 22 | mar 24 nov | Qualification d'un adhésif de vitrine, et l'extinction nocturne |
 
 La publication n° 6 ne porte plus d'avertissement : le sujet du devis,
 qui en demandait un, a été remplacé. Le carrousel sur la propriété d'un
-logo est vérifié, et l'article du 6 novembre cite ses sources.
+logo est vérifié, et l'article du 13 novembre cite ses sources.
 
 ### Plus aucune publication n'attend d'image
 
@@ -214,9 +214,9 @@ est une preuve là où un dessin n'est qu'une maquette.
 
 ---
 
-## Le premier créneau est dans cinq jours
+## Le premier créneau est dans huit jours
 
-Le calendrier commence **lundi 19 octobre**. Rien n'est programmé : la
+Le calendrier commence **lundi 26 octobre**. Rien n'est programmé : la
 publication n° 1 ne partira que si tu la valides d'ici là.
 
 **Tranché le 12 octobre : on garde 18 h 30.** Le tableau des créneaux

@@ -45,7 +45,13 @@ import sys
 
 RACINE = pathlib.Path(__file__).resolve().parent
 ANNEE = 2026
-DEPART_ACTUEL = dt.date(2026, 10, 12)
+# Le depart REEL du calendrier, pas celui d'avant. Le decalage du
+# 12 au 19 octobre a bien ete applique aux documents, mais cette
+# constante et la table SAISONNIER sont restees sur l'ancienne valeur :
+# l'outil rapportait donc « 23/10 -> 30/10 » pour un reel Halloween deja
+# au 30. Un outil qui ne se remet pas a jour apres usage ment au
+# deuxieme usage.
+DEPART_ACTUEL = dt.date(2026, 10, 26)
 
 JOURS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi",
          "dimanche"]
@@ -78,21 +84,25 @@ PROVENANCE = re.compile(
 
 # Ce qui perd son sens si la date de publication s'éloigne de l'événement.
 SAISONNIER = [
-    ("n° 8, reel Halloween", dt.date(2026, 10, 23), dt.date(2026, 10, 31),
+    ("n° 8, reel Halloween", dt.date(2026, 10, 30), dt.date(2026, 10, 31),
      "un reel sur Halloween publié après le 31 octobre n'a plus d'objet"),
     # Tranché par Laurent le 12 octobre : « laisse la story halloween au
     # 31 octobre ». Elle est donc dans ANCREES, et ne figure plus ici
     # comme un conflit : c'est une décision prise, pas une alerte.
-    ("n° 16, reel fin d'année", dt.date(2026, 11, 7), dt.date(2026, 12, 24),
+    ("n° 16, reel fin d'année", dt.date(2026, 11, 21), dt.date(2026, 12, 24),
      "sa voix off dit la date du jour — elle se décale avec, vérifier le "
      "texte"),
-    ("n° 17, rétroplanning", dt.date(2026, 11, 9), dt.date(2026, 11, 24),
+    ("n° 17, rétroplanning", dt.date(2026, 11, 23), dt.date(2026, 11, 24),
      "il dit « cette semaine » pour une échéance au 24 novembre, qui ne "
      "bouge pas"),
 ]
 
+# BRIEF-VISUELS.md vit a la racine de reseaux/ et avait ete oublie : il
+# a traverse un decalage entier avec les dates d'avant. Un document que
+# l'outil ne voit pas est un document qui contredira les autres.
 CIBLES = (sorted((RACINE / "propositions/a-valider").glob("*.md"))
-          + sorted((RACINE / "blog").glob("*.md")))
+          + sorted((RACINE / "blog").glob("*.md"))
+          + [RACINE / "BRIEF-VISUELS.md"])
 
 _MOIS_RE = "|".join(MOIS)
 _COURTS_RE = "|".join(COURTS)

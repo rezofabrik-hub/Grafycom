@@ -1292,7 +1292,7 @@ class Planche:
 # Le carrousel du 12 octobre, en exemple complet et reproductible.
 # ---------------------------------------------------------------------
 def carrousel_couleurs(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-19-couleurs"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-26-couleurs"))
     accent("violet")
     faits = []
 
@@ -1358,7 +1358,7 @@ def dilemme_enseigne(dossier=None):
     lecture, pas des elements de la scene : les flouter les rendrait
     inutiles.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-22-dilemme"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-29-dilemme"))
     accent("corail")
     faits = []
     LARG, HAUTF, ECART = 420, 430, 60
@@ -1399,7 +1399,7 @@ def dilemme_enseigne(dossier=None):
 
 
 def carrousel_typographie(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-26-typographie"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-02-typographie"))
     accent("magenta")
     f = []
     p = Planche("blanc")
@@ -1452,7 +1452,7 @@ def carrousel_typographie(dossier=None):
 
 
 def carrousel_enseigne(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-20-enseigne"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-10-enseigne"))
     accent("bleu")
     f = []
     p = Planche("sable_chaud")
@@ -1512,7 +1512,7 @@ def carrousel_enseigne(dossier=None):
 
 
 def quiz_idees_recues(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-29-quiz"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-05-quiz"))
     accent("rose")
     f = []
     p = Planche("sable_chaud")
@@ -1543,7 +1543,7 @@ def quiz_idees_recues(dossier=None):
 
 
 def carrousel_droits(dossier=None):
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-27-droits"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-03-droits"))
     accent("bleu")
     f = []
     p = Planche("creme")
@@ -1644,7 +1644,7 @@ def carrousel_blog_rdv(dossier=None):
     aux abonnes qu'il y en a un chaque semaine. C'est une annonce, pas un
     relais : elle ne se republie pas, elle s'epingle.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-24-blog-rdv"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-31-blog-rdv"))
     accent("bleu_vif")
     f = []
 
@@ -1703,7 +1703,7 @@ def dilemme_carte_prix(dossier=None):
     cadre a l'image B ferait gagner B pour une autre raison, et le post
     ne prouverait plus rien.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-05-dilemme-carte"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-12-dilemme-carte"))
     accent("corail")
     f = []
     PLATS = [
@@ -1764,7 +1764,7 @@ def carrousel_retroplanning(dossier=None):
     aujourd'hui, on compte a rebours depuis la boite aux lettres. Une
     frise dessinee dans l'autre sens dirait le contraire du texte.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-16-retroplanning"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-23-retroplanning"))
     accent("violet")
     f = []
 
@@ -1918,7 +1918,7 @@ def dilemme_voeux(dossier=None):
     generique de _logo_fictif) : on ne met jamais en defaut l'identite
     d'un client reel dans une demonstration publique.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-19-dilemme-voeux"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-26-dilemme-voeux"))
     accent("magenta")
     f = []
 
@@ -1986,7 +1986,7 @@ def quiz_fin_annee(dossier=None):
     reservee des le depart. La quatrieme est un « vrai... mais » assume :
     faux pour l'impression, vrai pour la decision.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-26-quiz-fin-annee"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-03-quiz-fin-annee"))
     accent("bleu")
     f = []
 
@@ -2311,7 +2311,7 @@ def solaire_66(dossier=None):
     demanderait une photo de base, et on ne publie pas une image dont les
     droits ne sont pas clairs.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-09-solaire-66"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-16-solaire-66"))
     accent("bleu")
     S = RACINE / "visuels" / "sources"
     MM = 1052 / 89              # px par mm du rendu 300 dpi des cartes
@@ -2442,7 +2442,7 @@ def _logo_fictif(d, cx, cy, r, detail=True, variante=0.0):
 
 def pub09_logo_reduction(dossier=None):
     """n° 9, lundi 2 novembre — un logo tient-il en petit."""
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-02-logo-reduction"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-09-logo-reduction"))
     accent("bleu")
     faits = []
 
@@ -3817,7 +3817,7 @@ def pub10_enseigne_hiver(dossier=None):
     Cerfa : on dessine un schema de formulaire, on ne reproduit pas un
     document administratif.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-03-enseigne-hiver"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-10-27-enseigne-hiver"))
     accent("violet")
     faits = []
 
@@ -3916,7 +3916,7 @@ def pub12_reel_vitrophanie(dossier=None):
     etats dans la meme image au lieu de les separer par un mouvement de
     camera.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-06-reel-vitrophanie"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-13-reel-vitrophanie"))
     accent("turquoise")
     faits = []
 
@@ -3995,7 +3995,7 @@ def pub14_francais_devanture(dossier=None):
     C'est le meme appel de fonction avec un argument de plus : la
     demonstration est donc rigoureusement « on n'a rien retire ».
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-10-francais-devanture"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-17-francais-devanture"))
     accent("magenta")
     faits = []
 
@@ -4088,7 +4088,7 @@ def pub15_quiz_matieres(dossier=None):
     plus facile sur l'alu composite, dont la coupe EST la reponse, et
     plus difficile sur le gaufrage, qui perd la lumiere rasante.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-12-quiz-matieres"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-19-quiz-matieres"))
     accent("turquoise")
     faits = []
     ordre = ["alu", "plexi", "depoli", "gaufre"]
@@ -4157,19 +4157,19 @@ def pub16_reel_fin_annee(dossier=None):
     applique.
     """
     import datetime
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-14-reel-fin-annee"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-21-reel-fin-annee"))
     accent("corail")
     faits = []
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=180)
     p.titre("Pour Noël,\nvous êtes déjà\nen retard.", 100, y=260)
-    _bande_jours(p, 90, 760, 900, datetime.date(2026, 11, 14),
+    _bande_jours(p, 90, 760, 900, datetime.date(2026, 11, 21),
                  datetime.date(2026, 12, 24),
                  {datetime.date(2026, 12, 24): ("encre", "")},
                  haut_case=116)
     p.y = 1600
-    p.texte("Six semaines. C'est tout ce qui reste.", 46, "brun", 600,
+    p.texte("Cinq semaines. C'est tout ce qui reste.", 46, "brun", 600,
             avant=0)
     p.signature("brun")
     faits.append(p.ecrire(d / "ecran1.png"))
@@ -4248,7 +4248,7 @@ def pub18_emballage_tri(dossier=None):
     dessin au trait. Les deux sont dessines : c'est la seule facon de
     garantir que c'est le MEME sachet, ce que la demonstration exige.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-17-emballage-tri"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-24-emballage-tri"))
     accent("turquoise")
     faits = []
 
@@ -4349,7 +4349,7 @@ def pub21_vitrine_trottoir(dossier=None):
     faudrait trois prises de vue au meme instant. Le texte alternatif de
     la publication est a mettre a jour en consequence.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-23-vitrine-trottoir"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-30-vitrine-trottoir"))
     accent("violet")
     faits = []
 
@@ -4443,7 +4443,7 @@ def pub22_sticker_enseigne(dossier=None):
     L'arbitrage n° 2 de A-FAIRE-APRES-RELECTURE.md fait de « quand ca
     devient une enseigne » le sujet principal de cette publication.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-24-sticker-enseigne"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-01-sticker-enseigne"))
     accent("rose")
     faits = []
 
@@ -4685,7 +4685,7 @@ def pub20_reel_matieres(dossier=None):
     rasante garde quelque chose que le trace n'a pas. Si un jour les
     echantillons sont sous la main, ces ecrans se remplacent un par un.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-20-reel-matieres"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-27-reel-matieres"))
     accent("jaune")
     faits = []
 
@@ -4884,7 +4884,7 @@ def pub24_reel_bilan(dossier=None):
     calendrier, decembre et janvier, rigoureusement identiques sauf le
     nom du mois. C'est l'argument de la publication, pose d'emblee.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-28-reel-bilan"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-05-reel-bilan"))
     accent("corail")
     faits = []
 
@@ -5146,7 +5146,7 @@ def pub04_reel_cmjn(dossier=None):
     CALCULEES : les recouvrements sortent d'une addition et d'une
     multiplication de calques.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-cmjn"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-06-reel-cmjn"))
     accent("turquoise")
     faits = []
     vif = (53, 169, 221)                     # le bleu vif de la charte

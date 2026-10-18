@@ -3,7 +3,7 @@ titre: "Qui possède votre logo ?"
 slug: qui-possede-votre-logo
 titre_seo: "Qui possède votre logo ?"
 liens_retour: prestations.html, refaire-son-image.html, infographiste-perpignan.html
-date: 2026-11-06
+date: 2026-11-13
 meta: "Payer un logo ne suffit pas à en détenir les droits. Ce que dit le code de la propriété intellectuelle et ce que doit contenir votre contrat."
 illustration: droits.png
 illustration_alt: "Le même logo côte à côte : net en fichier vectoriel, et pixellisé lorsqu'un JPEG est agrandi."

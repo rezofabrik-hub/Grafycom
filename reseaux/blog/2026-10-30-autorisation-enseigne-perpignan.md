@@ -3,7 +3,7 @@ titre: "Enseigne de commerce : comment obtenir l'autorisation préalable dans le
 slug: autorisation-enseigne-perpignan
 titre_seo: "Autorisation d'enseigne dans le 66"
 liens_retour: enseigne-perpignan.html, ouverture-commerce-66.html, graphiste-conflent.html
-date: 2026-10-23
+date: 2026-10-30
 meta: "Autorisation préalable d'enseigne : Cerfa 16308*01, dépôt en mairie, RLP et secteur protégé. Le guide pour les commerces du 66."
 illustration: enseigne.png
 illustration_alt: "Deux devantures identiques côte à côte : l'une hors périmètre, l'autre encadrée de pointillés corail marquant le secteur protégé où l'autorisation préalable s'impose."

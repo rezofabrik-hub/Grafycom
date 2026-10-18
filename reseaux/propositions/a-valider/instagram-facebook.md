@@ -1,6 +1,6 @@
 # Instagram & Facebook — les 24 publications à valider
 
-Du **lundi 19 octobre au samedi 28 novembre 2026**. Tout ce qui est écrit
+Du **lundi 26 octobre au samedi 5 décembre 2026**. Tout ce qui est écrit
 et non encore publié, dans l'ordre.
 
 > **Rien n'est programmé.** Les dates et heures sont des recommandations.
@@ -40,9 +40,9 @@ ressemblent, et non des aplats saturés que le site n'emploie nulle part.
 **Ce que ça change pour toi :** rien à relire dans les textes, tout dans
 les fonds. Les directions visuelles ci-dessous sont déjà réécrites.
 
-# SEMAINE 1 — du lundi 19 au dimanche 25 octobre
+# SEMAINE 1 — du lundi 19 au dimanche 1er novembre
 
-## 1 — Lundi 19 octobre, 12 h 30 · Carrousel · Pédagogie couleur
+## 1 — Lundi 26 octobre, 12 h 30 · Carrousel · Pédagogie couleur
 
 ### Direction visuelle — 6 slides
 
@@ -114,7 +114,7 @@ le même sur bleu marine, parfaitement lisible.
 
 ---
 
-## 2 — Mardi 20 octobre, 8 h 00 · Carrousel · Réglementation enseigne
+## 2 — Mardi 10 novembre, 8 h 00 · Carrousel · Réglementation enseigne
 
 > 🔎 **Contenu vérifié à la source.** Cerfa n° 16308\*01, arrêté du 31 août
 > 2012, articles R.581-6 à R.581-8 du code de l'environnement.
@@ -188,7 +188,7 @@ commune.
 
 ---
 
-## 3 — Jeudi 22 octobre, 12 h 30 · Dilemme A/B · Interactivité
+## 3 — Jeudi 29 octobre, 12 h 30 · Dilemme A/B · Interactivité
 
 ### Direction visuelle — 2 images
 
@@ -245,13 +245,13 @@ illisible, la sans-serif reste lisible.
 
 ---
 
-## 4 — Vendredi 23 octobre, 18 h 00 · REEL 24 s · Matières & impression
+## 4 — Vendredi 6 novembre, 18 h 00 · REEL 24 s · Matières & impression
 
 ### Découpage
 
 > **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
 > `visuels.py`, gabarit `reel-cmjn`, dans
-> `reseaux/visuels/2026-10-23-reel-cmjn/`.
+> `reseaux/visuels/2026-11-06-reel-cmjn/`.
 >
 > **C'est la publication du cycle où le dessin est le plus clairement
 > supérieur au tournage.** La synthèse additive et la synthèse
@@ -322,9 +322,9 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
   imprimé en quadri : **il perd son éclat avant de perdre sa teinte.** La
   légende ne promet rien de plus que ce constat.
 
-# SEMAINE 2 — du lundi 26 octobre au dimanche 1er novembre
+# SEMAINE 2 — du lundi 2 novembre au dimanche 1er novembre
 
-## 4 bis — Samedi 24 octobre, 10 h 30 · Carrousel · Annonce du rendez-vous
+## 4 bis — Samedi 31 octobre, 10 h 30 · Carrousel · Annonce du rendez-vous
 
 > **Ajoutée le 12 octobre, à ta demande :** « le sujet qui dit que je
 > publie un article blog par semaine peut être aussi traité pour prévenir
@@ -352,7 +352,7 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
   les coups de main saisonniers, en avance. En pied : « Des sujets
   vérifiés, pas des avis. »
 - **S3.** Fond blanc. « Les quatre prochains », avec les dates et les
-  titres réels des 16, 23, 29 et 6 novembre.
+  titres réels des 16, 23, 29 et 13 novembre.
 - **S4.** Fond encre `#2f2723`, texte blanc, filet dégradé :
   « grafycom.fr/blog ». Dessous : « Le lien est en bio. Activez les
   notifications pour ne rien rater. »
@@ -392,7 +392,7 @@ des quatre prochains articles.
 
 ### À fournir par Sandra
 - Rien. Les 4 planches sont dessinées, dans
-  `reseaux/visuels/2026-10-24-blog-rdv/`.
+  `reseaux/visuels/2026-10-31-blog-rdv/`.
 - ⚠️ **Une seule vérification, à faire le jour même :** que le premier
   article soit bien en ligne. Annoncer un rendez-vous hebdomadaire devant
   un blog vide est le seul vrai risque de cette publication.
@@ -401,7 +401,7 @@ des quatre prochains articles.
 
 ---
 
-## 5 — Lundi 26 octobre, 12 h 30 · Carrousel · Typographie
+## 5 — Lundi 2 novembre, 12 h 30 · Carrousel · Typographie
 
 ### Direction visuelle — 6 slides
 
@@ -468,7 +468,7 @@ lecture, la tenue en petit corps, et les droits d'utilisation commerciale.
 
 ---
 
-## 6 — Mardi 27 octobre, 8 h 00 · Carrousel · Droits et propriété
+## 6 — Mardi 3 novembre, 8 h 00 · Carrousel · Droits et propriété
 
 > **Sujet remplacé le 12 octobre.** Cette case portait « les mentions
 > obligatoires d'un devis ». Laurent : « ne pas faire d'article sur les
@@ -541,15 +541,15 @@ supports, le territoire et la durée.
 
 ### À fournir par Sandra
 - Rien. Les 6 planches sont dessinées, dans
-  `reseaux/visuels/2026-10-27-droits/`.
+  `reseaux/visuels/2026-11-03-droits/`.
 - 🔎 **Partie vérifiée** : l'absence de transfert automatique des droits
   par le paiement, l'exigence d'un écrit, l'incessibilité du droit moral,
-  et les mentions qu'une cession doit porter. L'article du 6 novembre
+  et les mentions qu'une cession doit porter. L'article du 13 novembre
   développe le même sujet et cite ses sources.
 
 ---
 
-## 7 — Jeudi 29 octobre, 19 h 00 · Quiz vrai/faux · Interactivité
+## 7 — Jeudi 5 novembre, 19 h 00 · Quiz vrai/faux · Interactivité
 
 ### Direction visuelle — carrousel 5 slides
 
@@ -665,9 +665,9 @@ normal. Ton curieux, pas effrayant.
   qui porterait en plus une marque, une rue et une météo dont le sujet n'a
   que faire.
 
-# SEMAINE 3 — du lundi 2 au dimanche 8 novembre
+# SEMAINE 3 — du lundi 2 au dimanche 15 novembre
 
-## 9 — Lundi 2 novembre, 12 h 30 · Carrousel · Pilier 1, conseils & pédagogie de marque
+## 9 — Lundi 9 novembre, 12 h 30 · Carrousel · Pilier 1, conseils & pédagogie de marque
 
 ### Direction visuelle — 6 slides
 
@@ -747,7 +747,7 @@ visite, polo brodé, flanc de camionnette, panneau de chantier, favicon.
 
 ---
 
-## 10 — Mardi 3 novembre, 8 h 00 · Carrousel · Pilier 2, réglementation
+## 10 — Mardi 27 octobre, 8 h 00 · Carrousel · Pilier 2, réglementation
 
 > 🔎 **Vérifié à la source :** une enseigne relève d'une **autorisation
 > préalable** du maire, formulaire **Cerfa n° 16308\*01** (notice 52393#01),
@@ -857,11 +857,11 @@ soumises à des plages d'extinction nocturne fixées par la commune.
   est écrit** : le carrousel fonctionne ainsi.
 - ~~Une photo de rue commerçante~~ et ~~une capture du Cerfa~~ : **plus
   rien à fournir**. Les sept planches sont dessinées et prêtes, dans
-  `reseaux/visuels/2026-11-03-enseigne-hiver/`.
+  `reseaux/visuels/2026-10-27-enseigne-hiver/`.
 
 ---
 
-## 11 — Jeudi 5 novembre, 12 h 30 · Dilemme A/B · Pilier 5, interactivité
+## 11 — Jeudi 12 novembre, 12 h 30 · Dilemme A/B · Pilier 5, interactivité
 
 ### Direction visuelle — 2 images
 
@@ -932,7 +932,7 @@ typographie sont identiques.
 
 ---
 
-## 12 — Vendredi 6 novembre, 18 h 00 · REEL 23 s · Pilier 3, supports & matières
+## 12 — Vendredi 13 novembre, 18 h 00 · REEL 23 s · Pilier 3, supports & matières
 
 ### Accroche 0-3 s
 **Écran dessiné**, pas de tournage. Une vitrine nue en élévation, avec sa
@@ -943,7 +943,7 @@ est vide. »**
 
 > **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
 > `visuels.py`, gabarit `reel-vitrophanie`, dans
-> `reseaux/visuels/2026-11-06-reel-vitrophanie/`. Le montage consiste à
+> `reseaux/visuels/2026-11-13-reel-vitrophanie/`. Le montage consiste à
 > les enchaîner avec la voix off. Deux des cinq montrent d'ailleurs plus
 > que le plan filmé qu'ils remplacent, parce qu'ils mettent les deux
 > états dans la même image au lieu de les séparer par un mouvement de
@@ -1021,9 +1021,9 @@ terminée, éclairée de l'intérieur à la nuit tombée.
   vitrine est requalifié en enseigne par la commune. Tant que ce n'est pas
   confirmé, la légende reste au conditionnel comme elle est écrite.
 
-# SEMAINE 4 — du lundi 9 au dimanche 15 novembre
+# SEMAINE 4 — du lundi 9 au dimanche 22 novembre
 
-## 13 — Lundi 9 novembre, 12 h 30 · Carrousel 7 slides · Pilier « réalisations » · **Solaire 66**
+## 13 — Lundi 16 novembre, 12 h 30 · Carrousel 7 slides · Pilier « réalisations » · **Solaire 66**
 
 > ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
 > est aussi le commanditaire de ces publications — la carte de visite porte
@@ -1031,7 +1031,7 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 > accord » est donc satisfaite à la source, sans démarche.
 >
 > ✅ **Visuels produits, les 7.** Dans
-> `reseaux/visuels/2026-11-09-solaire-66/`, par
+> `reseaux/visuels/2026-11-16-solaire-66/`, par
 > `python3 reseaux/visuels.py` (gabarit `solaire_66`). Format 1080 × 1350,
 > police Inter du site, pseudo en constante, relus à l'image.
 >
@@ -1161,7 +1161,7 @@ gravure, broderie, tampon.
 
 ---
 
-## 14 — Mardi 10 novembre, 8 h 00 · Carrousel · Pilier 2, réglementation
+## 14 — Mardi 17 novembre, 8 h 00 · Carrousel · Pilier 2, réglementation
 
 > ⚠️ **Contenu entièrement au conditionnel, et c'est volontaire.** Le
 > principe — la langue française obligatoire dans la publicité et
@@ -1265,13 +1265,13 @@ français en plus petit dessous.
   et sur les slides. **Chaque point non confirmé reste au conditionnel.**
 - ~~La photo de devanture de la S1~~ : **plus rien à fournir**. Les six
   planches sont dessinées, dans
-  `reseaux/visuels/2026-11-10-francais-devanture/`.
+  `reseaux/visuels/2026-11-17-francais-devanture/`.
 - Quand les trois points seront confirmés, **ajoutez-les à la liste des faits
   réglementaires vérifiés** du cahier des charges, avec leur date.
 
 ---
 
-## 15 — Jeudi 12 novembre, 19 h 00 · Quiz 4 choix · Pilier 5, interactivité
+## 15 — Jeudi 19 novembre, 19 h 00 · Quiz 4 choix · Pilier 5, interactivité
 
 ### Direction visuelle — carrousel 5 slides
 
@@ -1355,7 +1355,7 @@ leur usage.
 
 ### À fournir par Sandra
 - **Rien à photographier.** Les cinq planches sont dessinées, dans
-  `reseaux/visuels/2026-11-12-quiz-matieres/`.
+  `reseaux/visuels/2026-11-19-quiz-matieres/`.
 - *Le jour où l'occasion se présente* : quatre macros des vrais échantillons,
   à demander à l'enseigniste et à l'imprimeur partenaires, resteraient
   meilleures **sur deux des quatre** — le dépoli et surtout le gaufrage, dont
@@ -1366,10 +1366,10 @@ leur usage.
 
 ---
 
-## 16 — Samedi 14 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
+## 16 — Samedi 21 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
 
 ### Accroche 0-3 s
-**Écran dessiné**, pas de tournage. Les six semaines du 14 novembre au
+**Écran dessiné**, pas de tournage. Les six semaines du 21 novembre au
 24 décembre en une seule grille — pas deux mois côte à côte, une bande
 continue, le 24 décembre noir au bout. Texte : **« Pour Noël, vous êtes déjà
 en retard. »**
@@ -1378,7 +1378,7 @@ en retard. »**
 
 > **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
 > `visuels.py`, gabarit `reel-fin-annee`, dans
-> `reseaux/visuels/2026-11-14-reel-fin-annee/`. Deux écarts assumés par
+> `reseaux/visuels/2026-11-21-reel-fin-annee/`. Deux écarts assumés par
 > rapport au découpage filmé : le doigt qui remonte le calendrier devient
 > une grille unique, ce qui montre les six semaines d'un coup au lieu d'un
 > mois à la fois ; et les mains de plusieurs générations disparaissent. Un
@@ -1388,7 +1388,7 @@ en retard. »**
 
 | Chrono | Visuel / action | Texte incrusté | Script voix off |
 |---|---|---|---|
-| 0-3 s | Doigt qui remonte les cases d'un calendrier, du 24 décembre vers le 14 novembre. Lumière chaude de matin. | **« Pour Noël, vous êtes déjà en retard. »** | On est le 14 novembre. Pour vos supports de fin d'année, c'est maintenant. |
+| 0-3 s | Doigt qui remonte les cases d'un calendrier, du 24 décembre vers le 21 novembre. Lumière chaude de matin. | **« Pour Noël, vous êtes déjà en retard. »** | On est le 21 novembre. Pour vos supports de fin d'année, c'est maintenant. |
 | 3-9 s | Trois cartes de vœux imprimées posées en éventail sur une table en bois. Une main en prend une, on voit le relief d'un gaufrage en lumière rasante. | Une carte imprimée se garde. Un mail se ferme. | Une carte de vœux imprimée reste sur un bureau trois semaines. Un mail de vœux se ferme en deux secondes. Ce n'est pas de la nostalgie, c'est de la durée d'exposition. |
 | 9-15 s | Mains qui plient un emballage cadeau simple, avec un bandeau imprimé et un adhésif au logo. Papier kraft, un seul bandeau de couleur. | Un bandeau suffit. Pas un packaging entier. | Et pour l'emballage, pas besoin de tout refaire. Un bandeau imprimé et un adhésif au logo transforment un papier kraft. Le client photographie ça. |
 | 15-21 s | Rétroplanning animé, trois jalons en violet `#a86cd0`, bleu `#2f7fc4`, corail `#f2585c` : *mi-novembre : création* → *fin novembre : bon à tirer* → *début décembre : livraison*. | Création · BAT · Livraison | Le calendrier est serré. La création à la mi-novembre. Le bon à tirer validé fin novembre. La livraison début décembre. Un jour de retard au début, c'est une semaine de retard à la fin. |
@@ -1440,7 +1440,7 @@ d'être affectif — la voix ne doit pas pour autant devenir publicitaire.
 
 ### Texte alternatif
 Reel de 25 secondes sur la préparation des supports de fin d'année. Un
-calendrier dessiné montre les six semaines du 14 novembre au 24 décembre en
+calendrier dessiné montre les six semaines du 21 novembre au 31 décembre en
 une seule grille. Deux cartes de vœux posées à plat portent un gaufrage rendu
 par une ombre et une lumière décalées, et l'une d'elles la mention
 manuscrite « Bonne année ». Un paquet en papier kraft est fermé par un bandeau
@@ -1462,9 +1462,9 @@ paquet posés dessus.
   être confirmés par l'imprimeur partenaire** avant publication. S'ils sont
   plus serrés, le reel se décale d'une semaine en avant, pas en arrière.
 
-# SEMAINE 5 — du lundi 16 au dimanche 22 novembre
+# SEMAINE 5 — du lundi 16 au dimanche 29 novembre
 
-## 17 — Lundi 16 novembre, 12 h 30 · Carrousel · Pilier 1, conseils stratégiques
+## 17 — Lundi 23 novembre, 12 h 30 · Carrousel · Pilier 1, conseils stratégiques
 
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
@@ -1548,7 +1548,7 @@ chez le même imprimeur au même moment.
 
 ---
 
-## 18 — Mardi 17 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
+## 18 — Mardi 24 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
 
 > ⚠️ **Contenu au conditionnel, vérification à faire avant publication.**
 > Je n'ai **pas** pu confirmer les règles de signalétique de tri sur la
@@ -1651,11 +1651,11 @@ une méthode validée, « on réserve la zone puis on dessine autour ».
   de la légende se réécrivent — pas le reste.
 - ~~Les 7 slides~~ et ~~un sachet à photographier~~ : **faits**. Gabarit
   `emballage-tri`, sept planches dans
-  `reseaux/visuels/2026-11-17-emballage-tri/`.
+  `reseaux/visuels/2026-11-24-emballage-tri/`.
 
 ---
 
-## 19 — Jeudi 19 novembre, 19 h 00 · Dilemme A/B · Pilier 5, interactivité
+## 19 — Jeudi 26 novembre, 19 h 00 · Dilemme A/B · Pilier 5, interactivité
 
 ### Direction visuelle — 2 images, 1080 × 1350 px
 
@@ -1728,7 +1728,7 @@ personnel.
 
 ---
 
-## 20 — Vendredi 20 novembre, 18 h 00 · REEL 24 s · Pilier 3, matières & fabrication
+## 20 — Vendredi 27 novembre, 18 h 00 · REEL 24 s · Pilier 3, matières & fabrication
 
 ### Accroche 0-3 s
 **Écran dessiné**, pas de tournage. Un gaufrage en plein cadre, rendu par une
@@ -1739,7 +1739,7 @@ presque à plat. Texte : **« Ce que vos clients sentent avant de lire. »**
 
 > **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
 > `visuels.py`, gabarit `reel-matieres`, dans
-> `reseaux/visuels/2026-11-20-reel-matieres/`.
+> `reseaux/visuels/2026-11-27-reel-matieres/`.
 >
 > **C'est le sujet où le dessin perd le plus, et il faut le dire.** Une
 > dorure, un gaufrage, un papier qui ondule se *sentent* ; une photo en
@@ -1821,9 +1821,9 @@ brillant sous un angle et sombre sous un autre.
 - Les écrans se remplacent **un par un** : une vraie macro de gaufrage peut
   prendre la place de l'écran 1 sans toucher aux quatre autres.
 
-# SEMAINE 6 — du lundi 23 au dimanche 29 novembre
+# SEMAINE 6 — du lundi 23 au dimanche 6 décembre
 
-## 21 — Lundi 23 novembre, 18 h 30 · Carrousel · Pilier 4, saisonnalité & valeurs
+## 21 — Lundi 30 novembre, 18 h 30 · Carrousel · Pilier 4, saisonnalité & valeurs
 
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
@@ -1922,7 +1922,7 @@ deux, huit et vingt-cinq mètres : les horaires disparaissent avant le nom.
 
 ### À fournir par Sandra
 - **Rien à fournir.** Les sept planches sont dessinées, dans
-  `reseaux/visuels/2026-11-23-vitrine-trottoir/`. La vitrine de nuit, les
+  `reseaux/visuels/2026-11-30-vitrine-trottoir/`. La vitrine de nuit, les
   deux détails de la S5 et la démonstration des trois distances sortent du
   même gabarit, donc de la même devanture : c'est ce qui rend les
   comparaisons honnêtes.
@@ -1933,7 +1933,7 @@ deux, huit et vingt-cinq mètres : les horaires disparaissent avant le nom.
 
 ---
 
-## 22 — Mardi 24 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
+## 22 — Mardi 1er décembre, 8 h 00 · Carrousel · Pilier 2, conformité
 
 > 🔎 **Partie vérifiée à la source.** La distinction enseigne / publicité,
 > l'autorisation préalable au titre de l'article L.581-18 du code de
@@ -2042,13 +2042,13 @@ en vigueur est le Cerfa 16308\*01 et que le 14798\*01 est périmé.
   conditionnel par du factuel, et la publication gagne beaucoup.
 - ~~Une photo de vitrine avec adhésifs de fêtes~~ et ~~les 6 slides~~ :
   **faits**. Gabarit `sticker-enseigne`, six planches dans
-  `reseaux/visuels/2026-11-24-sticker-enseigne/`. L'astérisque du numéro de
+  `reseaux/visuels/2026-12-01-sticker-enseigne/`. L'astérisque du numéro de
   Cerfa a été contrôlée sur l'image : `16308*01` sort entier, sur la S5 et
   dans le texte de la S5.
 
 ---
 
-## 23 — Jeudi 26 novembre, 19 h 00 · Quiz · Pilier 5, interactivité
+## 23 — Jeudi 3 décembre, 19 h 00 · Quiz · Pilier 5, interactivité
 
 ### Direction visuelle — carrousel 6 slides, 1080 × 1350 px
 
@@ -2134,7 +2134,7 @@ violet pour la dernière.
 
 ---
 
-## 24 — Samedi 28 novembre, 10 h 30 · REEL 26 s · Pilier 7, démarche studio
+## 24 — Samedi 5 décembre, 10 h 30 · REEL 26 s · Pilier 7, démarche studio
 
 ### Accroche 0-3 s
 **Écran dessiné**, pas de tournage. Deux pages de calendrier mural côte à
@@ -2145,7 +2145,7 @@ du mois. Texte : **« Non, pas en janvier. »**
 
 > **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
 > `visuels.py`, gabarit `reel-bilan`, dans
-> `reseaux/visuels/2026-11-28-reel-bilan/`.
+> `reseaux/visuels/2026-12-05-reel-bilan/`.
 >
 > **Un écart assumé : le carnet de croquis qui se ferme disparaît.** Un
 > carnet dessiné ne se ferme pas — c'est un plan qui n'existe qu'en

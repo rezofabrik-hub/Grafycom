@@ -178,7 +178,7 @@ def couverture(titre, sous, doc, nb_mots):
   <p class="sous">%s</p>
   <div class="meta">
     <b>%s</b> &nbsp;·&nbsp; %s mots &nbsp;·&nbsp; édité le %s<br>
-    Cycle du <b>lundi 19 octobre</b> au <b>samedi 28 novembre 2026</b>
+    Cycle du <b>lundi 26 octobre</b> au <b>samedi 5 décembre 2026</b>
   </div>
   <div class="rappel"><b>Rien n'est programmé, rien n'est publié.</b>
   Aucune publication ne part sans ton accord explicite. Les cases

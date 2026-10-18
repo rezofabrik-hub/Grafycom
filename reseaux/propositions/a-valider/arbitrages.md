@@ -38,7 +38,7 @@ redescendre.
 
 | | Visuels |
 |---|---|
-| Publications 1 à 8 — cycle du 19 au 30 octobre | ✅ produits |
+| Publications 1 à 8 — cycle du 26 octobre au 6 novembre | ✅ produits |
 | Publication 13 — Solaire 66 | ✅ produite, 7 planches |
 | Publications 9 à 12 et 14 à 24 | ❌ **15 restent à dessiner** |
 | Stories | 10 écrans produits sur 41 |
@@ -74,33 +74,33 @@ te revient.
 ## ⚠️ Deux doublons avec la quinzaine suivante — à arbitrer avant validation
 
 Les fichiers `B-*` de ce même dossier couvrent la quinzaine du 9 au
-28 novembre. Ils ont été écrits en parallèle de celui-ci, et deux sujets se
+5 décembre. Ils ont été écrits en parallèle de celui-ci, et deux sujets se
 télescopent. **Ce n'est pas à moi de trancher, mais ça ne doit pas partir
 en ligne sans l'être.**
 
 **1. La fin d'année est annoncée deux fois en trois jours.** Ma publication
-n° 8 (samedi 14 novembre, reel — « Pour Noël, vous êtes déjà en retard »,
+n° 8 (samedi 21 novembre, reel — « Pour Noël, vous êtes déjà en retard »,
 rétroplanning création / BAT / livraison) et la publication n° 1 de la
-quinzaine suivante (lundi 16 novembre, carrousel — « Vos cartes de vœux de
+quinzaine suivante (lundi 23 novembre, carrousel — « Vos cartes de vœux de
 Noël se décident cette semaine ») disent la même chose au même public à deux
 jours d'intervalle. Et le rétroplanning est écrit **deux fois au blog** :
-mon article du 13 novembre (« Cartes de vœux et emballages de fête : le
-rétroplanning à tenir ») et celui du 27 novembre
-(`2026-11-27-retroplanning-fin-annee-commerce.md`), qui traite le même sujet.
+mon article du 20 novembre (« Cartes de vœux et emballages de fête : le
+rétroplanning à tenir ») et celui du 4 décembre
+(`2026-12-04-retroplanning-fin-annee-commerce.md`), qui traite le même sujet.
 Les deux sont en `à relire` : il faut en supprimer un, et l'argument de date
 plaide pour garder le mien — un rétroplanning qui demande de créer à la
 mi-novembre n'est plus actionnable s'il paraît le 20.
-*Arbitrage possible :* garder le reel du 14 novembre, qui ouvre le sujet, et
-reprofiler le carrousel du 16 novembre sur un angle qui ne recouvre pas le
+*Arbitrage possible :* garder le reel du 21 novembre, qui ouvre le sujet, et
+reprofiler le carrousel du 23 novembre sur un angle qui ne recouvre pas le
 calendrier — le contenu d'une carte de vœux, par exemple, ou les mentions
 obligatoires d'un emballage, déjà traitées le 10. Ou l'inverse : décaler mon
 reel et laisser la quinzaine suivante ouvrir le sujet. Mais pas les deux.
 
-**2. La vitrine est traitée trois fois.** Mon reel du 6 novembre (les trois
-familles d'adhésifs) et mon article du 5 novembre, puis la publication n° 5
-du 23 novembre (« Votre vitrine de Noël est faite pour celui qui passe »), la
+**2. La vitrine est traitée trois fois.** Mon reel du 13 novembre (les trois
+familles d'adhésifs) et mon article du 12 novembre, puis la publication n° 5
+du 30 novembre (« Votre vitrine de Noël est faite pour celui qui passe »), la
 n° 6 du 24 novembre (un sticker de Noël est-il une enseigne ?) et l'article
-du 20 novembre. Les angles diffèrent — matières chez moi, mise en scène et
+du 27 novembre. Les angles diffèrent — matières chez moi, mise en scène et
 qualification réglementaire ensuite — et l'enchaînement peut très bien se
 défendre comme une série. Mais la question « est-ce que ça devient une
 enseigne ? » apparaît chez moi en réserve de fin de légende **et** chez eux
@@ -110,12 +110,12 @@ en sujet principal : il faut choisir où elle est traitée pour de bon.
 
 ## 🔀 Deux recoupements avec la quinzaine précédente — à arbitrer
 
-La quinzaine du 2 novembre au 14 novembre a été préparée en parallèle, sans
+La quinzaine du 9 novembre au 21 novembre a été préparée en parallèle, sans
 que l'une voie l'autre. En déposant mes fichiers, j'ai trouvé deux articles
 de blog déjà écrits par elle, et deux de mes sujets tombaient dessus. Voici
 ce que j'ai fait, et ce qui reste à trancher.
 
-**1. Le rétroplanning de fin d'année.** Un article daté du 13 novembre,
+**1. Le rétroplanning de fin d'année.** Un article daté du 20 novembre,
 « Cartes de vœux et emballages de fête : le rétroplanning à tenir », couvre
 déjà ce terrain. **J'ai donc changé mon second article de blog** : il porte
 maintenant sur la refonte de logo en début d'année, qui n'est traitée
@@ -123,7 +123,7 @@ nulle part. Deux articles quasi identiques sur le même site se concurrencent
 dans les résultats de recherche, et c'est le seul endroit où le doublon
 coûte vraiment.
 
-En revanche, **j'ai gardé la publication n° 1 du 16 novembre** sur le même
+En revanche, **j'ai gardé la publication n° 1 du 23 novembre** sur le même
 sujet. C'est l'angle que vous m'avez demandé pour cette quinzaine, c'est la
 semaine où la question se pose réellement, et un post Instagram vit deux
 jours là où un article reste indexé des années. **Mais si la quinzaine
@@ -135,9 +135,9 @@ vitrine — et ce qu'il faut simplifier à chaque échelle pour que l'idée
 tienne encore.* Même pilier, même semaine, aucun recoupement. Dites-moi et
 je l'écris.
 
-**2. La vitrine.** Un article du 5 novembre, « Habiller sa vitrine : dépoli,
+**2. La vitrine.** Un article du 12 novembre, « Habiller sa vitrine : dépoli,
 microperforé ou lettres découpées ? », traite du **choix de la matière
-adhésive**. Mon article du 20 novembre et ma publication n° 5 traitent de la
+adhésive**. Mon article du 27 novembre et ma publication n° 5 traitent de la
 **composition et de la lisibilité vues du trottoir** : hauteur des yeux,
 verre libre, reflet nocturne, fond derrière le texte. Les deux angles sont
 différents et se complètent plutôt bien — l'un dit *quoi poser*, l'autre
@@ -147,7 +147,7 @@ trouvez que ça fait beaucoup de vitrine en trois semaines : dans ce cas,
 c'est ma publication n° 5 qui se décale, pas l'article.
 
 Le recoupement à surveiller en priorité reste **la publication n° 6 du
-24 novembre** : l'article du 5 novembre se termine, d'après ses intertitres,
+24 novembre** : l'article du 12 novembre se termine, d'après ses intertitres,
 sur « quand ça devient une enseigne ». Mon carrousel traite la distinction
 déclaration / autorisation appliquée aux adhésifs de Noël, avec le rappel du
 Cerfa périmé. C'est une redite partielle, assumée : ce rappel mérite d'être
@@ -166,7 +166,7 @@ sortir sans que le point soit tranché.
 **Le rythme.** Quatre publications par semaine, c'est un rythme d'agence. Le
 risque n'est pas la qualité des textes : c'est que Sandra produise 7 jeux de
 visuels et 2 reels en quinze jours en plus du travail facturé. **Si le cycle
-du 19 au 30 octobre n'a pas été publié en entier, dites-le : le bon arbitrage
+du 26 octobre au 6 novembre n'a pas été publié en entier, dites-le : le bon arbitrage
 est de descendre à 3 publications par semaine** en gardant les piliers
 réglementation et interactivité, qui sont ceux qui différencient. Les deux
 carrousels de pédagogie (n° 1 et n° 5) se replient très bien en posts à une
@@ -219,7 +219,7 @@ relus mot par mot sur chaque slide.
 
 3. **Quatre publications par semaine, c'est un rythme d'agence.** Le risque
    n'est pas le texte, il est dans les 6 visuels et 2 reels à produire en
-   quinze jours, en plus du travail facturé. **Le cycle du 19 au 30 octobre
+   quinze jours, en plus du travail facturé. **Le cycle du 26 octobre au 6 novembre
    a-t-il été publié en entier ?** Si non, le bon arbitrage est de
    redescendre à 2 ou 3 publications par semaine : un compte qui s'arrête
    fait plus de mal qu'un compte lent. Dans cette quinzaine, les quatre à
@@ -242,7 +242,7 @@ compte reprend le jeudi 12.
 
 Le pilier « journées et marronniers » n'est donc pas servi cette quinzaine.
 La seule autre date du créneau qui offrait une prise sur le métier était le
-26 novembre, Journée mondiale des toilettes, sous l'angle des pictogrammes
+3 décembre, Journée mondiale des toilettes, sous l'angle des pictogrammes
 et de la signalétique universelle. L'angle est réel, le registre ne va pas
 à un compte qui parle à des chefs d'entreprise. Il est écarté ; il reste
 disponible si vous le voulez l'an prochain.
@@ -252,13 +252,13 @@ disponible si vous le voulez l'an prochain.
 ## 3 bis · Solaire 66 — complet, rien à trancher
 
 Seul vrai projet client du mois, il remplace l'exercice de style fictif du
-9 novembre. Le pilier « réalisations » est le plus fort et le plus rare, et
+16 novembre. Le pilier « réalisations » est le plus fort et le plus rare, et
 c'était le seul que le mois ne servait pas.
 
 **L'accord ne se pose pas** : la carte porte « Laurent MIENVILLE, Gérant ».
 
 **Sept planches produites et relues à l'image**, dans
-`reseaux/visuels/2026-11-09-solaire-66/`. Tout ce qui manquait a été
+`reseaux/visuels/2026-11-16-solaire-66/`. Tout ce qui manquait a été
 fourni : le panneau, les dimensions réelles (120 × 80 cm), et le fichier
 vectoriel qui a remplacé le JPEG du premier envoi.
 
@@ -279,7 +279,7 @@ gravure.
 
 - **Vos délais d'imprimeur réels pour décembre.** Aucun nombre de jours n'a
   été inventé nulle part. Un délai vrai rendrait la publication du
-  16 novembre et l'article du 13 nettement plus utiles.
+  23 novembre et l'article du 13 nettement plus utiles.
 - **Les photos.** Voir `photos-a-prendre.md`.
 - **L'accord des clients** pour tout projet montré. Une seule publication
   est concernée, elle porte la mention.

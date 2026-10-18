@@ -1,4 +1,4 @@
-# Visuels à produire — du 2 novembre au 28 novembre 2026
+# Visuels à produire — du 9 novembre au 5 décembre 2026
 
 Ce que `reseaux/visuels.py` doit dessiner, et ce qui demande une vraie
 photo (voir `photos-a-prendre.md`).
@@ -16,7 +16,7 @@ photo (voir `photos-a-prendre.md`).
 > ```
 >
 > **À jour au 14 octobre : 26 gabarits, 177 planches.** Tout le cycle du
-> 19 octobre au 28 novembre est produit, les 44 écrans de stories compris.
+> 26 octobre au 5 décembre est produit, les 44 écrans de stories compris.
 > Les huit publications qui attendaient une photographie ont été
 > redessinées — voir `photos-a-prendre.md`, section « Les photos
 > spécifiques au mois ». Les récapitulatifs ci-dessous décrivent donc ce
@@ -27,14 +27,14 @@ photo (voir `photos-a-prendre.md`).
 
 > **Les dossiers de `reseaux/visuels/` portent désormais la vraie date de
 > publication.** Ils étaient restés aux dates d'avant le décalage du
-> calendrier au 19 octobre : le carrousel du lundi 19 était rangé dans
-> `2026-10-12-couleurs`, le reel du 20 novembre dans `2026-11-13-…`. Les
+> calendrier au 26 octobre : le carrousel du lundi 19 était rangé dans
+> `2026-10-12-couleurs`, le reel du 27 novembre dans `2026-11-20-…`. Les
 > vingt-cinq dossiers sont renommés, et chaque gabarit porte maintenant
 > son numéro de publication dans son commentaire.
 
 ---
 
-## Quinzaine 1 — du 2 novembre au 14 novembre
+## Quinzaine 1 — du 9 novembre au 21 novembre
 
 # RÉCAPITULATIF DE CE QU'IL FAUT PRODUIRE
 
@@ -52,7 +52,7 @@ photo (voir `photos-a-prendre.md`).
 
 ---
 
-## Quinzaine 2 — du 16 au 28 novembre
+## Quinzaine 2 — du 23 novembre au 5 décembre
 
 # RÉCAPITULATIF DE CE QU'IL FAUT PRODUIRE
 
@@ -64,7 +64,7 @@ photo (voir `photos-a-prendre.md`).
 | Écrans de stories | 14 — détail dans `stories.md` |
 | Photos à prendre | 5 : un sachet cadeau neutre, une vitrine de nuit depuis le trottoir d'en face, une vitrine avec adhésifs de fêtes, un lettrage sur plexi devant deux fonds, des échantillons de papier |
 | Tournages | 2 × 5 plans de 5 s au téléphone |
-| Articles de blog | 2 — **déjà rédigés**, dans `reseaux/blog/`, en `statut: à relire` : `2026-11-20-vitrine-fin-annee-trottoir.md` et `2026-11-27-refaire-son-logo-nouvelle-annee.md` |
+| Articles de blog | 2 — **déjà rédigés**, dans `reseaux/blog/`, en `statut: à relire` : `2026-11-27-vitrine-fin-annee-trottoir.md` et `2026-12-04-refaire-son-logo-nouvelle-annee.md` |
 | Textes fiche Google | 8 — **déjà rédigés et publiables**, après vérification des réglages de la fiche |
 | Gabarits dans `visuels.py` | **tous écrits** — 26 au total, `python3 reseaux/visuels.py --liste` |
 

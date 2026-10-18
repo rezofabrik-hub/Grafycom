@@ -1,4 +1,4 @@
-# Photos à prendre — du 2 novembre au 28 novembre 2026
+# Photos à prendre — du 9 novembre au 5 décembre 2026
 
 > **Aucune publication du mois n'attend plus d'image.** Les huit qui en
 > demandaient une sont redessinées — le détail est plus bas, dans « Les
@@ -144,17 +144,17 @@ dans `reseaux/visuels/`, et il n'y a rien à photographier pour les sortir.
 
 | # | Date | Ce qui était demandé | Ce qui est livré |
 |---|---|---|---|
-| 4 | 23 oct | cinq plans à filmer, dont deux animations | **cinq écrans finis** : écran contre papier, synthèse RVB et synthèse CMJN **calculées**, le même bleu sur mat et sur couché |
-| 8 | 30 oct | quatre plans à filmer, dont une séquence sans issue propre | **cinq écrans finis** : citrouille, contraste orange/noir, quatre pictogrammes d'alerte, deux devantures comparées |
-| 10 | 3 nov | une rue commerçante au crépuscule | une rue dessinée, six façades, enseignes allumées avec leur halo — plus un schéma de formulaire à la place de la capture du Cerfa |
-| 12 | 6 nov | quatre plans à filmer | **cinq écrans finis** : vitrine nue cotée, dépoli, microperforé vu des deux côtés, lettres contre pavé blanc, vitrine de nuit |
-| 14 | 10 nov | une devanture floutée | une devanture fictive, slogan anglais **lisible**, puis la même avec la ligne française ajoutée |
-| 15 | 12 nov | quatre macrophotographies | quatre matières **dessinées en coupe** |
-| 16 | 14 nov | cinq plans à filmer, dont des mains | **cinq écrans finis** : calendrier de six semaines, cartes gaufrées, paquet kraft, rétroplanning, table vue de dessus |
-| 20 | 20 nov | cinq plans à filmer | **cinq écrans finis** : gaufrage, deux grammages sur la tranche, gaufrage de côté **et** de face, dorure allumée **et** éteinte |
-| 24 | 28 nov | cinq plans à filmer | **cinq écrans finis** : deux pages de calendrier, deux versions du logo, trois questions, le logo sur trois supports |
-| 18 | 17 nov | un sachet à photographier | un sachet dessiné, puis **le même** au trait avec sa zone réservée |
-| 21 | 23 nov | une vitrine de nuit du trottoir d'en face | la scène dessinée — **et une septième planche** : la même devanture à 2, 8 et 25 m |
+| 4 | 30 oct | cinq plans à filmer, dont deux animations | **cinq écrans finis** : écran contre papier, synthèse RVB et synthèse CMJN **calculées**, le même bleu sur mat et sur couché |
+| 8 | 6 nov | quatre plans à filmer, dont une séquence sans issue propre | **cinq écrans finis** : citrouille, contraste orange/noir, quatre pictogrammes d'alerte, deux devantures comparées |
+| 10 | 10 nov | une rue commerçante au crépuscule | une rue dessinée, six façades, enseignes allumées avec leur halo — plus un schéma de formulaire à la place de la capture du Cerfa |
+| 12 | 13 nov | quatre plans à filmer | **cinq écrans finis** : vitrine nue cotée, dépoli, microperforé vu des deux côtés, lettres contre pavé blanc, vitrine de nuit |
+| 14 | 17 nov | une devanture floutée | une devanture fictive, slogan anglais **lisible**, puis la même avec la ligne française ajoutée |
+| 15 | 19 nov | quatre macrophotographies | quatre matières **dessinées en coupe** |
+| 16 | 21 nov | cinq plans à filmer, dont des mains | **cinq écrans finis** : calendrier de six semaines, cartes gaufrées, paquet kraft, rétroplanning, table vue de dessus |
+| 20 | 27 nov | cinq plans à filmer | **cinq écrans finis** : gaufrage, deux grammages sur la tranche, gaufrage de côté **et** de face, dorure allumée **et** éteinte |
+| 24 | 5 déc | cinq plans à filmer | **cinq écrans finis** : deux pages de calendrier, deux versions du logo, trois questions, le logo sur trois supports |
+| 18 | 24 nov | un sachet à photographier | un sachet dessiné, puis **le même** au trait avec sa zone réservée |
+| 21 | 30 nov | une vitrine de nuit du trottoir d'en face | la scène dessinée — **et une septième planche** : la même devanture à 2, 8 et 25 m |
 | 22 | 24 nov | une vitrine avec adhésifs de fêtes | une vitrine dessinée portant les deux adhésifs |
 
 ### Pourquoi un dessin, et pas une image générée

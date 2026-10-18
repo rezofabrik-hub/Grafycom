@@ -8,9 +8,9 @@ demandé que je m'en occupe d'un bloc quand tu auras fini.
 
 | # | Décision | Ce que je fais |
 |---|---|---|
-| 1 | Le reel de fin d'année se décale, le carrousel ouvre le sujet | n° 16 passe au **samedi 21 novembre**, n° 17 reste au lundi 16 et ouvre |
-| 2 | « Quand ça devient une enseigne » → sujet principal | traité pour de bon dans la n° 22 ; retiré de la réserve de fin de légende de l'article du 5 novembre, qui y renverra |
-| 3 | Écrire l'angle de remplacement | nouvelle publication **samedi 14 novembre** : un même visuel de fêtes décliné sur quatre supports — étiquette de 3 cm, sachet, carte, vitrine |
+| 1 | Le reel de fin d'année se décale, le carrousel ouvre le sujet | n° 16 passe au **samedi 28 novembre**, n° 17 reste au lundi 16 et ouvre |
+| 2 | « Quand ça devient une enseigne » → sujet principal | traité pour de bon dans la n° 22 ; retiré de la réserve de fin de légende de l'article du 12 novembre, qui y renverra |
+| 3 | Écrire l'angle de remplacement | nouvelle publication **samedi 21 novembre** : un même visuel de fêtes décliné sur quatre supports — étiquette de 3 cm, sachet, carte, vitrine |
 | 4 | La vitrine répétée : « si tu penses que c'est bien de répéter, on répète » | **on garde**, et on l'assume comme une série — voir plus bas |
 | 5 | Le rappel du Cerfa périmé : « occupe-t'en » | **on répète**, pour la raison dite plus bas |
 | 6 | Les deux publications de réalisation | **en plus** du rythme, pas à la place |
@@ -18,7 +18,7 @@ demandé que je m'en occupe d'un bloc quand tu auras fini.
 ### Mon arbitrage sur les points 4 et 5, puisque tu me les laisses
 
 **La vitrine, trois fois en trois semaines : on garde.** Les angles sont
-réellement différents — la matière le 5 novembre, la composition vue du
+réellement différents — la matière le 12 novembre, la composition vue du
 trottoir le 20, la qualification réglementaire le 24. Ce n'est pas une
 redite, c'est une progression : *quoi poser*, puis *où et comment*, puis
 *ce que ça déclenche*. Je vais simplement la rendre lisible comme série,
@@ -60,15 +60,15 @@ temps, pour que tu ne relises pas deux fois le même point.
 - La réserve n° 2 demande d'écrire les gabarits : **c'est fait**, 18
   gabarits et 95 planches.
 - La partie 2-1 cite un article de blog en double,
-  `2026-11-27-retroplanning-fin-annee-commerce.md` : **il n'existe plus**.
-  Le 27 novembre porte « Faut-il refaire son logo pour la nouvelle année ».
+  `2026-12-04-retroplanning-fin-annee-commerce.md` : **il n'existe plus**.
+  Le 4 décembre porte « Faut-il refaire son logo pour la nouvelle année ».
 
 ## Le point que je veux te soumettre avant d'agir
 
-Décaler le reel au samedi 21 novembre fait **cinq publications** cette
-semaine-là — 16, 17, 19, 20 et 21 novembre. Ta réserve n° 3 mettait
+Décaler le reel au samedi 28 novembre fait **cinq publications** cette
+semaine-là — 16, 17, 19, 20 et 28 novembre. Ta réserve n° 3 mettait
 justement en garde contre quatre par semaine.
 
-Deux façons de l'éviter, si tu veux : laisser le reel au 14 novembre en
+Deux façons de l'éviter, si tu veux : laisser le reel au 21 novembre en
 reprofilant seulement son accroche pour qu'il n'ouvre pas le sujet, ou
 décaler plutôt la n° 19 du jeudi. Dis-le-moi en même temps que le reste.

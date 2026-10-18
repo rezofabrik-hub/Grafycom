@@ -1,4 +1,4 @@
-# Brief visuels Grafycom — cycle du 19 octobre au 28 novembre 2026
+# Brief visuels Grafycom — cycle du 26 octobre au 5 décembre 2026
 
 Document destiné à un prestataire ou à un outil de génération d'images et
 de vidéos. Il décrit **le rendu attendu**, planche par planche, pour les
@@ -118,7 +118,7 @@ studio.
 
 Espace **insécable** avant `? ! ; :` et à l'intérieur des guillemets
 français `« »`. Les heures s'écrivent `17 h 30` avec des insécables, les
-dates `mardi 3 novembre` de même — un `?` seul en début de ligne ou un
+dates `mardi 10 novembre` de même — un `?` seul en début de ligne ou un
 `8 h` coupé en deux sont des défauts rédhibitoires.
 
 ### 1.6 Le pseudo et les mentions exactes
@@ -379,7 +379,7 @@ Notation : `fond` / `surtitre` / **titre** / corps / éléments dessinés.
 
 ---
 
-### n° 1 · lundi 19 octobre · Carrousel 6 planches · Pédagogie couleur
+### n° 1 · lundi 26 octobre · Carrousel 6 planches · Pédagogie couleur
 
 1. `sable chaud` · surtitre « IDENTITÉ VISUELLE » · filet · **« Votre
    couleur dit déjà ce que vous vendez. »** (104 px) · signature.
@@ -402,7 +402,7 @@ Notation : `fond` / `surtitre` / **titre** / corps / éléments dessinés.
 6. `blanc` · **« Votre secteur en commentaire. »** (86 px) · texte · flèche
    corail · signature.
 
-### n° 2 · mardi 20 octobre · Carrousel 7 planches · Réglementation enseigne
+### n° 2 · mardi 10 novembre · Carrousel 7 planches · Réglementation enseigne
 
 1. `sable chaud` · surtitre « RÉGLEMENTATION » · filet · **« Votre enseigne
    a besoin / d'une autorisation. / Pas d'une déclaration. »** (74 px).
@@ -425,7 +425,7 @@ Notation : `fond` / `surtitre` / **titre** / corps / éléments dessinés.
 7. `encre` · filet · **« Une enseigne se pense / en amont. »** (86 px,
    blanc) · « Pas après le logo. » (crème) · signature sable.
 
-### n° 3 · jeudi 22 octobre · Dilemme A/B · 2 images
+### n° 3 · jeudi 29 octobre · Dilemme A/B · 2 images
 
 **La démonstration la plus stricte du cycle.** Deux images **rigoureusement
 identiques**, la seconde étant la première **floutée par le programme**.
@@ -443,7 +443,7 @@ identiques**, la seconde étant la première **floutée par le programme**.
    scène. Titres ajoutés par-dessus : **« À vingt mètres, / ce n'est plus
    une typo. »** en haut, **« C'est une silhouette. »** en corail en bas.
 
-### n° 4 · vendredi 23 octobre · REEL 24 s · 5 écrans 9:16 · RVB / CMJN
+### n° 4 · vendredi 6 novembre · REEL 24 s · 5 écrans 9:16 · RVB / CMJN
 
 **La publication où le dessin bat le tournage le plus nettement.** Une
 synthèse additive et une synthèse soustractive sont des schémas, pas des
@@ -479,7 +479,7 @@ scènes.
 > constate en quadri — **la couleur perd son éclat avant de perdre sa
 > teinte**. Ne pas la présenter autrement.
 
-### n° 4 bis · samedi 24 octobre · Carrousel 4 planches · Annonce du blog
+### n° 4 bis · samedi 31 octobre · Carrousel 4 planches · Annonce du blog
 
 1. `sable chaud` · surtitre « LE BLOG » · filet · **« Un nouvel article /
    chaque vendredi matin. »** (84 px) · « Sur grafycom.fr/blog. Gratuit,
@@ -494,7 +494,7 @@ scènes.
 4. `encre` · filet · **« grafycom.fr/blog »** (86 px, blanc) · « Le lien
    est en bio. Activez les notifications pour ne rien rater. » · 4/4.
 
-### n° 5 · lundi 26 octobre · Carrousel 6 planches · Typographie
+### n° 5 · lundi 2 novembre · Carrousel 6 planches · Typographie
 
 1. `blanc` · surtitre « TYPOGRAPHIE » · bloc centré · **« Cette police est
    magnifique. »** (92 px) · « Et elle va vous coûter des clients. »
@@ -514,7 +514,7 @@ scènes.
 6. `encre` · filet · **« Une identité, / c'est deux polices. »** (88 px,
    blanc) · « Une pour les titres, une pour le texte. Pas cinq. »
 
-### n° 6 · mardi 27 octobre · Carrousel 6 planches · Droits et propriété
+### n° 6 · mardi 3 novembre · Carrousel 6 planches · Droits et propriété
 
 1. `crème` · surtitre « DROITS & PROPRIÉTÉ » · **« Qui possède / votre
    logo ? »** (110 px) · « La réponse surprend la plupart des chefs
@@ -533,7 +533,7 @@ scènes.
 6. `encre` · filet · **« Demandez votre / contrat de cession. »** (88 px) ·
    « S'il n'existe pas, c'est le moment de le faire. »
 
-### n° 7 · jeudi 29 octobre · Quiz vrai/faux · 5 planches
+### n° 7 · jeudi 5 novembre · Quiz vrai/faux · 5 planches
 
 1. `sable chaud` · pastille « QUIZ » corail · filet · **« 4 idées reçues /
    sur l'impression / et les enseignes. »** (84 px) · « Combien allez-vous
@@ -574,7 +574,7 @@ scènes.
 5. `violet` plein · filet · **« Une couleur / n'est jamais / neutre. »**
    (112 px, blanc) · relance d'abonnement · signature crème.
 
-### n° 9 · lundi 2 novembre · Carrousel 6 planches · Un logo en petit
+### n° 9 · lundi 9 novembre · Carrousel 6 planches · Un logo en petit
 
 1. `crème` · surtitre « CONSEIL » · **« Votre logo tient-il / sur un
    stylo ? »** (96 px) · le logo fictif à **210 px de rayon**, et le même
@@ -593,7 +593,7 @@ scènes.
 6. `encre` · filet · **« Faites le test / ce soir. »** (104 px, blanc) ·
    flèche corail.
 
-### n° 10 · mardi 3 novembre · Carrousel 7 planches · L'enseigne à 17 h
+### n° 10 · mardi 27 octobre · Carrousel 7 planches · L'enseigne à 17 h
 
 1. `sable chaud` · la **rue au crépuscule** (section 5.2) occupant le haut
    jusqu'à y≈880 · un **bandeau violet plein en travers** à y=170, texte
@@ -617,7 +617,7 @@ scènes.
 7. `violet` plein · filet · **« Votre rue / en commentaire. »** (96 px,
    blanc) · flèche corail.
 
-### n° 11 · jeudi 5 novembre · Dilemme A/B · 2 images · La place du prix
+### n° 11 · jeudi 12 novembre · Dilemme A/B · 2 images · La place du prix
 
 Deux cartes de restaurant **rigoureusement identiques** : mêmes six plats,
 mêmes prix, même police, même corps, mêmes marges. **Le seul écart est la
@@ -638,7 +638,7 @@ Les six plats : Velouté de potimarron 9 € · Œuf parfait 12 € · Encornets
 à la plancha 16 € · Épaule d'agneau confite 24 € · Rouget de roche 26 € ·
 Tarte fine aux pommes 9 €.
 
-### n° 12 · vendredi 6 novembre · REEL 23 s · 5 écrans 9:16 · Vitrophanie
+### n° 12 · vendredi 13 novembre · REEL 23 s · 5 écrans 9:16 · Vitrophanie
 
 1. `sable chaud` · surtitre « REEL · 0-3 S » · **« Vous avez un panneau /
    de 6 m². / Il est vide. »** (94 px) · une **devanture au trait**, vide ·
@@ -664,7 +664,7 @@ Tarte fine aux pommes 9 €.
    filet · **« Et ça se décolle. »** (92 px, blanc) · relance
    d'abonnement.
 
-### n° 13 · lundi 9 novembre · Carrousel 7 planches · Solaire 66
+### n° 13 · lundi 16 novembre · Carrousel 7 planches · Solaire 66
 
 **La seule publication qui montre un vrai client, avec son accord.** Elle
 utilise les couleurs de la marque Solaire 66 (`#10638b` et `#f5b32d`),
@@ -682,7 +682,7 @@ qui ne sont pas celles de Grafycom : c'est normal et voulu.
    monochrome.
 7. `sable chaud` · **« Dessiné en grand. / Vérifié en petit. »** (92 px).
 
-### n° 14 · mardi 10 novembre · Carrousel 6 planches · Loi Toubon
+### n° 14 · mardi 17 novembre · Carrousel 6 planches · Loi Toubon
 
 1. `sable chaud` · une **devanture éclairée** portant sur son bandeau
    principal **« SUNSET COFFEE »** et, sur un second bandeau juste en
@@ -709,7 +709,7 @@ qui ne sont pas celles de Grafycom : c'est normal et voulu.
 5. `sable chaud` · filet · **« Et le catalan ? »** (100 px) · la réponse.
 6. `blanc` · **« Vous avez un slogan / en anglais ? »** (86 px) · flèche.
 
-### n° 15 · jeudi 12 novembre · Quiz 4 choix · 5 planches · Les matières
+### n° 15 · jeudi 19 novembre · Quiz 4 choix · 5 planches · Les matières
 
 1. `sable chaud` · surtitre « QUIZ » · **« Quatre supports. / Vous en
    reconnaissez / combien ? »** (72 px) · les **quatre matières en coupe**
@@ -726,11 +726,11 @@ qui ne sont pas celles de Grafycom : c'est normal et voulu.
    avec son nom en Inter 600 40 px et son usage en 32 px brun · flèche
    corail et « Votre score en commentaire. »
 
-### n° 16 · samedi 14 novembre · REEL 25 s · 5 écrans 9:16 · Fin d'année
+### n° 16 · samedi 21 novembre · REEL 25 s · 5 écrans 9:16 · Fin d'année
 
 1. `crème` · surtitre « REEL · 0-3 S » · **« Pour Noël, / vous êtes déjà /
    en retard. »** (100 px) · un **calendrier en bande continue** du
-   14 novembre au 24 décembre — pas deux mois côte à côte, **une seule
+   21 novembre au 31 décembre — pas deux mois côte à côte, **une seule
    grille de six semaines**, sept colonnes, cases à coins arrondis. Les
    jours hors période sont en contour seul ; le **24 décembre est en encre
    plein, chiffre blanc**. Le premier de chaque mois porte son abréviation.
@@ -752,7 +752,7 @@ qui ne sont pas celles de Grafycom : c'est normal et voulu.
    **« Décembre se décide / en novembre. »** (78 px) · relance
    d'abonnement.
 
-### n° 17 · lundi 16 novembre · Carrousel 6 planches · Rétroplanning
+### n° 17 · lundi 23 novembre · Carrousel 6 planches · Rétroplanning
 
 1. `sable chaud` · surtitre « FIN D'ANNÉE » · filet · **« Vos cartes de
    vœux / de Noël se décident / cette semaine. »** (86 px) · « Pas en
@@ -780,7 +780,7 @@ qui ne sont pas celles de Grafycom : c'est normal et voulu.
 6. `crème` · filet · **« Dites-moi ce que vous / voulez imprimer / pour les
    fêtes. »** (80 px) · flèche · 6/6.
 
-### n° 18 · mardi 17 novembre · Carrousel 7 planches · Signalétique de tri
+### n° 18 · mardi 24 novembre · Carrousel 7 planches · Signalétique de tri
 
 1. `crème` · le **sachet cadeau** complet (5.5) · bandeau **violet** en
    travers : **« Votre bel emballage de fête / a une mention à porter. »**
@@ -804,7 +804,7 @@ qui ne sont pas celles de Grafycom : c'est normal et voulu.
 7. `encre` · filet · **« Vous préparez / un emballage / pour les fêtes ? »**
    (92 px, blanc) · flèche.
 
-### n° 19 · jeudi 19 novembre · Dilemme A/B · 2 images · Cartes de vœux
+### n° 19 · jeudi 26 novembre · Dilemme A/B · 2 images · Cartes de vœux
 
 Deux cartes **au même format, sur le même fond, avec la même marque**
 (le logo fictif). Le seul écart est **le texte et la place du logo**.
@@ -821,7 +821,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
   année. On rouvre le 4 janvier, et on vous garde la table du fond. » — et
   le logo **petit, en bas** (rayon 40 px).
 
-### n° 20 · vendredi 20 novembre · REEL 24 s · 5 écrans 9:16 · Les matières
+### n° 20 · vendredi 27 novembre · REEL 24 s · 5 écrans 9:16 · Les matières
 
 > **C'est ici que le dessin perd le plus.** Une dorure, un gaufrage, un
 > papier qui ondule se *sentent*. Si un seul visuel du cycle mérite une
@@ -853,7 +853,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    légendée « 350 g » · filet · **« Choisissez la matière / avant le
    dessin. »** (84 px, blanc) · relance d'abonnement.
 
-### n° 21 · lundi 23 novembre · Carrousel 7 planches · La vitrine du trottoir
+### n° 21 · lundi 30 novembre · Carrousel 7 planches · La vitrine du trottoir
 
 1. `crème` · une **devanture éclairée vue de nuit depuis le trottoir d'en
    face** : ciel en dégradé encre → bleu → violet sur le tiers haut, le
@@ -891,7 +891,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
 7. `crème` · **« Photographiez votre vitrine / depuis le trottoir d'en
    face. »** (60 px) · flèche.
 
-### n° 22 · mardi 24 novembre · Carrousel 6 planches · Enseigne ou publicité
+### n° 22 · mardi 1er décembre · Carrousel 6 planches · Enseigne ou publicité
 
 1. `crème` · une **devanture éclairée** portant **deux adhésifs** : une
    pastille **violette « Joyeuses fêtes »** en haut à gauche du vitrage, et
@@ -917,7 +917,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
 6. `violet` plein · filet · **« Dites-moi votre commune / en
    commentaire. »** (72 px, blanc) · flèche.
 
-### n° 23 · jeudi 26 novembre · Quiz · 6 planches · Impressions de fin d'année
+### n° 23 · jeudi 3 décembre · Quiz · 6 planches · Impressions de fin d'année
 
 1. `sable chaud` · surtitre « QUIZ » · filet · **« 4 idées reçues / sur vos
    impressions / de fin d'année. »** (86 px) · « Vous en avez combien de
@@ -932,7 +932,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    « VRAI… mais »**, puis l'explication en 44 px encre. La planche 6 porte
    en plus la flèche et « Votre score en commentaire. »
 
-### n° 24 · samedi 28 novembre · REEL 26 s · 5 écrans 9:16 · Refaire son logo
+### n° 24 · samedi 5 décembre · REEL 26 s · 5 écrans 9:16 · Refaire son logo
 
 1. `sable chaud` · surtitre « REEL · 0-3 S » · **« Non, / pas en
    janvier. »** (116 px) · **deux pages de calendrier mural** côte à côte,
@@ -973,12 +973,12 @@ indiqué par le surtitre de chaque écran.
 
 | N° | Date | Durée | Écrans | Découpage |
 |---|---|---|---|---|
-| 4 | ven 23 oct | 24 s | 5 | 0-3 · 3-9 · 9-15 · 15-20 · 20-24 |
-| 8 | ven 30 oct | 22 s | 5 | 0-3 · 3-9 · 9-15 · 15-19 · 19-22 |
-| 12 | ven 6 nov | 23 s | 5 | 0-3 · 3-8 · 8-13 · 13-18 · 18-23 |
-| 16 | sam 14 nov | 25 s | 5 | 0-3 · 3-9 · 9-15 · 15-21 · 21-25 |
-| 20 | ven 20 nov | 24 s | 5 | 0-3 · 3-8 · 8-14 · 14-19 · 19-24 |
-| 24 | sam 28 nov | 26 s | 5 | 0-3 · 3-9 · 9-15 · 15-21 · 21-26 |
+| 4 | ven 30 oct | 24 s | 5 | 0-3 · 3-9 · 9-15 · 15-20 · 20-24 |
+| 8 | ven 6 nov | 22 s | 5 | 0-3 · 3-9 · 9-15 · 15-19 · 19-22 |
+| 12 | ven 13 nov | 23 s | 5 | 0-3 · 3-8 · 8-13 · 13-18 · 18-23 |
+| 16 | sam 21 nov | 25 s | 5 | 0-3 · 3-9 · 9-15 · 15-21 · 21-25 |
+| 20 | ven 27 nov | 24 s | 5 | 0-3 · 3-8 · 8-14 · 14-19 · 19-24 |
+| 24 | sam 5 déc | 26 s | 5 | 0-3 · 3-9 · 9-15 · 15-21 · 21-26 |
 
 **Les six MP4 sont livrés montés**, en 1080 × 1920, H.264, 30 i/s, avec
 un fondu enchaîné de 0,35 s entre les écrans et la durée exacte du
