@@ -249,6 +249,56 @@ def _fonds_couleur():
     return fonds
 
 
+def _fill(c):
+    """Un nom de la charte, ou une teinte déjà calculée depuis la charte.
+
+    teinte() refuse un hexadecimal, et elle a raison : une couleur ecrite
+    en dur dans le code derive. Mais _accent_lisible() ne l'ecrit pas,
+    elle la CALCULE a l'execution a partir de deux valeurs de la charte
+    — la teinte et l'encre. Elle n'apparait nulle part dans le source,
+    et charte.py --verifier, qui lit le source, n'a rien a y redire.
+    """
+    return c if isinstance(c, str) and c.startswith("#") else teinte(c)
+
+
+_ACCENT = None
+
+
+def accent(nom=None):
+    """La teinte d'accent de la publication en cours.
+
+    Une variable de module, et pas un argument de Planche : le surtitre
+    revient sur cinq ou six planches d'un meme carrousel, et passer la
+    teinte a chaque appel, c'est cinq endroits ou elle peut diverger.
+    Chaque gabarit la pose une fois, en tete.
+    """
+    global _ACCENT
+    if nom is not None:
+        _ACCENT = nom
+    return _ACCENT
+
+
+def _accent_lisible(nom, fond_lum, exige=4.5, pas=0.06):
+    """La teinte d'accent, approfondie juste assez pour se lire.
+
+    Une teinte de la charte en petit corps sur du creme ne passe pas :
+    le violet y est a 3,0:1, le bleu a 3,6:1, et le seuil est 4,5. Les
+    poser telles quelles, c'est un surtitre qu'on devine.
+
+    On les approfondit donc vers l'encre — qui est dans la charte, comme
+    pour tous les _melange() du fichier — par pas de 6 %, et on s'arrete
+    AU PREMIER PAS QUI PASSE. Pas de valeur choisie a l'oeil : le violet
+    reste le plus violet qu'un surtitre lisible autorise, et pas un
+    cran de plus.
+    """
+    base = C.get(nom, nom)
+    for i in range(14):
+        teint = _vers_encre(base, i * pas)
+        if _rapport(_luminance(teint), fond_lum) >= exige:
+            return teint
+    return _vers_encre(base, 13 * pas)
+
+
 def _vers_encre(hexa, k):
     """Une teinte de la charte, approfondie vers l'encre de la charte."""
     enc = C["encre"]
@@ -634,6 +684,12 @@ class Planche:
         le veut, c'est sur la premiere ET la derniere planche de chaque
         carrousel — l'accroche et l'appel — et nulle part ailleurs.
         """
+        if couleur is None and accent() and not self.sombre:
+            # la luminance du fond, relevee et pas supposee : le creme,
+            # le blanc et le sable chaud ne donnent pas le meme seuil.
+            fl = _luminance((sorted(self.im.convert("L").getdata())
+                             [self.l * self.h // 2],) * 3)
+            couleur = _accent_lisible(accent(), fl)
         couleur = self._encre(couleur, "creme", "taupe")
         if bandeau:
             h = 230
@@ -656,7 +712,7 @@ class Planche:
         larg = sum(self.d.textlength(c, font=f) + esp for c in t) - esp
         x = (self.l - larg) / 2 if centre else MARGE
         for c in t:
-            self.d.text((x, self.y), c, font=f, fill=teinte(couleur))
+            self.d.text((x, self.y), c, font=f, fill=_fill(couleur))
             x += self.d.textlength(c, font=f) + esp
         self.y += int(taille * 1.5)
         return self
@@ -703,7 +759,7 @@ class Planche:
         self._deborde()
         return self
 
-    def filet(self, largeur=180, epaisseur=10, y=None, apres=34):
+    def filet(self, largeur=260, epaisseur=12, y=None, apres=34):
         """Le filet degrade du site — la regle .trait, a l'echelle.
 
         C'est l'accent de la charte : le site ne pose jamais un aplat
@@ -1237,6 +1293,7 @@ class Planche:
 # ---------------------------------------------------------------------
 def carrousel_couleurs(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-19-couleurs"))
+    accent("violet")
     faits = []
 
     p = Planche("sable_chaud")
@@ -1302,6 +1359,7 @@ def dilemme_enseigne(dossier=None):
     inutiles.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-10-22-dilemme"))
+    accent("corail")
     faits = []
     LARG, HAUTF, ECART = 420, 430, 60
     X0 = (LARGE - 2 * LARG - ECART) // 2
@@ -1342,6 +1400,7 @@ def dilemme_enseigne(dossier=None):
 
 def carrousel_typographie(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-26-typographie"))
+    accent("magenta")
     f = []
     p = Planche("blanc")
     t = "Cette police est magnifique."
@@ -1394,6 +1453,7 @@ def carrousel_typographie(dossier=None):
 
 def carrousel_enseigne(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-20-enseigne"))
+    accent("bleu")
     f = []
     p = Planche("sable_chaud")
     t = "Votre enseigne a besoin\nd'une autorisation.\nPas d'une déclaration."
@@ -1453,6 +1513,7 @@ def carrousel_enseigne(dossier=None):
 
 def quiz_idees_recues(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-29-quiz"))
+    accent("rose")
     f = []
     p = Planche("sable_chaud")
     p.pastille(MARGE, 240, "QUIZ", "corail", "blanc", 30)
@@ -1483,6 +1544,7 @@ def quiz_idees_recues(dossier=None):
 
 def carrousel_droits(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-10-27-droits"))
+    accent("bleu")
     f = []
     p = Planche("creme")
     t = "Qui possède\nvotre logo ?"
@@ -1583,6 +1645,7 @@ def carrousel_blog_rdv(dossier=None):
     relais : elle ne se republie pas, elle s'epingle.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-10-24-blog-rdv"))
+    accent("bleu_vif")
     f = []
 
     p = Planche("sable_chaud")
@@ -1641,6 +1704,7 @@ def dilemme_carte_prix(dossier=None):
     ne prouverait plus rien.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-05-dilemme-carte"))
+    accent("corail")
     f = []
     PLATS = [
         ("Velouté de potimarron", "Crème de châtaigne, huile de noisette", "9"),
@@ -1701,6 +1765,7 @@ def carrousel_retroplanning(dossier=None):
     frise dessinee dans l'autre sens dirait le contraire du texte.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-16-retroplanning"))
+    accent("violet")
     f = []
 
     p = Planche("sable_chaud")
@@ -1854,6 +1919,7 @@ def dilemme_voeux(dossier=None):
     d'un client reel dans une demonstration publique.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-19-dilemme-voeux"))
+    accent("magenta")
     f = []
 
     def carte(p, x, y, w, h):
@@ -1921,6 +1987,7 @@ def quiz_fin_annee(dossier=None):
     faux pour l'impression, vrai pour la decision.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-26-quiz-fin-annee"))
+    accent("bleu")
     f = []
 
     p = Planche("sable_chaud")
@@ -2009,6 +2076,7 @@ def stories(dossier=None):
     ne viendra pas — et il reste publiable tel quel.
     """
     d = pathlib.Path(dossier or (SORTIE / "stories"))
+    accent("violet")
     f = []
     # code, fond, encre, surtitre, texte, titre du sticker, lignes
     E = [
@@ -2244,6 +2312,7 @@ def solaire_66(dossier=None):
     droits ne sont pas clairs.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-09-solaire-66"))
+    accent("bleu")
     S = RACINE / "visuels" / "sources"
     MM = 1052 / 89              # px par mm du rendu 300 dpi des cartes
     PANNEAU_CM, CARTE_CM = 120.0, 8.5
@@ -2374,6 +2443,7 @@ def _logo_fictif(d, cx, cy, r, detail=True, variante=0.0):
 def pub09_logo_reduction(dossier=None):
     """n° 9, lundi 2 novembre — un logo tient-il en petit."""
     d = pathlib.Path(dossier or (SORTIE / "2026-11-02-logo-reduction"))
+    accent("bleu")
     faits = []
 
     p = Planche("creme")
@@ -3748,6 +3818,7 @@ def pub10_enseigne_hiver(dossier=None):
     document administratif.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-03-enseigne-hiver"))
+    accent("violet")
     faits = []
 
     p = Planche("sable_chaud")
@@ -3846,6 +3917,7 @@ def pub12_reel_vitrophanie(dossier=None):
     camera.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-06-reel-vitrophanie"))
+    accent("turquoise")
     faits = []
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
@@ -3924,6 +3996,7 @@ def pub14_francais_devanture(dossier=None):
     demonstration est donc rigoureusement « on n'a rien retire ».
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-10-francais-devanture"))
+    accent("magenta")
     faits = []
 
     p = Planche("sable_chaud")
@@ -4016,6 +4089,7 @@ def pub15_quiz_matieres(dossier=None):
     plus difficile sur le gaufrage, qui perd la lumiere rasante.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-12-quiz-matieres"))
+    accent("turquoise")
     faits = []
     ordre = ["alu", "plexi", "depoli", "gaufre"]
     reponses = {
@@ -4084,6 +4158,7 @@ def pub16_reel_fin_annee(dossier=None):
     """
     import datetime
     d = pathlib.Path(dossier or (SORTIE / "2026-11-14-reel-fin-annee"))
+    accent("corail")
     faits = []
 
     p = Planche("creme", LARGE_S, HAUT_S)
@@ -4174,6 +4249,7 @@ def pub18_emballage_tri(dossier=None):
     garantir que c'est le MEME sachet, ce que la demonstration exige.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-17-emballage-tri"))
+    accent("turquoise")
     faits = []
 
     p = Planche("creme")
@@ -4274,6 +4350,7 @@ def pub21_vitrine_trottoir(dossier=None):
     la publication est a mettre a jour en consequence.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-23-vitrine-trottoir"))
+    accent("violet")
     faits = []
 
     p = Planche("creme")
@@ -4367,6 +4444,7 @@ def pub22_sticker_enseigne(dossier=None):
     devient une enseigne » le sujet principal de cette publication.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-24-sticker-enseigne"))
+    accent("rose")
     faits = []
 
     p = Planche("creme")
@@ -4608,6 +4686,7 @@ def pub20_reel_matieres(dossier=None):
     echantillons sont sous la main, ces ecrans se remplacent un par un.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-20-reel-matieres"))
+    accent("jaune")
     faits = []
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
@@ -4806,6 +4885,7 @@ def pub24_reel_bilan(dossier=None):
     nom du mois. C'est l'argument de la publication, pose d'emblee.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-28-reel-bilan"))
+    accent("corail")
     faits = []
 
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
@@ -5067,6 +5147,7 @@ def pub04_reel_cmjn(dossier=None):
     multiplication de calques.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-10-23-reel-cmjn"))
+    accent("turquoise")
     faits = []
     vif = (53, 169, 221)                     # le bleu vif de la charte
     terne = _hors_gamme(vif)
@@ -5284,6 +5365,7 @@ def pub08_reel_halloween(dossier=None):
     dont le sujet n'a que faire.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-10-30-reel-halloween"))
+    accent("orange")
     faits = []
 
     p = Planche("encre", LARGE_S, HAUT_S)
