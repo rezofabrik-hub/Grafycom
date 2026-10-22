@@ -63,7 +63,24 @@ réalimenté :
 | Fichier | Client | État |
 |---|---|---|
 | `sources/solaire-66-logo.png` | Solaire 66 | détouré, les trois monochromes en découlent |
-| `sources/clients/big-food-planche.png` | BIG FOOD | **planche de présentation, 287 px de large.** Inexploitable en l'état : il faut le fichier d'origine, et l'accord du client avant toute publication |
+| `sources/clients/big-food.png` | BIG FOOD | **fichier vectoriel reçu** (`LOGO_OK.ai`, PDF 1.6), rendu à 3600 px. **Accord du client donné** le 22 octobre |
+
+### BIG FOOD — ce que le fichier dit
+
+Relevé dans le fichier, pas supposé :
+
+- **format 7937 × 1984 points, soit 2 800 × 700 mm.** Ce n'est pas un
+  logo d'en-tête, c'est une enseigne : 2,80 m de large.
+- rapport 4:1 exactement.
+- trois couleurs, mesurées sur l'aplat : violet `#4b165f` (59 % de la
+  surface), blanc `#ffffff` (14 %), orange `#f39200` (4 %). Le reste
+  est l'illustration des deux burgers.
+- le « B » est le seul caractère orange ; les deux « O » de FOOD sont
+  remplacés par des burgers.
+
+Ces trois valeurs sont **les couleurs du client, pas celles de la
+charte Grafycom** — elles n'ont donc rien à faire dans `style.css` ni
+dans `charte.py`, exactement comme le bleu et le jaune de Solaire 66.
 
 Les trois versions monochromes du logo Solaire 66 se **déduisent** du
 fichier couleur : même forme, une seule encre. Les redessiner serait
