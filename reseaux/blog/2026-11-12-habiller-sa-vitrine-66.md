@@ -50,7 +50,7 @@ C'est aussi le support des informations que vos clients cherchent vraiment : les
 
 **La pose.** Un adhésif se pose à deux, par temps sec, sur un verre parfaitement propre, au plioir. Sur quatre mètres de long, ce n'est pas un travail du dimanche : confiez-le au poseur, le surcoût est faible au regard du résultat.
 
-**La requalification possible en enseigne.** C'est le point que personne ne soulève spontanément. Selon ce qu'il porte et la surface qu'il couvre, un habillage de vitrine pourrait, dans certaines communes, être regardé comme une enseigne — avec les démarches qui vont avec. Pour les horaires et le nom en lettres découpées, cela ne pose en pratique aucune question. Pour une devanture entièrement couverte d'un visuel imprimé, la question mérite d'être posée au service urbanisme avant la commande. Si vous êtes en train de monter votre dossier d'[enseigne](enseigne-perpignan.html), c'est le moment d'y ajouter la vitrine : le même interlocuteur répondra aux deux.
+**Le moment où ça devient une enseigne.** C'est le point que personne ne soulève spontanément, et il est trop lourd pour une ligne en fin d'article : il a son traitement à part, dans [l'article consacré à l'autorisation d'enseigne](enseigne-perpignan.html). Ce qu'il faut en retenir ici tient en une phrase : ce qui décide, c'est ce que porte l'habillage et la surface qu'il couvre, pas la matière employée. Des horaires et un nom en lettres découpées ne posent en pratique aucune question. Une devanture entièrement couverte d'un visuel imprimé en pose une, et la réponse appartient au service urbanisme de votre commune — avant la commande, pas après. Si vous montez déjà un dossier d'enseigne, ajoutez-y la vitrine : c'est le même interlocuteur.
 
 ## Le vrai avantage : ça se retire
 

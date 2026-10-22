@@ -29,40 +29,44 @@ vérifications réglementaires**, détaillées plus bas.
 
 ---
 
-## 1. Instagram & Facebook — les 25 publications sont complètes
+## 1. Instagram & Facebook — les 29 publications sont complètes
 
 Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 1080 × 1350 px, dans l'ordre du carrousel.
 
 | N° | Date | Format | Sujet | Planches |
 |---|---|---|---|---|
-| 1 | lun 26 oct | Carrousel | Pédagogie couleur | 6 |
-| 2 | mar 27 oct | Carrousel | Réglementation enseigne | 7 |
+| 1 | lun 26 oct | Carrousel | Pédagogie couleur | 7 |
+| 2 | mar 10 nov | Carrousel | Réglementation enseigne | 7 |
 | 3 | jeu 29 oct | Dilemme A/B | Lisibilité d'une enseigne | 2 |
-| 4 | ven 30 oct | Reel 24 s | Matières & impression | 5 |
-| 4 bis | **sam 31 oct** | Carrousel | **Annonce du blog hebdomadaire** | 4 |
+| 4 | ven 6 nov | REEL 24 s | Matières & impression | 5 |
+| **4 bis** | sam 31 oct | Carrousel | **Annonce du blog hebdomadaire** | 4 |
 | 5 | lun 2 nov | Carrousel | Typographie | 6 |
 | 6 | mar 3 nov | Carrousel | Qui possède votre logo ? | 6 |
 | 7 | jeu 5 nov | Quiz vrai/faux | Quatre idées reçues | 5 |
-| 8 | ven 6 nov | Reel 22 s | Halloween & couleurs | 5 |
+| 8 | ven 30 oct | REEL 22 s | Halloween & couleurs | 5 |
 | 9 | lun 9 nov | Carrousel | Un logo tient-il en petit | 6 |
-| 10 | mar 10 nov | Carrousel | L'enseigne quand la nuit tombe à 17 h | 7 |
+| 10 | mar 27 oct | Carrousel | L'enseigne quand la nuit tombe à 17 h | 7 |
 | 11 | jeu 12 nov | Dilemme A/B | La place du prix sur une carte | 2 |
-| 12 | ven 13 nov | Reel 23 s | Les adhésifs de vitrine | 5 |
-| 13 | lun 16 nov | Carrousel | **Solaire 66** | 7 |
+| 12 | ven 13 nov | REEL 23 s | Les adhésifs de vitrine | 5 |
+| 13 | lun 16 nov | Carrousel 8 slides | **Solaire 66** | 8 |
 | 14 | mar 17 nov | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
 | 15 | jeu 19 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
-| 16 | sam 21 nov | Reel 25 s | Décembre se décide en novembre | 5 |
+| **15 bis** | sam 21 nov | Carrousel 7 planches | **Un visuel, quatre supports** | 7 |
+| 16 | sam 28 nov | REEL 25 s | Décembre se décide en novembre | 5 |
 | 17 | lun 23 nov | Carrousel | Le rétroplanning des cartes de vœux | 6 |
 | 18 | mar 24 nov | Carrousel | La place à réserver sur un emballage | 7 |
 | 19 | jeu 26 nov | Dilemme A/B | Deux cartes de vœux | 2 |
-| 20 | ven 27 nov | Reel 24 s | Matières et fabrication | 5 |
+| 20 | ven 27 nov | REEL 24 s | Matières et fabrication | 5 |
 | 21 | lun 30 nov | Carrousel | La vitrine vue du trottoir d'en face | 7 |
-| 22 | mar 24 nov | Carrousel | Enseigne, publicité, ou rien du tout ? | 6 |
+| 22 | mar 1er déc | Carrousel | Enseigne, publicité, ou rien du tout ? | 6 |
 | 23 | jeu 3 déc | Quiz | Impressions de fin d'année | 6 |
-| 24 | sam 5 déc | Reel 26 s | Faut-il refaire son logo | 5 |
+| 24 | sam 5 déc | REEL 30 s | Faut-il refaire son logo | 6 |
+| **25** | mar 8 déc | Carrousel 7 planches | **BIG FOOD** | 7 |
+| **26** | sam 12 déc | Carrousel 8 planches | **KRUSTY** | 8 |
+| **27** | ⏳ **à arrêter** | Carrousel 8 planches | **SWEET DREAM** | 8 |
 
-**133 planches**, dans `reseaux/visuels/`, un dossier par publication —
+**166 planches de publication** (210 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
 et le dossier porte **la date réelle de parution**. Il portait jusqu'au
 14 octobre la date d'avant le décalage du calendrier, soit sept jours
 d'écart : un dossier ouvert au hasard faisait publier une semaine trop

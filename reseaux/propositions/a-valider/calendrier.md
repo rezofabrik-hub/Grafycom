@@ -1,4 +1,4 @@
-# Calendrier — du 26 octobre au 5 décembre 2026
+# Calendrier — du 26 octobre au 12 décembre 2026
 
 Tout ce qui est écrit et non publié, tous canaux, dans l'ordre.
 
@@ -33,8 +33,8 @@ automatique du matin.
 | lundi 26 octobre | **18 h 30** | Instagram + Facebook | Carrousel | n° 1 |
 | lundi 26 octobre | **18 h 30** | Fiche Google | post | texte n° 1 |
 | lundi 26 octobre | **18 h 45** | Story | story | S1-A · teasing du carrousel |
-| mardi 27 octobre | 8 h 00 | Instagram + Facebook | Carrousel | n° 2 |
-| mardi 27 octobre | 8 h 00 | Fiche Google | post | texte n° 2 |
+| mardi 27 octobre | 8 h 00 | Instagram + Facebook | Carrousel | n° 10 — 🔀 **permutée, pour rester de saison** |
+| mardi 27 octobre | 8 h 00 | Fiche Google | post | texte n° 10 |
 | mardi 27 octobre | 8 h 15 | Story | story | S1-B1 · teasing réglementation |
 | mardi 27 octobre | 10 h 15 | Story | story | S1-B2 · la réponse |
 | mercredi 28 octobre | 18 h 30 | Story | story | S1-C · boîte à questions |
@@ -43,9 +43,9 @@ automatique du matin.
 | jeudi 29 octobre | 12 h 30 | Story | story | S1-D1 · le vote du jeudi |
 | jeudi 29 octobre | 14 h 30 | Story | story | S1-D2 · la réponse |
 | vendredi 30 octobre | 08 h 00 | Blog | article | Enseigne de commerce : comment obtenir l'autorisation préa |
-| vendredi 30 octobre | 18 h 00 | Instagram + Facebook | REEL 24 s | n° 4 |
-| vendredi 30 octobre | 18 h 00 | Fiche Google | post | texte n° 4 |
-| vendredi 30 octobre | 18 h 15 | Story | story | S1-E · relais du blog |
+| vendredi 30 octobre | 10 h 30 | Instagram + Facebook | REEL 22 s | n° 8 — 🔀 **permutée, pour rester de saison** |
+| vendredi 30 octobre | 10 h 30 | Fiche Google | post | texte n° 8 |
+| vendredi 30 octobre | 10 h 45 | Story | story | S1-E · relais du blog |
 | samedi 31 octobre | 10 h 30 | Instagram + Facebook | Carrousel | **n° 4 bis · annonce du blog** |
 | samedi 31 octobre | 10 h 30 | Fiche Google | post | texte n° 4 bis |
 | | | | | |
@@ -61,16 +61,16 @@ automatique du matin.
 | jeudi 5 novembre | 19 h 00 | Story | story | S2-D1 · le quiz du jeudi |
 | jeudi 5 novembre | 21 h 00 | Story | story | S2-D2 · la réponse |
 | vendredi 6 novembre | 08 h 00 | Blog | article | Pourquoi vos couleurs imprimées ne ressemblent jamais à vo |
-| vendredi 6 novembre | 10 h 30 | Instagram + Facebook | REEL 22 s | n° 8 |
-| vendredi 6 novembre | 10 h 30 | Fiche Google | post | texte n° 8 |
-| vendredi 6 novembre | 10 h 45 | Story | story | S2-E · relais du blog |
+| vendredi 6 novembre | 18 h 00 | Instagram + Facebook | REEL 24 s | n° 4 — 🔀 **permutée, pour rester de saison** |
+| vendredi 6 novembre | 18 h 00 | Fiche Google | post | texte n° 4 |
+| vendredi 6 novembre | 18 h 15 | Story | story | S2-E · relais du blog |
 | | | | | |
 | lundi 9 novembre | 12 h 30 | Instagram + Facebook | Carrousel | n° 9 |
 | lundi 9 novembre | 12 h 30 | Fiche Google | post | texte n° 9 |
 | lundi 9 novembre | 12 h 45 | Story | story | S3-A · teasing du carrousel |
 | mardi 10 novembre | 10 h 15 | Story | story | S3-B2 · la réponse |
-| mardi 10 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 10 |
-| mardi 10 novembre | 8 h 00 | Fiche Google | post | texte n° 10 |
+| mardi 10 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 2 — 🔀 **permutée, pour rester de saison** |
+| mardi 10 novembre | 8 h 00 | Fiche Google | post | texte n° 2 |
 | mardi 10 novembre | 8 h 15 | Story | story | S3-B1 · quiz enseigne |
 | mercredi 11 novembre | 18 h 30 | Story | story | S3-C · boîte à questions |
 | jeudi 12 novembre | 08 h 00 | Blog | article | Habiller sa vitrine : dépoli, microperforé ou lettres déco ⚠️ |
@@ -100,9 +100,8 @@ automatique du matin.
 | jeudi 19 novembre | 21 h 00 | Story | story | S4-D2 · les quatre réponses |
 | vendredi 20 novembre | 08 h 00 | Blog | article | Cartes de vœux et emballages de fête : le rétroplanning à  ⚠️ |
 | vendredi 20 novembre | 18 h 15 | Story | story | S4-E · relais du blog |
-| samedi 21 novembre | 10 h 30 | Instagram + Facebook | REEL 25 s | n° 16 |
-| samedi 21 novembre | 10 h 30 | Fiche Google | post | texte n° 16 |
-| samedi 21 novembre | 10 h 45 | Story | story | S4-F · teasing du reel |
+| samedi 21 novembre | 10 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 15 bis — ➕ **nouvelle, arbitrage n° 3** |
+| samedi 21 novembre | 10 h 30 | Fiche Google | post | texte n° 15 bis |
 | | | | | |
 | lundi 23 novembre | 12 h 30 | Instagram + Facebook | Carrousel | n° 17 |
 | lundi 23 novembre | 12 h 30 | Fiche Google | post | texte n° 17 |
@@ -119,15 +118,18 @@ automatique du matin.
 | vendredi 27 novembre | 18 h 00 | Instagram + Facebook | REEL 24 s | n° 20 |
 | vendredi 27 novembre | 18 h 00 | Fiche Google | post | texte n° 20 |
 | vendredi 27 novembre | 18 h 15 | Story | story | S5-D · relais du blog |
+| samedi 28 novembre | 10 h 30 | Instagram + Facebook | REEL 25 s | n° 16 — 🔀 **décalée du 21, pour que le carrousel n° 17 ouvre le sujet** |
+| samedi 28 novembre | 10 h 30 | Fiche Google | post | texte n° 16 |
+| samedi 28 novembre | 10 h 45 | Story | story | S4-F · teasing du reel |
 | samedi 28 novembre | 11 h 00 | Story | story | S5-E · boîte à questions |
 | | | | | |
 | lundi 30 novembre | 18 h 30 | Instagram + Facebook | Carrousel | n° 21 |
 | lundi 30 novembre | 18 h 30 | Fiche Google | post | texte n° 21 |
 | lundi 30 novembre | 18 h 45 | Story | story | S6-A · teasing vitrine |
-| mardi 24 novembre | 10 h 15 | Story | story | S6-B écran 2 |
-| mardi 24 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 22 |
-| mardi 24 novembre | 8 h 00 | Fiche Google | post | texte n° 22 |
-| mardi 24 novembre | 8 h 15 | Story | story | S6-B écran 1 |
+| mardi 1er décembre | 10 h 15 | Story | story | S6-B écran 2 |
+| mardi 1er décembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 22 |
+| mardi 1er décembre | 8 h 00 | Fiche Google | post | texte n° 22 |
+| mardi 1er décembre | 8 h 15 | Story | story | S6-B écran 1 |
 | jeudi 3 décembre | 19 h 00 | Instagram + Facebook | Quiz | n° 23 |
 | jeudi 3 décembre | 19 h 00 | Fiche Google | post | texte n° 23 |
 | jeudi 3 décembre | 19 h 00 | Story | story | S6-C écran 1 |
@@ -135,9 +137,12 @@ automatique du matin.
 | vendredi 4 décembre | 08 h 00 | Blog | article | Faut-il refaire son logo pour la nouvelle année ? Trois qu ⚠️ |
 | vendredi 4 décembre | 18 h 15 | Story | story | S6-D · relais du blog |
 | samedi 5 décembre | 10 h 30 | Instagram + Facebook | REEL 30 s | n° 24 |
-| mardi 8 décembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 25 — BIG FOOD, hors rythme |
 | samedi 5 décembre | 10 h 30 | Fiche Google | post | texte n° 24 |
 | samedi 5 décembre | 10 h 45 | Story | story | S6-E · coulisses du reel |
+| | | | | |
+| mardi 8 décembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 25 — BIG FOOD, hors rythme |
+| samedi 12 décembre | 10 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, hors rythme |
+| **à arrêter** | — | Instagram + Facebook | Carrousel 8 planches | n° 27 — SWEET DREAM, hors rythme — ⏳ **date à décider** |
 
 ---
 
@@ -145,13 +150,34 @@ automatique du matin.
 
 | Canal | Volume |
 |---|---|
-| Publications Instagram + Facebook | **26** |
-| Textes de fiche Google | **25** |
+| Publications Instagram + Facebook | **29** |
+| Textes de fiche Google | **26** |
 | Écrans de story | **44** |
 | Articles de blog | **7** |
-| **Total à valider** | **102** |
+| **Total à valider** | **106** |
 
-La 26ᵉ publication est **BIG FOOD, le mardi 8 décembre** : une
-réalisation, hors rythme et en plus du cycle, conformément à
-l'arbitrage du 18 octobre. Elle n'a pas de texte de fiche Google — le
-compte en reste à 25, un par publication du cycle.
+**Trois réalisations hors rythme**, en plus du cycle et conformément à
+l'arbitrage du 18 octobre : **BIG FOOD le mardi 8 décembre**,
+**KRUSTY le samedi 12 décembre** et **SWEET DREAM à une date à
+arrêter**. Aucune n'a de texte de fiche Google — le compte en reste à
+26, un par publication du cycle. Les trois accords clients sont
+acquis.
+
+> ⏳ **La date de SWEET DREAM reste à décider.** Son dossier de
+> visuels porte `2026-12-19` à titre provisoire, pour qu'il ait un
+> nom. Trois réalisations en douze jours — les 8, 12 et 19 décembre —
+> font une série serrée sur un public qui n'est pas venu pour ça :
+> une respiration d'une ou deux semaines se défend.
+
+**La n° 15 bis, le samedi 21 novembre**, est la publication écrite à
+l'arbitrage n° 3 : elle reprend le créneau que le reel n° 16 libère en
+partant au 28. Elle a son texte de fiche Google comme les autres
+publications du cycle.
+
+> **Une semaine porte cinq publications, et c'est arithmétique.** Du
+> lundi 23 au samedi 28 novembre : n° 17, 18, 19, 20 et 16. Avec 26
+> publications de cycle sur six semaines, la moyenne est de 4,33 — une
+> semaine passera à cinq quoi qu'on fasse, la question est seulement
+> laquelle. Celle-ci est la moins lourde : la cinquième est un reel de
+> 25 secondes, le format qui demande le moins au lecteur, et il tombe
+> un samedi.

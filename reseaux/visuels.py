@@ -4365,25 +4365,29 @@ def pub16_reel_fin_annee(dossier=None):
 
     Ce sont des ECRANS FINIS : le reel se monte en les enchainant.
 
-    ATTENTION : l'arbitrage n° 1 de A-FAIRE-APRES-RELECTURE.md deplace
-    cette publication au samedi 21 novembre. Le dossier porte encore la
-    date du 14 ; il sera renomme avec le reste quand l'arbitrage sera
-    applique.
+    L'arbitrage n° 1 de A-FAIRE-APRES-RELECTURE.md place ce reel APRES
+    le carrousel n° 17 : c'est le carrousel qui ouvre le sujet de fin
+    d'annee, le reel enfonce le clou. D'ou le samedi 28 novembre.
+
+    Tout ce qui est date ici suit ce deplacement : la bande de jours
+    part du 28, le compte passe de cinq semaines a quatre, et les
+    jalons glissent d'autant. Un reel qui dit « on est le 28 novembre »
+    en montrant une grille qui part du 21 se trahit tout seul.
     """
     import datetime
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-21-reel-fin-annee"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-28-reel-fin-annee"))
     accent("corail")
     faits = []
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=180)
     p.titre("Pour Noël,\nvous êtes déjà\nen retard.", 100, y=260)
-    _bande_jours(p, 90, 760, 900, datetime.date(2026, 11, 21),
+    _bande_jours(p, 90, 760, 900, datetime.date(2026, 11, 28),
                  datetime.date(2026, 12, 24),
                  {datetime.date(2026, 12, 24): ("encre", "")},
                  haut_case=116)
     p.y = 1600
-    p.texte("Cinq semaines. C'est tout ce qui reste.", 46, "brun", 600,
+    p.texte("Quatre semaines. C'est tout ce qui reste.", 46, "brun", 600,
             avant=0)
     p.signature("brun")
     faits.append(p.ecrire(d / "ecran1.png"))
@@ -4416,9 +4420,9 @@ def pub16_reel_fin_annee(dossier=None):
     p = Planche("blanc", LARGE_S, HAUT_S)
     p.surtitre("15-21 s", "taupe", y=180)
     p.titre("Création · BAT ·\nLivraison", 92, y=250)
-    jalons = [("mi-novembre", "création", "violet"),
-              ("fin novembre", "bon à tirer", "bleu"),
-              ("début décembre", "livraison", "corail")]
+    jalons = [("fin novembre", "création", "violet"),
+              ("début décembre", "bon à tirer", "bleu"),
+              ("mi-décembre", "livraison", "corail")]
     yy = 700
     for quand, quoi, coul in jalons:
         p.d.ellipse([MARGE, yy, MARGE + 46, yy + 46], fill=teinte(coul))
@@ -5721,6 +5725,143 @@ def main():
 
 # Les deux gabarits ci-dessous sont definis apres le registre : on les
 # y ajoute ici, sinon --liste et --tout les ignorent en silence.
+
+@pose(flou=14, force=66, bas=9, cote=4)
+def _etiquette_ronde(p, cx, cy, r, mot=None, couleur="violet"):
+    """Une etiquette ronde, du diametre qu'on lui donne.
+
+    Elle sert deux fois dans la n° 15 bis : minuscule a l'echelle du
+    reel, puis grande pour montrer ce qui y tient. C'est le meme
+    dessin aux deux tailles, ce qui est precisement le propos.
+    """
+    p.d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=teinte("blanc"),
+                outline=_melange(couleur, "blanc", 0.5), width=max(2, r // 22))
+    # la marque : un disque plein, le seul element qui survit a 3 cm
+    p.d.ellipse([cx - r * 0.34, cy - r * 0.34, cx + r * 0.34, cy + r * 0.34],
+                fill=teinte(couleur))
+    if mot:
+        _bloc(p, cx - r, cy + r * 0.44, mot, max(11, int(r * 0.22)),
+              "brun", 600, r * 2, centre=True)
+
+
+def _regle(p, x0, x1, y, mesure):
+    """Une reglette cotee. Sans elle, « 3 cm » n'est qu'un mot."""
+    gris = _melange("taupe", "blanc", 0.35)
+    p.d.line([(x0, y), (x1, y)], fill=gris, width=3)
+    for x in (x0, x1):
+        p.d.line([(x, y - 12), (x, y + 12)], fill=gris, width=3)
+    _bloc(p, x0, y + 24, mesure, 28, "taupe", 400, x1 - x0, centre=True)
+
+
+def pub15bis_quatre_supports(dossier=None):
+    """n° 15 bis, samedi 21 novembre — un visuel, quatre supports.
+
+    Arbitrage n° 3 de A-FAIRE-APRES-RELECTURE.md. Le creneau du 21 se
+    libere quand le reel n° 16 part au 28 ; cette publication le
+    reprend, avec l'angle qui manquait au cycle.
+
+    Elle ne redit pas la n° 17. Le carrousel du 23 parle de LOGISTIQUE
+    — meme imprimeur, meme delai, un seul fichier. Celle-ci parle de
+    DESSIN : le meme visuel ne s'agrandit pas d'un support a l'autre,
+    il se redessine. Deux sujets voisins, deux demonstrations
+    differentes, et celle-ci vient d'abord parce qu'on decide quoi
+    imprimer avant de decider quand.
+
+    Creneau du samedi : on regarde, on ne lit plus. D'ou des planches
+    tenues par l'objet, avec des legendes courtes.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-21-quatre-supports"))
+    accent("violet")
+    faits = []
+
+    p = Planche("creme")
+    p.surtitre("Conseil", y=200)
+    p.filet()
+    p.titre("Un visuel.\nQuatre supports.\nQuatre dessins.", 72)
+    p.y = 760
+    p.texte("Le même décor de fêtes doit tenir sur une étiquette de "
+            "3 cm et sur une vitrine de 2 m. Ce n'est pas la même "
+            "image agrandie quatre fois.", 40, "brun", 400, avant=0)
+    _etiquette_ronde(p, 270, 1080, 56, couleur="violet")
+    _etiquette_ronde(p, 520, 1080, 92, couleur="violet")
+    _etiquette_ronde(p, 830, 1080, 128, couleur="violet")
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("blanc")
+    p.titre("L'étiquette fait\n3 cm.", 80, y=150)
+    _etiquette_ronde(p, 540, 640, 150, couleur="violet")
+    _regle(p, 390, 690, 850, "3 cm")
+    p.y = 960
+    p.texte("À cette taille, un seul élément survit : la marque. Le "
+            "slogan, les vœux, l'adresse du site — tout cela devient "
+            "du gris. On ne les réduit pas, on les retire.", 38, "brun",
+            400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("creme")
+    p.titre("Le sachet se lit\nà un mètre.", 76, y=150)
+    _sachet(p, 540, 500, 360, 450, couleur="violet")
+    p.y = 1030
+    p.texte("Un mètre, c'est la distance du comptoir. La marque peut "
+            "s'accompagner d'une ligne — pas de trois.", 38, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("blanc")
+    p.titre("La carte est le seul\nendroit où le texte\nrespire.", 64,
+            y=150)
+    _carte(p, 540, 740, 420, 540, -4, gaufre=True, texte="Bonne année")
+    p.y = 1070
+    p.texte("On la tient à trente centimètres. C'est le seul support où "
+            "les vœux ont leur place.", 38, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("creme")
+    p.titre("La vitrine se lit\ndu trottoir d'en face.", 66, y=150)
+    _vitrine(p, 150, 500, 780, 440, decor="flocons", bandeau=0.30,
+             couleur_decor="violet", eclairee=True, enseigne="VOTRE NOM")
+    p.y = 1010
+    p.texte("Huit mètres de recul. La marque grossit, le reste "
+            "disparaît, et le décor ne doit pas manger la moitié du "
+            "verre : on regarde à travers une vitrine.", 38, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("blanc")
+    p.titre("Le même visuel,\nquatre fois dessiné.", 66, y=150)
+    _etiquette_ronde(p, 180, 700, 46, couleur="violet")
+    _sachet(p, 400, 560, 150, 190, couleur="violet")
+    _carte(p, 620, 660, 140, 180, -4, gaufre=True)
+    # la marque violette sur la carte aussi : sans elle, a cette taille,
+    # la carte est le seul des quatre objets qui ne porte rien.
+    p.d.ellipse([620 - 15, 655 - 15, 620 + 15, 655 + 15],
+                fill=teinte("violet"))
+    _vitrine(p, 760, 580, 190, 150, decor="flocons", bandeau=0.30,
+             couleur_decor="violet", eclairee=True)
+    for x, mot in ((180, "3 cm"), (400, "18 cm"), (620, "15 cm"),
+                   (855, "2 m")):
+        _bloc(p, x - 80, 800, mot, 30, "taupe", 400, 160, centre=True)
+    p.y = 900
+    p.texte("Quatre échelles, quatre compositions, une seule marque. "
+            "C'est ce qui fait qu'on les reconnaît ensemble sans "
+            "qu'aucun ne soit l'agrandissement de l'autre.", 38, "brun",
+            400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("encre")
+    p.filet()
+    p.titre("Un visuel qu'on agrandit\nse voit.\nUn visuel qu'on redessine\nse lit.", 58, y=420)
+    p.signature("sable")
+    faits.append(p.ecrire(d / "07.png"))
+
+    return faits
+
 GABARITS["solaire-66"] = solaire_66
 GABARITS["logo-reduction"] = pub09_logo_reduction
 
@@ -5734,6 +5875,7 @@ GABARITS["enseigne-hiver"] = pub10_enseigne_hiver
 GABARITS["reel-vitrophanie"] = pub12_reel_vitrophanie
 GABARITS["francais-devanture"] = pub14_francais_devanture
 GABARITS["quiz-matieres"] = pub15_quiz_matieres
+GABARITS["quatre-supports"] = pub15bis_quatre_supports
 GABARITS["reel-fin-annee"] = pub16_reel_fin_annee
 GABARITS["emballage-tri"] = pub18_emballage_tri
 GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
@@ -5931,7 +6073,19 @@ def _reduction_logo(p, chemin, y):
         p.images_absentes = getattr(p, "images_absentes", [])
         p.images_absentes.append(pathlib.Path(chemin).name)
         return p
-    im = Image.open(chemin).convert("RGB")
+    # convert("RGB") d'office noircissait un logo detoure : KRUSTY est
+    # livre sans fond. On compose donc sur le fond de la planche.
+    im = Image.open(chemin)
+    if im.mode in ("RGBA", "LA", "P"):
+        im = im.convert("RGBA")
+        try:
+            dessous = teinte(p.fond) + "ff"
+        except SystemExit:          # un fond degrade n'a pas de teinte
+            dessous = "#ffffffff"
+        sous = Image.new("RGBA", im.size, dessous)
+        im = Image.alpha_composite(sous, im).convert("RGB")
+    else:
+        im = im.convert("RGB")
     f = police(600, 28)
     x = MARGE
     sol = y + 320
@@ -5951,10 +6105,372 @@ def _reduction_logo(p, chemin, y):
     return p
 
 
+
+def _couleurs_krusty():
+    """Les couleurs du logo KRUSTY, relevées DANS le fichier.
+
+    Meme principe que pour BIG FOOD : rien de recopie a la main. Le
+    fichier est livre sans fond, on ne compte donc que les pixels
+    opaques.
+    """
+    import collections
+    f = SOURCES / "clients" / "krusty.png"
+    if not f.exists():
+        return None
+    im = Image.open(f).convert("RGBA").resize((500, 400))
+    freq = collections.Counter(px[:3] for px in im.getdata()
+                               if px[3] > 200).most_common(8)
+    def sat(c):
+        return (max(c) - min(c)) / max(1, max(c))
+    violets = [c for c, _ in freq if c[2] > c[1] + 30 and c[0] > c[1]]
+    chauds = [c for c, _ in freq if c[0] > c[2] + 60 and sat(c) > 0.55]
+    if not violets or not chauds:
+        return None
+    return {"violet": "#%02x%02x%02x" % violets[0],
+            "orange": "#%02x%02x%02x" % chauds[0],
+            "blanc": "#ffffff"}
+
+
+def _bande_epreuve(p, x0, y0, x1, y1, clair, fonce):
+    """Une bande tramée, claire à gauche et foncée à droite.
+
+    Un seul fond ne demontre rien : un aplat blanc plein s'y lit tres
+    bien. Il faut que le mot TRAVERSE une frontiere pour qu'on voie
+    lequel des trois traitements survit aux deux cotes. La trame est
+    de la meme famille que celle du client, mais rien de son travail
+    n'est reproduit ici : c'est une demonstration.
+    """
+    mi = (x0 + x1) // 2
+    p.d.rectangle([x0, y0, mi, y1], fill=clair)
+    p.d.rectangle([mi, y0, x1, y1], fill=fonce)
+    r, pas = 9, 34
+    j = 0
+    y = y0 + 14
+    while y < y1 - 4:
+        x = x0 + 14 + (pas // 2 if j % 2 else 0)
+        while x < x1 - 4:
+            p.d.ellipse([x - r, y - r, x + r, y + r],
+                        fill=fonce if x < mi else clair)
+            x += pas
+        y += pas
+        j += 1
+    p._redessiner()
+    return mi
+
+
+def pub26_krusty(dossier=None):
+    """n° 26, samedi 12 décembre — pourquoi les lettres sont creuses.
+
+    Deuxieme realisation hors rythme, comme BIG FOOD, et pour la meme
+    raison : une realisation s'ajoute au cycle, elle ne prend pas le
+    creneau d'une lecon.
+
+    Le sujet n'est pas celui de la n° 25. BIG FOOD remplacait deux
+    lettres par des burgers ; KRUSTY ne remplace rien, il pose. Et
+    surtout : ses lettres sont CREUSES, blanches cernees de violet.
+    C'est ce qui les laisse vivre sur un fond charge comme sur un fond
+    clair, la ou un aplat plein meurt sur l'un des deux.
+
+    Ce qui est demontre planche 3 est DESSINE : un fond trame de la
+    meme famille, pas le depliant du client. On montre un principe, on
+    ne republie pas une piece dont la paternite n'est pas etablie.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-12-krusty"))
+    accent("violet")
+    L = SOURCES / "clients" / "krusty.png"
+    C_K = _couleurs_krusty()
+    faits = []
+
+    p = Planche("creme")
+    p.surtitre("Réalisation", y=200)
+    p.filet()
+    p.titre("Pourquoi les lettres\nsont creuses.", 68)
+    p.poser(L, 540, 770, 630, ombre=26)
+    p.y = 1070
+    p.texte("KRUSTY — logo, avec l'accord du client.", 32, "taupe", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    # Le logo seul, en grand. Fond blanc : c'est ainsi que le fichier
+    # est construit, sans fond, et le cerne violet y est a son aise.
+    p = Planche("blanc")
+    p.poser(L, 540, 620, 940, ombre=0)
+    p.y = 1080
+    if C_K:
+        p.texte("Trois couleurs : le violet du cerne, l'orange du K, "
+                "le blanc des lettres. Rien d'autre.", 38, "brun", 400,
+                avant=0)
+    else:
+        p.images_absentes = ["krusty.png"]
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    # La demonstration : le meme mot, trois traitements, un fond charge.
+    p = Planche("creme")
+    p.titre("Le même mot,\ntrois fois.", 76, y=150)
+    if C_K:
+        v = C_K["violet"]
+        rv = tuple(int(v[i:i + 2], 16) for i in (1, 3, 5))
+        clair = "#%02x%02x%02x" % tuple(int(c + (255 - c) * 0.62) for c in rv)
+        x0, x1 = MARGE, p.l - MARGE
+        f = police(800, 86)
+        essais = [("plein blanc", "#ffffff", None),
+                  ("plein violet", v, None),
+                  ("creux, cerné", "#ffffff", v)]
+        y = 460
+        for lib, remplissage, cerne in essais:
+            _bande_epreuve(p, x0, y, x1, y + 128, clair, v)
+            # ECHANTILLONS : deux des trois sont illisibles exprès,
+            # c'est la demonstration meme. Le correcteur de contraste
+            # de _Dessin les reparerait et la detruirait, donc ils
+            # passent par un calque, hors de son passage.
+            calque = Image.new("RGBA", (x1 - x0, 128), (0, 0, 0, 0))
+            dc = ImageDraw.Draw(calque)
+            kw = {"font": f, "fill": remplissage}
+            if cerne:
+                kw["stroke_width"] = 7
+                kw["stroke_fill"] = cerne
+            dc.text((126, 16), "KRUSTY", **kw)
+            p.im.paste(calque, (x0, y), calque)
+            p._redessiner()
+            # le libellé, lui, se lit : il est sur le fond de la planche
+            _bloc(p, x0, y + 138, lib, 28, "taupe", 600, x1 - x0)
+            y += 196
+    else:
+        p.images_absentes = ["krusty.png"]
+    p.y = 1070
+    p.texte("À gauche le fond est clair, à droite il est foncé. Le "
+            "blanc plein meurt à gauche, le violet plein meurt à "
+            "droite. Seul le troisième traverse.", 36, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    # Le depliant, en vrai. Le mock-up est attendu sous ce nom ; tant
+    # qu'il n'est pas la, poser() le signale et la planche sort sans
+    # lui plutot que de faire tomber le cycle.
+    #
+    # Un SCHEMA avait ete dessine ici a sa place. Il est retire : sur
+    # une publication « realisations », un dessin a la place d'un
+    # imprime ne vaut rien. On montre la piece, ou on ne montre pas.
+    p = Planche("blanc")
+    p.titre("Il vit sur un fond\noù tout se dispute.", 66, y=150)
+    p.poser(SOURCES / "clients" / "krusty-depliant.png", 540, 720, 900,
+            ombre=26)
+    p.y = 1070
+    p.texte("Trois volets, une trame violette, des dizaines de vignettes "
+            "et de prix. Sur ce fond-là, un logo plein se noie. Le cerné "
+            "est ce qui le tient au-dessus.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("creme")
+    p.titre("Le burger ne\nremplace rien.", 78, y=150)
+    p.poser(L, 540, 700, 760, ombre=24)
+    p.y = 1050
+    p.texte("La solution courante est de remplacer une lettre par un "
+            "objet. Ici il se pose sur le Y, en débordant du mot. Le "
+            "nom reste entier — on le lit avant de voir le burger.",
+            36, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    # L'arc : la ligne du bas est courbe, et le bloc devient un visage.
+    p = Planche("creme")
+    p.titre("La ligne du bas\nest un sourire.", 76, y=150)
+    p.poser(L, 540, 660, 640, ombre=24)
+    # l'arc ne s'ajoute pas au logo, il souligne celui qui y est deja.
+    p.d.arc([318, 742, 762, 1000], start=12, end=168,
+            fill=teinte("corail"), width=8)
+    p._redessiner()
+    p.y = 1050
+    p.texte("« Tellement TASTY !! » ne court pas droit, il court en arc. "
+            "Un arc posé sous un bloc de lettres se lit comme une "
+            "bouche : le mot entier devient un visage.", 36, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("blanc")
+    p.titre("Ce qui disparaît\nen premier.", 80, y=150)
+    _reduction_logo(p, L, 560)
+    p.y = 1060
+    p.texte("En favicon, l'arc se ferme et le cerne se referme sur les "
+            "lettres. Il reste le burger et la masse du mot — c'est "
+            "assez pour qu'on le reconnaisse.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "07.png"))
+
+    p = Planche("encre")
+    p.filet()
+    p.titre("Un logo plein choisit\nson fond.\nUn logo cerné s'en\npasse.", 60, y=400)
+    p.signature("sable")
+    faits.append(p.ecrire(d / "08.png"))
+
+    return faits
+
+
+def _couleurs_sweet_dream():
+    """Les deux roses du logo, relevés DANS le fichier.
+
+    Le fichier est livre sans fond : on ne compte que l'opaque. Le
+    rose clair porte les lettres, le magenta porte l'ombre — et c'est
+    tout, il n'y a pas de troisieme encre.
+    """
+    import collections
+    f = SOURCES / "clients" / "sweet-dream.png"
+    if not f.exists():
+        return None
+    im = Image.open(f).convert("RGBA").resize((600, 160))
+    freq = collections.Counter(px[:3] for px in im.getdata()
+                               if px[3] > 200).most_common(6)
+    if len(freq) < 2:
+        return None
+    clair, fonce = freq[0][0], freq[1][0]
+    if sum(clair) < sum(fonce):
+        clair, fonce = fonce, clair
+    return {"clair": "#%02x%02x%02x" % clair,
+            "fonce": "#%02x%02x%02x" % fonce}
+
+
+def pub27_sweet_dream(dossier=None):
+    """n° 27 — l'ombre portee nette, et ce qu'elle fait avec deux encres.
+
+    Troisieme realisation hors rythme. La date reste a arreter avec
+    Laurent ; le dossier porte une date provisoire, et c'est le
+    calendrier qui fait foi.
+
+    Le sujet n'est ni celui de la n° 25 ni celui de la n° 26. BIG FOOD
+    remplacait des lettres, KRUSTY les creusait. SWEET DREAM ne fait ni
+    l'un ni l'autre : il DEDOUBLE. Une copie du dessin, decalee, dans
+    la seconde encre — et deux aplats font un relief, sans degrade, sans
+    flou, sans biseau.
+
+    C'est la lecon la plus transposable des trois, parce qu'elle ne
+    coute rien : elle marche en serigraphie, en flocage, en decoupe,
+    partout ou un degrade ne passe pas.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-19-sweet-dream"))
+    accent("rose")
+    L = SOURCES / "clients" / "sweet-dream.png"
+    L2 = SOURCES / "clients" / "sweet-dream-2lignes.png"
+    DEP = SOURCES / "clients" / "sweet-dream-depliant.png"
+    C_SD = _couleurs_sweet_dream()
+    faits = []
+
+    p = Planche("creme")
+    p.surtitre("Réalisation", y=200)
+    p.filet()
+    p.titre("L'ombre n'est pas\nfloue.", 72)
+    p.poser(L, 540, 760, 820, ombre=26)
+    p.y = 1060
+    p.texte("SWEET DREAM — logo, avec l'accord du client.", 32, "taupe",
+            400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    p = Planche("blanc")
+    p.poser(L, 540, 620, 940, ombre=0)
+    p.y = 1080
+    if C_SD:
+        p.texte("Deux encres. Le rose clair porte les lettres, le "
+                "magenta porte l'ombre. Il n'y a rien d'autre.", 38,
+                "brun", 400, avant=0)
+    else:
+        p.images_absentes = ["sweet-dream.png"]
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    # La demonstration : la meme ombre, floue puis nette.
+    p = Planche("creme")
+    p.titre("Floue, elle bave.\nNette, elle tient.", 70, y=150)
+    if C_SD:
+        clair, fonce = C_SD["clair"], C_SD["fonce"]
+        f = police(800, 104)
+        larg, haut = p.l - 2 * MARGE, 230
+        for k, (y, flou, lib) in enumerate(
+                ((470, True, "ombre floue"), (760, False, "ombre décalée"))):
+            calque = Image.new("RGBA", (larg, haut), (0, 0, 0, 0))
+            dc = ImageDraw.Draw(calque)
+            if flou:
+                dc.text((38, 46), "SWEET", font=f, fill=fonce)
+                calque = calque.filter(ImageFilter.GaussianBlur(13))
+                dc = ImageDraw.Draw(calque)
+            else:
+                dc.text((54, 62), "SWEET", font=f, fill=fonce)
+            dc.text((38, 46), "SWEET", font=f, fill=clair)
+            p.im.paste(calque, (MARGE, y), calque)
+            p._redessiner()
+            _bloc(p, MARGE, y + haut - 16, lib, 28, "taupe", 600, larg)
+    else:
+        p.images_absentes = ["sweet-dream.png"]
+    p.y = 1070
+    p.texte("Une ombre floue demande un dégradé : elle passe en "
+            "quadri, elle meurt en sérigraphie, en flocage et en "
+            "découpe. Une ombre décalée est un aplat de plus.", 36,
+            "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("blanc")
+    p.titre("La couronne\nrepose sur les lettres.", 64, y=150)
+    p.poser(L, 540, 700, 800, ombre=24)
+    p.y = 1010
+    p.texte("Elle ne flotte pas au-dessus du mot : sa base s'appuie sur "
+            "les deux E, dont la barre se prolonge pour l'accueillir. "
+            "Un objet posé sur un mot doit le toucher.", 36, "brun",
+            400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("creme")
+    p.titre("Deux compositions,\nun seul dessin.", 66, y=150)
+    p.poser(L, 540, 540, 740, ombre=22)
+    p.poser(L2, 540, 860, 400, ombre=22)
+    p.y = 1070
+    p.texte("Une ligne quand la place est large, deux quand elle est "
+            "courte. Les deux sont dans le même fichier vectoriel — "
+            "rien n'a été redessiné après coup.", 36, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("blanc")
+    p.titre("Ce qui disparaît\nen premier.", 80, y=150)
+    _reduction_logo(p, L, 540)
+    p.y = 1040
+    p.texte("En favicon, l'ombre se referme sur les lettres et le mot "
+            "s'épaissit. La couronne, elle, tient jusqu'au bout — "
+            "c'est la forme la plus simple du dessin.", 36, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("creme")
+    p.titre("Le même logo,\nsur son dépliant.", 66, y=150)
+    p.poser(DEP, 540, 740, 900, ombre=26)
+    p.y = 1070
+    p.texte("Sur l'imprimé il passe en blanc, et l'ombre magenta reste. "
+            "C'est elle qu'on reconnaît : le décalage identifie le "
+            "logo mieux que sa couleur.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "07.png"))
+
+    p = Planche("encre")
+    p.filet()
+    p.titre("Un relief se dessine.\nIl ne se calcule pas.", 62, y=440)
+    p.signature("sable")
+    faits.append(p.ecrire(d / "08.png"))
+
+    return faits
+
 GABARITS["reel-bilan"] = pub24_reel_bilan
 GABARITS["reel-cmjn"] = pub04_reel_cmjn
 GABARITS["reel-halloween"] = pub08_reel_halloween
 GABARITS["big-food"] = pub25_big_food
+GABARITS["krusty"] = pub26_krusty
+GABARITS["sweet-dream"] = pub27_sweet_dream
 
 
 if __name__ == "__main__":

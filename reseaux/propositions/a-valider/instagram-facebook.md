@@ -40,7 +40,20 @@ ressemblent, et non des aplats saturés que le site n'emploie nulle part.
 **Ce que ça change pour toi :** rien à relire dans les textes, tout dans
 les fonds. Les directions visuelles ci-dessous sont déjà réécrites.
 
-# SEMAINE 1 — du lundi 19 au dimanche 1er novembre
+# SEMAINE 1 — du lundi 26 octobre au dimanche 1er novembre
+
+> **Comment lire ce document.** Les publications sont rangées par
+> **numéro**, pas par date : un numéro désigne toujours la même
+> publication, où qu'elle tombe. Cinq d'entre elles ne sont donc pas
+> dans la semaine de leur bloc, et chacune porte sa vraie date dans son
+> titre :
+>
+> - les **n° 2, 4, 8 et 10** ont été permutées deux à deux pour rester
+>   de saison — l'heure d'hiver fin octobre, Halloween le 30 ;
+> - la **n° 16** est passée au samedi 28 novembre, pour que le
+>   carrousel n° 17 ouvre le sujet de fin d'année avant elle.
+>
+> **En cas de doute sur une date, c'est `calendrier.md` qui fait foi.**
 
 ## 1 — Lundi 26 octobre, 12 h 30 · Carrousel · Pédagogie couleur
 
@@ -327,7 +340,7 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
   imprimé en quadri : **il perd son éclat avant de perdre sa teinte.** La
   légende ne promet rien de plus que ce constat.
 
-# SEMAINE 2 — du lundi 2 novembre au dimanche 1er novembre
+# SEMAINE 2 — du lundi 2 au dimanche 8 novembre
 
 ## 4 bis — Samedi 31 octobre, 10 h 30 · Carrousel · Annonce du rendez-vous
 
@@ -670,7 +683,7 @@ normal. Ton curieux, pas effrayant.
   qui porterait en plus une marque, une rue et une météo dont le sujet n'a
   que faire.
 
-# SEMAINE 3 — du lundi 2 au dimanche 15 novembre
+# SEMAINE 3 — du lundi 9 au dimanche 15 novembre
 
 ## 9 — Lundi 9 novembre, 12 h 30 · Carrousel · Pilier 1, conseils & pédagogie de marque
 
@@ -976,6 +989,10 @@ publicitaire : le texte est un conseil, pas une offre.
 
 ### Légende
 
+> *Premier des trois volets sur la vitrine : la matière. Viendront la
+> composition vue du trottoir, puis le moment où tout cela devient une
+> enseigne.*
+>
 > Votre vitrine fait six mètres carrés. C'est le plus grand support que vous
 > possédez, et vous ne le louez à personne.
 >
@@ -1026,7 +1043,7 @@ terminée, éclairée de l'intérieur à la nuit tombée.
   vitrine est requalifié en enseigne par la commune. Tant que ce n'est pas
   confirmé, la légende reste au conditionnel comme elle est écrite.
 
-# SEMAINE 4 — du lundi 9 au dimanche 22 novembre
+# SEMAINE 4 — du lundi 16 au dimanche 22 novembre
 
 ## 13 — Lundi 16 novembre, 12 h 30 · Carrousel 8 slides · Pilier « réalisations » · **Solaire 66**
 
@@ -1374,11 +1391,111 @@ leur usage.
 
 ---
 
-## 16 — Samedi 21 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
+## 15 bis — Samedi 21 novembre, 10 h 30 · Carrousel 7 planches · Pilier 1, conseils & pédagogie de marque
+
+> **Pourquoi cette publication existe.** Arbitrage n° 3 de la relecture.
+> Le créneau du samedi 21 se libère quand le reel n° 16 part au 28 ;
+> celle-ci le reprend avec l'angle qui manquait au cycle.
+>
+> **Elle ne redit pas la n° 17.** Le carrousel du 23 parle de
+> *logistique* — même imprimeur, même délai, un seul fichier. Celle-ci
+> parle de *dessin* : le même visuel ne s'agrandit pas d'un support à
+> l'autre, il se redessine. Et elle vient d'abord, parce qu'on décide
+> **quoi** imprimer avant de décider **quand**.
+>
+> **Créneau du samedi** — on regarde, on ne lit plus. D'où des planches
+> tenues par l'objet et des légendes de deux ou trois lignes.
+
+### Direction visuelle — 7 planches, 1080 × 1350 px
+
+Toutes dessinées. `visuels.py`, gabarit `quatre-supports`, dans
+`reseaux/visuels/2026-11-21-quatre-supports/`. Accent violet sur tout
+le carrousel : c'est la couleur qui relie les quatre objets d'une
+planche à l'autre, et c'est ce lien qui porte la démonstration.
+
+- **S1.** Fond crème, surtitre « Conseil », filet multicolore. Titre :
+  « Un visuel. Quatre supports. Quatre dessins. » En bas, trois
+  étiquettes rondes de taille croissante — la même, à trois échelles.
+- **S2.** Fond blanc. « L'étiquette fait 3 cm. » Une étiquette ronde
+  seule, avec une réglette cotée sous elle. Sans la réglette, « 3 cm »
+  n'est qu'un mot.
+- **S3.** Fond crème. « Le sachet se lit à un mètre. » Le sachet cadeau,
+  bandeau violet à flocons, pastille au logo.
+- **S4.** Fond blanc. « La carte est le seul endroit où le texte
+  respire. » La carte à plat, légèrement tournée, gaufrage rendu par
+  une ombre et une lumière décalées, mention manuscrite « Bonne année ».
+- **S5.** Fond crème. « La vitrine se lit du trottoir d'en face. » La
+  devanture éclairée, enseigne « VOTRE NOM », bandeau de flocons sur
+  30 % de la hauteur du vitrage — pas davantage, et la légende dit
+  pourquoi.
+- **S6.** Fond blanc. Les quatre objets alignés à leur échelle
+  relative, cotés 3 cm · 18 cm · 15 cm · 2 m. C'est la planche qui
+  démontre : même marque violette sur les quatre, quatre compositions
+  différentes.
+- **S7.** Fond encre, filet multicolore. « Un visuel qu'on agrandit se
+  voit. Un visuel qu'on redessine se lit. »
+
+### Accroche
+
+**« Un visuel. Quatre supports. Quatre dessins. »**
+
+### Légende
+
+> Vous avez fait faire un visuel de fin d'année. Très bien. Maintenant
+> il doit tenir sur une étiquette de 3 cm **et** sur une vitrine de
+> 2 mètres.
+>
+> Ce n'est pas la même image agrandie quatre fois. C'est quatre
+> dessins qui partagent une marque.
+>
+> **L'étiquette, 3 cm.** Un seul élément survit : la marque. Le slogan,
+> les vœux, l'adresse du site deviennent du gris. On ne les réduit pas,
+> on les retire. C'est le support qui décide, pas l'envie de tout dire.
+>
+> **Le sachet, à un mètre.** La distance du comptoir. La marque peut
+> s'accompagner d'une ligne. Pas de trois.
+>
+> **La carte, à trente centimètres.** On la tient, on la lit vraiment.
+> C'est le seul endroit où les vœux ont leur place — et c'est pour ça
+> qu'ils n'ont rien à faire sur le sachet.
+>
+> **La vitrine, à huit mètres.** La marque grossit, le reste disparaît.
+> Et le décor ne doit pas manger la moitié du verre : on regarde **à
+> travers** une vitrine. Un tiers de la hauteur, c'est déjà beaucoup.
+>
+> Ce qui fait qu'on reconnaît les quatre ensemble, ce n'est pas qu'ils
+> sont identiques. C'est qu'ils portent la même marque et qu'aucun
+> n'est l'agrandissement de l'autre.
+>
+> **Vous avez un visuel qui ne passe pas sur un de vos supports ?**
+> Dites-moi lequel en commentaire.
+
+### Texte alternatif
+Carrousel de sept planches sur la déclinaison d'un visuel de fin
+d'année. Une étiquette ronde est dessinée seule sous une réglette
+indiquant trois centimètres. Un sachet cadeau porte un bandeau violet à
+flocons et une pastille ronde. Une carte posée à plat montre un
+gaufrage rendu par une ombre décalée et la mention manuscrite « Bonne
+année ». Une devanture éclairée porte l'enseigne « VOTRE NOM » et un
+bandeau de flocons sur le tiers bas du vitrage. La dernière planche
+illustrée aligne les quatre objets à leur échelle relative, cotés trois
+centimètres, dix-huit centimètres, quinze centimètres et deux mètres.
+
+### Hashtags — jeu B + 2 locaux
+`#identitevisuelle #charteGraphique #printdesign #designgraphique #declinaison #packagingdesign #graphistePerpignan #CommerceLocal66`
+
+### À fournir par Sandra
+- **Rien.** Les sept planches sont dessinées et finies.
+- *Reste utile si l'occasion se présente* : une photo des quatre
+  supports réels côte à côte, une fois imprimés. Elle remplacerait la
+  planche S6 par la preuve plutôt que par le schéma. Aucun accord
+  client n'est en jeu si ce sont des modèles de démonstration.
+
+## 16 — Samedi 28 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
 
 ### Accroche 0-3 s
-**Écran dessiné**, pas de tournage. Les six semaines du 21 novembre au
-24 décembre en une seule grille — pas deux mois côte à côte, une bande
+**Écran dessiné**, pas de tournage. Les quatre semaines du 28 novembre
+au 24 décembre en une seule grille — pas deux mois côte à côte, une bande
 continue, le 24 décembre noir au bout. Texte : **« Pour Noël, vous êtes déjà
 en retard. »**
 
@@ -1386,20 +1503,20 @@ en retard. »**
 
 > **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
 > `visuels.py`, gabarit `reel-fin-annee`, dans
-> `reseaux/visuels/2026-11-21-reel-fin-annee/`. Deux écarts assumés par
+> `reseaux/visuels/2026-11-28-reel-fin-annee/`. Deux écarts assumés par
 > rapport au découpage filmé : le doigt qui remonte le calendrier devient
-> une grille unique, ce qui montre les six semaines d'un coup au lieu d'un
-> mois à la fois ; et les mains de plusieurs générations disparaissent. Un
+> une grille unique, ce qui montre les quatre semaines d'un coup au lieu
+> d'un mois à la fois ; et les mains de plusieurs générations disparaissent. Un
 > plan de mains dessiné serait soit maladroit, soit une illustration de
 > banque d'images déguisée. La table reste, vue de dessus, avec ce qu'il y
 > a dessus — c'est ce que le plan devait montrer.
 
 | Chrono | Visuel / action | Texte incrusté | Script voix off |
 |---|---|---|---|
-| 0-3 s | Doigt qui remonte les cases d'un calendrier, du 24 décembre vers le 21 novembre. Lumière chaude de matin. | **« Pour Noël, vous êtes déjà en retard. »** | On est le 21 novembre. Pour vos supports de fin d'année, c'est maintenant. |
+| 0-3 s | Doigt qui remonte les cases d'un calendrier, du 24 décembre vers le 28 novembre. Lumière chaude de matin. | **« Pour Noël, vous êtes déjà en retard. »** | On est le 28 novembre. Pour vos supports de fin d'année, c'est maintenant. |
 | 3-9 s | Trois cartes de vœux imprimées posées en éventail sur une table en bois. Une main en prend une, on voit le relief d'un gaufrage en lumière rasante. | Une carte imprimée se garde. Un mail se ferme. | Une carte de vœux imprimée reste sur un bureau trois semaines. Un mail de vœux se ferme en deux secondes. Ce n'est pas de la nostalgie, c'est de la durée d'exposition. |
 | 9-15 s | Mains qui plient un emballage cadeau simple, avec un bandeau imprimé et un adhésif au logo. Papier kraft, un seul bandeau de couleur. | Un bandeau suffit. Pas un packaging entier. | Et pour l'emballage, pas besoin de tout refaire. Un bandeau imprimé et un adhésif au logo transforment un papier kraft. Le client photographie ça. |
-| 15-21 s | Rétroplanning animé, trois jalons en violet `#a86cd0`, bleu `#2f7fc4`, corail `#f2585c` : *mi-novembre : création* → *fin novembre : bon à tirer* → *début décembre : livraison*. | Création · BAT · Livraison | Le calendrier est serré. La création à la mi-novembre. Le bon à tirer validé fin novembre. La livraison début décembre. Un jour de retard au début, c'est une semaine de retard à la fin. |
+| 15-21 s | Rétroplanning animé, trois jalons en violet `#a86cd0`, bleu `#2f7fc4`, corail `#f2585c` : *fin novembre : création* → *début décembre : bon à tirer* → *mi-décembre : livraison*. | Création · BAT · Livraison | Le calendrier est serré. La création fin novembre. Le bon à tirer validé début décembre. La livraison à la mi-décembre. Un jour de retard au début, c'est une semaine de retard à la fin. |
 | 21-25 s | Table de famille, cartes et emballages posés au milieu, mains de plusieurs générations. Fondu sur le logo Grafycom, signature `@grafycom.graphiste`. | **« Décembre se décide en novembre. »** | Décembre se décide en novembre. Et c'est le seul mois de l'année où un support imprimé se garde pour autre chose que son utilité. |
 
 **Pas de prompt d'arrière-plan.** Il y en avait un ici pour le dernier
@@ -1417,8 +1534,8 @@ d'être affectif — la voix ne doit pas pour autant devenir publicitaire.
 > Décembre se décide en novembre. Et plus précisément cette semaine.
 >
 > Si vous voulez des cartes de vœux ou un emballage de fête cette année, le
-> calendrier est le suivant : création à la mi-novembre, bon à tirer validé
-> fin novembre, livraison début décembre. Chaque jour perdu au début devient
+> calendrier est le suivant : création fin novembre, bon à tirer validé
+> début décembre, livraison à la mi-décembre. Chaque jour perdu au début devient
 > une semaine à la fin, parce qu'en décembre les imprimeurs travaillent à
 > plein et les délais s'allongent pour tout le monde.
 >
@@ -1448,13 +1565,13 @@ d'être affectif — la voix ne doit pas pour autant devenir publicitaire.
 
 ### Texte alternatif
 Reel de 25 secondes sur la préparation des supports de fin d'année. Un
-calendrier dessiné montre les six semaines du 21 novembre au 31 décembre en
+calendrier dessiné montre les quatre semaines du 28 novembre au 24 décembre en
 une seule grille. Deux cartes de vœux posées à plat portent un gaufrage rendu
 par une ombre et une lumière décalées, et l'une d'elles la mention
 manuscrite « Bonne année ». Un paquet en papier kraft est fermé par un bandeau
 imprimé à flocons et un adhésif rond au logo. Un rétroplanning en trois jalons
-indique création à la mi-novembre, bon à tirer fin novembre, livraison début
-décembre. Le dernier écran montre la table vue de dessus avec les cartes et le
+indique création fin novembre, bon à tirer début décembre, livraison à la
+mi-décembre. Le dernier écran montre la table vue de dessus avec les cartes et le
 paquet posés dessus.
 
 ### Hashtags — jeu B + 2 locaux
@@ -1466,11 +1583,11 @@ paquet posés dessus.
   impression d'essai chez l'imprimeur partenaire. Ça sert deux fois — le
   visuel, puis la proposition commerciale de fin d'année. Aucun accord client
   n'est en jeu, ce sont des modèles de démonstration.
-- **Les délais annoncés (mi-novembre, fin novembre, début décembre) doivent
+- **Les délais annoncés (fin novembre, début décembre, mi-décembre) doivent
   être confirmés par l'imprimeur partenaire** avant publication. S'ils sont
   plus serrés, le reel se décale d'une semaine en avant, pas en arrière.
 
-# SEMAINE 5 — du lundi 16 au dimanche 29 novembre
+# SEMAINE 5 — du lundi 23 au dimanche 29 novembre
 
 ## 17 — Lundi 23 novembre, 12 h 30 · Carrousel · Pilier 1, conseils stratégiques
 
@@ -1829,7 +1946,7 @@ brillant sous un angle et sombre sous un autre.
 - Les écrans se remplacent **un par un** : une vraie macro de gaufrage peut
   prendre la place de l'écran 1 sans toucher aux quatre autres.
 
-# SEMAINE 6 — du lundi 23 au dimanche 6 décembre
+# SEMAINE 6 — du lundi 30 novembre au dimanche 6 décembre
 
 ## 21 — Lundi 30 novembre, 18 h 30 · Carrousel · Pilier 4, saisonnalité & valeurs
 
@@ -1879,6 +1996,9 @@ brillant sous un angle et sombre sous un autre.
 
 ### Légende
 
+> *On a vu quoi poser sur une vitrine — dépoli, microperforé, lettres
+> découpées. Reste où le poser, et c'est une autre question.*
+>
 > Décembre est le seul mois de l'année où les gens regardent les vitrines
 > pour le plaisir. C'est dommage de le passer à décorer de l'intérieur.
 >
@@ -1989,6 +2109,10 @@ deux, huit et vingt-cinq mètres : les horaires disparaissent avant le nom.
 
 ### Légende
 
+> *Troisième et dernier volet. On a vu la matière, puis la composition
+> vue du trottoir. Il reste ce que personne ne demande avant de
+> commander.*
+>
 > Décembre arrive, et avec lui les adhésifs de vitrine. Flocons, sapins,
 > « -30 % jusqu'au 24 ». Personne ne se demande si c'est encadré. C'est en
 > partie le cas.
@@ -2347,3 +2471,277 @@ ligne, légendées « en grand », « sur une carte », « en favicon ».
   avatar, il faudra le vectoriel.
 - **Rien d'autre.** Le logo une ligne vient du fichier vectoriel, les
   trois couleurs sont relevées dedans et non recopiées.
+
+## 26 — Samedi 12 décembre, 10 h 30 · Carrousel 8 planches · Pilier « réalisations » · **KRUSTY**
+
+> ✅ **Accord client : acquis.** Donné le 22 octobre. Le logo a été
+> commandé à Grafycom par REZOFABRIK, et **le client KRUSTY est au
+> courant** de la sous-traitance.
+>
+> ✅ **Source vectorielle.** `LOGO.pdf`, rendu à 3593 px, fond
+> transparent réel. Les trois couleurs sont **relevées dans le
+> fichier** par `_couleurs_krusty()`, pas recopiées : violet
+> `#7b4c9f`, orange `#fcb141`, blanc. Elles n'ont rien à faire dans
+> `style.css` — ce sont les couleurs du client.
+>
+> ✅ **Le mock-up du dépliant est en place**, planche S4, sous
+> `reseaux/visuels/sources/clients/krusty-depliant.png` — recadré sur
+> la pièce, 1168 × 702 px.
+>
+> *Un schéma de la grille avait d'abord été dessiné à sa place. Il est
+> retiré : sur une publication « réalisations », un dessin à la place
+> d'un imprimé ne vaut rien. On montre la pièce, ou on ne montre pas.*
+>
+> ℹ️ **Les photographies de plats du dépliant sont générées par IA**,
+> Laurent l'a dit le 22 octobre. Les droits ne posent donc aucun
+> problème. Reste un point de fond, dit une fois et laissé à son
+> arbitrage : sur un compte dont tout le cycle argumente sur le dessin
+> et la netteté, une image générée affaiblit l'argument plus qu'elle
+> ne sert la réalisation.
+
+> **Deuxième réalisation hors rythme**, comme BIG FOOD, et pour la
+> même raison : une réalisation s'**ajoute** au cycle, elle ne prend
+> pas le créneau d'une leçon.
+
+### Pourquoi ce sujet, et pas celui de la n° 25
+
+BIG FOOD remplaçait deux lettres par des burgers. KRUSTY ne remplace
+rien : son burger **se pose** sur le Y. Deux réponses différentes à la
+même question — dire « nourriture » sans l'écrire — et les montrer à
+quatre jours d'intervalle fait une paire, pas une redite.
+
+Mais le vrai sujet est ailleurs, et il est plus utile : **les lettres
+sont creuses**, blanches cernées de violet. C'est ce qui les laisse
+vivre sur un fond chargé comme sur un fond clair, là où un aplat plein
+meurt sur l'un des deux. C'est la leçon transposable de ce logo, et
+aucune autre publication du cycle ne la porte.
+
+### Direction visuelle — 7 planches, 1080 × 1350 px
+
+Toutes dessinées ou posées depuis le vectoriel. Gabarit `krusty`, dans
+`reseaux/visuels/2026-12-12-krusty/`. Accent violet, pour ne pas
+reprendre l'orange de la n° 25.
+
+- **S1.** Crème, surtitre « Réalisation », filet. « Pourquoi les
+  lettres sont creuses. » Le logo posé, mention « KRUSTY — logo, avec
+  l'accord du client. »
+- **S2.** Blanc, le logo en grand. Le fichier est livré sans fond :
+  c'est sur blanc qu'il est construit, et le cerné violet y est à son
+  aise.
+- **S3.** **La démonstration.** Trois bandes tramées, **claires à
+  gauche, foncées à droite**, et le même mot qui les traverse : plein
+  blanc, plein violet, creux et cerné. Le blanc meurt à gauche, le
+  violet meurt à droite, le troisième traverse.
+- **S4.** **Le dépliant.** Blanc. « Il vit sur un fond où tout se
+  dispute. » Le mock-up des trois volets, posé en grand. C'est la
+  planche qui prouve le propos : le logo tient au-dessus d'un fond
+  saturé de vignettes et de prix.
+- **S5.** Crème. « Le burger ne remplace rien. » Il se pose sur le Y
+  en débordant du mot — le nom reste entier, on le lit avant de voir
+  le burger.
+- **S6.** Crème. « La ligne du bas est un sourire. » Un arc corail
+  souligne la courbe que le logo porte déjà : un arc sous un bloc de
+  lettres se lit comme une bouche.
+- **S7.** Blanc. Le test de réduction, trois tailles alignées sur leur
+  bas : en grand, sur une carte, en favicon.
+- **S8.** Encre, filet. « Un logo plein choisit son fond. Un logo
+  cerné s'en passe. »
+
+> **Ce qui est dessiné planche 3 n'est pas le travail du client ni
+> celui de Sandra.** C'est une trame fabriquée pour l'occasion, de la
+> même famille que celle du dépliant, qui sert à montrer un principe.
+> Reproduire une pièce pour démontrer quelque chose qu'on peut
+> dessiner soi-même n'apporte rien et engage ce qu'on ne maîtrise pas.
+
+### Accroche
+
+**« Pourquoi les lettres sont creuses. »**
+
+### Légende
+
+> Regardez n'importe quelle enseigne de restauration rapide : le logo
+> doit tenir sur une devanture, sur un menu couvert de photos, sur un
+> gobelet, sur un écran de borne. Jamais deux fois le même fond.
+>
+> C'est pour ça que les lettres de KRUSTY sont **creuses** : blanches,
+> cernées de violet.
+>
+> Un aplat blanc plein disparaît dès que le fond s'éclaircit — une
+> photo de pain, une assiette, un mur blanc. Un aplat violet plein
+> disparaît dès que le fond fonce. Le cerné, lui, porte les deux : le
+> blanc tient sur le foncé, le violet tient sur le clair, et il y en a
+> toujours un des deux qui travaille.
+>
+> Ça se voit sur le dépliant du menu : trois volets, une trame
+> violette, des dizaines de vignettes et de prix. Sur un fond pareil,
+> un logo plein se noie. Le cerné est ce qui le tient au-dessus.
+>
+> **Le burger ne remplace aucune lettre.** C'est la solution facile, et
+> elle coûte cher : un mot amputé se lit moins vite. Ici il se pose sur
+> le Y, en débordant du bloc. Le nom reste entier, et le burger se voit
+> en second — ce qui est le bon ordre.
+>
+> **La ligne du bas n'est pas droite.** « Tellement TASTY !! » court en
+> arc. Un arc posé sous un bloc de lettres se lit comme une bouche, et
+> le logo entier devient un visage sans qu'on ait dessiné de visage.
+>
+> Et la vérification, toujours la même : on réduit. En favicon l'arc se
+> ferme et le cerné se referme sur les lettres. Il reste le burger et
+> la masse du mot. C'est assez.
+>
+> **Vous avez un logo qui ne tient que sur un seul fond ?** C'est le
+> défaut le plus courant, et il se corrige sans tout redessiner.
+
+### Texte alternatif
+Carrousel de huit planches sur le logo KRUSTY. Le logo montre le mot
+KRUSTY en lettres blanches cernées de violet, le K en orange, un
+burger posé sur le Y, et la mention « KRUSTY, Tellement TASTY !! » en
+arc au-dessous. Une planche de démonstration montre trois bandes
+tramées claires à gauche et foncées à droite, traversées chacune par
+le même mot : en blanc plein, en violet plein, puis en blanc cerné de
+violet. Une planche montre le dépliant du menu, trois volets sur fond
+violet tramé couverts de vignettes de plats et de prix, le logo posé
+sur le volet de couverture. Une autre planche souligne d'un arc corail
+la courbe de la ligne basse. La dernière planche illustrée montre le logo à trois
+tailles décroissantes alignées sur leur bas, légendées en grand, sur
+une carte, en favicon.
+
+### Hashtags — jeu B + 2 locaux
+`#creationlogo #identitevisuelle #designgraphique #logodesign #restaurationrapide #burger #graphistePerpignan #CommerceLocal66`
+
+### À fournir par Sandra
+- **Rien.** Les huit planches sont finies. Le logo vient du fichier
+  vectoriel, les trois couleurs sont relevées dedans, le mock-up du
+  dépliant est posé.
+- **Deux vérifications avant publication**, à faire à l'œil sur la
+  planche S4 :
+  1. **La mention « Réalisation REZOFABRIK »** est imprimée en pied du
+     volet de couverture. À l'échelle du mock-up elle est illisible —
+     deux pixels de haut — donc elle ne contredit rien visuellement.
+     Mais si un jour la pièce est montrée plus grande, il faudra
+     trancher : la retirer **du fichier source**, ou l'assumer d'une
+     ligne de légende qui dit la sous-traitance. Jamais l'effacer sur
+     l'image : maquiller un crédit sur une pièce imprimée est autre
+     chose que corriger un fichier.
+  2. **Le numéro de téléphone du client** reste lisible sur le volet
+     de couverture. C'est son propre tract, le numéro est public, et
+     le montrer dans une réalisation est l'usage. À confirmer d'un mot
+     avec lui, puisque l'accord porte sur le logo.
+
+## 27 — Date à arrêter · Carrousel 8 planches · Pilier « réalisations » · **SWEET DREAM**
+
+> ⏳ **La date n'est pas fixée.** Le dossier porte `2026-12-19` à titre
+> provisoire, parce qu'un dossier doit bien s'appeler quelque chose.
+> **C'est `calendrier.md` qui fera foi** une fois la date arrêtée.
+>
+> ✅ **Accord client : acquis**, donné le 22 octobre.
+>
+> ✅ **Source vectorielle.** `LOGO.pdf`, un seul plan de travail qui
+> contient **les deux compositions** — une ligne et deux lignes. Rendu
+> à 3123 px pour la une ligne, 1463 px pour la deux lignes, fond
+> transparent réel. Les deux roses sont **relevés dans le fichier** par
+> `_couleurs_sweet_dream()` : rose clair `#f5a3c7`, magenta `#ec008b`.
+> Ce sont les couleurs du client, pas celles de la charte.
+>
+> ✅ **Le dépliant est mis en situation**, planche S7. Le mock-up n'a
+> pas été téléchargé : il est **calculé** à partir des deux faces
+> fournies, par `reseaux/mockup.py` — perspective, ombre portée en
+> silhouette, creux de pli. Rien à acheter, aucun droit à vérifier.
+
+### Pourquoi ce sujet, et pas celui des n° 25 et 26
+
+Trois réalisations de restauration à la suite, c'est beaucoup — il
+fallait trois leçons franchement différentes, sinon la série se répète.
+
+- **BIG FOOD** *remplace* des lettres par des objets.
+- **KRUSTY** *creuse* les lettres pour survivre à tous les fonds.
+- **SWEET DREAM** *dédouble* : une copie du dessin, décalée, dans la
+  seconde encre.
+
+C'est la plus transposable des trois, parce qu'elle ne coûte rien.
+Un relief obtenu par décalage tient en sérigraphie, en flocage, en
+découpe, en broderie — partout où un dégradé ne passe pas. Un relief
+obtenu par un flou n'existe qu'en quadri.
+
+### Direction visuelle — 8 planches, 1080 × 1350 px
+
+Gabarit `sweet-dream`, dans `reseaux/visuels/2026-12-19-sweet-dream/`.
+Accent rose, qui rappelle la couleur du client sans la copier.
+
+- **S1.** Crème, surtitre « Réalisation », filet. « L'ombre n'est pas
+  floue. » Le logo posé, mention de l'accord.
+- **S2.** Blanc, le logo en grand. « Deux encres. Le rose clair porte
+  les lettres, le magenta porte l'ombre. Il n'y a rien d'autre. »
+- **S3.** **La démonstration.** Le même mot deux fois : une ombre
+  floue, puis l'ombre décalée du logo. La première bave, la seconde
+  tient.
+- **S4.** Blanc. « La couronne repose sur les lettres. » Sa base
+  s'appuie sur les deux E, dont la barre se prolonge.
+- **S5.** Crème. Les deux compositions, une ligne et deux lignes —
+  **toutes deux dans le même fichier vectoriel.**
+- **S6.** Blanc. Le test de réduction : en grand, sur une carte, en
+  favicon.
+- **S7.** Crème. Le dépliant en situation. « Sur l'imprimé il passe en
+  blanc, et l'ombre magenta reste. »
+- **S8.** Encre, filet. « Un relief se dessine. Il ne se calcule pas. »
+
+### Accroche
+
+**« L'ombre n'est pas floue. »**
+
+### Légende
+
+> Regardez ce logo de près. Le relief ne vient pas d'un dégradé, ni
+> d'un biseau, ni d'une ombre portée floue. C'est une **copie du
+> dessin, décalée**, dans la seconde encre. Rien d'autre.
+>
+> Ça paraît un détail. C'est en réalité ce qui décide de tout ce qu'on
+> pourra en faire.
+>
+> **Une ombre floue demande un dégradé.** Elle passe très bien sur un
+> écran et en impression quadri. Elle meurt partout ailleurs : en
+> sérigraphie sur un tablier, en flocage sur un polo, en découpe sur
+> une vitrine, en broderie sur une casquette. Tous ces procédés
+> travaillent par aplats, et un aplat ne sait pas faire un dégradé.
+>
+> **Une ombre décalée est un aplat de plus.** Elle passe partout, pour
+> le prix d'une seconde couleur.
+>
+> **La couronne ne flotte pas non plus.** Sa base s'appuie sur les
+> deux E, dont la barre se prolonge pour l'accueillir. Un objet posé
+> sur un mot doit le toucher — sinon il a l'air collé dessus, et il
+> l'est.
+>
+> Et sur le dépliant, le logo passe en blanc. L'ombre magenta, elle,
+> reste. C'est elle qu'on reconnaît : **le décalage identifie le logo
+> mieux que sa couleur.**
+>
+> **Vous avez un logo qui ne passe qu'en quadri ?** Dites-le en
+> commentaire, c'est plus courant qu'on ne croit.
+
+### Texte alternatif
+Carrousel de huit planches sur le logo SWEET DREAM. Le logo montre les
+mots SWEET DREAM en lettres roses épaisses, doublées d'une ombre
+magenta décalée, surmontées d'une couronne dont la base repose sur les
+deux lettres E. Une planche de démonstration montre le mot SWEET deux
+fois : d'abord avec une ombre floue, puis avec l'ombre décalée du
+logo. Une autre planche présente les deux compositions, sur une ligne
+et sur deux lignes. Une autre montre le logo à trois tailles
+décroissantes, légendées en grand, sur une carte, en favicon. La
+dernière planche illustrée montre le dépliant du menu en volume, une
+face pliée en retrait et une face ouverte au premier plan.
+
+### Hashtags — jeu B + 2 locaux
+`#creationlogo #identitevisuelle #designgraphique #logodesign #patisserie #dessert #graphistePerpignan #CommerceLocal66`
+
+### À fournir par Sandra
+- **La date**, à arrêter ensemble.
+- **Rien d'autre.** Les huit planches sont finies. Le logo et ses deux
+  compositions viennent du fichier vectoriel, les deux roses sont
+  relevés dedans, et le mock-up du dépliant est calculé à partir des
+  faces fournies.
+- **Une vérification avant publication** : le dépliant porte en pied
+  la mention « Réalisation REZOFABRIK » et les coordonnées du client.
+  À l'échelle du mock-up les deux sont illisibles. Si la pièce est un
+  jour montrée plus grande, même arbitrage que pour KRUSTY.
+

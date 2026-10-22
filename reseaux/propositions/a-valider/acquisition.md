@@ -7,7 +7,7 @@ n'est pas bon partout, et c'est réparable.
 
 ---
 
-## Ce que le plan fait, mesuré sur les 25 publications
+## Ce que le plan fait, mesuré sur les 25 publications du cycle initial
 
 | Levier | Publications concernées | Lecture |
 |---|---|---|
@@ -42,10 +42,18 @@ depuis le 4 octobre :
 | Cap Loisirs | totem numérique d'entrée |
 | Pano Perpignan | gabarits de publication pour les réseaux |
 
-Donc le diagnostic tient — **1 réalisation sur 25 publications** — mais le
+Donc le diagnostic tenait — **1 réalisation sur 25 publications** — mais le
 remède est bien moins cher que je ne l'ai dit : il n'y a **rien à
 produire** et **personne à solliciter d'abord**. Ces visuels sont déjà
 montrés publiquement, sous la même responsabilité que la page du site.
+
+> ✅ **Corrigé depuis.** Le cycle compte désormais **quatre
+> réalisations sur 29 publications** : Solaire 66 le 16 novembre,
+> BIG FOOD le 8 décembre, KRUSTY le 12 décembre et SWEET DREAM à une
+> date à arrêter. Les trois dernières sont **hors rythme**, en plus
+> du cycle et non à la place d'une leçon. Les quatre accords clients
+> sont acquis. Le levier le plus fort du cahier des charges n'est
+> donc plus le plus rare — il est devenu le mieux servi.
 
 Ce qui reste vrai, et qui est écrit noir sur blanc dans
 `assets/img/realisations/LISEZ-MOI.md` : *« le contrat cède les droits sur

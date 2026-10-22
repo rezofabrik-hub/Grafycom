@@ -65,6 +65,11 @@ réalimenté :
 | `sources/solaire-66-logo.png` | Solaire 66 | détouré, les trois monochromes en découlent |
 | `sources/clients/big-food.png` | BIG FOOD | **fichier vectoriel reçu** (`LOGO_OK.ai`, PDF 1.6), rendu à 3600 px. **Accord du client donné** le 22 octobre |
 | `sources/clients/big-food-2lignes.png` | BIG FOOD, composition deux lignes | **capture d'écran, 356 px** — pas de vectoriel. Posée à sa taille native, jamais agrandie. Le `.ai` reste demandé |
+| `sources/clients/krusty.png` | KRUSTY | **fichier vectoriel reçu** (`LOGO.pdf`), rendu à 3593 px, fond transparent. ✅ **Accord client acquis** le 22 octobre |
+| `sources/clients/krusty-depliant.png` | KRUSTY, dépliant | mock-up fourni, recadré à 1168 px. Extrait du transcript, faute de dépôt sur le disque |
+| `sources/clients/sweet-dream.png` | SWEET DREAM, une ligne | **vectoriel reçu** (`LOGO.pdf`), 3123 px, fond transparent. ✅ **Accord acquis** le 22 octobre |
+| `sources/clients/sweet-dream-2lignes.png` | SWEET DREAM, deux lignes | **du même fichier vectoriel**, 1463 px. Contrairement à BIG FOOD, les deux compositions sont dans le même plan de travail |
+| `sources/clients/sweet-dream-depliant.png` | SWEET DREAM, dépliant | **mock-up calculé** par `reseaux/mockup.py` à partir des deux faces fournies. Rien de téléchargé, aucun droit à vérifier |
 
 ### BIG FOOD — ce que le fichier dit, et ce qu'il ne dit pas
 
@@ -103,6 +108,74 @@ ce serait redessiner le logo d'un client à sa place.
 
 **Ce qui manque encore :** le `.ai` de cette composition, pour tout
 usage au-delà de 356 px.
+
+### SWEET DREAM — et le mock-up calculé
+
+Logo vectoriel reçu le 22 octobre avec le JPEG recto-verso du
+dépliant. Accord client acquis.
+
+Relevé dans le fichier : **un seul plan de travail**, qui contient
+**les deux compositions** — une ligne et deux lignes. C'est la
+différence avec BIG FOOD, dont le `.ai` n'en portait qu'une. Deux
+encres seulement : rose clair `#f5a3c7` pour les lettres, magenta
+`#ec008b` pour l'ombre décalée. Pas de troisième couleur, pas de
+dégradé.
+
+**Le mock-up du dépliant n'a pas été téléchargé.** Il est calculé par
+`reseaux/mockup.py`, à partir des deux faces du JPEG : perspective
+résolue à la main, ombre portée dérivée de la silhouette transformée,
+creux de pli en dégradé. C'est le même principe que partout ailleurs
+ici — ce qui peut se calculer ne se télécharge pas, et ce qui ne se
+télécharge pas n'a pas de licence à vérifier.
+
+> Le dépliant porte, comme celui de KRUSTY, la mention « Réalisation
+> REZOFABRIK » et les coordonnées du client. À l'échelle du mock-up
+> les deux sont illisibles. Même arbitrage que pour KRUSTY si la pièce
+> est un jour montrée plus grande.
+
+### KRUSTY — reçu, pas utilisable pour l'instant
+
+Logo vectoriel reçu le 22 octobre, avec un dépliant de menu en
+visualisation. Relevé dans le fichier : trois couleurs sur fond
+transparent — violet `#7b4c9f`, orange `#fcb141`, jaune `#fbce45`,
+plus le blanc des lettres. Rapport 1,25:1. Le burger est posé sur le
+« Y » et le « K » est la seule lettre orange.
+
+**Accord acquis le 22 octobre.** Le logo a été commandé à Grafycom
+par REZOFABRIK, et le client KRUSTY est au courant de la
+sous-traitance. La publication n° 26 est écrite, samedi 12 décembre.
+
+**Le dépliant est de Grafycom lui aussi.** Son fichier d'impression
+fait 68 Mo et n'est pas ici — mais il n'a pas eu à l'être. La planche
+S4 de la n° 26 **dessine sa grille** : trois volets, la trame
+violette, le vrai logo posé dedans, des blocs neutres à la place des
+plats. Ce qui démontre le propos, c'est la grille, et une grille se
+dessine.
+
+> ⚠️ **Trois points à régler le jour où le dépliant réel serait
+> montré.** Un JPEG de 1500 px suffirait ; le fichier d'impression
+> n'est pas nécessaire.
+>
+> **Les photographies de plats sont générées par IA**, Laurent l'a
+> dit le 22 octobre. Les droits ne posent donc pas de problème. Le
+> reste si : sur un compte dont tout le cycle argumente sur le dessin
+> et la netteté, une photo générée affaiblit l'argument plus qu'elle
+> ne sert la réalisation. Et pour le restaurant, montrer un plat qui
+> ne ressemble pas à celui qu'on sert est un risque commercial — dit
+> comme un risque, pas comme une règle de droit, faute de l'avoir
+> vérifiée. **Mon avis : ne pas les montrer sur ce compte.**
+>
+> Le dépliant porte en pied de volet la mention **« Réalisation
+> REZOFABRIK »**. Sur une publication signée `@grafycom.graphiste`
+> elle se contredit avec la signature. Deux issues honnêtes : la
+> retirer **du fichier source**, ou l'assumer d'une ligne de légende
+> qui dit la sous-traitance. **Jamais l'effacer sur l'image** :
+> maquiller un crédit sur une pièce imprimée est autre chose que
+> corriger un fichier.
+>
+> Il porte aussi le **téléphone, l'adresse et les réseaux du client**.
+> Publics, mais sans raison d'être relayés : le cadrage devra les
+> exclure.
 
 > ⚠️ **Ce que le fichier NE dit PAS, et que j'avais écrit à tort.**
 >

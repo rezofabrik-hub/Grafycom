@@ -96,6 +96,24 @@ calendrier — le contenu d'une carte de vœux, par exemple, ou les mentions
 obligatoires d'un emballage, déjà traitées le 10. Ou l'inverse : décaler mon
 reel et laisser la quinzaine suivante ouvrir le sujet. Mais pas les deux.
 
+> ✅ **Tranché, et appliqué.** Le reel part au **samedi 28 novembre** ;
+> c'est le carrousel du 23 qui ouvre le sujet. Tout ce qui était daté
+> dans le reel a suivi — la grille part du 28, le compte passe de cinq
+> semaines à quatre, les jalons glissent à fin novembre / début
+> décembre / mi-décembre. Un reel qui dit « on est le 28 » en montrant
+> une grille qui part du 21 se trahirait tout seul.
+>
+> Le créneau du 21 ainsi libéré porte la **n° 15 bis**, écrite à
+> l'arbitrage n° 3 : un même visuel de fêtes décliné sur quatre
+> supports. Elle ne recouvre pas le carrousel du 23 — celui-ci parle
+> de logistique, celle-là de dessin.
+>
+> **Le doublon d'article n'existe plus** :
+> `2026-12-04-retroplanning-fin-annee-commerce.md` a été supprimé, et
+> le 4 décembre porte « Faut-il refaire son logo pour la nouvelle
+> année ». Le rétroplanning n'est donc plus écrit qu'une fois, le
+> 20 novembre.
+
 **2. La vitrine est traitée trois fois.** Mon reel du 13 novembre (les trois
 familles d'adhésifs) et mon article du 12 novembre, puis la publication n° 5
 du 30 novembre (« Votre vitrine de Noël est faite pour celui qui passe »), la
@@ -209,6 +227,12 @@ relus mot par mot sur chaque slide.
    le fait pas : il livre les textes et les directions visuelles, qui sont
    exactement ce qu'un gabarit a besoin de recevoir. Dites-moi si je les
    écris.
+
+   > ✅ **Écrits.** La question ne se pose plus : **30 gabarits** et
+   > **210 planches**, tout le cycle compris, les 44 écrans de story
+   > compris. Plus aucune publication n'attend d'image, et rien n'est
+   > à photographier ni à filmer. La liste à jour est donnée par
+   > `python3 reseaux/visuels.py --liste`.
 
    Le bénéfice de `visuels.py` par rapport à Canva est acquis et ne se
    revérifie pas à chaque export : les accents français viennent de la
