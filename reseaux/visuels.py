@@ -74,11 +74,16 @@ PSEUDO = "@grafycom.graphiste"
 # jour ou le fichier change de nom.
 SOURCES = pathlib.Path(__file__).resolve().parent / "visuels" / "sources"
 PHOTOS = {
-    "sandra-nuancier":   SOURCES / "atelier" / "03-pseudo-corrige-logo.png",
-    "sandra-ecran":      SOURCES / "atelier" / "05-recadre-4x5.png",
-    "sandra-sourire":    SOURCES / "atelier" / "01-recadre-4x5-logo.png",
+    # n° 1, clôture — le nuancier Pantone, sur le carrousel couleur
+    "sandra-nuancier":   SOURCES / "atelier" / "01-recadre-4x5.png",
+    # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
+    # en perspective depuis sources/solaire-66-logo.png : celui que la
+    # photo affichait était une approximation, et la publication est
+    # justement celle consacrée à ce client.
+    "sandra-ecran":      SOURCES / "atelier" / "07-recadre-4x5.png",
+    # n° 24, dernier écran du dernier reel
+    "sandra-sourire":    SOURCES / "atelier" / "06-recadre-4x5.png",
     "sandra-carte":      SOURCES / "atelier" / "04-recadre-4x5.png",
-    "sandra-ecran-large": SOURCES / "atelier" / "05-profil-ecran-solaire66.jpg",
 }    # avec le point. C'est une constante
                                   # justement pour qu'il ne se perde plus.
 
