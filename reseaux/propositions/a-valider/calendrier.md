@@ -135,6 +135,7 @@ automatique du matin.
 | vendredi 4 décembre | 08 h 00 | Blog | article | Faut-il refaire son logo pour la nouvelle année ? Trois qu ⚠️ |
 | vendredi 4 décembre | 18 h 15 | Story | story | S6-D · relais du blog |
 | samedi 5 décembre | 10 h 30 | Instagram + Facebook | REEL 30 s | n° 24 |
+| mardi 8 décembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 25 — BIG FOOD, hors rythme |
 | samedi 5 décembre | 10 h 30 | Fiche Google | post | texte n° 24 |
 | samedi 5 décembre | 10 h 45 | Story | story | S6-E · coulisses du reel |
 
@@ -144,8 +145,13 @@ automatique du matin.
 
 | Canal | Volume |
 |---|---|
-| Publications Instagram + Facebook | **25** |
+| Publications Instagram + Facebook | **26** |
 | Textes de fiche Google | **25** |
 | Écrans de story | **44** |
 | Articles de blog | **7** |
-| **Total à valider** | **101** |
+| **Total à valider** | **102** |
+
+La 26ᵉ publication est **BIG FOOD, le mardi 8 décembre** : une
+réalisation, hors rythme et en plus du cycle, conformément à
+l'arbitrage du 18 octobre. Elle n'a pas de texte de fiche Google — le
+compte en reste à 25, un par publication du cycle.

@@ -2245,3 +2245,105 @@ un panneau et un polo brodé, où il devient une tache grossière.
 - **Rien à filmer.** Les cinq écrans sont dessinés et prêts.
 
 ---
+
+---
+
+## 25 — Mardi 8 décembre, 12 h 30 · Carrousel 7 planches · Pilier « réalisations » · **BIG FOOD**
+
+**Hors rythme, et c'est voulu.** L'arbitrage du 18 octobre dit que les
+publications de réalisation viennent **en plus** du cycle, pas à la
+place. Celle-ci tombe trois jours après la n° 24 et ne déplace rien.
+
+**Accord du client donné** le 22 octobre, et il porte aussi sur le nom :
+on écrit BIG FOOD.
+
+**Ce que Sandra a fait, et rien d'autre : le logo.** Pas d'enseigne, pas
+de pose, pas de support. Le fichier a un plan de travail de 2 800 mm, et
+j'en avais d'abord déduit une enseigne — c'était faux. Un plan de
+travail dit comment un fichier a été réglé, jamais ce qu'on en a fait.
+La légende ne parle donc que de dessin.
+
+**L'idée, une seule :** un symbole posé à côté d'un nom peut s'en
+détacher ; devenu une lettre, il ne peut plus partir.
+
+### Direction visuelle — 7 planches *(produites)*
+
+Gabarit `big-food`, dans `reseaux/visuels/2026-12-08-big-food/`.
+
+1. Ouverture crème, bandeau multicolore, le logo posé avec son ombre.
+2. Le logo en grand sur **son** violet. C'est la seule planche du cycle
+   où un aplat non charte occupe toute la page : c'est la couleur du
+   client, pas celle de Grafycom.
+3. La démonstration : le même mot et le même symbole, à côté puis
+   dedans. Le symbole y est **simplifié volontairement** — on compare
+   une relation entre un mot et un signe, pas deux dessins, et un
+   burger détaillé à cette taille serait illisible.
+4. Une seule lettre en couleur, et pourquoi.
+5. Les deux compositions, une ligne et deux lignes.
+6. Le test de réduction : le même fichier en grand, sur une carte, en
+   favicon.
+7. Clôture encre.
+
+### Accroche
+
+**« Pourquoi les deux O sont des burgers. »**
+
+### Légende
+
+> Sur ce logo, les deux O de FOOD ne sont pas des lettres. Ce sont deux
+> burgers.
+>
+> Ça peut passer pour une coquetterie. C'en est une si le symbole est
+> posé **à côté** du nom : dans ce cas il peut s'en détacher — on le
+> retire pour gagner de la place, il disparaît sur un tampon, il survit
+> mal à une réduction. On a alors deux objets qui voyagent séparément.
+>
+> Devenu une lettre, il ne peut plus partir sans emporter le mot. C'est
+> le même principe que le O de Solaire 66, et c'est ce qui fait la
+> différence entre un logo et une illustration avec du texte dessous.
+>
+> Le reste suit la même logique. Une seule lettre en couleur, le B : une
+> couleur qui touche tout ne désigne plus rien, elle devient le fond.
+> Deux compositions, une ligne et deux lignes, pour que le même dessin
+> serve une place large et une place carrée — pas deux dessins.
+>
+> Et la vérification, toujours la même : on réduit, et on regarde ce qui
+> lâche en premier.
+>
+> **Logo BIG FOOD, publié avec l'accord du client.**
+
+### Texte alternatif
+
+**S1 et S2** — Logo BIG FOOD : le mot « BIG » puis le mot « FOOD » en
+capitales blanches sur fond violet, le B en orange, les deux O de FOOD
+remplacés par deux burgers dessinés.
+
+**S3** — Deux lignes de démonstration : le mot FOOD avec un symbole rond
+posé à sa droite, légendé « à côté » ; puis le même mot dont les deux O
+sont remplacés par ce symbole, légendé « dedans ».
+
+**S4** — Le logo BIG FOOD, avec le B orange isolé parmi les lettres
+blanches.
+
+**S5** — Le logo en deux compositions : sur une ligne, puis sur deux.
+
+**S6** — Le même logo à trois tailles décroissantes posées sur une même
+ligne, légendées « en grand », « sur une carte », « en favicon ».
+
+**S7** — Fond encre, filet multicolore, texte « Un logo se dessine pour
+être lu. »
+
+### Hashtags — jeu B + 2 locaux
+
+`#creationlogo #identitevisuelle #designgraphique #logodesign #restauration #foodtruck #graphistePerpignan #PyreneesOrientales #CommerceLocal66 #ArtisanDuRoussillon`
+
+### À fournir par Sandra
+
+- **Le fichier de la composition deux lignes.** Je n'ai reçu que le
+  `.ai` de la version une ligne ; la deux lignes n'est arrivée qu'en
+  capture d'écran de 287 px, inexploitable. La planche 5 sort avec son
+  emplacement vide et le signale — déposer le fichier sous
+  `reseaux/visuels/sources/clients/big-food-2lignes.png` suffit à la
+  compléter.
+- **Rien d'autre.** Le logo une ligne vient du fichier vectoriel, les
+  trois couleurs sont relevées dedans et non recopiées.

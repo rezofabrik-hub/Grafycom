@@ -1367,6 +1367,9 @@ class Planche:
             RESIDU.append((_etiquette(chemin), r, e, t))
             print("   CONTRASTE %-28s %.2f:1 (il faut %.1f)  « %s »"
                   % (_etiquette(chemin), r, e, t))
+        for quoi, g, dte in getattr(self, "debordements_lateraux", []):
+            print("   HORS CADRE %-22s %s déborde de %d px à gauche, "
+                  "%d px à droite" % (_etiquette(chemin), quoi, g, dte))
         manquantes = (getattr(self, "images_absentes", [])
                       + getattr(self, "photos_absentes", []))
         if manquantes:
@@ -2742,6 +2745,19 @@ def pose(flou=20, force=78, bas=15, cote=6, modele=0.26,
             decale.paste(silhouette, (cote, bas))
             ombre.paste(teint, (0, 0),
                         decale.point(lambda v: int(v * force / 255)))
+            # La silhouette est déjà calculée : elle dit aussi où
+            # l'objet S'ARRÊTE. _deborde() ne surveille que le bas de
+            # planche, et rien ne regardait les côtés — une rangée de
+            # vignettes trop large sortait du cadre sans un mot. C'est
+            # gratuit ici, et ça ferme le dernier bord non gardé.
+            bx = silhouette.getbbox()
+            if bx and (bx[0] < MARGE - 24 or bx[2] > p.l - MARGE + 24):
+                p.debordements_lateraux = getattr(
+                    p, "debordements_lateraux", [])
+                p.debordements_lateraux.append(
+                    (fn.__name__, max(0, MARGE - bx[0]),
+                     max(0, bx[2] - (p.l - MARGE))))
+
             ombre = ombre.filter(ImageFilter.GaussianBlur(flou))
             fond = Image.alpha_composite(avant.convert("RGBA"), ombre)
 
@@ -5144,9 +5160,9 @@ def pub24_reel_bilan(dossier=None):
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("15-21 s", "taupe", y=200)
     p.titre("Deux « oui »,\nun « non » :\non ajuste.", 96, y=280)
-    for cx, genre, flou in ((190, "carte", False), (540, "panneau", False),
-                            (890, "polo", True)):
-        _support_logo(p, cx, 1040, 230, genre, brouille=flou)
+    for cx, genre, flou in ((245, "carte", False), (540, "panneau", False),
+                            (835, "polo", True)):
+        _support_logo(p, cx, 1040, 208, genre, brouille=flou)
     p.y = 1420
     p.texte("Le même logo : il tient sur deux supports, il se brouille sur "
             "le troisième. Un problème précis se répare.", 42, "brun", 400,
@@ -5155,8 +5171,8 @@ def pub24_reel_bilan(dossier=None):
     faits.append(p.ecrire(d / "ecran4.png"))
 
     p = Planche("encre", LARGE_S, HAUT_S)
-    for cx, genre in ((190, "carte"), (540, "panneau"), (890, "polo")):
-        _support_logo(p, cx, 700, 230, genre, couleur_legende="sable")
+    for cx, genre in ((245, "carte"), (540, "panneau"), (835, "polo")):
+        _support_logo(p, cx, 700, 208, genre, couleur_legende="sable")
     p.y = 1080
     p.filet()
     p.titre("Un bilan,\npas une résolution.", 92, "blanc")
@@ -5723,9 +5739,222 @@ GABARITS["emballage-tri"] = pub18_emballage_tri
 GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
 GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
 GABARITS["reel-matieres"] = pub20_reel_matieres
+# ---------------------------------------------------------------------
+# n° 25, mardi 8 décembre — BIG FOOD. Pilier « réalisations ».
+#
+# Accord du client donné le 22 octobre. Sandra a fait LE LOGO, et rien
+# d'autre : pas d'enseigne, pas de pose, pas de support. La taille du
+# plan de travail du fichier (2 800 mm) m'avait fait écrire le
+# contraire — un plan de travail dit comment un fichier a été réglé,
+# jamais ce qu'on en a fait.
+# ---------------------------------------------------------------------
+def _couleurs_big_food():
+    """Les trois couleurs du logo, relevées DANS le fichier.
+
+    Pas écrites en dur : une couleur client recopiée dérive comme une
+    autre, et `charte.py --verifier` aurait raison de signaler un
+    hexadécimal de plus dans le source. Ici le fichier est la source,
+    et il ne peut pas se tromper sur lui-même.
+    """
+    import collections
+    f = SOURCES / "clients" / "big-food.png"
+    if not f.exists():
+        return None
+    im = Image.open(f).convert("RGB").resize((400, 100))
+    freq = collections.Counter(im.getdata()).most_common(12)
+    fond = freq[0][0]
+    # l'orange : le plus sature des aplats restants
+    def sat(c):
+        return (max(c) - min(c)) / max(1, max(c))
+    chauds = [c for c, _ in freq[1:]
+              if c[0] > c[2] + 40 and sat(c) > 0.55]
+    return {"fond": "#%02x%02x%02x" % fond,
+            "orange": "#%02x%02x%02x" % (chauds[0] if chauds else (243, 146, 0)),
+            "blanc": "#ffffff"}
+
+
+def pub25_big_food(dossier=None):
+    """n° 25, mardi 8 décembre — pourquoi les deux O sont des burgers."""
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-08-big-food"))
+    accent("orange")
+    L = SOURCES / "clients" / "big-food.png"
+    C_BF = _couleurs_big_food()
+    faits = []
+
+    p = Planche("creme")
+    p.surtitre("Réalisation", y=200)
+    p.filet()
+    p.titre("Pourquoi les deux O\nsont des burgers.", 68)
+    p.poser(L, 540, 760, 900, ombre=30)
+    p.y = 1000
+    p.texte("BIG FOOD — logo, avec l'accord du client.", 32, "taupe", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    # Le logo en grand, sur son propre fond. C'est la seule planche du
+    # cycle ou un aplat non charte occupe toute la page, et c'est
+    # normal : c'est la couleur du client, pas celle de Grafycom.
+    p = Planche("creme")
+    if C_BF:
+        p.d.rectangle([0, 0, p.l, p.h], fill=C_BF["fond"])
+        p._redessiner()
+        p.sombre = True
+    else:
+        p.images_absentes = ["big-food.png"]
+    p.poser(L, 540, 640, 980, ombre=0)
+    p.y = 980
+    p.texte("Trois couleurs. Une seule lettre en couleur.", 42, "blanc", 600,
+            avant=0)
+    p.signature("blanc")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("blanc")
+    p.titre("Un symbole posé à côté\nd'un nom peut s'en aller.", 58, y=150)
+    _deux_mots(p, 500)
+    p.y = 980
+    p.texte("Devenu une lettre, il ne peut plus partir sans emporter le "
+            "mot. C'est le même principe que le O de Solaire 66.", 38,
+            "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("sable_chaud")
+    p.titre("Une seule lettre\nen couleur.", 78, y=160)
+    p.poser(L, 540, 620, 880, ombre=24)
+    p.y = 880
+    p.texte("Le B, et pas le mot entier. Une couleur qui touche tout ne "
+            "désigne plus rien : elle devient le fond. Posée sur un seul "
+            "caractère, elle donne un point d'entrée à l'œil.", 38, "brun",
+            400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    # Les deux compositions. Le fichier deux lignes n'est pas encore
+    # fourni : poser() le signale et la planche sort sans lui plutôt
+    # que de faire tomber le cycle. Le jour où il arrive, il suffit de
+    # le déposer sous ce nom.
+    p = Planche("blanc")
+    p.titre("Deux compositions,\nun seul logo.", 64, y=150)
+    p.poser(L, 540, 560, 740, ombre=22)
+    p.poser(SOURCES / "clients" / "big-food-2lignes.png", 540, 850, 420,
+            ombre=22)
+    p.y = 1040
+    p.texte("Une ligne quand la place est large — une devanture, un "
+            "bandeau. Deux lignes quand elle est carrée — un avatar, un "
+            "tampon. Le même dessin, pas un redessin.", 34, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("creme")
+    p.titre("Ce qui disparaît\nen premier.", 80, y=150)
+    _reduction_logo(p, L, 470)
+    p.y = 1030
+    p.texte("À la taille d'un favicon, les garnitures des burgers se "
+            "ferment et il reste deux disques. Le mot, lui, tient.", 36,
+            "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("encre")
+    p.filet(y=330)
+    p.titre("Un logo se dessine\npour être lu.", 72, "blanc")
+    p.y = 820
+    p.texte("Pas pour être admiré de près. Celui-ci se lit avant qu'on ait "
+            "fini de passer devant.", 40, "creme", 400, avant=0)
+    p.abonnement("sable")
+    p.signature("sable")
+    faits.append(p.ecrire(d / "07.png"))
+    return faits
+
+
+@pose(flou=14, force=58, bas=9, cote=4)
+def _deux_mots(p, y):
+    """« FOOD » avec le symbole à côté, puis le symbole DANS le mot.
+
+    La démonstration de la n° 25. Les deux lignes portent exactement le
+    même mot et le même symbole : seule leur relation change, et c'est
+    la condition pour que la comparaison prouve quelque chose.
+    """
+    f = police(800, 120)
+    for i, (lib, colle) in enumerate((("à côté", False), ("dedans", True))):
+        yy = y + i * 230
+        mot = "FOOD" if colle else "FOOD"
+        lm = p.d.textlength(mot, font=f)
+        x = (p.l - lm) / 2 + (0 if colle else 50)
+        if colle:
+            # le symbole prend la place des deux O
+            p.d.text((x, yy), "F", font=f, fill=teinte("encre"))
+            lF = p.d.textlength("F", font=f)
+            lO = p.d.textlength("O", font=f)
+            for k in range(2):
+                cx = x + lF + lO * (k + 0.5)
+                _burger(p, cx, yy + 62, lO * 0.92)
+            p.d.text((x + lF + 2 * lO, yy), "D", font=f, fill=teinte("encre"))
+        else:
+            p.d.text((x - 90, yy), mot, font=f, fill=teinte("encre"))
+            _burger(p, x + lm - 30, yy + 62, 104)
+        fl = police(600, 30)
+        t = lib
+        p.d.text(((p.l - p.d.textlength(t, font=fl)) / 2, yy + 150), t,
+                 font=fl, fill=teinte("taupe"))
+    return p
+
+
+def _burger(p, cx, cy, diam):
+    """Un burger stylisé — le symbole de la démonstration, pas le logo.
+
+    Le vrai burger du logo est une illustration détaillée ; la réduire
+    à cette taille la rendrait illisible et, surtout, la publication
+    compare ici une RELATION entre un mot et un symbole, pas deux
+    dessins. Un symbole simple sert mieux la démonstration, et il ne
+    prétend pas être le logo du client.
+    """
+    r = diam / 2
+    p.d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=teinte("encre"))
+    p.d.ellipse([cx - r * 0.74, cy - r * 0.74, cx + r * 0.74, cy + r * 0.74],
+                fill=teinte("blanc"))
+    p.d.rectangle([cx - r * 0.74, cy - r * 0.16, cx + r * 0.74, cy + r * 0.16],
+                  fill=teinte("encre"))
+    return p
+
+
+@pose(flou=16, force=64, bas=10, cote=5)
+def _reduction_logo(p, chemin, y):
+    """Le même fichier à trois tailles, aligné sur son bas.
+
+    Alignées sur leur milieu, les trois versions flotteraient ; la
+    réduction se lit quand elles posent sur la même ligne.
+    """
+    if not pathlib.Path(chemin).exists():
+        p.images_absentes = getattr(p, "images_absentes", [])
+        p.images_absentes.append(pathlib.Path(chemin).name)
+        return p
+    im = Image.open(chemin).convert("RGB")
+    f = police(600, 28)
+    x = MARGE
+    sol = y + 320
+    utile = p.l - 2 * MARGE
+    ecart = 44
+    parts = (0.62, 0.26, 0.12)
+    tailles = [int((utile - 2 * ecart) * k) for k in parts]
+    for larg, lib in zip(tailles, ("en grand", "sur une carte",
+                                   "en favicon")):
+        h = int(im.height * larg / im.width)
+        p.im.paste(im.resize((larg, h), Image.LANCZOS), (int(x), int(sol - h)))
+        p._redessiner()
+        t = lib
+        p.d.text((x + (larg - p.d.textlength(t, font=f)) / 2, sol + 18), t,
+                 font=f, fill=teinte("taupe"))
+        x += larg + ecart
+    return p
+
+
 GABARITS["reel-bilan"] = pub24_reel_bilan
 GABARITS["reel-cmjn"] = pub04_reel_cmjn
 GABARITS["reel-halloween"] = pub08_reel_halloween
+GABARITS["big-food"] = pub25_big_food
 
 
 if __name__ == "__main__":
