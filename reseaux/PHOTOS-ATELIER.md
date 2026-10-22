@@ -64,6 +64,7 @@ réalimenté :
 |---|---|---|
 | `sources/solaire-66-logo.png` | Solaire 66 | détouré, les trois monochromes en découlent |
 | `sources/clients/big-food.png` | BIG FOOD | **fichier vectoriel reçu** (`LOGO_OK.ai`, PDF 1.6), rendu à 3600 px. **Accord du client donné** le 22 octobre |
+| `sources/clients/big-food-2lignes.png` | BIG FOOD, composition deux lignes | **capture d'écran, 356 px** — pas de vectoriel. Posée à sa taille native, jamais agrandie. Le `.ai` reste demandé |
 
 ### BIG FOOD — ce que le fichier dit, et ce qu'il ne dit pas
 
@@ -75,11 +76,33 @@ Relevé dans le fichier :
   est l'illustration des deux burgers ;
 - le « B » est le seul caractère orange ; les deux « O » de FOOD sont
   remplacés par des burgers ;
-- deux compositions fournies : une ligne, et deux lignes.
+- **un seul plan de travail**, donc une seule composition : la ligne.
+  La version deux lignes existe, Sandra l'a envoyée — mais en capture
+  d'écran de 356 px, pas dans ce fichier.
 
 Ces trois valeurs sont **les couleurs du client, pas celles de la
 charte Grafycom** — elles n'ont donc rien à faire dans `style.css` ni
 dans `charte.py`, exactement comme le bleu et le jaune de Solaire 66.
+
+### La composition deux lignes
+
+Reçue le 22 octobre, en capture d'écran : **356 × 222 px**, rapport
+1,6:1. Les couleurs sont fidèles — orange et blanc identiques au
+vectoriel, violet à une unité près (`#4c1660` au lieu de `#4b165f`,
+l'arrondi d'une capture), réaligné à l'enregistrement.
+
+Elle est posée **à 356 px, sa taille native**, et non aux 420 px
+prévus. Une planche qui explique qu'un logo doit rester net ne peut
+pas montrer une image agrandie : on verrait le défaut dont elle parle.
+
+Elle n'a pas été reconstruite à partir du vectoriel non plus, alors
+que les lettres y sont. Dans la deux lignes, le « B » orange est
+surdimensionné et chevauche le « F » de la ligne du dessous : c'est un
+arbitrage de Sandra, pas une mise en page qu'on redevine. Recomposer,
+ce serait redessiner le logo d'un client à sa place.
+
+**Ce qui manque encore :** le `.ai` de cette composition, pour tout
+usage au-delà de 356 px.
 
 > ⚠️ **Ce que le fichier NE dit PAS, et que j'avais écrit à tort.**
 >

@@ -5830,18 +5830,18 @@ def pub25_big_food(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "04.png"))
 
-    # Les deux compositions. Le fichier deux lignes n'est pas encore
-    # fourni : poser() le signale et la planche sort sans lui plutôt
-    # que de faire tomber le cycle. Le jour où il arrive, il suffit de
-    # le déposer sous ce nom.
+    # Les deux compositions. La deux lignes n'existe qu'en capture
+    # d'écran, 356 px de large : elle est posée à sa taille native,
+    # jamais agrandie. Une image molle sur une planche qui parle de
+    # netteté se verrait. Le .ai reste demandé pour les grands usages.
     p = Planche("blanc")
     p.titre("Deux compositions,\nun seul logo.", 64, y=150)
     p.poser(L, 540, 560, 740, ombre=22)
-    p.poser(SOURCES / "clients" / "big-food-2lignes.png", 540, 850, 420,
+    p.poser(SOURCES / "clients" / "big-food-2lignes.png", 540, 850, 356,
             ombre=22)
     p.y = 1040
     p.texte("Une ligne quand la place est large — une devanture, un "
-            "bandeau. Deux lignes quand elle est carrée — un avatar, un "
+            "bandeau. Deux lignes quand elle est courte — un avatar, un "
             "tampon. Le même dessin, pas un redessin.", 34, "brun", 400,
             avant=0)
     p.signature("brun")

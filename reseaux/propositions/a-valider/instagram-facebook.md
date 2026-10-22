@@ -2305,7 +2305,7 @@ Gabarit `big-food`, dans `reseaux/visuels/2026-12-08-big-food/`.
 > Le reste suit la même logique. Une seule lettre en couleur, le B : une
 > couleur qui touche tout ne désigne plus rien, elle devient le fond.
 > Deux compositions, une ligne et deux lignes, pour que le même dessin
-> serve une place large et une place carrée — pas deux dessins.
+> serve une place large et une place courte — pas deux dessins.
 >
 > Et la vérification, toujours la même : on réduit, et on regarde ce qui
 > lâche en premier.
@@ -2339,11 +2339,11 @@ ligne, légendées « en grand », « sur une carte », « en favicon ».
 
 ### À fournir par Sandra
 
-- **Le fichier de la composition deux lignes.** Je n'ai reçu que le
-  `.ai` de la version une ligne ; la deux lignes n'est arrivée qu'en
-  capture d'écran de 287 px, inexploitable. La planche 5 sort avec son
-  emplacement vide et le signale — déposer le fichier sous
-  `reseaux/visuels/sources/clients/big-food-2lignes.png` suffit à la
-  compléter.
+- **Le `.ai` de la composition deux lignes** — utile, pas bloquant.
+  La planche 5 est complète : la capture reçue le 22 octobre fait
+  356 px et elle y est posée **à cette taille exacte**, donc nette.
+  Mais 356 px est un plafond. Le jour où cette composition doit
+  passer sur un support imprimé, ou simplement plus grand qu'un
+  avatar, il faudra le vectoriel.
 - **Rien d'autre.** Le logo une ligne vient du fichier vectoriel, les
   trois couleurs sont relevées dedans et non recopiées.
