@@ -214,7 +214,7 @@ est une preuve là où un dessin n'est qu'une maquette.
 
 ---
 
-## Le premier créneau est dans huit jours
+## Le premier créneau est le lundi 26 octobre
 
 Le calendrier commence **lundi 26 octobre**. Rien n'est programmé : la
 publication n° 1 ne partira que si tu la valides d'ici là.

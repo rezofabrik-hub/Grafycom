@@ -1231,6 +1231,19 @@ class Planche:
         montrer, c'est montrer un fichier de production et non l'objet
         fini. On rogne donc les 2 mm reglementaires avant de poser.
         """
+        if not pathlib.Path(chemin).exists():
+            # sources/ n'est pas versionné — le dépôt est public, et ni
+            # les logos clients ni les portraits de Sandra n'ont à y
+            # être. Conséquence mesurée le 22 octobre : sur un conteneur
+            # neuf, le cycle entier tombait sur un FileNotFoundError au
+            # premier fichier absent. photo() savait déjà le signaler
+            # sans mourir ; poser() ne le savait pas. Un outil de
+            # production qui s'arrête parce qu'un fichier non versionné
+            # manque est un outil qui ne tourne pas sur une autre
+            # machine.
+            self.images_absentes = getattr(self, "images_absentes", [])
+            self.images_absentes.append(pathlib.Path(chemin).name)
+            return self
         im = Image.open(chemin).convert("RGBA")
         if rogner_mm and mm_par_px:
             r = int(rogner_mm * mm_par_px)
@@ -1349,6 +1362,11 @@ class Planche:
             RESIDU.append((_etiquette(chemin), r, e, t))
             print("   CONTRASTE %-28s %.2f:1 (il faut %.1f)  « %s »"
                   % (_etiquette(chemin), r, e, t))
+        manquantes = (getattr(self, "images_absentes", [])
+                      + getattr(self, "photos_absentes", []))
+        if manquantes:
+            print("   SANS IMAGE %-22s %s"
+                  % (_etiquette(chemin), ", ".join(manquantes)))
         if getattr(self, "debordements", 0):
             print("   ATTENTION %s : %d bloc(s) descendent sous la "
                   "signature" % (_etiquette(chemin),
