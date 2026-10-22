@@ -30,7 +30,7 @@ elle qui a attrapé tout ce qui suit.
 | `01-nuancier-pull-rouge.jpg` | pull rouge, nuancier Pantone | **bon.** Pseudo correct, logo mural fidèle |
 | `04-carte-voeux-dorure.jpg` | carte de vœux en main | **la carte ne peut pas être montrée de près** — elle porte « Graautte de voeuwr ». Utilisable en plan large, où elle redevient du décor |
 | `06-ecran-solaire66.jpg` | de profil, devant l'écran | **bon.** L'affiche murale « Solaire 66 / Grafycom » est fidèle |
-| `07-bureau-solaire66.jpg` | au bureau, Solaire 66 à l'écran | **corrigée** : le vrai logo est incrusté en perspective à l'écran. Le croquis « devanfture » est hors du recadrage 4:5 |
+| `07-bureau-solaire66.jpg` | au bureau, Solaire 66 à l'écran | **corrigée** : le vrai logo est incrusté en perspective à l'écran, coins mesurés et inscrits dans `ECRANS`. Le croquis « devanfture » est hors du recadrage 4:5 |
 | `03-portrait-nuancier-4x5.jpg` | portrait vertical, nuancier | **à corriger** : le pseudo y est `@grafycom graphiste`, **sans le point**. `retouche_atelier.py` sait le refaire |
 | `08-croquis-denim.jpg` | veste en jean, carnet de croquis | reçue en aperçu seulement, pas en fichier |
 | `05-profil-ecran-solaire66.jpg` | de profil, écran | perdue avec le conteneur, non renvoyée |
@@ -51,7 +51,19 @@ réalimenté :
   quadrilatère de l'affiche, en perspective, l'encre posée en
   multiplication ;
 - `carte_voeux()` — recadre la carte au lieu de la retoucher, et dit
-  pourquoi la retouche échoue.
+  pourquoi la retouche échoue ;
+- `logo_ecran()` — projette le logo d'un client dans le plan de travail
+  affiché à l'écran. Les coins y sont **mesurés** par ajustement des
+  quatre bords puis intersection, et non estimés : le premier relevé,
+  fait à l'œil, avait lu un rectangle là où l'écran est tourné, et le
+  logo se posait à plat sur un plan incliné.
+
+## Les logos clients
+
+| Fichier | Client | État |
+|---|---|---|
+| `sources/solaire-66-logo.png` | Solaire 66 | détouré, les trois monochromes en découlent |
+| `sources/clients/big-food-planche.png` | BIG FOOD | **planche de présentation, 287 px de large.** Inexploitable en l'état : il faut le fichier d'origine, et l'accord du client avant toute publication |
 
 Les trois versions monochromes du logo Solaire 66 se **déduisent** du
 fichier couleur : même forme, une seule encre. Les redessiner serait

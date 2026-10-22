@@ -295,7 +295,7 @@ if __name__ == "__main__":
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     a.add_argument("--voir", action="store_true", help="écrire les avant/après")
     o = a.parse_args()
-    for f in (carte_voeux, pseudo):
+    for f in (carte_voeux, pseudo, logo_mural, logo_ecran):
         r = f(voir=o.voir)
         print("  %-18s %s" % (f.__name__, r.name if r else "—"))
 
@@ -414,6 +414,59 @@ AFFICHES = {
     "03-pseudo-corrige.png": [(985, 188), (1538, 112), (1556, 552), (990, 592)],
     "01-recadre-4x5.png":    [(579, 116), (959, 90), (964, 365), (585, 391)],
 }
+
+# Les plans de travail affichés À L'ÉCRAN, et le logo qui doit s'y
+# trouver. Même mécanique que les affiches, autre fichier source.
+#
+# Ces coins sont MESURÉS, pas estimés, et le premier relevé était faux :
+# pris à l'œil, le quadrilatère avait été lu comme un rectangle alors
+# que l'écran est tourné, et le logo se posait à plat sur un plan
+# incliné. Trois pièges, dans l'ordre où ils se sont présentés :
+#
+#   1. n'ajuster que les bords gauche et droit impose des bords haut et
+#      bas horizontaux — ça force un rectangle ;
+#   2. ajuster les quatre bords sur les extrêmes clairs prend le bureau
+#      éclairé SOUS l'écran pour le bas du plan de travail ; la fenêtre
+#      de relevé doit s'arrêter avant lui ;
+#   3. chercher une plage claire CONTINUE ne marche pas davantage : le
+#      dessin affiché est sombre et coupe la plage en deux.
+#
+# Les quatre droites ajustées puis intersectées donnent ici 272 px de
+# large en haut contre 264 en bas, et 250 de haut à gauche contre 286 à
+# droite. Rien d'un rectangle.
+ECRANS = {
+    "07-bureau-solaire66.jpg": ([(1189, 551), (1461, 560), (1432, 846),
+                                 (1168, 801)], "solaire-66-logo.png"),
+}
+
+
+def logo_ecran(voir=False):
+    """Remplace le logo affiché à l'écran par le vrai fichier du client.
+
+    Montrer une fausse version du logo d'un client sur la publication
+    qui lui est consacrée est le défaut à ne pas laisser passer. Que ce
+    client soit un proche n'y change rien.
+    """
+    faits = []
+    for nom, (quad, fichier) in ECRANS.items():
+        src = ATELIER / nom
+        logo_f = RACINE / "visuels" / "sources" / fichier
+        if not src.exists() or not logo_f.exists():
+            print("   absente :", nom if not src.exists() else fichier)
+            continue
+        im = Image.open(src).convert("RGB")
+        larg = max(abs(quad[1][0] - quad[0][0]), abs(quad[2][0] - quad[3][0]))
+        haut = max(abs(quad[3][1] - quad[0][1]), abs(quad[2][1] - quad[1][1]))
+        zone = im.crop((min(x for x, _ in quad), min(y for _, y in quad),
+                        max(x for x, _ in quad), max(y for _, y in quad)))
+        clairs = [p for p in zone.convert("RGB").getdata() if min(p) > 200]
+        papier = (tuple(sum(c[i] for c in clairs) // len(clairs)
+                        for i in range(3)) if clairs else (250, 250, 250))
+        feuille = _affiche_logo(larg * 3, haut * 3, Image.open(logo_f), papier)
+        _incruster(im, quad, feuille)
+        im.save(src, quality=95)
+        faits.append(src)
+    return faits
 
 
 def logo_mural(voir=False):
