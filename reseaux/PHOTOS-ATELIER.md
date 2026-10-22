@@ -65,22 +65,34 @@ réalimenté :
 | `sources/solaire-66-logo.png` | Solaire 66 | détouré, les trois monochromes en découlent |
 | `sources/clients/big-food.png` | BIG FOOD | **fichier vectoriel reçu** (`LOGO_OK.ai`, PDF 1.6), rendu à 3600 px. **Accord du client donné** le 22 octobre |
 
-### BIG FOOD — ce que le fichier dit
+### BIG FOOD — ce que le fichier dit, et ce qu'il ne dit pas
 
-Relevé dans le fichier, pas supposé :
+Relevé dans le fichier :
 
-- **format 7937 × 1984 points, soit 2 800 × 700 mm.** Ce n'est pas un
-  logo d'en-tête, c'est une enseigne : 2,80 m de large.
-- rapport 4:1 exactement.
+- rapport **4:1** exactement ;
 - trois couleurs, mesurées sur l'aplat : violet `#4b165f` (59 % de la
   surface), blanc `#ffffff` (14 %), orange `#f39200` (4 %). Le reste
-  est l'illustration des deux burgers.
+  est l'illustration des deux burgers ;
 - le « B » est le seul caractère orange ; les deux « O » de FOOD sont
-  remplacés par des burgers.
+  remplacés par des burgers ;
+- deux compositions fournies : une ligne, et deux lignes.
 
 Ces trois valeurs sont **les couleurs du client, pas celles de la
 charte Grafycom** — elles n'ont donc rien à faire dans `style.css` ni
 dans `charte.py`, exactement comme le bleu et le jaune de Solaire 66.
+
+> ⚠️ **Ce que le fichier NE dit PAS, et que j'avais écrit à tort.**
+>
+> Le plan de travail mesure 7937 × 1984 points, soit 2 800 × 700 mm.
+> J'en avais déduit « c'est une enseigne de 2,80 m », et c'est faux :
+> **Sandra n'a fait que le logo.** La taille d'un plan de travail dit
+> comment un fichier a été réglé, pas ce qui a été produit, ni ce qui a
+> été posé sur une façade.
+>
+> La règle 3 interdit d'inventer une référence client. Déduire un
+> livrable d'une propriété de fichier en est une, et elle est d'autant
+> plus dangereuse qu'elle a l'air vérifiée. **Ce qu'un fichier prouve,
+> c'est ce qu'il contient — jamais ce qu'on en a fait.**
 
 Les trois versions monochromes du logo Solaire 66 se **déduisent** du
 fichier couleur : même forme, une seule encre. Les redessiner serait
