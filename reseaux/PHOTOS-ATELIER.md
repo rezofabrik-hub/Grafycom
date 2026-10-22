@@ -143,7 +143,7 @@ plus le blanc des lettres. Rapport 1,25:1. Le burger est posé sur le
 
 **Accord acquis le 22 octobre.** Le logo a été commandé à Grafycom
 par REZOFABRIK, et le client KRUSTY est au courant de la
-sous-traitance. La publication n° 26 est écrite, samedi 12 décembre.
+sous-traitance. La publication n° 26 est écrite, samedi 14 novembre.
 
 **Le dépliant est de Grafycom lui aussi.** Son fichier d'impression
 fait 68 Mo et n'est pas ici — mais il n'a pas eu à l'être. La planche

@@ -73,7 +73,6 @@ Si vous régénérez les pages depuis les scripts de génération, pensez à pas
 | `graphiste-argeles-sur-mer.html` | Page locale — Argelès-sur-Mer |
 | `graphiste-ceret.html` | Page locale — Céret |
 | `basculer-domaine.sh` | Script de bascule vers un vrai nom de domaine |
-| `MENTIONS-DEVIS.md` | Textes prêts à coller dans les devis (hors site) |
 | `cgv.html` | Conditions générales de vente — professionnels et particuliers |
 | `mentions-legales.html` | Obligatoires — complètes |
 | `confidentialite.html` | RGPD — **à compléter avant mise en ligne** |
@@ -108,9 +107,10 @@ Les deux logos, eux, sont bien en place :
 ### 2. Informations légales — fait
 
 Les mentions légales sont renseignées d'après le registre national des
-entreprises&nbsp;: Grafycom, nom commercial de **Sandra Martinez Gala**,
-entrepreneur individuel, SIREN 999 556 301, SIRET 999 556 301 00011, TVA non
-applicable (art. 293 B du CGI). L'hébergeur (GitHub,&nbsp;Inc.) et la date de
+entreprises&nbsp;: identité de l'entrepreneur individuel, SIREN, SIRET et TVA
+non applicable (art. 293 B du CGI). **Le détail figure dans
+`mentions-legales.html`**, seul endroit où la loi l'exige — la règle
+« ni nom de famille ailleurs » vaut aussi pour ce fichier. L'hébergeur (GitHub,&nbsp;Inc.) et la date de
 mise à jour y figurent également.
 
 Les **conditions générales de vente** sont rédigées (`cgv.html`), avec les
@@ -118,10 +118,8 @@ régimes distincts pour les clients professionnels et pour les consommateurs&nbs
 devis, acomptes, allers-retours, bon à tirer, cession de droits au sens de
 l'article L131-3 du CPI, droit de rétractation et formulaire type.
 
-Les mentions à faire figurer sur les devis — dont la renonciation au droit de
-rétractation — sont rassemblées dans `MENTIONS-DEVIS.md`, à la racine du dépôt.
-
-⚠ **Ces textes doivent être relus par un juriste avant usage.**
+Les mentions à faire figurer sur les devis ne sont pas traitées dans ce
+dépôt : c'est une question pour un juriste, pas pour une graphiste.
 
 ### Le choix du tout-professionnel
 
@@ -136,8 +134,7 @@ qui ne s'appliquent qu'aux consommateurs.
   distance, qui permet à un client de tout annuler après deux semaines de
   travail.
 
-Les mentions légales et les CGV sont rédigées en conséquence, et la mention de
-qualité à faire signer sur chaque devis figure dans `MENTIONS-DEVIS.md`.
+Les mentions légales et les CGV sont rédigées en conséquence.
 
 ⚠ **Ce positionnement ne vaut que s'il est tenu.** Accepter un seul particulier
 fait renaître les deux obligations pour ce contrat. Si Grafycom décide un jour

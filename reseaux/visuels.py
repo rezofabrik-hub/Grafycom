@@ -5882,7 +5882,7 @@ GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
 GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
 GABARITS["reel-matieres"] = pub20_reel_matieres
 # ---------------------------------------------------------------------
-# n° 25, mardi 8 décembre — BIG FOOD. Pilier « réalisations ».
+# n° 25, samedi 7 novembre — BIG FOOD. Pilier « réalisations ».
 #
 # Accord du client donné le 22 octobre. Sandra a fait LE LOGO, et rien
 # d'autre : pas d'enseigne, pas de pose, pas de support. La taille du
@@ -5916,8 +5916,8 @@ def _couleurs_big_food():
 
 
 def pub25_big_food(dossier=None):
-    """n° 25, mardi 8 décembre — pourquoi les deux O sont des burgers."""
-    d = pathlib.Path(dossier or (SORTIE / "2026-12-08-big-food"))
+    """n° 25, samedi 7 novembre — pourquoi les deux O sont des burgers."""
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-07-big-food"))
     accent("orange")
     L = SOURCES / "clients" / "big-food.png"
     C_BF = _couleurs_big_food()
@@ -6159,7 +6159,7 @@ def _bande_epreuve(p, x0, y0, x1, y1, clair, fonce):
 
 
 def pub26_krusty(dossier=None):
-    """n° 26, samedi 12 décembre — pourquoi les lettres sont creuses.
+    """n° 26, samedi 14 novembre — pourquoi les lettres sont creuses.
 
     Deuxieme realisation hors rythme, comme BIG FOOD, et pour la meme
     raison : une realisation s'ajoute au cycle, elle ne prend pas le
@@ -6175,7 +6175,7 @@ def pub26_krusty(dossier=None):
     meme famille, pas le depliant du client. On montre un principe, on
     ne republie pas une piece dont la paternite n'est pas etablie.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-12-12-krusty"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-14-krusty"))
     accent("violet")
     L = SOURCES / "clients" / "krusty.png"
     C_K = _couleurs_krusty()
@@ -6337,9 +6337,10 @@ def _couleurs_sweet_dream():
 def pub27_sweet_dream(dossier=None):
     """n° 27 — l'ombre portee nette, et ce qu'elle fait avec deux encres.
 
-    Troisieme realisation hors rythme. La date reste a arreter avec
-    Laurent ; le dossier porte une date provisoire, et c'est le
-    calendrier qui fait foi.
+    Troisieme realisation hors rythme, intercalee dans le cycle :
+    mercredi 25 novembre. Les realisations ne sont plus groupees apres
+    la fin du cycle, elles alternent avec les publications
+    d'information — c'est l'arbitrage du 22 octobre.
 
     Le sujet n'est ni celui de la n° 25 ni celui de la n° 26. BIG FOOD
     remplacait des lettres, KRUSTY les creusait. SWEET DREAM ne fait ni
@@ -6351,7 +6352,7 @@ def pub27_sweet_dream(dossier=None):
     coute rien : elle marche en serigraphie, en flocage, en decoupe,
     partout ou un degrade ne passe pas.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-12-19-sweet-dream"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-25-sweet-dream"))
     accent("rose")
     L = SOURCES / "clients" / "sweet-dream.png"
     L2 = SOURCES / "clients" / "sweet-dream-2lignes.png"

@@ -131,7 +131,7 @@ pas un lieu réel.
 |---|---|---|
 | **SR Coiffure** | oui | forme vectorisée depuis la capture, **le filet doré manque** — demander le fichier au client |
 | **B.F Plomberie** | oui | **non récupérable** depuis la capture : nom en blanc sur beige, dégradé, texture |
-| **Social Miroir** | oui | ✅ **logo reçu le 13 octobre**, trois déclinaisons vectorielles dans `reseaux/visuels/sources/social-miroir/`. **Client actuel de Grafycom** — pas de mention de structure précédente |
+| **Social Miroir** | oui | ⚠️ **logo à redemander.** Reçu le 13 octobre avec trois déclinaisons vectorielles, mais `reseaux/visuels/sources/` n'est pas versionné et le contenu a été perdu à la reconstruction du conteneur. **Client actuel de Grafycom** — pas de mention de structure précédente |
 | **La Casquette Bleue** | **non** | Sandra n'a pas créé son identité : impression de cartes de visite uniquement |
 
 ### La Casquette Bleue : cliente, pas réalisation

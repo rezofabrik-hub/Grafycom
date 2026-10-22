@@ -121,6 +121,26 @@ les filtres de répétition.
   exercice, le dire.
 - **Jamais une image dont les droits ne sont pas clairs.** Ni photo
   trouvée, ni visuel de banque sans licence commerciale.
+- **Jamais une publication sur l'administratif d'un client.** Devis,
+  CGV, conditions de règlement, formulaires, mentions contractuelles,
+  régimes de TVA : ce n'est pas le métier d'une graphiste, c'est celui
+  d'un comptable ou d'un juriste. Arbitrage de Laurent, pris le
+  12 octobre et redit le 22 : « je ne m'occupe pas de l'administratif
+  de mes clients ».
+
+  **Où passe la frontière** — ce qui compte, c'est ce qu'on enseigne,
+  pas le mot employé. Expliquer *ce qui doit figurer sur un devis* est
+  interdit. Expliquer qu'un devis qui dit « panneau » ne dit rien, et
+  qu'entre un PVC expansé et un alu composite il y a huit ans d'écart,
+  est non seulement permis mais recommandé : ça apprend au client à
+  lire une offre, et c'est précisément le métier. Le sujet reste la
+  matière, le support, le dessin — le document contractuel n'est que
+  l'endroit où on les lit.
+
+  Cette règle **ne concerne que les publications**. Le site garde ses
+  pages légales, son formulaire et ses CGV : elles sont obligatoires ou
+  utiles, et les retirer serait une faute. On ne les met simplement pas
+  en avant sur les réseaux.
 - **Répondre aux commentaires sous 24 h.** L'algorithme le récompense, et
   c'est surtout la moitié de l'intérêt d'être là.
 - **Les liens dans la bio, pas dans les légendes** : Instagram ne les rend

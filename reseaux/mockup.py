@@ -17,7 +17,7 @@ des faces qu'on lui donne, rien d'autre.
 
 Usage
 -----
-    python3 reseaux/mockup.py recto.png verso.png sortie.png
+    python3 reseaux/mockup.py recto.png verso.png sortie.png [depliant|feuillet]
 """
 import sys
 import pathlib
@@ -110,48 +110,89 @@ def _poser(planche, face, quad, flou=26, decalage=(16, 22), opacite=104):
     return planche
 
 
-def depliant(recto, verso, sortie, large=1700, haut=1150):
-    """Un dépliant en volume : une face pliée debout, une face ouverte.
+def depliant(recto, verso, sortie, large=1700, haut=1150, pli=0.5):
+    """Un pli roulé debout, et la face intérieure ouverte devant.
 
-    La composition reprend celle qu'on voit partout pour un trois-volets
-    — l'ouvert au premier plan en bas à gauche, le plié en retrait en
-    haut à droite — parce que c'est celle qui montre les deux faces sans
-    que l'une cache l'autre.
+    `pli` dit où la pliure tombe, en fraction de la largeur : 0.5 pour
+    une feuille pliée en deux. Mal placée, la pliure coupe un bloc au
+    milieu et le volume se voit faux — c'est le premier défaut à
+    corriger sur une mise en situation.
+
+    Le volet de COUVERTURE est celui de droite, et c'est lui qu'on
+    place presque de face : c'est la page qu'on lit en premier dans la
+    vraie vie, et la mettre en fuite rend l'image illisible.
     """
     planche = Image.new("RGBA", (large, haut), FOND + (255,))
 
-    # la face pliée, en retrait : deux volets qui forment un V ouvert
     r = Image.open(recto).convert("RGBA")
     l, h = r.size
-    gauche_src = r.crop((0, 0, int(l * 0.62), h))
-    droite_src = r.crop((int(l * 0.62), 0, l, h))
-    _poser(planche, _pli(gauche_src, part=1.0, force=0.19,
-                        largeur=0.5, creux=False),
-           [(840, 128), (1245, 86), (1245, 492), (848, 512)], flou=22,
-           decalage=(14, 18), opacite=92)
-    _poser(planche, droite_src,
-           [(1245, 86), (1512, 150), (1512, 556), (1245, 492)], flou=22,
-           decalage=(14, 18), opacite=92)
+    x = int(l * pli)
+    dos_src = r.crop((0, 0, x, h))            # le volet qui part en arrière
+    couv_src = r.crop((x, 0, l, h))           # la couverture
 
-    # la face ouverte, au premier plan, à plat et légèrement tournée
+    # le dos d'abord : il est derrière, et sa pliure s'assombrit
+    _poser(planche, _pli(dos_src, part=1.0, force=0.22, largeur=0.55,
+                         creux=False),
+           [(872, 212), (1148, 112), (1148, 584), (872, 650)], flou=22,
+           decalage=(14, 18), opacite=88)
+    # la couverture ensuite, presque de face
+    _poser(planche, _pli(couv_src, part=0.0, force=0.14, largeur=0.3,
+                         creux=False),
+           [(1148, 112), (1556, 168), (1556, 640), (1148, 584)], flou=24,
+           decalage=(16, 22), opacite=96)
+
+    # la face intérieure, ouverte à plat au premier plan
     v = Image.open(verso).convert("RGBA")
-    v = _pli(v, part=0.5, force=0.20, largeur=0.16)
+    v = _pli(v, part=pli, force=0.20, largeur=0.14)
     _poser(planche, v,
-           [(118, 404), (1012, 470), (896, 1040), (96, 896)], flou=30,
-           decalage=(18, 26), opacite=116)
+           [(112, 420), (1016, 492), (952, 1064), (78, 944)], flou=32,
+           decalage=(18, 28), opacite=120)
+
+    planche.convert("RGB").save(sortie)
+    return sortie
+
+
+def feuillet(recto, verso, sortie, large=1700, haut=1150):
+    """Deux faces d'un imprimé à plat, posées l'une devant l'autre.
+
+    Pour une pièce qui NE SE PLIE PAS. Un dépliant plié montre son
+    volume ; un feuillet n'en a pas, et lui en inventer un se voit :
+    la pliure tombe au milieu d'un bloc, et le volet qui porte le logo
+    part en arrière alors que c'est lui qu'on doit lire en premier.
+
+    La face de couverture passe donc devant, bien posée, et le verso
+    derrière, décalé — c'est ainsi qu'on pose deux feuilles sur une
+    table quand on veut montrer les deux.
+    """
+    planche = Image.new("RGBA", (large, haut), FOND + (255,))
+
+    # le verso en retrait, plus incliné : il se lit en second
+    v = Image.open(verso).convert("RGBA")
+    _poser(planche, v,
+           [(742, 96), (1562, 208), (1498, 724), (686, 588)], flou=26,
+           decalage=(16, 22), opacite=96)
+
+    # le recto au premier plan, presque de face : c'est lui qu'on lit
+    r = Image.open(recto).convert("RGBA")
+    _poser(planche, r,
+           [(128, 420), (1022, 500), (962, 1066), (86, 950)], flou=34,
+           decalage=(20, 30), opacite=122)
 
     planche.convert("RGB").save(sortie)
     return sortie
 
 
 def main():
-    if len(sys.argv) != 4:
+    if len(sys.argv) not in (4, 5):
         raise SystemExit(__doc__.strip().split("Usage")[-1].strip())
-    recto, verso, sortie = (pathlib.Path(a) for a in sys.argv[1:])
+    forme = depliant
+    if len(sys.argv) == 5:
+        forme = {"depliant": depliant, "feuillet": feuillet}[sys.argv[4]]
+    recto, verso, sortie = (pathlib.Path(a) for a in sys.argv[1:4])
     for f in (recto, verso):
         if not f.exists():
             raise SystemExit("fichier introuvable : %s" % f)
-    print(depliant(recto, verso, sortie))
+    print(forme(recto, verso, sortie))
 
 
 if __name__ == "__main__":

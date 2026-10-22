@@ -55,7 +55,7 @@ les fonds. Les directions visuelles ci-dessous sont déjà réécrites.
 >
 > **En cas de doute sur une date, c'est `calendrier.md` qui fait foi.**
 
-## 1 — Lundi 26 octobre, 12 h 30 · Carrousel · Pédagogie couleur
+## 1 — Lundi 26 octobre, 18 h 30 · Carrousel · Pédagogie couleur
 
 ### Direction visuelle — 6 slides
 
@@ -2372,7 +2372,7 @@ un panneau et un polo brodé, où il devient une tache grossière.
 
 ---
 
-## 25 — Mardi 8 décembre, 12 h 30 · Carrousel 7 planches · Pilier « réalisations » · **BIG FOOD**
+## 25 — Samedi 7 novembre, 10 h 30 · Carrousel 7 planches · Pilier « réalisations » · **BIG FOOD**
 
 **Hors rythme, et c'est voulu.** L'arbitrage du 18 octobre dit que les
 publications de réalisation viennent **en plus** du cycle, pas à la
@@ -2392,7 +2392,7 @@ détacher ; devenu une lettre, il ne peut plus partir.
 
 ### Direction visuelle — 7 planches *(produites)*
 
-Gabarit `big-food`, dans `reseaux/visuels/2026-12-08-big-food/`.
+Gabarit `big-food`, dans `reseaux/visuels/2026-11-07-big-food/`.
 
 1. Ouverture crème, bandeau multicolore, le logo posé avec son ombre.
 2. Le logo en grand sur **son** violet. C'est la seule planche du cycle
@@ -2472,7 +2472,7 @@ ligne, légendées « en grand », « sur une carte », « en favicon ».
 - **Rien d'autre.** Le logo une ligne vient du fichier vectoriel, les
   trois couleurs sont relevées dedans et non recopiées.
 
-## 26 — Samedi 12 décembre, 10 h 30 · Carrousel 8 planches · Pilier « réalisations » · **KRUSTY**
+## 26 — Samedi 14 novembre, 10 h 30 · Carrousel 8 planches · Pilier « réalisations » · **KRUSTY**
 
 > ✅ **Accord client : acquis.** Donné le 22 octobre. Le logo a été
 > commandé à Grafycom par REZOFABRIK, et **le client KRUSTY est au
@@ -2519,7 +2519,7 @@ aucune autre publication du cycle ne la porte.
 ### Direction visuelle — 7 planches, 1080 × 1350 px
 
 Toutes dessinées ou posées depuis le vectoriel. Gabarit `krusty`, dans
-`reseaux/visuels/2026-12-12-krusty/`. Accent violet, pour ne pas
+`reseaux/visuels/2026-11-14-krusty/`. Accent violet, pour ne pas
 reprendre l'orange de la n° 25.
 
 - **S1.** Crème, surtitre « Réalisation », filet. « Pourquoi les
@@ -2628,11 +2628,13 @@ une carte, en favicon.
      le montrer dans une réalisation est l'usage. À confirmer d'un mot
      avec lui, puisque l'accord porte sur le logo.
 
-## 27 — Date à arrêter · Carrousel 8 planches · Pilier « réalisations » · **SWEET DREAM**
+## 27 — Mercredi 25 novembre, 18 h 30 · Carrousel 8 planches · Pilier « réalisations » · **SWEET DREAM**
 
-> ⏳ **La date n'est pas fixée.** Le dossier porte `2026-12-19` à titre
-> provisoire, parce qu'un dossier doit bien s'appeler quelque chose.
-> **C'est `calendrier.md` qui fera foi** une fois la date arrêtée.
+> 📅 **Mercredi 25 novembre**, par l'arbitrage du 22 octobre : les
+> réalisations s'intercalent entre les publications d'information au
+> lieu d'être groupées après le cycle. C'est aussi la seule
+> publication du cycle un mercredi — le jour n'avait jusqu'ici que
+> des stories.
 >
 > ✅ **Accord client : acquis**, donné le 22 octobre.
 >
@@ -2647,6 +2649,11 @@ une carte, en favicon.
 > pas été téléchargé : il est **calculé** à partir des deux faces
 > fournies, par `reseaux/mockup.py` — perspective, ombre portée en
 > silhouette, creux de pli. Rien à acheter, aucun droit à vérifier.
+>
+> *La pièce est un A4 paysage **plié en deux**, Laurent l'a confirmé.
+> Un premier essai pliait à 62 % : la pliure tombait au milieu d'un
+> bloc et la couverture partait en fuite. Une pliure mal placée se
+> voit immédiatement.*
 
 ### Pourquoi ce sujet, et pas celui des n° 25 et 26
 
@@ -2665,7 +2672,7 @@ obtenu par un flou n'existe qu'en quadri.
 
 ### Direction visuelle — 8 planches, 1080 × 1350 px
 
-Gabarit `sweet-dream`, dans `reseaux/visuels/2026-12-19-sweet-dream/`.
+Gabarit `sweet-dream`, dans `reseaux/visuels/2026-11-25-sweet-dream/`.
 Accent rose, qui rappelle la couleur du client sans la copier.
 
 - **S1.** Crème, surtitre « Réalisation », filet. « L'ombre n'est pas
@@ -2681,8 +2688,9 @@ Accent rose, qui rappelle la couleur du client sans la copier.
   **toutes deux dans le même fichier vectoriel.**
 - **S6.** Blanc. Le test de réduction : en grand, sur une carte, en
   favicon.
-- **S7.** Crème. Le dépliant en situation. « Sur l'imprimé il passe en
-  blanc, et l'ombre magenta reste. »
+- **S7.** Crème. Le dépliant en situation : plié en deux, couverture
+  de face, et la face intérieure ouverte au premier plan. « Sur
+  l'imprimé il passe en blanc, et l'ombre magenta reste. »
 - **S8.** Encre, filet. « Un relief se dessine. Il ne se calcule pas. »
 
 ### Accroche
@@ -2728,15 +2736,15 @@ fois : d'abord avec une ombre floue, puis avec l'ombre décalée du
 logo. Une autre planche présente les deux compositions, sur une ligne
 et sur deux lignes. Une autre montre le logo à trois tailles
 décroissantes, légendées en grand, sur une carte, en favicon. La
-dernière planche illustrée montre le dépliant du menu en volume, une
-face pliée en retrait et une face ouverte au premier plan.
+dernière planche illustrée montre le dépliant du menu en volume : plié
+en deux, sa couverture de face, et sa face intérieure ouverte à plat au
+premier plan.
 
 ### Hashtags — jeu B + 2 locaux
 `#creationlogo #identitevisuelle #designgraphique #logodesign #patisserie #dessert #graphistePerpignan #CommerceLocal66`
 
 ### À fournir par Sandra
-- **La date**, à arrêter ensemble.
-- **Rien d'autre.** Les huit planches sont finies. Le logo et ses deux
+- **Rien.** Les huit planches sont finies. Le logo et ses deux
   compositions viennent du fichier vectoriel, les deux roses sont
   relevés dedans, et le mock-up du dépliant est calculé à partir des
   faces fournies.

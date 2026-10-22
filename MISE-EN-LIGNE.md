@@ -410,7 +410,7 @@ et les anciens enregistrements `A` vers GitHub s'ils subsistent.
 
 Le code d'un site vitrine n'a rien de confidentiel : c'est exactement ce que le
 navigateur de chaque visiteur télécharge. Ce que le dépôt privé protège, c'est
-le reste — `README.md`, `MISE-EN-LIGNE.md`, `MENTIONS-DEVIS.md`, les scripts, et
+le reste — `README.md`, `MISE-EN-LIGNE.md`, les scripts, et
 l'historique des commits, jusqu'ici lisibles et indexés par les moteurs.
 
 `build.sh` écarte déjà ces fichiers du site publié. Le dépôt privé ferme la

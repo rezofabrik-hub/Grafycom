@@ -1,4 +1,4 @@
-# Calendrier — du 26 octobre au 12 décembre 2026
+# Calendrier — du 26 octobre au 5 décembre 2026
 
 Tout ce qui est écrit et non publié, tous canaux, dans l'ordre.
 
@@ -64,6 +64,7 @@ automatique du matin.
 | vendredi 6 novembre | 18 h 00 | Instagram + Facebook | REEL 24 s | n° 4 — 🔀 **permutée, pour rester de saison** |
 | vendredi 6 novembre | 18 h 00 | Fiche Google | post | texte n° 4 |
 | vendredi 6 novembre | 18 h 15 | Story | story | S2-E · relais du blog |
+| samedi 7 novembre | 10 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 25 — BIG FOOD, 🧩 **réalisation intercalée** |
 | | | | | |
 | lundi 9 novembre | 12 h 30 | Instagram + Facebook | Carrousel | n° 9 |
 | lundi 9 novembre | 12 h 30 | Fiche Google | post | texte n° 9 |
@@ -83,6 +84,7 @@ automatique du matin.
 | vendredi 13 novembre | 18 h 00 | Fiche Google | post | texte n° 12 |
 | vendredi 13 novembre | 18 h 15 | Story | story | S3-E1 · relais du blog |
 | vendredi 13 novembre | 18 h 20 | Story | story | S3-E2 · teasing du reel |
+| samedi 14 novembre | 10 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, 🧩 **réalisation intercalée** |
 | samedi 31 octobre | 11 h 00 | Story | story | S2-F · Halloween — 📌 **date fixe** |
 | | | | | |
 | lundi 16 novembre | 12 h 30 | Instagram + Facebook | Carrousel 7 slides | n° 13 |
@@ -110,6 +112,7 @@ automatique du matin.
 | mardi 24 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 18 |
 | mardi 24 novembre | 8 h 00 | Fiche Google | post | texte n° 18 |
 | mardi 24 novembre | 8 h 15 | Story | story | S5-B écran 1 |
+| mercredi 25 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 27 — SWEET DREAM, 🧩 **réalisation intercalée** |
 | jeudi 26 novembre | 19 h 00 | Instagram + Facebook | Dilemme A/B | n° 19 |
 | jeudi 26 novembre | 19 h 00 | Fiche Google | post | texte n° 19 |
 | jeudi 26 novembre | 19 h 00 | Story | story | S5-C écran 1 |
@@ -140,9 +143,6 @@ automatique du matin.
 | samedi 5 décembre | 10 h 30 | Fiche Google | post | texte n° 24 |
 | samedi 5 décembre | 10 h 45 | Story | story | S6-E · coulisses du reel |
 | | | | | |
-| mardi 8 décembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 25 — BIG FOOD, hors rythme |
-| samedi 12 décembre | 10 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, hors rythme |
-| **à arrêter** | — | Instagram + Facebook | Carrousel 8 planches | n° 27 — SWEET DREAM, hors rythme — ⏳ **date à décider** |
 
 ---
 
@@ -156,18 +156,41 @@ automatique du matin.
 | Articles de blog | **7** |
 | **Total à valider** | **106** |
 
-**Trois réalisations hors rythme**, en plus du cycle et conformément à
-l'arbitrage du 18 octobre : **BIG FOOD le mardi 8 décembre**,
-**KRUSTY le samedi 12 décembre** et **SWEET DREAM à une date à
-arrêter**. Aucune n'a de texte de fiche Google — le compte en reste à
-26, un par publication du cycle. Les trois accords clients sont
-acquis.
+**Quatre réalisations**, en plus du cycle et non à la place d'une
+leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du
+22 octobre elles ne sont plus groupées après la fin du cycle : elles
+**s'intercalent entre les publications d'information**.
 
-> ⏳ **La date de SWEET DREAM reste à décider.** Son dossier de
-> visuels porte `2026-12-19` à titre provisoire, pour qu'il ait un
-> nom. Trois réalisations en douze jours — les 8, 12 et 19 décembre —
-> font une série serrée sur un public qui n'est pas venu pour ça :
-> une respiration d'une ou deux semaines se défend.
+| Réalisation | Date | Ce qu'elle suit |
+|---|---|---|
+| **BIG FOOD** | samedi 7 novembre | la n° 6 du 3 novembre, « Qui possède votre logo ? » |
+| **KRUSTY** | samedi 14 novembre | la n° 9 du 9 novembre, « Un logo tient-il en petit » |
+| **Solaire 66** | lundi 16 novembre | inchangée, elle occupe le créneau n° 13 |
+| **SWEET DREAM** | mercredi 25 novembre | la n° 18 du 24 novembre |
+
+Aucune n'a de texte de fiche Google — le compte en reste à 26, un par
+publication du cycle. Les quatre accords clients sont acquis.
+
+**Ce que l'intercalage change, mesuré.** Les semaines passent de
+`5 · 4 · 4 · 4 · 5 · 4 · 2` à `5 · 5 · 5 · 4 · 6 · 4`, et la queue de
+cycle à deux publications disparaît.
+
+**L'espacement des réalisations** : 7 jours, 2 jours, 9 jours. SWEET
+DREAM a été ramenée du 2 décembre au 25 novembre pour combler un trou
+de seize jours — arbitrage du 22 octobre.
+
+> ⚠️ **Ce que ce choix coûte, dit plutôt que masqué.** La semaine du
+> 23 novembre passe à **six publications** : n° 17, 18, 27, 19, 20
+> et 16. C'est une de plus que partout ailleurs, et une de plus que
+> ce que recommandait la réserve n° 3.
+>
+> Il reste par ailleurs **deux réalisations à deux jours**, KRUSTY le
+> 14 et Solaire 66 le 16. C'est la conséquence de Solaire 66, fixée
+> au créneau n° 13 ; la déplacer rouvrirait l'arbitrage n° 6.
+>
+> **Le mercredi 25 novembre est une première** : jusqu'ici le
+> mercredi ne portait que des stories. Le créneau du soir, 18 h 30,
+> est celui du lundi.
 
 **La n° 15 bis, le samedi 21 novembre**, est la publication écrite à
 l'arbitrage n° 3 : elle reprend le créneau que le reel n° 16 libère en

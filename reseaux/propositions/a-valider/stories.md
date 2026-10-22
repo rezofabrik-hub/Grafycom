@@ -69,7 +69,7 @@ sticker et ses options, arrière-plan.
 - **Texte :** « Avez-vous un contrat de cession pour votre logo ? »
 - **Sticker :** *Sondage A/B* — « Votre logo, vous le possédez… »
   → **A : oui, j'ai l'écrit** · **B : aucune idée**
-- Écran déjà dessiné : `reseaux/visuels/stories/20-teasing.png`.
+- Écran déjà dessiné : `reseaux/visuels/stories/S2-B.png`.
 
 ## S2-C — Mercredi 4 novembre, 18 h 30 · coulisses
 - **Fond :** photo d'un plan de travail — crayonnés, nuancier, écran.

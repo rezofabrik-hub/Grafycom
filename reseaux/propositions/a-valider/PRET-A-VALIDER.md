@@ -62,9 +62,9 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 22 | mar 1er déc | Carrousel | Enseigne, publicité, ou rien du tout ? | 6 |
 | 23 | jeu 3 déc | Quiz | Impressions de fin d'année | 6 |
 | 24 | sam 5 déc | REEL 30 s | Faut-il refaire son logo | 6 |
-| **25** | mar 8 déc | Carrousel 7 planches | **BIG FOOD** | 7 |
-| **26** | sam 12 déc | Carrousel 8 planches | **KRUSTY** | 8 |
-| **27** | ⏳ **à arrêter** | Carrousel 8 planches | **SWEET DREAM** | 8 |
+| **25** | sam 7 nov | Carrousel 7 planches | **BIG FOOD** | 7 |
+| **26** | sam 14 nov | Carrousel 8 planches | **KRUSTY** | 8 |
+| **27** | mer 25 nov | Carrousel 8 planches | **SWEET DREAM** | 8 |
 
 **166 planches de publication** (210 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
 et le dossier porte **la date réelle de parution**. Il portait jusqu'au

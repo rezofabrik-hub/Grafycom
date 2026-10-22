@@ -41,8 +41,7 @@ Sept planches, toutes dessinées, gabarit `quatre-supports`.
 ### Arbitrage 6 — ce que je n'ai pas fait, et pourquoi
 
 Tu demandais que les deux réalisations soient **en plus** du rythme,
-pas à la place. **BIG FOOD l'est** : hors rythme, le 8 décembre, en
-supplément.
+pas à la place. **BIG FOOD l'est** : en supplément, le 7 novembre.
 
 **Solaire 66 ne l'est pas** : elle occupe le créneau n° 13 du lundi
 16 novembre. Je ne l'ai pas sortie du rythme, pour une raison que je
