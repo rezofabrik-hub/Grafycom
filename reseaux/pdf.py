@@ -38,10 +38,12 @@ from charte import C  # noqa: E402
 # L'ordre de lecture, pas l'ordre alphabétique : on commence par l'état,
 # on finit par ce qui demande une décision.
 ORDRE = [
+    ("A-FOURNIR", "Ce qu'il me manque",
+     "Par ordre de priorité, vérifié fichier par fichier"),
     ("PRET-A-VALIDER", "Ce qui est terminé", "L'état exact, canal par canal"),
     ("calendrier", "Le calendrier", "Tout ce qui est écrit, daté, dans l'ordre"),
-    ("instagram-facebook", "Instagram & Facebook", "Les 25 publications"),
-    ("fiche-google", "Fiche Google", "Les 25 textes de fiche"),
+    ("instagram-facebook", "Instagram & Facebook", "Les 29 publications"),
+    ("fiche-google", "Fiche Google", "Les 26 textes de fiche"),
     ("stories", "Les stories", "Les 6 semaines, écran par écran"),
     ("blog", "Le blog", "L'index des 7 articles"),
     ("messages-prives", "Messages privés", "Le message d'accueil et les réponses types"),
