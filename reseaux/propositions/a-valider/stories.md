@@ -131,10 +131,15 @@ sticker et ses options, arrière-plan.
 > **Le 11 novembre ne porte aucune story** — Armistice, décision de
 > Laurent. Le calendrier s'y contredisait : il programmait `S3-C` à
 > 18 h 30 **et** marquait « rien, volontairement ». La ligne `S3-C`
-> est retirée, et l'écran reprend le créneau du **samedi 14 à 11 h 00**,
-> celui des boîtes à questions (`S2-F` le 31/10, `S5-E` le 28/11) —
-> c'est aussi là que l'autre checklist le plaçait. À dire si vous
-> préférez le laisser tomber pour cette semaine-là.
+> est retirée. Le 11 garde en revanche sa ligne dans la table,
+> sans écran : ce document pose que l'absence doit être un choix
+> validé, pas un trou dans le planning.
+>
+> **`S3-C` reprend le samedi 14 à 11 h 00 — validé par Laurent.**
+> C'est le créneau des boîtes à questions ailleurs dans le cycle
+> (`S2-F` le 31/10, `S5-E` le 28/11), et c'est aussi là que l'autre
+> checklist la plaçait. Elle suit donc `S3-A` de quinze minutes, le
+> même écart que partout ailleurs.
 >
 > `reseaux/audit.py` relit ce tableau à chaque passage : un écran du
 > moteur sans ligne, une ligne sans écran, une date ou une heure qui

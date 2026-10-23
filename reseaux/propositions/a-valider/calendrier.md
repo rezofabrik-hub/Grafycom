@@ -86,7 +86,7 @@ automatique du matin.
 | samedi 14 novembre | 10 h 30 | Instagram + Facebook | Carrousel | n° 9 — 🔀 **décalée du 9, pour libérer le créneau du reel** |
 | samedi 14 novembre | 10 h 30 | Fiche Google | post | texte n° 9 |
 | samedi 14 novembre | 10 h 45 | Story | story | S3-A · teasing du carrousel |
-| samedi 14 novembre | 11 h 00 | Story | story | S3-C · boîte à questions — 🔀 **déplacée du 11, Armistice** |
+| samedi 14 novembre | 11 h 00 | Story | story | S3-C · boîte à questions — 🔀 **déplacée du 11, Armistice ; créneau validé le 23 octobre** |
 
 | samedi 31 octobre | 11 h 00 | Story | story | S2-F · Halloween — 📌 **date fixe** |
 | | | | | |
