@@ -350,15 +350,56 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 | **J** | n° 20 · Matières et fabrication | Une découpe en cours : lame, règle en acier, chute d'adhésif qui s'enroule. Geste arrêté. |
 | **K** | n° 23 · Impressions de fin d'année | Une sortie d'imprimante en train de tomber dans le réceptacle, légèrement floue par le mouvement. |
 
-### Priorité basse — les fonds d'ambiance, réutilisables partout
+### ~~Priorité basse~~ — les quatre textures, faites le 23 octobre
 
-Quatre textures neutres, à garder en réserve pour les planches de
-titre et de clôture. Elles servent plusieurs fois.
+Elles étaient rangées en réserve. Elles se sont révélées la réponse la
+moins chère au vrai défaut du feed : **douze carreaux d'affilée sans
+photographie**, des positions 13 à 24 de la grille. Quatre images pour
+quatre planches, et la plus longue suite tombe de 12 à 6.
 
-- **L** — plâtre brut, lumière rasante, nuances de crème
-- **M** — chêne clair, veines marquées, vue de dessus
-- **N** — lin froissé, plis doux, ombre longue
-- **O** — béton ciré gris chaud, une seule ombre nette en diagonale
+| | Texture | Planche | État |
+|---|---|---|---|
+| **L** | plâtre brut | n° 6 · 4 idées reçues sur l'impression | ✅ `L-platre-brut.jpg` |
+| **M** | chêne clair | n° 17 · Rétroplanning vœux | ✅ `M-chene-clair.jpg` |
+| **N** | lin froissé | n° 24 · Quiz fin d'année | ✅ `N-lin-froisse.jpg` |
+| **O** | béton ciré | n° 8 · Enseigne, autorisation | ✅ `O-beton-cire.jpg` |
+
+**Ce qu'une texture change par rapport aux six images à sujet.** Elle
+n'a pas de sujet, donc la grille de composition ne s'applique pas : ce
+qui la remplace est le **plan de netteté**. La lumière rasante et le
+grain dans le tiers haut, le premier plan qui part dans le flou vers le
+bas — c'est physiquement ce que fait un 50 mm à f/2.2 près d'une
+surface, et ça donne la zone calme sans qu'on ait à la fabriquer.
+
+Et **aucun accent** : les quatre planches portent déjà le leur. La
+pastille QUIZ corail de la n° 6 est restée en place sur la photo.
+
+**Deux ouvertures restent volontairement en typographie pleine page** —
+la n° 7 « Qui possède votre logo ? » et la n° 5 bis « Le blog ». C'est
+l'écart entre les deux traitements qui fait ressortir les photos ; six
+fonds photographiques d'affilée les annuleraient.
+
+#### Le test du motif recopié, et comment le rater
+
+Sur une texture, c'est **le** contrôle. Mais il se mesure mal, et la
+première mesure a donné un faux positif.
+
+Corrélation croisée d'un carré de 220 px contre tout le reste de
+l'image, en excluant son voisinage. Sans passe-haut préalable, le
+**dégradé lent** de la lumière suffit à faire monter le score à 0,99
+sur n'importe quelle surface lisse : on mesure la lumière, pas la
+matière.
+
+Après passe-haut : plâtre **0,37**, lin **0,54**, chêne **0,72**, béton
+**0,92**. Les deux derniers restent hauts, et ce ne sont pas des
+copies : le chêne a un fil droit qui se ressemble d'un bout à l'autre,
+et le béton porte **une arête d'ombre** qui traverse le cadre. Sorti
+les deux carrés les plus corrélés du béton et regardé : c'est deux fois
+la même ligne d'ombre, une seule vraie structure.
+
+**La leçon vaut plus que le chiffre : un score élevé se regarde avant
+de se croire.** Sortir les deux carrés, les poser côte à côte. Un motif
+recopié se voit en une seconde ; une structure continue aussi.
 
 ---
 

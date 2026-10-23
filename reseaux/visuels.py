@@ -126,6 +126,25 @@ PHOTOS = {
     # 14 en haut. Recadree avant depot : photo() recouvre et centre, la
     # bordure serait ressortie sur les bords de la planche.
     "vitrine-trottoir":  SOURCES / "ambiances" / "F-vitrine-trottoir.png",
+    # Les quatre TEXTURES, recues le 23 octobre. Elles n'ont pas de
+    # sujet : ce qu'elles apportent, c'est de la profondeur sous un
+    # titre, la ou il n'y avait qu'un aplat. Elles ne portent AUCUN
+    # accent — chacune des quatre planches garde le sien, pastille ou
+    # fleche corail.
+    #
+    # Le piege d'une texture est le motif recopie, et il se mesure :
+    # correlation croisee d'un carre de 220 px contre tout le reste de
+    # l'image, APRES passe-haut — sans le passe-haut, le degradé lent
+    # suffit a faire monter le score a 0,99 sur n'importe quelle
+    # surface lisse. Mesure : platre 0,37, lin 0,54, chene 0,72, beton
+    # 0,92. Les deux derniers sont des FEATURES, pas des copies — le
+    # fil droit du chene, et l'arete d'ombre du beton qui traverse le
+    # cadre. Verifie en sortant les deux carres les plus correles et en
+    # les regardant.
+    "platre-brut":       SOURCES / "ambiances" / "L-platre-brut.jpg",
+    "chene-clair":       SOURCES / "ambiances" / "M-chene-clair.jpg",
+    "lin-froisse":       SOURCES / "ambiances" / "N-lin-froisse.jpg",
+    "beton-cire":        SOURCES / "ambiances" / "O-beton-cire.jpg",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -1714,12 +1733,29 @@ def carrousel_enseigne(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-11-10-enseigne"))
     accent("bleu")
     f = []
+    # Fond photographique : une TEXTURE, pas une scene. Elle ne
+    # demontre rien et n'affirme rien — elle remplace un aplat par de
+    # la matiere. La planche garde son accent (la pastille, la fleche) :
+    # la texture n'en porte aucun, c'est pour ca qu'il n'y a pas de
+    # conflit.
     p = Planche("sable_chaud")
     t = "Votre enseigne a besoin\nd'une autorisation.\nPas d'une déclaration."
-    p.centrer(p.h_titre(t, 74) + 44 + 39)
-    p.surtitre("Réglementation")
-    p.filet(); p.titre(t, 74, "encre")
-    p.signature("brun"); f.append(p.ecrire(d / "01.png"))
+    p.photo("beton-cire", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.centrer(p.h_titre(t, 74) + 44 + 39)
+        p.surtitre("Réglementation")
+        p.filet()
+        p.titre(t, 74, "encre")
+        p.signature("brun")
+    else:
+        # centrer() n'a plus de sens sur une photo : tout le texte
+        # descend sous le voile, comme sur les cinq autres planches
+        # photographiques.
+        p.surtitre("Réglementation", "blanc", y=742)
+        p.y = 806
+        p.titre(t, 62, "blanc")
+        p.signature("blanc")
+    f.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")
     p.titre("La confusion\nla plus répandue", 76, y=200)
@@ -1774,13 +1810,27 @@ def quiz_idees_recues(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-11-05-quiz"))
     accent("rose")
     f = []
+    # Fond photographique : une TEXTURE, pas une scene. Elle ne
+    # demontre rien et n'affirme rien — elle remplace un aplat par de
+    # la matiere. La planche garde son accent (la pastille, la fleche) :
+    # la texture n'en porte aucun, c'est pour ca qu'il n'y a pas de
+    # conflit.
     p = Planche("sable_chaud")
-    p.pastille(MARGE, 240, "QUIZ", "corail", "blanc", 30)
-    p.filet(y=330)
     t = "4 idées reçues\nsur l'impression\net les enseignes."
-    p.titre(t, 84, "encre")
-    p.texte("Combien allez-vous rater ?", 46, "brun", 600, avant=40)
-    p.signature("brun"); f.append(p.ecrire(d / "01.png"))
+    p.photo("platre-brut", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.pastille(MARGE, 240, "QUIZ", "corail", "blanc", 30)
+        p.filet(y=330)
+        p.titre(t, 84, "encre")
+        p.texte("Combien allez-vous rater ?", 46, "brun", 600, avant=40)
+        p.signature("brun")
+    else:
+        p.pastille(MARGE, 240, "QUIZ", "corail", "blanc", 30)
+        p.y = 760
+        p.titre(t, 72, "blanc")
+        p.texte("Combien allez-vous rater ?", 42, "blanc", 600, avant=24)
+        p.signature("blanc")
+    f.append(p.ecrire(d / "01.png"))
 
     questions = [
         ("« Une enseigne se déclare\nen mairie. »", "FAUX", "Elle s'autorise. Cerfa 16308*01."),
@@ -2027,15 +2077,28 @@ def carrousel_retroplanning(dossier=None):
     accent("violet")
     f = []
 
+    # Fond photographique : une TEXTURE, pas une scene. Elle ne
+    # demontre rien et n'affirme rien — elle remplace un aplat par de
+    # la matiere. La planche garde son accent (la pastille, la fleche) :
+    # la texture n'en porte aucun, c'est pour ca qu'il n'y a pas de
+    # conflit.
     p = Planche("sable_chaud")
-    p.surtitre("Fin d'année", y=250)
-    p.filet()
-    p.titre("Vos cartes de vœux\nde Noël se décident\ncette semaine.", 86,
-            "encre")
-    p.texte("Pas en décembre. Voici pourquoi.", 42, "brun", 400, avant=56)
-    p.fleche("corail", y=1120)
-    p.signature("brun")
-    p.numero(1, 6, "taupe")
+    T = "Vos cartes de vœux\nde Noël se décident\ncette semaine."
+    p.photo("chene-clair", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.surtitre("Fin d'année", y=250)
+        p.filet()
+        p.titre(T, 86, "encre")
+        p.texte("Pas en décembre. Voici pourquoi.", 42, "brun", 400, avant=56)
+        p.fleche("corail", y=1120)
+        p.signature("brun")
+        p.numero(1, 6, "taupe")
+    else:
+        p.surtitre("Fin d'année", "blanc", y=742)
+        p.y = 806
+        p.titre(T, 70, "blanc")
+        p.texte("Pas en décembre. Voici pourquoi.", 40, "blanc", 400, avant=24)
+        p.signature("blanc")
     f.append(p.ecrire(d / "01.png"))
 
     # S2 — la frise a rebours
@@ -2249,15 +2312,28 @@ def quiz_fin_annee(dossier=None):
     accent("bleu")
     f = []
 
+    # Fond photographique : une TEXTURE, pas une scene. Elle ne
+    # demontre rien et n'affirme rien — elle remplace un aplat par de
+    # la matiere. La planche garde son accent (la pastille, la fleche) :
+    # la texture n'en porte aucun, c'est pour ca qu'il n'y a pas de
+    # conflit.
     p = Planche("sable_chaud")
-    p.surtitre("Quiz", y=230)
-    p.filet()
-    p.titre("4 idées reçues\nsur vos impressions\nde fin d'année.", 86,
-            "encre")
-    p.texte("Vous en avez combien de justes ?", 46, "brun", 600, avant=56)
-    p.fleche("corail", y=1090)
-    p.signature("brun")
-    p.numero(1, 6, "taupe")
+    T = "4 idées reçues\nsur vos impressions\nde fin d'année."
+    p.photo("lin-froisse", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.surtitre("Quiz", y=230)
+        p.filet()
+        p.titre(T, 86, "encre")
+        p.texte("Vous en avez combien de justes ?", 46, "brun", 600, avant=56)
+        p.fleche("corail", y=1090)
+        p.signature("brun")
+        p.numero(1, 6, "taupe")
+    else:
+        p.surtitre("Quiz", "blanc", y=742)
+        p.y = 806
+        p.titre(T, 70, "blanc")
+        p.texte("Vous en avez combien de justes ?", 42, "blanc", 600, avant=24)
+        p.signature("blanc")
     f.append(p.ecrire(d / "01.png"))
 
     p = Planche("creme")
