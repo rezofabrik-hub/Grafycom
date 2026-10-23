@@ -216,11 +216,8 @@ premier dont le texte est dans le dépôt.
 
 **La réponse est déjà publiée**, et elle est bonne — elle reprend le
 problème du client (« dompter le flux de vos idées ») au lieu de
-remercier dans le vide.
-
-> ⚠️ **Une coquille dans la réponse publiée :** « dompter **le flues**
-> de vos idées ». Lire « le flux ». C'est corrigeable depuis la fiche,
-> et une réponse de propriétaire est aussi lue que l'avis.
+remercier dans le vide. Elle portait une coquille, « le flues » :
+**corrigée depuis la fiche le 23 octobre.**
 
 **Deux choses à trancher avant de le reprendre sur le site :**
 

@@ -151,9 +151,6 @@ Deux questions l'accompagnent, et elles sont pour toi : sous quel nom
 le reprendre sur le site, et faut-il y rendre lisible le lien entre
 REZOFABRIK et Grafycom.
 
-Et une coquille à corriger depuis la fiche : la réponse publiée dit
-« dompter **le flues** de vos idées ».
-
 **Restent ceux de Social Miroir et Solaire 66**, du 13 octobre. Les
 textes ne sont pas lisibles depuis ici. Me les recopier permet d'écrire
 les réponses — un avis sans réponse vaut la moitié d'un avis.
