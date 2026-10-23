@@ -82,51 +82,33 @@ Dream, Krusty, Big Food** et, depuis le 23 octobre, **Social Miroir**.
 
 ## 🟡 Confort — ce qui améliorerait sans débloquer
 
-### 7. Les visuels IA suivants
+### 7. ~~Les visuels IA~~ — les six sont faites
 
-**A — le nuancier en éventail** est intégré : il ouvre la n° 1, et la
-planche bascule sur le repli typographique si le fichier disparaît.
-**B — les papiers sur la tranche** est reçue le 23 octobre et ouvre la
-**n° 20**, pas la n° 4 comme l'annonçait le brief : les deux écrans
-« matière » de la n° 4 portent des démonstrations calculées, et on ne
-remplace pas une preuve par un décor.
+| | Publication | Place | Ce que l'image a dû contourner |
+|---|---|---|---|
+| **A** | n° 1 · Couleur | ouverture | — |
+| **C** | n° 5 · Typographie | ouverture | des lettres : vues de profil |
+| **D** | n° 9 · Logo en petit | **clôture** | une semelle gravée, une feuille imprimée |
+| **E** | n° 15 bis · Quatre supports | ouverture | une matière nommée |
+| **B** | n° 20 · Matières | ouverture | — |
+| **F** | n° 21 · Vitrine | ouverture | une enseigne, un ciel, un reflet qui parle |
 
-Elle sort du moteur en **940 × 1672** — sa taille native, pas une copie
-réduite. L'écran du reel en fait 1080. L'agrandissement de 1,15 a été
-mesuré plutôt que redouté : il coûte 15 % d'énergie de contours et ne se
-voit pas à 100 % sur la planche. Une photographie absorbe une
-interpolation qu'un logo révèle. **Rien à redemander.**
+Deux choses que le brief n'avait pas prévues, et qui se sont vérifiées
+à chaque fois :
 
-**C — les caractères en plomb** est arrivée le 23 octobre et ouvre la
-n° 5. Son piège était dans son sujet : des caractères en plomb sont des
-lettres, et un moteur en rend d'inventées. Le prompt impose le profil —
-crans et épaulements face caméra, faces tournées. Vérifié à 100 % :
-aucun glyphe. La règle est écrite dans le brief, au § 3.5, parce qu'elle
-servira aussi au tampon encreur et au nuancier annoté.
+**La bonne place n'est presque jamais celle qui était annoncée.** Trois
+des six ont changé de publication ou de planche, parce que la planche
+visée démontrait quelque chose. La règle décor/preuve n'est pas une
+précaution théorique : elle a déplacé la moitié de la série.
 
-**E — les échantillons debout** est arrivée le 23 octobre et ouvre la
-**n° 15 bis**, pas la n° 15 : le quiz exagère volontairement l'épaisseur
-des coupes parce qu'une photo ne montrerait rien à cette échelle, et une
-photo générée le rendrait injouable. Son piège était la matière nommée —
-un dibond approximatif affirme une structure fausse sur un produit qu'on
-vend. Le prompt demande donc des échantillons quelconques.
+**Le piège est toujours dans le sujet, jamais dans la lumière.** Les
+constantes optiques ont tenu du premier coup à chaque fois. Ce qui a
+demandé du travail, c'est d'empêcher le moteur d'affirmer quelque
+chose — une lettre, une structure de matériau, un nom sur une vitre.
 
-**D — le stylo et le tampon** est arrivée le 23 octobre et clôt la
-n° 9, planche 06 : les cinq autres démontrent, celle-là appelle à faire
-le test. Une feuille blanche et un stylo sous « faites le test ce soir »
-invitent le geste au lieu de l'illustrer. Ses deux pièges sont évités —
-semelle de tampon sans gravure, feuille rigoureusement vierge.
-
-**Reste F**, la vitrine vue du trottoir (n° 21). C'est la plus
-difficile des six et la seule qui ne peut pas tenir les sept constantes
-optiques : un extérieur n'a ni établi ni fenêtre à 45°. Le prompt cadre
-sous le bandeau d'enseigne — ni fronton, ni ciel, ni nom — et l'image ne
-porte aucun accent, le bandeau violet de la planche étant déjà le sien.
-
-Si deux ou trois tentatives échouent, on renonce sans rien perdre : la
-planche 01 actuelle, devanture dessinée et bandeau violet, fonctionne. Les prompts
-sortent du bloc de `BRIEF-PHOTOS-IA.md`, § 3.6 : une seule ligne change
-d'une image à l'autre.
+Restent les neuf images de priorité moyenne et basse du brief — **G**
+à **O**. Aucune n'est attendue par une planche : elles élargiraient le
+choix, c'est tout.
 
 ### 8. Le logo SR Coiffure
 

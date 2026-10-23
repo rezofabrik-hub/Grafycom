@@ -114,6 +114,18 @@ PHOTOS = {
     # sur une publication qui parle de la lisibilite d'un logo en petit,
     # un faux logo dans l'image aurait ete l'ironie parfaite.
     "stylo-tampon":      SOURCES / "ambiances" / "D-stylo-tampon.jpg",
+    # n° 21, ouverture — image GENEREE, recue le 23 octobre. La derniere
+    # des six, et la plus contrainte : une devanture porte une enseigne,
+    # et une enseigne generee est un faux logo. Le cadre commence donc
+    # SOUS le bandeau d'enseigne — ni fronton, ni ciel, ni nom, ni
+    # vitrine garnie, ni reflet qui parle. Une vitre chaude au-dessus
+    # d'un bitume mouille se lit comme une devanture sans qu'aucun nom
+    # existe.
+    #
+    # Elle arrivait avec une bordure blanche de scan, 27 px a gauche et
+    # 14 en haut. Recadree avant depot : photo() recouvre et centre, la
+    # bordure serait ressortie sur les bords de la planche.
+    "vitrine-trottoir":  SOURCES / "ambiances" / "F-vitrine-trottoir.png",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -4728,12 +4740,29 @@ def pub21_vitrine_trottoir(dossier=None):
     accent("violet")
     faits = []
 
+    # L'ouverture passe sur la photographie. La demonstration de cette
+    # publication est la planche 07 — la meme devanture redessinee a 2,
+    # 8 et 25 metres — et le document dit pourquoi elle ne se photographie
+    # pas : il faudrait trois prises au meme instant. La 01 ne demontre
+    # rien, elle pose un point de vue.
+    #
+    # LE BANDEAU RESTE, et il n'y a pas d'hesitation a avoir : sa propre
+    # docstring dit qu'il existe pour « poser le titre sur une scene ».
+    # C'est le cas ici, et il couvre exactement la bordure de trottoir
+    # — le seul bord dur de l'image, mesure a 17,9 de nervosite la ou
+    # tout le reste est sous 5. C'est aussi lui qui porte l'accent
+    # violet, et c'est pourquoi l'image n'en porte aucun.
     p = Planche("creme")
-    _trottoir_den_face(p, 0, 830)
+    p.photo("vitrine-trottoir", ancrage="haut")
+    if getattr(p, "photos_absentes", None):
+        _trottoir_den_face(p, 0, 830)
+        signature = "brun"
+    else:
+        signature = "blanc"
     _bandeau_travers(p, "Votre vitrine de Noël est faite\npour celui qui "
                         "passe. Pas pour\ncelui qui est dedans.", "violet",
                      y=880, taille=46)
-    p.signature("brun")
+    p.signature(signature)
     faits.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")

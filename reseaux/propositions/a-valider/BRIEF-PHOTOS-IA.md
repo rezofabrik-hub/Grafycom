@@ -217,6 +217,22 @@ frame` — et le négatif ajoute `letterforms, glyphs, typefaces, printed
 characters, engraved text, mirror writing, type faces pointing at
 camera`.
 
+**L'extérieur — la seule image qui ne tient pas les sept constantes.**
+F est un extérieur : il n'a ni établi, ni fenêtre à 45° à gauche. Trois
+entorses, assumées et nommées plutôt que subies — la surface sort de la
+liste fermée (bitume gris chaud, le plus proche du béton ciré), la
+source est la vitrine elle-même face caméra, et l'image ne porte aucun
+accent parce que le bandeau violet de la planche est déjà le sien. Ce
+qui tient quand même, et c'est ce qui fait la famille : **une seule
+source**, chaude, et la même palette de neutres.
+
+La quatrième décision est la plus importante : **ni fronton, ni ciel,
+ni nom dans le cadre.** Une devanture porte une enseigne, une enseigne
+générée est un faux logo, et un faux logo sur le compte d'une graphiste
+est la faute dont on ne se relève pas. Le cadre commence sous le
+bandeau d'enseigne. Une vitre chaude au-dessus d'un bitume mouillé se
+lit comme une devanture sans qu'aucun nom existe.
+
 **Matières — la même règle, un cran plus loin.** Ce n'est pas seulement
 la lettre qu'un moteur invente : c'est **toute affirmation technique**.
 Un dibond, ce sont deux peaux d'aluminium sur une âme noire en
@@ -290,7 +306,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 
 ### Priorité haute — six images qui changent le feed
 
-> **Cinq sont faites, il reste F.** **A** ouvre la n° 1 depuis le 23 octobre.
+> **Les six sont faites.** **A** ouvre la n° 1 depuis le 23 octobre.
 > **B** est arrivée le 23 au soir, en 9:16 exact, et elle ouvre la
 > **n° 20** — pas la n° 4 comme annoncé ici. La raison tient en une
 > ligne, et c'est la règle du § 2 : les deux écrans « matière » de la
@@ -322,7 +338,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 | ~~**C**~~ | n° 5 · Typographie | ✅ **reçue le 23 octobre.** Caractères en plomb dans un composteur en laiton, vus **de profil** — crans et épaulements face caméra, faces tournées. Accent **bleu** sur un seul sort. Déposée en `C-caracteres-plomb.jpg`. |
 | ~~**D**~~ | n° 9 · Un logo tient-il en petit | ✅ **reçue le 23 octobre.** Stylo-bille en biais sur une feuille **vierge**, tampon sur le flanc, **semelle sans gravure**. Accent **turquoise** sur le capuchon, 0,18 % de la surface. Sur la planche **06**, la clôture — les cinq autres démontrent. Déposée en `D-stylo-tampon.jpg`. |
 | ~~**E**~~ | **n° 15 bis** · Un visuel, quatre supports | ✅ **reçue le 23 octobre.** Quatre échantillons de feuille **quelconques** debout sur un établi en chêne, coupés par le haut du cadre, épaisseurs et finitions différentes. Accent **violet** sur un translucide. Déposée en `E-echantillons-debout.jpg`. |
-| **F** | n° 21 · Vitrine vue du trottoir | Une devanture **anonyme** photographiée depuis le trottoir d'en face, de nuit, reflets de rue dans le verre. Aucune enseigne lisible, aucun nom. |
+| ~~**F**~~ | n° 21 · Vitrine vue du trottoir | ✅ **reçue le 23 octobre.** Le bas d'une vitrine éclairée, **fronton hors cadre**, bordure et chaussée mouillée. Ni enseigne, ni ciel, ni vitrine garnie, ni reflet lisible. **Aucun accent** : le bandeau violet de la planche est le sien. Déposée en `F-vitrine-trottoir.png`. |
 
 ### Priorité moyenne — cinq images qui gagnent du réalisme
 
