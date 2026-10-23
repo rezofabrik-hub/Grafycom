@@ -2800,8 +2800,14 @@ def _logo_fictif(d, cx, cy, r, detail=True, variante=0.0):
 
 
 def pub09_logo_reduction(dossier=None):
-    """n° 9, lundi 2 novembre — un logo tient-il en petit."""
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-09-logo-reduction"))
+    """n° 9, samedi 14 novembre — un logo tient-il en petit.
+
+    Decalee du lundi 9 le 23 octobre, pour liberer ce creneau au reel
+    n° 16 que l'imprimeur oblige a remonter. Son contenu ne depend
+    d'aucune date : c'est la seule publication de la semaine qu'on
+    pouvait deplacer sans rien casser.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-14-logo-reduction"))
     accent("bleu")
     faits = []
 
@@ -4623,30 +4629,57 @@ def pub16_reel_fin_annee(dossier=None):
 
     Ce sont des ECRANS FINIS : le reel se monte en les enchainant.
 
-    L'arbitrage n° 1 de A-FAIRE-APRES-RELECTURE.md place ce reel APRES
-    le carrousel n° 17 : c'est le carrousel qui ouvre le sujet de fin
-    d'annee, le reel enfonce le clou. D'ou le samedi 28 novembre.
+    REMONTE AU LUNDI 9 NOVEMBRE le 23 octobre, et c'est l'imprimeur qui
+    l'a decide : la creation doit se faire sur la PREMIERE QUINZAINE de
+    novembre, parce qu'en decembre les livraisons deviennent risquees a
+    cause de Noel.
 
-    Tout ce qui est date ici suit ce deplacement : la bande de jours
-    part du 28, le compte passe de cinq semaines a quatre, et les
-    jalons glissent d'autant. Un reel qui dit « on est le 28 novembre »
-    en montrant une grille qui part du 21 se trahit tout seul.
+    Le reel partait le 28 novembre. Il annoncait « creation fin
+    novembre, BAT debut decembre, livraison mi-decembre » — un
+    calendrier que l'imprimeur ne tient pas. Et surtout : une
+    publication qui donne une date limite doit PRECEDER sa date limite.
+    Le 28 novembre, elle arrivait deux semaines apres la fermeture de
+    la fenetre. Quelqu'un qui l'aurait suivie aurait commande des
+    cartes qui ne seraient pas arrivees.
+
+    Le 9 laisse six jours pour decider, ce qui est le minimum pour
+    qu'un projet demarre : un brief, un devis, un aller-retour.
+
+    Tout ce qui est date ici suit : la bande part du 9, elle porte
+    DEUX marques — le 15 novembre, la vraie date limite, et le 24
+    decembre, la cible — et les jalons passent a 1-15 novembre /
+    fin novembre / debut decembre. C'est la chaine que le texte de
+    fiche Google n° 17 annoncait deja : les deux disent enfin la meme
+    chose.
+
+    La semaine du 9 portait quatre publications. Elle en porte cinq :
+    aucune derogation n'a ete necessaire. La n° 9 glisse au samedi 14,
+    son contenu ne depend d'aucune date.
     """
     import datetime
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-28-reel-fin-annee"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-09-reel-fin-annee"))
     accent("corail")
     faits = []
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=180)
-    p.titre("Pour Noël,\nvous êtes déjà\nen retard.", 100, y=260)
-    _bande_jours(p, 90, 760, 900, datetime.date(2026, 11, 28),
+    p.titre("Pour Noël,\nvous êtes déjà\nen retard.", 86, y=220)
+    # DEUX marques, et c'est la deuxieme qui porte le message : le 24
+    # decembre est la cible, mais la vraie date limite est le 15
+    # novembre — au-dela, l'imprimeur ne garantit plus la livraison.
+    # Une seule marque sur Noel laissait croire qu'on avait six
+    # semaines ; on en a six JOURS.
+    # 86 et non 100, bande a 640 et non 680 : la grille passe de
+    # quatre semaines a SEPT, et a 100 elle recouvrait le titre de
+    # 1728 px — le garde-fou du moteur l'a dit avant qu'on le voie.
+    _bande_jours(p, 90, 640, 900, datetime.date(2026, 11, 9),
                  datetime.date(2026, 12, 24),
-                 {datetime.date(2026, 12, 24): ("encre", "")},
-                 haut_case=116)
-    p.y = 1600
-    p.texte("Quatre semaines. C'est tout ce qui reste.", 46, "brun", 600,
-            avant=0)
+                 {datetime.date(2026, 11, 15): ("corail", ""),
+                  datetime.date(2026, 12, 24): ("encre", "")},
+                 haut_case=92)
+    p.y = 1500
+    p.texte("Six jours pour décider. Six semaines pour livrer.", 46,
+            "brun", 600, avant=0)
     p.signature("brun")
     faits.append(p.ecrire(d / "ecran1.png"))
 
@@ -4678,9 +4711,12 @@ def pub16_reel_fin_annee(dossier=None):
     p = Planche("blanc", LARGE_S, HAUT_S)
     p.surtitre("15-21 s", "taupe", y=180)
     p.titre("Création · BAT ·\nLivraison", 92, y=250)
-    jalons = [("fin novembre", "création", "violet"),
-              ("début décembre", "bon à tirer", "bleu"),
-              ("mi-décembre", "livraison", "corail")]
+    # La chaine de l'imprimeur, confirmee le 23 octobre. Elle n'est pas
+    # choisie : en decembre les livraisons deviennent risquees a cause
+    # de Noel, donc tout se decale en amont.
+    jalons = [("1er au 15 novembre", "création", "violet"),
+              ("fin novembre", "bon à tirer", "bleu"),
+              ("début décembre", "livraison", "corail")]
     yy = 700
     for quand, quoi, coul in jalons:
         p.d.ellipse([MARGE, yy, MARGE + 46, yy + 46], fill=teinte(coul))
@@ -4691,8 +4727,8 @@ def pub16_reel_fin_annee(dossier=None):
         _bloc(p, MARGE + 86, yy + 62, quand, 36, "taupe", 400, 760)
         yy += 220
     p.y = 1480
-    p.texte("Un jour de retard au début, c'est une semaine de retard à la "
-            "fin : en décembre les imprimeurs travaillent à plein.", 42,
+    p.texte("En décembre, les imprimeurs travaillent à plein et les "
+            "livraisons deviennent risquées. Tout se décide avant.", 42,
             "brun", 400, avant=0)
     p.signature("brun")
     faits.append(p.ecrire(d / "ecran4.png"))

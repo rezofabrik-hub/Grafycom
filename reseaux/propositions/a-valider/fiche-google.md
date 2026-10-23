@@ -474,7 +474,7 @@ jour qu'elle.
 >
 > Pour disposer de cartes de vœux ou d'un emballage festif en décembre, les
 > décisions se prennent début novembre. Le rétroplanning est serré : création
-> à la mi-novembre, bon à tirer validé fin novembre, livraison début
+> du 1er au 15 novembre, bon à tirer validé fin novembre, livraison début
 > décembre. En décembre, les imprimeurs travaillent à plein régime et les
 > délais s'allongent pour tout le monde : un retard initial de quelques jours
 > devient une semaine à l'arrivée.

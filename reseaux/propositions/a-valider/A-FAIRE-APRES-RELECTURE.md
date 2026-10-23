@@ -21,6 +21,10 @@ Le reel était daté dans son propre script : « on est le 21 novembre »,
 une grille de six semaines, des jalons à mi-novembre. Tout a suivi le
 déplacement — la grille part du 28, le compte passe à **quatre
 semaines**, les jalons à fin novembre / début décembre / mi-décembre.
+      ⚠️ **Repris le 23 octobre** : l'imprimeur impose la création sur
+      la première quinzaine de novembre, le reel remonte au lundi 9 et
+      les jalons deviennent 1-15 novembre / fin novembre / début
+      décembre. Voir `arbitrages.md`.
 Un reel qui annonce une date en montrant un calendrier qui en dit une
 autre se trahit tout seul.
 

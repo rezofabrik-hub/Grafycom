@@ -685,7 +685,7 @@ normal. Ton curieux, pas effrayant.
 
 # SEMAINE 3 — du lundi 9 au dimanche 15 novembre
 
-## 9 — Lundi 9 novembre, 12 h 30 · Carrousel · Pilier 1, conseils & pédagogie de marque
+## 9 — Samedi 14 novembre, 10 h 30 · Carrousel · Pilier 1, conseils & pédagogie de marque
 
 ### Direction visuelle — 6 slides
 
@@ -1458,7 +1458,7 @@ centimètres, dix-huit centimètres, quinze centimètres et deux mètres.
   planche S6 par la preuve plutôt que par le schéma. Aucun accord
   client n'est en jeu si ce sont des modèles de démonstration.
 
-## 16 — Samedi 28 novembre, 10 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
+## 16 — Lundi 9 novembre, 12 h 30 · REEL 25 s · Pilier 4, saisonnalité & valeurs familiales
 
 ### Accroche 0-3 s
 **Écran dessiné**, pas de tournage. Les quatre semaines du 28 novembre
@@ -1470,7 +1470,7 @@ en retard. »**
 
 > **Ce reel ne se tourne pas.** Les cinq écrans sont dessinés et finis —
 > `visuels.py`, gabarit `reel-fin-annee`, dans
-> `reseaux/visuels/2026-11-28-reel-fin-annee/`. Deux écarts assumés par
+> `reseaux/visuels/2026-11-09-reel-fin-annee/`. Deux écarts assumés par
 > rapport au découpage filmé : le doigt qui remonte le calendrier devient
 > une grille unique, ce qui montre les quatre semaines d'un coup au lieu
 > d'un mois à la fois ; et les mains de plusieurs générations disparaissent. Un
@@ -1480,10 +1480,10 @@ en retard. »**
 
 | Chrono | Visuel / action | Texte incrusté | Script voix off |
 |---|---|---|---|
-| 0-3 s | Doigt qui remonte les cases d'un calendrier, du 24 décembre vers le 28 novembre. Lumière chaude de matin. | **« Pour Noël, vous êtes déjà en retard. »** | On est le 28 novembre. Pour vos supports de fin d'année, c'est maintenant. |
+| 0-3 s | La grille des jours du 9 novembre au 24 décembre, deux cases marquées : le **15 novembre** en corail, le **24 décembre** en encre. | **« Pour Noël, vous êtes déjà en retard. »** | On est le 9 novembre. Il vous reste six jours pour décider, et six semaines pour être livré. |
 | 3-9 s | Trois cartes de vœux imprimées posées en éventail sur une table en bois. Une main en prend une, on voit le relief d'un gaufrage en lumière rasante. | Une carte imprimée se garde. Un mail se ferme. | Une carte de vœux imprimée reste sur un bureau trois semaines. Un mail de vœux se ferme en deux secondes. Ce n'est pas de la nostalgie, c'est de la durée d'exposition. |
 | 9-15 s | Mains qui plient un emballage cadeau simple, avec un bandeau imprimé et un adhésif au logo. Papier kraft, un seul bandeau de couleur. | Un bandeau suffit. Pas un packaging entier. | Et pour l'emballage, pas besoin de tout refaire. Un bandeau imprimé et un adhésif au logo transforment un papier kraft. Le client photographie ça. |
-| 15-21 s | Rétroplanning animé, trois jalons en violet `#a86cd0`, bleu `#2f7fc4`, corail `#f2585c` : *fin novembre : création* → *début décembre : bon à tirer* → *mi-décembre : livraison*. | Création · BAT · Livraison | Le calendrier est serré. La création fin novembre. Le bon à tirer validé début décembre. La livraison à la mi-décembre. Un jour de retard au début, c'est une semaine de retard à la fin. |
+| 15-21 s | Rétroplanning animé, trois jalons en violet `#a86cd0`, bleu `#2f7fc4`, corail `#f2585c` : *1er au 15 novembre : création* → *fin novembre : bon à tirer* → *début décembre : livraison*. | Création · BAT · Livraison | La création, c'est maintenant — du 1er au 15 novembre. Le bon à tirer validé fin novembre. La livraison début décembre. En décembre, les livraisons deviennent risquées à cause de Noël. |
 | 21-25 s | Table de famille, cartes et emballages posés au milieu, mains de plusieurs générations. Fondu sur le logo Grafycom, signature `@grafycom.graphiste`. | **« Décembre se décide en novembre. »** | Décembre se décide en novembre. Et c'est le seul mois de l'année où un support imprimé se garde pour autre chose que son utilité. |
 
 **Pas de prompt d'arrière-plan.** Il y en avait un ici pour le dernier
@@ -1498,13 +1498,14 @@ d'être affectif — la voix ne doit pas pour autant devenir publicitaire.
 
 ### Légende
 
-> Décembre se décide en novembre. Et plus précisément cette semaine.
+> Décembre se décide en novembre. Et plus précisément avant le 15.
 >
 > Si vous voulez des cartes de vœux ou un emballage de fête cette année, le
-> calendrier est le suivant : création fin novembre, bon à tirer validé
-> début décembre, livraison à la mi-décembre. Chaque jour perdu au début devient
-> une semaine à la fin, parce qu'en décembre les imprimeurs travaillent à
-> plein et les délais s'allongent pour tout le monde.
+> calendrier est le suivant : création du 1er au 15 novembre, bon à tirer
+> validé fin novembre, livraison début décembre. C'est l'imprimeur qui le
+> fixe, pas moi : en décembre les livraisons deviennent risquées à cause de
+> Noël, et un retard de quelques jours au début devient une semaine à
+> l'arrivée.
 >
 > Deux choses valent vraiment l'effort.
 >
@@ -1537,8 +1538,8 @@ une seule grille. Deux cartes de vœux posées à plat portent un gaufrage rendu
 par une ombre et une lumière décalées, et l'une d'elles la mention
 manuscrite « Bonne année ». Un paquet en papier kraft est fermé par un bandeau
 imprimé à flocons et un adhésif rond au logo. Un rétroplanning en trois jalons
-indique création fin novembre, bon à tirer début décembre, livraison à la
-mi-décembre. Le dernier écran montre la table vue de dessus avec les cartes et le
+indique création du 1er au 15 novembre, bon à tirer fin novembre, livraison
+début décembre. Le dernier écran montre la table vue de dessus avec les cartes et le
 paquet posés dessus.
 
 ### Hashtags — jeu B + 2 locaux
@@ -1550,9 +1551,12 @@ paquet posés dessus.
   impression d'essai chez l'imprimeur partenaire. Ça sert deux fois — le
   visuel, puis la proposition commerciale de fin d'année. Aucun accord client
   n'est en jeu, ce sont des modèles de démonstration.
-- **Les délais annoncés (fin novembre, début décembre, mi-décembre) doivent
-  être confirmés par l'imprimeur partenaire** avant publication. S'ils sont
-  plus serrés, le reel se décale d'une semaine en avant, pas en arrière.
+- ✅ **Les délais sont confirmés par l'imprimeur**, le 23 octobre : création
+  du 1er au 15 novembre, parce qu'en décembre les livraisons deviennent
+  risquées à cause de Noël. C'est ce qui a fait **remonter le reel du 28 au
+  9 novembre** — une publication qui donne une date limite doit précéder sa
+  date limite. Le 28, elle arrivait deux semaines après la fermeture de la
+  fenêtre.
 
 # SEMAINE 5 — du lundi 23 au dimanche 29 novembre
 

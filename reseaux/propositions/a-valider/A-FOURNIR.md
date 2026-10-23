@@ -214,12 +214,33 @@ Pour la remettre un jour : une ligne dans `visuels.py`,
 `GABARITS["emballage-tri"] = pub18_emballage_tri`, et les sept planches
 reviennent — sachet kraft compris.
 
-### 14. La confirmation des délais d'impression
+### 14. ~~La confirmation des délais d'impression~~ — donnée le 23 octobre
 
-La n° 16 annonce **création fin novembre, bon à tirer début décembre,
-livraison mi-décembre**. À faire confirmer par l'imprimeur partenaire
-avant publication. S'ils sont plus serrés, le reel se décale d'une
-semaine **en avant**, pas en arrière.
+**Création sur la première quinzaine de novembre**, parce qu'en
+décembre les livraisons deviennent risquées à cause de Noël. La chaîne
+complète : création du 1er au 15 novembre → bon à tirer fin novembre →
+livraison début décembre.
+
+Elle a coûté un déplacement, et il était nécessaire. **Le reel n° 16
+remonte du samedi 28 au lundi 9 novembre.** Il annonçait « création fin
+novembre, livraison mi-décembre » — un calendrier que l'imprimeur ne
+tient pas. Et surtout : une publication qui donne une date limite doit
+précéder sa date limite. Le 28, elle arrivait deux semaines après la
+fermeture de la fenêtre, et quelqu'un qui l'aurait suivie aurait
+commandé des cartes qui ne seraient pas arrivées.
+
+La **n° 9** glisse du lundi 9 au samedi 14 pour libérer le créneau :
+c'est la seule publication de cette semaine dont le contenu ne dépend
+d'aucune date.
+
+**Aucune dérogation n'a été nécessaire.** La semaine du 9 portait
+quatre publications, elle en porte cinq ; celle du 23 en portait cinq,
+elle en porte quatre. Densités : 5 · 5 · 5 · 5 · 4 · 5.
+
+L'écran 1 du reel porte maintenant **deux marques** au lieu d'une : le
+15 novembre en corail, le 24 décembre en encre. « Six jours pour
+décider. Six semaines pour livrer. » Une seule marque sur Noël laissait
+croire qu'on avait six semaines devant soi.
 
 ---
 

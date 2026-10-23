@@ -305,9 +305,9 @@ l'absence soit un choix validé, pas un trou dans le planning.
 
 | Élément | Contenu |
 |---|---|
-| **Texte exact** | « Le reel du jour : pour Noël, vous êtes déjà en retard. Création à la mi-novembre, bon à tirer fin novembre, livraison début décembre. » |
-| **Sticker** | *Compte à rebours* — nommé « Bon à tirer de fin d'année », réglé sur le **14 décembre 2026**. Les abonnés peuvent s'y abonner et seront prévenus. Plus le sticker *Mention du post* vers le reel. |
-| **Arrière-plan** | Le plan du calendrier du reel, le doigt sur la case du 21 novembre, lumière chaude de matin. |
+| **Texte exact** | « Le reel du jour : pour Noël, vous êtes déjà en retard. Création du 1er au 15 novembre, bon à tirer fin novembre, livraison début décembre. » |
+| **Sticker** | *Compte à rebours* — nommé « Dernier jour pour décider », réglé sur le **15 novembre 2026**, la date limite de création fixée par l'imprimeur. Les abonnés peuvent s'y abonner et seront prévenus. Plus le sticker *Mention du post* vers le reel. |
+| **Arrière-plan** | L'écran 1 du reel : la grille du 9 novembre au 24 décembre, le 15 novembre marqué en corail. |
 
 ---
 

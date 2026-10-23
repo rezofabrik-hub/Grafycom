@@ -66,9 +66,9 @@ automatique du matin.
 | vendredi 6 novembre | 18 h 15 | Story | story | S2-E · relais du blog |
 | samedi 7 novembre | 10 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 25 — BIG FOOD, 🧩 **réalisation intercalée** |
 | | | | | |
-| lundi 9 novembre | 12 h 30 | Instagram + Facebook | Carrousel | n° 9 |
-| lundi 9 novembre | 12 h 30 | Fiche Google | post | texte n° 9 |
-| lundi 9 novembre | 12 h 45 | Story | story | S3-A · teasing du carrousel |
+| lundi 9 novembre | 12 h 30 | Instagram + Facebook | REEL 25 s | n° 16 — 🔀 **remontée du 28, décision de l'imprimeur** |
+| lundi 9 novembre | 12 h 30 | Fiche Google | post | texte n° 16 |
+| lundi 9 novembre | 12 h 45 | Story | story | S4-F · teasing du reel |
 | mardi 10 novembre | 10 h 15 | Story | story | S3-B2 · la réponse |
 | mardi 10 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 2 — 🔀 **permutée, pour rester de saison** |
 | mardi 10 novembre | 8 h 00 | Fiche Google | post | texte n° 2 |
@@ -84,6 +84,9 @@ automatique du matin.
 | vendredi 13 novembre | 18 h 00 | Fiche Google | post | texte n° 12 |
 | vendredi 13 novembre | 18 h 15 | Story | story | S3-E1 · relais du blog |
 | vendredi 13 novembre | 18 h 20 | Story | story | S3-E2 · teasing du reel |
+| samedi 14 novembre | 10 h 30 | Instagram + Facebook | Carrousel | n° 9 — 🔀 **décalée du 9, pour libérer le créneau du reel** |
+| samedi 14 novembre | 10 h 30 | Fiche Google | post | texte n° 9 |
+| samedi 14 novembre | 10 h 45 | Story | story | S3-A · teasing du carrousel |
 
 | samedi 31 octobre | 11 h 00 | Story | story | S2-F · Halloween — 📌 **date fixe** |
 | | | | | |
@@ -120,9 +123,6 @@ automatique du matin.
 | vendredi 27 novembre | 18 h 00 | Instagram + Facebook | REEL 24 s | n° 20 |
 | vendredi 27 novembre | 18 h 00 | Fiche Google | post | texte n° 20 |
 | vendredi 27 novembre | 18 h 15 | Story | story | S5-D · relais du blog |
-| samedi 28 novembre | 10 h 30 | Instagram + Facebook | REEL 25 s | n° 16 — 🔀 **décalée du 21, pour que le carrousel n° 17 ouvre le sujet** |
-| samedi 28 novembre | 10 h 30 | Fiche Google | post | texte n° 16 |
-| samedi 28 novembre | 10 h 45 | Story | story | S4-F · teasing du reel |
 | samedi 28 novembre | 11 h 00 | Story | story | S5-E · boîte à questions |
 | | | | | |
 | lundi 30 novembre | 18 h 30 | Instagram + Facebook | Carrousel | n° 21 |

@@ -96,12 +96,31 @@ calendrier — le contenu d'une carte de vœux, par exemple, ou les mentions
 obligatoires d'un emballage, déjà traitées le 10. Ou l'inverse : décaler mon
 reel et laisser la quinzaine suivante ouvrir le sujet. Mais pas les deux.
 
-> ✅ **Tranché, et appliqué.** Le reel part au **samedi 28 novembre** ;
-> c'est le carrousel du 23 qui ouvre le sujet. Tout ce qui était daté
-> dans le reel a suivi — la grille part du 28, le compte passe de cinq
-> semaines à quatre, les jalons glissent à fin novembre / début
-> décembre / mi-décembre. Un reel qui dit « on est le 28 » en montrant
-> une grille qui part du 21 se trahirait tout seul.
+> ✅ **Tranché le 22 octobre, puis REPRIS le 23.** Le reel était parti
+> au samedi 28 novembre, derrière le carrousel du 23 qui ouvrait le
+> sujet, et tout ce qui était daté dedans avait suivi : grille à partir
+> du 28, jalons à fin novembre / début décembre / mi-décembre.
+>
+> **L'imprimeur a renversé l'arbitrage.** La création doit se faire sur
+> la première quinzaine de novembre, parce qu'en décembre les
+> livraisons deviennent risquées à cause de Noël. Le calendrier du reel
+> n'était donc pas seulement serré : il était faux.
+>
+> Et le défaut était plus grave que trois dates. **Une publication qui
+> donne une date limite doit précéder sa date limite.** Le 28 novembre,
+> elle arrivait deux semaines après la fermeture de la fenêtre —
+> quelqu'un qui l'aurait suivie aurait commandé des cartes qui ne
+> seraient pas arrivées.
+>
+> Le reel remonte donc au **lundi 9 novembre**, et la n° 9 glisse au
+> samedi 14 pour lui laisser le créneau : c'est la seule publication de
+> cette semaine dont le contenu ne dépend d'aucune date. Aucune
+> dérogation n'a été nécessaire.
+>
+> Ce qui reste à trancher, et c'est la conséquence : **le carrousel
+> n° 17 du 23 novembre dit « vos cartes de vœux se décident cette
+> semaine »**. Avec la date limite au 15, cette phrase est fausse le
+> 23. Voir l'arbitrage suivant.
 >
 > Le créneau du 21 ainsi libéré porte la **n° 15 bis**, écrite à
 > l'arbitrage n° 3 : un même visuel de fêtes décliné sur quatre
