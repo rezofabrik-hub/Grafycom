@@ -7,6 +7,51 @@ recyclé et `reseaux/visuels/sources/` est parti avec. Le code était
 intact, les images non. Ce fichier existe pour que la prochaine fois on
 sache **quoi redemander, et ce qui avait déjà été corrigé**.
 
+## La photo du site, découpée — et pourquoi c'est elle qui va dans la grille
+
+`assets/img/sandra-grafycom.webp` est une **vraie photographie**, elle est
+**versionnée**, et elle porte déjà un canal alpha : la silhouette y est
+séparée du fond.
+
+C'est elle qui porte désormais la **planche 01 de la n° 5 bis**, le
+blog — la seule planche 01 du cycle qui montre son visage. Les trois
+photos d'atelier sont toutes sur une clôture, qu'il faut faire glisser
+pour atteindre : son visage n'apparaissait sur **aucun** des trente
+carreaux de la grille.
+
+**Ce n'est pas une image générée**, et ce n'est pas faute d'avoir
+essayé : cinq portraits de synthèse ont été commandés le 23 octobre et
+les cinq ont échoué — texte inventé sur les murs, logo Grafycom
+redessiné différemment à chaque image, logo Solaire 66 faux. Le détail
+est au § 3.5 de `propositions/a-valider/BRIEF-PHOTOS-IA.md`.
+
+Le découpage est **refabriqué à chaque cycle** par `_sandra_detouree()`
+dans `visuels.py`, jamais déposé : un fichier dans `visuels/sources/`
+se perdrait à la prochaine reconstruction du conteneur, comme deux
+fichiers clients avant lui. Trois opérations, et chacune répare un
+défaut mesuré :
+
+1. **Le lettrage est dans l'alpha, lui aussi** — « hello, moi c'est
+   Sandra », « +7 ans d'expertise ». Une ouverture morphologique tue
+   ces traits fins sans entamer la silhouette, et on ne garde que la
+   plus grande composante connexe.
+2. **Dilatation de 3 px** pour récupérer les mèches que l'ouverture a
+   rognées. Plus large, et le lettrage revient — c'est arrivé, et ça se
+   voyait.
+3. **Érosion de 5 px et gamma 2,0 sur l'alpha.** Le détourage d'origine
+   laisse un liseré clair, invisible sur fond blanc et très visible sur
+   l'encre. Le gamma rend transparents les pixels partiellement
+   mélangés, l'érosion enlève le reste.
+
+Le fond de la planche est **encre et non sable** : son haut est crème,
+elle disparaissait dans un fond clair. Sur l'encre elle se détache, et
+le blanc du texte passe à 13 de contraste.
+
+**La limite, et elle est réelle : une seule pose.** Pour d'autres
+situations il faudra de vraies photographies. Pour une graphiste qui
+vend de l'image, un après-midi avec un appareil reste l'investissement
+le plus rentable de ce chantier.
+
 ## Où elles vont
 
 | Fichier | Publication | Planche |
