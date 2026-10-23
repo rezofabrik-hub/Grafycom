@@ -90,6 +90,15 @@ PHOTOS = {
     # lire. L'ecran 2, qui demontre vraiment (120 g contre 350 g),
     # reste dessine et calcule.
     "papiers-tranche":   SOURCES / "ambiances" / "B-papiers-tranche.png",
+    # n° 5, ouverture — image GENEREE, recue le 23 octobre. Meme statut
+    # que les deux precedentes. Le piege de celle-ci etait dans son
+    # sujet : des caracteres en plomb SONT des lettres, et un moteur a
+    # qui on en demande rend des glyphes inventes — sur une publication
+    # qui parle de typographie, signee par une graphiste, c'est la
+    # faute la plus chere possible. Le prompt impose donc le profil :
+    # les sorts sont vus de cote, crans et epaulements face camera, les
+    # faces tournees. Verifie a 100 % : aucun glyphe, rien de lisible.
+    "caracteres-plomb":  SOURCES / "ambiances" / "C-caracteres-plomb.jpg",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -1605,14 +1614,34 @@ def carrousel_typographie(dossier=None):
     d = pathlib.Path(dossier or (SORTIE / "2026-11-02-typographie"))
     accent("magenta")
     f = []
+    # L'ouverture passe sur la photographie. Les planches 02, 04 et 05
+    # DEMONTRENT — les devantures a deux graisses, le meme mot a trois
+    # corps — et ne se remplacent pas. Celle-ci enonce une phrase :
+    # c'est la place d'un decor.
+    #
+    # « Et elle va vous couter des clients » perd son corail et passe en
+    # blanc. Ce n'est pas un oubli : l'image porte un accent bleu, et
+    # deux accents sur une meme planche, c'est la faute qui fait
+    # « banque d'images ». La phrase garde sa morsure, elle la doit aux
+    # mots. Sur le repli sans photo, le corail revient.
     p = Planche("blanc")
-    t = "Cette police est magnifique."
-    p.centrer(p.h_titre(t, 92) + p.h_texte("Et elle va vous coûter des clients.", 44, avant=40) + 39)
-    p.surtitre("Typographie")
-    p.filet()
-    p.titre(t, 92)
-    p.texte("Et elle va vous coûter des clients.", 44, "corail", 600, avant=40)
-    p.signature("brun"); f.append(p.ecrire(d / "01.png"))
+    st = "Et elle va vous coûter des clients."
+    p.photo("caracteres-plomb", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        t = "Cette police est magnifique."
+        p.centrer(p.h_titre(t, 92) + p.h_texte(st, 44, avant=40) + 39)
+        p.surtitre("Typographie")
+        p.filet()
+        p.titre(t, 92)
+        p.texte(st, 44, "corail", 600, avant=40)
+        p.signature("brun")
+    else:
+        p.surtitre("Typographie", "blanc", y=742)
+        p.y = 802
+        p.titre("Cette police\nest magnifique.", 80, "blanc")
+        p.texte(st, 42, "blanc", 600, avant=30)
+        p.signature("blanc")
+    f.append(p.ecrire(d / "01.png"))
 
     p = Planche("creme")
     p.titre("Lisible sur une carte.\nIllisible sur une bâche.", 70, y=220)

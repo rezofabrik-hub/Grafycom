@@ -196,6 +196,27 @@ datent une image en six mois.
 coude. Peau neutre, aucun bijou, aucun vernis, aucune montre. **Jamais
 de visage, jamais de buste, jamais de regard caméra.**
 
+**Lettres — la règle qu'on découvre trop tard.** Le négatif interdit
+`text, letters, numbers`, et c'est facile tant que le sujet n'en porte
+pas. Mais plusieurs sujets de cette liste en portent par nature : des
+caractères en plomb, un tampon encreur, un nuancier annoté. Un moteur à
+qui on demande une lettre rend **un glyphe inventé** — empattements qui
+ne se referment pas, formes qui n'existent dans aucune fonte. Sur le
+compte d'une graphiste, c'est la faute la plus chère possible.
+
+La parade n'est pas de flouter : c'est de **changer l'angle**. Un
+caractère en plomb vu de profil est une tige de métal avec un cran et un
+épaulement — aucune lettre, et la matière devient le sujet au lieu
+d'être un prétexte. Vérifié sur l'image C : à 100 %, les formes qui
+ressemblent à des lettres au format vignette sont des profils flous, pas
+des glyphes. Rien n'y est transcriptible.
+
+Le prompt le dit en toutes lettres — `seen strictly FROM THE SIDE`,
+`every printing face turned away`, `no letterform anywhere in the
+frame` — et le négatif ajoute `letterforms, glyphs, typefaces, printed
+characters, engraved text, mirror writing, type faces pointing at
+camera`.
+
 ### 3.6 — Le bloc à copier tel quel
 
 Une seule ligne change d'une image à l'autre : la première.
@@ -255,7 +276,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 
 ### Priorité haute — six images qui changent le feed
 
-> **Deux sont faites.** **A** ouvre la n° 1 depuis le 23 octobre.
+> **Trois sont faites.** **A** ouvre la n° 1 depuis le 23 octobre.
 > **B** est arrivée le 23 au soir, en 9:16 exact, et elle ouvre la
 > **n° 20** — pas la n° 4 comme annoncé ici. La raison tient en une
 > ligne, et c'est la règle du § 2 : les deux écrans « matière » de la
@@ -265,12 +286,16 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 > démontre rien : il affirme qu'on touche une carte avant de la lire.
 > C'est exactement la place d'un décor, et la docstring de ce gabarit
 > l'avait écrit avant que l'image existe.
+>
+> **C** ouvre la n° 5 — planche 01, la seule des six qui ne démontre
+> rien. Les planches 02, 04 et 05 portent les devantures à deux graisses
+> et le même mot à trois corps : elles restent dessinées.
 
 | # | Publication | L'image à générer |
 |---|---|---|
 | ~~**A**~~ | n° 1 · Pédagogie couleur | ✅ **intégrée le 23 octobre.** Nuancier Pantone en éventail, main qui écarte deux teintes, accent **corail**. Ouvre le cycle. |
 | ~~**B**~~ | **n° 20** · Ce qu'on sent avant de lire | ✅ **reçue le 23 octobre.** Macro d'une pile de papiers vus **sur la tranche**, lumière rasante qui révèle l'épaisseur et la fibre. Accent **orange** sur un seul, 9:16 exact, zone de texte calme. Déposée en `B-papiers-tranche.png`. |
-| **C** | n° 5 · Typographie | Des caractères en plomb d'imprimerie, serrés dans un composteur, poussière et reflets d'huile. Accent **bleu** froid dans le métal. |
+| ~~**C**~~ | n° 5 · Typographie | ✅ **reçue le 23 octobre.** Caractères en plomb dans un composteur en laiton, vus **de profil** — crans et épaulements face caméra, faces tournées. Accent **bleu** sur un seul sort. Déposée en `C-caracteres-plomb.jpg`. |
 | **D** | n° 9 · Un logo tient-il en petit | Un stylo-bille posé en biais sur du papier blanc, et un tampon encreur à côté — l'échelle se lit toute seule. Accent **turquoise** sur le capuchon. |
 | **E** | n° 15 · Quatre supports en coupe | Quatre échantillons de matière — alu, PVC, dibond, plexi — alignés debout sur un établi, vus de trois quarts. Lumière rasante, bords nets. |
 | **F** | n° 21 · Vitrine vue du trottoir | Une devanture **anonyme** photographiée depuis le trottoir d'en face, de nuit, reflets de rue dans le verre. Aucune enseigne lisible, aucun nom. |

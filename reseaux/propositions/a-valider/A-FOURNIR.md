@@ -97,9 +97,16 @@ mesuré plutôt que redouté : il coûte 15 % d'énergie de contours et ne se
 voit pas à 100 % sur la planche. Une photographie absorbe une
 interpolation qu'un logo révèle. **Rien à redemander.**
 
-Restent à commander, dans cet ordre : **C** les caractères en plomb
-(n° 5), **D** le stylo et le tampon (n° 9), **E** les quatre échantillons
-debout (n° 15), **F** la vitrine anonyme de nuit (n° 21). Les prompts
+**C — les caractères en plomb** est arrivée le 23 octobre et ouvre la
+n° 5. Son piège était dans son sujet : des caractères en plomb sont des
+lettres, et un moteur en rend d'inventées. Le prompt impose le profil —
+crans et épaulements face caméra, faces tournées. Vérifié à 100 % :
+aucun glyphe. La règle est écrite dans le brief, au § 3.5, parce qu'elle
+servira aussi au tampon encreur et au nuancier annoté.
+
+Restent à commander, dans cet ordre : **D** le stylo et le tampon
+(n° 9), **E** les quatre échantillons debout (n° 15), **F** la vitrine
+anonyme de nuit (n° 21). Les prompts
 sortent du bloc de `BRIEF-PHOTOS-IA.md`, § 3.6 : une seule ligne change
 d'une image à l'autre.
 
