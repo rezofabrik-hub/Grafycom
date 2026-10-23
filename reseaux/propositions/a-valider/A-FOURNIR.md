@@ -136,30 +136,26 @@ conteneur, comme la photo n° 05. Ce qu'il faut donc, c'est **le fichier
 d'origine tel qu'il sort de l'appareil**, pas un envoi par messagerie
 qui le redimensionne.
 
-### 9. De vraies photographies de Sandra — la seule chose qui manque vraiment
+### 9. De vraies photographies de Sandra
 
-La génération de son portrait est **un échec, et on arrête**. Cinq
-images essayées le 23 octobre, cinq refusées : texte inventé sur les
-murs, logo Grafycom redessiné différemment à chaque fois, logo
-Solaire 66 faux. Un moteur ne tient pas un visage réel, et il écrit
-toujours quelque chose derrière.
+**Les deux contournements ont échoué.** La génération d'abord — cinq
+images, texte inventé, logos redessinés. Puis la photo du site
+détourée et posée sur la planche 01 du blog : techniquement propre,
+refusée au rendu.
 
-**Le repli fonctionne** : la vraie photo du site est découpée de son
-propre canal alpha et porte la planche 01 du blog. Son visage est donc
-dans la grille, position 26.
+Il n'y a donc pas de raccourci. Trois poses couvriraient tout le
+cycle :
 
-Mais c'est **une seule pose**, et elle date. Trois situations
-suffiraient à couvrir tout le cycle :
+- **elle écrit** — le blog, les publications de conseil ;
+- **elle tend un dossier** — la livraison, la propriété des fichiers ;
+- **de dos devant un mur d'échantillons** — les clôtures.
 
-- **elle écrit** — pour le blog et les publications de conseil ;
-- **elle tend un dossier** — pour la livraison, la propriété des
-  fichiers ;
-- **de dos devant un mur d'échantillons** — pour les clôtures.
+Fond neutre, haut **crème ou sable** — ni rouge ni bleu marine, ils
+dépassent les 10 % d'accent de la charte. C'est le seul manque de cette
+liste que je ne sais pas contourner.
 
-Un après-midi avec un appareil, un fond neutre, un haut crème ou sable
-— pas de rouge ni de bleu marine, ils dépassent les 10 % d'accent de la
-charte. C'est l'investissement le plus rentable de ce chantier, et le
-seul que je ne peux pas remplacer.
+En attendant, les trois photos existantes restent sur leurs clôtures et
+son visage n'est sur aucun carreau de la grille.
 
 ### 10. Deux photos d'atelier
 

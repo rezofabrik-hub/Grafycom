@@ -1970,46 +1970,14 @@ def carrousel_blog_rdv(dossier=None):
     accent("bleu_vif")
     f = []
 
-    # Le VISAGE de Sandra, et c'est la seule planche 01 du cycle qui le
-    # porte. Son visage n'apparaissait sur aucun des trente carreaux de
-    # la grille : les trois photos d'atelier sont toutes sur une planche
-    # de cloture, qu'il faut faire glisser pour atteindre. Le blog est
-    # la publication ou un visage se justifie tout seul — c'est sa voix
-    # qui y parle chaque vendredi.
-    #
-    # Ce n'est PAS une image generee. Cinq portraits de synthese ont ete
-    # essayes le 23 octobre et tous ont echoue : texte invente sur les
-    # murs, logo Grafycom redessine differemment a chaque image, logo
-    # Solaire 66 faux. Celle-ci est la vraie photo du site, decoupee de
-    # son propre canal alpha — voir _sandra_detouree().
-    #
-    # Fond ENCRE et non sable : son haut est creme, elle disparaissait
-    # dans le fond clair. Sur l'encre elle se detache, et le blanc du
-    # texte passe a 13 de contraste.
-    p = Planche("encre")
-    photo = _sandra_detouree()
-    if photo is None:
-        p = Planche("sable_chaud")
-        p.surtitre("Le blog", y=270)
-        p.filet()
-        p.titre("Un nouvel article\nchaque vendredi matin.", 78, "encre")
-        p.texte("Sur grafycom.fr/blog. Gratuit, sans inscription.", 42,
-                "brun", 400, avant=56)
-        p.signature("brun")
-        p.numero(1, 4, "taupe")
-    else:
-        p.surtitre("Le blog", "blanc", y=150)
-        p.filet()
-        p.titre("Un nouvel article\nchaque vendredi matin.", 70, "blanc")
-        p.texte("Sur grafycom.fr/blog. Gratuit, sans inscription.", 38,
-                "creme", 400, avant=28)
-        s = Image.open(photo).convert("RGBA")
-        k = 720 / s.height
-        s = s.resize((max(1, int(s.width * k)), 720), Image.LANCZOS)
-        p.im.paste(s, (int(p.l * 0.58 - s.width / 2), p.h - s.height), s)
-        p._redessiner()
-        p.signature("sable")
-        p.numero(1, 4, "taupe")
+    p = Planche("sable_chaud")
+    p.surtitre("Le blog", y=270)
+    p.filet()
+    p.titre("Un nouvel article\nchaque vendredi matin.", 78, "encre")
+    p.texte("Sur grafycom.fr/blog. Gratuit, sans inscription.", 42, "brun",
+            400, avant=56)
+    p.signature("brun")
+    p.numero(1, 4, "taupe")
     f.append(p.ecrire(d / "01.png"))
 
     p = Planche("creme")
@@ -6258,95 +6226,6 @@ GABARITS["reel-matieres"] = pub20_reel_matieres
 # contraire — un plan de travail dit comment un fichier a été réglé,
 # jamais ce qu'on en a fait.
 # ---------------------------------------------------------------------
-def _sandra_detouree():
-    """Sandra, seule, decoupee de la photo versionnee du site.
-
-    Pourquoi cette fonction existe plutot qu'un fichier depose.
-    `assets/img/sandra-grafycom.webp` EST versionne, et il porte deja un
-    canal alpha : la silhouette y est separee du fond. Un fichier
-    detoure depose dans visuels/sources/ se perdrait a la prochaine
-    reconstruction du conteneur, comme deux fichiers clients avant lui.
-    On le refabrique donc a chaque fois, en deux secondes, depuis la
-    seule source qui ne disparait pas.
-
-    Trois operations, et chacune repare un defaut mesure :
-
-    1. L'alpha du fichier couvre AUSSI le lettrage manuscrit pose autour
-       d'elle — « hello, moi c'est Sandra », « +7 ans d'expertise ». Une
-       ouverture morphologique tue ces traits fins sans entamer la
-       silhouette, et on ne garde que la plus grande composante connexe.
-    2. Une dilatation MODESTE de 3 px recupere les meches de cheveux que
-       l'ouverture a rognees. Plus large, et le lettrage revient : c'est
-       arrive, et ca se voyait.
-    3. Erosion de 5 px et gamma 2,0 sur l'alpha : le detourage d'origine
-       laisse un liseré clair, invisible sur fond blanc et tres visible
-       sur l'encre. Le gamma rend transparents les pixels partiellement
-       melanges, l'erosion enleve le reste.
-
-    Renvoie None si la photo manque. L'appelant retombe alors sur sa
-    planche d'origine.
-    """
-    import collections
-    src = RACINE.parent / "assets" / "img" / "sandra-grafycom.webp"
-    cache = SOURCES / "atelier" / "sandra-detouree.png"
-    if cache.exists():
-        return cache
-    if not src.exists():
-        return None
-    im = Image.open(src).convert("RGBA")
-    a0 = im.getchannel("A")
-
-    o = a0
-    for _ in range(3):
-        o = o.filter(ImageFilter.MinFilter(9))
-    for _ in range(3):
-        o = o.filter(ImageFilter.MaxFilter(9))
-    o = o.point(lambda v: 255 if v > 140 else 0)
-
-    # la plus grande composante connexe de l'ouverture : son buste
-    px = o.load()
-    L, H = o.size
-    vu = [[False] * L for _ in range(H)]
-    best = []
-    for sy in range(0, H, 8):
-        for sx in range(0, L, 8):
-            if not px[sx, sy] or vu[sy][sx]:
-                continue
-            file = collections.deque([(sy, sx)])
-            vu[sy][sx] = True
-            pts = []
-            while file:
-                y, x = file.popleft()
-                pts.append((y, x))
-                for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
-                    ny, nx = y + dy, x + dx
-                    if 0 <= ny < H and 0 <= nx < L and px[nx, ny] \
-                            and not vu[ny][nx]:
-                        vu[ny][nx] = True
-                        file.append((ny, nx))
-            if len(pts) > len(best):
-                best = pts
-    if not best:
-        return None
-    corps = Image.new("L", o.size, 0)
-    cp = corps.load()
-    for y, x in best:
-        cp[x, y] = 255
-    corps = corps.filter(ImageFilter.MaxFilter(7))
-
-    masque = Image.composite(a0, Image.new("L", a0.size, 0),
-                             corps.point(lambda v: 255 if v > 128 else 0))
-    masque = masque.filter(ImageFilter.MinFilter(11))
-    masque = masque.point(lambda v: int(255 * (v / 255) ** 2.0))
-    im.putalpha(masque)
-    bb = masque.getbbox()
-    if not bb:
-        return None
-    cache.parent.mkdir(parents=True, exist_ok=True)
-    im.crop(bb).save(cache)
-    return cache
-
-
 def _couleur_client(marque, nom):
     """Une couleur de marque qui ne se releve dans aucun fichier source.
 
