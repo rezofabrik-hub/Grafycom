@@ -4,9 +4,20 @@ Du 26 octobre au 5 décembre. Un texte par publication, à publier le même
 jour qu'elle.
 
 > ✅ **La fiche existe et appartient au compte de Sandra**, Laurent y a
-> accès : ces textes sont publiables. Avant d'y publier, régler la fiche —
-> catégorie principale, type « zone desservie » à adresse masquée, nom,
-> site web. Marche à suivre dans `outils/FICHE-GOOGLE.md`.
+> accès : ces textes sont publiables.
+>
+> ⚠️ **Mais pas avant d'avoir réglé la fiche.** Dix minutes, et trois
+> champs comptent plus que tout le reste : la **catégorie principale**
+> (`Graphiste`), qui décide sur quelles recherches la fiche apparaît ;
+> le **type d'activité** en « zone desservie » avec **l'affichage de
+> l'adresse décoché**, sans quoi l'adresse de Sandra est publique ; et
+> le **nom**, `Grafycom` seul — un nom chargé de mots-clés est la
+> première cause de suspension.
+>
+> La liste à cocher, avec les valeurs exactes et l'endroit où les
+> saisir, est en tête de `outils/FICHE-GOOGLE.md`. Elle ne se fait pas
+> depuis le dépôt : il n'y a pas de connecteur Google Business ici, et
+> la fiche est sur le compte de Sandra.
 >
 > Toute phrase de ce document affirmant que la fiche n'existe pas est un
 > reste d'une note périmée du cahier des charges : à ignorer.

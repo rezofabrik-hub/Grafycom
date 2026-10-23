@@ -93,6 +93,41 @@ Laurent s'ajoute ensuite comme **gestionnaire** (Paramètres → Utilisateurs
 transférer plus tard — est possible mais pénible, et il y a une fenêtre
 où personne n'est clairement propriétaire.
 
+## À corriger maintenant — la liste à cocher
+
+> Les textes de `fiche-google.md` ne partent pas tant que ces réglages
+> ne sont pas faits. Publier des posts sur une fiche mal réglée, c'est
+> les publier sur les mauvaises recherches — et, pour le point 2, c'est
+> afficher une adresse que Sandra ne veut pas afficher.
+>
+> **Je ne peux pas le faire d'ici** : il n'y a pas de connecteur Google
+> Business dans cet environnement, et de toute façon la fiche est sur
+> le compte de Sandra. C'est donc à faire à la main, et c'est dix
+> minutes. Les valeurs ci-dessous sont celles des sections suivantes,
+> recopiées pour n'avoir qu'un seul endroit à ouvrir.
+
+| ✔ | Champ | Valeur exacte | Où |
+|---|---|---|---|
+| ☐ | **1. Catégorie principale** | `Graphiste` | Modifier le profil → À propos |
+| ☐ | **2. Type d'activité** | cocher « Je livre des biens et services à mes clients », puis **décocher l'affichage de l'adresse** | Modifier le profil → Localisation |
+| ☐ | **3. Nom** | `Grafycom`, et rien d'autre | Modifier le profil → À propos |
+| ☐ | 4. Zones desservies | `Pyrénées-Orientales`, `Fitou`, `Leucate` | Modifier le profil → Localisation |
+| ☐ | 5. Site web | `https://grafycom.fr/` | Modifier le profil → Coordonnées |
+| ☐ | 6. Téléphone | `07 82 92 19 81` | Modifier le profil → Coordonnées |
+| ☐ | 7. Catégories secondaires | `Agence de publicité`, `Studio de design` | Modifier le profil → À propos |
+| ☐ | 8. Description | le texte de 726 caractères, plus bas | Modifier le profil → À propos |
+| ☐ | 9. Services | les neuf, un par un, plus bas | Modifier le profil → Services |
+| ☐ | 10. Horaires | **les vrais** — personne ne peut les mettre à la place de Sandra | Modifier le profil → Horaires |
+
+**Les trois premiers d'abord, dans cet ordre.** Ce sont les trois champs
+le plus souvent faux sur une fiche non revendiquée, et les trois qui
+coûtent le plus cher : la catégorie décide sur quelles recherches la
+fiche apparaît ; l'adresse affichée est exactement ce qu'on veut éviter ;
+un nom chargé de mots-clés est la première cause de suspension.
+
+**Le reste peut attendre la validation.** Les photos aussi — elles n'ont
+de sens qu'une fois la fiche validée, et seulement des travaux de Sandra.
+
 ## Les champs, un par un
 
 **Nom de l'établissement**
