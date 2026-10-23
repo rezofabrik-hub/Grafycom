@@ -102,11 +102,11 @@ font foi dans `calendrier.md`.**
       66. Illisibles depuis ici, voir `outils/FICHE-GOOGLE.md`.
 - [ ] **Le logo de SR Coiffure**, à demander au salon. La forme est
       vectorisée depuis ta capture, le filet doré manque.
-- [ ] **Les cartes recto/verso et le panneau de Solaire 66** — les
-      deux seuls trous du cycle, planches 4 et 5 de la n° 13.
-- [ ] **Le `.ai` de la composition deux lignes de BIG FOOD** — utile,
-      pas bloquant : la capture de 356 px est posée à sa taille native
-      et reste nette.
+- [x] **Les cartes recto/verso et le panneau de Solaire 66** — reçus
+      le 23 octobre, planches 4 et 5 de la n° 13 complètes.
+- [x] **Le `.ai` de la composition deux lignes de BIG FOOD** — reçu le
+      23 octobre, les deux compositions sur le même plan de travail,
+      rendues à 3200 px. Le plafond de 356 px est levé.
 - [ ] **L'accord du client KRUSTY**, si tu veux que son logo et son
       dépliant servent à une publication. Le logo vectoriel est
       enregistré, rien n'est écrit tant que l'accord n'est pas donné.

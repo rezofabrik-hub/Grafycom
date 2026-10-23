@@ -71,7 +71,7 @@ réalimenté :
 |---|---|---|
 | `sources/solaire-66-logo.png` | Solaire 66 | détouré, les trois monochromes en découlent |
 | `sources/clients/big-food.png` | BIG FOOD | **fichier vectoriel reçu** (`LOGO_OK.ai`, PDF 1.6), rendu à 3600 px. **Accord du client donné** le 22 octobre |
-| `sources/clients/big-food-2lignes.png` | BIG FOOD, composition deux lignes | **capture d'écran, 356 px** — pas de vectoriel. Posée à sa taille native, jamais agrandie. Le `.ai` reste demandé |
+| `sources/clients/big-food-2lignes.png` | BIG FOOD, composition deux lignes | **vectoriel, reçu le 23 octobre**, rendu à 3198 px. Remplace la capture de 356 px |
 | `sources/clients/krusty.png` | KRUSTY | **fichier vectoriel reçu** (`LOGO.pdf`), rendu à 3593 px, fond transparent. ✅ **Accord client acquis** le 22 octobre |
 | `sources/clients/krusty-depliant.png` | KRUSTY, dépliant | mock-up fourni, recadré à 1168 px. Extrait du transcript, faute de dépôt sur le disque |
 | `sources/clients/sweet-dream.png` | SWEET DREAM, une ligne | **vectoriel reçu** (`LOGO.pdf`), 3123 px, fond transparent. ✅ **Accord acquis** le 22 octobre |
@@ -88,33 +88,47 @@ Relevé dans le fichier :
   est l'illustration des deux burgers ;
 - le « B » est le seul caractère orange ; les deux « O » de FOOD sont
   remplacés par des burgers ;
-- **un seul plan de travail**, donc une seule composition : la ligne.
-  La version deux lignes existe, Sandra l'a envoyée — mais en capture
-  d'écran de 356 px, pas dans ce fichier.
+- **les deux compositions** sont dans le vectoriel reçu le 23 octobre,
+  sur le même plan de travail de 2800 × 1868 mm : la ligne en haut,
+  les deux lignes en dessous. Elles sont découpées et rendues
+  séparément, à 3200 px chacune.
 
 Ces trois valeurs sont **les couleurs du client, pas celles de la
 charte Grafycom** — elles n'ont donc rien à faire dans `style.css` ni
 dans `charte.py`, exactement comme le bleu et le jaune de Solaire 66.
 
-### La composition deux lignes
+### La composition deux lignes — plafond levé le 23 octobre
 
-Reçue le 22 octobre, en capture d'écran : **356 × 222 px**, rapport
-1,6:1. Les couleurs sont fidèles — orange et blanc identiques au
-vectoriel, violet à une unité près (`#4c1660` au lieu de `#4b165f`,
-l'arrondi d'une capture), réaligné à l'enregistrement.
+Elle est arrivée le 22 octobre en capture d'écran de **356 × 222 px**.
+Elle était posée à cette taille exacte, et non aux 420 px prévus : une
+planche qui explique qu'un logo doit rester net ne peut pas montrer une
+image agrandie, on verrait le défaut dont elle parle.
 
-Elle est posée **à 356 px, sa taille native**, et non aux 420 px
-prévus. Une planche qui explique qu'un logo doit rester net ne peut
-pas montrer une image agrandie : on verrait le défaut dont elle parle.
+**Le vectoriel est arrivé le 23.** Les deux compositions y sont sur le
+même plan de travail ; découpées et rendues séparément, elles font
+3200 px de large. La planche 5 de la n° 25 passe donc de 356 à 470 px,
+et la ligne de 740 à 760.
 
-Elle n'a pas été reconstruite à partir du vectoriel non plus, alors
-que les lettres y sont. Dans la deux lignes, le « B » orange est
-surdimensionné et chevauche le « F » de la ligne du dessous : c'est un
-arbitrage de Sandra, pas une mise en page qu'on redevine. Recomposer,
-ce serait redessiner le logo d'un client à sa place.
+Elle n'avait pas été reconstruite à partir du vectoriel une ligne, alors
+que les lettres y étaient — et c'était la bonne décision. Dans la deux
+lignes, le « B » orange est surdimensionné et chevauche le « F » de la
+ligne du dessous : un arbitrage de Sandra, pas une mise en page qu'on
+redevine. Recomposer, c'eût été redessiner le logo d'un client à sa
+place. Le vectoriel confirme le chevauchement au pixel près.
 
-**Ce qui manque encore :** le `.ai` de cette composition, pour tout
-usage au-delà de 356 px.
+### Le violet, lui, a disparu du fichier
+
+Le vectoriel ne porte **que le logo**, sur fond transparent — c'est ce
+qui le rend posable partout. La capture précédente, elle, montrait le
+logo sur une bande violette, et `_couleurs_big_food()` y relevait ce
+violet pour le fond de la planche 2.
+
+Il n'a donc plus de fichier source où se mesurer. Il vit maintenant dans
+`reseaux/couleurs-clients.json`, versionné, avec sa provenance et sa
+réserve : **à confirmer auprès du client**. Si Big Food n'a pas de
+violet de marque, l'entrée se retire et la planche tombe sur l'encre de
+la charte. L'orange et le blanc, eux, continuent de se relever dans le
+logo : `#f39200` et `#ffffff`, exacts.
 
 ### SWEET DREAM — et le mock-up calculé
 

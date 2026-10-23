@@ -240,10 +240,21 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 
 ### Priorité haute — six images qui changent le feed
 
+> **Deux sont faites.** **A** ouvre la n° 1 depuis le 23 octobre.
+> **B** est arrivée le 23 au soir, en 9:16 exact, et elle ouvre la
+> **n° 20** — pas la n° 4 comme annoncé ici. La raison tient en une
+> ligne, et c'est la règle du § 2 : les deux écrans « matière » de la
+> n° 4 portent des **démonstrations calculées** — l'écran vif contre
+> l'imprimé terne, le mat contre le couché. On ne remplace pas une
+> preuve par un décor. L'écran d'ouverture de la n° 20, lui, ne
+> démontre rien : il affirme qu'on touche une carte avant de la lire.
+> C'est exactement la place d'un décor, et la docstring de ce gabarit
+> l'avait écrit avant que l'image existe.
+
 | # | Publication | L'image à générer |
 |---|---|---|
-| **A** | n° 1 · Pédagogie couleur | Un nuancier Pantone en éventail ouvert sur un plan de travail en chêne, une main qui en écarte deux teintes. Accent **corail** sur une seule languette. C'est l'ouverture du cycle : c'est l'image qui décide du reste. |
-| **B** | n° 4 · Matières & impression | Macro d'une pile de quatre papiers différents vus **sur la tranche**, lumière rasante qui révèle l'épaisseur et la fibre. Accent **orange** sur un seul. Moins de 10 cm de champ. |
+| ~~**A**~~ | n° 1 · Pédagogie couleur | ✅ **intégrée le 23 octobre.** Nuancier Pantone en éventail, main qui écarte deux teintes, accent **corail**. Ouvre le cycle. |
+| ~~**B**~~ | **n° 20** · Ce qu'on sent avant de lire | ✅ **reçue le 23 octobre.** Macro d'une pile de papiers vus **sur la tranche**, lumière rasante qui révèle l'épaisseur et la fibre. Accent **orange** sur un seul, 9:16 exact, zone de texte calme. Déposée en `B-papiers-tranche.webp`. |
 | **C** | n° 5 · Typographie | Des caractères en plomb d'imprimerie, serrés dans un composteur, poussière et reflets d'huile. Accent **bleu** froid dans le métal. |
 | **D** | n° 9 · Un logo tient-il en petit | Un stylo-bille posé en biais sur du papier blanc, et un tampon encreur à côté — l'échelle se lit toute seule. Accent **turquoise** sur le capuchon. |
 | **E** | n° 15 · Quatre supports en coupe | Quatre échantillons de matière — alu, PVC, dibond, plexi — alignés debout sur un établi, vus de trois quarts. Lumière rasante, bords nets. |

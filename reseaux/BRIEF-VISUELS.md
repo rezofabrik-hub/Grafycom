@@ -96,9 +96,14 @@ une erreur de ce genre se voit immédiatement, et par la personne la plus
 mal placée pour ne pas la voir.
 
 Les fichiers clients disponibles sont dans
-`reseaux/visuels/sources/` — Solaire 66 (logo couleur, trois monochromes,
-carte recto-verso, panneau), Social Miroir, SR Coiffure. Ce dossier n'est
-**pas versionné** : le dépôt est public.
+`reseaux/visuels/sources/clients/` — Solaire 66 (logo couleur, trois
+monochromes, carte recto-verso, panneau), Big Food (vectoriel, les deux
+compositions), Krusty (logo et dépliant), Sweet Dream (logo, deux lignes,
+dépliant), Social Miroir (rond, carré, en long), SR Coiffure. Ce dossier
+n'est **pas versionné** : le dépôt est public, et il a déjà été vidé deux
+fois par une reconstruction du conteneur. Ce qui ne se relève pas dans un
+fichier — le violet de Big Food, par exemple — vit dans
+`reseaux/couleurs-clients.json`, qui l'est.
 
 ### 1.4 Ni visage inventé, ni main dessinée
 

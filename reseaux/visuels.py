@@ -33,6 +33,7 @@ Depuis un script :
     from visuels import Planche, LARGE, HAUT
 """
 import argparse
+import json
 import os
 import pathlib
 import re
@@ -82,6 +83,13 @@ PHOTOS = {
     # est dans ce brief, et elle n'a pas bouge — aucune realisation ne
     # recoit d'image generee.
     "nuancier-eventail": SOURCES / "ambiances" / "A-nuancier-eventail.png",
+    # n° 20, ouverture — image GENEREE, commandee sur le meme brief et
+    # recue le 23 octobre. Meme statut que la precedente : un decor, pas
+    # une preuve. Elle remplace un gaufrage DESSINE sur un ecran qui ne
+    # demontre rien — il affirme qu'on touche une carte avant de la
+    # lire. L'ecran 2, qui demontre vraiment (120 g contre 350 g),
+    # reste dessine et calcule.
+    "papiers-tranche":   SOURCES / "ambiances" / "B-papiers-tranche.webp",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -4992,15 +5000,34 @@ def pub20_reel_matieres(dossier=None):
     accent("jaune")
     faits = []
 
+    # La docstring de cette fonction disait : « si un jour les
+    # echantillons sont sous la main, ces ecrans se remplacent un par
+    # un ». C'est fait pour celui-la, et pour lui seul. L'image est
+    # generee, pas photographiee — elle montre des papiers quelconques
+    # sur du chene, elle n'atteste d'aucune commande. Les proportions
+    # suivent le brief : sujet dans le haut, voile a 58 %, tout le
+    # texte sous le voile.
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
-    p.surtitre("Reel · 0-3 s", "taupe", y=200)
-    p.filet()
-    p.titre("Ce que vos clients\nsentent\navant de lire.", 84, y=280)
-    _gaufrage(p, 180, 900, 700, rasante=True)
-    p.y = 1640
-    p.texte("Avant de lire votre carte, votre client la touche. Et il a "
-            "déjà une opinion.", 42, "brun", 400, avant=0)
-    p.signature("brun")
+    p.photo("papiers-tranche", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.surtitre("Reel · 0-3 s", "taupe", y=200)
+        p.filet()
+        p.titre("Ce que vos clients\nsentent\navant de lire.", 84, y=280)
+        _gaufrage(p, 180, 900, 700, rasante=True)
+        p.y = 1640
+        p.texte("Avant de lire votre carte, votre client la touche. Et "
+                "il a déjà une opinion.", 42, "brun", 400, avant=0)
+        p.signature("brun")
+    else:
+        # 72 et non 84 : sur la photo, le titre part plus bas et
+        # « Ce que vos clients » passait a la ligne, ce qui donnait
+        # quatre lignes collees a la signature.
+        p.surtitre("Reel · 0-3 s", "blanc", y=1020)
+        p.y = 1094
+        p.titre("Ce que vos clients\nsentent avant\nde lire.", 72, "blanc")
+        p.texte("Avant de lire votre carte, votre client la touche. Et "
+                "il a déjà une opinion.", 42, "blanc", 400, avant=28)
+        p.signature("blanc")
     faits.append(p.ecrire(d / "ecran1.png"))
 
     p = Planche("creme", LARGE_S, HAUT_S)
@@ -5975,28 +6002,69 @@ GABARITS["reel-matieres"] = pub20_reel_matieres
 # contraire — un plan de travail dit comment un fichier a été réglé,
 # jamais ce qu'on en a fait.
 # ---------------------------------------------------------------------
+def _couleur_client(marque, nom):
+    """Une couleur de marque qui ne se releve dans aucun fichier source.
+
+    Tout ce qui se mesure se mesure : `_couleurs_big_food` lit l'orange
+    DANS le logo, et c'est la regle. Restent les couleurs orphelines —
+    celles dont le fichier qui les portait a ete remplace par un
+    vectoriel qui ne les porte plus. Elles ont besoin d'un domicile
+    VERSIONNE, sinon elles se perdent une deuxieme fois : sources/ ne
+    l'est pas, et le conteneur a deja ete reconstruit deux fois.
+
+    Renvoie None si l'entree n'existe pas. L'appelant retombe alors sur
+    la charte — jamais sur une couleur inventee.
+    """
+    f = RACINE / "couleurs-clients.json"
+    if not f.exists():
+        return None
+    try:
+        with f.open(encoding="utf-8") as fh:
+            return json.load(fh).get(marque, {}).get(nom)
+    except (ValueError, OSError):
+        return None
+
+
 def _couleurs_big_food():
-    """Les trois couleurs du logo, relevées DANS le fichier.
+    """Les trois couleurs du logo, relevées DANS des fichiers.
 
     Pas écrites en dur : une couleur client recopiée dérive comme une
     autre, et `charte.py --verifier` aurait raison de signaler un
-    hexadécimal de plus dans le source. Ici le fichier est la source,
-    et il ne peut pas se tromper sur lui-même.
+    hexadécimal de plus dans le source. Un fichier ne peut pas se
+    tromper sur lui-même.
+
+    Le BLANC et l'ORANGE viennent du vectoriel reçu le 23 octobre. Il
+    les donne exacts — #f39200 — là où la capture précédente les donnait
+    compressés.
+
+    Le VIOLET n'est plus dans le logo. L'ancienne source était une
+    capture du logo posé sur une bande violette ; le vectoriel ne porte
+    que le logo, sur fond transparent, et c'est précisément ce qui le
+    rend posable ailleurs. Il n'a donc plus de fichier où se relever :
+    il vit dans `couleurs-clients.json`, qui est versionné, avec sa
+    provenance et la réserve qui va avec. Si l'entrée disparaît, la
+    planche tombe sur l'encre de la charte plutôt que d'inventer un
+    violet.
     """
     import collections
     f = SOURCES / "clients" / "big-food.png"
     if not f.exists():
         return None
-    im = Image.open(f).convert("RGB").resize((400, 100))
-    freq = collections.Counter(im.getdata()).most_common(12)
-    fond = freq[0][0]
-    # l'orange : le plus sature des aplats restants
+    im = Image.open(f).convert("RGBA")
+    im = im.resize((400, max(1, int(400 * im.height / im.width))))
+    opaques = [px[:3] for px in im.getdata() if px[3] > 200]
+    if not opaques:
+        return None
+
     def sat(c):
         return (max(c) - min(c)) / max(1, max(c))
-    chauds = [c for c, _ in freq[1:]
+
+    chauds = [c for c, _ in collections.Counter(opaques).most_common(12)
               if c[0] > c[2] + 40 and sat(c) > 0.55]
-    return {"fond": "#%02x%02x%02x" % fond,
-            "orange": "#%02x%02x%02x" % (chauds[0] if chauds else (243, 146, 0)),
+    orange = chauds[0] if chauds else (243, 146, 0)
+
+    return {"fond": _couleur_client("big-food", "violet"),
+            "orange": "#%02x%02x%02x" % orange,
             "blanc": "#ffffff"}
 
 
@@ -6024,7 +6092,10 @@ def pub25_big_food(dossier=None):
     # normal : c'est la couleur du client, pas celle de Grafycom.
     p = Planche("creme")
     if C_BF:
-        p.d.rectangle([0, 0, p.l, p.h], fill=C_BF["fond"])
+        # `fond` peut manquer : le violet n'est plus dans le logo, il se
+        # releve sur la vignette du portfolio. Sans elle, l'encre de la
+        # charte plutot qu'un violet invente.
+        p.d.rectangle([0, 0, p.l, p.h], fill=C_BF["fond"] or teinte("encre"))
         p._redessiner()
         p.sombre = True
     else:
@@ -6057,16 +6128,18 @@ def pub25_big_food(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "04.png"))
 
-    # Les deux compositions. La deux lignes n'existe qu'en capture
-    # d'écran, 356 px de large : elle est posée à sa taille native,
-    # jamais agrandie. Une image molle sur une planche qui parle de
-    # netteté se verrait. Le .ai reste demandé pour les grands usages.
+    # Les deux compositions. La deux lignes a longtemps ete bornee a
+    # 356 px — la largeur de la capture d'ecran recue — et posee a cette
+    # taille exacte, jamais agrandie : une image molle sur une planche
+    # qui parle de nettete se verrait. Le vectoriel est arrive le 23
+    # octobre, rendu a 3198 px : le plafond saute, et la composition
+    # prend enfin la place que la demonstration demande.
     p = Planche("blanc")
     p.titre("Deux compositions,\nun seul logo.", 64, y=150)
-    p.poser(L, 540, 560, 740, ombre=22)
-    p.poser(SOURCES / "clients" / "big-food-2lignes.png", 540, 850, 356,
+    p.poser(L, 540, 540, 760, ombre=22)
+    p.poser(SOURCES / "clients" / "big-food-2lignes.png", 540, 870, 470,
             ombre=22)
-    p.y = 1040
+    p.y = 1090
     p.texte("Une ligne quand la place est large — une devanture, un "
             "bandeau. Deux lignes quand elle est courte — un avatar, un "
             "tampon. Le même dessin, pas un redessin.", 34, "brun", 400,

@@ -22,11 +22,25 @@ celui de s'en servir de vitrine. Un message suffit, et c'est rarement
 refusé ; mais un client qui se découvre en ligne sans avoir été prévenu est
 un client perdu.
 
-## Provenance — précisé le 12 octobre 2026
+## Provenance — précisé le 12 octobre, revu le 23
 
-Ces projets ont été menés par Sandra **au sein d'une société précédente**,
-pas sous la marque Grafycom. L'accord obtenu porte sur le fait de dire
-qu'elle a créé les visuels, et il ne couvre pas tout :
+**La galerie mélange désormais deux provenances**, et c'est ce qui a
+changé le 23 octobre.
+
+| Provenance | Projets |
+|---|---|
+| Commandes reçues par **Grafycom** | Solaire 66, Sweet Dream, Krusty, Big Food, Social Miroir |
+| Menés **au sein d'une structure précédente** | Ô Fait Maison, Mia Beauty |
+
+La mention de provenance se pose donc **sur la fiche** et non en chapeau
+de page. Elle y était, en une phrase sous le titre : depuis que cinq
+fiches sur sept sont des commandes Grafycom, cette phrase affirmait le
+contraire de la vérité pour la majorité de la page. `reaz(..., avant=True)`
+la rend fiche par fiche dans `generateurs/p_realisations.py`.
+
+Les projets ci-dessous sont ceux de la structure précédente. L'accord
+obtenu porte sur le fait de dire que Sandra a créé les visuels, et il ne
+couvre pas tout :
 
 | Projet | Accord | Réserve |
 |---|---|---|
@@ -140,6 +154,7 @@ donné le 22 octobre :
 | **Sweet Dream** | `sweet-dream.webp` | le dépliant en situation |
 | **Krusty** | `krusty.webp` | le dépliant en situation |
 | **Big Food** | `big-food.webp` | le logo seul |
+| **Social Miroir** | `social-miroir.webp` | le logo, version en long |
 
 > **Les deux mises en situation sont calculées**, pas photographiées :
 > `reseaux/mockup.py` les monte à partir des faces fournies. C'est dit
@@ -157,7 +172,7 @@ donné le 22 octobre :
 |---|---|---|
 | **SR Coiffure** | oui | forme vectorisée depuis la capture, **le filet doré manque** — demander le fichier au client |
 | **B.F Plomberie** | oui | **non récupérable** depuis la capture : nom en blanc sur beige, dégradé, texture |
-| **Social Miroir** | oui | ⚠️ **logo à redemander.** Reçu le 13 octobre avec trois déclinaisons vectorielles, mais `reseaux/visuels/sources/` n'est pas versionné et le contenu a été perdu à la reconstruction du conteneur. **Client actuel de Grafycom** — pas de mention de structure précédente |
+| **Social Miroir** | oui | ✅ **logo reçu le 23 octobre**, trois déclinaisons vectorielles — ronde, carrée, en long. En ligne depuis. **Client actuel de Grafycom** — pas de mention de structure précédente |
 | **La Casquette Bleue** | **non** | Sandra n'a pas créé son identité : impression de cartes de visite uniquement |
 
 ### La Casquette Bleue : cliente, pas réalisation
@@ -173,10 +188,15 @@ Un avis client et une référence de création sont deux choses séparées.
 Confondre les deux, c'est s'attribuer un travail qu'on n'a pas fait — la
 faute la plus coûteuse du métier.
 
-### Les trois logos à récupérer
+### Les logos à récupérer — il en reste deux
 
 SR Coiffure, B.F Plomberie et Social Miroir apparaissent dans la
 publication Instagram du 19 janvier. Il faut leurs **fichiers sources**,
 pas une capture du carrousel : vectoriel de préférence, sinon un PNG à
 fond transparent d'au moins 2000 px. Même exigence que pour Casa Aldo, et
 pour la même raison.
+
+**Social Miroir est arrivé le 23 octobre** — trois `.ai` de 200 × 200 mm
+et 300 × 100 mm, déposés dans `reseaux/visuels/sources/clients/` et
+rendus à 300 dpi à côté. Restent SR Coiffure, dont le filet doré manque,
+et B.F Plomberie, non récupérable depuis la capture.

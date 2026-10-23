@@ -2430,14 +2430,14 @@ ligne, légendées « en grand », « sur une carte », « en favicon ».
 
 ### À fournir par Sandra
 
-- **Le `.ai` de la composition deux lignes** — utile, pas bloquant.
-  La planche 5 est complète : la capture reçue le 22 octobre fait
-  356 px et elle y est posée **à cette taille exacte**, donc nette.
-  Mais 356 px est un plafond. Le jour où cette composition doit
-  passer sur un support imprimé, ou simplement plus grand qu'un
-  avatar, il faudra le vectoriel.
-- **Rien d'autre.** Le logo une ligne vient du fichier vectoriel, les
-  trois couleurs sont relevées dedans et non recopiées.
+- **Rien.** Le vectoriel est arrivé le 23 octobre avec les **deux**
+  compositions sur le même plan de travail. Le plafond de 356 px de la
+  capture est levé : la planche 5 pose la deux lignes à 470 px.
+- Une réserve, pas un manque : le vectoriel ne porte que le logo, sur
+  fond transparent. Le **violet** de la planche 2 n'y est plus — il est
+  conservé dans `reseaux/couleurs-clients.json` et reste **à confirmer
+  auprès du client**. L'orange et le blanc, eux, se relèvent toujours
+  dans le fichier.
 
 ## 26 — Mercredi 18 novembre, 18 h 30 · Carrousel 8 planches · Pilier « réalisations » · **KRUSTY**
 

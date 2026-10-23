@@ -1,12 +1,25 @@
 # -*- coding: utf-8 -*-
 from gen import page, appel
 
-def reaz(cat, titre, desc, fichier):
+# `avant=True` marque un projet mene AVANT Grafycom, au sein d'une
+# precedente structure. La mention se pose alors SUR LA FICHE, et non en
+# chapeau de page : depuis que la galerie melange des commandes recues
+# par Grafycom (Solaire 66, Sweet Dream, Krusty, Big Food, Social Miroir)
+# et des travaux anterieurs, une phrase globale en haut de page devient
+# fausse pour la moitie des fiches. Le texte est celui qu'autorise
+# l'accord, mot pour mot — voir assets/img/realisations/LISEZ-MOI.md.
+PROVENANCE = ("\n      <p style=\"margin-top:10px;font-size:12.5px;"
+              "color:var(--taupe)\">Création de Sandra, fondatrice de "
+              "Grafycom — projet réalisé au sein d'une précédente "
+              "structure.</p>")
+
+
+def reaz(cat, titre, desc, fichier, alt=None, avant=False):
     return """    <article class="reaz">
       <div class="reaz-vignette"><img src="assets/img/realisations/%s" alt="%s" data-attente="Visuel à venir" loading="lazy"></div>
-      <div class="reaz-texte"><span>%s</span><h3>%s</h3><p>%s</p></div>
+      <div class="reaz-texte"><span>%s</span><h3>%s</h3><p>%s</p>%s</div>
     </article>
-""" % (fichier, titre, cat, titre, desc)
+""" % (fichier, alt or titre, cat, titre, desc, PROVENANCE if avant else "")
 
 # Casa Aldo est retire definitivement : Laurent n'a plus le logo
 # vectoriel, et la seule source restante est la photo de l'enseigne ou il
@@ -25,27 +38,49 @@ def reaz(cat, titre, desc, fichier):
 # d'une precedente structure aujourd'hui fermee : la ligne d'attribution
 # sous le chapeau le dit, et elle n'est pas facultative.
 #
-# Alliance Peintures et Pano Perpignan ont ete retires le 12 octobre, et
-# leurs fichiers supprimes — une image seulement dereferencee reste servie
-# a son adresse. Avant d'en ajouter une, lire
-# assets/img/realisations/LISEZ-MOI.md : l'accord du client y est note
-# projet par projet.
+# Alliance Peintures et Pano Perpignan ont ete retires le 12 octobre,
+# Cap Loisirs le 23 — accord jamais confirme dans les trois cas. Leurs
+# fichiers sont SUPPRIMES, pas seulement dereferences : une image
+# seulement retiree de la page reste servie a son adresse. Avant d'en
+# ajouter une, lire assets/img/realisations/LISEZ-MOI.md : l'accord du
+# client y est note projet par projet.
 #
 # Cette note vit ici et non dans un commentaire HTML : build.sh recopie
 # le fichier tel quel, et un commentaire nommant des clients retires
 # serait lisible dans la source de la page publique.
 GALERIE = "".join([
-    reaz("Affichage", "Cap Loisirs",
-         "Affiche tarifaire des activités — bowling, laser game, formules. "
-         "Présentée ici en maquette : l'original est affiché à l'intérieur "
-         "de l'établissement.",
-         "cap-loisirs.webp"),
+    reaz("Identité", "Solaire 66",
+         "Logo, cartes de visite et panneau de chantier. Le même dessin "
+         "tient des 8,5 cm de la carte aux 120 cm du panneau — c'est ce "
+         "qui se vérifie avant de livrer, pas après.",
+         "solaire-66.webp", alt="Panneau de chantier Solaire 66"),
+    reaz("Identité &amp; édition", "Sweet Dream",
+         "Logo et dépliant de menu pour un salon de desserts. Le relief "
+         "des lettres ne vient pas d'un dégradé mais d'une ombre "
+         "décalée : deux encres suffisent, et ça passe partout.",
+         "sweet-dream.webp", alt="Dépliant de menu Sweet Dream"),
+    reaz("Logo &amp; édition", "Krusty",
+         "Logo et dépliant de menu. Les lettres sont creuses, blanches "
+         "cernées de violet — c'est ce qui les laisse vivre sur un fond "
+         "chargé de photos comme sur un fond clair.",
+         "krusty.webp", alt="Dépliant de menu Krusty"),
+    reaz("Logo", "Big Food",
+         "Logo seul, décliné sur une ligne et sur deux. Les deux O du "
+         "mot sont des burgers : l'objet remplace la lettre au lieu de "
+         "s'ajouter à côté.",
+         "big-food.webp", alt="Logo Big Food"),
+    reaz("Identité", "Social Miroir",
+         "Logo décliné en trois versions : ronde, carrée, en long. La "
+         "ronde n'est pas la carrée recadrée — la bande du nom y est "
+         "allongée de trois centimètres pour rejoindre le cercle, sinon "
+         "l'avatar laisse deux vides sur les côtés.",
+         "social-miroir.webp", alt="Logo Social Miroir"),
     reaz("Signalétique", "Ô Fait Maison",
          "Enseigne de devanture d'un salon de thé, et la décoration intérieure qui lui répond.",
-         "o-fait-maison.webp"),
+         "o-fait-maison.webp", avant=True),
     reaz("Édition", "Mia Beauty",
          "Livret de formation : couverture, mise en page et gabarit des pages intérieures.",
-         "mia-beauty.webp"),
+         "mia-beauty.webp", avant=True),
 ])
 BODY = """
 <section class="heros">
@@ -54,7 +89,6 @@ BODY = """
     <h1>Quelques projets,<br><span class="texte-degrade">et ce qu'ils demandaient</span></h1>
     <div class="trait"></div>
     <p class="chapeau">Chaque projet part d'une page blanche et d'une conversation. Voici une sélection de travaux et, pour chacun, ce qu'il fallait résoudre.</p>
-    <p class="chapeau" style="font-size:1rem;opacity:.78;margin-top:14px">Ces projets ont été réalisés par Sandra avant la création de Grafycom, au sein d'une autre structure aujourd'hui fermée.</p>
   </div>
 </section>
 

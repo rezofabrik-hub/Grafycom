@@ -1,6 +1,6 @@
 # Ce qu'il me manque, par ordre de priorité
 
-Relevé le 22 octobre, **vérifié fichier par fichier** et non de mémoire :
+Relevé le 23 octobre, **vérifié fichier par fichier** et non de mémoire :
 chaque manque ci-dessous a été constaté par `reseaux/audit.py` ou par le
 rapport du moteur, pas recopié d'une note.
 
@@ -16,7 +16,7 @@ Trois niveaux, et ils ne se valent pas.
 
 ## 🟢 Plus aucun bloquant
 
-**Le cycle est complet.** 210 visuels, aucune planche avec un trou.
+**Le cycle est complet.** 217 visuels, aucune planche avec un trou.
 
 Les deux derniers manques sont arrivés le 23 octobre :
 
@@ -36,56 +36,63 @@ la carte était seule au milieu d'un vide.
 
 ---
 
-## 🟠 Décision — quatre arbitrages qui n'attendent qu'un mot
+## 🟠 Décision — plus rien en attente
+
+Les quatre arbitrages ont été tranchés les 22 et 23 octobre. Ils restent
+écrits ici, parce qu'un arbitrage qu'on efface se re-pose trois semaines
+plus tard.
 
 ### 3. ~~KRUSTY et Solaire 66 à deux jours~~ — tranché le 23 octobre
 
 **KRUSTY passe au mercredi 18 novembre**, 18 h 30, après Solaire 66 et
-non avant. Le mercredi devient le créneau des réalisations intercalées,
-avec SWEET DREAM le 25.
+non avant. Le mercredi devient le créneau des réalisations intercalées.
 
 L'ordre se défend mieux ainsi : la n° 13 du 16 montre une identité
 complète — enseigne, cartes, panneau — et la n° 26 revient deux jours
 après sur le seul logo et sur ce qui le fait tenir. L'une ouvre, l'autre
 resserre.
 
-### 4. La semaine du 23 novembre porte six publications
+### 4. ~~La semaine du 23 novembre porte six publications~~ — tranché le 23 octobre
 
-n° 17, 18, 27, 19, 20 et 16. C'est une de plus que partout ailleurs, et
-c'est la conséquence directe d'avoir ramené SWEET DREAM au 25.
+SWEET DREAM est **repartie au 2 décembre**, comme tu l'as demandé. La
+semaine du 23 reste pourtant à six — n° 17, 18, 19, 20, 16 et Solaire 66
+le 25 — parce que Solaire 66 a été ajoutée **en plus**, pas à la place.
 
-C'est écrit comme **dérogation motivée** dans `reseaux/audit.py`, pas
-toléré en silence. Si tu préfères revenir à cinq, SWEET DREAM repart au
-2 décembre et le trou de seize jours revient avec elle.
+C'est écrit comme **dérogation motivée** dans `reseaux/audit.py`, avec sa
+raison et sa date, pas toléré en silence. Le contrôle du plafond de cinq
+publications par semaine passe donc pour la bonne raison, et il échouera
+de nouveau si une sixième arrive sans motif écrit.
 
-### 5. Solaire 66 : réalisation en plus, ou à la place ?
+### 5. ~~Solaire 66 : réalisation en plus, ou à la place ?~~ — tranché le 23 octobre
 
-L'arbitrage n° 6 disait « en plus du rythme, pas à la place ». BIG FOOD,
-KRUSTY et SWEET DREAM le sont. **Solaire 66 ne l'est pas** : elle occupe
-le créneau n° 13.
+**En plus.** Elle est publiée le 25 novembre et le créneau n° 13 garde
+son exercice. Le cycle passe de 29 à 30 publications.
 
-Je ne l'ai pas déplacée, pour une raison que je te soumets plutôt que de
-trancher seul : le créneau qu'elle occupe ne portait pas une leçon, il
-portait **un exercice fictif**. Le cycle n'a donc rien perdu. La sortir
-obligerait à écrire une 30ᵉ publication.
+### 6. ~~Trois projets clients sans accord écrit~~ — tranché le 23 octobre
 
-### 6. Trois projets clients sans accord écrit
+**Alliance Peintures, Cap Loisirs et Pano Perpignan sont retirés** de la
+page réalisations, faute d'accord confirmé. Leurs fichiers sont
+supprimés et non seulement déréférencés : une image qu'on retire d'une
+page reste servie à son adresse.
 
-**Alliance Peintures, Cap Loisirs, Pano Perpignan** — relevés dans
-`acquisition.md`. Soit tu obtiens l'accord, soit on les retire de la page
-réalisations. Aucune publication du cycle ne les montre, donc rien n'est
-bloqué : c'est le site qui attend.
+À leur place, les projets dont l'accord est acquis : **Solaire 66, Sweet
+Dream, Krusty, Big Food** et, depuis le 23 octobre, **Social Miroir**.
 
 ---
 
 ## 🟡 Confort — ce qui améliorerait sans débloquer
 
-### 7. Le logo Social Miroir, à redemander
+### 7. Les visuels IA suivants
 
-Reçu le 13 octobre avec trois déclinaisons vectorielles, puis **perdu** :
-`reseaux/visuels/sources/` n'est pas versionné — le dépôt est public — et
-le conteneur a été reconstruit depuis. Aucune publication ne l'utilise
-aujourd'hui, mais la page réalisations le cite.
+**A — le nuancier en éventail** est intégré : il ouvre la n° 1, et la
+planche bascule sur le repli typographique si le fichier disparaît.
+**B — les papiers sur la tranche** est reçu le 23 octobre.
+
+Restent à commander, dans cet ordre : **C** les caractères en plomb
+(n° 5), **D** le stylo et le tampon (n° 9), **E** les quatre échantillons
+debout (n° 15), **F** la vitrine anonyme de nuit (n° 21). Les prompts
+sortent du bloc de `BRIEF-PHOTOS-IA.md`, § 3.6 : une seule ligne change
+d'une image à l'autre.
 
 ### 8. Le logo SR Coiffure
 
@@ -106,25 +113,31 @@ l'agrandissement.
 
 Aucune planche ne les attend : elles élargiraient le choix, c'est tout.
 
-### 11. Le `.ai` de la composition deux lignes de BIG FOOD
-
-La capture reçue fait 356 px. Elle est posée **à cette taille exacte**,
-donc nette. Mais 356 px est un plafond : le jour où cette composition
-part à l'impression, il faudra le vectoriel.
-
-### 12. Les textes des deux avis Google
+### 11. Les textes des deux avis Google
 
 **Social Miroir** et **Solaire 66** ont laissé un avis le 13 octobre. Les
 textes ne sont pas lisibles depuis ici. Me les recopier permet d'écrire
 les réponses — un avis sans réponse vaut la moitié d'un avis.
 
-### 13. L'adresse de partage de la fiche Google
+### 12. L'adresse de partage de la fiche Google
 
 Une adresse courte en `g.page/…`, ou un lien Maps. Elle se récupère dans
 le profil d'établissement, bouton **« Partager »**.
 
 C'est la dernière entrée manquante du bloc `sameAs` : celle qui permet à
 Google de rapprocher le site, la fiche et les réseaux sans le deviner.
+
+### 13. Une réserve, pas un manque : le violet de BIG FOOD
+
+Le vectoriel reçu le 23 octobre ne porte **que le logo**, sur fond
+transparent. La capture qu'il remplace montrait ce logo sur une bande
+violette, et c'est là que la planche 2 de la n° 25 prenait son fond.
+
+Le violet `#4b175f` est conservé dans `reseaux/couleurs-clients.json`,
+versionné, avec sa provenance. **À confirmer auprès du client :** si
+Big Food n'a pas de violet de marque, l'entrée se retire et la planche
+tombe sur l'encre de la charte. L'orange et le blanc, eux, se relèvent
+toujours dans le fichier — `#f39200` et `#ffffff`, exacts.
 
 ### 14. La confirmation des délais d'impression
 
@@ -144,12 +157,17 @@ Pour que la liste soit honnête dans les deux sens.
 | L'accord KRUSTY | ✅ donné le 22 octobre |
 | L'accord SWEET DREAM | ✅ donné le 22 octobre |
 | L'accord BIG FOOD | ✅ donné le 22 octobre |
-| La date de SWEET DREAM | ✅ mercredi 25 novembre |
+| La date de SWEET DREAM | ✅ mercredi 2 décembre |
 | Le mock-up du dépliant KRUSTY | ✅ posé, planche 4 |
 | Le mock-up du dépliant SWEET DREAM | ✅ calculé, planche 7 |
 | Les photos des publications | ✅ plus aucune publication n'attend d'image |
 | Les cartes Solaire 66 | ✅ reçues le 23 octobre, planche 4 complète |
-| Les gabarits de visuels | ✅ 30 gabarits, 210 planches |
+| Les gabarits de visuels | ✅ 30 publications, 173 planches, 44 stories |
+| Le logo Social Miroir | ✅ reçu le 23 octobre, trois déclinaisons vectorielles |
+| Le premier visuel IA | ✅ A, le nuancier, intégré à la n° 1 |
+| Le deuxième visuel IA | ✅ B, les papiers sur la tranche, reçu le 23 octobre |
+| Les trois projets sans accord | ✅ retirés, fichiers supprimés |
+| Le `.ai` deux lignes de BIG FOOD | ✅ reçu le 23 octobre, les deux compositions, 3200 px |
 
 ---
 
