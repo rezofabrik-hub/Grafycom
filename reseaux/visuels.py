@@ -145,6 +145,19 @@ PHOTOS = {
     "chene-clair":       SOURCES / "ambiances" / "M-chene-clair.jpg",
     "lin-froisse":       SOURCES / "ambiances" / "N-lin-froisse.jpg",
     "beton-cire":        SOURCES / "ambiances" / "O-beton-cire.jpg",
+    # n° 18, clôture — image GENEREE, recue le 23 octobre. Le piege de
+    # celle-ci est le plus grave de la serie : la mention de tri et le
+    # Triman sont des SYMBOLES REGLEMENTES. Un pictogramme invente sur
+    # un sachet, dans la publication qui parle precisement de cette
+    # mention, serait une affirmation reglementaire fausse — et le
+    # texte de la publication porte deja l'avertissement « contenu au
+    # conditionnel, verification a faire ». Le sachet est donc
+    # rigoureusement VIERGE : ni bandeau, ni etiquette, ni pastille,
+    # ni pictogramme.
+    #
+    # Fond platre et non chene : du kraft brun sur du chene clair, ce
+    # sont deux bruns chauds qui se mangent.
+    "sachet-kraft":      SOURCES / "ambiances" / "P-sachet-kraft.jpg",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -4791,14 +4804,34 @@ def pub18_emballage_tri(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "06.png"))
 
+    # La CLOTURE passe sur la photographie, et surtout pas l'ouverture.
+    # La docstring de cette fonction dit pourquoi : les planches 01 et
+    # 02 sont le MEME sachet dessine, et la 02 y repose la zone a
+    # reserver. Une photo en 01 ferait deux sachets differents et la
+    # demonstration tomberait. La 07 n'affirme rien, elle appelle — et
+    # un sachet vierge sous la question invite le geste au lieu de
+    # l'illustrer, comme la feuille blanche de la n° 9.
+    #
+    # La fleche corail saute : le carrousel tourne deja en turquoise,
+    # un troisieme accent serait de trop, et rien dans un kraft nu
+    # n'est turquoise.
     p = Planche("encre")
-    p.filet(y=330)
-    p.titre("Vous préparez\nun emballage\npour les fêtes ?", 92, "blanc")
-    p.y += 40
-    p.texte("Dites-moi en commentaire ce que vous vendez : je vous dis "
-            "quelles questions poser, et à qui.", 40, "creme", 400, avant=20)
-    p.fleche("corail", y=1120)
-    p.signature("sable")
+    T = "Vous préparez\nun emballage\npour les fêtes ?"
+    ST = ("Dites-moi en commentaire ce que vous vendez : je vous dis "
+          "quelles questions poser, et à qui.")
+    p.photo("sachet-kraft", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.filet(y=330)
+        p.titre(T, 92, "blanc")
+        p.y += 40
+        p.texte(ST, 40, "creme", 400, avant=20)
+        p.fleche("corail", y=1120)
+        p.signature("sable")
+    else:
+        p.y = 752
+        p.titre(T, 78, "blanc")
+        p.texte(ST, 38, "blanc", 400, avant=24)
+        p.signature("blanc")
     faits.append(p.ecrire(d / "07.png"))
     return faits
 

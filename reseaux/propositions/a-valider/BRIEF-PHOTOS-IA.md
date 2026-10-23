@@ -217,6 +217,28 @@ frame` — et le négatif ajoute `letterforms, glyphs, typefaces, printed
 characters, engraved text, mirror writing, type faces pointing at
 camera`.
 
+**Les symboles réglementés — le piège le plus grave, et il était dans
+ce brief.** La ligne H demandait « un paquet kraft fermé d'un bandeau
+imprimé et d'une pastille ». C'est exactement ce qu'il ne fallait pas
+générer : la publication n° 18 parle de **la mention de tri**, et le
+Triman est un symbole réglementé. Un bandeau imprimé sur ce sachet se
+serait lu comme cette mention, et un pictogramme inventé est une
+affirmation réglementaire fausse — pire qu'une lettre inventée, parce
+qu'un client peut s'en prévaloir. D'autant que le texte de cette
+publication porte déjà l'avertissement « contenu au conditionnel,
+vérification à faire ».
+
+Le sachet reçu est donc **rigoureusement vierge** : ni bandeau, ni
+étiquette, ni pastille, ni pictogramme. Négatif correspondant :
+`printed band, printed label, sticker, pictogram, recycling symbol,
+triman, sorting symbol, eco label, certification mark, barcode, QR
+code, stamp`.
+
+**Et les mains sont sorties.** H les demandait, « coupées au poignet ».
+Les sept images à sujet les ont toutes évitées et aucune n'en a
+souffert. Compter les doigts reste le défaut le plus fréquent des
+moteurs, et aucune de ces publications n'avait besoin d'un geste.
+
 **L'extérieur — la seule image qui ne tient pas les sept constantes.**
 F est un extérieur : il n'a ni établi, ni fenêtre à 45° à gauche. Trois
 entorses, assumées et nommées plutôt que subies — la surface sort de la
@@ -345,7 +367,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 | # | Publication | L'image |
 |---|---|---|
 | **G** | n° 17 · Rétroplanning vœux | Une main qui pose une carte imprimée sur une table, pile de cartes à côté, gaufrage visible en lumière rasante. Accent **violet**. |
-| **H** | n° 18 · Emballage de fête | Un paquet kraft fermé d'un bandeau imprimé et d'une pastille, en cours de fermeture, mains coupées au poignet. |
+| ~~**H**~~ → **P** | n° 18 · Emballage de fête | ✅ **reçue le 23 octobre**, mais **rien de ce qui était décrit ici**. Un sachet kraft **rigoureusement vierge** sur du plâtre pâle, sans mains. Sur la planche **07**, la clôture. Déposée en `P-sachet-kraft.jpg`. |
 | **I** | n° 15 bis · Un visuel, quatre supports | Les quatre supports réels **côte à côte** sur un plan de travail : étiquette, sachet, carte, adhésif. Vue de dessus, léger désordre. |
 | **J** | n° 20 · Matières et fabrication | Une découpe en cours : lame, règle en acier, chute d'adhésif qui s'enroule. Geste arrêté. |
 | **K** | n° 23 · Impressions de fin d'année | Une sortie d'imprimante en train de tomber dans le réceptacle, légèrement floue par le mouvement. |
