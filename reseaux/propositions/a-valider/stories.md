@@ -415,8 +415,7 @@ sur le site.
 - **Arrière-plan :** aplat blanc cassé chaud `#f7f1ef`. En bas de l'écran,
   hors du tiers central, une photo recadrée de cartes de vœux empilées, en
   bande horizontale.
-- **Texte exact :** « Nouveau post. Pour Noël, c'est passé. Pour janvier,
-  c'est maintenant. »
+- **Texte exact :** « Nouveau post. Créer maintenant, imprimer en janvier. »
 - **Sticker :** *Sondage A/B* — question rédigée : « Vos vœux cette année,
   vous les envoyez quand ? »
   → **A : avant Noël** · **B : en janvier**

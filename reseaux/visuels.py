@@ -2600,7 +2600,7 @@ def stories(dossier=None):
       "Compte à rebours", ["Bon à tirer de fin d'année",
                            "réglé au 7 décembre"]),
      ("S5-A", "sable_chaud", "encre", "Nouveau post",
-      "Pour Noël, c'est passé.\nPour janvier, c'est maintenant.",
+      "Créer maintenant.\nImprimer en janvier.",
       "Sondage", ["Vos vœux cette année, vous les envoyez quand ?",
                   "A : avant Noël", "B : en janvier"]),
      ("S5-B1", "sable_chaud", "encre", "Réglementation",

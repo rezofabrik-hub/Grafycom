@@ -274,6 +274,47 @@ déclaration / autorisation appliquée aux adhésifs de Noël, avec le rappel du
 Cerfa périmé. C'est une redite partielle, assumée : ce rappel mérite d'être
 répété, c'est le piège le plus coûteux du sujet. À vous de voir.
 
+> ✅ **Tranché le 23 octobre.** Laurent m'a laissé décider. Les trois
+> points sont réglés, et deux d'entre eux l'étaient déjà sans qu'on le
+> sache — ce document avait été écrit avant les arbitrages de la soirée.
+>
+> **1. Le rétroplanning — rien à échanger.** Le doublon redouté
+> n'existe pas, et l'angle de remplacement proposé ici *existe déjà* :
+> « un même visuel de fêtes décliné sur quatre supports » a été écrit à
+> l'arbitrage n° 3, c'est la **n° 15 bis du samedi 21 novembre**. Quant
+> au sujet lui-même, il est désormais porté par une paire volontaire :
+> le **reel n° 16 du 9 novembre** ouvre avec une date limite encore
+> devant le lecteur, le **carrousel n° 17 du 23** ferme en disant ce
+> qu'il reste une fois la fenêtre close. Quatorze jours d'écart, deux
+> messages différents.
+>
+> **Un vrai doublon a été trouvé en vérifiant, et corrigé** : les deux
+> stories. `S4-E` du 20 novembre annonçait l'article — « pour Noël
+> c'est trop tard, et c'est une bonne nouvelle » — et `S5-A` du 23
+> annonçait le carrousel — « Pour Noël, c'est passé. Pour janvier,
+> c'est maintenant. » Deux titres quasi identiques à trois jours, et
+> c'est le seul endroit où un même abonné voit les deux. `S5-A` porte
+> maintenant **« Créer maintenant, imprimer en janvier »**, qui est la
+> thèse propre du carrousel — le calendrier coupé en deux — et que
+> l'article n'annonce pas.
+>
+> **2. La vitrine — rien ne bouge.** J'ai compté : cinq éléments en
+> vingt jours, mais ce sont **deux campagnes, pas une répétition**.
+> Matière les 12 et 13 novembre (article puis reel), composition les 27
+> et 30 (article puis carrousel) — chaque fois un article le vendredi
+> et son relais Instagram dans la foulée, ce qui est le dispositif
+> voulu, pas un doublon. Les deux angles sont bien ceux que décrit ce
+> document : l'un dit *quoi poser*, l'autre *où et pourquoi*.
+>
+> **3. La n° 22 — gardée telle quelle.** Elle est au **1er décembre**,
+> pas au 24 novembre comme écrit ici. L'article du 12 novembre
+> effleure « quand ça devient une enseigne » en conclusion ; elle en
+> fait son sujet, **dix-neuf jours plus tard**, avec le rappel du Cerfa
+> périmé. À cet écart, la répétition n'est plus une redite : c'est de
+> la pédagogie, et sur le piège le plus coûteux du sujet. Sa réserve
+> réglementaire, elle, reste ouverte — c'est elle qui conditionne sa
+> sortie, pas le recoupement.
+
 ---
 
 ## 3 · Les vérifications réglementaires qui bloquent
