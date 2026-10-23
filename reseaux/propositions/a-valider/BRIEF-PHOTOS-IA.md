@@ -425,6 +425,70 @@ recopié se voit en une seconde ; une structure continue aussi.
 
 ---
 
+## 5 bis. Ce qui ne recevra pas de photographie, et pourquoi
+
+Vérifié publication par publication le 23 octobre. **Ce n'est pas une
+liste d'attente : c'est une liste de refus motivés.** Elle existe pour
+que la question ne se repose pas dans trois semaines.
+
+### Les quatre réalisations — règle absolue
+
+Solaire 66, Sweet Dream, Krusty, Big Food. Aucune image générée
+n'approche le travail d'un client, jamais, à aucune place du carrousel.
+
+### Les démonstrations calculées
+
+| Publication | Ce qu'elle démontre | Pourquoi le dessin gagne |
+|---|---|---|
+| n° 4 · RVB/CMJN | les deux synthèses | les recouvrements sont **calculés**, pas choisis |
+| n° 11 · slogan anglais | une devanture qui porte un slogan | l'enseigne **est** la question |
+| n° 12 · vitrophanie | voir ci-dessous | les cinq écrans |
+| n° 13 · fichier vectoriel | la marque témoin réduite | c'est le même objet d'un écran à l'autre |
+| n° 15 · quiz matières | quatre coupes | l'épaisseur est **volontairement exagérée** : 3 mm d'alu sur un panneau d'un mètre ne feraient pas un pixel |
+| n° 18 · emballage, planches 01-02 | la zone à réserver | c'est le **même** sachet sur les deux planches |
+| n° 22 · sticker | une vitrine et ses stickers | les stickers **sont** la question |
+| les dilemmes | A contre B | la comparaison exige deux objets identiques à un détail près |
+
+### La n° 12, vérifiée écran par écran
+
+C'était la dernière candidate du creux du feed. Elle est fermée deux
+fois.
+
+**Les quatre premiers écrans démontrent**, et le plus décisif est le
+premier, de façon subtile : il porte **une cote**. Une ligne de mesure
+tracée comme sur un plan, qui annonce 6 m² sur la largeur exacte de la
+vitrine dessinée. Sur une vitrine générée, cette cote mesurerait
+quelque chose dont personne ne connaît la taille — on affirmerait une
+surface qui n'est pas celle de l'objet montré. C'est la faute du
+dibond, transposée à une dimension.
+
+**Le cinquième ne démontre rien, et il est fermé quand même.** Le
+document le dit déjà : « une vitrine inventée sur le compte d'une
+graphiste qui habille des vitrines est précisément l'image qui se
+retourne contre elle ». Et c'est le cas le plus exposé : il montre une
+vitrine **habillée**, décor adhésif et enseigne. Exactement ce que
+Sandra vend.
+
+C'est ce qui le sépare de **F**, pourtant une devanture elle aussi : F
+ne montre que du vitrage nu, une bordure et du bitume. Aucun habillage,
+aucune enseigne, rien qui ressemble à une commande. Elle ne prétend à
+rien.
+
+### Conséquence : le creux du feed est structurel
+
+Positions 13 à 18 de la grille — quiz matières, Krusty, slogan anglais,
+fichier vectoriel, vitrophanie, dilemme carte. Six carreaux sans
+photographie, et les six sont exclus pour une raison écrite.
+
+**Ce n'est pas un oubli à rattraper.** C'est la zone du cycle où les
+publications démontrent le plus, donc où le dessin fait un travail que
+la photographie ne peut pas faire. Le feed y est plus uniforme parce
+que le contenu y est plus technique. Aller plus loin obligerait à
+casser une démonstration, et la première personne à s'en apercevoir
+serait le public de Sandra.
+
+---
+
 ## 6. Comment juger une image avant de l'accepter
 
 Six tests. Si l'un échoue, régénérer plutôt que retoucher.
