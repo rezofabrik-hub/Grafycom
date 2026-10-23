@@ -2553,7 +2553,8 @@ def stories(dossier=None):
                             "même aux questions qui paraissent bêtes.",
                             "Surtout à celles-là."]),
      ("S3-D1", "creme", "encre", "Le vote du jeudi",
-      "Même carte, mêmes prix.\nLaquelle fait commander\nle plat ?",
+      "Même carte, mêmes prix.\nLaquelle fait commander le plat, "
+      "et pas le chiffre ?",
       "Sondage", ["A : prix au fil du texte", "B : prix alignés à droite"]),
      ("S3-D2", "sable_chaud", "encre", "La réponse",
       "A.",

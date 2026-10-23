@@ -113,6 +113,39 @@ sticker et ses options, arrière-plan.
 
 ## ✅ BON À PUBLIER — stories
 
+> ⚠️ **Ce document porte DEUX checklists qui ne parlent pas des mêmes
+> écrans, et aucune des deux ne suit le calendrier. Relevé le
+> 23 octobre, non corrigé : trancher demande une décision.**
+>
+> Celle-ci (ci-dessous, S3-A à S4-F, du 26/10 au 07/11) et celle du
+> canal stories, plus bas (du 09/11 au 21/11), **réutilisent les mêmes
+> codes pour des écrans différents**. Dans celle-ci, `S3-C` est la
+> boîte à questions et `S3-D1` le vote du jeudi ; dans l'autre, `S3-C`
+> est le vote du jeudi et `S3-E` la boîte à questions — les lettres
+> sont décalées d'un cran, parce que la seconde n'a ni écran Halloween
+> ni `S3-E2`.
+>
+> **Le moteur et le calendrier suivent la lettre de celle-ci**, pas de
+> l'autre : `visuels.py` produit bien `S3-C` en boîte à questions, et
+> `calendrier.md` la programme au mercredi 11 novembre, 18 h 30. Or la
+> seconde checklist écrit, à cette date : « Aucune story — Armistice,
+> choix assumé ». Les deux ne peuvent pas être vraies.
+>
+> **Les dates de cette checklist-ci sont périmées** : elles datent
+> d'avant la permutation « pour rester de saison ». Dix-neuf écrans
+> sont concernés, et le calendrier a raison partout où j'ai pu
+> vérifier — sa règle est constante, la story tombe quinze minutes
+> après la publication du jour. C'est ce qui explique les trois
+> horaires qui semblaient aberrants : `S1-A` à 18 h 45 derrière un
+> post de 18 h 30, `S1-E` à 10 h 45 derrière le reel de 10 h 30,
+> `S2-E` à 18 h 15 derrière celui de 18 h 00.
+>
+> Je peux réaligner les deux tables sur le calendrier d'un coup, et
+> poser le contrôle qui empêchera la dérive de revenir — comme pour la
+> fiche Google. Mais il faut d'abord dire **quelle lettre fait foi**,
+> et **si le 11 novembre porte une story ou non**. Ces deux réponses
+> ne se déduisent d'aucun fichier.
+
 | ✔ | Écran | Jour | Date | Heure | Contenu | Validé par |
 |---|---|---|---|---|---|---|
 | ☐ | S3-A | Lundi | 26/10 | 12 h 45 | Teasing carrousel + sondage A/B | |
