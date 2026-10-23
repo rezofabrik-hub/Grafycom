@@ -65,6 +65,23 @@ elle qui a attrapé tout ce qui suit.
 | `08-croquis-denim.jpg` | veste en jean, carnet de croquis | reçue en aperçu seulement, pas en fichier |
 | `05-profil-ecran-solaire66.jpg` | de profil, écran | perdue avec le conteneur, non renvoyée |
 
+## Les trois manquantes sortent de la liste — 23 octobre
+
+`03-portrait-nuancier-4x5.jpg`, `08-croquis-denim.jpg` et
+`05-profil-ecran-solaire66.jpg` ne seront ni fournies ni générées.
+
+**Générer est exclu** : ce sont des photos de Sandra dans son atelier,
+et c'est ce qui a échoué cinq fois. Le sujet est clos dans les trois
+directions, voir plus haut.
+
+**Et rien ne les attend.** Vérifié dans `visuels.py` : les trois ne
+sont référencées nulle part. Le registre `PHOTOS` n'en connaît que
+quatre — 01, 04, 06, 07 — toutes en place.
+
+`retouche_atelier.py` garde sa fonction `pseudo()` pour la 03, et
+`_zone_pseudo_03()` avec elle. Elles ne coûtent rien et elles servent
+le jour où le fichier réapparaît.
+
 ## Ce qui manque encore
 
 - **Plus rien.** Le panneau de chantier est arrivé le 23 octobre —

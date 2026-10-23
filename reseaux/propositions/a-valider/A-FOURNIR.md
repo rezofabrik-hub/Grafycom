@@ -110,40 +110,27 @@ Restent les neuf images de priorité moyenne et basse du brief — **G**
 à **O**. Aucune n'est attendue par une planche : elles élargiraient le
 choix, c'est tout.
 
-### 8. La photo `03-portrait-nuancier-4x5.jpg` — « la grande version »
+### 8. ~~Les trois photos d'atelier manquantes~~ — retirées de la liste
 
-**La question était : c'est quoi, la grande version ?** Voici la
-réponse exacte, parce que ma formulation précédente était vague.
+`03-portrait-nuancier-4x5.jpg`, `08-croquis-denim.jpg`,
+`05-profil-ecran-solaire66.jpg`. Elles y figuraient depuis le début.
+Elles en sortent le 23 octobre, pour deux raisons qui se suffisent
+chacune.
 
-Sur cette photo, le pseudo est écrit à la main sur du liège :
-**« @grafycom graphiste », sans le point**. `retouche_atelier.py`
-sait le réparer — il efface l'encre sombre, reconstruit le liège par
-flou local, et réécrit « @grafycom.graphiste » incliné de 3 degrés pour
-suivre la ligne de base.
+**On ne peut pas les générer.** Ce sont des photos de Sandra dans son
+atelier, et c'est exactement ce qui a échoué cinq fois : texte inventé
+sur les murs, logo Grafycom redessiné, logo Solaire 66 faux. Le sujet
+est clos, dans les trois directions — voir `PHOTOS-ATELIER.md`.
 
-Mais la fonction travaille sur **des coordonnées en pixels, relevées
-une fois à la main** : la boîte du pseudo est à `(1120, 588)-(1570, 696)`.
-Cela suppose une image d'au moins **1570 px de large**. Le script porte
-aussi un second jeu de coordonnées, `(318, 470)-(700, 516)`, pour une
-copie **3,5 fois plus petite** — c'est celle-là qui avait circulé.
+**Et aucune planche ne les attend.** Vérifié : les trois sont
+référencées nulle part dans `visuels.py`. Le registre `PHOTOS` n'en
+connaît que quatre — 01, 04, 06, 07 — et elles sont toutes en place.
+Ces trois-là élargissaient le choix, rien de plus.
 
-Sur la petite, la retouche se voit : le liège reconstruit est plus lisse
-que le vrai, et le raccord apparaît dès qu'on agrandit.
+Un manque qu'on ne peut pas combler et que personne n'attend n'est pas
+un manque. Il encombre la liste, et il fait douter du reste.
 
-**Et depuis, le fichier a disparu.** `sources/atelier/` contient
-aujourd'hui 01, 04, 06 et 07 — pas de 03. Il est parti avec le
-conteneur, comme la photo n° 05. Ce qu'il faut donc, c'est **le fichier
-d'origine tel qu'il sort de l'appareil**, pas un envoi par messagerie
-qui le redimensionne.
-
-### 9. Deux photos d'atelier
-
-- `08-croquis-denim.jpg` — reçue en aperçu seulement, jamais en fichier.
-- `05-profil-ecran-solaire66.jpg` — perdue avec le conteneur, non renvoyée.
-
-Aucune planche ne les attend : elles élargiraient le choix, c'est tout.
-
-### 10. ~~Les textes des avis Google~~ — les deux sont arrivés
+### 9. ~~Les textes des avis Google~~ — les deux sont arrivés
 
 **Solaire 66** le matin du 23 octobre, **Social Miroir** le soir. Les
 deux textes sont dans `outils/FICHE-GOOGLE.md`, les deux réponses sont
@@ -161,7 +148,7 @@ reste.** À cinq, ce n'est plus une phrase qui peut le dire, c'est la
 structure — deux groupes, deux intertitres, et la page se lit sans note
 de bas de bloc.
 
-### 11. L'adresse de partage de la fiche Google
+### 10. L'adresse de partage de la fiche Google
 
 Une adresse courte en `g.page/…`, ou un lien Maps. Elle se récupère dans
 le profil d'établissement, bouton **« Partager »**.
@@ -169,7 +156,7 @@ le profil d'établissement, bouton **« Partager »**.
 C'est la dernière entrée manquante du bloc `sameAs` : celle qui permet à
 Google de rapprocher le site, la fiche et les réseaux sans le deviner.
 
-### 12. ~~Le violet de BIG FOOD~~ — tranché le 23 octobre
+### 11. ~~Le violet de BIG FOOD~~ — tranché le 23 octobre
 
 **Il n'est pas une couleur de marque.** L'entrée est retirée de
 `reseaux/couleurs-clients.json`, et la planche 2 de la n° 25 tombe sur
@@ -179,31 +166,35 @@ de registre reste en place, vide : il a servi une fois, il resservira.
 L'orange et le blanc continuent de se relever dans le vectoriel :
 `#f39200` et `#ffffff`, exacts.
 
-### 13. Le logo rond de Social Miroir, à reprendre par Sandra
+### 12. Le logo rond de Social Miroir — rien ne l'attend non plus
 
-Ce n'est pas un fichier à me fournir : c'est une correction à faire
-dans Illustrator, et elle ne se fait pas sur un PNG. Voici les mesures,
-pour qu'elle n'ait pas à les relever.
+**Le site n'est pas concerné.** La vignette de la page réalisations est
+faite à partir de la version **en long**, qui n'a pas le défaut. Le
+fichier rond ne sert nulle part : ni sur le site, ni dans une
+publication, ni dans un visuel. Il n'y a donc **rien à enlever**, et
+rien qui bloque.
+
+La reprise ne devient utile que le jour où la version ronde doit servir
+d'**avatar** — c'est son usage, et c'est là que le défaut se verrait :
+Instagram et Facebook recadrent l'avatar en cercle, et ce qui touche le
+bord se fait rogner.
+
+Les mesures restent ici pour ce jour-là, et la correction est plus
+simple qu'elle n'en a l'air :
 
 | | Aujourd'hui | Cible |
 |---|---|---|
-| Marge à gauche | **26,1 mm** | inchangée |
+| Marge à gauche | 26,1 mm | inchangée |
 | Marge à droite | **1,9 mm** | 26,1 mm |
-| Décentrage du bloc | **+12,1 mm** vers la droite | 0 |
+| Décentrage du bloc | +12,1 mm | 0 |
 | Largeur du bloc | 172,0 mm | **147,9 mm** |
 
-**Et la correction est plus simple qu'elle n'en a l'air : la largeur
-visée est exactement celle de la version carrée.** La bande y mesure
-147,7 mm contre 147,9 ici — à deux dixièmes près, la même. Il ne s'agit
-donc pas de redessiner quoi que ce soit, mais de **rendre à la bande la
-longueur qu'elle a déjà dans les deux autres déclinaisons**, et de
-recentrer le bloc.
+**La largeur visée est exactement celle de la version carrée** —
+147,7 mm mesurés contre 147,9. Il ne s'agit pas de redessiner, mais de
+rendre à la bande la longueur qu'elle a déjà dans les deux autres
+déclinaisons, et de recentrer.
 
-Tant que ce n'est pas fait, `social-miroir-rond.png` **ne sert nulle
-part** : la vignette du portfolio utilise la version en long, qui n'a
-pas le défaut.
-
-### 14. ~~La n° 18~~ — sortie du calendrier le 23 octobre
+### 13. ~~La n° 18~~ — sortie du calendrier le 23 octobre
 
 Elle devait partir le mardi 24 novembre à 8 h 00. **Elle ne part pas**,
 et elle n'a plus de date tant que la signalétique de tri n'est pas
@@ -223,7 +214,7 @@ Pour la remettre un jour : une ligne dans `visuels.py`,
 `GABARITS["emballage-tri"] = pub18_emballage_tri`, et les sept planches
 reviennent — sachet kraft compris.
 
-### 15. La confirmation des délais d'impression
+### 14. La confirmation des délais d'impression
 
 La n° 16 annonce **création fin novembre, bon à tirer début décembre,
 livraison mi-décembre**. À faire confirmer par l'imprimeur partenaire
