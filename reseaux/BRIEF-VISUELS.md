@@ -235,6 +235,36 @@ la franchit jamais.
 en 4:5 et **y = 1808** en 9:16. Aucun bloc de texte ne descend sous cette
 ligne.
 
+### 3.1 À la publication : caler en haut la vignette des reels
+
+**Un reel se publie en 9:16, mais la grille du profil l'affiche en 4:5.**
+Instagram recadre alors **au centre** par défaut, et retire **285 px en
+haut** comme en bas — le calcul est sans surprise : `(1920 − 1350) / 2`.
+
+Ces 285 px contiennent le surtitre « REEL · 0-3 S » de tous les reels, et
+sur deux d'entre eux ils mordent dans le titre lui-même :
+
+| Reel | Titre posé à | Ce que le recadrage centré mange |
+|---|---|---|
+| **09/11 · « Pour Noël, vous êtes déjà en retard. »** | y = 220 | **65 px de titre** — « Pour Noël, » tranché |
+| **06/11 · « Pourquoi ce n'est jamais la même couleur. »** | y = 260 | **25 px de titre** |
+| 30/10 · Halloween | y = 280 | le surtitre (5 px de marge sur le titre) |
+| 13/11 · vitrophanie | y = 300 | le surtitre |
+| 05/12 · bilan | y = 290 | le surtitre |
+| 27/11 · matières | couverture photo | rien de lisible |
+
+**La règle, donc : au moment de publier un reel, tirer le cadrage de la
+vignette tout en haut.** Instagram le permet au doigt, sur l'écran de
+choix de la couverture. Le titre et le surtitre entrent alors en entier,
+et ce qu'on perd est le bas de l'illustration — ce qui est le bon
+arbitrage : une vignette sert à faire cliquer, pas à tout dire.
+
+Arbitré le 23 octobre. L'autre voie était de descendre les deux titres
+fautifs sous la ligne des 285 px, mais cela aurait déformé la
+composition du reel lui-même — celle que les gens voient en entier
+quand ils le regardent — pour servir sa miniature. **On ne déforme pas
+l'objet pour son aperçu.**
+
 ---
 
 ## 4. Le vocabulaire de mise en page

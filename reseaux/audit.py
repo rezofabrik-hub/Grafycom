@@ -321,6 +321,38 @@ def photos_a_prendre(pubs):
         juste("photos-a-prendre : les dates du tableau suivent le calendrier")
 
 
+def pret_a_valider(pubs):
+    """Le tableau de PRET-A-VALIDER porte-t-il les bonnes dates ?
+
+    Quatrieme tableau de dates tenu a la main, quatrieme derive, et le
+    plus genant des quatre : c'est celui que Laurent a sous les yeux
+    quand il programme. Le 23 octobre il datait encore la n° 16 au
+    28 novembre — elle etait remontee au 9 — la n° 9 au 9 novembre, la
+    n° 22 au 24, et gardait la n° 18 comme si elle etait au calendrier.
+    """
+    ABR = {"oct": 10, "nov": 11, "déc": 12}
+    mauvais, fantomes = [], []
+    for ligne in lire("reseaux/propositions/a-valider/PRET-A-VALIDER.md").split("\n"):
+        m = re.match(r"\| (\d+(?: bis)?) \| \w+ (\d{1,2})(?:er)? (oct|nov|déc) \|",
+                     ligne)
+        if not m:
+            continue
+        num = m.group(1)
+        d = datetime.date(2026, ABR[m.group(3)], int(m.group(2)))
+        if num not in pubs:
+            fantomes.append(num)
+        elif pubs[num][0] != d:
+            mauvais.append("n° %s : tableau %s ≠ publication %s"
+                           % (num, d, pubs[num][0]))
+    for t in mauvais:
+        faux("PRET-A-VALIDER — " + t)
+    if fantomes:
+        faux("PRET-A-VALIDER : numéros hors cycle, à barrer : %s"
+             % ", ".join("n° " + n for n in fantomes))
+    if not mauvais and not fantomes:
+        juste("PRET-A-VALIDER : les dates du tableau suivent le calendrier")
+
+
 def stories_dates():
     """La checklist des stories suit-elle le moteur et le calendrier ?
 
@@ -514,6 +546,7 @@ def main():
     fiche_google()
     photos_a_prendre(pubs)
     stories_dates()
+    pret_a_valider(pubs)
     prudence()
     references()
     reglementation()

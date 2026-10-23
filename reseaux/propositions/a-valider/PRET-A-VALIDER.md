@@ -45,7 +45,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 6 | mar 3 nov | Carrousel | Qui possède votre logo ? | 6 |
 | 7 | jeu 5 nov | Quiz vrai/faux | Quatre idées reçues | 5 |
 | 8 | ven 30 oct | REEL 22 s | Halloween & couleurs | 5 |
-| 9 | lun 9 nov | Carrousel | Un logo tient-il en petit | 6 |
+| 9 | sam 14 nov | Carrousel | Un logo tient-il en petit | 6 |
 | 10 | mar 27 oct | Carrousel | L'enseigne quand la nuit tombe à 17 h | 7 |
 | 11 | jeu 12 nov | Dilemme A/B | La place du prix sur une carte | 2 |
 | 12 | ven 13 nov | REEL 23 s | Les adhésifs de vitrine | 5 |
@@ -53,9 +53,9 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 14 | mar 17 nov | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
 | 15 | jeu 19 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
 | **15 bis** | sam 21 nov | Carrousel 7 planches | **Un visuel, quatre supports** | 7 |
-| 16 | sam 28 nov | REEL 25 s | Décembre se décide en novembre | 5 |
+| 16 | lun 9 nov | REEL 25 s | Décembre se décide en novembre | 5 |
 | 17 | lun 23 nov | Carrousel | Les vœux de janvier ♻️ | 6 |
-| 18 | mar 24 nov | Carrousel | La place à réserver sur un emballage | 7 |
+| ~~18~~ | 🛑 sortie | Carrousel | La place à réserver sur un emballage | 7 |
 | 19 | jeu 26 nov | Dilemme A/B | Deux cartes de vœux | 2 |
 | 20 | ven 27 nov | REEL 24 s | Matières et fabrication | 5 |
 | 21 | lun 30 nov | Carrousel | La vitrine vue du trottoir d'en face | 7 |
@@ -191,8 +191,8 @@ avec le Cerfa 14798\*01, périmé depuis le 1er juillet 2026.
 | N° | Date | Sujet à vérifier |
 |---|---|---|
 | 14 | mar 17 nov | Loi Toubon : application à une devanture, une marque déposée, une carte bilingue |
-| 18 | mar 24 nov | Signalétique de tri (article L541-10-1) — les sources trouvées ne sont pas officielles |
-| 22 | mar 24 nov | Qualification d'un adhésif de vitrine, et l'extinction nocturne |
+| ~~18~~ | 🛑 sortie du calendrier | Signalétique de tri (article L541-10-1) — les sources trouvées ne sont pas officielles. **C'est cette réserve qui l'a sortie.** |
+| 22 | mar 1er déc | Qualification d'un adhésif de vitrine, et l'extinction nocturne |
 
 La publication n° 6 ne porte plus d'avertissement : le sujet du devis,
 qui en demandait un, a été remplacé. Le carrousel sur la propriété d'un
