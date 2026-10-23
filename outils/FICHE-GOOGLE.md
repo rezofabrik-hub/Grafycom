@@ -231,13 +231,19 @@ c'est exactement ce que Solaire 66 a reçu.
 **Il n'y a donc pas trois avis mais deux**, et celui-ci est le premier
 dont le texte est dans le dépôt. Reste celui de **Social Miroir**.
 
-Sur le site, l'attribution serait **« Laurent — Solaire 66 »**, au
-format des trois témoignages existants. Une seule chose à savoir avant
-de l'y mettre : le bloc d'avis de la page réalisations porte la mention
-« ces avis ont été laissés à l'époque de la structure précédente ».
-Celui-ci ne l'a pas été — c'est le premier avis de l'ère Grafycom, et
-c'est précisément ce qui le rend utile. La mention devra donc se
-déplacer sur les trois anciens au lieu de couvrir le bloc entier.
+**Il est en ligne depuis le 23 octobre**, sur la page réalisations,
+attribué « Laurent — Solaire 66 » et placé **en premier** : c'est le
+seul de l'ère Grafycom, les trois autres viennent de la structure
+précédente.
+
+Et c'est pour ça que la mention de provenance a quitté le pied du bloc,
+où elle couvrait les quatre, pour nommer les trois qu'elle concerne —
+Sarah Otman, Ludivine Le Blay, Jade Lopez. **Une mention globale
+devenue fausse pour un quart du bloc est pire que pas de mention : elle
+fait douter du reste.**
+
+La grille est passée de trois à deux colonnes : quatre cartes sur trois
+colonnes laissaient la quatrième seule sur sa ligne.
 
 ### Les deux premiers avis sont arrivés — 13 octobre 2026
 

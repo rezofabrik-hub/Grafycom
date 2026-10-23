@@ -155,12 +155,11 @@ REZOFABRIK. Un avis de client, sans réserve.
 lisible depuis ici. Me le recopier permet d'écrire la réponse — un avis
 sans réponse vaut la moitié d'un avis.
 
-**Une décision t'attend** : reprendre l'avis de Solaire 66 sur la page
-réalisations, attribué « Laurent — Solaire 66 ». Le bloc des trois
-témoignages porte aujourd'hui la mention « laissés à l'époque de la
-structure précédente » ; celui-ci est le premier de l'ère Grafycom, et
-c'est ce qui le rend utile. La mention devra donc passer sur les trois
-anciens au lieu de couvrir le bloc.
+✅ **Il est en ligne depuis le 23 octobre**, en tête du bloc des avis
+de la page réalisations. La mention « structure précédente » a quitté
+le pied du bloc pour nommer les trois qu'elle concerne : une mention
+globale devenue fausse pour un quart du bloc est pire que pas de
+mention.
 
 ### 11. L'adresse de partage de la fiche Google
 

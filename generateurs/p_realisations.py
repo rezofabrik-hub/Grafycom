@@ -48,6 +48,15 @@ def reaz(cat, titre, desc, fichier, alt=None, avant=False):
 # Cette note vit ici et non dans un commentaire HTML : build.sh recopie
 # le fichier tel quel, et un commentaire nommant des clients retires
 # serait lisible dans la source de la page publique.
+# Le bloc des avis. L'avis de Solaire 66 passe EN PREMIER : c'est le
+# seul de l'ere Grafycom, les trois autres viennent de la structure
+# precedente. Et c'est pour ca que la mention de provenance a quitte le
+# pied du bloc, ou elle couvrait les quatre, pour nommer les trois
+# qu'elle concerne. Une mention globale devenue fausse pour un quart du
+# bloc est pire que pas de mention : elle fait douter du reste.
+#
+# La grille passe de g3 a g2 : quatre cartes sur trois colonnes
+# laissaient la quatrieme seule sur sa ligne.
 GALERIE = "".join([
     reaz("Identité", "Solaire 66",
          "Logo, cartes de visite et panneau de chantier. Le même dessin "
@@ -101,11 +110,15 @@ BODY = """
   <div class="conteneur">
     <div class="centre">
       <span class="eyebrow">Ce que disent mes clients</span>
-      <h2>Trois avis, signés</h2>
+      <h2>Quatre avis, signés</h2>
       <div class="trait" style="margin-left:auto;margin-right:auto"></div>
-      <p class="chapeau">De vrais témoignages, laissés par des clientes avec qui le contact est resté. Pas de phrases inventées pour faire joli&nbsp;: s'il n'y en a que trois, c'est qu'il n'y en a que trois.</p>
+      <p class="chapeau">De vrais témoignages, laissés par des clients avec qui le contact est resté. Pas de phrases inventées pour faire joli&nbsp;: s'il n'y en a que quatre, c'est qu'il n'y en a que quatre.</p>
     </div>
-    <div class="grille g3" style="margin-top:34px;text-align:left">
+    <div class="grille g2" style="margin-top:34px;text-align:left">
+      <article class="carte">
+        <p style="font-size:16px;line-height:1.66;font-style:italic;color:var(--brun)">J'avais beaucoup d'idées en tête, mais je ne savais pas comment les concrétiser. Un immense merci à Sandra qui a su m'écouter et donner vie à mon projet. Mon nouveau logo et ma charte graphique sont magnifiques et me correspondent totalement. Son professionnalisme et sa patience font toute la différence&nbsp;!</p>
+        <p style="margin-top:16px;font-size:15px"><strong>Laurent</strong><br><span style="color:var(--taupe)">Solaire 66</span></p>
+      </article>
       <article class="carte">
         <p style="font-size:16px;line-height:1.66;font-style:italic;color:var(--brun)">J'ai adoré l'accueil, l'écoute et le professionnalisme. Sandra comprend tout de suite ce que vous voulez. Je la recommande vivement : mon coffee shop a été mis en avant avec sa créativité, et maintenant mes bougies artisanales aussi.</p>
         <p style="margin-top:16px;font-size:15px"><strong>Sarah Otman</strong><br><span style="color:var(--taupe)">Ô Fait Maison</span></p>
@@ -119,7 +132,7 @@ BODY = """
         <p style="margin-top:16px;font-size:15px"><strong>Jade Lopez</strong><br><span style="color:var(--taupe)">Mia Beauty</span></p>
       </article>
     </div>
-    <p class="chapeau" style="font-size:.95rem;opacity:.72;margin-top:26px;text-align:center">Ces avis ont été laissés à l'époque de la structure précédente, et sont repris ici avec l'accord de leurs autrices.</p>
+    <p class="chapeau" style="font-size:.95rem;opacity:.72;margin-top:26px;text-align:center">Les avis de Sarah Otman, Ludivine Le Blay et Jade Lopez ont été laissés à l'époque de la structure précédente, et sont repris ici avec l'accord de leurs autrices. Celui de Solaire 66 porte sur un projet mené par Grafycom.</p>
     <div class="groupe-btn" style="margin-top:22px;justify-content:center">
       <a href="contact.html" class="btn btn-secondaire">Laisser un avis</a>
     </div>
