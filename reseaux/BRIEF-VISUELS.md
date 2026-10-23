@@ -796,7 +796,10 @@ l'a livré — la seule publication du cycle qui montre un vrai client.
    l'étape et son moment : « Réception / mi-janvier », « Impression /
    janvier », « Bon à tirer / décembre », « Création / maintenant ». Au
    -dessus, deux repères en taupe : « aujourd'hui » à gauche, « la boîte
-   aux lettres » à droite.
+   aux lettres » à droite. **La flèche entre l'impression et le bon à
+   tirer est en pointillé**, légendée « les fêtes » 24 px : c'est le seul
+   intervalle où rien ne se passe, et le texte dessous dit que le
+   calendrier se coupe en deux.
    **Le sens de lecture est tout le propos** : une frise dessinée dans
    l'autre sens dirait le contraire du texte. · 3/6.
 4. `sable chaud` · **« Les trois étapes / qu'on oublie de compter »**

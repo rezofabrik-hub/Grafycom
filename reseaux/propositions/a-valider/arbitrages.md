@@ -85,7 +85,7 @@ quinzaine suivante (lundi 23 novembre, carrousel — « Vos cartes de vœux de
 Noël se décident cette semaine ») disent la même chose au même public à deux
 jours d'intervalle. Et le rétroplanning est écrit **deux fois au blog** :
 mon article du 20 novembre (« Cartes de vœux et emballages de fête : le
-rétroplanning à tenir ») et celui du 4 décembre
+rétroplanning à tenir », depuis réécrit) et celui du 4 décembre
 (`2026-12-04-retroplanning-fin-annee-commerce.md`), qui traite le même sujet.
 Les deux sont en `à relire` : il faut en supprimer un, et l'argument de date
 plaide pour garder le mien — un rétroplanning qui demande de créer à la
@@ -139,6 +139,31 @@ reel et laisser la quinzaine suivante ouvrir le sujet. Mais pas les deux.
 > Google du 23 et la story qui annonce le carrousel ont été réécrits
 > avec lui.
 >
+> **L'article du 20 novembre a suivi, sur demande de Laurent.** Il
+> portait le même défaut en plus grave : « mi-novembre : la création »,
+> publié le 20, conseillait une fenêtre fermée cinq jours plus tôt, et
+> un article dure plus longtemps qu'un post. Il paraît désormais sous
+> « Cartes de vœux : il est trop tard pour Noël, et c'est une bonne
+> nouvelle », et son illustration a été recomptée avec lui. L'emballage
+> y change de statut : ce n'est plus un support de Noël mais un support
+> d'année, à produire une fois en janvier sans millésime. Le menu de
+> réveillon reste la seule échéance qui n'a pas bougé, et le seul sujet
+> encore urgent au 20 novembre.
+>
+> **Deux textes de fiche Google ont suivi aussi** : le n° 23 du
+> 3 décembre, qui disait encore « la mi-novembre n'est pas trop tard »,
+> et le n° 16, qui relaie l'article.
+>
+> ⚠️ **Ce que cette passe a mis au jour, et qui n'avait rien à voir.**
+> En reconstruisant la checklist de la fiche Google, quatre en-têtes de
+> textes se sont révélés en désaccord avec le calendrier — dont celui
+> du n° 16, qui m'a d'abord fait réécrire un texte pour le
+> 21 novembre alors qu'il paraît le 9, six jours avant la fermeture de
+> la fenêtre. Sa réécriture a été annulée et son en-tête corrigé. Et
+> le texte n° 15 bis, programmé depuis l'arbitrage n° 3, n'avait
+> jamais été écrit. `reseaux/audit.py` contrôle maintenant les trois
+> points à chaque passage.
+>
 > Le créneau du 21 ainsi libéré porte la **n° 15 bis**, écrite à
 > l'arbitrage n° 3 : un même visuel de fêtes décliné sur quatre
 > supports. Elle ne recouvre pas le carrousel du 23 — celui-ci parle
@@ -170,7 +195,9 @@ de blog déjà écrits par elle, et deux de mes sujets tombaient dessus. Voici
 ce que j'ai fait, et ce qui reste à trancher.
 
 **1. Le rétroplanning de fin d'année.** Un article daté du 20 novembre,
-« Cartes de vœux et emballages de fête : le rétroplanning à tenir », couvre
+« Cartes de vœux et emballages de fête : le rétroplanning à tenir »
+— réécrit le 23 octobre sous le titre « Cartes de vœux : il est trop tard
+pour Noël, et c'est une bonne nouvelle » —, couvre
 déjà ce terrain. **J'ai donc changé mon second article de blog** : il porte
 maintenant sur la refonte de logo en début d'année, qui n'est traitée
 nulle part. Deux articles quasi identiques sur le même site se concurrencent

@@ -222,6 +222,105 @@ def comptes(pubs):
         juste("tous les compteurs des documents correspondent au mesuré")
 
 
+def fiche_google():
+    """Les textes de la fiche Google portent-ils la bonne date ?
+
+    Le calendrier programme un texte par publication, au même créneau
+    qu'elle. Les en-têtes du document, eux, étaient saisis à la main,
+    et rien ne les relisait : le 23 octobre, quatre d'entre eux
+    dataient d'un état antérieur du calendrier. Trois tenaient à des
+    publications déplacées — le reel remonté au 9 novembre, la n° 9
+    glissée au 14 — et le quatrième à une heure jamais corrigée.
+
+    L'écart ne se voyait pas, parce que le contrôle de concordance
+    d'au-dessus ne lit que le document Instagram. Celui-ci fait le
+    même travail sur la fiche Google, dans les deux sens : un en-tête
+    qui ne correspond à aucun créneau, et un créneau sans texte.
+    """
+    MOTIF_CAL = (r"\| (?:~~)?(\w+) (\d{1,2})(?:er)? (\w+)(?:~~)? \| "
+                 r"\*{0,2}([\dh\s—-]+?)\*{0,2} \| Fiche Google \| post \| "
+                 r"texte n° ([\w ]+?) \|")
+    cal = {}
+    for ligne in lire("reseaux/propositions/a-valider/calendrier.md").split("\n"):
+        m = re.match(MOTIF_CAL, ligne)
+        if m:
+            _, j, mois, heure, num = m.groups()
+            cal[num.strip()] = (datetime.date(2026, MOIS[mois], int(j)),
+                                re.sub(r"\s+", " ", heure).strip())
+
+    doc = {}
+    for tete in re.findall(r"^## (?:~~)?(\d+(?: bis)?)(?:~~)? — (?:\w+) "
+                           r"(\d{1,2})(?:er)? (\w+)(?: 2026)?, "
+                           r"(\d+ h(?: \d+)?)",
+                           lire("reseaux/propositions/a-valider/fiche-google.md"),
+                           re.M):
+        num, j, mois, heure = tete
+        doc[num] = (datetime.date(2026, MOIS[mois], int(j)),
+                    re.sub(r"\s+", " ", heure).strip())
+
+    t = lire("reseaux/propositions/a-valider/fiche-google.md")
+    m = re.search(r"les (\d+) textes à valider", t)
+    if not m:
+        faux("fiche Google : compteur de textes introuvable en tête")
+    elif int(m.group(1)) != len(doc):
+        faux("fiche Google : l'en-tête annonce %s textes, %d sont datés"
+             % (m.group(1), len(doc)))
+    else:
+        juste("fiche Google : le compteur de tête vaut les textes datés (%d)"
+              % len(doc))
+
+    sans_texte = sorted(set(cal) - set(doc))
+    if sans_texte:
+        faux("fiche Google : créneau au calendrier sans texte écrit : %s"
+             % ", ".join("n° " + n for n in sans_texte))
+    else:
+        juste("fiche Google : chaque créneau du calendrier a son texte")
+
+    divergent = ["n° %s : en-tête %s %s ≠ calendrier %s %s"
+                 % (n, doc[n][0], doc[n][1], cal[n][0], cal[n][1])
+                 for n in sorted(set(doc) & set(cal))
+                 if doc[n] != cal[n]]
+    if divergent:
+        for d in divergent:
+            faux("fiche Google — " + d)
+    else:
+        juste("fiche Google : les en-têtes concordent avec le calendrier")
+
+
+def photos_a_prendre(pubs):
+    """Le tableau des visuels livrés porte-t-il les bonnes dates ?
+
+    Meme defaut que les en-tetes de la fiche Google, et trouve le meme
+    jour : ce tableau datait chaque publication a la main, et cinq de
+    ses lignes avaient vieilli — deux numeros intervertis, deux dates
+    jamais reprises, et la n° 16 restee au 21 novembre alors qu'elle
+    etait remontee au 9. Un tableau de dates qu'aucun programme ne
+    relit finit toujours par mentir.
+    """
+    ABR = {"oct": 10, "nov": 11, "déc": 12}
+    mauvais, inconnues = [], []
+    for ligne in lire("reseaux/propositions/a-valider/photos-a-prendre.md")\
+            .split("\n"):
+        m = re.match(r"\| (\d+(?: bis)?) \| (\d{1,2})(?:er)? (oct|nov|déc) \|",
+                     ligne)
+        if not m:
+            continue
+        num = m.group(1)
+        d = datetime.date(2026, ABR[m.group(3)], int(m.group(2)))
+        if num not in pubs:
+            inconnues.append(num)
+        elif pubs[num][0] != d:
+            mauvais.append("n° %s : tableau %s ≠ publication %s"
+                           % (num, d, pubs[num][0]))
+    for t in mauvais:
+        faux("photos-a-prendre — " + t)
+    if inconnues:
+        faux("photos-a-prendre : numéros hors cycle, à barrer : %s"
+             % ", ".join("n° " + n for n in inconnues))
+    if not mauvais and not inconnues:
+        juste("photos-a-prendre : les dates du tableau suivent le calendrier")
+
+
 def prudence():
     """Les règles qu'on ne discute pas."""
     # Le pseudo. Une citation du défaut n'est pas le défaut.
@@ -357,6 +456,8 @@ def main():
     pubs = _publications()
     dates(pubs)
     comptes(pubs)
+    fiche_google()
+    photos_a_prendre(pubs)
     prudence()
     references()
     reglementation()

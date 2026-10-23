@@ -2175,8 +2175,25 @@ def carrousel_retroplanning(dossier=None):
             p.d.text((x - l / 2, cy + dy), txt, font=fo, fill=teinte(co))
         if i < len(etapes) - 1:        # une fleche vers la gauche
             xa, xb = x - 62, cx[i + 1] + 62
-            p.d.line([(xa, cy), (xb + 16, cy)], fill=teinte("sable_fonce"),
-                     width=5)
+            if i == 1:
+                # L'intervalle entre l'impression (janvier) et le bon a
+                # tirer (decembre) est le seul ou RIEN ne se passe : le
+                # fichier attend les fetes. Le texte sous la frise dit
+                # que le calendrier se coupe en deux ; un trait plein
+                # ici dirait le contraire, donc celui-la est pointille.
+                t = xa
+                while t > xb + 16:
+                    p.d.line([(t, cy), (max(t - 13, xb + 16), cy)],
+                             fill=teinte("sable_fonce"), width=5)
+                    t -= 24
+                fo = police(800, 24)
+                lab = "les fêtes"
+                l = p.d.textlength(lab, font=fo)
+                p.d.text(((xa + xb) / 2 - l / 2, cy - 54), lab, font=fo,
+                         fill=teinte("taupe"))
+            else:
+                p.d.line([(xa, cy), (xb + 16, cy)],
+                         fill=teinte("sable_fonce"), width=5)
             p.d.polygon([(xb, cy), (xb + 20, cy - 11), (xb + 20, cy + 11)],
                         fill=teinte("sable_fonce"))
     # les deux reperes qui fixent le sens de lecture de la frise

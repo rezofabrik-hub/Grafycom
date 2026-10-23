@@ -269,10 +269,18 @@ def illu_retroplanning():
     Tout le propos : on ne compte pas depuis aujourd'hui, on compte
     depuis la boite aux lettres. La frise est donc flechee vers la
     gauche, et les deux reperes nomment ses extremites.
+
+    Recomptee le 23 octobre, en meme temps que l'article et le
+    carrousel n° 17. Elle portait « reception / 24 dec. » et un total
+    de 22 jours ouvres : la fenetre d'impression pour Noel s'etant
+    fermee au 15 novembre, ce total n'avait plus de sens le 20. Les
+    etapes ne portent donc plus des durees mais des MOMENTS, parce que
+    le calendrier n'est plus continu — il s'arrete apres le bon a
+    tirer et reprend en janvier.
     """
     im, d = fond()
-    etapes = [("Création", "10 j"), ("Bon à tirer", "4 j"),
-              ("Impression", "8 j"), ("Réception", "24 déc.")]
+    etapes = [("Création", "maintenant"), ("Bon à tirer", "décembre"),
+              ("Impression", "janvier"), ("Réception", "mi-janvier")]
     cy = 250
     xs = [170, 450, 730, 1010]
     for i, (nom, delai) in enumerate(etapes):
@@ -286,14 +294,28 @@ def illu_retroplanning():
         legende(d, x, cy + 94, delai, 20, "taupe", centre=True)
         if i < 3:                       # une fleche, vers la gauche
             xa, xb = xs[i + 1] - 58, x + 58
-            d.line([(xa, cy), (xb + 18, cy)], fill=rvb("sable_fonce"),
-                   width=5)
+            if i == 1:
+                # L'intervalle entre l'impression (janvier) et le bon a
+                # tirer (decembre) est le seul ou RIEN ne se passe : le
+                # fichier attend les fetes. Le legender sans le dessiner
+                # laisserait la frise dire le contraire de sa propre
+                # legende, donc ce trait-la est pointille.
+                t = xa
+                while t > xb + 18:
+                    d.line([(t, cy), (max(t - 14, xb + 18), cy)],
+                           fill=rvb("sable_fonce"), width=5)
+                    t -= 26
+                legende(d, (xa + xb) / 2, cy - 44, "les fêtes", 19, "taupe",
+                        centre=True)
+            else:
+                d.line([(xa, cy), (xb + 18, cy)], fill=rvb("sable_fonce"),
+                       width=5)
             d.polygon([(xb, cy), (xb + 22, cy - 12), (xb + 22, cy + 12)],
                       fill=rvb("sable_fonce"))
     legende(d, 170, cy - 92, "aujourd'hui", 20, "taupe", centre=True)
     legende(d, 1010, cy - 92, "la boîte aux lettres", 20, "taupe",
             centre=True)
-    titre_bas(d, "22 jours ouvrés. On compte à rebours, pas en avant.")
+    titre_bas(d, "Le calendrier se coupe en deux, et on compte à rebours.")
     return im
 
 

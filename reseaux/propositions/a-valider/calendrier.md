@@ -104,7 +104,7 @@ automatique du matin.
 | jeudi 19 novembre | 19 h 00 | Fiche Google | post | texte n° 15 |
 | jeudi 19 novembre | 19 h 00 | Story | story | S4-D1 · le quiz du jeudi |
 | jeudi 19 novembre | 21 h 00 | Story | story | S4-D2 · les quatre réponses |
-| vendredi 20 novembre | 08 h 00 | Blog | article | Cartes de vœux et emballages de fête : le rétroplanning à  ⚠️ |
+| vendredi 20 novembre | 08 h 00 | Blog | article | Cartes de vœux : il est trop tard pour Noël, et c'est une  ♻️ |
 | vendredi 20 novembre | 18 h 15 | Story | story | S4-E · relais du blog |
 | samedi 21 novembre | 10 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 15 bis — ➕ **nouvelle, arbitrage n° 3** |
 | samedi 21 novembre | 10 h 30 | Fiche Google | post | texte n° 15 bis |

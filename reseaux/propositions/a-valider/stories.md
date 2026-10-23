@@ -297,9 +297,15 @@ l'absence soit un choix validé, pas un trou dans le planning.
 
 | Élément | Contenu |
 |---|---|
-| **Texte exact** | « Nouvel article : les supports de fin d'année se commandent maintenant. Le rétroplanning, semaine par semaine. » |
+| **Texte exact** | « Nouvel article : pour Noël c'est trop tard, et c'est une bonne nouvelle. Le calendrier des vœux de janvier. » |
 | **Sticker** | *Lien* → l'article du 20 novembre sur grafycom.fr (`blog-supports-fin-annee-66.html`) |
 | **Arrière-plan** | Trois cartes de vœux imprimées posées en éventail sur une table en bois, lumière rasante sur le relief. |
+
+> ♻️ **Texte réécrit le 23 octobre** avec l'article qu'il relaie. Il
+> annonçait « les supports de fin d'année se commandent maintenant » :
+> le 20 novembre, la fenêtre d'impression pour Noël était fermée
+> depuis cinq jours. Le visuel ne change pas — les cartes en éventail
+> conviennent aux vœux de janvier comme à ceux de Noël.
 
 ## S4-F — Samedi 21 novembre, 10 h 45 · teasing du reel
 

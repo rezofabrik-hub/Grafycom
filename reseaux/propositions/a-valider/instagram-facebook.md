@@ -1361,14 +1361,14 @@ leur usage.
 ## 15 bis — Samedi 21 novembre, 10 h 30 · Carrousel 7 planches · Pilier 1, conseils & pédagogie de marque
 
 > **Pourquoi cette publication existe.** Arbitrage n° 3 de la relecture.
-> Le créneau du samedi 21 se libère quand le reel n° 16 part au 28 ;
-> celle-ci le reprend avec l'angle qui manquait au cycle.
+> Le créneau du samedi 21 se libère quand le reel n° 16 remonte au
+> 9 novembre ; celle-ci le reprend avec l'angle qui manquait au cycle.
 >
 > **Elle ne redit pas la n° 17.** Le carrousel du 23 parle de
-> *logistique* — même imprimeur, même délai, un seul fichier. Celle-ci
-> parle de *dessin* : le même visuel ne s'agrandit pas d'un support à
-> l'autre, il se redessine. Et elle vient d'abord, parce qu'on décide
-> **quoi** imprimer avant de décider **quand**.
+> *calendrier* — Noël est passé, janvier est ouvert. Celle-ci parle de
+> *dessin* : le même visuel ne s'agrandit pas d'un support à l'autre,
+> il se redessine. Et elle vient d'abord, parce qu'on décide **quoi**
+> imprimer avant de décider **quand**.
 >
 > **Créneau du samedi** — on regarde, on ne lit plus. D'où des planches
 > tenues par l'objet et des légendes de deux ou trois lignes.
@@ -1591,11 +1591,14 @@ paquet posés dessus.
 - **S3.** Fond `#f7f1ef`. Une frise horizontale qui se lit **de droite à
   gauche**, de la boîte aux lettres vers aujourd'hui, avec quatre pastilles
   numérotées en corail : *réception (mi-janvier)* ← *impression (janvier)* ←
-  *bon à tirer (décembre)* ← *création (maintenant)*. Sous la frise : « On ne
-  compte pas à partir d'aujourd'hui. On compte à rebours depuis la boîte aux
-  lettres. » Puis le point du carrousel : **le calendrier se coupe en deux**,
-  la création et le bon à tirer maintenant, l'impression en janvier, quand
-  les ateliers se sont vidés.
+  *bon à tirer (décembre)* ← *création (maintenant)*. **La liaison entre
+  l'impression et le bon à tirer est en pointillé**, légendée « les fêtes » :
+  c'est le seul intervalle où rien ne se passe, et le texte dessous affirme
+  que le calendrier se coupe en deux — un trait plein dirait le contraire.
+  Sous la frise : « On ne compte pas à partir d'aujourd'hui. On compte à
+  rebours depuis la boîte aux lettres. » Puis le point du carrousel : la
+  création et le bon à tirer maintenant, l'impression en janvier, quand les
+  ateliers se sont vidés.
 - **S4.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`. Trois lignes, chacune
   introduite par un tiret violet : « Le texte à écrire. » / « Le fichier à
   préparer. » / « Les adresses à réunir. » Sous-titre bleu profond
@@ -1658,7 +1661,8 @@ visuel montre une table en chêne clair assombrie, avec le titre « Pour Noël,
 c'est passé. Pour janvier, c'est maintenant. » Une frise se lit de droite à
 gauche, de la boîte aux lettres vers aujourd'hui, avec quatre étapes :
 réception en mi-janvier, impression en janvier, bon à tirer en décembre,
-création maintenant. Un autre visuel liste les trois étapes qu'on oublie de
+création maintenant. Entre l'impression et le bon à tirer, le trait est
+en pointillé et porte la mention « les fêtes ». Un autre visuel liste les trois étapes qu'on oublie de
 compter : le texte à écrire, le fichier à préparer, les adresses à réunir.
 
 ### Hashtags — jeu C + 2 métier

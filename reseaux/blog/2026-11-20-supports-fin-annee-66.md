@@ -1,32 +1,42 @@
 ---
-titre: "Cartes de vœux et emballages de fête : le rétroplanning à tenir"
+titre: "Cartes de vœux : il est trop tard pour Noël, et c'est une bonne nouvelle"
 slug: supports-fin-annee-66
-titre_seo: "Supports de fin d'année : quand les commander"
+titre_seo: "Cartes de vœux : commander pour janvier plutôt que pour Noël"
 liens_retour: prestations.html, graphiste-restaurant-perpignan.html, realisations.html
 date: 2026-11-20
-meta: "Cartes de vœux, bandeaux d'emballage, menus de fêtes : le calendrier réel à tenir en novembre pour être livré avant décembre, sans surcoût."
+meta: "Passé la mi-novembre, imprimer pour Noël devient un pari. Le calendrier des vœux de janvier, l'emballage réutilisable et le menu de réveillon : ce qui reste tenable."
 illustration: retroplanning.png
-illustration_alt: "Frise du rétroplanning lue de droite à gauche, du 24 décembre vers aujourd'hui : réception, impression en huit jours, bon à tirer en quatre, création en dix."
+illustration_alt: "Frise du rétroplanning lue de droite à gauche, de la mi-janvier vers aujourd'hui : réception en mi-janvier, impression en janvier, bon à tirer en décembre, création maintenant."
 statut: à relire
 ---
 
-# Cartes de vœux et emballages de fête : le rétroplanning à tenir
+# Cartes de vœux : il est trop tard pour Noël, et c'est une bonne nouvelle
 
-Chaque année, la même conversation a lieu autour du 24 décembre. Un commerçant appelle, il voudrait des cartes de vœux, et il est déjà trop tard pour les avoir sur son comptoir avant Noël — ou alors au prix d'un tirage en express qui coûte le double.
+Chaque année, la même conversation a lieu autour du 15 décembre : un commerçant appelle, il voudrait des cartes de vœux, et il est déjà trop tard — ou alors au prix d'un tirage en express qui coûte le double.
 
-Ce n'est pas un problème de prestataire, c'est un problème de calendrier. Un support imprimé passe par quatre étapes qui ne se compressent pas : la création, les corrections, le bon à tirer, la fabrication. Et en décembre, les imprimeurs tournent à plein régime : les délais qu'ils annoncent en octobre ne sont plus les mêmes.
+Autant le dire tout de suite : au 20 novembre, la fenêtre est fermée. Mon imprimeur demande que la création soit lancée sur la première quinzaine de novembre, parce qu'en décembre ce ne sont pas seulement les ateliers qui saturent, ce sont les livraisons. Une commande qui traverse la deuxième quinzaine de décembre n'est plus une commande, c'est un pari.
 
-Voici donc le calendrier réel, à rebours.
+Ce n'est pas la fin de la conversation. C'est le moment de la déplacer sur janvier.
 
-## Le rétroplanning, semaine par semaine
+## La carte de vœux se présente jusqu'au 31 janvier
 
-**Mi-novembre : la création.** C'est le moment où l'on décide ce qu'on envoie, à qui, et en quelle quantité. Comptez une semaine de création et une semaine d'aller-retour pour les corrections. Les corrections prennent toujours plus de temps que la création, parce qu'elles dépendent de votre disponibilité, pas de la mienne.
+L'usage laisse présenter ses vœux pendant tout le mois de janvier. C'est une convention, pas une règle, mais elle est solidement établie et personne ne vous trouvera en retard le 14 janvier. Presque aucune entreprise ne s'en sert.
 
-**Fin novembre : le bon à tirer.** Un exemplaire réel, imprimé sur le papier définitif, que l'on valide avant de lancer la série. C'est l'étape que les gens pressés veulent sauter, et c'est exactement celle qui évite de refaire mille cartes.
+C'est ce qui rend la date intéressante. En décembre, votre carte arrive au milieu de trente autres, dans une semaine où votre client fait son inventaire. En janvier, elle arrive seule, sur un bureau qu'on vient de retrouver.
 
-**Début décembre : la fabrication et la livraison.** Entre trois et dix jours ouvrés selon le travail demandé. Un gaufrage, une dorure à chaud ou un vernis sélectif ajoutent un passage machine, donc des jours.
+Une précision qui change le calendrier : **le 31 janvier est la limite, pas la cible.** L'usage veut un envoi dès la reprise, et passé le 25 janvier une carte commence à ressembler à un oubli rattrapé. Visez la première quinzaine. C'est de là qu'on compte à rebours.
 
-Retenez surtout ceci : un jour de retard au début devient une semaine à l'arrivée, parce que chaque étape repousse la place que l'imprimeur vous avait réservée dans son planning.
+## Le rétroplanning, coupé en deux
+
+Quatre étapes ne se compressent pas : la création, les corrections, le bon à tirer, la fabrication. Jusqu'ici elles s'enchaînaient. Pour janvier, elles se coupent en deux, et c'est tout l'intérêt.
+
+**Maintenant : la création.** On décide ce qu'on envoie, à qui, et en quelle quantité. Comptez une semaine de création et une semaine d'aller-retour pour les corrections — celles-ci dépendent de votre disponibilité, pas de la mienne, et cette disponibilité, vous l'avez en novembre.
+
+**Décembre : le bon à tirer.** Un exemplaire réel sur le papier définitif, validé avant de lancer la série. C'est l'étape que les gens pressés veulent sauter, et celle qui évite de refaire mille cartes.
+
+**Janvier : la fabrication et la livraison.** Les ateliers se sont vidés, les transporteurs aussi, et les délais annoncés redeviennent les délais réels.
+
+Votre fichier attend pendant les fêtes, votre commande non. L'erreur de calcul, elle, ne change pas : on compte à partir d'aujourd'hui, alors qu'il faut compter à l'envers, depuis le jour où la carte doit être dans la boîte aux lettres.
 
 ## Pourquoi une carte imprimée, en 2026
 
@@ -34,33 +44,26 @@ La question est légitime, et la réponse n'est pas sentimentale.
 
 Un message de vœux par courriel se lit en deux secondes et se referme. Il entre en concurrence, le même jour, avec trente autres messages identiques, et personne ne se souvient de qui l'a envoyé.
 
-Une carte imprimée reste deux ou trois semaines sur un bureau. Elle est posée debout contre un écran, elle est vue par les collègues de votre client, et elle porte votre nom en continu. La différence ne se mesure pas en émotion, elle se mesure en durée d'exposition — et c'est le seul support de l'année qui bénéficie d'un effet pareil.
+Une carte imprimée reste deux ou trois semaines sur un bureau. Elle est posée debout contre un écran, vue par les collègues de votre client, et elle porte votre nom en continu. La différence se mesure en durée d'exposition.
 
-Deux conditions, cependant. Le papier doit se sentir sous les doigts : un texturé, un épais, un gaufrage discret. Une carte imprimée sur du papier bureautique fait l'effet inverse de celui recherché.
+Deux conditions, cependant. Le papier doit se sentir sous les doigts — une carte sur du papier bureautique fait l'effet inverse de celui recherché. Et le texte ne doit rien vendre : des vœux sincères tiennent en deux phrases, et dès qu'une carte contient une remise, c'est un prospectus. Vos clients font parfaitement la différence.
 
-Et le texte ne doit rien vendre. Des vœux sincères tiennent en deux phrases. Dès qu'une carte contient une remise ou une invitation commerciale, ce n'est plus une carte de vœux : c'est un prospectus, et vos clients font parfaitement la différence.
+## L'emballage : à produire une fois, pour toute l'année
 
-## L'emballage : le petit budget qui circule tout seul
+Pour les commerces qui vendent un objet, il y a moins cher qu'une carte : l'emballage. Mais pas pour ce Noël-ci — la même fenêtre s'est refermée dessus. C'est une bonne occasion d'arrêter de le traiter comme un support de Noël, parce qu'il n'en est pas un.
 
-Pour les commerces qui vendent un objet, il y a mieux qu'une carte, et ça coûte moins cher : l'emballage.
+Deux pièces simples suffisent : **un bandeau imprimé** qui ceint le paquet avec votre logo, et **un adhésif rond à votre marque** qui ferme le papier de soie. Posés sur un kraft ordinaire, ils transforment un paquet en cadeau — et vos clients les photographient, ce qu'aucun autre support n'obtient.
 
-Pas un packaging complet — ce n'est pas le sujet, et ce n'est pas le budget de novembre. Il s'agit de deux pièces simples :
-
-- **un bandeau imprimé**, une bande de papier qui ceint le paquet, avec votre logo et une couleur de saison ;
-- **un adhésif rond à votre marque**, qui ferme le papier de soie ou le sachet.
-
-Posés sur un papier kraft ordinaire, ces deux éléments transforment un paquet en cadeau. Et ils font une chose qu'aucun autre support ne fait : vos clients les photographient. Un paquet soigné circule tout seul, publié par la personne qui l'a reçu, sans que vous ayez rien demandé.
-
-C'est aussi réutilisable. Un bandeau sans millésime sert aux anniversaires, aux fêtes des mères, aux commandes spéciales. Faites-en tirer deux fois la quantité du mois de décembre.
+Un bandeau **sans millésime et sans flocon** sert aussi aux anniversaires, à la fête des mères, aux commandes spéciales — et au Noël suivant. Produit une fois en janvier, dans le même passage que vos cartes, il couvre l'année entière.
 
 ### Et pour les restaurants
 
-Un cas particulier qui se décide encore plus tôt : les menus de fêtes. Si vous servez un réveillon, la carte spéciale doit être écrite, composée et imprimée avant la mi-décembre, au moment précis où votre cuisine est le plus occupée. La version à imprimer et la version à publier en ligne se préparent ensemble — c'est le même travail, et ça évite deux allers-retours. Si vous tenez un établissement, [cette page](graphiste-restaurant-perpignan.html) détaille comment je travaille sur les cartes et menus.
+Un cas particulier, et le seul dont l'échéance n'a pas bougé : les menus de fêtes. Si vous servez un réveillon, la carte spéciale doit être écrite, composée et imprimée avant la mi-décembre, au moment précis où votre cuisine est le plus occupée. Le réveillon, lui, ne se décale pas en janvier.
 
-## Les commerces d'ici sont des affaires de famille
+C'est donc la seule chose de cet article qui soit encore urgente, et elle l'est vraiment. Le délai tenable dépend du tirage et de la finition : c'est une question à poser à votre imprimeur cette semaine, pas à estimer. Si vous tenez un établissement, [cette page](graphiste-restaurant-perpignan.html) détaille comment je travaille sur les cartes et menus.
 
-Un dernier mot, parce que c'est ce que ces supports racontent le mieux. Beaucoup de commerces et d'ateliers des Pyrénées-Orientales sont tenus par la même famille depuis vingt ou trente ans. Une carte de fin d'année est à peu près le seul moment de l'année où il est naturel de le dire : un nom, une maison, des gens.
+## Ce qu'une carte de janvier dit de vous
 
-Ce n'est pas un argument de vente, c'est simplement vrai, et ça se lit tout de suite sur un support bien fait. Vous pouvez voir le genre de travail dont il s'agit dans les [réalisations](realisations.html) du studio.
+Beaucoup de commerces et d'ateliers des Pyrénées-Orientales sont tenus par la même famille depuis vingt ou trente ans. Une carte de début d'année est à peu près le seul moment où il est naturel de le dire : un nom, une maison, des gens. Ça se lit tout de suite sur un support bien fait — vous pouvez en juger dans les [réalisations](realisations.html) du studio.
 
-Si vous voulez des cartes, des bandeaux ou un menu de fêtes cette année, le moment pour en parler est maintenant — pas en décembre. Écrivez-moi avec ce que vous avez en tête, même approximatif, et une idée de quantité : je vous dis en retour ce qui est tenable dans les délais et à quel budget. Le détail des prestations est sur la page [prestations](prestations.html).
+Si vous visez janvier, le moment pour en parler est maintenant : c'est le texte qui est la partie longue, et c'est maintenant que vous avez le temps de l'écrire. Dites-moi ce que vous avez en tête, même approximatif, et une idée de quantité — je vous réponds sur ce qui est tenable et à quel budget. Le détail est sur la page [prestations](prestations.html).

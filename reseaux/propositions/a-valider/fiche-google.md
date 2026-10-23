@@ -1,4 +1,4 @@
-# Fiche Google Établissement — les 24 textes à valider
+# Fiche Google Établissement — les 25 textes à valider
 
 Du 26 octobre au 5 décembre. Un texte par publication, à publier le même
 jour qu'elle.
@@ -13,7 +13,7 @@ jour qu'elle.
 
 ---
 
-## 1 — Lundi 26 octobre, 12 h 30 · Carrousel · Pédagogie couleur
+## 1 — Lundi 26 octobre, 18 h 30 · Carrousel · Pédagogie couleur
 
 > **Choisir les couleurs de son entreprise : trois réflexes à connaître**
 >
@@ -253,7 +253,7 @@ jour qu'elle.
 
 ---
 
-## 9 — Lundi 9 novembre 2026, 12 h 30 · 182 mots
+## 9 — Samedi 14 novembre 2026, 10 h 30 · 182 mots
 
 > **Un logo réussi est un logo qui se décline**
 >
@@ -280,7 +280,7 @@ jour qu'elle.
 
 ---
 
-## 10 — Mardi 10 novembre 2026, 8 h 00 · 190 mots
+## 10 — Mardi 27 octobre 2026, 8 h 00 · 190 mots
 
 > **Enseigne de commerce : ce que l'arrivée de l'hiver change**
 >
@@ -468,7 +468,52 @@ jour qu'elle.
 
 ---
 
-## 16 — Samedi 21 novembre 2026, 10 h 30 · 191 mots
+## 15 bis — Samedi 21 novembre 2026, 10 h 30 · 186 mots
+
+> ➕ **Écrit le 23 octobre.** Le calendrier programmait ce créneau
+> depuis l'arbitrage n° 3, mais le texte n'avait jamais été rédigé —
+> l'écart a été relevé par le nouveau contrôle de concordance de
+> `reseaux/audit.py`.
+
+> **Un visuel de fin d'année ne s'agrandit pas, il se redessine**
+>
+> Un commerce fait réaliser un visuel de fêtes, puis le décline sur une
+> étiquette, un sachet, une carte et une vitrine. L'erreur courante
+> consiste à utiliser la même image à quatre échelles. Le résultat est
+> lisible sur un seul des quatre supports.
+>
+> Une étiquette mesure environ trois centimètres. À cette taille, un seul
+> élément survit : la marque. Le slogan, les vœux, l'adresse du site
+> deviennent une zone grise. Ils ne se réduisent pas, ils se retirent.
+>
+> Un sachet se regarde à un mètre, une carte se tient à trente
+> centimètres, une vitrine se lit depuis le trottoir d'en face. Chaque
+> distance impose sa propre hiérarchie, et c'est la distance qui décide,
+> pas l'envie de tout dire.
+>
+> Ce qui relie les quatre, ce n'est donc pas l'image : c'est une couleur
+> et une marque identiques, tenues d'un support à l'autre. Quatre
+> compositions différentes qui se reconnaissent du premier coup d'œil
+> valent mieux qu'une seule image étirée quatre fois.
+>
+> Grafycom décline les visuels de fin d'année sur l'ensemble des supports
+> des commerces et artisans des Pyrénées-Orientales.
+
+**Bouton :** « En savoir plus » → `https://grafycom.fr/prestations.html`
+
+---
+
+## 16 — Lundi 9 novembre 2026, 12 h 30 · 191 mots
+
+> ♻️ **En-tête corrigé le 23 octobre.** Ce texte accompagne le reel
+> n° 16, remonté au 9 novembre sur décision de l'imprimeur ; son
+> en-tête était resté au samedi 21 novembre. **Le texte, lui, ne
+> change pas** : le 9 novembre, « création du 1er au 15 novembre »
+> est encore devant le lecteur, et c'est précisément ce qui a fait
+> remonter le reel.
+>
+> Son bouton renvoyait vers l'article du 20 novembre, qui n'est pas
+> encore paru le 9. Il pointe désormais la page prestations.
 
 > **Supports de fin d'année : le calendrier commence maintenant**
 >
@@ -495,7 +540,7 @@ jour qu'elle.
 > Grafycom conçoit les supports de fin d'année des commerces et artisans des
 > Pyrénées-Orientales.
 
-**Bouton :** « En savoir plus » → l'article du 20 novembre, `https://grafycom.fr/blog-supports-fin-annee-66.html`
+**Bouton :** « En savoir plus » → `https://grafycom.fr/prestations.html`
 
 ---
 
@@ -503,14 +548,53 @@ jour qu'elle.
 
 | ✔ | Date | Heure | Texte | Validé par |
 |---|------|-------|-------|------------|
-| ☐ | 09/11 | 12 h 30 | Décider maintenant ses supports de fin d'année | |
-| ☐ | 10/11 | 8 h 00 | Emballage de fête et signalétique de tri | |
-| ☐ | 12/11 | 19 h 00 | À quoi sert vraiment une carte de vœux | |
-| ☐ | 13/11 | 18 h 00 | Grammage, gaufrage, dorure : ce qui se touche | |
-| ☐ | 16/11 | 18 h 30 | Une vitrine de fin d'année qui se lit du trottoir | |
-| ☐ | 17/11 | 8 h 00 | Décorer sa vitrine et rester dans les règles | |
-| ☐ | 19/11 | 19 h 00 | Quatre idées reçues sur les impressions de fin d'année | |
-| ☐ | 21/11 | 10 h 30 | Faut-il refaire son logo pour la nouvelle année | |
+| ☐ | 26/10 | 18 h 30 | n° 1 — Choisir les couleurs de son entreprise : trois réflexes à connaître | |
+| ☐ | 27/10 | 8 h 00 | n° 10 — Enseigne de commerce : ce que l'arrivée de l'hiver change | |
+| ☐ | 29/10 | 12 h 30 | n° 3 — Enseigne : le test des vingt mètres | |
+| ☐ | 30/10 | 10 h 30 | n° 8 — Halloween : ce que l'orange et le noir disent de votre vitrine | |
+| ☐ | 31/10 | 10 h 30 | n° 4 bis — Un nouvel article chaque vendredi matin | |
+| ☐ | 02/11 | 12 h 30 | n° 5 — Choisir la police de son entreprise : trois questions avant de décider | |
+| ☐ | 03/11 | 8 h 00 | n° 6 — Qui possède votre logo ? | |
+| ☐ | 05/11 | 19 h 00 | n° 7 — Quatre idées reçues sur l'impression et les enseignes | |
+| ☐ | 06/11 | 18 h 00 | n° 4 — RVB, CMJN : pourquoi l'impression ne rend jamais comme l'écran | |
+| ☐ | 09/11 | 12 h 30 | n° 16 — Supports de fin d'année : le calendrier commence maintenant ♻️ | |
+| ☐ | 10/11 | 8 h 00 | n° 2 — Enseigne de commerce : l'autorisation préalable, mode d'emploi | |
+| ☐ | 12/11 | 12 h 30 | n° 11 — Carte de restaurant : où placer les prix change la commande | |
+| ☐ | 13/11 | 18 h 00 | n° 12 — Habiller sa vitrine : trois familles d'adhésifs, trois usages | |
+| ☐ | 14/11 | 10 h 30 | n° 9 — Un logo réussi est un logo qui se décline | |
+| ☐ | 16/11 | 12 h 30 | n° 13 — Un logo se dessine en grand et se vérifie en petit | |
+| ☐ | 17/11 | 8 h 00 | n° 14 — Un slogan en langue étrangère sur vos supports : ce qu'il faut savoir | |
+| ☐ | 19/11 | 19 h 00 | n° 15 — Signalétique : quatre supports, quatre usages à ne pas confondre | |
+| ☐ | 21/11 | 10 h 30 | n° 15 bis — Un visuel de fin d'année ne s'agrandit pas, il se redessine ➕ | |
+| ☐ | 23/11 | 12 h 30 | n° 17 — Cartes de vœux : viser janvier plutôt que décembre ♻️ | |
+| 🛑 | ~~24/11~~ | — | n° 18 — Emballage de fête et signalétique de tri — **suspendu le 23 octobre** | |
+| ☐ | 26/11 | 19 h 00 | n° 19 — Carte de vœux d'entreprise : ce qui fait qu'elle est gardée | |
+| ☐ | 27/11 | 18 h 00 | n° 20 — Papier, gaufrage, dorure : la partie du support qui ne se voit pas à l'écran | |
+| ☐ | 30/11 | 18 h 30 | n° 21 — Vitrine de fin d'année : quatre points qui changent tout, vus du trottoir | |
+| ☐ | 01/12 | 8 h 00 | n° 22 — Décor de vitrine : la différence entre une enseigne et une publicité | |
+| ☐ | 03/12 | 19 h 00 | n° 23 — Quatre idées reçues sur les impressions de fin d'année ♻️ | |
+| ☐ | 05/12 | 10 h 30 | n° 24 — Refaire son logo en janvier : trois questions avant de décider | |
+
+**25 textes à valider**, plus un suspendu. ♻️ marque ceux qui ont été
+touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
+
+> ♻️ **Checklist reconstruite le 23 octobre, et quatre en-têtes
+> recalés.** Elle ne portait que huit lignes, et ces huit-là croisaient
+> les titres des textes n° 17 à 24 avec les dates de la quinzaine
+> précédente. En la refaisant sur les en-têtes eux-mêmes, **quatre de
+> ces en-têtes se sont révélés en désaccord avec le calendrier** :
+> n° 1 (18 h 30 et non 12 h 30), n° 9 (samedi 14 novembre, il avait
+> glissé pour libérer le créneau du reel), n° 10 (mardi 27 octobre) et
+> n° 16 (lundi 9 novembre, remonté avec son reel). Les quatre sont
+> alignés sur le calendrier, qui fait foi.
+>
+> Le **texte n° 15 bis manquait** : le calendrier le programmait au
+> samedi 21 novembre depuis l'arbitrage n° 3, il n'avait jamais été
+> écrit. Il l'est maintenant.
+>
+> `reseaux/audit.py` contrôle désormais ces trois choses à chaque
+> passage — concordance des en-têtes, créneau sans texte, et compteur
+> de tête — pour que cet écart ne puisse plus se reformer en silence.
 
 ---
 
@@ -723,6 +807,12 @@ jour qu'elle.
 
 ## 23 — Jeudi 3 décembre, 19 h 00 — « Quatre idées reçues sur les impressions de fin d'année » (201 mots)
 
+> ♻️ **Dernier paragraphe réécrit le 23 octobre.** Il disait « la
+> mi-novembre n'est pas trop tard pour une carte de vœux imprimée ».
+> Publié le 3 décembre, ce conseil arrivait près de trois semaines
+> après la fermeture de la fenêtre. Il renvoie désormais sur janvier,
+> seul calendrier encore tenable à cette date.
+
 > **Quatre idées reçues sur les impressions de fin d'année**
 >
 > Le doré d'une dorure n'est pas une encre jaune saturée. Une dorure à
@@ -741,9 +831,12 @@ jour qu'elle.
 > pas au dixième de millimètre. C'est le premier motif de refus de fichier
 > chez les imprimeurs.
 >
-> Enfin, la mi-novembre n'est pas trop tard pour une carte de vœux
-> imprimée. Elle est trop tard pour hésiter : il reste du temps pour
-> produire, les ateliers se remplissent à partir de maintenant.
+> Enfin, une carte de vœux n'est pas forcément une carte de Noël. L'usage
+> laisse présenter ses vœux pendant tout le mois de janvier, et une carte
+> envoyée à la reprise arrive dans une boîte vide plutôt qu'au milieu de
+> trente autres. C'est aussi le seul calendrier encore tenable début
+> décembre : l'impression se fait en janvier, quand les ateliers se sont
+> vidés.
 >
 > Grafycom prépare les fichiers d'impression aux normes des imprimeurs et
 > contrôle les bons à tirer pour les entreprises du département.

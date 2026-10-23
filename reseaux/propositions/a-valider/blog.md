@@ -25,7 +25,7 @@ Chaque article paraîtra à sa date, tout seul.
 | vendredi 6 novembre | Pourquoi vos couleurs imprimées ne ressemblent jamais à votre  | 647 | ✅ validé |
 | jeudi 12 novembre | Habiller sa vitrine : dépoli, microperforé ou lettres découpée | 904 | ⚠️ à relire |
 | vendredi 13 novembre | Qui possède votre logo ? | 687 | ✅ validé |
-| vendredi 20 novembre | Cartes de vœux et emballages de fête : le rétroplanning à teni | 897 | ⚠️ à relire |
+| vendredi 20 novembre | Cartes de vœux : il est trop tard pour Noël, et c'est une bon | 990 | ♻️ réécrit, à relire |
 | vendredi 27 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le trot | 854 | ⚠️ à relire |
 | vendredi 4 décembre | Faut-il refaire son logo pour la nouvelle année ? Trois questi | 792 | ⚠️ à relire |
 

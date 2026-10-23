@@ -147,7 +147,7 @@ sorte le même jour.
 | ven 6 nov | Pourquoi vos couleurs imprimées ne ressemblent jamais à votre écran | 647 | validé |
 | jeu 12 nov | Habiller sa vitrine : dépoli, microperforé ou lettres découpées | 904 | à relire |
 | ven 13 nov | Qui possède votre logo ? | 687 | validé |
-| ven 20 nov | Cartes de vœux et emballages de fête : le rétroplanning | 897 | à relire |
+| ven 20 nov | Cartes de vœux : il est trop tard pour Noël ♻️ | 990 | à relire |
 | ven 27 nov | Vitrine de fin d'année : ce qui se lit depuis le trottoir | 854 | à relire |
 | ven 4 déc | Faut-il refaire son logo pour la nouvelle année ? | 792 | à relire |
 
