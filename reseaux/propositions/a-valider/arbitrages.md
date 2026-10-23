@@ -16,7 +16,7 @@ points ne sont pas réglés.
 > même où ils trompaient, et non seulement signalés ailleurs.
 >
 > **L'état réel, relevé par `reseaux/audit.py` à chaque passage :**
-> 29 publications · 166 planches · 44 écrans de story · 7 articles ·
+> 27 publications · 154 planches · 44 écrans de story · 7 articles ·
 > 210 visuels au total. **Plus rien n'attend d'image.** Un seul manque
 > dans le dossier, et ce n'est pas un dessin : la n° 18 est sortie du
 > calendrier faute de vérification réglementaire.

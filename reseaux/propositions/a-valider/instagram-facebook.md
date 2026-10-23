@@ -1153,7 +1153,25 @@ petite échelle.
 - **Rien.** Les sept planches sont dessinées, la démonstration est
   calculée.
 
-## 14 — Mardi 17 novembre, 8 h 00 · Carrousel · Pilier 2, réglementation
+## 14 — HORS CALENDRIER · Carrousel · Pilier 2, réglementation
+
+> 🛑 **SORTIE DU CALENDRIER LE 23 OCTOBRE, sur décision de
+> Laurent.** Elle devait partir le mardi 17 novembre à 8 h 00. Elle ne part
+> pas, et elle n'a plus de date tant que sa réserve n'est pas
+> levée : **l'application de la loi Toubon à une devanture, à une marque déposée et à une carte bilingue** n'a pas pu être confirmé sur une
+> source officielle.
+>
+> C'est la même décision que pour la n° 18, prise le même
+> jour et pour la même raison. Une publication de conformité
+> qui se trompe coûte plus cher que les autres ne rapportent,
+> et le dossier a déjà failli publier un Cerfa périmé.
+>
+> **Le travail reste entier** : les six planches sont
+> dessinées et le texte est écrit. Seule la clé
+> `GABARITS["francais-devanture"]` est retirée de `visuels.py`, pour
+> que le cycle ne produise plus son dossier. Une ligne à
+> remettre le jour où la vérification tombe. Son texte de
+> fiche Google et ses deux stories partent avec elle.
 
 > ⚠️ **Contenu entièrement au conditionnel, et c'est volontaire.** Le
 > principe — la langue française obligatoire dans la publicité et
@@ -1256,8 +1274,9 @@ français en plus petit dessous.
   Chaque point confirmé peut passer de « serait » à « est » dans la légende
   et sur les slides. **Chaque point non confirmé reste au conditionnel.**
 - ~~La photo de devanture de la S1~~ : **plus rien à fournir**. Les six
-  planches sont dessinées, dans
-  `reseaux/visuels/2026-11-17-francais-devanture/`.
+  planches sont dessinées. Leur dossier n'existe plus sur le disque
+  depuis la sortie du calendrier — le gabarit `francais-devanture` les
+  reproduit à l'identique dès que sa clé est remise.
 - Quand les trois points seront confirmés, **ajoutez-les à la liste des faits
   réglementaires vérifiés** du cahier des charges, avec leur date.
 
@@ -2101,7 +2120,25 @@ deux, huit et vingt-cinq mètres : les horaires disparaissent avant le nom.
 
 ---
 
-## 22 — Mardi 1er décembre, 8 h 00 · Carrousel · Pilier 2, conformité
+## 22 — HORS CALENDRIER · Carrousel · Pilier 2, conformité
+
+> 🛑 **SORTIE DU CALENDRIER LE 23 OCTOBRE, sur décision de
+> Laurent.** Elle devait partir le mardi 1er décembre à 8 h 00. Elle ne part
+> pas, et elle n'a plus de date tant que sa réserve n'est pas
+> levée : **la qualification d'un adhésif de vitrine et l'extinction nocturne** n'a pas pu être confirmé sur une
+> source officielle.
+>
+> C'est la même décision que pour la n° 18, prise le même
+> jour et pour la même raison. Une publication de conformité
+> qui se trompe coûte plus cher que les autres ne rapportent,
+> et le dossier a déjà failli publier un Cerfa périmé.
+>
+> **Le travail reste entier** : les six planches sont
+> dessinées et le texte est écrit. Seule la clé
+> `GABARITS["sticker-enseigne"]` est retirée de `visuels.py`, pour
+> que le cycle ne produise plus son dossier. Une ligne à
+> remettre le jour où la vérification tombe. Son texte de
+> fiche Google et ses deux stories partent avec elle.
 
 > 🔎 **Partie vérifiée à la source.** La distinction enseigne / publicité,
 > l'autorisation préalable au titre de l'article L.581-18 du code de
@@ -2213,10 +2250,11 @@ en vigueur est le Cerfa 16308\*01 et que le 14798\*01 est périmé.
   carrousel au conditionnel ; si la réponse est claire, on peut remplacer le
   conditionnel par du factuel, et la publication gagne beaucoup.
 - ~~Une photo de vitrine avec adhésifs de fêtes~~ et ~~les 6 slides~~ :
-  **faits**. Gabarit `sticker-enseigne`, six planches dans
-  `reseaux/visuels/2026-12-01-sticker-enseigne/`. L'astérisque du numéro de
-  Cerfa a été contrôlée sur l'image : `16308*01` sort entier, sur la S5 et
-  dans le texte de la S5.
+  **faits**. Gabarit `sticker-enseigne`, six planches. Leur dossier
+  n'existe plus sur le disque depuis la sortie du calendrier ; le
+  gabarit les reproduit à l'identique dès que sa clé est remise.
+  L'astérisque du numéro de Cerfa avait été contrôlée sur l'image :
+  `16308*01` sortait entier, sur la S5 et dans le texte de la S5.
 
 ---
 

@@ -20,7 +20,7 @@ autres documents de ce dossier.
 | Messages privés | 6 modèles | — | **6** |
 
 **104 éléments peuvent être programmés aujourd'hui** : 22 publications,
-25 textes de fiche, 7 articles, 44 écrans de story, 6 modèles de message.
+23 textes de fiche, 7 articles, 44 écrans de story, 6 modèles de message.
 
 **Plus rien n'attend une image.** Les 133 planches Instagram et les 44
 écrans de story sont dessinés, les 7 articles sont illustrés. Il ne reste
@@ -29,7 +29,7 @@ vérifications réglementaires**, détaillées plus bas.
 
 ---
 
-## 1. Instagram & Facebook — les 29 publications sont complètes
+## 1. Instagram & Facebook — les 27 publications sont complètes
 
 Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 1080 × 1350 px, dans l'ordre du carrousel.
@@ -50,7 +50,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 11 | jeu 12 nov | Dilemme A/B | La place du prix sur une carte | 2 |
 | 12 | ven 13 nov | REEL 23 s | Les adhésifs de vitrine | 5 |
 | 13 | lun 16 nov | Carrousel 7 planches | Pourquoi un fichier vectoriel | 7 |
-| 14 | mar 17 nov | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
+| ~~14~~ | 🛑 sortie | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
 | 15 | jeu 19 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
 | **15 bis** | sam 21 nov | Carrousel 7 planches | **Un visuel, quatre supports** | 7 |
 | 16 | lun 9 nov | REEL 25 s | Décembre se décide en novembre | 5 |
@@ -59,7 +59,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 19 | jeu 26 nov | Dilemme A/B | Deux cartes de vœux | 2 |
 | 20 | ven 27 nov | REEL 24 s | Matières et fabrication | 5 |
 | 21 | lun 30 nov | Carrousel | La vitrine vue du trottoir d'en face | 7 |
-| 22 | mar 1er déc | Carrousel | Enseigne, publicité, ou rien du tout ? | 6 |
+| ~~22~~ | 🛑 sortie | Carrousel | Enseigne, publicité, ou rien du tout ? | 6 |
 | 23 | jeu 3 déc | Quiz | Impressions de fin d'année | 6 |
 | 24 | sam 5 déc | REEL 30 s | Faut-il refaire son logo | 6 |
 | **25** | sam 7 nov | Carrousel 7 planches | **BIG FOOD** | 7 |
@@ -67,7 +67,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | **27** | mer 2 déc | Carrousel 8 planches | **SWEET DREAM** | 8 |
 | **28** | mer 25 nov | Carrousel 8 planches | **Solaire 66** | 8 |
 
-**166 planches de publication** (210 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
+**154 planches de publication** (198 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
 et le dossier porte **la date réelle de parution**. Il portait jusqu'au
 14 octobre la date d'avant le décalage du calendrier, soit sept jours
 d'écart : un dossier ouvert au hasard faisait publier une semaine trop
@@ -116,9 +116,9 @@ le jour où la vérification tombe, il n'y a qu'à lever le conditionnel.
 
 ---
 
-## 2. Fiche Google — 25 textes, tous prêts
+## 2. Fiche Google — 23 textes, tous prêts
 
-C'est le canal le plus simple : pas de visuel obligatoire. Les 25 textes
+C'est le canal le plus simple : pas de visuel obligatoire. Les 23 textes
 sont dans `fiche-google.md`, numérotés comme les publications — 1 à 24,
 plus la 4 bis. *(Ce paragraphe annonçait 24 textes alors que le tableau
 du haut en annonçait 25 : c'est 25.)*
@@ -190,9 +190,9 @@ avec le Cerfa 14798\*01, périmé depuis le 1er juillet 2026.
 
 | N° | Date | Sujet à vérifier |
 |---|---|---|
-| 14 | mar 17 nov | Loi Toubon : application à une devanture, une marque déposée, une carte bilingue |
+| ~~14~~ | 🛑 sortie du calendrier | Loi Toubon : application à une devanture, une marque déposée, une carte bilingue. **C'est cette réserve qui l'a sortie, le 23 octobre.** |
 | ~~18~~ | 🛑 sortie du calendrier | Signalétique de tri (article L541-10-1) — les sources trouvées ne sont pas officielles. **C'est cette réserve qui l'a sortie.** |
-| 22 | mar 1er déc | Qualification d'un adhésif de vitrine, et l'extinction nocturne |
+| ~~22~~ | 🛑 sortie du calendrier | Qualification d'un adhésif de vitrine, et l'extinction nocturne. **C'est cette réserve qui l'a sortie, le 23 octobre.** |
 
 La publication n° 6 ne porte plus d'avertissement : le sujet du devis,
 qui en demandait un, a été remplacé. Le carrousel sur la propriété d'un
@@ -252,7 +252,7 @@ de travail : impossible de vérifier autrement qu'en demandant.
    débloque les stories qui s'y rattachent. Commence par la n° 1 : son
    créneau est ce soir.
 2. **Les 7 articles de blog** — quatre lignes `statut:` à changer.
-3. **Les 25 textes de fiche Google** — mais corriger la fiche d'abord.
+3. **Les 23 textes de fiche Google** — mais corriger la fiche d'abord.
 4. **Les 10 écrans de story.**
 
 Le pseudo Instagram, lui, est réglé : rien à faire.

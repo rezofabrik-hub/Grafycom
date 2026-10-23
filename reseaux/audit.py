@@ -298,6 +298,15 @@ def fiche_google():
     else:
         juste("fiche Google : chaque créneau du calendrier a son texte")
 
+    # L'autre sens, et il a failli passer : le 23 octobre, les n° 14 et
+    # 22 sont sorties du calendrier et leurs textes sont restes dates
+    # dans le document. Le controle ne regardait que cal - doc.
+    orphelins = sorted(set(doc) - set(cal))
+    if orphelins:
+        faux("fiche Google : textes encore datés sans créneau au "
+             "calendrier, à suspendre : %s"
+             % ", ".join("n° " + n for n in orphelins))
+
     divergent = ["n° %s : en-tête %s %s ≠ calendrier %s %s"
                  % (n, doc[n][0], doc[n][1], cal[n][0], cal[n][1])
                  for n in sorted(set(doc) & set(cal))
@@ -420,6 +429,12 @@ def stories_dates():
     if fantomes:
         faux("stories : en checklist mais pas dans le moteur : %s"
              % ", ".join(fantomes))
+    # Meme angle mort que pour la fiche Google : un ecran reste coche
+    # dans la table alors que sa publication est sortie du calendrier.
+    sans_creneau = sorted(set(doc) - set(cal))
+    if sans_creneau:
+        faux("stories : encore cochées sans créneau au calendrier, à "
+             "suspendre : %s" % ", ".join(sans_creneau))
     divergent = ["%s : checklist %s %s ≠ calendrier %s %s"
                  % (c, doc[c][0], doc[c][1], cal[c][0], cal[c][1])
                  for c in sorted(set(doc) & set(cal)) if doc[c] != cal[c]]

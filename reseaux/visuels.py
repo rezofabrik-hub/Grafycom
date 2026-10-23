@@ -6303,7 +6303,12 @@ GABARITS["logo-reduction"] = pub09_logo_reduction
 # a solaire-66 et a logo-reduction, qui etaient restes muets.
 GABARITS["enseigne-hiver"] = pub10_enseigne_hiver
 GABARITS["reel-vitrophanie"] = pub12_reel_vitrophanie
-GABARITS["francais-devanture"] = pub14_francais_devanture
+# La n° 14 est SORTIE DU CALENDRIER le 23 octobre, pour la meme raison
+# que la n° 18 : sa reserve reglementaire — l'application de la loi
+# Toubon a une devanture, a une marque deposee et a une carte bilingue —
+# n'a pas pu etre confirmee sur une source officielle. Les six planches
+# restent dessinees. Seule la cle part :
+#     GABARITS["francais-devanture"] = pub14_francais_devanture
 GABARITS["quiz-matieres"] = pub15_quiz_matieres
 GABARITS["quatre-supports"] = pub15bis_quatre_supports
 GABARITS["reel-fin-annee"] = pub16_reel_fin_annee
@@ -6316,7 +6321,11 @@ GABARITS["reel-fin-annee"] = pub16_reel_fin_annee
 #     GABARITS["emballage-tri"] = pub18_emballage_tri
 # Une ligne a remettre le jour ou la verification tombe.
 GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
-GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
+# La n° 22 est SORTIE DU CALENDRIER le 23 octobre, troisieme et derniere
+# reserve reglementaire : la qualification d'un adhesif de vitrine et
+# l'extinction nocturne. Les six planches restent dessinees. Seule la
+# cle part :
+#     GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
 GABARITS["reel-matieres"] = pub20_reel_matieres
 # ---------------------------------------------------------------------
 # n° 25, samedi 7 novembre — BIG FOOD. Pilier « réalisations ».

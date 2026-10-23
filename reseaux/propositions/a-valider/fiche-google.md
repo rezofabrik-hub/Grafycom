@@ -1,4 +1,4 @@
-# Fiche Google Établissement — les 25 textes à valider
+# Fiche Google Établissement — les 23 textes à valider
 
 Du 26 octobre au 5 décembre. Un texte par publication, à publier le même
 jour qu'elle.
@@ -417,7 +417,12 @@ jour qu'elle.
 
 **Bouton** : « En savoir plus » → <https://grafycom.fr/prestations.html#logo>
 
-## 14 — Mardi 17 novembre 2026, 8 h 00 · 193 mots
+## ~~14~~ — SUSPENDU — « Un slogan en langue étrangère » (193 mots)
+
+> 🛑 **SUSPENDU le 23 octobre avec le carrousel n° 14.** Le texte est
+> conservé entier ; il ne part pas tant que l'application de la loi Toubon à une devanture,
+> à une marque déposée et à une carte bilingue
+> n'est pas confirmé sur une source officielle.
 
 > **Un slogan en langue étrangère sur vos supports : ce qu'il faut savoir**
 >
@@ -574,7 +579,7 @@ jour qu'elle.
 | ☐ | 13/11 | 18 h 00 | n° 12 — Habiller sa vitrine : trois familles d'adhésifs, trois usages | |
 | ☐ | 14/11 | 10 h 30 | n° 9 — Un logo réussi est un logo qui se décline | |
 | ☐ | 16/11 | 12 h 30 | n° 13 — Un logo se dessine en grand et se vérifie en petit | |
-| ☐ | 17/11 | 8 h 00 | n° 14 — Un slogan en langue étrangère sur vos supports : ce qu'il faut savoir | |
+| 🛑 | ~~17/11~~ | — | n° 14 — Un slogan en langue étrangère — **suspendu le 23 octobre** | |
 | ☐ | 19/11 | 19 h 00 | n° 15 — Signalétique : quatre supports, quatre usages à ne pas confondre | |
 | ☐ | 21/11 | 10 h 30 | n° 15 bis — Un visuel de fin d'année ne s'agrandit pas, il se redessine ➕ | |
 | ☐ | 23/11 | 12 h 30 | n° 17 — Cartes de vœux : viser janvier plutôt que décembre ♻️ | |
@@ -582,7 +587,7 @@ jour qu'elle.
 | ☐ | 26/11 | 19 h 00 | n° 19 — Carte de vœux d'entreprise : ce qui fait qu'elle est gardée | |
 | ☐ | 27/11 | 18 h 00 | n° 20 — Papier, gaufrage, dorure : la partie du support qui ne se voit pas à l'écran | |
 | ☐ | 30/11 | 18 h 30 | n° 21 — Vitrine de fin d'année : quatre points qui changent tout, vus du trottoir | |
-| ☐ | 01/12 | 8 h 00 | n° 22 — Décor de vitrine : la différence entre une enseigne et une publicité | |
+| 🛑 | ~~01/12~~ | — | n° 22 — Décor de vitrine — **suspendu le 23 octobre** | |
 | ☐ | 03/12 | 19 h 00 | n° 23 — Quatre idées reçues sur les impressions de fin d'année ♻️ | |
 | ☐ | 05/12 | 10 h 30 | n° 24 — Refaire son logo en janvier : trois questions avant de décider | |
 
@@ -782,7 +787,12 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 
 ---
 
-## 22 — Mardi 1er décembre, 8 h 00 — « Décorer sa vitrine et rester dans les règles » (220 mots)
+## ~~22~~ — SUSPENDU — « Décorer sa vitrine et rester dans les règles » (220 mots)
+
+> 🛑 **SUSPENDU le 23 octobre avec le carrousel n° 22.** Le texte est
+> conservé entier ; il ne part pas tant que la qualification d'un adhésif de vitrine
+> et l'extinction nocturne
+> n'est pas confirmé sur une source officielle.
 
 > **Décor de vitrine : la différence entre une enseigne et une publicité**
 >

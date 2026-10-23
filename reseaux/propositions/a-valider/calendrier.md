@@ -93,10 +93,7 @@ automatique du matin.
 | lundi 16 novembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 13 — fichiers vectoriels |
 | lundi 16 novembre | 12 h 30 | Fiche Google | post | texte n° 13 |
 | lundi 16 novembre | 12 h 45 | Story | story | S4-A · teasing du carrousel |
-| mardi 17 novembre | 10 h 15 | Story | story | S4-B2 · la réponse |
-| mardi 17 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 14 |
-| mardi 17 novembre | 8 h 00 | Fiche Google | post | texte n° 14 |
-| mardi 17 novembre | 8 h 15 | Story | story | S4-B1 · quiz langue |
+| ~~mardi 17 novembre~~ | — | — | — | 🛑 **n° 14 sortie du calendrier le 23 octobre** — loi Toubon non confirmée. Le texte Google n° 14 et les stories S4-B partent avec elle |
 | mardi 17 novembre | 18 h 30 | Story | story | S4-C · coulisses — 🔀 **décalée du 11** |
 | mercredi 18 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, 🧩 **réalisation intercalée** |
 | mercredi 11 novembre | — | — | — | 🕯️ **rien, volontairement** — Armistice |
@@ -128,10 +125,7 @@ automatique du matin.
 | lundi 30 novembre | 18 h 30 | Instagram + Facebook | Carrousel | n° 21 |
 | lundi 30 novembre | 18 h 30 | Fiche Google | post | texte n° 21 |
 | lundi 30 novembre | 18 h 45 | Story | story | S6-A · teasing vitrine |
-| mardi 1er décembre | 10 h 15 | Story | story | S6-B écran 2 |
-| mardi 1er décembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 22 |
-| mardi 1er décembre | 8 h 00 | Fiche Google | post | texte n° 22 |
-| mardi 1er décembre | 8 h 15 | Story | story | S6-B écran 1 |
+| ~~mardi 1er décembre~~ | — | — | — | 🛑 **n° 22 sortie du calendrier le 23 octobre** — qualification d'un adhésif non confirmée. Le texte Google n° 22 et les stories S6-B partent avec elle |
 | mercredi 2 décembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 27 — SWEET DREAM, 🧩 **réalisation intercalée** |
 | jeudi 3 décembre | 19 h 00 | Instagram + Facebook | Quiz | n° 23 |
 | jeudi 3 décembre | 19 h 00 | Fiche Google | post | texte n° 23 |
@@ -150,11 +144,11 @@ automatique du matin.
 
 | Canal | Volume |
 |---|---|
-| Publications Instagram + Facebook | **29** |
-| Textes de fiche Google | **25** |
+| Publications Instagram + Facebook | **27** |
+| Textes de fiche Google | **23** |
 | Écrans de story | **44** |
 | Articles de blog | **7** |
-| **Total à valider** | **105** |
+| **Total à valider** | **101** |
 
 **Quatre réalisations**, toutes en plus du cycle et aucune à la place
 d'une leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du
@@ -166,7 +160,7 @@ d'une leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du
 | **BIG FOOD** | samedi 7 novembre | la n° 6 du 3 novembre, « Qui possède votre logo ? » |
 | **KRUSTY** | mercredi 18 novembre | la n° 13 du 16, dont elle prolonge le propos |
 | **Solaire 66** | mercredi 25 novembre | la n° 18 du 24 — **sortie du rythme le 23 octobre**, devient la n° 28 |
-| **SWEET DREAM** | mercredi 2 décembre | la n° 22 du 1er décembre |
+| **SWEET DREAM** | mercredi 2 décembre | la n° 21 du 30 novembre — *la n° 22 qu'elle suivait est sortie le 23 octobre* |
 
 Aucune n'a de texte de fiche Google — le compte en reste à 26, un par
 publication du cycle. Les quatre accords clients sont acquis.

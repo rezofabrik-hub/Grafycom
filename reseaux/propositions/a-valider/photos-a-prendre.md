@@ -156,14 +156,14 @@ dans `reseaux/visuels/`, et il n'y a rien à photographier pour les sortir.
 | 8 | 30 oct | quatre plans à filmer, dont une séquence sans issue propre | **cinq écrans finis** : citrouille, contraste orange/noir, quatre pictogrammes d'alerte, deux devantures comparées |
 | 10 | 27 oct | une rue commerçante au crépuscule | une rue dessinée, six façades, enseignes allumées avec leur halo — plus un schéma de formulaire à la place de la capture du Cerfa |
 | 12 | 13 nov | quatre plans à filmer | **cinq écrans finis** : vitrine nue cotée, dépoli, microperforé vu des deux côtés, lettres contre pavé blanc, vitrine de nuit |
-| 14 | 17 nov | une devanture floutée | une devanture fictive, slogan anglais **lisible**, puis la même avec la ligne française ajoutée |
+| ~~14~~ | 🛑 sortie | une devanture floutée | une devanture fictive, slogan anglais **lisible**, puis la même avec la ligne française ajoutée |
 | 15 | 19 nov | quatre macrophotographies | quatre matières **dessinées en coupe** |
 | 16 | 9 nov | cinq plans à filmer, dont des mains | **cinq écrans finis** : calendrier de six semaines, cartes gaufrées, paquet kraft, rétroplanning, table vue de dessus |
 | 20 | 27 nov | cinq plans à filmer | **cinq écrans finis** : gaufrage, deux grammages sur la tranche, gaufrage de côté **et** de face, dorure allumée **et** éteinte |
 | 24 | 5 déc | cinq plans à filmer | **cinq écrans finis** : deux pages de calendrier, deux versions du logo, trois questions, le logo sur trois supports |
 | ~~18~~ | 🛑 sortie | un sachet à photographier | un sachet dessiné, puis **le même** au trait avec sa zone réservée |
 | 21 | 30 nov | une vitrine de nuit du trottoir d'en face | la scène dessinée — **et une septième planche** : la même devanture à 2, 8 et 25 m |
-| 22 | 1er déc | une vitrine avec adhésifs de fêtes | une vitrine dessinée portant les deux adhésifs |
+| ~~22~~ | 🛑 sortie | une vitrine avec adhésifs de fêtes | une vitrine dessinée portant les deux adhésifs |
 
 ### Pourquoi un dessin, et pas une image générée
 

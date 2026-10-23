@@ -5,9 +5,9 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 | Document | Ce qu'il contient |
 |---|---|
 | **`PRET-A-VALIDER.md`** | **ce qui est terminé et ce qui ne l'est pas** — à lire en premier |
-| **`calendrier.md`** | les 105 éléments datés, tous canaux, dans l'ordre |
-| **`instagram-facebook.md`** | les 29 publications |
-| **`fiche-google.md`** | les 25 textes de fiche |
+| **`calendrier.md`** | les 101 éléments datés, tous canaux, dans l'ordre |
+| **`instagram-facebook.md`** | les 27 publications |
+| **`fiche-google.md`** | les 23 textes de fiche |
 | **`stories.md`** | les 6 séquences hebdomadaires, 44 écrans |
 | **`blog.md`** | l'index des 7 articles — les textes sont dans `reseaux/blog/` |
 | **`messages-prives.md`** | le message d'accueil et 4 réponses types |
@@ -43,8 +43,8 @@ que se passe la vraie validation, et c'est le gros du temps.
 
 3. **`instagram-facebook.md`** — le document le plus long de loin, et
    celui dont tout le reste dérive. Rien n'est encore publié :
-   **29 publications attendent ton accord**.
-4. **`fiche-google.md`** — 25 textes, un par publication, **avec ses
+   **27 publications attendent ton accord**.
+4. **`fiche-google.md`** — 23 textes, un par publication, **avec ses
    cases à cocher**. Si une publication change au point 3, son texte
    change ici.
 5. **`stories.md`** — 44 écrans, **avec ses cases à cocher**. Ils

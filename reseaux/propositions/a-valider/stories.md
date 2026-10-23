@@ -172,8 +172,8 @@ sticker et ses options, arrière-plan.
 | ☐ | S3-A   | Samedi    | 14/11 | 10 h 45  | Nouveau post · Votre logo tient-il sur un stylo ? | |
 | ☐ | S3-C   | Samedi    | 14/11 | 11 h 00  | Boîte à questions · Une question sur votre enseigne, vos imprimés, votre… | |
 | ☐ | S4-A   | Lundi     | 16/11 | 12 h 45  | Nouveau post · Je présente toujours trois pistes. Deux sont faites… | |
-| ☐ | S4-B1  | Mardi     | 17/11 | 8 h 15   | Quiz langue · « Sunset Coffee », et sur le store « Best coffee in… | |
-| ☐ | S4-B2  | Mardi     | 17/11 | 10 h 15  | La réponse · Le slogan. | |
+| 🛑 | ~~S4-B1~~ | ~~Mardi~~ | ~~17/11~~ | — | Quiz langue — **suspendu avec la n° 14** | |
+| 🛑 | ~~S4-B2~~ | ~~Mardi~~ | ~~17/11~~ | — | La réponse — **suspendu avec la n° 14** | |
 | ☐ | S4-C   | Mardi     | 17/11 | 18 h 30  | Coulisses · 14 h 40. Une piste de logo qui ne sortira jamais. | |
 | ☐ | S4-D1  | Jeudi     | 19/11 | 19 h 00  | Le quiz du jeudi · Quatre matières en gros plan. Celle-ci, c'est quoi ? | |
 | ☐ | S4-D2  | Jeudi     | 19/11 | 21 h 00  | Les quatre réponses · Chaque matière a son emploi. | |
@@ -186,14 +186,15 @@ sticker et ses options, arrière-plan.
 | ☐ | S5-D   | Vendredi  | 27/11 | 18 h 15  | Nouvel article · Votre vitrine de fin d'année, vue du trottoir. | |
 | ☐ | S5-E   | Samedi    | 28/11 | 11 h 00  | Boîte à questions · Vous préparez quelque chose pour les fêtes ? | |
 | ☐ | S6-A   | Lundi     | 30/11 | 18 h 45  | Nouveau post · Votre vitrine de Noël est faite pour celui qui passe. | |
-| ☐ | S6-B1  | Mardi     | 01/12 | 8 h 15   | Quiz réglementation · Un sticker « -30 % » sur votre vitrine : on le déclare… | |
-| ☐ | S6-B2  | Mardi     | 01/12 | 10 h 15  | La réponse · Une autorisation. | |
+| 🛑 | ~~S6-B1~~ | ~~Mardi~~ | ~~01/12~~ | — | Quiz réglementation — **suspendu avec la n° 22** | |
+| 🛑 | ~~S6-B2~~ | ~~Mardi~~ | ~~01/12~~ | — | La réponse — **suspendu avec la n° 22** | |
 | ☐ | S6-C1  | Jeudi     | 03/12 | 19 h 00  | Le quiz du jeudi · Le doré d'une dorure à chaud, c'est quoi ? | |
 | ☐ | S6-C2  | Jeudi     | 03/12 | 21 h 00  | La réponse · Une feuille métallisée, pressée à chaud. | |
 | ☐ | S6-D   | Vendredi  | 04/12 | 18 h 15  | Nouvel article · Faut-il refaire son logo pour la nouvelle année ? | |
 | ☐ | S6-E   | Samedi    | 05/12 | 10 h 45  | Coulisses · Deux pages de calendrier, décembre et janvier. | |
 
-**42 écrans à publier**, plus deux suspendus avec la n° 18 et
+**38 écrans à publier**, plus six suspendus — deux avec la n° 18,
+deux avec la n° 14, deux avec la n° 22 — et
 une ligne de non-publication. Le 11 novembre est une ligne, pas
 un trou : l'absence est un choix validé.
 
