@@ -192,9 +192,60 @@ plante verte, fleurs, lunettes posées, souris, clavier, post-it de
 couleur, mug à motif. Ce sont les clichés de la photo de bureau, et ils
 datent une image en six mois.
 
-**Humain** — mains et avant-bras seulement, toujours coupés avant le
-coude. Peau neutre, aucun bijou, aucun vernis, aucune montre. **Jamais
-de visage, jamais de buste, jamais de regard caméra.**
+**Humain** — par défaut : mains et avant-bras seulement, coupés avant
+le coude. Peau neutre, aucun bijou, aucun vernis, aucune montre.
+**Aucun visage inventé, jamais.** Un visage généré est une personne qui
+n'existe pas, présentée comme si elle existait.
+
+**Une exception, et une seule : Sandra.** Accordée par elle le
+23 octobre. Son visage, son buste et son regard sont autorisés, parce
+qu'une graphiste indépendante se vend d'abord sur une personne et que
+son visage n'apparaissait sur **aucun** des trente carreaux de la
+grille — les trois photos existantes sont toutes sur une planche de
+clôture, qu'il faut faire glisser pour atteindre.
+
+L'exception porte sur **elle**, pas sur ce qui l'entoure. Tout le reste
+du cadre reste soumis aux deux règles dures : **rien de lisible**, et
+**aucun logo approximé**. C'est précisément là que la première série a
+échoué — voir ci-dessous.
+
+#### Ce que la première série de portraits a raté, et ce qu'on en tire
+
+Cinq images reçues le 23 octobre. Mesuré à pleine résolution :
+
+- **Du texte inventé dans quatre des cinq.** « devanfture » pour
+  devanture, « MALLES HOLTCARBER » sur l'affiche Halloween,
+  « Graautte de voeux » sur la carte tenue en main, l'enseigne du
+  croquis brouillée, « (rofycom » sur l'esquisse.
+- **Le logo Grafycom redessiné, et différemment dans chaque photo.**
+  Comparé à `assets/img/logo-grafycom.webp` : la structure y est —
+  l'aile sur le « a », le « com » en script, la ligne de signature —
+  mais la tache aquarelle, l'espacement et la position du « com »
+  changent d'une image à l'autre. Son propre logo, approximé.
+- **Le logo Solaire 66 faux.** Deux sommets au lieu de trois, l'éclair
+  au centre au lieu d'être à droite du sommet central, le soleil à côté
+  du S au lieu d'être la spirale DANS le O, le « 66 » qui chevauche le
+  R et le E. C'est l'erreur du 18 octobre, à l'identique.
+
+**Une seule chose était juste : le pseudo portait son point.**
+
+La parade tient en une ligne de prompt — **rien de net et de lisible
+derrière elle** — et en un réflexe : le tableau de liège hors de la
+profondeur de champ, aucune affiche nette, l'écran éteint ou tourné.
+Les logos qui doivent apparaître ne se demandent pas au moteur : ils
+s'**incrustent** depuis le vrai fichier, et `retouche_atelier.py` sait
+déjà le faire — `logo_ecran()` et `logo_mural()`, avec les quatre coins
+mesurés et non estimés.
+
+#### Et ce qu'elle porte compte
+
+Dans la première série, un pull rouge et un blazer bleu marine. Le
+rouge couvre bien plus que les 10 % d'accent autorisés, et le bleu
+marine n'est dans aucune des deux listes de la charte.
+
+Sur une photo de Sandra, **elle porte un neutre** — crème, sable,
+taupe, écru. Pas par austérité : parce que l'accent de la planche doit
+rester le seul, et qu'un vêtement occupe un quart du cadre.
 
 **Lettres — la règle qu'on découvre trop tard.** Le négatif interdit
 `text, letters, numbers`, et c'est facile tant que le sujet n'en porte
