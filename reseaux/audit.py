@@ -291,6 +291,32 @@ def fiche_google():
         juste("calendrier : le volume de textes Google vaut ses lignes (%d)"
               % len(cal))
 
+    # Chaque en-tete annonce un nombre de mots, et rien ne le relisait :
+    # le 23 octobre, onze des vingt-cinq etaient faux. Sept a cause des
+    # coupes du jour, quatre qui avaient derive plus tot — dont un
+    # ecart de dix-neuf mots sur le texte n° 23. Un compteur ecrit a la
+    # main dans un titre se perime au premier mot change.
+    fg = lire("reseaux/propositions/a-valider/fiche-google.md")
+    faux_mots = []
+    for sec in re.split(r"\n(?=## )", fg):
+        tete = sec.split("\n", 1)[0]
+        m = re.search(r"[·(]\s*(\d+) mots", tete)
+        cm = re.search(r"^> \*\*.+?\*\*\s*$", sec, re.M)
+        if not m or not cm:
+            continue
+        fin = sec.find("**Bouton", cm.start())
+        corps = sec[cm.start():fin if fin > 0 else len(sec)]
+        corps = "\n".join(l.lstrip("> ").rstrip()
+                          for l in corps.split("\n")).replace("**", "")
+        n = len(re.findall(r"[0-9A-Za-zÀ-ÿ'’-]+", corps))
+        if n != int(m.group(1)):
+            faux_mots.append("%s annonce %s mots, en compte %d"
+                             % (tete.split("—")[0].strip(), m.group(1), n))
+    for t in faux_mots:
+        faux("fiche Google — " + t)
+    if not faux_mots:
+        juste("fiche Google : chaque en-tête annonce son vrai nombre de mots")
+
     sans_texte = sorted(set(cal) - set(doc))
     if sans_texte:
         faux("fiche Google : créneau au calendrier sans texte écrit : %s"

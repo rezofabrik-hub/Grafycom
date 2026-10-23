@@ -73,9 +73,7 @@ jour qu'elle.
 > France s'ajoute à la procédure.
 >
 > Anticiper ces règles dès la conception évite de refaire une enseigne
-> refusée. Grafycom conçoit les enseignes des commerces et artisans des
-> Pyrénées-Orientales en tenant compte des contraintes locales dès le
-> premier croquis.
+> refusée.
 
 **Bouton :** « En savoir plus » → lien vers l'article de blog de la semaine
 
@@ -94,10 +92,8 @@ jour qu'elle.
 > scripts élégants — ceux qui séduisent sur maquette — disparaissent les
 > premiers. Il ne reste qu'une tache illisible.
 >
-> Le test est simple et gratuit : imprimez la proposition à l'échelle,
-> placez-la sur la façade, et traversez la rue. Dix minutes sur le trottoir
-> évitent une enseigne qu'on regrette pendant dix ans, et un
-> investissement à refaire.
+> Dix minutes sur le trottoir évitent une enseigne qu'on regrette pendant
+> dix ans, et un investissement à refaire.
 >
 > Grafycom conçoit les enseignes en tenant compte de la distance réelle de
 > lecture, de l'éclairage et du support, dès le premier croquis.
@@ -122,9 +118,6 @@ jour qu'elle.
 > Le support amplifie l'écart. Un papier mat absorbe et adoucit les teintes,
 > un couché brillant les sature. Le même fichier donne deux résultats selon
 > le papier choisi.
->
-> La parade est simple : demander un bon à tirer, un exemplaire réel
-> imprimé sur le papier définitif, avant le lancement de la série.
 >
 > Grafycom prépare les fichiers aux normes des imprimeurs et contrôle les
 > bons à tirer pour ses clients.
@@ -204,8 +197,6 @@ jour qu'elle.
 > où l'entreprise se vend, où la marque se dépose, ou simplement où l'on
 > change de prestataire.
 >
-> Chez Grafycom, les fichiers sources et les droits d'exploitation sont
-> transmis à la livraison, par écrit.
 
 **Bouton :** « Nous contacter »
 
@@ -264,7 +255,7 @@ jour qu'elle.
 
 ---
 
-## 9 — Samedi 14 novembre 2026, 10 h 30 · 182 mots
+## 9 — Samedi 14 novembre 2026, 10 h 30 · 179 mots
 
 > **Un logo réussi est un logo qui se décline**
 >
@@ -291,7 +282,7 @@ jour qu'elle.
 
 ---
 
-## 10 — Mardi 27 octobre 2026, 8 h 00 · 190 mots
+## 10 — Mardi 27 octobre 2026, 8 h 00 · 167 mots
 
 > **Enseigne de commerce : ce que l'arrivée de l'hiver change**
 >
@@ -316,14 +307,12 @@ jour qu'elle.
 > peut rendre plus strictes. Ce point se vérifie en mairie avant toute
 > commande.
 >
-> Grafycom accompagne les commerces des Pyrénées-Orientales de la conception
-> de l'enseigne à la constitution du dossier.
 
 **Bouton :** « En savoir plus » → `https://grafycom.fr/enseigne-perpignan.html`
 
 ---
 
-## 11 — Jeudi 12 novembre 2026, 12 h 30 · 189 mots
+## 11 — Jeudi 12 novembre 2026, 12 h 30 · 186 mots
 
 > **Carte de restaurant : où placer les prix change la commande**
 >
@@ -351,7 +340,7 @@ jour qu'elle.
 
 ---
 
-## 12 — Vendredi 13 novembre 2026, 18 h 00 · 204 mots
+## 12 — Vendredi 13 novembre 2026, 18 h 00 · 197 mots
 
 > **Habiller sa vitrine : trois familles d'adhésifs, trois usages**
 >
@@ -383,7 +372,7 @@ jour qu'elle.
 
 ---
 
-## 13 — Lundi 16 novembre 2026, 12 h 30 · 215 mots · **Solaire 66**
+## 13 — Lundi 16 novembre 2026, 12 h 30 · 200 mots · **Solaire 66**
 
 > 🔒 Accord client à obtenir. Ce texte ne nomme pas le client : il décrit
 > le métier et la démarche. Il reste publiable même si l'accord tarde,
@@ -417,7 +406,7 @@ jour qu'elle.
 
 **Bouton** : « En savoir plus » → <https://grafycom.fr/prestations.html#logo>
 
-## ~~14~~ — SUSPENDU — « Un slogan en langue étrangère » (193 mots)
+## ~~14~~ — SUSPENDU — « Un slogan en langue étrangère » (184 mots)
 
 > 🛑 **SUSPENDU le 23 octobre avec le carrousel n° 14.** Le texte est
 > conservé entier ; il ne part pas tant que l'application de la loi Toubon à une devanture,
@@ -453,7 +442,7 @@ jour qu'elle.
 
 ---
 
-## 15 — Jeudi 19 novembre 2026, 19 h 00 · 189 mots
+## 15 — Jeudi 19 novembre 2026, 19 h 00 · 185 mots
 
 > **Signalétique : quatre supports, quatre usages à ne pas confondre**
 >
@@ -689,7 +678,7 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 
 ---
 
-## 19 — Jeudi 26 novembre, 19 h 00 — « À quoi sert vraiment une carte de vœux » (189 mots)
+## 19 — Jeudi 26 novembre, 19 h 00 — « À quoi sert vraiment une carte de vœux » (186 mots)
 
 > **Carte de vœux d'entreprise : ce qui fait qu'elle est gardée**
 >
@@ -714,7 +703,7 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 > graphiste.
 >
 > Grafycom accompagne les commerces et artisans du Roussillon sur leurs
-> supports de fidélisation, du message jusqu'au choix du papier.
+> supports de fidélisation.
 
 **Bouton :** « En savoir plus » → `https://grafycom.fr/prestations.html`
 
@@ -754,7 +743,7 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 
 ---
 
-## 21 — Lundi 30 novembre, 18 h 30 — « Une vitrine de fin d'année qui se lit du trottoir » (217 mots)
+## 21 — Lundi 30 novembre, 18 h 30 — « Une vitrine de fin d'année qui se lit du trottoir » (219 mots)
 
 > **Vitrine de fin d'année : quatre points qui changent tout, vus du trottoir**
 >
@@ -787,7 +776,7 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 
 ---
 
-## ~~22~~ — SUSPENDU — « Décorer sa vitrine et rester dans les règles » (220 mots)
+## ~~22~~ — SUSPENDU — « Décorer sa vitrine et rester dans les règles » (224 mots)
 
 > 🛑 **SUSPENDU le 23 octobre avec le carrousel n° 22.** Le texte est
 > conservé entier ; il ne part pas tant que la qualification d'un adhésif de vitrine
@@ -826,7 +815,7 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 
 ---
 
-## 23 — Jeudi 3 décembre, 19 h 00 — « Quatre idées reçues sur les impressions de fin d'année » (201 mots)
+## 23 — Jeudi 3 décembre, 19 h 00 — « Quatre idées reçues sur les impressions de fin d'année » (220 mots)
 
 > ♻️ **Dernier paragraphe réécrit le 23 octobre.** Il disait « la
 > mi-novembre n'est pas trop tard pour une carte de vœux imprimée ».
@@ -859,8 +848,7 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 > décembre : l'impression se fait en janvier, quand les ateliers se sont
 > vidés.
 >
-> Grafycom prépare les fichiers d'impression aux normes des imprimeurs et
-> contrôle les bons à tirer pour les entreprises du département.
+> Grafycom prépare les fichiers d'impression aux normes des imprimeurs.
 
 **Bouton :** « Nous contacter »
 
