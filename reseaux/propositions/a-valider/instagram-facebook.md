@@ -1562,85 +1562,133 @@ paquet posés dessus.
 
 ## 17 — Lundi 23 novembre, 12 h 30 · Carrousel · Pilier 1, conseils stratégiques
 
+> ♻️ **Réécrit le 23 octobre.** Il disait « vos cartes de vœux de Noël se
+> décident cette semaine ». L'imprimeur a fermé cette fenêtre au
+> 15 novembre : le 23, la phrase était fausse. Plutôt que de déplacer la
+> publication, elle a été **réécrite sur sa date** — parce que le
+> 23 novembre a quelque chose de vrai à dire, et que c'est même un
+> meilleur sujet. L'usage laisse présenter ses vœux jusqu'au
+> 31 janvier, et presque personne ne s'en sert.
+>
+> Les quatre supports de fête (carte, étiquette, sachet, vitrine) ont
+> quitté le carrousel avec l'ancienne version : une étiquette de Noël
+> décidée le 23 novembre n'arrive plus, et une vitrophanie de fin
+> d'année posée fin décembre ne sert plus à rien. **Seule la carte de
+> vœux a une suite honnête en janvier**, et c'est elle qui reste.
+
 ### Direction visuelle — 6 slides, 1080 × 1350 px
 
-- **S1.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, filet dégradé sous la
-  marge haute. En gros titrage sans-serif géométrique, au-dessous :
-  « Vos cartes de vœux de Noël se décident **cette semaine**. » Signature
-  `@grafycom.graphiste` en pied, discrète. Flèche corail `#f2585c` « Swipe »
-  en bas à droite.
-- **S2.** Fond blanc pur. Une frise horizontale qui se lit **de droite à
-  gauche**, du 24 décembre vers aujourd'hui, avec quatre pastilles
-  numérotées en corail : *réception* ← *impression* ← *bon à tirer* ←
-  *création*. Sous la frise : « On ne compte pas à partir d'aujourd'hui. On
-  compte à rebours depuis la boîte aux lettres. »
-- **S3.** Fond `#f7f1ef`. Trois lignes, chacune introduite par un tiret
-  violet : « Le texte à écrire. » / « Le fichier à préparer. » / « Les
-  adresses à réunir. » Sous-titre bleu profond `#2f7fc4` : « Les trois
-  étapes qu'on oublie de compter. Elles prennent plus de temps que
-  l'impression. »
-- **S4.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre : « Le bon à tirer n'est
-  pas une formalité. C'est un aller-retour, et parfois deux. Prévoyez-le. »
-- **S5.** Fond blanc. Quatre pictogrammes alignés, trait fin violet : une
-  carte, une étiquette, un sachet, un adhésif de vitrine. Légende : « Tout
-  cela part chez le même imprimeur, au même moment. Décidé ensemble, c'est
-  un seul fichier et un seul délai. Décidé séparément, c'est trois
-  relances. »
-- **S6.** Fond `#f7f1ef`. Grande flèche corail `#f2585c`. « Dites-moi en
-  commentaire ce que vous voulez imprimer pour les fêtes. Je vous dis la
-  date limite réelle pour le décider. »
+- **S1.** Fond photographique : la texture de chêne clair (`M-chene-clair`),
+  ancrée en haut, voilée d'encre sur 58 %. Surtitre blanc « CARTES DE VŒUX »
+  dans le tiers bas, puis en gros titrage : « Pour Noël, c'est passé. Pour
+  janvier, c'est **maintenant**. » Sous-titre : « Et janvier n'est pas un
+  repli. » Signature `@grafycom.graphiste` en pied.
+- **S2.** Fond blanc pur. « Décembre est plein. Janvier est vide. » Deux
+  paragraphes opposés : en décembre la carte arrive avec trente autres ;
+  en janvier elle arrive seule. Puis, souligné d'un tiret violet :
+  « L'usage laisse jusqu'au 31 janvier. » Et en pied : « Presque personne
+  ne s'en sert. C'est précisément ce qui rend la carte visible. »
+- **S3.** Fond `#f7f1ef`. Une frise horizontale qui se lit **de droite à
+  gauche**, de la boîte aux lettres vers aujourd'hui, avec quatre pastilles
+  numérotées en corail : *réception (mi-janvier)* ← *impression (janvier)* ←
+  *bon à tirer (décembre)* ← *création (maintenant)*. Sous la frise : « On ne
+  compte pas à partir d'aujourd'hui. On compte à rebours depuis la boîte aux
+  lettres. » Puis le point du carrousel : **le calendrier se coupe en deux**,
+  la création et le bon à tirer maintenant, l'impression en janvier, quand
+  les ateliers se sont vidés.
+- **S4.** Fond dégradé chaud `#f7f1ef` → `#e9dcd5`. Trois lignes, chacune
+  introduite par un tiret violet : « Le texte à écrire. » / « Le fichier à
+  préparer. » / « Les adresses à réunir. » Sous-titre bleu profond
+  `#2f7fc4` : « Elles prennent plus de temps que l'impression, et ce sont
+  les seules qui ne se sous-traitent pas. » Puis : « Ce sont elles qui
+  occupent décembre. L'imprimeur, lui, n'intervient qu'après. »
+- **S5.** Fond blanc, filet dégradé au-dessus du titre : « Le bon à tirer
+  n'est pas une formalité. C'est un aller-retour, et parfois deux.
+  Faites-le en décembre, pendant que tout le monde a encore le temps. »
+- **S6.** Fond `#f7f1ef`. Grande flèche corail `#f2585c`. « Vous visez
+  janvier ? Dites-le-moi en commentaire. Je vous dis la vraie date limite
+  pour le décider, et ce qu'il reste à écrire avant. »
 
 ### Accroche
-**« Vos cartes de vœux de Noël se décident cette semaine. »**
+**« Pour Noël, c'est passé. Pour janvier, c'est maintenant. »**
 
 ### Légende
 
-> Mi-novembre, il n'est pas trop tard. C'est simplement le dernier moment
-> où c'est confortable.
+> Si vous vouliez des cartes de vœux pour Noël, c'est fini. Pas « serré » :
+> fini. Il fallait lancer la création avant le 15 novembre, parce qu'une
+> livraison qui traverse la deuxième quinzaine de décembre n'est plus une
+> livraison, c'est un pari.
 >
-> L'erreur de calcul est toujours la même : on compte à partir
-> d'aujourd'hui, en se demandant si on a encore le temps. Il faut compter à
-> l'envers, en partant du jour où la carte doit être dans la boîte aux
-> lettres.
+> Ce n'est pas une mauvaise nouvelle, et voici pourquoi.
 >
-> Et en remontant, on trouve des étapes qu'on n'avait pas comptées. Le texte
-> à écrire — celui-là bloque plus de projets que l'impression. Le fichier à
-> préparer aux normes de l'imprimeur. Les adresses à réunir, à vérifier, à
-> mettre en forme. Le bon à tirer, qui est un aller-retour et parfois deux.
+> L'usage laisse présenter ses vœux jusqu'au 31 janvier. Presque personne ne
+> s'en sert. Résultat : en décembre, votre carte arrive avec trente autres,
+> entre un inventaire et deux livraisons en retard. En janvier, elle arrive
+> seule, sur un bureau qu'on vient de retrouver. La différence ne se mesure
+> pas en élégance, elle se mesure en temps d'attention.
 >
-> Les délais d'impression, eux, se tendent à partir de la mi-novembre :
-> tous les commerces commandent en même temps, et les ateliers passent en
-> file d'attente. Un délai annoncé en septembre n'est pas celui de décembre.
+> Une précision, parce qu'elle change le calendrier : le 31 janvier est la
+> limite, pas la cible. L'usage veut un envoi dès la reprise, et au-delà du
+> 25 janvier une carte commence à ressembler à un oubli rattrapé. **Visez la
+> première quinzaine** : c'est de là qu'on compte à rebours.
 >
-> Le vrai gain est ailleurs. Une carte de vœux, des étiquettes de fêtes, un
-> sachet, un adhésif de vitrine : décidés ensemble, c'est une seule série de
-> fichiers et un seul passage chez l'imprimeur. Décidés au fil des
-> semaines, c'est trois commandes, trois frais de port et trois fois le
-> risque d'être en retard.
+> Et le calendrier, lui, devient confortable — à condition de le couper en
+> deux. La création et le bon à tirer se font maintenant, pendant que le
+> temps existe. L'impression attend janvier, quand les ateliers se sont
+> vidés et que les délais sont redevenus normaux. Vous ne faites pas
+> traverser Noël à votre commande.
 >
-> **Dites-moi en commentaire ce que vous voulez imprimer pour les fêtes** :
-> je vous donne la date limite réelle pour le décider.
+> Reste l'erreur de calcul habituelle : on compte à partir d'aujourd'hui, en
+> se demandant si on a encore le temps. Il faut compter à l'envers, depuis
+> le jour où la carte doit être dans la boîte aux lettres. Et en remontant,
+> on trouve les étapes qu'on n'avait pas comptées. Le texte à écrire —
+> celui-là bloque plus de projets que l'impression. Le fichier à préparer aux
+> normes de l'imprimeur. Les adresses à réunir, à vérifier, à mettre en
+> forme. Le bon à tirer, qui est un aller-retour et parfois deux.
+>
+> Ce sont elles qui occupent décembre. Ce sont aussi les seules qui ne se
+> sous-traitent pas.
+>
+> **Vous visez janvier ? Dites-le-moi en commentaire** : je vous donne la
+> vraie date limite pour le décider, et ce qu'il reste à écrire avant.
 
 ### Texte alternatif
-Carrousel de six visuels sur la préparation des supports imprimés de fin
-d'année. Une frise se lit de droite à gauche, du 24 décembre vers
-aujourd'hui, avec quatre étapes : réception, impression, bon à tirer,
-création. Un autre visuel aligne quatre pictogrammes — une carte, une
-étiquette, un sachet, un adhésif de vitrine — pour montrer qu'ils partent
-chez le même imprimeur au même moment.
+Carrousel de six visuels sur les cartes de vœux de janvier. Le premier
+visuel montre une table en chêne clair assombrie, avec le titre « Pour Noël,
+c'est passé. Pour janvier, c'est maintenant. » Une frise se lit de droite à
+gauche, de la boîte aux lettres vers aujourd'hui, avec quatre étapes :
+réception en mi-janvier, impression en janvier, bon à tirer en décembre,
+création maintenant. Un autre visuel liste les trois étapes qu'on oublie de
+compter : le texte à écrire, le fichier à préparer, les adresses à réunir.
 
 ### Hashtags — jeu C + 2 métier
-`#carteDeRestaurant #menuDesign #commercantsPerpignan #restaurateur66 #ouvertureCommerce #nouvelleEntreprise #printdesign #charteGraphique #graphistePerpignan #CommerceLocal66`
+`#carteDeVoeux #voeux2027 #commercantsPerpignan #restaurateur66 #ouvertureCommerce #nouvelleEntreprise #printdesign #charteGraphique #graphistePerpignan #CommerceLocal66`
+
+### Ce qui a été vérifié
+- **Le 31 janvier comme limite d'usage** n'est pas une règle de droit,
+  c'est une convention, et elle est bien celle qui est couramment
+  retenue : les guides de savoir-vivre laissent le mois de janvier
+  entier, avec un envoi conseillé dès la reprise et une réserve passé
+  le 25. C'est pour cela que le carrousel affiche **« réception :
+  mi-janvier »** sur la frise et non « 31 janvier » : la limite n'est
+  pas la cible, et un rétroplanning qui compte depuis la limite arrive
+  en retard.
+- **La fenêtre d'impression** vient de votre imprimeur : création sur
+  la première quinzaine de novembre pour une livraison avant Noël,
+  parce que les livraisons de décembre sont risquées. C'est elle qui a
+  fermé l'ancien angle, et elle n'est pas republiée ici — le carrousel
+  dit seulement qu'elle est passée.
 
 ### À fournir par Sandra
-- Les 6 slides, en 1080 × 1350. Un gabarit à ajouter dans
-  `reseaux/visuels.py` : il n'y en a pas pour ce sujet.
-- **Les délais réels de vos imprimeurs partenaires pour décembre.** Le
+- Les 6 slides, en 1080 × 1350. Produites par
+  `GABARITS["retroplanning-voeux"]`.
+- **Les délais réels de vos imprimeurs partenaires pour janvier.** Le
   carrousel ne cite volontairement aucun chiffre de jours, parce que je ne
   les ai pas vérifiés. Si vous me donnez les vrais, on peut les afficher :
   un délai précis est beaucoup plus utile qu'un conseil général, et c'est
   exactement ce qu'aucune agence du département n'écrit.
-- Aucune photo, aucun accord client.
+- Aucune photo à fournir, aucun accord client. Le fond de la planche 01 est
+  la texture `M-chene-clair.jpg`, déjà en place.
 
 ---
 

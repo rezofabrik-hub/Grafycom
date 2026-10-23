@@ -514,29 +514,35 @@ jour qu'elle.
 
 ---
 
-## 17 — Lundi 23 novembre, 12 h 30 — « Décider maintenant ses supports de fin d'année » (197 mots)
+## 17 — Lundi 23 novembre, 12 h 30 — « Les vœux de janvier » (216 mots)
 
-> **Supports de fin d'année : la décision se prend maintenant**
+> ♻️ **Réécrit le 23 octobre**, en même temps que le carrousel du même
+> jour. L'ancien texte disait que la mi-novembre n'était pas trop tard :
+> publié le 23, il donnait un conseil dont la fenêtre était fermée
+> depuis huit jours.
+
+> **Cartes de vœux : viser janvier plutôt que décembre**
 >
-> Mi-novembre n'est pas trop tard pour faire imprimer des cartes de vœux,
-> des étiquettes ou un emballage de fête. C'est simplement le dernier
-> moment où le calendrier reste confortable.
+> Pour une carte de vœux arrivant avant Noël, les décisions se prenaient
+> début novembre. Passé la mi-novembre, l'impression et l'acheminement
+> traversent la période la plus chargée de l'année, et un retard de
+> quelques jours en devient une semaine.
 >
-> L'erreur de calcul la plus fréquente consiste à compter à partir
-> d'aujourd'hui. Il faut compter à l'envers, depuis le jour où le support
-> doit être entre les mains du client. En remontant, on retrouve les étapes
-> qu'on n'avait pas comptées : le texte à écrire, le fichier à préparer aux
-> normes de l'imprimeur, les adresses à réunir, et le bon à tirer, qui est
-> un aller-retour et parfois deux.
+> L'usage laisse pourtant présenter ses vœux jusqu'au 31 janvier, et peu
+> d'entreprises s'en servent. En décembre, une carte arrive au milieu de
+> trente autres. En janvier, elle arrive seule. La différence ne tient pas
+> à l'élégance du geste, elle se mesure en temps d'attention. Le 31 janvier
+> reste une limite et non une cible : l'envoi se fait de préférence sur la
+> première quinzaine du mois.
 >
-> Les délais d'impression se tendent à partir de la mi-novembre, parce que
-> tous les commerces commandent en même temps. Un délai annoncé en
-> septembre n'est pas celui de décembre.
+> Le calendrier devient alors confortable, à condition de le couper en
+> deux. La création et le bon à tirer se font dès maintenant, pendant que
+> le temps existe. L'impression attend janvier, quand les ateliers se sont
+> vidés et que les délais sont redevenus normaux.
 >
-> Le second gain est financier. Cartes, étiquettes, sachets et adhésifs de
-> vitrine décidés ensemble représentent une seule série de fichiers et un
-> seul passage en atelier. Décidés au fil des semaines, ils deviennent trois
-> commandes et trois frais de port.
+> Restent les étapes qu'on oublie de compter : le texte à écrire, le
+> fichier à préparer aux normes de l'imprimeur, les adresses à réunir. Ce
+> sont les plus longues, et les seules qui ne se sous-traitent pas.
 >
 > Grafycom prépare les supports imprimés des commerces et artisans des
 > Pyrénées-Orientales, de la conception des fichiers au contrôle du bon à

@@ -117,10 +117,27 @@ reel et laisser la quinzaine suivante ouvrir le sujet. Mais pas les deux.
 > cette semaine dont le contenu ne dépend d'aucune date. Aucune
 > dérogation n'a été nécessaire.
 >
-> Ce qui reste à trancher, et c'est la conséquence : **le carrousel
-> n° 17 du 23 novembre dit « vos cartes de vœux se décident cette
-> semaine »**. Avec la date limite au 15, cette phrase est fausse le
-> 23. Voir l'arbitrage suivant.
+> La conséquence a été traitée dans la foulée : **le carrousel n° 17
+> du 23 novembre disait « vos cartes de vœux de Noël se décident cette
+> semaine »**. Avec la date limite au 15, cette phrase était fausse le
+> 23. Trois sorties étaient possibles — le déplacer avant le 15, le
+> supprimer, ou le réécrire sur sa date. **Laurent a choisi de le
+> réécrire**, et c'est celle des trois qui ajoute quelque chose au
+> lieu d'en retrancher : l'usage laisse présenter ses vœux jusqu'au
+> 31 janvier, presque personne ne s'en sert, et le calendrier de
+> janvier est confortable à condition de le couper en deux — création
+> et bon à tirer maintenant, impression en janvier, quand les ateliers
+> se sont vidés et que la commande ne traverse plus Noël.
+>
+> Le reel du 9 ouvre donc le sujet avec une date limite encore devant
+> le lecteur, et le carrousel du 23 ferme en disant ce qu'il reste.
+> Les deux dates sont vraies. Les quatre pictogrammes de supports de
+> fête (carte, étiquette, sachet, vitrine) ont quitté le carrousel :
+> une étiquette de Noël décidée le 23 novembre n'arrive plus, et une
+> vitrophanie posée fin décembre ne sert plus à rien. **Seule la carte
+> de vœux a une suite honnête en janvier.** Le texte de la fiche
+> Google du 23 et la story qui annonce le carrousel ont été réécrits
+> avec lui.
 >
 > Le créneau du 21 ainsi libéré porte la **n° 15 bis**, écrite à
 > l'arbitrage n° 3 : un même visuel de fêtes décliné sur quatre

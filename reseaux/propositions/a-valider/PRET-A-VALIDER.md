@@ -54,7 +54,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 15 | jeu 19 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
 | **15 bis** | sam 21 nov | Carrousel 7 planches | **Un visuel, quatre supports** | 7 |
 | 16 | sam 28 nov | REEL 25 s | Décembre se décide en novembre | 5 |
-| 17 | lun 23 nov | Carrousel | Le rétroplanning des cartes de vœux | 6 |
+| 17 | lun 23 nov | Carrousel | Les vœux de janvier ♻️ | 6 |
 | 18 | mar 24 nov | Carrousel | La place à réserver sur un emballage | 7 |
 | 19 | jeu 26 nov | Dilemme A/B | Deux cartes de vœux | 2 |
 | 20 | ven 27 nov | REEL 24 s | Matières et fabrication | 5 |

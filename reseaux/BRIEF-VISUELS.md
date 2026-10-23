@@ -771,34 +771,42 @@ l'a livré — la seule publication du cycle qui montre un vrai client.
    **« Décembre se décide / en novembre. »** (78 px) · relance
    d'abonnement.
 
-### n° 17 · lundi 23 novembre · Carrousel 6 planches · Rétroplanning
+### n° 17 · lundi 23 novembre · Carrousel 6 planches · Les vœux de janvier
 
-1. `sable chaud` · surtitre « FIN D'ANNÉE » · filet · **« Vos cartes de
-   vœux / de Noël se décident / cette semaine. »** (86 px) · « Pas en
-   décembre. Voici pourquoi. » · flèche · 1/6.
-2. `blanc` · **« On compte à rebours. »** · **une frise qui se lit de
-   DROITE à GAUCHE** : quatre disques corail de 92 px numérotés 4, 3, 2, 1
-   placés aux abscisses 880, 640, 400, 160, reliés par des **flèches
-   pointant vers la gauche**. Sous chaque disque, l'étape et son délai :
-   « Réception / 24 déc. », « Impression / 8 jours », « Bon à tirer /
-   4 jours », « Création / 10 jours ». Au-dessus, deux repères en taupe :
-   « aujourd'hui » à gauche, « la boîte aux lettres » à droite.
+> ♻️ **Réécrit le 23 octobre**, sur sa date. L'ancienne version annonçait
+> « vos cartes de vœux de Noël se décident cette semaine » : la fenêtre
+> de création s'est fermée au 15 novembre, la phrase était fausse le 23.
+> Les quatre pictogrammes de supports de fête sont partis avec elle, et
+> les titres ont été redimensionnés pour que leurs coupes tiennent.
+
+1. **Photo** `M-chene-clair.jpg`, ancrage haut, voile encre 58 % ·
+   surtitre blanc « CARTES DE VŒUX » à y = 742 · **« Pour Noël, c'est
+   passé. / Pour janvier, c'est / maintenant. »** (64 px, blanc) · « Et
+   janvier n'est pas un repli. » · signature blanche, pas de numéro.
+   *Repli sans photo :* `sable chaud` · surtitre · filet · même titre en
+   encre (64 px) · flèche · 1/6.
+2. `blanc` · **« Décembre est plein. / Janvier est vide. »** (74 px) ·
+   deux paragraphes opposés, taupe puis encre en graisse 600 · un
+   **tiret violet** suivi de « L'usage laisse jusqu'au 31 janvier. »
+   (44 px, violet) · pied en brun 36 px · 2/6.
+3. `crème` · **« On compte à rebours. »** (66 px, une seule ligne) ·
+   **une frise qui se lit de DROITE à GAUCHE** : quatre disques corail de
+   92 px numérotés 4, 3, 2, 1 placés aux abscisses 880, 640, 400, 160,
+   reliés par des **flèches pointant vers la gauche**. Sous chaque disque,
+   l'étape et son moment : « Réception / mi-janvier », « Impression /
+   janvier », « Bon à tirer / décembre », « Création / maintenant ». Au
+   -dessus, deux repères en taupe : « aujourd'hui » à gauche, « la boîte
+   aux lettres » à droite.
    **Le sens de lecture est tout le propos** : une frise dessinée dans
-   l'autre sens dirait le contraire du texte. · 2/6.
-3. `crème` · **« Les trois étapes / qu'on oublie de compter »** · trois
-   lignes précédées d'un **tiret violet épais** : « Le texte à écrire. »,
-   « Le fichier à préparer. », « Les adresses à réunir. » · 3/6.
-4. `sable chaud` · filet · **« Le bon à tirer n'est / pas une
-   formalité. »** (82 px) · 4/6.
-5. `blanc` · **« Tout part chez le même / imprimeur, au même moment. »** ·
-   quatre **pictogrammes au trait violet**, épaisseur 5 px, alignés et
-   légendés : une carte (rectangle + deux traits), une étiquette (pentagone
-   avec œillet), un sachet (rectangle + anse en arc), une vitrine
-   (rectangle + deux diagonales) · deux phrases opposées, l'une en encre
-   l'autre en corail · 5/6.
-6. `crème` · filet · **« Dites-moi ce que vous / voulez imprimer / pour les
-   fêtes. »** (80 px) · flèche · 6/6.
-
+   l'autre sens dirait le contraire du texte. · 3/6.
+4. `sable chaud` · **« Les trois étapes / qu'on oublie de compter »**
+   (58 px) · trois lignes précédées d'un **tiret violet épais** : « Le
+   texte à écrire. », « Le fichier à préparer. », « Les adresses à
+   réunir. » · relance bleue, puis pied brun · 4/6.
+5. `blanc` · filet · **« Le bon à tirer n'est / pas une formalité. »**
+   (74 px) · bloc centré · 5/6.
+6. `crème` · filet · **« Vous visez janvier ? / Dites-le-moi en /
+   commentaire. »** (74 px) · flèche · 6/6.
 ### n° 18 · mardi 24 novembre · Carrousel 7 planches · Signalétique de tri
 
 1. `crème` · le **sachet cadeau** complet (5.5) · bandeau **violet** en

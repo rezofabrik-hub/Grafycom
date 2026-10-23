@@ -357,12 +357,19 @@ sur le site.
 - **Arrière-plan :** aplat blanc cassé chaud `#f7f1ef`. En bas de l'écran,
   hors du tiers central, une photo recadrée de cartes de vœux empilées, en
   bande horizontale.
-- **Texte exact :** « Nouveau post. Vos cartes de vœux de Noël se décident
-  cette semaine. »
-- **Sticker :** *Sondage A/B* — question rédigée : « Pour vos supports de
-  fêtes, vous en êtes où ? »
-  → **A : déjà commandé** · **B : j'y pense depuis septembre**
+- **Texte exact :** « Nouveau post. Pour Noël, c'est passé. Pour janvier,
+  c'est maintenant. »
+- **Sticker :** *Sondage A/B* — question rédigée : « Vos vœux cette année,
+  vous les envoyez quand ? »
+  → **A : avant Noël** · **B : en janvier**
 - **Puis :** sticker *Mention du post* pour renvoyer au carrousel du jour.
+
+> ♻️ **Réécrite le 23 octobre** avec le carrousel qu'elle annonce. Elle
+> disait « vos cartes de vœux de Noël se décident cette semaine » : le
+> 23 novembre, la fenêtre d'impression pour Noël était fermée depuis
+> huit jours. Le sondage a suivi — « déjà commandé / j'y pense depuis
+> septembre » ne voulait plus rien dire une fois le sujet déplacé sur
+> janvier.
 
 ---
 

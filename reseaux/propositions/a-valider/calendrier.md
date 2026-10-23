@@ -172,21 +172,27 @@ Aucune n'a de texte de fiche Google — le compte en reste à 26, un par
 publication du cycle. Les quatre accords clients sont acquis.
 
 **Ce que l'intercalage change, mesuré.** Les semaines passent de
-`5 · 4 · 4 · 4 · 5 · 4 · 2` à `5 · 5 · 5 · 4 · 6 · 4`, et la queue de
-cycle à deux publications disparaît.
+`5 · 4 · 4 · 4 · 5 · 4 · 2` à **`5 · 5 · 5 · 5 · 4 · 5`** — chiffre
+relevé par l'audit, pas estimé — et la queue de cycle à deux
+publications disparaît.
 
-**L'espacement des réalisations** : 7 jours, 2 jours, 9 jours. SWEET
-DREAM a été ramenée du 2 décembre au 25 novembre pour combler un trou
-de seize jours — arbitrage du 22 octobre.
+**L'espacement des réalisations** : 11 jours, 7 jours, 7 jours. BIG
+FOOD le 7 novembre, KRUSTY le 18, Solaire 66 le 25, SWEET DREAM le
+2 décembre.
 
-> ⚠️ **Ce que ce choix coûte, dit plutôt que masqué.** La semaine du
-> 23 novembre passe à **six publications** : n° 17, 18, 27, 19, 20
-> et 16. C'est une de plus que partout ailleurs, et une de plus que
-> ce que recommandait la réserve n° 3.
+> ♻️ **Ce bloc a été recompté le 23 octobre.** Il annonçait une
+> semaine du 23 novembre à six publications et un espacement de
+> « 7 · 2 · 9 jours ». Les deux chiffres dataient de l'arbitrage du
+> 22 octobre et deux décisions les avaient périmés depuis : la n° 18
+> est sortie du calendrier, et le reel n° 16 est remonté au
+> 9 novembre. **La semaine du 23 novembre est désormais la plus
+> légère du cycle, à quatre publications** — n° 17, 28, 19 et 20.
+> Plus aucune semaine ne dépasse cinq, et aucune dérogation n'est
+> écrite.
 >
-> Deux réalisations restent à deux jours, **Solaire 66 le 16 et
-> KRUSTY le 18** — arbitrage du 23 octobre, qui a préféré cet ordre
-> à l'inverse. Il se défend : la n° 13 montre une identité complète,
+> Deux réalisations restent à sept jours, **KRUSTY le 18 et
+> Solaire 66 le 25** — Solaire 66 occupe le mercredi que la n° 18 a
+> libéré. Il se défend : la n° 13 montre une identité complète,
 > enseigne et cartes ; la n° 26 revient deux jours après sur le seul
 > logo et sur ce qui le fait tenir. L'une ouvre, l'autre resserre.
 >
@@ -197,13 +203,12 @@ de seize jours — arbitrage du 22 octobre.
 
 **La n° 15 bis, le samedi 21 novembre**, est la publication écrite à
 l'arbitrage n° 3 : elle reprend le créneau que le reel n° 16 libère en
-partant au 28. Elle a son texte de fiche Google comme les autres
-publications du cycle.
+remontant au 9 novembre. Elle a son texte de fiche Google comme les
+autres publications du cycle.
 
-> **Une semaine porte cinq publications, et c'est arithmétique.** Du
-> lundi 23 au samedi 28 novembre : n° 17, 18, 19, 20 et 16. Avec 26
-> publications de cycle sur six semaines, la moyenne est de 4,33 — une
-> semaine passera à cinq quoi qu'on fasse, la question est seulement
-> laquelle. Celle-ci est la moins lourde : la cinquième est un reel de
-> 25 secondes, le format qui demande le moins au lecteur, et il tombe
-> un samedi.
+> **Quatre semaines sur six portent cinq publications, et c'est
+> arithmétique.** Avec 29 publications sur six semaines, la moyenne est
+> de 4,83 : le cycle ne peut pas tenir à quatre partout. Le plafond est
+> à cinq, aucune semaine ne le dépasse, et **plus aucune dérogation
+> n'est écrite** — la seule qui l'était couvrait la semaine du
+> 23 novembre à six, et elle est tombée avec la n° 18.

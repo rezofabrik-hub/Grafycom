@@ -2079,12 +2079,31 @@ def dilemme_carte_prix(dossier=None):
 
 
 def carrousel_retroplanning(dossier=None):
-    """Publication n° 17 — le retroplanning des cartes de voeux.
+    """Publication n° 17 — les voeux de janvier, et pourquoi c'est mieux.
 
-    La frise de la slide 2 se lit de DROITE a GAUCHE, du 24 decembre vers
-    aujourd'hui. C'est tout le propos : on ne compte pas depuis
-    aujourd'hui, on compte a rebours depuis la boite aux lettres. Une
-    frise dessinee dans l'autre sens dirait le contraire du texte.
+    Ce carrousel disait « vos cartes de voeux de Noel se decident cette
+    semaine ». L'imprimeur a ferme cette fenetre au 15 novembre : le
+    23, la phrase etait fausse. Elle a ete reecrite SUR SA DATE plutot
+    que deplacee, parce que le 23 novembre a quelque chose de vrai a
+    dire — l'usage laisse presenter ses voeux jusqu'au 31 janvier, et
+    presque personne ne s'en sert.
+
+    Le calendrier qu'il decrit est donc coupe en deux, et c'est tout le
+    propos : la creation et le bon a tirer se font maintenant, pendant
+    que le temps existe ; l'impression attend janvier, quand les
+    ateliers se sont vides et que les livraisons ne traversent plus
+    Noel. C'est la seule facon d'avoir une date limite qui soit encore
+    devant le lecteur le jour ou il lit la publication.
+
+    La frise de la planche 03 se lit toujours de DROITE a GAUCHE, de la
+    boite aux lettres vers aujourd'hui. Une frise dessinee dans l'autre
+    sens dirait le contraire du texte.
+
+    Les quatre supports de fete — carte, etiquette, sachet, vitrine —
+    ont quitte ce carrousel avec l'ancienne version. Une etiquette de
+    Noel decidee le 23 novembre n'arrive plus a temps, et une
+    vitrophanie de fin d'annee posee fin decembre ne sert plus a rien :
+    seule la carte de voeux a une suite honnete en janvier.
     """
     d = pathlib.Path(dossier or (SORTIE / "2026-11-23-retroplanning"))
     accent("violet")
@@ -2096,29 +2115,52 @@ def carrousel_retroplanning(dossier=None):
     # la texture n'en porte aucun, c'est pour ca qu'il n'y a pas de
     # conflit.
     p = Planche("sable_chaud")
-    T = "Vos cartes de vœux\nde Noël se décident\ncette semaine."
+    T = "Pour Noël, c'est passé.\nPour janvier, c'est\nmaintenant."
     p.photo("chene-clair", ancrage="haut", voile="encre", part=0.58)
     if getattr(p, "photos_absentes", None):
-        p.surtitre("Fin d'année", y=250)
+        p.surtitre("Cartes de vœux", y=250)
         p.filet()
-        p.titre(T, 86, "encre")
-        p.texte("Pas en décembre. Voici pourquoi.", 42, "brun", 400, avant=56)
+        p.titre(T, 64, "encre")
+        p.texte("Et janvier n'est pas un repli.", 42, "brun", 400, avant=56)
         p.fleche("corail", y=1120)
         p.signature("brun")
         p.numero(1, 6, "taupe")
     else:
-        p.surtitre("Fin d'année", "blanc", y=742)
+        p.surtitre("Cartes de vœux", "blanc", y=742)
         p.y = 806
-        p.titre(T, 70, "blanc")
-        p.texte("Pas en décembre. Voici pourquoi.", 40, "blanc", 400, avant=24)
+        p.titre(T, 64, "blanc")
+        p.texte("Et janvier n'est pas un repli.", 40, "blanc", 400, avant=24)
         p.signature("blanc")
     f.append(p.ecrire(d / "01.png"))
 
-    # S2 — la frise a rebours
+    # S2 — pourquoi janvier n'est pas un pis-aller
     p = Planche("blanc")
-    p.titre("On compte à rebours.", 76, "encre", y=170)
-    etapes = [("4", "Réception", "24 déc."), ("3", "Impression", "8 jours"),
-              ("2", "Bon à tirer", "4 jours"), ("1", "Création", "10 jours")]
+    p.titre("Décembre est plein.\nJanvier est vide.", 74, "encre", y=170)
+    p.y = 450
+    p.texte("En décembre, votre carte arrive avec trente autres, entre un "
+            "inventaire et deux livraisons en retard.", 42, "taupe", 400,
+            avant=0)
+    p.y = 660
+    p.texte("En janvier, elle arrive seule, sur un bureau qu'on vient de "
+            "retrouver.", 42, "encre", 600, avant=0)
+    p.d.line([(MARGE, 886), (MARGE + 52, 886)], fill=teinte("violet"),
+             width=7)
+    p.d.text((MARGE + 80, 858), "L'usage laisse jusqu'au 31 janvier.",
+             font=police(600, 44), fill=teinte("violet"))
+    p.y = 970
+    p.texte("Presque personne ne s'en sert. C'est précisément ce qui rend "
+            "la carte visible.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    p.numero(2, 6, "taupe")
+    f.append(p.ecrire(d / "02.png"))
+
+    # S3 — la frise a rebours, recomptee depuis la mi-janvier
+    p = Planche("creme")
+    p.titre("On compte à rebours.", 66, "encre", y=170)
+    etapes = [("4", "Réception", "mi-janvier"),
+              ("3", "Impression", "janvier"),
+              ("2", "Bon à tirer", "décembre"),
+              ("1", "Création", "maintenant")]
     cx = [880, 640, 400, 160]          # de droite a gauche
     cy = 540
     for i, (n, nom, delai) in enumerate(etapes):
@@ -2147,16 +2189,17 @@ def carrousel_retroplanning(dossier=None):
             "On compte à rebours depuis la boîte aux lettres.", 42, "encre",
             600, avant=0)
     p.y = 960
-    p.texte("Vingt-deux jours ouvrés de production. Dernier jour pour "
-            "lancer la création : mardi 24 novembre.", 36, "brun", 400,
-            avant=0)
+    p.texte("Et le calendrier se coupe en deux : la création et le bon à "
+            "tirer maintenant, l'impression en janvier, quand les ateliers "
+            "se sont vidés.", 36, "brun", 400, avant=0)
     p.signature("brun")
-    p.numero(2, 6, "taupe")
-    f.append(p.ecrire(d / "02.png"))
+    p.numero(3, 6, "taupe")
+    f.append(p.ecrire(d / "03.png"))
 
-    # S3 — les trois etapes qu'on oublie de compter
-    p = Planche("creme")
-    p.titre("Les trois étapes\nqu'on oublie de compter", 68, "encre", y=170)
+    # S4 — les trois etapes qu'on oublie de compter
+    p = Planche("sable_chaud")
+    p.titre("Les trois étapes\nqu'on oublie de compter", 58, "encre",
+            y=170)
     y = 480
     for txt in ("Le texte à écrire.", "Le fichier à préparer.",
                 "Les adresses à réunir."):
@@ -2169,62 +2212,21 @@ def carrousel_retroplanning(dossier=None):
     p.texte("Elles prennent plus de temps que l'impression, et ce sont les "
             "seules qui ne se sous-traitent pas.", 38, "bleu", 600, avant=0)
     p.y = 1030
-    p.texte("Ce sont elles qui occupent les deux semaines d'ici au 24 "
-            "novembre. D'où : cette semaine.", 34, "brun", 400, avant=0)
-    p.signature("brun")
-    p.numero(3, 6, "taupe")
-    f.append(p.ecrire(d / "03.png"))
-
-    # S4 — le bon a tirer
-    p = Planche("sable_chaud")
-    t = "Le bon à tirer n'est\npas une formalité."
-    st = "C'est un aller-retour, et parfois deux. Prévoyez-le."
-    p.centrer(p.h_titre(t, 82) + p.h_texte(st, 42, avant=50) + 44)
-    p.filet()
-    p.titre(t, 82, "encre")
-    p.texte(st, 42, "brun", 400, avant=50)
+    p.texte("Ce sont elles qui occupent décembre. L'imprimeur, lui, "
+            "n'intervient qu'après.", 34, "brun", 400, avant=0)
     p.signature("brun")
     p.numero(4, 6, "taupe")
     f.append(p.ecrire(d / "04.png"))
 
-    # S5 — les quatre supports, pictogrammes au trait
+    # S5 — le bon a tirer
     p = Planche("blanc")
-    p.titre("Tout part chez le même\nimprimeur, au même moment.", 62,
-            "encre", y=170)
-    v, ep = teinte("violet"), 5
-    bx, by, bw, bh = 120, 520, 190, 190
-    def cadre(i):
-        return bx + i * 215, by
-    # 1. une carte
-    x, y = cadre(0)
-    p.d.rectangle([x, y + 40, x + 170, y + 150], outline=v, width=ep)
-    p.d.line([(x + 24, y + 78), (x + 100, y + 78)], fill=v, width=ep)
-    p.d.line([(x + 24, y + 108), (x + 70, y + 108)], fill=v, width=ep)
-    # 2. une etiquette
-    x, y = cadre(1)
-    p.d.polygon([(x + 30, y + 30), (x + 170, y + 30), (x + 170, y + 160),
-                 (x + 30, y + 160), (x + 2, y + 95)], outline=v, width=ep)
-    p.d.ellipse([x + 26, y + 80, x + 56, y + 110], outline=v, width=ep)
-    # 3. un sachet
-    x, y = cadre(2)
-    p.d.rectangle([x + 28, y + 60, x + 160, y + 170], outline=v, width=ep)
-    p.d.arc([x + 62, y + 22, x + 126, y + 86], 180, 360, fill=v, width=ep)
-    # 4. un adhesif de vitrine
-    x, y = cadre(3)
-    p.d.rectangle([x + 20, y + 30, x + 170, y + 170], outline=v, width=ep)
-    p.d.line([(x + 20, y + 110), (x + 170, y + 70)], fill=v, width=ep)
-    p.d.line([(x + 20, y + 140), (x + 170, y + 100)], fill=v, width=ep)
-    for i, lib in enumerate(("Carte", "Étiquette", "Sachet", "Vitrine")):
-        x, _ = cadre(i)
-        fo = police(600, 28)
-        l = p.d.textlength(lib, font=fo)
-        p.d.text((x + 95 - l / 2, by + 200), lib, font=fo, fill=teinte("brun"))
-    p.y = 830
-    p.texte("Décidé ensemble : un seul fichier, un seul délai, un seul "
-            "transport.", 40, "encre", 600, avant=0)
-    p.y = 990
-    p.texte("Décidé séparément : trois relances, et trois fois les frais "
-            "de port.", 40, "corail", 600, avant=0)
+    t = "Le bon à tirer n'est\npas une formalité."
+    st = ("C'est un aller-retour, et parfois deux. Faites-le en décembre, "
+          "pendant que tout le monde a encore le temps.")
+    p.centrer(p.h_titre(t, 74) + p.h_texte(st, 42, avant=50) + 44)
+    p.filet()
+    p.titre(t, 74, "encre")
+    p.texte(st, 42, "brun", 400, avant=50)
     p.signature("brun")
     p.numero(5, 6, "taupe")
     f.append(p.ecrire(d / "05.png"))
@@ -2232,11 +2234,10 @@ def carrousel_retroplanning(dossier=None):
     # S6 — l'appel
     p = Planche("creme")
     p.filet(y=300)
-    p.titre("Dites-moi ce que vous\nvoulez imprimer\npour les fêtes.", 80,
+    p.titre("Vous visez janvier ?\nDites-le-moi en\ncommentaire.", 74,
             "encre")
-    p.texte("En commentaire. Je vous dis la date limite réelle pour le "
-            "décider — pas celle de l'imprimeur, la vôtre.", 40, "brun",
-            400, avant=56)
+    p.texte("Je vous dis la vraie date limite pour le décider, et ce qu'il "
+            "reste à écrire avant.", 40, "brun", 400, avant=56)
     p.fleche("corail", y=1050)
     p.signature("brun")
     p.numero(6, 6, "taupe")
