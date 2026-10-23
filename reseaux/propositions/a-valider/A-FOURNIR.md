@@ -104,9 +104,17 @@ crans et épaulements face caméra, faces tournées. Vérifié à 100 % :
 aucun glyphe. La règle est écrite dans le brief, au § 3.5, parce qu'elle
 servira aussi au tampon encreur et au nuancier annoté.
 
-Restent à commander, dans cet ordre : **D** le stylo et le tampon
-(n° 9), **E** les quatre échantillons debout (n° 15), **F** la vitrine
-anonyme de nuit (n° 21). Les prompts
+**E — les échantillons debout** est arrivée le 23 octobre et ouvre la
+**n° 15 bis**, pas la n° 15 : le quiz exagère volontairement l'épaisseur
+des coupes parce qu'une photo ne montrerait rien à cette échelle, et une
+photo générée le rendrait injouable. Son piège était la matière nommée —
+un dibond approximatif affirme une structure fausse sur un produit qu'on
+vend. Le prompt demande donc des échantillons quelconques.
+
+Restent à commander : **D** le stylo et le tampon (n° 9), **F** la
+vitrine anonyme de nuit (n° 21). Les deux portent le piège de C et de E
+— un tampon encreur a des lettres en relief, une devanture a une
+enseigne. Les prompts
 sortent du bloc de `BRIEF-PHOTOS-IA.md`, § 3.6 : une seule ligne change
 d'une image à l'autre.
 

@@ -217,6 +217,20 @@ frame` — et le négatif ajoute `letterforms, glyphs, typefaces, printed
 characters, engraved text, mirror writing, type faces pointing at
 camera`.
 
+**Matières — la même règle, un cran plus loin.** Ce n'est pas seulement
+la lettre qu'un moteur invente : c'est **toute affirmation technique**.
+Un dibond, ce sont deux peaux d'aluminium sur une âme noire en
+polyéthylène. Un moteur en rend une approximation, et une approximation
+de la structure d'un matériau qu'on vend est aussi fausse qu'un glyphe
+qui n'existe pas — avec cette aggravation qu'un client peut la citer.
+
+Donc : **ne jamais nommer une matière dans un prompt.** Demander des
+échantillons de feuille quelconques, d'épaisseurs et de finitions
+différentes, sans coupe, sans âme visible, sans étiquette. L'image dit
+« des supports » ; elle ne dit pas lequel. Le négatif porte
+`layered composite core, visible core layer, honeycomb, sandwich panel
+cross-section, technical cutaway`.
+
 ### 3.6 — Le bloc à copier tel quel
 
 Une seule ligne change d'une image à l'autre : la première.
@@ -276,7 +290,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 
 ### Priorité haute — six images qui changent le feed
 
-> **Trois sont faites.** **A** ouvre la n° 1 depuis le 23 octobre.
+> **Quatre sont faites.** **A** ouvre la n° 1 depuis le 23 octobre.
 > **B** est arrivée le 23 au soir, en 9:16 exact, et elle ouvre la
 > **n° 20** — pas la n° 4 comme annoncé ici. La raison tient en une
 > ligne, et c'est la règle du § 2 : les deux écrans « matière » de la
@@ -290,6 +304,16 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 > **C** ouvre la n° 5 — planche 01, la seule des six qui ne démontre
 > rien. Les planches 02, 04 et 05 portent les devantures à deux graisses
 > et le même mot à trois corps : elles restent dessinées.
+>
+> **E a changé de publication, et c'est une erreur de ce brief.** Elle
+> était annoncée sur la n° 15 — le **quiz**, dont les cinq planches
+> demandent d'identifier une matière. Le document le dit lui-même :
+> « l'épaisseur des échantillons est volontairement exagérée, trois
+> millimètres d'alu sur un panneau d'un mètre ne feraient pas un
+> pixel ». C'est le cas rare où le dessin est **supérieur** à la
+> photographie : une vraie photo ne montrerait rien à cette échelle, et
+> une photo générée rendrait le quiz injouable. E ouvre donc la
+> **n° 15 bis**, dont la planche 01 énonce au lieu de démontrer.
 
 | # | Publication | L'image à générer |
 |---|---|---|
@@ -297,7 +321,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 | ~~**B**~~ | **n° 20** · Ce qu'on sent avant de lire | ✅ **reçue le 23 octobre.** Macro d'une pile de papiers vus **sur la tranche**, lumière rasante qui révèle l'épaisseur et la fibre. Accent **orange** sur un seul, 9:16 exact, zone de texte calme. Déposée en `B-papiers-tranche.png`. |
 | ~~**C**~~ | n° 5 · Typographie | ✅ **reçue le 23 octobre.** Caractères en plomb dans un composteur en laiton, vus **de profil** — crans et épaulements face caméra, faces tournées. Accent **bleu** sur un seul sort. Déposée en `C-caracteres-plomb.jpg`. |
 | **D** | n° 9 · Un logo tient-il en petit | Un stylo-bille posé en biais sur du papier blanc, et un tampon encreur à côté — l'échelle se lit toute seule. Accent **turquoise** sur le capuchon. |
-| **E** | n° 15 · Quatre supports en coupe | Quatre échantillons de matière — alu, PVC, dibond, plexi — alignés debout sur un établi, vus de trois quarts. Lumière rasante, bords nets. |
+| ~~**E**~~ | **n° 15 bis** · Un visuel, quatre supports | ✅ **reçue le 23 octobre.** Quatre échantillons de feuille **quelconques** debout sur un établi en chêne, coupés par le haut du cadre, épaisseurs et finitions différentes. Accent **violet** sur un translucide. Déposée en `E-echantillons-debout.jpg`. |
 | **F** | n° 21 · Vitrine vue du trottoir | Une devanture **anonyme** photographiée depuis le trottoir d'en face, de nuit, reflets de rue dans le verre. Aucune enseigne lisible, aucun nom. |
 
 ### Priorité moyenne — cinq images qui gagnent du réalisme

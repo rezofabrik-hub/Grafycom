@@ -99,6 +99,15 @@ PHOTOS = {
     # les sorts sont vus de cote, crans et epaulements face camera, les
     # faces tournees. Verifie a 100 % : aucun glyphe, rien de lisible.
     "caracteres-plomb":  SOURCES / "ambiances" / "C-caracteres-plomb.jpg",
+    # n° 15 bis, ouverture — image GENEREE, recue le 23 octobre. Le
+    # piege de celle-ci n'etait pas la lettre mais la MATIERE NOMMEE :
+    # un dibond, c'est deux peaux d'alu sur une ame noire, et un moteur
+    # en rend une approximation. Affirmer une structure de materiau
+    # qu'on vend, c'est la meme faute qu'un glyphe invente. Le prompt
+    # demande donc des echantillons de feuille QUELCONQUES — pas de
+    # coupe, pas d'ame visible, pas d'etiquette. L'image dit « des
+    # supports », elle ne dit pas lequel.
+    "echantillons-debout": SOURCES / "ambiances" / "E-echantillons-debout.jpg",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -5915,18 +5924,40 @@ def pub15bis_quatre_supports(dossier=None):
     accent("violet")
     faits = []
 
+    # L'ouverture passe sur la photographie. Les planches 02 a 06
+    # DEMONTRENT — chacune un support a son echelle, avec sa regle
+    # graduee — et restent dessinees. Les trois etiquettes rondes de
+    # l'ouverture refaisaient en petit ce que les cinq suivantes font
+    # en grand : elles sortent sans rien couter.
+    #
+    # PAS DE SURTITRE sur la variante photo, et ce n'est pas un oubli.
+    # Les echantillons sont pales a la hauteur ou il se pose : le fond
+    # y est mesure a 155, ou un blanc tombe a 2,78 de contraste. Le
+    # correcteur lui donne donc une encre sombre, juste pour lui — et
+    # la planche se retrouve avec deux encres, le defaut corrige trois
+    # fois en octobre. Un label qui ne peut pas s'ecrire dans l'encre
+    # de la planche n'a pas sa place sur cette planche. Le repli sans
+    # photo le garde.
     p = Planche("creme")
-    p.surtitre("Conseil", y=200)
-    p.filet()
-    p.titre("Un visuel.\nQuatre supports.\nQuatre dessins.", 72)
-    p.y = 760
-    p.texte("Le même décor de fêtes doit tenir sur une étiquette de "
-            "3 cm et sur une vitrine de 2 m. Ce n'est pas la même "
-            "image agrandie quatre fois.", 40, "brun", 400, avant=0)
-    _etiquette_ronde(p, 270, 1080, 56, couleur="violet")
-    _etiquette_ronde(p, 520, 1080, 92, couleur="violet")
-    _etiquette_ronde(p, 830, 1080, 128, couleur="violet")
-    p.signature("brun")
+    p.photo("echantillons-debout", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.surtitre("Conseil", y=200)
+        p.filet()
+        p.titre("Un visuel.\nQuatre supports.\nQuatre dessins.", 72)
+        p.y = 760
+        p.texte("Le même décor de fêtes doit tenir sur une étiquette de "
+                "3 cm et sur une vitrine de 2 m. Ce n'est pas la même "
+                "image agrandie quatre fois.", 40, "brun", 400, avant=0)
+        _etiquette_ronde(p, 270, 1080, 56, couleur="violet")
+        _etiquette_ronde(p, 520, 1080, 92, couleur="violet")
+        _etiquette_ronde(p, 830, 1080, 128, couleur="violet")
+        p.signature("brun")
+    else:
+        p.y = 752
+        p.titre("Un visuel.\nQuatre supports.\nQuatre dessins.", 66, "blanc")
+        p.texte("Le même décor doit tenir sur une étiquette de 3 cm et "
+                "sur une vitrine de 2 m.", 37, "blanc", 400, avant=26)
+        p.signature("blanc")
     faits.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")
