@@ -6,19 +6,13 @@
     "Ce qui est ici n'a pas d'autre domicile possible, et chaque entrée",
     "dit d'où elle vient. Ce fichier EST versionné — contrairement à",
     "reseaux/visuels/sources/, qui a déjà emporté deux fichiers clients",
-    "à la reconstruction du conteneur."
-  ],
-  "big-food": {
-    "violet": "#4b175f",
-    "provenance": [
-      "Le logo vectoriel reçu le 23 octobre ne porte que le logo, sur",
-      "fond transparent. La source précédente était une capture du même",
-      "logo posé sur une bande violette : le violet y était, il n'y est",
-      "plus. Relevé une dernière fois sur cette capture avant qu'elle",
-      "soit remplacée, et sur la vignette du portfolio qui en vient.",
-      "À confirmer auprès du client : si Big Food n'a pas de violet de",
-      "marque, c'est ici qu'il se retire, et la planche 2 de la n° 25",
-      "tombe sur l'encre de la charte."
-    ]
-  }
+    "à la reconstruction du conteneur.",
+    "",
+    "VIDE depuis le 23 octobre. Le violet de Big Food y a vécu une",
+    "journée : la bande violette de la capture n'était pas une couleur",
+    "de marque, Laurent l'a confirmé. L'entrée est retirée et la",
+    "planche 2 de la n° 25 tombe sur l'encre de la charte, comme le",
+    "repli le prévoyait. Le fichier reste : il a servi une fois, il",
+    "resservira."
+  ]
 }

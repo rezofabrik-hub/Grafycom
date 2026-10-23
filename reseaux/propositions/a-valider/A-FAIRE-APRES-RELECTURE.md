@@ -100,8 +100,9 @@ font foi dans `calendrier.md`.**
 
 - [ ] **Les textes des deux avis Google** — Social Miroir et Solaire
       66. Illisibles depuis ici, voir `outils/FICHE-GOOGLE.md`.
-- [ ] **Le logo de SR Coiffure**, à demander au salon. La forme est
-      vectorisée depuis ta capture, le filet doré manque.
+- [x] **Le logo de SR Coiffure** — ~~à demander au salon~~ **retiré du
+      portfolio le 23 octobre**. Le filet doré manquait ; plutôt que de
+      courir après le fichier, le projet sort. Classé.
 - [x] **Les cartes recto/verso et le panneau de Solaire 66** — reçus
       le 23 octobre, planches 4 et 5 de la n° 13 complètes.
 - [x] **Le `.ai` de la composition deux lignes de BIG FOOD** — reçu le

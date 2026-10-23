@@ -99,7 +99,7 @@ Les fichiers clients disponibles sont dans
 `reseaux/visuels/sources/clients/` — Solaire 66 (logo couleur, trois
 monochromes, carte recto-verso, panneau), Big Food (vectoriel, les deux
 compositions), Krusty (logo et dépliant), Sweet Dream (logo, deux lignes,
-dépliant), Social Miroir (rond, carré, en long), SR Coiffure. Ce dossier
+dépliant), Social Miroir (rond, carré, en long). Ce dossier
 n'est **pas versionné** : le dépôt est public, et il a déjà été vidé deux
 fois par une reconstruction du conteneur. Ce qui ne se relève pas dans un
 fichier — le violet de Big Food, par exemple — vit dans

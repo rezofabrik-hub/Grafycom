@@ -203,6 +203,40 @@ visuel de banque sans licence commerciale — la règle de
 `reseaux/LIGNE-EDITORIALE.md` vaut ici aussi, et une fiche Google est
 publique et traçable.
 
+### Le troisième avis, reçu le 23 octobre — texte intégral
+
+**Laurent**, 5 étoiles, « il y a une semaine », visite en octobre. Le
+premier dont le texte est dans le dépôt.
+
+> J'avais beaucoup d'idées en tête, mais je ne savais pas comment les
+> concrétiser. Un immense merci à Sandra qui a su m'écouter et donner
+> vie à mon projet. Mon nouveau logo et ma charte graphique sont
+> magnifiques et me correspondent totalement. Son professionnalisme et
+> sa patience font toute la différence !
+
+**La réponse est déjà publiée**, et elle est bonne — elle reprend le
+problème du client (« dompter le flux de vos idées ») au lieu de
+remercier dans le vide.
+
+> ⚠️ **Une coquille dans la réponse publiée :** « dompter **le flues**
+> de vos idées ». Lire « le flux ». C'est corrigeable depuis la fiche,
+> et une réponse de propriétaire est aussi lue que l'avis.
+
+**Deux choses à trancher avant de le reprendre sur le site :**
+
+1. **Sous quel nom ?** Les trois témoignages du site portent
+   « Prénom Nom — Entreprise ». L'avis est signé « Laurent » seul.
+2. **Avec quelle distance ?** REZOFABRIK est une entreprise distincte
+   de Grafycom, qui lui passe commande — la même situation que
+   Solaire 66, tranchée le 13 octobre. L'avis est donc un avis de
+   client. Mais Laurent est aussi celui qui construit ce site : si le
+   témoignage y figure sans que le lien soit lisible, un visiteur qui
+   le découvre ensuite perd confiance d'un coup. Le dire coûte une
+   ligne ; le taire coûte un prospect.
+
+C'est une décision de Laurent, pas une règle : les deux options se
+défendent, et aucune n'est malhonnête tant qu'elle est assumée.
+
 ### Les deux premiers avis sont arrivés — 13 octobre 2026
 
 **Social Miroir** et **Solaire 66** ont laissé un avis. Les textes ne sont

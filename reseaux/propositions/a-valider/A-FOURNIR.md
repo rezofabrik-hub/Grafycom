@@ -110,32 +110,55 @@ Restent les neuf images de priorité moyenne et basse du brief — **G**
 à **O**. Aucune n'est attendue par une planche : elles élargiraient le
 choix, c'est tout.
 
-### 8. Le logo SR Coiffure
+### 8. La photo `03-portrait-nuancier-4x5.jpg` — « la grande version »
 
-La forme est vectorisée depuis ta capture, **le filet doré manque**. À
-demander au salon.
+**La question était : c'est quoi, la grande version ?** Voici la
+réponse exacte, parce que ma formulation précédente était vague.
 
-### 9. La photo `03-portrait-nuancier-4x5.jpg`
+Sur cette photo, le pseudo est écrit à la main sur du liège :
+**« @grafycom graphiste », sans le point**. `retouche_atelier.py`
+sait le réparer — il efface l'encre sombre, reconstruit le liège par
+flou local, et réécrit « @grafycom.graphiste » incliné de 3 degrés pour
+suivre la ligne de base.
 
-Le pseudo y est écrit **« @grafycom graphiste », sans le point**.
-`retouche_atelier.py` sait le corriger, mais il lui faut le fichier
-d'origine — celui en main est trop petit pour que la correction tienne à
-l'agrandissement.
+Mais la fonction travaille sur **des coordonnées en pixels, relevées
+une fois à la main** : la boîte du pseudo est à `(1120, 588)-(1570, 696)`.
+Cela suppose une image d'au moins **1570 px de large**. Le script porte
+aussi un second jeu de coordonnées, `(318, 470)-(700, 516)`, pour une
+copie **3,5 fois plus petite** — c'est celle-là qui avait circulé.
 
-### 10. Deux photos d'atelier
+Sur la petite, la retouche se voit : le liège reconstruit est plus lisse
+que le vrai, et le raccord apparaît dès qu'on agrandit.
+
+**Et depuis, le fichier a disparu.** `sources/atelier/` contient
+aujourd'hui 01, 04, 06 et 07 — pas de 03. Il est parti avec le
+conteneur, comme la photo n° 05. Ce qu'il faut donc, c'est **le fichier
+d'origine tel qu'il sort de l'appareil**, pas un envoi par messagerie
+qui le redimensionne.
+
+### 9. Deux photos d'atelier
 
 - `08-croquis-denim.jpg` — reçue en aperçu seulement, jamais en fichier.
 - `05-profil-ecran-solaire66.jpg` — perdue avec le conteneur, non renvoyée.
 
 Aucune planche ne les attend : elles élargiraient le choix, c'est tout.
 
-### 11. Les textes des deux avis Google
+### 10. Les textes des avis Google — un reçu, deux manquants
 
-**Social Miroir** et **Solaire 66** ont laissé un avis le 13 octobre. Les
+**L'avis de Laurent est arrivé le 23 octobre**, texte intégral, avec sa
+réponse déjà publiée. Il est consigné dans `outils/FICHE-GOOGLE.md`.
+Deux questions l'accompagnent, et elles sont pour toi : sous quel nom
+le reprendre sur le site, et faut-il y rendre lisible le lien entre
+REZOFABRIK et Grafycom.
+
+Et une coquille à corriger depuis la fiche : la réponse publiée dit
+« dompter **le flues** de vos idées ».
+
+**Restent ceux de Social Miroir et Solaire 66**, du 13 octobre. Les
 textes ne sont pas lisibles depuis ici. Me les recopier permet d'écrire
 les réponses — un avis sans réponse vaut la moitié d'un avis.
 
-### 12. L'adresse de partage de la fiche Google
+### 11. L'adresse de partage de la fiche Google
 
 Une adresse courte en `g.page/…`, ou un lien Maps. Elle se récupère dans
 le profil d'établissement, bouton **« Partager »**.
@@ -143,19 +166,53 @@ le profil d'établissement, bouton **« Partager »**.
 C'est la dernière entrée manquante du bloc `sameAs` : celle qui permet à
 Google de rapprocher le site, la fiche et les réseaux sans le deviner.
 
-### 13. Une réserve, pas un manque : le violet de BIG FOOD
+### 12. ~~Le violet de BIG FOOD~~ — tranché le 23 octobre
 
-Le vectoriel reçu le 23 octobre ne porte **que le logo**, sur fond
-transparent. La capture qu'il remplace montrait ce logo sur une bande
-violette, et c'est là que la planche 2 de la n° 25 prenait son fond.
+**Il n'est pas une couleur de marque.** L'entrée est retirée de
+`reseaux/couleurs-clients.json`, et la planche 2 de la n° 25 tombe sur
+l'encre de la charte — exactement ce que le repli prévoyait. Le fichier
+de registre reste en place, vide : il a servi une fois, il resservira.
 
-Le violet `#4b175f` est conservé dans `reseaux/couleurs-clients.json`,
-versionné, avec sa provenance. **À confirmer auprès du client :** si
-Big Food n'a pas de violet de marque, l'entrée se retire et la planche
-tombe sur l'encre de la charte. L'orange et le blanc, eux, se relèvent
-toujours dans le fichier — `#f39200` et `#ffffff`, exacts.
+L'orange et le blanc continuent de se relever dans le vectoriel :
+`#f39200` et `#ffffff`, exacts.
 
-### 14. La confirmation des délais d'impression
+### 13. Le logo rond de Social Miroir, à reprendre par Sandra
+
+Ce n'est pas un fichier à me fournir : c'est une correction à faire
+dans Illustrator, et elle ne se fait pas sur un PNG. Voici les mesures,
+pour qu'elle n'ait pas à les relever.
+
+| | Aujourd'hui | Cible |
+|---|---|---|
+| Marge à gauche | **26,1 mm** | inchangée |
+| Marge à droite | **1,9 mm** | 26,1 mm |
+| Décentrage du bloc | **+12,1 mm** vers la droite | 0 |
+| Largeur du bloc | 172,0 mm | **147,9 mm** |
+
+**Et la correction est plus simple qu'elle n'en a l'air : la largeur
+visée est exactement celle de la version carrée.** La bande y mesure
+147,7 mm contre 147,9 ici — à deux dixièmes près, la même. Il ne s'agit
+donc pas de redessiner quoi que ce soit, mais de **rendre à la bande la
+longueur qu'elle a déjà dans les deux autres déclinaisons**, et de
+recentrer le bloc.
+
+Tant que ce n'est pas fait, `social-miroir-rond.png` **ne sert nulle
+part** : la vignette du portfolio utilise la version en long, qui n'a
+pas le défaut.
+
+### 14. La n° 18 attend ta relecture
+
+Le carrousel sur la mention de tri porte toujours son avertissement :
+**« contenu au conditionnel, vérification à faire avant publication »**.
+Les règles de signalétique n'ont pas pu être confirmées sur une source
+officielle — seulement des guides d'éco-organismes et de cabinets, ce
+qui est exactement le piège qui a déjà fonctionné avec le Cerfa
+14798\*01.
+
+Le sachet vierge de la planche 07 règle l'**image**. Il ne règle pas le
+**texte**. Rien ne part avant ta relecture.
+
+### 15. La confirmation des délais d'impression
 
 La n° 16 annonce **création fin novembre, bon à tirer début décembre,
 livraison mi-décembre**. À faire confirmer par l'imprimeur partenaire

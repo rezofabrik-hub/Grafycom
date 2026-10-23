@@ -31,7 +31,7 @@ elle qui a attrapé tout ce qui suit.
 | `04-carte-voeux-dorure.jpg` | carte de vœux en main | **la carte ne peut pas être montrée de près** — elle porte « Graautte de voeuwr ». Utilisable en plan large, où elle redevient du décor |
 | `06-ecran-solaire66.jpg` | de profil, devant l'écran | **bon.** L'affiche murale « Solaire 66 / Grafycom » est fidèle |
 | `07-bureau-solaire66.jpg` | au bureau, Solaire 66 à l'écran | **corrigée** : le vrai logo est incrusté en perspective à l'écran, coins mesurés et inscrits dans `ECRANS`. Le croquis « devanfture » est hors du recadrage 4:5 |
-| `03-portrait-nuancier-4x5.jpg` | portrait vertical, nuancier | **à corriger** : le pseudo y est `@grafycom graphiste`, **sans le point**. `retouche_atelier.py` sait le refaire |
+| `03-portrait-nuancier-4x5.jpg` | portrait vertical, nuancier | ⚠️ **absente du dossier** — partie avec le conteneur. Le pseudo y est `@grafycom graphiste`, **sans le point** ; `retouche_atelier.py` sait le refaire, mais sur une image d'au moins **1570 px de large** : ses coordonnées sont relevées en dur, boîte `(1120, 588)-(1570, 696)` |
 | `08-croquis-denim.jpg` | veste en jean, carnet de croquis | reçue en aperçu seulement, pas en fichier |
 | `05-profil-ecran-solaire66.jpg` | de profil, écran | perdue avec le conteneur, non renvoyée |
 

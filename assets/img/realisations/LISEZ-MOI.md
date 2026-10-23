@@ -170,9 +170,9 @@ donné le 22 octobre :
 
 | Projet | Publiable en réalisation | Note |
 |---|---|---|
-| **SR Coiffure** | oui | forme vectorisée depuis la capture, **le filet doré manque** — demander le fichier au client |
+| ~~**SR Coiffure**~~ | **retiré le 23 octobre** | la forme était vectorisée depuis une capture et le filet doré manquait. Plutôt que de courir après le fichier, Laurent préfère la sortir du portfolio. Ne pas rouvrir |
 | **B.F Plomberie** | oui | **non récupérable** depuis la capture : nom en blanc sur beige, dégradé, texture |
-| **Social Miroir** | oui | ✅ **logo reçu le 23 octobre**, trois déclinaisons vectorielles — ronde, carrée, en long. En ligne depuis. **Client actuel de Grafycom** — pas de mention de structure précédente |
+| **Social Miroir** | oui | ✅ **logo reçu le 23 octobre**, trois déclinaisons — ronde, carrée, en long. La vignette utilise **la version en long**. ⚠️ La **ronde est à reprendre** : la bande arrive à 1,9 mm du cercle contre 26,1 mm à gauche, voir `A-FOURNIR.md` n° 13. **Client actuel de Grafycom** — pas de mention de structure précédente |
 | **La Casquette Bleue** | **non** | Sandra n'a pas créé son identité : impression de cartes de visite uniquement |
 
 ### La Casquette Bleue : cliente, pas réalisation
@@ -188,15 +188,20 @@ Un avis client et une référence de création sont deux choses séparées.
 Confondre les deux, c'est s'attribuer un travail qu'on n'a pas fait — la
 faute la plus coûteuse du métier.
 
-### Les logos à récupérer — il en reste deux
+### Les logos à récupérer — il n'en reste qu'un, et il est perdu
 
-SR Coiffure, B.F Plomberie et Social Miroir apparaissent dans la
-publication Instagram du 19 janvier. Il faut leurs **fichiers sources**,
-pas une capture du carrousel : vectoriel de préférence, sinon un PNG à
-fond transparent d'au moins 2000 px. Même exigence que pour Casa Aldo, et
-pour la même raison.
+SR Coiffure, B.F Plomberie et Social Miroir apparaissaient dans la
+publication Instagram du 19 janvier. Il fallait leurs **fichiers
+sources**, pas une capture du carrousel.
 
 **Social Miroir est arrivé le 23 octobre** — trois `.ai` de 200 × 200 mm
 et 300 × 100 mm, déposés dans `reseaux/visuels/sources/clients/` et
-rendus à 300 dpi à côté. Restent SR Coiffure, dont le filet doré manque,
-et B.F Plomberie, non récupérable depuis la capture.
+rendus à 300 dpi à côté. Le projet est en ligne.
+
+**SR Coiffure est retiré le 23 octobre.** Le filet doré manquait, et
+plutôt que de courir après le fichier, Laurent préfère le sortir du
+portfolio. Classé.
+
+**Reste B.F Plomberie**, non récupérable depuis la capture — nom en
+blanc sur beige, dégradé, texture. Même situation que Casa Aldo : sans
+un fichier qui réapparaît, il ne revient pas.
