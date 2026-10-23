@@ -4,6 +4,26 @@ Tout ce qui ne peut pas être tranché à ma place, rassemblé ici plutôt que
 dispersé dans les quatre documents. Rien de ce mois ne part tant que ces
 points ne sont pas réglés.
 
+> ⚠️ **Ce document est un JOURNAL, pas un état des lieux. Lis ceci avant
+> d'agir sur un de ses tableaux.**
+>
+> Il a été écrit le 12 octobre et augmenté à chaque arbitrage depuis. Les
+> passages d'origine décrivent la situation **de ce jour-là**, et plusieurs
+> annonçaient du travail à faire qui a été fait depuis. Le 23 octobre,
+> Laurent y a lu « 15 publications restent à dessiner » et « 10 écrans de
+> story produits sur 41 », et m'a demandé les visuels manquants : **il n'en
+> manquait aucun.** Les passages fautifs sont désormais barrés à l'endroit
+> même où ils trompaient, et non seulement signalés ailleurs.
+>
+> **L'état réel, relevé par `reseaux/audit.py` à chaque passage :**
+> 29 publications · 166 planches · 44 écrans de story · 7 articles ·
+> 210 visuels au total. **Plus rien n'attend d'image.** Un seul manque
+> dans le dossier, et ce n'est pas un dessin : la n° 18 est sortie du
+> calendrier faute de vérification réglementaire.
+>
+> Ce qui demande encore une décision est **dans les blocs non barrés**,
+> et seulement là.
+
 ---
 
 ## 0 · Trois notes du cahier des charges étaient fausses — déjà corrigées
@@ -16,7 +36,7 @@ portent encore des traces.
 |---|---|---|
 | « Le site n'a pas de blog » | `blog.html` est en ligne depuis le 7 octobre | Les articles se publient seuls, sous deux verrous |
 | « L'outil est Canva » | `visuels.py` l'a remplacé le 7 octobre | Les consignes de relecture d'export Canva sont caduques |
-| « La fiche Google n'existe pas » | Elle existe, elle est à Sandra | **Les 16 textes de fiche sont publiables** |
+| « La fiche Google n'existe pas » | Elle existe, elle est à Sandra | **Les textes de fiche sont publiables** — 25 à ce jour |
 
 Les deux quinzaines ont écrit que les textes de fiche Google n'étaient pas
 publiables. **Ignore ces phrases** : l'avertissement est en tête de
@@ -34,29 +54,49 @@ conditions réelles.** La capacité de production n'est pas éprouvée, et
 c'est précisément la situation où le cahier des charges demande de
 redescendre.
 
-### Ce qui est déjà dessiné, et ce qui ne l'est pas
+### ~~Ce qui est déjà dessiné, et ce qui ne l'est pas~~
 
-| | Visuels |
-|---|---|
-| Publications 1 à 8 — cycle du 26 octobre au 6 novembre | ✅ produits |
-| Publication 13 — Solaire 66 | ✅ produite, 7 planches |
-| Publications 9 à 12 et 14 à 24 | ❌ **15 restent à dessiner** |
-| Stories | 10 écrans produits sur 41 |
+> 🛑 **TABLEAU PÉRIMÉ — tout est dessiné depuis le 22 octobre.**
+> Laurent l'a lu le 23 et m'a demandé les quinze visuels manquants.
+> Il n'en manque aucun : les quinze publications visées ont leurs
+> dossiers et **74 planches** au total. L'avertissement en tête de
+> `LISEZ-MOI` ne suffisait pas — une note ailleurs ne protège pas
+> d'un tableau qui affirme le contraire là où on le lit. Le tableau
+> est donc barré ici, à l'endroit où il trompait.
 
-### Ma recommandation, en une phrase
+| | Visuels | Au 23 octobre |
+|---|---|---|
+| ~~Publications 1 à 8~~ | ~~✅ produits~~ | ✅ toujours vrai |
+| ~~Publication 13 — Solaire 66~~ | ~~✅ produite, 7 planches~~ | ✅ 8 planches |
+| ~~Publications 9 à 12 et 14 à 24~~ | ~~❌ 15 restent à dessiner~~ | ✅ **les 15 sont produites** |
+| ~~Stories~~ | ~~10 écrans produits sur 41~~ | ✅ **44 écrans sur 44** |
 
-**Publier d'abord les 8 premières, qui sont prêtes de bout en bout, et ne
-rien décider pour la suite avant de les avoir tenues.**
+Le cycle entier compte aujourd'hui **29 publications, 166 planches,
+44 écrans de story et 210 visuels**, relevés par `reseaux/audit.py` à
+chaque passage. La n° 18 est sortie du calendrier le 23 octobre, faute
+de vérification réglementaire : c'est le seul manque du dossier, et ce
+n'est pas un manque de dessin.
 
-Deux semaines à quatre publications, visuels déjà faits : c'est le seul
+### ~~Ma recommandation, en une phrase~~
+
+> 🛑 **Caduque pour la même raison.** Elle proposait de ne dessiner la
+> suite qu'après avoir tenu les huit premières. La suite a été dessinée
+> entre-temps, donc l'arbitrage qu'elle demandait ne se pose plus. **La
+> question du rythme, elle, reste entière** — mais elle se pose
+> maintenant sur un cycle complet, pas sur un pari de production.
+
+~~Publier d'abord les 8 premières, qui sont prêtes de bout en bout, et ne
+rien décider pour la suite avant de les avoir tenues.~~
+
+~~Deux semaines à quatre publications, visuels déjà faits : c'est le seul
 moyen honnête de savoir si le rythme est tenable. Si ces huit sortent sans
 douleur, on garde quatre par semaine et je dessine les quinze autres. Si
 elles coûtent plus que prévu, on descend à deux ou trois et je ne dessine
-que celles-là.
+que celles-là.~~
 
-Décider maintenant, dans un sens ou dans l'autre, serait décider sans
+~~Décider maintenant, dans un sens ou dans l'autre, serait décider sans
 données. Un compte qui s'arrête fait plus de mal qu'un compte lent — et un
-mois entier dessiné puis abandonné coûterait deux fois.
+mois entier dessiné puis abandonné coûterait deux fois.~~
 
 **Si tu veux trancher tout de suite pour un rythme réduit**, les quatre à
 garder par quinzaine sont indiquées dans chaque cycle, et la publication
@@ -291,9 +331,9 @@ relus mot par mot sur chaque slide.
    exactement ce qu'un gabarit a besoin de recevoir. Dites-moi si je les
    écris.
 
-   > ✅ **Écrits.** La question ne se pose plus : **30 gabarits** et
-   > **210 planches**, tout le cycle compris, les 44 écrans de story
-   > compris. Plus aucune publication n'attend d'image, et rien n'est
+   > ✅ **Écrits.** La question ne se pose plus : **30 gabarits**,
+   > **166 planches** de publication et **44 écrans de story**, soit
+   > **210 visuels** en tout. Plus aucune publication n'attend d'image, et rien n'est
    > à photographier ni à filmer. La liste à jour est donnée par
    > `python3 reseaux/visuels.py --liste`.
 
