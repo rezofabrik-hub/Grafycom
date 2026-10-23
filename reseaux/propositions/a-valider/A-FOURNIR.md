@@ -111,10 +111,20 @@ photo générée le rendrait injouable. Son piège était la matière nommée �
 un dibond approximatif affirme une structure fausse sur un produit qu'on
 vend. Le prompt demande donc des échantillons quelconques.
 
-Restent à commander : **D** le stylo et le tampon (n° 9), **F** la
-vitrine anonyme de nuit (n° 21). Les deux portent le piège de C et de E
-— un tampon encreur a des lettres en relief, une devanture a une
-enseigne. Les prompts
+**D — le stylo et le tampon** est arrivée le 23 octobre et clôt la
+n° 9, planche 06 : les cinq autres démontrent, celle-là appelle à faire
+le test. Une feuille blanche et un stylo sous « faites le test ce soir »
+invitent le geste au lieu de l'illustrer. Ses deux pièges sont évités —
+semelle de tampon sans gravure, feuille rigoureusement vierge.
+
+**Reste F**, la vitrine vue du trottoir (n° 21). C'est la plus
+difficile des six et la seule qui ne peut pas tenir les sept constantes
+optiques : un extérieur n'a ni établi ni fenêtre à 45°. Le prompt cadre
+sous le bandeau d'enseigne — ni fronton, ni ciel, ni nom — et l'image ne
+porte aucun accent, le bandeau violet de la planche étant déjà le sien.
+
+Si deux ou trois tentatives échouent, on renonce sans rien perdre : la
+planche 01 actuelle, devanture dessinée et bandeau violet, fonctionne. Les prompts
 sortent du bloc de `BRIEF-PHOTOS-IA.md`, § 3.6 : une seule ligne change
 d'une image à l'autre.
 

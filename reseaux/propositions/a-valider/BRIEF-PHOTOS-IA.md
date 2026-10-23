@@ -290,7 +290,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 
 ### Priorité haute — six images qui changent le feed
 
-> **Quatre sont faites.** **A** ouvre la n° 1 depuis le 23 octobre.
+> **Cinq sont faites, il reste F.** **A** ouvre la n° 1 depuis le 23 octobre.
 > **B** est arrivée le 23 au soir, en 9:16 exact, et elle ouvre la
 > **n° 20** — pas la n° 4 comme annoncé ici. La raison tient en une
 > ligne, et c'est la règle du § 2 : les deux écrans « matière » de la
@@ -320,7 +320,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 | ~~**A**~~ | n° 1 · Pédagogie couleur | ✅ **intégrée le 23 octobre.** Nuancier Pantone en éventail, main qui écarte deux teintes, accent **corail**. Ouvre le cycle. |
 | ~~**B**~~ | **n° 20** · Ce qu'on sent avant de lire | ✅ **reçue le 23 octobre.** Macro d'une pile de papiers vus **sur la tranche**, lumière rasante qui révèle l'épaisseur et la fibre. Accent **orange** sur un seul, 9:16 exact, zone de texte calme. Déposée en `B-papiers-tranche.png`. |
 | ~~**C**~~ | n° 5 · Typographie | ✅ **reçue le 23 octobre.** Caractères en plomb dans un composteur en laiton, vus **de profil** — crans et épaulements face caméra, faces tournées. Accent **bleu** sur un seul sort. Déposée en `C-caracteres-plomb.jpg`. |
-| **D** | n° 9 · Un logo tient-il en petit | Un stylo-bille posé en biais sur du papier blanc, et un tampon encreur à côté — l'échelle se lit toute seule. Accent **turquoise** sur le capuchon. |
+| ~~**D**~~ | n° 9 · Un logo tient-il en petit | ✅ **reçue le 23 octobre.** Stylo-bille en biais sur une feuille **vierge**, tampon sur le flanc, **semelle sans gravure**. Accent **turquoise** sur le capuchon, 0,18 % de la surface. Sur la planche **06**, la clôture — les cinq autres démontrent. Déposée en `D-stylo-tampon.jpg`. |
 | ~~**E**~~ | **n° 15 bis** · Un visuel, quatre supports | ✅ **reçue le 23 octobre.** Quatre échantillons de feuille **quelconques** debout sur un établi en chêne, coupés par le haut du cadre, épaisseurs et finitions différentes. Accent **violet** sur un translucide. Déposée en `E-echantillons-debout.jpg`. |
 | **F** | n° 21 · Vitrine vue du trottoir | Une devanture **anonyme** photographiée depuis le trottoir d'en face, de nuit, reflets de rue dans le verre. Aucune enseigne lisible, aucun nom. |
 

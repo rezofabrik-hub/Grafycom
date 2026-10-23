@@ -108,6 +108,12 @@ PHOTOS = {
     # coupe, pas d'ame visible, pas d'etiquette. L'image dit « des
     # supports », elle ne dit pas lequel.
     "echantillons-debout": SOURCES / "ambiances" / "E-echantillons-debout.jpg",
+    # n° 9, clôture — image GENEREE, recue le 23 octobre. Deux pieges
+    # ici, et tous deux evites : la semelle du tampon est VIERGE (pas un
+    # glyphe miroir invente), et la feuille est rigoureusement BLANCHE —
+    # sur une publication qui parle de la lisibilite d'un logo en petit,
+    # un faux logo dans l'image aurait ete l'ironie parfaite.
+    "stylo-tampon":      SOURCES / "ambiances" / "D-stylo-tampon.jpg",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -2758,15 +2764,35 @@ def pub09_logo_reduction(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "05.png"))
 
+    # La CLOTURE passe sur la photographie, et non l'ouverture. La
+    # planche 01 demontre — le meme logo a 210 px et a 26, legende
+    # « meme logo, 8 mm » — comme les 02, 04 et 05. La 03 est une liste
+    # a puces qui occupe toute la planche. La 06 est la seule qui
+    # n'affirme rien d'autre qu'un appel a faire le test.
+    #
+    # Et c'est la meilleure place : une feuille blanche et un stylo sous
+    # « faites le test ce soir » invitent le geste au lieu de
+    # l'illustrer. La fleche corail saute — l'image porte le turquoise
+    # du capuchon, et deux accents sur une planche, c'est la faute
+    # qu'on evite depuis la n° 5.
     p = Planche("encre")
-    p.filet(y=320)
-    p.titre("Faites le test" + "\n" + "ce soir.", 92, "blanc")
-    p.y = 700
-    p.texte("Réduisez votre logo à la taille d'un ongle. Si vous ne le "
-            "reconnaissez plus, vos clients non plus.", 40, "creme", 400,
-            avant=0)
-    p.fleche("corail", y=950)
-    p.signature("sable")
+    p.photo("stylo-tampon", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        p.filet(y=320)
+        p.titre("Faites le test" + "\n" + "ce soir.", 92, "blanc")
+        p.y = 700
+        p.texte("Réduisez votre logo à la taille d'un ongle. Si vous ne le "
+                "reconnaissez plus, vos clients non plus.", 40, "creme", 400,
+                avant=0)
+        p.fleche("corail", y=950)
+        p.signature("sable")
+    else:
+        p.y = 760
+        p.titre("Faites le test\nce soir.", 84, "blanc")
+        p.texte("Réduisez votre logo à la taille d'un ongle. Si vous ne le "
+                "reconnaissez plus, vos clients non plus.", 38, "blanc",
+                400, avant=24)
+        p.signature("blanc")
     faits.append(p.ecrire(d / "06.png"))
     return faits
 
