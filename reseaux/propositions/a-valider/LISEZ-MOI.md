@@ -5,9 +5,9 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 | Document | Ce qu'il contient |
 |---|---|
 | **`PRET-A-VALIDER.md`** | **ce qui est terminé et ce qui ne l'est pas** — à lire en premier |
-| **`calendrier.md`** | les 96 éléments datés, tous canaux, dans l'ordre |
-| **`instagram-facebook.md`** | les 24 publications |
-| **`fiche-google.md`** | les 24 textes de fiche |
+| **`calendrier.md`** | les 105 éléments datés, tous canaux, dans l'ordre |
+| **`instagram-facebook.md`** | les 29 publications |
+| **`fiche-google.md`** | les 25 textes de fiche |
 | **`stories.md`** | les 6 séquences hebdomadaires, 44 écrans |
 | **`blog.md`** | l'index des 7 articles — les textes sont dans `reseaux/blog/` |
 | **`messages-prives.md`** | le message d'accueil et 4 réponses types |
@@ -17,18 +17,58 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 | **`checklist-enseigne.md`** | le document à **donner** en message privé — quatre pages, à relire avant usage |
 | **`arbitrages.md`** | **ce qui demande ta décision** — à lire en premier |
 
-## Par où commencer
+## Dans quel ordre les traiter
 
-1. **`PRET-A-VALIDER.md`** : l'état exact. 104 éléments sont complets et
-   peuvent partir. **Plus rien n'attend une image** — 133 planches, 44
-   écrans de story et 7 illustrations d'article sont dessinés. Il ne reste
-   qu'un seul type de blocage : trois vérifications réglementaires.
-2. **`arbitrages.md`**, section 1 : la question du rythme. Rien n'est
-   publié, 29 publications attendent ton accord. *(Ce document date du
+L'ordre n'est pas indifférent, et ce n'est pas celui du tableau
+ci-dessus. **Une décision prise en haut de cette liste déplace ce qui
+est en dessous** : refuser une publication, c'est aussi refaire son
+texte de fiche, sa story, sa ligne de calendrier et quatre compteurs.
+Lire le calendrier en premier, c'est relire une conséquence avant sa
+cause.
+
+**D'abord ce qui peut encore bouger** — 15 minutes, et ça conditionne
+tout le reste.
+
+1. **`arbitrages.md`** — ce qui attend encore ta décision. Tout ce qui
+   s'y tranche change des documents plus bas. *(Ce fichier date du
    12 octobre : là où il parle de visuels restant à dessiner, c'est
    périmé — ils le sont tous.)*
-3. **`calendrier.md`** pour voir l'ensemble d'un coup d'œil.
-4. Puis canal par canal, dans l'ordre qui t'arrange.
+2. **`PRET-A-VALIDER.md`** — l'état exact, et surtout les **deux
+   réserves réglementaires** encore ouvertes, n° 14 et n° 22. Une
+   troisième, la n° 18, a déjà fait sortir sa publication du
+   calendrier : c'est ce qui arrive quand la réserve n'est pas levée.
+
+**Ensuite la substance, de la plus lourde à la plus légère.** C'est là
+que se passe la vraie validation, et c'est le gros du temps.
+
+3. **`instagram-facebook.md`** — le document le plus long de loin, et
+   celui dont tout le reste dérive. Rien n'est encore publié :
+   **29 publications attendent ton accord**.
+4. **`fiche-google.md`** — 25 textes, un par publication, **avec ses
+   cases à cocher**. Si une publication change au point 3, son texte
+   change ici.
+5. **`stories.md`** — 44 écrans, **avec ses cases à cocher**. Ils
+   annoncent les publications : ils bougent avec elles.
+6. **`blog.md`** — l'index seul. Les sept textes ne sont pas dans les
+   PDF : ils s'ouvrent dans `reseaux/blog/`, et se valident en y
+   écrivant `statut: validé`.
+
+**Puis ce qui ne se valide pas, mais se vérifie** — une relecture de
+cohérence, rapide, une fois que les décisions sont prises.
+
+7. **`calendrier.md`** — l'ensemble d'un coup d'œil, et la somme de
+   tout ce qui précède.
+8. **`A-FOURNIR.md`** — ce qui manque encore de ton côté.
+
+**Enfin les annexes**, qui ne bloquent rien et se lisent quand tu veux :
+`photos-a-prendre`, `visuels-a-produire`, `acquisition`,
+`messages-prives`, `checklist-enseigne`, `BRIEF-PHOTOS-IA`.
+
+**Ce qu'on peut sauter.** Les points 7 et 8 sont tenus par
+`reseaux/audit.py`, qui relit à chaque passage les quatre tableaux de
+dates du dossier et tous les compteurs. S'il ne signale rien, le
+calendrier est d'accord avec le reste — inutile de le vérifier à la
+main.
 
 ## Comment valider
 
@@ -46,7 +86,7 @@ Les mêmes documents, paginés et prêts à annoter, sont fabriqués par
 ce sont des dérivés, la source reste le markdown.
 
 ```bash
-python3 reseaux/pdf.py            # les treize
+python3 reseaux/pdf.py            # les quinze
 python3 reseaux/pdf.py calendrier  # un seul
 ```
 
@@ -56,7 +96,7 @@ Les textes complets des articles, qui vivent dans `reseaux/blog/`, un
 fichier par article. Et les visuels produits, dans `reseaux/visuels/` —
 un dossier par publication, nommé à **la date réelle de parution**.
 
-Pour les relire sans ouvrir 177 fichiers un par un :
+Pour les relire sans ouvrir 210 fichiers un par un :
 
 ```bash
 python3 reseaux/planche-contact.py          # une page A4 par publication

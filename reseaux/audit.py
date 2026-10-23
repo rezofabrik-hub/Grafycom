@@ -195,8 +195,15 @@ def comptes(pubs):
     arts = len(list((R / "reseaux/blog").glob("20*.md")))
     notes.append("mesuré : %d publications · %d planches · %d stories · "
                  "%d articles" % (len(pubs), planches, stories, arts))
+    # le total annoncé par le calendrier : il additionne quatre volumes
+    # qu'on mesure déjà, et il était faux des deux côtés — 107 pour
+    # 26 textes Google alors que 26 ne tombait pas juste non plus.
+    goog = len(re.findall(r"\| Fiche Google \| post \|",
+                          lire("reseaux/propositions/a-valider/calendrier.md")))
     regles = {
         "reseaux/propositions/a-valider/calendrier.md": [
+            (r"\| \*\*Total à valider\*\* \| \*\*(\d+)\*\* \|",
+             len(pubs) + goog + stories + arts),
             (r"\| Publications Instagram \+ Facebook \| \*\*(\d+)\*\* \|",
              len(pubs)),
             (r"\| Écrans de story \| \*\*(\d+)\*\* \|", stories),
@@ -268,6 +275,21 @@ def fiche_google():
     else:
         juste("fiche Google : le compteur de tête vaut les textes datés (%d)"
               % len(doc))
+
+    # le calendrier annonce aussi un volume, et personne ne le relisait :
+    # il comptait 26 textes — la n° 18 suspendue comprise, alors que sa
+    # ligne « publications » l'exclut — et un total de 107 qui ne tombait
+    # juste ni avec 26 ni avec 25.
+    kal = lire("reseaux/propositions/a-valider/calendrier.md")
+    m = re.search(r"\| Textes de fiche Google \| \*\*(\d+)\*\* \|", kal)
+    if not m:
+        faux("calendrier : compteur de textes Google introuvable")
+    elif int(m.group(1)) != len(cal):
+        faux("calendrier : annonce %s textes Google, %d lignes datées"
+             % (m.group(1), len(cal)))
+    else:
+        juste("calendrier : le volume de textes Google vaut ses lignes (%d)"
+              % len(cal))
 
     sans_texte = sorted(set(cal) - set(doc))
     if sans_texte:

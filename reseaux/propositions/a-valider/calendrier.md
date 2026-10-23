@@ -151,10 +151,10 @@ automatique du matin.
 | Canal | Volume |
 |---|---|
 | Publications Instagram + Facebook | **29** |
-| Textes de fiche Google | **26** |
+| Textes de fiche Google | **25** |
 | Écrans de story | **44** |
 | Articles de blog | **7** |
-| **Total à valider** | **107** |
+| **Total à valider** | **105** |
 
 **Quatre réalisations**, toutes en plus du cycle et aucune à la place
 d'une leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du
