@@ -24,7 +24,7 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
    écrans de story et 7 illustrations d'article sont dessinés. Il ne reste
    qu'un seul type de blocage : trois vérifications réglementaires.
 2. **`arbitrages.md`**, section 1 : la question du rythme. Rien n'est
-   publié, 29 publications attendent ton accord. *(Ce document date du
+   publié, 30 publications attendent ton accord. *(Ce document date du
    12 octobre : là où il parle de visuels restant à dessiner, c'est
    périmé — ils le sont tous.)*
 3. **`calendrier.md`** pour voir l'ensemble d'un coup d'œil.

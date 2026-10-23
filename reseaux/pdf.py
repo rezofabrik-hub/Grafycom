@@ -49,6 +49,8 @@ ORDRE = [
     ("messages-prives", "Messages privés", "Le message d'accueil et les réponses types"),
     ("photos-a-prendre", "Photos à prendre", "Les prises de vue pour Sandra"),
     ("visuels-a-produire", "Visuels à produire", "Ce qu'il reste à dessiner"),
+    ("BRIEF-PHOTOS-IA", "Brief visuels réalistes",
+     "Ce qu'il faut générer, et ce qu'il ne faut jamais générer"),
     ("acquisition", "Abonnés et clients",
      "Ce que le plan fait pour l'objectif, mesuré"),
     ("arbitrages", "Arbitrages", "Ce qui demande une décision"),

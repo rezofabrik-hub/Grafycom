@@ -37,9 +37,16 @@ elle qui a attrapé tout ce qui suit.
 
 ## Ce qui manque encore
 
-- **Les cartes Solaire 66**, recto et verso, et **le panneau de chantier.**
-  Deux planches de la n° 13 sortent avec un trou nommé : `04.png` et
-  `05.png`. Le reste de la publication est complet.
+- **Plus rien.** Le panneau de chantier est arrivé le 23 octobre —
+  2000 × 1337 px, rapport 1,496, soit les 120 × 80 cm annoncés. La n° 13
+  est complète, et avec elle tout le cycle.
+
+  Les **cartes recto/verso sont arrivées le 23 octobre**, en vectoriel —
+  `CARTES_DE_VISITE.pdf`, deux pages de 89 × 59 mm, soit 85 × 55 mm plus
+  2 mm de fond perdu. Rendues à **300 dpi**, ce qui donne 1052 px pour
+  89 mm : exactement la constante `MM` du gabarit. Le fond perdu est rogné
+  par `poser(rogner_mm=2)`, pas à la main — un rognage manuel se périme
+  le jour où le fichier est réexporté.
 
 ## Ce que les scripts refont tout seuls
 
@@ -143,7 +150,7 @@ plus le blanc des lettres. Rapport 1,25:1. Le burger est posé sur le
 
 **Accord acquis le 22 octobre.** Le logo a été commandé à Grafycom
 par REZOFABRIK, et le client KRUSTY est au courant de la
-sous-traitance. La publication n° 26 est écrite, samedi 14 novembre.
+sous-traitance. La publication n° 26 est écrite, mercredi 18 novembre.
 
 **Le dépliant est de Grafycom lui aussi.** Son fichier d'impression
 fait 68 Mo et n'est pas ici — mais il n'a pas eu à l'être. La planche

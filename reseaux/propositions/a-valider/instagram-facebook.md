@@ -1045,146 +1045,113 @@ terminée, éclairée de l'intérieur à la nuit tombée.
 
 # SEMAINE 4 — du lundi 16 au dimanche 22 novembre
 
-## 13 — Lundi 16 novembre, 12 h 30 · Carrousel 8 slides · Pilier « réalisations » · **Solaire 66**
+## 13 — Lundi 16 novembre, 12 h 30 · Carrousel 7 planches · Pilier 1, conseils & pédagogie de marque
 
-> ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
-> est aussi le commanditaire de ces publications — la carte de visite porte
-> « Laurent MIENVILLE, Gérant ». La règle « aucun projet client sans son
-> accord » est donc satisfaite à la source, sans démarche.
+> **Pourquoi cette publication existe.** Ce créneau portait Solaire 66.
+> L'arbitrage du 23 octobre sort les réalisations du rythme : elles
+> s'ajoutent au cycle, elles ne prennent pas la place d'une leçon.
+> Solaire 66 devient la n° 28, le mercredi 25 novembre, et le lundi 16
+> redevient pédagogique.
 >
-> ✅ **Visuels produits, les 7.** Dans
-> `reseaux/visuels/2026-11-16-solaire-66/`, par
-> `python3 reseaux/visuels.py` (gabarit `solaire_66`). Format 1080 × 1350,
-> police Inter du site, pseudo en constante, relus à l'image.
+> C'est l'application pleine de l'arbitrage n° 6, resté à moitié fait
+> depuis le 18 octobre.
+
+### Pourquoi ce sujet
+
+C'est le frottement le plus fréquent entre une graphiste et un client,
+et personne ne l'explique jamais : « envoyez-moi votre logo », et ce
+qui arrive est une capture d'écran.
+
+Le sujet a deux qualités rares réunies. Il est **utile tout de suite** —
+un commerçant qui lit ça redemande son fichier le jour même. Et il se
+**démontre** : on agrandit, et on voit. La plupart des sujets de
+graphisme s'expliquent ; celui-là se montre.
+
+### Direction visuelle — 7 planches, 1080 × 1350 px
+
+Gabarit `fichier-vectoriel`, dans
+`reseaux/visuels/2026-11-16-fichier-vectoriel/`. Accent bleu, la
+couleur du pilier technique.
+
+- **S1.** Crème, surtitre « Conseil », filet. « Pourquoi je vous
+  demande un fichier vectoriel. » La marque témoin posée dessous.
+- **S2.** **La démonstration.** Blanc. Le même dessin deux fois : à
+  gauche une image de 76 px étirée à 360, à droite le même tracé
+  directement à 360. Escaliers contre courbes.
+- **S3.** Crème. « Une image traîne son rectangle. » Le JPEG arrive
+  avec son carré blanc ; le vectoriel n'a pas de fond.
+- **S4.** Blanc. Les sept extensions, pastille bleue ou corail :
+  `.ai` `.eps` `.svg` `.pdf` tiennent, `.jpg` `.png` `.webp` sont des
+  images.
+- **S5.** Crème. « Le test en dix secondes » : ouvrir, zoomer à 800 %.
+- **S6.** Blanc. Les cinq choses à redemander à son prestataire.
+- **S7.** Encre, filet. « Un logo qu'on ne peut pas agrandir n'est pas
+  un logo. C'est une image. »
+
+> **La marque témoin n'imite personne.** Un disque, une barre, un
+> triangle. Elle n'est ni un logo client ni une marque existante : elle
+> sert uniquement à comparer un agrandissement de pixels à un tracé
+> redessiné, ce qui suppose de pouvoir la dessiner **aux deux
+> tailles** — une image ne le permettrait pas.
 >
-> ✅ **Sources vectorielles.** Le logo vient de `LOGO_OK.pdf`, rendu puis
-> recadré sur le dessin : bords nets et transparence réelle. Il remplace le
-> JPEG du premier envoi.
->
-> ✅ **Dimensions réelles, fournies par Laurent :** panneau 120 × 80 cm,
-> carte 8,5 × 5,5 cm. La planche 5 les pose **à l'échelle exacte** —
-> 8,5 / 120 = 7,08 % de la largeur. Aucun chiffre n'est estimé.
-
-**Pourquoi cette publication a remplacé un exercice fictif.** Le cahier des
-charges dit que les réalisations sont le pilier le plus fort et le plus
-rare. Mon contrôle avait relevé que le mois n'en servait aucun : zéro
-projet réel sur seize publications. Un projet livré bat un exercice de
-style à tous les coups.
-
-**L'idée, une seule :** un logo se dessine en grand et se vérifie en petit.
-Le reste — l'origine des couleurs, le symbole intégré au mot — sert cette
-idée, il ne la concurrence pas.
-
-### Direction visuelle — 5 slides *(produites)*
-
-- **S1** `01.png` — Fond blanc. Le logo seul, grand, centré. En bas,
-  discret : « Solaire 66 — identité livrée ». Le logo parle en premier, on
-  ne lui met rien par-dessus.
-- **S2** `02.png` — Fond crème. Deux disques aux couleurs réelles du logo,
-  `#10638b` et `#f5b32d`, légendés *la mer* et *le soleil*. Titre : « Ces
-  deux couleurs ne sont pas un goût. » Texte : elles viennent de
-  Canet-en-Roussillon, où l'entreprise est installée.
-- **S3** `03.png` — Fond blanc. Titre « Regardez le O. », le logo en
-  dessous, puis l'explication du symbole devenu lettre.
-- **S4** `04.png` — Fond crème. Les deux faces de la carte de visite en
-  présentation studio, légèrement tournées, avec leurs ombres portées.
-  Titre : « Une carte de visite fait 85 millimètres. »
-  *Le fond perdu de 2 mm est rogné : on montre l'objet fini, pas le fichier
-  d'impression.*
-- **S5** `05.png` — Fond crème. Le panneau de chantier et la carte de
-  visite **à l'échelle exacte** : la carte fait 7 % de la largeur du
-  panneau, et c'est écrit. Titre : « À l'échelle exacte. » Les deux cotes
-  sont légendées, 120 × 80 cm et 8,5 cm.
-- **S6** `06.png` — Fond crème. Le logo en monochrome bleu sur crème, puis
-  en monochrome blanc sur un bandeau encre. Titre : « En une seule
-  couleur. » Légende : les lettres sont ajourées, pas remplies de blanc,
-  c'est ce qui rend la version possible.
-- **S7** `07.png` — Fond dégradé chaud, filet dégradé en tête. « Dessiné
-  en grand. Vérifié en petit. » Puis la règle : une identité livrée ne
-  contient jamais un seul fichier.
-
-> **Ce que ces planches ne sont pas :** des mises en situation
-> photographiques. La carte n'est pas dans une main, le panneau ne sera pas
-> sur une palissade. Ça demanderait une photo de base, et on ne publie pas
-> une image dont les droits ne sont pas clairs. Ce sont des présentations
-> studio — rotation douce, ombre portée, fond de la charte.
+> La planche S2 ne truque donc rien, et c'est reproductible : la même
+> marque est tracée à 76 px puis étirée, et tracée à 360 px. C'est
+> exactement ce que fait un JPEG contre un vectoriel.
 
 ### Accroche
 
-« Ces deux couleurs ne sont pas un goût. »
+**« Pourquoi je vous demande un fichier vectoriel. »**
 
 ### Légende
 
-Le bleu et le jaune de ce logo ne sortent pas d'une tendance. Ils viennent
-de Canet-en-Roussillon, où l'entreprise est installée : la mer et le
-soleil. Une palette qui vient d'un lieu tient plus longtemps qu'une palette
-qui vient d'une mode — parce que le lieu, lui, ne change pas de saison.
-
-Regardez maintenant le `O` de SOLAIRE. Ce n'est pas un `O` avec un soleil
-posé dessus : c'est le soleil qui tient le rôle du `O`. La différence paraît
-minime, elle ne l'est pas. Un symbole posé à côté d'un nom peut toujours
-s'en détacher — on finit par l'oublier dans un document, le remplacer par
-une icône, le réduire jusqu'à ce qu'il disparaisse. Devenu une lettre, il ne
-peut plus partir sans emporter le mot avec lui.
-
-Et puis il y a la contrainte dont on parle le moins. Sur un panneau de
-chantier, un logo peut tout se permettre. Sur une carte de visite, il
-dispose de 85 millimètres. Dans un avatar, de quelques pixels. Brodé sur un
-polo, le fil ne descend pas en dessous d'une certaine finesse.
-
-C'est pour ça qu'une identité livrée ne contient jamais un seul fichier :
-une version complète, une version simplifiée pour les petites tailles, une
-version en une seule couleur pour la gravure et la broderie, et les fichiers
-vectoriels qui permettent de tout agrandir sans perte.
-
-Si votre logo n'existe qu'en une seule version, vous ne le découvrirez pas
-aujourd'hui. Vous le découvrirez le jour où un imprimeur vous demandera un
-fichier que vous n'avez pas.
+> « Vous pouvez m'envoyer votre logo ? » — et ce qui arrive est une
+> capture d'écran de la page Facebook.
+>
+> Ce n'est pas une maladresse, c'est que personne ne vous a expliqué la
+> différence. La voici, et elle vaut de l'argent.
+>
+> **Une image est une grille de points.** Un JPEG, un PNG, une capture :
+> chacun a un nombre de points fixé une fois pour toutes. Agrandissez, et
+> il n'y a rien à ajouter — le logiciel étire les points existants. Les
+> bords deviennent des escaliers.
+>
+> **Un vectoriel est une description.** Un cercle de tel rayon, un trait
+> de telle épaisseur, cette couleur. Il se redessine à chaque affichage,
+> à n'importe quelle taille. Sur une carte de visite comme sur une bâche
+> de six mètres.
+>
+> **Et une image traîne son fond.** Un JPEG ne sait pas être
+> transparent : posé sur une couleur, il arrive avec son rectangle
+> blanc. Sur une vitrine ou un textile, ce rectangle se découpe.
+>
+> **Le test prend dix secondes.** Ouvrez le fichier, zoomez à 800 %. Si
+> les bords s'escaliers, c'est une image. Si le trait reste franc, c'est
+> un vectoriel.
+>
+> Si vous n'avez que des images, ce n'est pas perdu : un logo se
+> revectorise. Mais c'est du travail qu'on refait, et qui avait déjà été
+> payé une fois.
+>
+> **Vous savez où est le fichier vectoriel de votre logo ?** Beaucoup
+> découvrent que non. Dites-le en commentaire, ça rassure les autres.
 
 ### Texte alternatif
-
-**S1 et S3** — Logo de Solaire 66 : une chaîne de montagnes bleues en
-silhouette, un soleil dessiné en spirale jaune qui remplace la lettre O du
-mot SOLAIRE, un éclair jaune traversant le relief, et le nombre 66 en jaune.
-
-**S2** — Deux disques côte à côte, l'un bleu profond légendé « la mer »,
-l'autre jaune doré légendé « le soleil ».
-
-**S4** — Les deux faces d'une carte de visite Solaire 66 posées en
-diagonale sur un fond crème : au recto le logo, au verso un QR code et les
-coordonnées du gérant.
-
-**S5** — Un panneau de chantier Solaire 66 de 120 par 80 centimètres, avec
-une carte de visite de 8,5 centimètres posée à côté, à l'échelle exacte :
-elle occupe à peine un quatorzième de la largeur.
-
-**S6** — Le logo Solaire 66 en une seule couleur : en bleu sur fond crème
-au-dessus, en blanc sur un bandeau brun foncé en dessous.
-
-**S7** — Fond crème et bandeau violet, texte « Dessiné en grand. Vérifié en
-petit. »
+Carrousel de sept planches sur les fichiers vectoriels. Une marque
+témoin faite d'un cercle, d'une barre et d'un triangle est montrée deux
+fois côte à côte : à gauche agrandie depuis une petite image, les bords
+en escalier ; à droite tracée directement à la grande taille, les bords
+nets. Une autre planche montre la même marque sur un carré blanc à
+gauche et sans fond à droite. Une planche liste sept extensions de
+fichier avec une pastille bleue pour les vectoriels et corail pour les
+images. La dernière planche illustrée répète la comparaison des bords à
+petite échelle.
 
 ### Hashtags — jeu B + 2 locaux
-
-`#creationlogo` `#identitevisuelle` `#designgraphique` `#directionArtistique`
-`#brandingLocal` `#logodesign` `#charteGraphique` `#printdesign`
-`#graphistePerpignan` `#PyreneesOrientales`
+`#identitevisuelle #logodesign #fichiervectoriel #designgraphique #charteGraphique #conseilgraphisme #graphistePerpignan #CommerceLocal66`
 
 ### À fournir par Sandra
-
-- **Plus rien de bloquant.** Dimensions, vectoriel et monochrome sont
-  fournis ou produits.
-- Les sept premières planches sont entièrement composées. **La huitième
-  est une photographie de toi devant l'écran**, recadrée en 4:5 et
-  validée le 18 octobre : un travail livré se raconte mieux avec la
-  personne qui l'a livré. Elle se supprime seule si tu la retires.
-
-**Les trois versions monochromes sont livrées** dans
-`reseaux/visuels/sources/` : bleu `#10638b`, noir `#1d1d1b`, et blanc pour
-les fonds sombres. Elles sont utilisables telles quelles par le client —
-gravure, broderie, tampon.
-
----
+- **Rien.** Les sept planches sont dessinées, la démonstration est
+  calculée.
 
 ## 14 — Mardi 17 novembre, 8 h 00 · Carrousel · Pilier 2, réglementation
 
@@ -2472,7 +2439,7 @@ ligne, légendées « en grand », « sur une carte », « en favicon ».
 - **Rien d'autre.** Le logo une ligne vient du fichier vectoriel, les
   trois couleurs sont relevées dedans et non recopiées.
 
-## 26 — Samedi 14 novembre, 10 h 30 · Carrousel 8 planches · Pilier « réalisations » · **KRUSTY**
+## 26 — Mercredi 18 novembre, 18 h 30 · Carrousel 8 planches · Pilier « réalisations » · **KRUSTY**
 
 > ✅ **Accord client : acquis.** Donné le 22 octobre. Le logo a été
 > commandé à Grafycom par REZOFABRIK, et **le client KRUSTY est au
@@ -2519,7 +2486,7 @@ aucune autre publication du cycle ne la porte.
 ### Direction visuelle — 7 planches, 1080 × 1350 px
 
 Toutes dessinées ou posées depuis le vectoriel. Gabarit `krusty`, dans
-`reseaux/visuels/2026-11-14-krusty/`. Accent violet, pour ne pas
+`reseaux/visuels/2026-11-18-krusty/`. Accent violet, pour ne pas
 reprendre l'orange de la n° 25.
 
 - **S1.** Crème, surtitre « Réalisation », filet. « Pourquoi les
@@ -2628,9 +2595,9 @@ une carte, en favicon.
      le montrer dans une réalisation est l'usage. À confirmer d'un mot
      avec lui, puisque l'accord porte sur le logo.
 
-## 27 — Mercredi 25 novembre, 18 h 30 · Carrousel 8 planches · Pilier « réalisations » · **SWEET DREAM**
+## 27 — Mercredi 2 décembre, 18 h 30 · Carrousel 8 planches · Pilier « réalisations » · **SWEET DREAM**
 
-> 📅 **Mercredi 25 novembre**, par l'arbitrage du 22 octobre : les
+> 📅 **Mercredi 2 décembre**, par l'arbitrage du 23 octobre : les
 > réalisations s'intercalent entre les publications d'information au
 > lieu d'être groupées après le cycle. C'est aussi la seule
 > publication du cycle un mercredi — le jour n'avait jusqu'ici que
@@ -2672,7 +2639,7 @@ obtenu par un flou n'existe qu'en quadri.
 
 ### Direction visuelle — 8 planches, 1080 × 1350 px
 
-Gabarit `sweet-dream`, dans `reseaux/visuels/2026-11-25-sweet-dream/`.
+Gabarit `sweet-dream`, dans `reseaux/visuels/2026-12-02-sweet-dream/`.
 Accent rose, qui rappelle la couleur du client sans la copier.
 
 - **S1.** Crème, surtitre « Réalisation », filet. « L'ombre n'est pas
@@ -2753,3 +2720,152 @@ premier plan.
   À l'échelle du mock-up les deux sont illisibles. Si la pièce est un
   jour montrée plus grande, même arbitrage que pour KRUSTY.
 
+## 28 — Mercredi 25 novembre, 18 h 30 · Carrousel 8 planches · Pilier « réalisations » · **Solaire 66**
+
+> ✅ **Accord client : acquis.** Solaire 66 est la société de Laurent, qui
+> est aussi le commanditaire de ces publications — la carte de visite porte
+> « Laurent MIENVILLE, Gérant ». La règle « aucun projet client sans son
+> accord » est donc satisfaite à la source, sans démarche.
+>
+> ✅ **Visuels produits, les 7.** Dans
+> `reseaux/visuels/2026-11-25-solaire-66/`, par
+> `python3 reseaux/visuels.py` (gabarit `solaire_66`). Format 1080 × 1350,
+> police Inter du site, pseudo en constante, relus à l'image.
+>
+> ✅ **Sources vectorielles.** Le logo vient de `LOGO_OK.pdf`, rendu puis
+> recadré sur le dessin : bords nets et transparence réelle. Il remplace le
+> JPEG du premier envoi.
+>
+> ✅ **Dimensions réelles, fournies par Laurent :** panneau 120 × 80 cm,
+> carte 8,5 × 5,5 cm. La planche 5 les pose **à l'échelle exacte** —
+> 8,5 / 120 = 7,08 % de la largeur. Aucun chiffre n'est estimé.
+
+> 📅 **Déplacée au mercredi 25 novembre, et sortie du rythme**, par
+> l'arbitrage du 23 octobre : une réalisation s'ajoute au cycle, elle
+> ne prend pas le créneau d'une leçon. Le lundi 16 redevient
+> pédagogique — c'est la nouvelle n° 13, sur les fichiers vectoriels.
+>
+> C'est l'application pleine de l'arbitrage n° 6, qui était resté à
+> moitié fait : les quatre réalisations sont désormais **toutes** en
+> supplément.
+
+**Pourquoi cette publication avait remplacé un exercice fictif.** Le cahier des
+charges dit que les réalisations sont le pilier le plus fort et le plus
+rare. Mon contrôle avait relevé que le mois n'en servait aucun : zéro
+projet réel sur seize publications. Un projet livré bat un exercice de
+style à tous les coups.
+
+**L'idée, une seule :** un logo se dessine en grand et se vérifie en petit.
+Le reste — l'origine des couleurs, le symbole intégré au mot — sert cette
+idée, il ne la concurrence pas.
+
+### Direction visuelle — 5 slides *(produites)*
+
+- **S1** `01.png` — Fond blanc. Le logo seul, grand, centré. En bas,
+  discret : « Solaire 66 — identité livrée ». Le logo parle en premier, on
+  ne lui met rien par-dessus.
+- **S2** `02.png` — Fond crème. Deux disques aux couleurs réelles du logo,
+  `#10638b` et `#f5b32d`, légendés *la mer* et *le soleil*. Titre : « Ces
+  deux couleurs ne sont pas un goût. » Texte : elles viennent de
+  Canet-en-Roussillon, où l'entreprise est installée.
+- **S3** `03.png` — Fond blanc. Titre « Regardez le O. », le logo en
+  dessous, puis l'explication du symbole devenu lettre.
+- **S4** `04.png` — Fond crème. Les deux faces de la carte de visite en
+  présentation studio, légèrement tournées, avec leurs ombres portées.
+  Titre : « Une carte de visite fait 85 millimètres. »
+  *Le fond perdu de 2 mm est rogné : on montre l'objet fini, pas le fichier
+  d'impression.*
+- **S5** `05.png` — Fond crème. Le panneau de chantier et la carte de
+  visite **à l'échelle exacte** : la carte fait 7 % de la largeur du
+  panneau, et c'est écrit. Titre : « À l'échelle exacte. » Les deux cotes
+  sont légendées, 120 × 80 cm et 8,5 cm.
+- **S6** `06.png` — Fond crème. Le logo en monochrome bleu sur crème, puis
+  en monochrome blanc sur un bandeau encre. Titre : « En une seule
+  couleur. » Légende : les lettres sont ajourées, pas remplies de blanc,
+  c'est ce qui rend la version possible.
+- **S7** `07.png` — Fond dégradé chaud, filet dégradé en tête. « Dessiné
+  en grand. Vérifié en petit. » Puis la règle : une identité livrée ne
+  contient jamais un seul fichier.
+
+> **Ce que ces planches ne sont pas :** des mises en situation
+> photographiques. La carte n'est pas dans une main, le panneau ne sera pas
+> sur une palissade. Ça demanderait une photo de base, et on ne publie pas
+> une image dont les droits ne sont pas clairs. Ce sont des présentations
+> studio — rotation douce, ombre portée, fond de la charte.
+
+### Accroche
+
+« Ces deux couleurs ne sont pas un goût. »
+
+### Légende
+
+Le bleu et le jaune de ce logo ne sortent pas d'une tendance. Ils viennent
+de Canet-en-Roussillon, où l'entreprise est installée : la mer et le
+soleil. Une palette qui vient d'un lieu tient plus longtemps qu'une palette
+qui vient d'une mode — parce que le lieu, lui, ne change pas de saison.
+
+Regardez maintenant le `O` de SOLAIRE. Ce n'est pas un `O` avec un soleil
+posé dessus : c'est le soleil qui tient le rôle du `O`. La différence paraît
+minime, elle ne l'est pas. Un symbole posé à côté d'un nom peut toujours
+s'en détacher — on finit par l'oublier dans un document, le remplacer par
+une icône, le réduire jusqu'à ce qu'il disparaisse. Devenu une lettre, il ne
+peut plus partir sans emporter le mot avec lui.
+
+Et puis il y a la contrainte dont on parle le moins. Sur un panneau de
+chantier, un logo peut tout se permettre. Sur une carte de visite, il
+dispose de 85 millimètres. Dans un avatar, de quelques pixels. Brodé sur un
+polo, le fil ne descend pas en dessous d'une certaine finesse.
+
+C'est pour ça qu'une identité livrée ne contient jamais un seul fichier :
+une version complète, une version simplifiée pour les petites tailles, une
+version en une seule couleur pour la gravure et la broderie, et les fichiers
+vectoriels qui permettent de tout agrandir sans perte.
+
+Si votre logo n'existe qu'en une seule version, vous ne le découvrirez pas
+aujourd'hui. Vous le découvrirez le jour où un imprimeur vous demandera un
+fichier que vous n'avez pas.
+
+### Texte alternatif
+
+**S1 et S3** — Logo de Solaire 66 : une chaîne de montagnes bleues en
+silhouette, un soleil dessiné en spirale jaune qui remplace la lettre O du
+mot SOLAIRE, un éclair jaune traversant le relief, et le nombre 66 en jaune.
+
+**S2** — Deux disques côte à côte, l'un bleu profond légendé « la mer »,
+l'autre jaune doré légendé « le soleil ».
+
+**S4** — Les deux faces d'une carte de visite Solaire 66 posées en
+diagonale sur un fond crème : au recto le logo, au verso un QR code et les
+coordonnées du gérant.
+
+**S5** — Un panneau de chantier Solaire 66 de 120 par 80 centimètres, avec
+une carte de visite de 8,5 centimètres posée à côté, à l'échelle exacte :
+elle occupe à peine un quatorzième de la largeur.
+
+**S6** — Le logo Solaire 66 en une seule couleur : en bleu sur fond crème
+au-dessus, en blanc sur un bandeau brun foncé en dessous.
+
+**S7** — Fond crème et bandeau violet, texte « Dessiné en grand. Vérifié en
+petit. »
+
+### Hashtags — jeu B + 2 locaux
+
+`#creationlogo` `#identitevisuelle` `#designgraphique` `#directionArtistique`
+`#brandingLocal` `#logodesign` `#charteGraphique` `#printdesign`
+`#graphistePerpignan` `#PyreneesOrientales`
+
+### À fournir par Sandra
+
+- **Plus rien de bloquant.** Dimensions, vectoriel et monochrome sont
+  fournis ou produits.
+- Les sept premières planches sont entièrement composées. **La huitième
+  est une photographie de toi devant l'écran**, recadrée en 4:5 et
+  validée le 18 octobre : un travail livré se raconte mieux avec la
+  personne qui l'a livré. Elle se supprime seule si tu la retires.
+
+**Les trois versions monochromes sont livrées** dans
+`reseaux/visuels/sources/` : bleu `#10638b`, noir `#1d1d1b`, et blanc pour
+les fonds sombres. Elles sont utilisables telles quelles par le client —
+gravure, broderie, tampon.
+
+---

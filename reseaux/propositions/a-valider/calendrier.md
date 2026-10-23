@@ -84,10 +84,10 @@ automatique du matin.
 | vendredi 13 novembre | 18 h 00 | Fiche Google | post | texte n° 12 |
 | vendredi 13 novembre | 18 h 15 | Story | story | S3-E1 · relais du blog |
 | vendredi 13 novembre | 18 h 20 | Story | story | S3-E2 · teasing du reel |
-| samedi 14 novembre | 10 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, 🧩 **réalisation intercalée** |
+
 | samedi 31 octobre | 11 h 00 | Story | story | S2-F · Halloween — 📌 **date fixe** |
 | | | | | |
-| lundi 16 novembre | 12 h 30 | Instagram + Facebook | Carrousel 7 slides | n° 13 |
+| lundi 16 novembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 13 — fichiers vectoriels |
 | lundi 16 novembre | 12 h 30 | Fiche Google | post | texte n° 13 |
 | lundi 16 novembre | 12 h 45 | Story | story | S4-A · teasing du carrousel |
 | mardi 17 novembre | 10 h 15 | Story | story | S4-B2 · la réponse |
@@ -95,6 +95,7 @@ automatique du matin.
 | mardi 17 novembre | 8 h 00 | Fiche Google | post | texte n° 14 |
 | mardi 17 novembre | 8 h 15 | Story | story | S4-B1 · quiz langue |
 | mardi 17 novembre | 18 h 30 | Story | story | S4-C · coulisses — 🔀 **décalée du 11** |
+| mercredi 18 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, 🧩 **réalisation intercalée** |
 | mercredi 11 novembre | — | — | — | 🕯️ **rien, volontairement** — Armistice |
 | jeudi 19 novembre | 19 h 00 | Instagram + Facebook | Quiz 4 choix | n° 15 |
 | jeudi 19 novembre | 19 h 00 | Fiche Google | post | texte n° 15 |
@@ -112,7 +113,8 @@ automatique du matin.
 | mardi 24 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 18 |
 | mardi 24 novembre | 8 h 00 | Fiche Google | post | texte n° 18 |
 | mardi 24 novembre | 8 h 15 | Story | story | S5-B écran 1 |
-| mercredi 25 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 27 — SWEET DREAM, 🧩 **réalisation intercalée** |
+| mercredi 25 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 28 — SOLAIRE 66, 🧩 **réalisation intercalée** |
+
 | jeudi 26 novembre | 19 h 00 | Instagram + Facebook | Dilemme A/B | n° 19 |
 | jeudi 26 novembre | 19 h 00 | Fiche Google | post | texte n° 19 |
 | jeudi 26 novembre | 19 h 00 | Story | story | S5-C écran 1 |
@@ -133,6 +135,7 @@ automatique du matin.
 | mardi 1er décembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 22 |
 | mardi 1er décembre | 8 h 00 | Fiche Google | post | texte n° 22 |
 | mardi 1er décembre | 8 h 15 | Story | story | S6-B écran 1 |
+| mercredi 2 décembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 27 — SWEET DREAM, 🧩 **réalisation intercalée** |
 | jeudi 3 décembre | 19 h 00 | Instagram + Facebook | Quiz | n° 23 |
 | jeudi 3 décembre | 19 h 00 | Fiche Google | post | texte n° 23 |
 | jeudi 3 décembre | 19 h 00 | Story | story | S6-C écran 1 |
@@ -150,23 +153,23 @@ automatique du matin.
 
 | Canal | Volume |
 |---|---|
-| Publications Instagram + Facebook | **29** |
+| Publications Instagram + Facebook | **30** |
 | Textes de fiche Google | **26** |
 | Écrans de story | **44** |
 | Articles de blog | **7** |
-| **Total à valider** | **106** |
+| **Total à valider** | **107** |
 
-**Quatre réalisations**, en plus du cycle et non à la place d'une
-leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du
+**Quatre réalisations**, toutes en plus du cycle et aucune à la place
+d'une leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du
 22 octobre elles ne sont plus groupées après la fin du cycle : elles
 **s'intercalent entre les publications d'information**.
 
 | Réalisation | Date | Ce qu'elle suit |
 |---|---|---|
 | **BIG FOOD** | samedi 7 novembre | la n° 6 du 3 novembre, « Qui possède votre logo ? » |
-| **KRUSTY** | samedi 14 novembre | la n° 9 du 9 novembre, « Un logo tient-il en petit » |
-| **Solaire 66** | lundi 16 novembre | inchangée, elle occupe le créneau n° 13 |
-| **SWEET DREAM** | mercredi 25 novembre | la n° 18 du 24 novembre |
+| **KRUSTY** | mercredi 18 novembre | la n° 13 du 16, dont elle prolonge le propos |
+| **Solaire 66** | mercredi 25 novembre | la n° 18 du 24 — **sortie du rythme le 23 octobre**, devient la n° 28 |
+| **SWEET DREAM** | mercredi 2 décembre | la n° 22 du 1er décembre |
 
 Aucune n'a de texte de fiche Google — le compte en reste à 26, un par
 publication du cycle. Les quatre accords clients sont acquis.
@@ -184,13 +187,16 @@ de seize jours — arbitrage du 22 octobre.
 > et 16. C'est une de plus que partout ailleurs, et une de plus que
 > ce que recommandait la réserve n° 3.
 >
-> Il reste par ailleurs **deux réalisations à deux jours**, KRUSTY le
-> 14 et Solaire 66 le 16. C'est la conséquence de Solaire 66, fixée
-> au créneau n° 13 ; la déplacer rouvrirait l'arbitrage n° 6.
+> Deux réalisations restent à deux jours, **Solaire 66 le 16 et
+> KRUSTY le 18** — arbitrage du 23 octobre, qui a préféré cet ordre
+> à l'inverse. Il se défend : la n° 13 montre une identité complète,
+> enseigne et cartes ; la n° 26 revient deux jours après sur le seul
+> logo et sur ce qui le fait tenir. L'une ouvre, l'autre resserre.
 >
-> **Le mercredi 25 novembre est une première** : jusqu'ici le
-> mercredi ne portait que des stories. Le créneau du soir, 18 h 30,
-> est celui du lundi.
+> **Le mercredi est devenu le créneau des réalisations intercalées**
+> — le 18 et le 25, à 18 h 30. Jusqu'ici il ne portait que des
+> stories. C'est cohérent : une réalisation n'est pas une leçon, elle
+> n'a pas à prendre un créneau de leçon.
 
 **La n° 15 bis, le samedi 21 novembre**, est la publication écrite à
 l'arbitrage n° 3 : elle reprend le créneau que le reel n° 16 libère en

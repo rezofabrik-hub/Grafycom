@@ -76,6 +76,12 @@ SOURCES = pathlib.Path(__file__).resolve().parent / "visuels" / "sources"
 PHOTOS = {
     # n° 1, clôture — le nuancier Pantone, sur le carrousel couleur
     "sandra-nuancier":   SOURCES / "atelier" / "01-recadre-4x5.png",
+    # n° 1, ouverture — image GENEREE, commandee sur le brief
+    # BRIEF-PHOTOS-IA.md et validee le 23 octobre. Elle n'atteste de
+    # rien : c'est un decor. La regle qui separe le decor de la preuve
+    # est dans ce brief, et elle n'a pas bouge — aucune realisation ne
+    # recoit d'image generee.
+    "nuancier-eventail": SOURCES / "ambiances" / "A-nuancier-eventail.png",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est
@@ -458,7 +464,48 @@ class _Dessin:
     # 4,5 obligerait a mettre du blanc pur sur des fonds moyens ou rien
     # d'autre ne passe : on gagnerait un chiffre et on perdrait la
     # discretion qui est tout l'interet de ces deux signes.
-    def text(self, xy, texte, *a, role=None, **kw):
+    def encre_de_bande(self, x, y, larg, haut, fill, exige=4.5):
+        """L'encre à tenir d'un bout à l'autre d'une bande.
+
+        Un mot dont chaque lettre est un appel text() separe se fait
+        corriger LETTRE PAR LETTRE. Sur un fond qui s'eclaircit en
+        cours de route, les premieres restent creme et la derniere
+        passe au blanc pur : le mot sort avec deux encres, et ca se
+        voit tout de suite.
+
+        On mesure donc la bande entiere, au plus defavorable pour
+        l'encre demandee — le point le plus clair si l'encre est
+        claire, le plus sombre si elle est foncee — et on tranche une
+        seule fois. Le correcteur de text() n'a plus rien a reprendre,
+        et il reste en place comme filet.
+        """
+        nom = next((k for k, v in C.items()
+                    if isinstance(fill, str) and fill.lower() == v.lower()),
+                   None)
+        if nom is None:
+            return fill
+        x0, y0 = max(0, int(x)), max(0, int(y))
+        x1 = min(self._im.width, max(x0 + 1, int(x + larg)))
+        y1 = min(self._im.height, max(y0 + 1, int(y + haut)))
+        vals = sorted(self._im.crop((x0, y0, x1, y1)).convert("L").getdata())
+        if not vals:
+            return fill
+        claire = nom in self.CLAIRES
+        # le pire cas : le plus clair sous une encre claire, le plus
+        # sombre sous une encre foncee. Neuvieme decile, pas l'extreme :
+        # un seul pixel aberrant ne doit pas decider du mot.
+        bord = vals[int(len(vals) * (0.9 if claire else 0.1))]
+        fondl = _luminance((bord,) * 3)
+        if _rapport(_luminance(fill), fondl) >= exige:
+            return fill
+        meilleur, score = fill, _rapport(_luminance(fill), fondl)
+        for cand in self.CLAIRES + self.FONCEES:
+            r = _rapport(_luminance(teinte(cand)), fondl)
+            if r > score:
+                meilleur, score = teinte(cand), r
+        return meilleur
+
+    def text(self, xy, texte, *a, role=None, fige=False, **kw):
         """Écrit — et change l'encre si le fond la rend illisible.
 
         Les 125 planches passent des couleurs en dur, choisies quand
@@ -474,6 +521,17 @@ class _Dessin:
         """
         fonte = kw.get("font") or (a[0] if a else None)
         fill = kw.get("fill") or (a[1] if len(a) > 1 else None)
+        # `fige` : l'encre a deja ete tranchee pour tout un mot, par
+        # encre_de_bande(). Corriger glyphe par glyphe par-dessus casse
+        # le mot en deux encres — c'est exactement ce qui faisait sortir
+        # le dernier E d'un surtitre en noir au milieu de lettres
+        # blanches. On enregistre quand meme : _contraste() mesure, et
+        # un mot entier mal pose doit etre signale, pas rattrape en
+        # douce sur une lettre.
+        if fige:
+            if fonte is not None:
+                self.textes.append((xy, str(texte), fonte, fill, role))
+            return self._d.text(xy, texte, *a, **kw)
         if texte and str(texte).strip() and fill and fonte is not None:
             nom = next((k for k, v in C.items()
                         if isinstance(fill, str) and fill.lower() == v.lower()),
@@ -776,8 +834,15 @@ class Planche:
         esp = max(2, taille // 8)
         larg = sum(self.d.textlength(c, font=f) + esp for c in t) - esp
         x = (self.l - larg) / 2 if centre else MARGE
+        # Une seule encre pour tout le mot, mesuree sur la bande
+        # entiere. Sans ca, chaque lettre etant un appel separe, le
+        # correcteur les traite une par une et le dernier caractere
+        # peut sortir dans une autre teinte que les precedents.
+        couleur = self.d.encre_de_bande(x, self.y, larg, taille * 1.3,
+                                        _fill(couleur))
         for c in t:
-            self.d.text((x, self.y), c, font=f, fill=_fill(couleur))
+            self.d.text((x, self.y), c, font=f, fill=_fill(couleur),
+                        fige=True)
             x += self.d.textlength(c, font=f) + esp
         self.y += int(taille * 1.5)
         return self
@@ -1393,11 +1458,31 @@ def carrousel_couleurs(dossier=None):
     accent("violet")
     faits = []
 
+    # L'ouverture du cycle. Elle etait en typo pleine page sur un
+    # aplat ; elle passe sur une photographie, parce que c'est la
+    # premiere planche que verra quelqu'un qui decouvre le compte et
+    # qu'un aplat n'a jamais donne envie de faire glisser.
+    #
+    # UNE SEULE ENCRE pour tout le texte. Sur un fond photographique,
+    # le creme a cote du blanc lit « sale » : la hierarchie se joue au
+    # corps et a la graisse, pas a la teinte.
     p = Planche("sable_chaud")
-    p.surtitre("Identité visuelle", y=200)
-    p.filet()
-    p.titre("Votre couleur dit déjà ce que vous vendez.", 104)
-    p.signature("brun")
+    p.photo("nuancier-eventail", ancrage="haut", voile="encre", part=0.58)
+    if getattr(p, "photos_absentes", None):
+        # la photo n'est pas la : on retombe sur la typo pleine page,
+        # qui tenait tres bien. Une planche sans image vaut mieux
+        # qu'une planche qui attend.
+        p.surtitre("Identité visuelle", y=200)
+        p.filet()
+        p.titre("Votre couleur dit déjà ce que vous vendez.", 104)
+        p.signature("brun")
+    else:
+        p.surtitre("Identité visuelle", "blanc", y=742)
+        p.y = 802
+        p.titre("Votre couleur\ndit déjà ce que\nvous vendez.", 74, "blanc")
+        p.texte("Avant le premier mot, avant le logo.", 34, "blanc", 400,
+                avant=20)
+        p.signature("blanc")
     faits.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")
@@ -2421,7 +2506,7 @@ def solaire_66(dossier=None):
     demanderait une photo de base, et on ne publie pas une image dont les
     droits ne sont pas clairs.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-16-solaire-66"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-25-solaire-66"))
     accent("bleu")
     S = RACINE / "visuels" / "sources"
     MM = 1052 / 89              # px par mm du rendu 300 dpi des cartes
@@ -6159,7 +6244,7 @@ def _bande_epreuve(p, x0, y0, x1, y1, clair, fonce):
 
 
 def pub26_krusty(dossier=None):
-    """n° 26, samedi 14 novembre — pourquoi les lettres sont creuses.
+    """n° 26, mercredi 18 novembre — pourquoi les lettres sont creuses.
 
     Deuxieme realisation hors rythme, comme BIG FOOD, et pour la meme
     raison : une realisation s'ajoute au cycle, elle ne prend pas le
@@ -6175,7 +6260,7 @@ def pub26_krusty(dossier=None):
     meme famille, pas le depliant du client. On montre un principe, on
     ne republie pas une piece dont la paternite n'est pas etablie.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-14-krusty"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-18-krusty"))
     accent("violet")
     L = SOURCES / "clients" / "krusty.png"
     C_K = _couleurs_krusty()
@@ -6338,7 +6423,7 @@ def pub27_sweet_dream(dossier=None):
     """n° 27 — l'ombre portee nette, et ce qu'elle fait avec deux encres.
 
     Troisieme realisation hors rythme, intercalee dans le cycle :
-    mercredi 25 novembre. Les realisations ne sont plus groupees apres
+    mercredi 2 decembre. Les realisations ne sont plus groupees apres
     la fin du cycle, elles alternent avec les publications
     d'information — c'est l'arbitrage du 22 octobre.
 
@@ -6352,7 +6437,7 @@ def pub27_sweet_dream(dossier=None):
     coute rien : elle marche en serigraphie, en flocage, en decoupe,
     partout ou un degrade ne passe pas.
     """
-    d = pathlib.Path(dossier or (SORTIE / "2026-11-25-sweet-dream"))
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-02-sweet-dream"))
     accent("rose")
     L = SOURCES / "clients" / "sweet-dream.png"
     L2 = SOURCES / "clients" / "sweet-dream-2lignes.png"
@@ -6466,12 +6551,187 @@ def pub27_sweet_dream(dossier=None):
 
     return faits
 
+
+def _marque_temoin(l, h, trait=True):
+    """Une marque neutre, dessinée à la taille qu'on veut.
+
+    Ni un logo client ni une imitation : un disque, une barre et un
+    contrefort. Elle sert UNIQUEMENT à comparer un agrandissement de
+    pixels a un trace redessine — il faut donc qu'elle existe aux deux
+    tailles, ce qu'une image ne permettrait pas.
+    """
+    im = Image.new("RGBA", (l, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    u = l / 100.0
+    d.ellipse([6*u, 18*u, 46*u, 58*u], outline=teinte("bleu"),
+              width=max(1, int(7*u)))
+    d.rectangle([54*u, 18*u, 64*u, 58*u], fill=teinte("bleu"))
+    d.polygon([(70*u, 58*u), (82*u, 18*u), (94*u, 58*u)],
+              fill=teinte("corail"))
+    d.rectangle([6*u, 68*u, 94*u, 74*u], fill=teinte("bleu"))
+    return im
+
+
+@pose(flou=14, force=62, bas=9, cote=4)
+def _marque_temoin_pose(p, cx, cy, cote):
+    """La marque témoin posée sur une planche, avec son ombre."""
+    m = _marque_temoin(cote, cote)
+    p.im.paste(m, (int(cx - cote / 2), int(cy - cote / 2)), m)
+    p._redessiner()
+
+
+def pub13_fichier_vectoriel(dossier=None):
+    """n° 13, lundi 16 novembre — pourquoi un fichier vectoriel.
+
+    Ce creneau portait Solaire 66. L'arbitrage du 23 octobre sort les
+    realisations du rythme : elles s'ajoutent, elles ne prennent pas la
+    place d'une lecon. Le creneau redevient donc pedagogique.
+
+    Le sujet est le frottement le plus frequent entre une graphiste et
+    un client : « envoyez-moi votre logo » et ce qui arrive est une
+    capture d'ecran. Il se DEMONTRE, ce qui est rare : on agrandit, et
+    on voit.
+
+    La planche 2 ne truque rien. La marque temoin est dessinee deux
+    fois — une fois petite puis agrandie au plus proche voisin, une
+    fois directement a la grande taille. C'est exactement ce que fait
+    un JPEG contre un vectoriel, et c'est reproductible.
+    """
+    d = pathlib.Path(dossier or (SORTIE / "2026-11-16-fichier-vectoriel"))
+    accent("bleu")
+    faits = []
+
+    p = Planche("creme")
+    p.surtitre("Conseil", y=200)
+    p.filet()
+    p.titre("Pourquoi je vous demande\nun fichier vectoriel.", 62)
+    p.y = 700
+    p.texte("Parce que « j'ai mon logo » et « j'ai le fichier de mon "
+            "logo » sont deux phrases différentes, et que la seconde "
+            "vaut de l'argent.", 40, "brun", 400, avant=0)
+    _marque_temoin_pose(p, 540, 1070, 300)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "01.png"))
+
+    # La demonstration, calculee et non illustree.
+    p = Planche("blanc")
+    p.titre("Le même logo,\nagrandi deux fois.", 70, y=150)
+    cote = 360
+    petite = _marque_temoin(76, 76)
+    gros_pixels = petite.resize((cote, cote), Image.NEAREST)
+    net = _marque_temoin(cote, cote)
+    p.im.paste(gros_pixels, (MARGE, 470), gros_pixels)
+    p.im.paste(net, (p.l - MARGE - cote, 470), net)
+    p._redessiner()
+    _bloc(p, MARGE, 860, "depuis un JPEG", 30, "taupe", 600, cote,
+          centre=True)
+    _bloc(p, p.l - MARGE - cote, 860, "depuis le vectoriel", 30, "taupe",
+          600, cote, centre=True)
+    p.y = 950
+    p.texte("À gauche, une image de 76 pixels étirée à 360. À droite, le "
+            "même dessin tracé à 360. Ce ne sont pas deux qualités "
+            "d'export : ce sont deux natures de fichier.", 36, "brun",
+            400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "02.png"))
+
+    p = Planche("creme")
+    p.titre("Une image traîne\nson rectangle.", 72, y=150)
+    cote = 300
+    fond = Image.new("RGBA", (cote, cote), teinte("blanc") + "ff")
+    m = _marque_temoin(cote, cote)
+    fond = Image.alpha_composite(fond, m)
+    p.im.paste(fond, (MARGE + 40, 480), fond)
+    m2 = _marque_temoin(cote, cote)
+    p.im.paste(m2, (p.l - MARGE - cote - 40, 480), m2)
+    p._redessiner()
+    _bloc(p, MARGE + 40, 820, "JPEG : fond blanc", 30, "taupe", 600, cote,
+          centre=True)
+    _bloc(p, p.l - MARGE - cote - 40, 820, "vectoriel : rien", 30, "taupe",
+          600, cote, centre=True)
+    p.y = 920
+    p.texte("Un JPEG ne sait pas être transparent. Posé sur une couleur, "
+            "il arrive avec son carré blanc — et sur une vitrine ou un "
+            "textile, ce carré se découpe.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "03.png"))
+
+    p = Planche("blanc")
+    p.titre("Les extensions\nqui comptent.", 76, y=150)
+    y = 470
+    for ext, quoi, bon in ((".ai", "Illustrator, le fichier de travail", True),
+                           (".eps", "l'échange, lisible partout", True),
+                           (".svg", "le web, et la découpe", True),
+                           (".pdf", "vectoriel s'il vient d'un vectoriel",
+                            True),
+                           (".jpg", "une image. Jamais un logo.", False),
+                           (".png", "une image, avec transparence", False),
+                           (".webp", "une image, pour le web", False)):
+        c = "bleu" if bon else "corail"
+        p.d.ellipse([MARGE, y + 8, MARGE + 20, y + 28], fill=teinte(c))
+        _bloc(p, MARGE + 44, y, ext, 40, "encre", 800, 160)
+        _bloc(p, MARGE + 210, y + 6, quoi, 32, "brun", 400, 620)
+        y += 84
+    p.y = 1110
+    p.texte("Les quatre premiers se redessinent à l'infini. Les trois "
+            "autres sont des photos de votre logo.", 34, "brun", 400,
+            avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "04.png"))
+
+    p = Planche("creme")
+    p.titre("Le test en\ndix secondes.", 80, y=150)
+    p.y = 520
+    p.texte("Ouvrez le fichier. Zoomez à 800 %.", 46, "encre", 600,
+            avant=0)
+    p.y = 640
+    p.texte("Si les bords deviennent des escaliers, c'est une image. "
+            "Si le trait reste franc, c'est un vectoriel.", 40, "brun",
+            400, avant=0)
+    cote = 230
+    petite = _marque_temoin(44, 44).resize((cote, cote), Image.NEAREST)
+    p.im.paste(petite, (MARGE + 60, 860), petite)
+    net = _marque_temoin(cote, cote)
+    p.im.paste(net, (p.l - MARGE - cote - 60, 860), net)
+    p._redessiner()
+    p.signature("brun")
+    faits.append(p.ecrire(d / "05.png"))
+
+    p = Planche("blanc")
+    p.titre("Ce qu'il faut\nredemander.", 78, y=150)
+    y = 470
+    for n, t in enumerate((
+            "Le fichier vectoriel du logo, pas son export.",
+            "Les déclinaisons : couleur, noir, blanc.",
+            "Les codes couleur exacts, en quadri et en Pantone.",
+            "Le nom de la police, ou les lettres vectorisées.",
+            "L'écrit qui dit que vous pouvez vous en servir."), 1):
+        p.d.ellipse([MARGE, y, MARGE + 46, y + 46], fill=teinte("bleu"))
+        f = police(800, 26)
+        p.d.text((MARGE + 17, y + 11), str(n), font=f, fill=teinte("blanc"))
+        _bloc(p, MARGE + 76, y + 2, t, 36, "encre", 400, 820)
+        y += 110
+    p.y = 1080
+    p.texte("Cinq lignes dans un courriel. C'est moins cher que de tout "
+            "refaire dans deux ans.", 34, "brun", 400, avant=0)
+    p.signature("brun")
+    faits.append(p.ecrire(d / "06.png"))
+
+    p = Planche("encre")
+    p.filet()
+    p.titre("Un logo qu'on ne peut pas\nagrandir n'est pas\nun logo.\nC'est une image.", 56, y=400)
+    p.signature("sable")
+    faits.append(p.ecrire(d / "07.png"))
+
+    return faits
+
 GABARITS["reel-bilan"] = pub24_reel_bilan
 GABARITS["reel-cmjn"] = pub04_reel_cmjn
 GABARITS["reel-halloween"] = pub08_reel_halloween
 GABARITS["big-food"] = pub25_big_food
 GABARITS["krusty"] = pub26_krusty
 GABARITS["sweet-dream"] = pub27_sweet_dream
+GABARITS["fichier-vectoriel"] = pub13_fichier_vectoriel
 
 
 if __name__ == "__main__":

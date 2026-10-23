@@ -49,8 +49,8 @@ montrés publiquement, sous la même responsabilité que la page du site.
 
 > ✅ **Corrigé depuis.** Le cycle compte désormais **quatre
 > réalisations sur 29 publications** : Solaire 66 le 16 novembre,
-> BIG FOOD le 7 novembre, KRUSTY le 14 novembre et SWEET DREAM le
-> 25 novembre. Les trois dernières sont **hors rythme**, en plus
+> BIG FOOD le 7 novembre, KRUSTY le 18 novembre et SWEET DREAM le
+> 2 décembre. Les trois dernières sont **hors rythme**, en plus
 > du cycle et non à la place d'une leçon. Les quatre accords clients
 > sont acquis. Le levier le plus fort du cahier des charges n'est
 > donc plus le plus rare — il est devenu le mieux servi.

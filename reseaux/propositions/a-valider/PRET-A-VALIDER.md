@@ -29,7 +29,7 @@ vérifications réglementaires**, détaillées plus bas.
 
 ---
 
-## 1. Instagram & Facebook — les 29 publications sont complètes
+## 1. Instagram & Facebook — les 30 publications sont complètes
 
 Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 1080 × 1350 px, dans l'ordre du carrousel.
@@ -49,7 +49,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 10 | mar 27 oct | Carrousel | L'enseigne quand la nuit tombe à 17 h | 7 |
 | 11 | jeu 12 nov | Dilemme A/B | La place du prix sur une carte | 2 |
 | 12 | ven 13 nov | REEL 23 s | Les adhésifs de vitrine | 5 |
-| 13 | lun 16 nov | Carrousel 8 slides | **Solaire 66** | 8 |
+| 13 | lun 16 nov | Carrousel 7 planches | Pourquoi un fichier vectoriel | 7 |
 | 14 | mar 17 nov | Carrousel | Votre slogan en anglais est-il légal ? | 6 |
 | 15 | jeu 19 nov | Quiz 4 choix | Quatre supports en coupe | 5 |
 | **15 bis** | sam 21 nov | Carrousel 7 planches | **Un visuel, quatre supports** | 7 |
@@ -63,10 +63,11 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | 23 | jeu 3 déc | Quiz | Impressions de fin d'année | 6 |
 | 24 | sam 5 déc | REEL 30 s | Faut-il refaire son logo | 6 |
 | **25** | sam 7 nov | Carrousel 7 planches | **BIG FOOD** | 7 |
-| **26** | sam 14 nov | Carrousel 8 planches | **KRUSTY** | 8 |
-| **27** | mer 25 nov | Carrousel 8 planches | **SWEET DREAM** | 8 |
+| **26** | mer 18 nov | Carrousel 8 planches | **KRUSTY** | 8 |
+| **27** | mer 2 déc | Carrousel 8 planches | **SWEET DREAM** | 8 |
+| **28** | mer 25 nov | Carrousel 8 planches | **Solaire 66** | 8 |
 
-**166 planches de publication** (210 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
+**173 planches de publication** (217 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
 et le dossier porte **la date réelle de parution**. Il portait jusqu'au
 14 octobre la date d'avant le décalage du calendrier, soit sept jours
 d'écart : un dossier ouvert au hasard faisait publier une semaine trop

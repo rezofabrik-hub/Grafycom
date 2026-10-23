@@ -14,45 +14,40 @@ Trois niveaux, et ils ne se valent pas.
 
 ---
 
-## 🔴 Bloquant — trois fichiers, une seule publication
+## 🟢 Plus aucun bloquant
 
-### 1. Les cartes de visite Solaire 66, recto et verso
+**Le cycle est complet.** 210 visuels, aucune planche avec un trou.
 
-**Où ça manque :** n° 13, lundi 16 novembre, planche **4**.
-**Noms attendus :** `solaire-66-carte-recto.png`, `solaire-66-carte-verso.png`
-**Où les déposer :** `reseaux/visuels/sources/`
+Les deux derniers manques sont arrivés le 23 octobre :
 
-La planche sort avec son emplacement vide et le signale. Le reste de la
-publication — huit planches — est complet.
+| Reçu | Ce que ça débloque |
+|---|---|
+| Les cartes Solaire 66, recto et verso | planche **4** de la n° 13 |
+| Le panneau de chantier Solaire 66 | planche **5** de la n° 13 |
 
-### 2. Le panneau de chantier Solaire 66
+Les cartes étaient en vectoriel, 89 × 59 mm — 85 × 55 plus 2 mm de fond
+perdu — rendues à 300 dpi, fond perdu rogné par `poser()`. Le panneau
+fait 2000 × 1337 px, rapport 1,496 : les 120 × 80 cm annoncés, à trois
+millièmes près.
 
-**Où ça manque :** n° 13, planche **5**.
-**Nom attendu :** `solaire-66-panneau.png`
-
-La planche 5 pose la carte et le panneau **à l'échelle exacte**, d'après
-les dimensions que tu as données : panneau 120 × 80 cm, carte 8,5 × 5,5 cm.
-C'est la planche qui démontre qu'un logo doit tenir aux deux tailles. Sans
-les deux fichiers, elle ne démontre rien.
-
-> **Ce sont les deux seuls trous de tout le cycle.** 210 visuels produits,
-> deux planches incomplètes.
+La planche 5 démontre enfin ce qu'elle annonce. Le panneau occupe 860 px,
+la carte 61 — **7 % de la largeur**, à l'échelle exacte. Sans le panneau,
+la carte était seule au milieu d'un vide.
 
 ---
 
 ## 🟠 Décision — quatre arbitrages qui n'attendent qu'un mot
 
-### 3. KRUSTY le 14 et Solaire 66 le 16
+### 3. ~~KRUSTY et Solaire 66 à deux jours~~ — tranché le 23 octobre
 
-Deux réalisations à deux jours d'intervalle. C'est la seule imperfection
-de l'intercalage, et elle vient de Solaire 66, fixée au créneau n° 13.
+**KRUSTY passe au mercredi 18 novembre**, 18 h 30, après Solaire 66 et
+non avant. Le mercredi devient le créneau des réalisations intercalées,
+avec SWEET DREAM le 25.
 
-La corriger veut dire la sortir du rythme — ce qui rouvre l'arbitrage
-n° 6 et demande d'écrire une publication de remplacement pour le 16.
-
-**Trois réponses possibles :** on laisse · on sort Solaire 66 · on décale
-KRUSTY au 11 (mercredi, comme SWEET DREAM — mais c'est l'Armistice, donc
-plutôt le 18).
+L'ordre se défend mieux ainsi : la n° 13 du 16 montre une identité
+complète — enseigne, cartes, panneau — et la n° 26 revient deux jours
+après sur le seul logo et sur ce qui le fait tenir. L'une ouvre, l'autre
+resserre.
 
 ### 4. La semaine du 23 novembre porte six publications
 
@@ -153,6 +148,7 @@ Pour que la liste soit honnête dans les deux sens.
 | Le mock-up du dépliant KRUSTY | ✅ posé, planche 4 |
 | Le mock-up du dépliant SWEET DREAM | ✅ calculé, planche 7 |
 | Les photos des publications | ✅ plus aucune publication n'attend d'image |
+| Les cartes Solaire 66 | ✅ reçues le 23 octobre, planche 4 complète |
 | Les gabarits de visuels | ✅ 30 gabarits, 210 planches |
 
 ---

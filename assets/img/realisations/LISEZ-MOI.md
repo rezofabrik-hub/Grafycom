@@ -34,7 +34,7 @@ qu'elle a créé les visuels, et il ne couvre pas tout :
 | Mia Beauty | oui | — |
 | ~~Casa Aldo~~ | **retiré le 12 octobre** | l'accord porte sur le logo, l'image montrait l'enseigne |
 | ~~Alliance Peintures~~ | **retirés le 12 octobre**, faute d'accord confirmé | |
-| ~~Cap Loisirs~~ | fichiers supprimés, pas seulement déréférencés | |
+| ~~Cap Loisirs~~ | **retiré le 23 octobre**, accord jamais confirmé. Fichier supprimé, pas seulement déréférencé | |
 | ~~Pano Perpignan~~ | une image déréférencée reste servie à son adresse | |
 
 **Un travail mené pour le compte d'une autre structure ne se présente pas
@@ -124,6 +124,32 @@ comme un travail. Mais il n'a rien à faire sur la page réalisations sous
 la ligne d'attribution de la page réalisations, et son texte alternatif
 ne parle plus d'un « hall d'entreprise » — le mur est une présentation,
 pas un lieu réel.
+
+## La galerie au 23 octobre
+
+Cap Loisirs est retiré, faute d'accord confirmé — comme Alliance
+Peintures et Pano Perpignan l'avaient été le 12 octobre. **La page ne
+montre plus que des projets dont l'accord est acquis.**
+
+Quatre réalisations récentes les remplacent, toutes avec accord écrit
+donné le 22 octobre :
+
+| Projet | Vignette | Ce qui est montré |
+|---|---|---|
+| **Solaire 66** | `solaire-66.webp` | le panneau de chantier |
+| **Sweet Dream** | `sweet-dream.webp` | le dépliant en situation |
+| **Krusty** | `krusty.webp` | le dépliant en situation |
+| **Big Food** | `big-food.webp` | le logo seul |
+
+> **Les deux mises en situation sont calculées**, pas photographiées :
+> `reseaux/mockup.py` les monte à partir des faces fournies. C'est dit
+> ici parce qu'une maquette présentée comme une photo d'imprimé serait
+> un mensonge de plus dans une page qui vient d'en retirer trois.
+
+> **Big Food, c'est le logo et rien d'autre.** Ni enseigne, ni
+> dépliant. La taille d'un plan de travail dans un fichier ne dit pas
+> ce qui a été produit — l'erreur a été faite une fois, elle est
+> documentée dans `reseaux/PHOTOS-ATELIER.md`.
 
 ## Statuts précisés le 13 octobre
 

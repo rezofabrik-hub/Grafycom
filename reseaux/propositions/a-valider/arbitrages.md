@@ -282,7 +282,7 @@ c'était le seul que le mois ne servait pas.
 **L'accord ne se pose pas** : la carte porte « Laurent MIENVILLE, Gérant ».
 
 **Sept planches produites et relues à l'image**, dans
-`reseaux/visuels/2026-11-16-solaire-66/`. Tout ce qui manquait a été
+`reseaux/visuels/2026-11-25-solaire-66/`. Tout ce qui manquait a été
 fourni : le panneau, les dimensions réelles (120 × 80 cm), et le fichier
 vectoriel qui a remplacé le JPEG du premier envoi.
 

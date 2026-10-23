@@ -41,7 +41,7 @@ PLAFOND = 5          # publications par semaine, réserve n° 3
 # exception qu'on tait redevient un défaut au bout de trois semaines.
 DEROGATIONS = {
     datetime.date(2026, 11, 23):
-        "SWEET DREAM intercalée le 25 — arbitrage du 22 octobre",
+        "SOLAIRE 66 ajoutée le 25 — arbitrage du 23 octobre, « en plus »",
 }
 
 # Les endroits où l'identité complète est OBLIGATOIRE : la loi l'exige sur
@@ -94,9 +94,21 @@ def moteur():
 
 def dates(pubs):
     """Le moteur, le document et le calendrier doivent dire la même date."""
-    dossiers = {d.name[:10]: d.name
-                for d in (R / "reseaux/visuels").iterdir()
-                if d.is_dir() and re.match(r"20\d\d-\d\d-\d\d", d.name)}
+    # Indexes par DATE, deux dossiers du meme jour s'ecrasaient dans le
+    # dictionnaire et le residu passait inapercu — c'est exactement ce
+    # qui est arrive a 2026-11-25-sweet-dream, cache derriere
+    # 2026-11-25-solaire-66. On garde donc la liste.
+    dossiers = collections.defaultdict(list)
+    for d in (R / "reseaux/visuels").iterdir():
+        if d.is_dir() and re.match(r"20\d\d-\d\d-\d\d", d.name):
+            dossiers[d.name[:10]].append(d.name)
+    doubles = {j: v for j, v in dossiers.items() if len(v) > 1}
+    if doubles:
+        faux("deux dossiers de visuels le même jour : %s"
+             % "; ".join("%s → %s" % (j, ", ".join(sorted(v)))
+                         for j, v in sorted(doubles.items())))
+    else:
+        juste("un seul dossier de visuels par date")
     sans = [n for n, (d, *_) in pubs.items() if d.isoformat() not in dossiers]
     if sans:
         faux("publications sans dossier de visuels : %s" % ", ".join(sans))
@@ -104,7 +116,8 @@ def dates(pubs):
         juste("chaque publication a son dossier de visuels (%d)" % len(pubs))
 
     attendus = {d.isoformat() for d, *_ in pubs.values()}
-    orphelins = sorted(dossiers[o] for o in set(dossiers) - attendus)
+    orphelins = sorted(n for o in set(dossiers) - attendus
+                       for n in dossiers[o])
     if orphelins:
         faux("dossiers sans publication, à supprimer : %s"
              % ", ".join(orphelins))
