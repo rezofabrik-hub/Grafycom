@@ -810,6 +810,7 @@ class Planche:
             self.y += int(taille * interligne)
         self._empreinte(poses, f)
         self._deborde()
+        self._coupe(texte, f)
         self._orphelin(texte, f)
         return self
 
@@ -848,6 +849,39 @@ class Planche:
         touche = ImageChops.multiply(ecart, masque.point(
             lambda v: 255 if v > 120 else 0))
         return sum(touche.histogram()[128:])
+
+    # En deca de cette part de colonne, le reste d'un paragraphe coupe
+    # n'est plus une ligne : c'est un debris.
+    DEBRIS = 0.30
+
+    def _coupe(self, texte, fonte):
+        """Un paragraphe du titre se brise-t-il sur un debris ?
+
+        Premiere version, le 23 octobre : comparer le nombre de \n
+        ecrits au nombre de lignes rendues. Elle a leve vingt-sept
+        alertes dont la moitie n'en etaient pas. « Autorisation. /
+        Cerfa 16308*01, en / mairie, en trois / exemplaires. » compte
+        quatre lignes pour deux \n, et se lit tres bien : le \n
+        separe deux phrases, il ne promet pas deux lignes.
+
+        Ce qui se voit vraiment, c'est un paragraphe qui se coupe et
+        dont le reste tient sur un mot — « BAT. », « compter »,
+        « commune ». _orphelin ne les attrapait pas : il s'arrete a
+        trois caracteres. La garde mesure donc la DERNIERE ligne de
+        chaque paragraphe effectivement coupe, et la compare a la
+        colonne. Un paragraphe d'une seule ligne, quel qu'il soit, ne
+        la concerne pas.
+        """
+        larg = self.l - 2 * MARGE
+        for para in texte.split("\n"):
+            lignes = couper(para, fonte, larg)
+            if len(lignes) < 2:
+                continue
+            reste = lignes[-1].strip()
+            if self.d.textlength(reste, font=fonte) < larg * self.DEBRIS:
+                self.coupes = getattr(self, "coupes", [])
+                self.coupes.append((para, reste))
+        return self
 
     def _orphelin(self, texte, fonte):
         """Signale une derniere ligne reduite a un mot court.
@@ -1498,6 +1532,11 @@ class Planche:
             print("   ORPHELIN  %-22s %s seul(s) en fin de ligne"
                   % (_etiquette(chemin),
                      ", ".join("« %s »" % o for o in self.orphelins)))
+        if getattr(self, "coupes", None):
+            print("   COUPE     %-22s %s"
+                  % (_etiquette(chemin),
+                     ", ".join("« %s » se brise sur « %s »" % (para, reste)
+                               for para, reste in self.coupes)))
         if getattr(self, "chevauchements", None):
             print("   CHEVAUCHE %-22s %s"
                   % (_etiquette(chemin),
@@ -1570,7 +1609,7 @@ def carrousel_couleurs(dossier=None):
     p = Planche("blanc")
     p.disques(["turquoise", "bleu", "rose"],
               ["BIO\nSANTÉ", "BANQUE\nCONSEIL", "SOIN\nENFANCE"], y=250)
-    p.titre("Ce ne sont pas des règles.\nCe sont des réflexes.", 66, y=820)
+    p.titre("Ce ne sont pas des règles.\nCe sont des réflexes.", 57, y=820)
     faits.append(p.ecrire(d / "03.png"))
 
     p = Planche("sable_chaud")
@@ -1583,7 +1622,7 @@ def carrousel_couleurs(dossier=None):
     faits.append(p.ecrire(d / "04.png"))
 
     p = Planche("creme")
-    p.titre("Le même prix. Deux fonds.", 58, y=150)
+    p.titre("Le même prix. Deux fonds.", 54, y=150)
     p.deux_cartes("jaune", "bleu", "12 €", y=360)
     p.titre("Le contraste se vérifie.\nIl ne se devine pas.", 62, y=900)
     faits.append(p.ecrire(d / "05.png"))
@@ -1663,7 +1702,7 @@ def dilemme_enseigne(dossier=None):
     facades(p)
     p.flouter(8)
     reperes(p)                      # nets : ce sont des reperes
-    p.titre("À vingt mètres,\nce n'est plus une typo.", 68, y=170)
+    p.titre("À vingt mètres,\nce n'est plus une typo.", 67, y=170)
     p.titre("C'est une silhouette.", 64, "corail", y=1130)
     faits.append(p.ecrire(d / "02.png"))
     return faits
@@ -1847,7 +1886,7 @@ def quiz_idees_recues(dossier=None):
 
     questions = [
         ("« Une enseigne se déclare\nen mairie. »", "FAUX", "Elle s'autorise. Cerfa 16308*01."),
-        ("« Un logo doit rester lisible\nen noir et blanc. »", "VRAI", "Sinon il échoue sur un tampon, une gravure, une broderie."),
+        ("« Un logo doit rester\nlisible en noir et blanc. »", "VRAI", "Sinon il échoue sur un tampon, une gravure, une broderie."),
         ("« 300 DPI convient\nà toutes les bâches. »", "FAUX", "La résolution se calcule à la distance de lecture."),
         ("« Une police gratuite est libre\npour un usage commercial. »", "FAUX", "Presque jamais vérifié, et c'est celui qui coûte."),
     ]
@@ -2514,7 +2553,7 @@ def stories(dossier=None):
                             "même aux questions qui paraissent bêtes.",
                             "Surtout à celles-là."]),
      ("S3-D1", "creme", "encre", "Le vote du jeudi",
-      "Même carte, mêmes prix.\nLaquelle fait commander le plat ?",
+      "Même carte, mêmes prix.\nLaquelle fait commander\nle plat ?",
       "Sondage", ["A : prix au fil du texte", "B : prix alignés à droite"]),
      ("S3-D2", "sable_chaud", "encre", "La réponse",
       "A.",
@@ -2553,16 +2592,16 @@ def stories(dossier=None):
                           "Dépoli : la vitrine qu'on masque.",
                           "Papier gaufré : la carte qu'on garde."]),
      ("S4-E", "creme", "encre", "Nouvel article",
-      "Les supports de fin d'année se commandent maintenant.",
+      "Pour Noël, c'est trop tard.\nEt c'est une bonne nouvelle.",
       "Lien", ["grafycom.fr/blog"]),
      ("S4-F", "sable_chaud", "encre", "Le reel du jour",
       "Pour Noël, vous êtes déjà en retard.",
       "Compte à rebours", ["Bon à tirer de fin d'année",
                            "réglé au 7 décembre"]),
      ("S5-A", "sable_chaud", "encre", "Nouveau post",
-      "Vos cartes de vœux de Noël se décident cette semaine.",
-      "Sondage", ["Pour vos supports de fin d'année…",
-                  "A : déjà commandé", "B : j'y pense depuis septembre"]),
+      "Pour Noël, c'est passé.\nPour janvier, c'est maintenant.",
+      "Sondage", ["Vos vœux cette année, vous les envoyez quand ?",
+                  "A : avant Noël", "B : en janvier"]),
      ("S5-B1", "sable_chaud", "encre", "Réglementation",
       "Votre emballage de fête a une mention à porter.",
       "Quiz", ["La signalétique de tri se place…",
@@ -4563,7 +4602,7 @@ def pub14_francais_devanture(dossier=None):
     faits.append(p.ecrire(d / "05.png"))
 
     p = Planche("blanc")
-    p.titre("Vous avez un slogan\nen anglais ?", 86, y=280)
+    p.titre("Vous avez un slogan\nen anglais ?", 74, y=280)
     p.y += 30
     p.texte("Postez-le en commentaire : je vous propose la ligne française "
             "qui va dessous sans alourdir le visuel.", 40, "brun", 400,
@@ -4929,7 +4968,7 @@ def pub21_vitrine_trottoir(dossier=None):
     faits.append(p.ecrire(d / "01.png"))
 
     p = Planche("blanc")
-    p.titre("La hauteur des yeux.", 76, y=140)
+    p.titre("La hauteur des yeux.", 71, y=140)
     _vitrine(p, 170, 380, 780, 500, trait=True, oeil=True, echelle=True,
              enseigne="VOTRE NOM")
     p.y = 980
@@ -4939,7 +4978,7 @@ def pub21_vitrine_trottoir(dossier=None):
     faits.append(p.ecrire(d / "02.png"))
 
     p = Planche("creme")
-    p.titre("Couvrir, ou laisser voir.", 70, y=130)
+    p.titre("Couvrir, ou laisser voir.", 62, y=130)
     _vitrine(p, 90, 380, 430, 300, eclairee=True, couverture=0.96,
              couleur_decor="corail", decor="sapins", opacite_decor=0xee)
     _vitrine(p, 560, 380, 430, 300, eclairee=True, bandeau=0.30,
@@ -4968,7 +5007,7 @@ def pub21_vitrine_trottoir(dossier=None):
 
     p = Planche("blanc")
     p.titre("Un texte sur verre se lit\ncontre ce qu'il y a derrière.",
-            58, y=140)
+            55, y=140)
     _fond_du_texte(p, MARGE, 448, p.l - 2 * MARGE, 460)
     p.y = 982
     p.texte("Et ce qu'il y a derrière bouge toute la journée.", 40, "brun",
@@ -4988,7 +5027,7 @@ def pub21_vitrine_trottoir(dossier=None):
 
     p = Planche("creme")
     p.titre("Photographiez votre vitrine\ndepuis le trottoir d'en face.",
-            60, y=300)
+            54, y=300)
     p.y += 30
     p.texte("Envoyez-la-moi en message : je vous dis ce qui se lit et ce "
             "qui se perd.", 40, "brun", 400, avant=20)
@@ -5064,7 +5103,7 @@ def pub22_sticker_enseigne(dossier=None):
 
     p = Planche("bleu")
     p.filet(y=280)
-    p.titre("C'est votre commune\nqui tranche.", 88, "blanc")
+    p.titre("C'est votre commune\nqui tranche.", 70, "blanc")
     p.y += 40
     p.texte("Le Règlement Local de Publicité et le PLU fixent les surfaces, "
             "la durée, l'éclairage.\n\nÀ trois kilomètres de distance, la "
@@ -5086,7 +5125,7 @@ def pub22_sticker_enseigne(dossier=None):
 
     p = Planche("violet")
     p.filet(y=320)
-    p.titre("Dites-moi votre commune\nen commentaire.", 72, "blanc")
+    p.titre("Dites-moi votre commune\nen commentaire.", 56, "blanc")
     p.y += 40
     p.texte("Je vous dis quelle question poser. Un appel au service "
             "urbanisme coûte dix minutes, et c'est gratuit.", 40, "creme",
@@ -5327,7 +5366,7 @@ def pub20_reel_matieres(dossier=None):
     _carte_tranche(p, 710, 470, 280, 280, "350 g")
     p.y = 920
     p.filet()
-    p.titre("Choisissez la matière\navant le dessin.", 84, "blanc")
+    p.titre("Choisissez la matière\navant le dessin.", 69, "blanc")
     p.y += 30
     p.texte("Un beau visuel sur un mauvais papier déçoit. Un visuel simple "
             "sur un beau papier se garde.", 40, "creme", 400, avant=20)
@@ -5477,7 +5516,7 @@ def pub24_reel_bilan(dossier=None):
     p = Planche("sable_chaud", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "taupe", y=200)
     p.filet()
-    p.titre("Non,\npas en janvier.", 116, y=290)
+    p.titre("Non,\npas en janvier.", 102, y=290)
     _page_calendrier(p, 110, 820, 400, 520, 12, 2026, couleur="bleu")
     _page_calendrier(p, 580, 820, 400, 520, 1, 2027, couleur="violet")
     p.fleche("corail", y=1420)
@@ -5490,7 +5529,7 @@ def pub24_reel_bilan(dossier=None):
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("3-9 s", "taupe", y=200)
     p.titre("Changer par calendrier,\nce n'est pas changer\npar besoin.",
-            72, y=280)
+            61, y=280)
     _logo_fictif(p.d, 330, 980, 190, detail=True)
     _logo_fictif(p.d, 760, 980, 190, detail=True, variante=0.045)
     f = police(600, 32)
@@ -5506,7 +5545,7 @@ def pub24_reel_bilan(dossier=None):
 
     p = Planche("blanc", LARGE_S, HAUT_S)
     p.surtitre("9-15 s", "taupe", y=200)
-    p.titre("Trois questions,\navant de redessiner.", 88, y=280)
+    p.titre("Trois questions,\navant de redessiner.", 74, y=280)
     questions = ["Lisible partout ?", "Fichiers en main ?",
                  "Dit-il ce que vous\nvendez aujourd'hui ?"]
     y = 700
@@ -5547,7 +5586,7 @@ def pub24_reel_bilan(dossier=None):
         _support_logo(p, cx, 700, 208, genre, couleur_legende="sable")
     p.y = 1080
     p.filet()
-    p.titre("Un bilan,\npas une résolution.", 92, "blanc")
+    p.titre("Un bilan,\npas une résolution.", 77, "blanc")
     p.y += 20
     p.texte("Trois « non », on repart de la feuille blanche — et ça se "
             "décide en connaissance de cause.", 40, "creme", 400, avant=20)
@@ -5812,7 +5851,7 @@ def pub04_reel_cmjn(dossier=None):
     _feuille_imprimee(p, 760, 640, 340, terne, angle=5)
     p.y = 1000
     p.filet()
-    p.titre("Demandez un BAT.\nToujours.", 98, "blanc")
+    p.titre("Demandez un BAT.\nToujours.", 77, "blanc")
     p.y += 30
     p.texte("Ne validez jamais une couleur sur un écran. Un bon à tirer, "
             "c'est gratuit, et ça évite de tout refaire.", 40, "creme", 400,
@@ -5975,7 +6014,7 @@ def pub08_reel_halloween(dossier=None):
     p = Planche("encre", LARGE_S, HAUT_S)
     p.surtitre("Reel · 0-3 s", "orange", y=200)
     p.filet()
-    p.titre("Pourquoi Halloween\nest orange\net noir.", 96, "blanc", y=280)
+    p.titre("Pourquoi\nHalloween\nest orange\net noir.", 96, "blanc", y=280)
     _citrouille(p, p.l / 2, 1130, 620)
     p.y = 1560
     p.texte("Orange et noir. Pourquoi ces deux couleurs, et pas d'autres ?",
@@ -6024,7 +6063,7 @@ def pub08_reel_halloween(dossier=None):
 
     p = Planche("creme", LARGE_S, HAUT_S)
     p.surtitre("15-19 s", "taupe", y=190)
-    p.titre("Et pour\nvotre commerce ?", 84, y=250)
+    p.titre("Et pour\nvotre commerce ?", 82, y=250)
     _vitrine(p, 90, 700, 900, 410, eclairee=True, enseigne="VOTRE NOM")
     _vitrine(p, 90, 1160, 900, 420, eclairee=True, enseigne="VOTRE NOM",
              bandeau=0.46, couleur_decor="orange", decor="citrouilles",
@@ -6962,7 +7001,7 @@ def pub13_fichier_vectoriel(dossier=None):
     p = Planche("creme")
     p.surtitre("Conseil", y=200)
     p.filet()
-    p.titre("Pourquoi je vous demande\nun fichier vectoriel.", 62)
+    p.titre("Pourquoi je vous demande\nun fichier vectoriel.", 55)
     p.y = 700
     p.texte("Parce que « j'ai mon logo » et « j'ai le fichier de mon "
             "logo » sont deux phrases différentes, et que la seconde "

@@ -440,7 +440,7 @@ def cycle(rapport):
     for l in t.split("\n"):
         if "SANS IMAGE" in l:
             notes.append("fichier source manquant : " + l.strip())
-    for mot in ("HORS CADRE", "CHEVAUCHE", "ORPHELIN", "DÉBORD"):
+    for mot in ("HORS CADRE", "CHEVAUCHE", "ORPHELIN", "DÉBORD", "COUPE"):
         n = t.count(mot)
         if n:
             faux("%d × %s dans les visuels" % (n, mot.lower()))

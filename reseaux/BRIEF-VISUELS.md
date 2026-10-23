@@ -251,10 +251,33 @@ titre. Exemples : « IDENTITÉ VISUELLE », « RÉGLEMENTATION », « QUIZ »,
 en dessous. Il n'apparaît pas sur toutes les planches : c'est un accent,
 réservé aux planches d'ouverture, de respiration et de conclusion.
 
-**Le titre.** Playfair, de **62 à 116 px** selon la longueur, couleur
+**Le titre.** Playfair, de **55 à 112 px** selon la longueur, couleur
 encre `#2f2723` sur fond clair, blanc sur fond sombre. Interligne 1,16.
 Les retours à la ligne sont **voulus** et font partie du rythme : les
 respecter.
+
+> ♻️ **Les tailles ont été reprises le 23 octobre, et une garde
+> ajoutée.** Dix-neuf titres étaient réglés trop grand pour leur
+> texte : Playfair les recoupait où il pouvait, et le reste du
+> paragraphe tombait seul sur une ligne — « BAT. », « compter »,
+> « commune », « lisible ». Le défaut ne se voyait dans aucun
+> contrôle : `_orphelin` ne se déclenche qu'à trois caractères, et
+> les deux autres gardes raisonnent sur le curseur, pas sur la coupe.
+>
+> Chaque taille est redescendue à la valeur qui tient le découpage
+> écrit — jamais plus bas. Deux titres ont été recoupés plutôt que
+> réduits, à mots identiques : la question 2 du quiz du 5 novembre et
+> la story S3-D1. Un troisième, le premier écran du reel Halloween,
+> rendait quatre lignes propres pour trois écrites : c'est la source
+> qui a été mise d'accord avec la planche, pas l'inverse.
+>
+> **La garde `COUPE`** mesure désormais, à chaque passage du cycle, la
+> dernière ligne de tout paragraphe de titre qui se coupe : en dessous
+> de 30 % de la colonne, ce n'est plus une ligne, c'est un débris, et
+> `reseaux/audit.py` compte l'alerte. Une première version comparait
+> le nombre de `\n` au nombre de lignes rendues ; elle levait
+> vingt-sept alertes dont la moitié n'en étaient pas, parce qu'un `\n`
+> sépare deux phrases sans promettre deux lignes.
 
 **Le texte courant.** Inter 400 ou 600, **34 à 46 px**, brun `#6d5a50`.
 Interligne 1,38. Posé à la marge gauche, jamais justifié, jamais centré
@@ -484,7 +507,7 @@ scènes.
    clairs et sombres. À droite « couché brillant » : couleur pleine, plus
    une **bande de lumière diagonale floue** en blanc translucide.
 5. `encre` · le moniteur et la feuille à nouveau, en petit · filet ·
-   **« Demandez un BAT. / Toujours. »** (98 px, blanc) · relance
+   **« Demandez un BAT. / Toujours. »** (77 px, blanc) · relance
    d'abonnement · signature sable.
 
 > Le bleu « imprimé » n'est **pas** une conversion colorimétrique : pas de
@@ -566,7 +589,7 @@ scènes.
 
 ### n° 8 · vendredi 30 octobre · REEL 22 s · 5 écrans 9:16 · Halloween
 
-1. `encre` · surtitre « REEL · 0-3 S » en **orange** · **« Pourquoi
+1. `encre` · surtitre « REEL · 0-3 S » en **orange** · **« Pourquoi /
    Halloween / est orange / et noir. »** (96 px, blanc) · une
    **citrouille** dessinée au centre : cinq ellipses orange de largeurs
    décroissantes pour les quartiers, contour plus sombre, queue brune.
@@ -580,7 +603,7 @@ scènes.
    (tête et thorax encre, abdomen rayé orange/encre, ailes translucides,
    antennes), une **salamandre** (corps encre allongé, taches orange,
    pattes, queue pointue).
-4. `crème` · **« Et pour / votre commerce ? »** (100 px) · **deux
+4. `crème` · **« Et pour / votre commerce ? »** (82 px) · **deux
    devantures identiques** empilées : la première neutre, légendée « toute
    l'année » ; la seconde avec un bandeau orange opaque portant des
    **silhouettes de citrouilles en encre**, légendée « en octobre ».
@@ -726,7 +749,7 @@ l'a livré — la seule publication du cycle qui montre un vrai client.
    ville — ouvert toute la journée ». La démonstration est littéralement
    « on n'a rien retiré ».
 5. `sable chaud` · filet · **« Et le catalan ? »** (100 px) · la réponse.
-6. `blanc` · **« Vous avez un slogan / en anglais ? »** (86 px) · flèche.
+6. `blanc` · **« Vous avez un slogan / en anglais ? »** (74 px) · flèche.
 
 ### n° 15 · jeudi 19 novembre · Quiz 4 choix · 5 planches · Les matières
 
@@ -881,7 +904,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
 5. `encre` · les trois matières en vignettes de 280 px — gaufrage, dorure,
    et une **carte épaisse vue de trois quarts** montrant sa tranche,
    légendée « 350 g » · filet · **« Choisissez la matière / avant le
-   dessin. »** (84 px, blanc) · relance d'abonnement.
+   dessin. »** (69 px, blanc) · relance d'abonnement.
 
 ### n° 21 · lundi 30 novembre · Carrousel 7 planches · La vitrine du trottoir
 
@@ -893,11 +916,11 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    de la vitrine sur le bitume** · bandeau **violet** : **« Votre vitrine
    de Noël est faite / pour celui qui passe. Pas pour / celui qui est
    dedans. »**
-2. `blanc` · **« La hauteur des yeux. »** (76 px) · la devanture **au
+2. `blanc` · **« La hauteur des yeux. »** (71 px) · la devanture **au
    trait**, avec une **échelle en mètres** tracée à gauche (graduations 0,
    1, 2, 3 m) et une **bande corail translucide entre 1,40 m et 1,70 m**
    bordée de deux traits corail qui débordent du cadre.
-3. `crème` · **« Couvrir, ou laisser voir. »** (70 px) · deux devantures de
+3. `crème` · **« Couvrir, ou laisser voir. »** (62 px) · deux devantures de
    430 px côte à côte, **toutes deux éclairées** : à gauche le verre
    couvert à 96 % par un décor **corail opaque** à sapins, légendée « le
    verre couvert » ; à droite un simple **bandeau** de décor et du verre
@@ -907,7 +930,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    de la rue reflétées, traînées de lumière diagonales en transparence, un
    lampadaire reflété.
 5. `blanc` · **« Un texte sur verre se lit / contre ce qu'il y a
-   derrière. »** (58 px) · deux panneaux portant **exactement le même
+   derrière. »** (55 px) · deux panneaux portant **exactement le même
    texte** « OUVERT / le dimanche » en blanc. À gauche, devant un
    **rayonnage encombré** de boîtes colorées : illisible. À droite, devant
    un **panneau uni sombre** : parfaitement lisible.
@@ -919,7 +942,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    faire cela en une image : il faudrait trois prises de vue au même
    instant.
 7. `crème` · **« Photographiez votre vitrine / depuis le trottoir d'en
-   face. »** (60 px) · flèche.
+   face. »** (54 px) · flèche.
 
 ### n° 22 · mardi 1er décembre · Carrousel 6 planches · Enseigne ou publicité
 
@@ -937,7 +960,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    à coins très arrondis empilées : « Joyeuses fêtes » sur fond violet,
    « -30 % jusqu'au 24 » sur fond bleu, texte blanc Inter 800 54 px.
 4. `bleu` plein · filet · **« C'est votre commune / qui tranche. »**
-   (88 px, blanc) · le RLP, le PLU, et « À trois kilomètres de distance, la
+   (70 px, blanc) · le RLP, le PLU, et « À trois kilomètres de distance, la
    réponse change. »
 5. `blanc` · **« Et surtout : / pas le 14798\*01. »** (72 px) · le **schéma
    de formulaire** portant « Cerfa n° 16308\*01 » · en dessous, un
@@ -945,7 +968,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    1er juillet 2026, un dossier déposé avec est considéré comme incomplet,
    et il remonte encore dans les recherches.
 6. `violet` plein · filet · **« Dites-moi votre commune / en
-   commentaire. »** (72 px, blanc) · flèche.
+   commentaire. »** (56 px, blanc) · flèche.
 
 ### n° 23 · jeudi 3 décembre · Quiz · 6 planches · Impressions de fin d'année
 
@@ -965,18 +988,18 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
 ### n° 24 · samedi 5 décembre · REEL 30 s · 6 écrans 9:16 · Refaire son logo
 
 1. `sable chaud` · surtitre « REEL · 0-3 S » · **« Non, / pas en
-   janvier. »** (116 px) · **deux pages de calendrier mural** côte à côte,
+   janvier. »** (102 px) · **deux pages de calendrier mural** côte à côte,
    400 × 520, rigoureusement identiques sauf le nom du mois : « DÉCEMBRE
    2026 » sur bandeau **bleu**, « JANVIER 2027 » sur bandeau **violet**.
    Chacune a sa **spirale** (six anneaux en haut) et sa grille de jours
    réelle · flèche corail entre les deux.
 2. `crème` · **« Changer par calendrier, / ce n'est pas changer / par
-   besoin. »** (80 px) · **le même logo fictif, deux fois**, à 190 px de
+   besoin. »** (61 px) · **le même logo fictif, deux fois**, à 190 px de
    rayon, avec un écart **minuscule** sur l'épaisseur des anneaux (environ
    4 %). Légendés « version actuelle » et « « nouvelle » version ». S'ils
    étaient rigoureusement identiques on croirait à une erreur de montage ;
    s'ils différaient vraiment, la démonstration tomberait.
-3. `blanc` · **« Trois questions, / avant de redessiner. »** (88 px) ·
+3. `blanc` · **« Trois questions, / avant de redessiner. »** (74 px) ·
    trois cartes crème à coins arrondis, chacune avec une pastille corail
    numérotée et une question **manuscrite en Caveat 62 px** : « Lisible
    partout ? », « Fichiers en main ? », « Dit-il ce que vous vendez
@@ -990,7 +1013,7 @@ carte, « Laquelle vous donne envie d'y retourner ? » en Inter 600 40 px.
    être « dessiné flou » — on doit voir disparaître ce qui disparaît en
    broderie.
 5. `encre` · les **trois mêmes supports**, logo net partout, légendes en
-   sable · filet · **« Un bilan, / pas une résolution. »** (92 px, blanc) ·
+   sable · filet · **« Un bilan, / pas une résolution. »** (77 px, blanc) ·
    relance d'abonnement.
 
 ---
