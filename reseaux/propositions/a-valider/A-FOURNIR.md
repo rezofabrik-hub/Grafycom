@@ -143,23 +143,23 @@ qui le redimensionne.
 
 Aucune planche ne les attend : elles élargiraient le choix, c'est tout.
 
-### 10. Les textes des avis Google — un reçu, un manquant
+### 10. ~~Les textes des avis Google~~ — les deux sont arrivés
 
-**L'avis de Solaire 66 est arrivé le 23 octobre**, texte intégral, avec
-sa réponse publiée et corrigée. Il est consigné dans
-`outils/FICHE-GOOGLE.md`. Il est signé « Laurent », et la précision du
-23 octobre lève la question que je posais : c'est Solaire 66, pas
-REZOFABRIK. Un avis de client, sans réserve.
+**Solaire 66** le matin du 23 octobre, **Social Miroir** le soir. Les
+deux textes sont dans `outils/FICHE-GOOGLE.md`, les deux réponses sont
+publiées, et aucune n'a de coquille — celle de Solaire 66 en avait une,
+corrigée depuis la fiche.
 
-**Reste celui de Social Miroir**, du 13 octobre. Le texte n'est pas
-lisible depuis ici. Me le recopier permet d'écrire la réponse — un avis
-sans réponse vaut la moitié d'un avis.
+✅ **Les deux sont en ligne sur la page réalisations**, dans un groupe
+« Projets menés par Grafycom » placé devant les trois anciens.
 
-✅ **Il est en ligne depuis le 23 octobre**, en tête du bloc des avis
-de la page réalisations. La mention « structure précédente » a quitté
-le pied du bloc pour nommer les trois qu'elle concerne : une mention
-globale devenue fausse pour un quart du bloc est pire que pas de
-mention.
+Le bloc portait une mention globale, « ces avis ont été laissés à
+l'époque de la structure précédente ». Vraie à trois avis, fausse pour
+un quart du bloc à quatre, pour deux cinquièmes à cinq. **Une mention
+globale fausse est pire que pas de mention : elle fait douter du
+reste.** À cinq, ce n'est plus une phrase qui peut le dire, c'est la
+structure — deux groupes, deux intertitres, et la page se lit sans note
+de bas de bloc.
 
 ### 11. L'adresse de partage de la fiche Google
 

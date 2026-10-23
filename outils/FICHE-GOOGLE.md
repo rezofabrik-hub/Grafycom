@@ -245,6 +245,32 @@ fait douter du reste.**
 La grille est passée de trois à deux colonnes : quatre cartes sur trois
 colonnes laissaient la quatrième seule sur sa ligne.
 
+### L'avis de Social Miroir — texte intégral, 23 octobre
+
+5 étoiles, visite en septembre, modifié le 23 octobre. **Le second des
+deux textes est désormais dans le dépôt : il n'en manque plus aucun.**
+
+> Merci beaucoup à Sandra pour son écoute, sa créativité et son grand
+> professionnalisme. Elle a réalisé mon logo et ma charte graphique
+> avec beaucoup de soin, et le résultat final est exactement ce que je
+> recherchais. Un excellent travail !
+
+**La réponse est publiée**, et elle est juste — elle nomme le projet
+(« ce projet original ») au lieu de remercier dans le vide :
+
+> Bonjour, ça a été un plaisir de travailler avec vous pour ce projet
+> original. Je vous remercie pour votre confiance et les moments
+> d'échanges.
+
+Rien à corriger dans l'une ni dans l'autre. **Il est en ligne sur la
+page réalisations depuis le 23 octobre**, dans le groupe « Projets
+menés par Grafycom », à côté de celui de Solaire 66.
+
+Une remarque qui n'est pas une correction : l'avis est signé du nom de
+l'entreprise, « Social Miroir », là où les quatre autres portent un
+prénom et un nom. La carte le reprend tel quel — inventer un prénom
+serait pire que l'asymétrie.
+
 ### Les deux premiers avis sont arrivés — 13 octobre 2026
 
 **Social Miroir** et **Solaire 66** ont laissé un avis. Les textes ne sont
