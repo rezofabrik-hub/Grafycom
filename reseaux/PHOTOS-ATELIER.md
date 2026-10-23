@@ -26,11 +26,16 @@ propre — **refusée au rendu : « je préférais avant ».** La planche
 revient à sa version typographique, et la fonction qui fabriquait le
 découpage est retirée du moteur.
 
-**Ne pas rouvrir sans de vraies photographies.** Ce qu'il faudrait :
-trois poses — elle écrit, elle tend un dossier, de dos devant un mur
-d'échantillons. Fond neutre, haut crème ou sable : ni rouge ni bleu
-marine, ils dépassent les 10 % d'accent de la charte, et c'était déjà
-le défaut des cinq images générées.
+**3. De vraies photographies.** Écartées aussi, le 23 octobre :
+« on ne va pas faire de photos avec Sandra, je n'aime pas les rendus ».
+
+**Le sujet est clos, dans les trois directions.** Son visage ne sera
+pas dans la grille, et ce n'est pas un manque en attente : c'est une
+décision. Les trois photos d'atelier existantes restent où elles sont,
+sur leurs planches de clôture.
+
+Ne pas rouvrir, et surtout ne pas le reproposer comme une amélioration
+possible — ça l'a été trois fois.
 
 ## Où elles vont## Où elles vont
 

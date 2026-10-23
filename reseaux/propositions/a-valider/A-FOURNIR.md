@@ -136,35 +136,14 @@ conteneur, comme la photo n° 05. Ce qu'il faut donc, c'est **le fichier
 d'origine tel qu'il sort de l'appareil**, pas un envoi par messagerie
 qui le redimensionne.
 
-### 9. De vraies photographies de Sandra
-
-**Les deux contournements ont échoué.** La génération d'abord — cinq
-images, texte inventé, logos redessinés. Puis la photo du site
-détourée et posée sur la planche 01 du blog : techniquement propre,
-refusée au rendu.
-
-Il n'y a donc pas de raccourci. Trois poses couvriraient tout le
-cycle :
-
-- **elle écrit** — le blog, les publications de conseil ;
-- **elle tend un dossier** — la livraison, la propriété des fichiers ;
-- **de dos devant un mur d'échantillons** — les clôtures.
-
-Fond neutre, haut **crème ou sable** — ni rouge ni bleu marine, ils
-dépassent les 10 % d'accent de la charte. C'est le seul manque de cette
-liste que je ne sais pas contourner.
-
-En attendant, les trois photos existantes restent sur leurs clôtures et
-son visage n'est sur aucun carreau de la grille.
-
-### 10. Deux photos d'atelier
+### 9. Deux photos d'atelier
 
 - `08-croquis-denim.jpg` — reçue en aperçu seulement, jamais en fichier.
 - `05-profil-ecran-solaire66.jpg` — perdue avec le conteneur, non renvoyée.
 
 Aucune planche ne les attend : elles élargiraient le choix, c'est tout.
 
-### 11. Les textes des avis Google — un reçu, deux manquants
+### 10. Les textes des avis Google — un reçu, deux manquants
 
 **L'avis de Laurent est arrivé le 23 octobre**, texte intégral, avec sa
 réponse déjà publiée. Il est consigné dans `outils/FICHE-GOOGLE.md`.
@@ -179,7 +158,7 @@ Et une coquille à corriger depuis la fiche : la réponse publiée dit
 textes ne sont pas lisibles depuis ici. Me les recopier permet d'écrire
 les réponses — un avis sans réponse vaut la moitié d'un avis.
 
-### 12. L'adresse de partage de la fiche Google
+### 11. L'adresse de partage de la fiche Google
 
 Une adresse courte en `g.page/…`, ou un lien Maps. Elle se récupère dans
 le profil d'établissement, bouton **« Partager »**.
@@ -187,7 +166,7 @@ le profil d'établissement, bouton **« Partager »**.
 C'est la dernière entrée manquante du bloc `sameAs` : celle qui permet à
 Google de rapprocher le site, la fiche et les réseaux sans le deviner.
 
-### 13. ~~Le violet de BIG FOOD~~ — tranché le 23 octobre
+### 12. ~~Le violet de BIG FOOD~~ — tranché le 23 octobre
 
 **Il n'est pas une couleur de marque.** L'entrée est retirée de
 `reseaux/couleurs-clients.json`, et la planche 2 de la n° 25 tombe sur
@@ -197,7 +176,7 @@ de registre reste en place, vide : il a servi une fois, il resservira.
 L'orange et le blanc continuent de se relever dans le vectoriel :
 `#f39200` et `#ffffff`, exacts.
 
-### 14. Le logo rond de Social Miroir, à reprendre par Sandra
+### 13. Le logo rond de Social Miroir, à reprendre par Sandra
 
 Ce n'est pas un fichier à me fournir : c'est une correction à faire
 dans Illustrator, et elle ne se fait pas sur un PNG. Voici les mesures,
@@ -221,7 +200,7 @@ Tant que ce n'est pas fait, `social-miroir-rond.png` **ne sert nulle
 part** : la vignette du portfolio utilise la version en long, qui n'a
 pas le défaut.
 
-### 15. La n° 18 attend ta relecture
+### 14. La n° 18 attend ta relecture
 
 Le carrousel sur la mention de tri porte toujours son avertissement :
 **« contenu au conditionnel, vérification à faire avant publication »**.
@@ -233,7 +212,7 @@ qui est exactement le piège qui a déjà fonctionné avec le Cerfa
 Le sachet vierge de la planche 07 règle l'**image**. Il ne règle pas le
 **texte**. Rien ne part avant ta relecture.
 
-### 16. La confirmation des délais d'impression
+### 15. La confirmation des délais d'impression
 
 La n° 16 annonce **création fin novembre, bon à tirer début décembre,
 livraison mi-décembre**. À faire confirmer par l'imprimeur partenaire
