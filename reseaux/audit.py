@@ -39,10 +39,11 @@ PLAFOND = 5          # publications par semaine, réserve n° 3
 
 # Les dépassements acceptés, et pourquoi. Une exception se motive ; une
 # exception qu'on tait redevient un défaut au bout de trois semaines.
-DEROGATIONS = {
-    datetime.date(2026, 11, 23):
-        "SOLAIRE 66 ajoutée le 25 — arbitrage du 23 octobre, « en plus »",
-}
+# Vide depuis le 23 octobre. La semaine du 23 novembre portait six
+# publications — SOLAIRE 66 ajoutée « en plus » le 25. La n° 18 en est
+# sortie le même jour, faute de vérification réglementaire : la semaine
+# retombe à cinq toute seule, et la dérogation n'a plus lieu d'être.
+DEROGATIONS = {}
 
 # Les endroits où l'identité complète est OBLIGATOIRE : la loi l'exige sur
 # les mentions légales, les CGV et tout document contractuel.

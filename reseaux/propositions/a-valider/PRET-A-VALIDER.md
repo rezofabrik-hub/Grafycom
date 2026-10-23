@@ -29,7 +29,7 @@ vérifications réglementaires**, détaillées plus bas.
 
 ---
 
-## 1. Instagram & Facebook — les 30 publications sont complètes
+## 1. Instagram & Facebook — les 29 publications sont complètes
 
 Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 1080 × 1350 px, dans l'ordre du carrousel.
@@ -67,7 +67,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | **27** | mer 2 déc | Carrousel 8 planches | **SWEET DREAM** | 8 |
 | **28** | mer 25 nov | Carrousel 8 planches | **Solaire 66** | 8 |
 
-**173 planches de publication** (217 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
+**166 planches de publication** (210 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
 et le dossier porte **la date réelle de parution**. Il portait jusqu'au
 14 octobre la date d'avant le décalage du calendrier, soit sept jours
 d'écart : un dossier ouvert au hasard faisait publier une semaine trop

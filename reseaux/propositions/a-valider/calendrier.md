@@ -109,10 +109,7 @@ automatique du matin.
 | lundi 23 novembre | 12 h 30 | Instagram + Facebook | Carrousel | n° 17 |
 | lundi 23 novembre | 12 h 30 | Fiche Google | post | texte n° 17 |
 | lundi 23 novembre | 12 h 45 | Story | story | S5-A · teasing du carrousel |
-| mardi 24 novembre | 10 h 15 | Story | story | S5-B écran 2 |
-| mardi 24 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 18 |
-| mardi 24 novembre | 8 h 00 | Fiche Google | post | texte n° 18 |
-| mardi 24 novembre | 8 h 15 | Story | story | S5-B écran 1 |
+| ~~mardi 24 novembre~~ | — | — | — | 🛑 **n° 18 sortie du calendrier le 23 octobre** — signalétique de tri non confirmée. Le texte Google n° 18 et les stories S5-B partent avec elle |
 | mercredi 25 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 28 — SOLAIRE 66, 🧩 **réalisation intercalée** |
 
 | jeudi 26 novembre | 19 h 00 | Instagram + Facebook | Dilemme A/B | n° 19 |
@@ -153,7 +150,7 @@ automatique du matin.
 
 | Canal | Volume |
 |---|---|
-| Publications Instagram + Facebook | **30** |
+| Publications Instagram + Facebook | **29** |
 | Textes de fiche Google | **26** |
 | Écrans de story | **44** |
 | Articles de blog | **7** |

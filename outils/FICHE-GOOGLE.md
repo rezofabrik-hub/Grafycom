@@ -219,20 +219,25 @@ problème du client (« dompter le flux de vos idées ») au lieu de
 remercier dans le vide. Elle portait une coquille, « le flues » :
 **corrigée depuis la fiche le 23 octobre.**
 
-**Deux choses à trancher avant de le reprendre sur le site :**
+**C'est l'avis de SOLAIRE 66**, précisé le 23 octobre. Pas celui de
+REZOFABRIK — et la question de distance que je posais ici tombe avec
+cette précision : Grafycom et Solaire 66 sont deux entreprises
+distinctes dirigées par deux personnes distinctes, ce qui était déjà
+tranché le 13 octobre. C'est un avis de client, sans réserve.
 
-1. **Sous quel nom ?** Les trois témoignages du site portent
-   « Prénom Nom — Entreprise ». L'avis est signé « Laurent » seul.
-2. **Avec quelle distance ?** REZOFABRIK est une entreprise distincte
-   de Grafycom, qui lui passe commande — la même situation que
-   Solaire 66, tranchée le 13 octobre. L'avis est donc un avis de
-   client. Mais Laurent est aussi celui qui construit ce site : si le
-   témoignage y figure sans que le lien soit lisible, un visiteur qui
-   le découvre ensuite perd confiance d'un coup. Le dire coûte une
-   ligne ; le taire coûte un prospect.
+Le contenu le confirme : « mon nouveau logo et ma charte graphique »,
+c'est exactement ce que Solaire 66 a reçu.
 
-C'est une décision de Laurent, pas une règle : les deux options se
-défendent, et aucune n'est malhonnête tant qu'elle est assumée.
+**Il n'y a donc pas trois avis mais deux**, et celui-ci est le premier
+dont le texte est dans le dépôt. Reste celui de **Social Miroir**.
+
+Sur le site, l'attribution serait **« Laurent — Solaire 66 »**, au
+format des trois témoignages existants. Une seule chose à savoir avant
+de l'y mettre : le bloc d'avis de la page réalisations porte la mention
+« ces avis ont été laissés à l'époque de la structure précédente ».
+Celui-ci ne l'a pas été — c'est le premier avis de l'ère Grafycom, et
+c'est précisément ce qui le rend utile. La mention devra donc se
+déplacer sur les trois anciens au lieu de couvrir le bloc entier.
 
 ### Les deux premiers avis sont arrivés — 13 octobre 2026
 

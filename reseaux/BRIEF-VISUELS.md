@@ -375,7 +375,7 @@ administratif, ni mise en page officielle.
 
 ---
 
-## 6. Les 30 publications, planche par planche
+## 6. Les 29 publications, planche par planche
 
 Les textes exacts (accroche, légende, texte alternatif, hashtags) sont
 dans `instagram-facebook.md`. Ce qui suit décrit **le rendu**.

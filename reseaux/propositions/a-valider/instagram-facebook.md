@@ -1640,9 +1640,24 @@ chez le même imprimeur au même moment.
 
 ---
 
-## 18 — Mardi 24 novembre, 8 h 00 · Carrousel · Pilier 2, conformité
+## 18 — HORS CALENDRIER · Carrousel · Pilier 2, conformité
 
-> ⚠️ **Contenu au conditionnel, vérification à faire avant publication.**
+> 🛑 **SORTIE DU CALENDRIER LE 23 OCTOBRE, sur décision de Laurent.**
+> Elle devait partir le mardi 24 novembre à 8 h 00. Elle ne part pas,
+> et elle n'a plus de date tant que la vérification ci-dessous n'est
+> pas faite.
+>
+> Le travail reste entier : les sept planches sont dessinées, le
+> gabarit `emballage-tri` existe toujours dans `visuels.py`, et le
+> sachet kraft de la planche 07 est en place. **Seule la clé
+> `GABARITS["emballage-tri"]` est retirée** — le cycle ne la produit
+> plus, donc elle ne crée pas de dossier orphelin. Une ligne à remettre
+> le jour où la vérification tombe.
+>
+> Le texte de fiche Google n° 18 et les deux stories S5-B qui la
+> teasaient sont suspendus avec elle.
+
+> ⚠️ **La vérification à faire, et pourquoi elle bloque.**
 > Je n'ai **pas** pu confirmer les règles de signalétique de tri sur la
 > fiche de `entreprendre.service-public.gouv.fr`. Les sources trouvées sont
 > des guides d'éco-organismes, de fédérations professionnelles et de
@@ -1741,9 +1756,11 @@ une méthode validée, « on réserve la zone puis on dessine autour ».
   qui n'est pas forcément celle d'un produit vendu en grande surface. Si la
   vérification contredit le carrousel, la slide 3 et le troisième paragraphe
   de la légende se réécrivent — pas le reste.
-- ~~Les 7 slides~~ et ~~un sachet à photographier~~ : **faits**. Gabarit
-  `emballage-tri`, sept planches dans
-  `reseaux/visuels/2026-11-24-emballage-tri/`.
+- ~~Les 7 slides~~ et ~~un sachet à photographier~~ : **faits**. Le
+  gabarit `emballage-tri` dessine les sept planches, sachet kraft
+  compris. Il n'est plus appelé par le cycle depuis le 23 octobre —
+  donc plus de dossier dans `reseaux/visuels/` — et il reproduira tout
+  le jour où sa clé revient dans `GABARITS`.
 
 ---
 

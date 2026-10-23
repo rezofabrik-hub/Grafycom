@@ -546,7 +546,11 @@ jour qu'elle.
 
 ---
 
-## 18 — Mardi 24 novembre, 8 h 00 — « Emballage de fête et signalétique de tri » (211 mots)
+## ~~18~~ — SUSPENDU — « Emballage de fête et signalétique de tri » (211 mots)
+
+> 🛑 **Suspendu le 23 octobre avec le carrousel n° 18.** Le texte est
+> conservé entier ; il ne part pas tant que la signalétique de tri n'est
+> pas confirmée sur une source officielle.
 
 > **Emballage de fête : prévoir la place des mentions dès le dessin**
 >

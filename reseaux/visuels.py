@@ -6213,7 +6213,14 @@ GABARITS["francais-devanture"] = pub14_francais_devanture
 GABARITS["quiz-matieres"] = pub15_quiz_matieres
 GABARITS["quatre-supports"] = pub15bis_quatre_supports
 GABARITS["reel-fin-annee"] = pub16_reel_fin_annee
-GABARITS["emballage-tri"] = pub18_emballage_tri
+# La n° 18 est SORTIE DU CALENDRIER le 23 octobre : sa signaletique
+# de tri n'a pas pu etre confirmee sur une source officielle, et une
+# publication de conformite qui se trompe coute plus cher que les
+# vingt-huit autres ne rapportent. La fonction reste entiere — sept
+# planches dessinees, le sachet kraft en place. Seule la cle part,
+# pour que --tout ne produise plus son dossier :
+#     GABARITS["emballage-tri"] = pub18_emballage_tri
+# Une ligne a remettre le jour ou la verification tombe.
 GABARITS["vitrine-trottoir"] = pub21_vitrine_trottoir
 GABARITS["sticker-enseigne"] = pub22_sticker_enseigne
 GABARITS["reel-matieres"] = pub20_reel_matieres

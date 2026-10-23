@@ -366,7 +366,12 @@ sur le site.
 
 ---
 
-## S5-B — Mardi 24 novembre · teasing réglementation, 2 écrans
+## ~~S5-B~~ — SUSPENDUE · teasing réglementation, 2 écrans
+
+> 🛑 **Suspendue le 23 octobre avec la n° 18**, qu'elle teasait. Sa
+> question de quiz porte sur la signalétique de tri, qui n'a pas pu
+> être confirmée sur une source officielle. Les deux écrans sont
+> conservés tels quels : ils repartent le jour où la n° 18 repart.
 
 ### Écran 1 — 8 h 15
 

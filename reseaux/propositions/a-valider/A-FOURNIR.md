@@ -143,17 +143,24 @@ qui le redimensionne.
 
 Aucune planche ne les attend : elles élargiraient le choix, c'est tout.
 
-### 10. Les textes des avis Google — un reçu, deux manquants
+### 10. Les textes des avis Google — un reçu, un manquant
 
-**L'avis de Laurent est arrivé le 23 octobre**, texte intégral, avec sa
-réponse déjà publiée. Il est consigné dans `outils/FICHE-GOOGLE.md`.
-Deux questions l'accompagnent, et elles sont pour toi : sous quel nom
-le reprendre sur le site, et faut-il y rendre lisible le lien entre
-REZOFABRIK et Grafycom.
+**L'avis de Solaire 66 est arrivé le 23 octobre**, texte intégral, avec
+sa réponse publiée et corrigée. Il est consigné dans
+`outils/FICHE-GOOGLE.md`. Il est signé « Laurent », et la précision du
+23 octobre lève la question que je posais : c'est Solaire 66, pas
+REZOFABRIK. Un avis de client, sans réserve.
 
-**Restent ceux de Social Miroir et Solaire 66**, du 13 octobre. Les
-textes ne sont pas lisibles depuis ici. Me les recopier permet d'écrire
-les réponses — un avis sans réponse vaut la moitié d'un avis.
+**Reste celui de Social Miroir**, du 13 octobre. Le texte n'est pas
+lisible depuis ici. Me le recopier permet d'écrire la réponse — un avis
+sans réponse vaut la moitié d'un avis.
+
+**Une décision t'attend** : reprendre l'avis de Solaire 66 sur la page
+réalisations, attribué « Laurent — Solaire 66 ». Le bloc des trois
+témoignages porte aujourd'hui la mention « laissés à l'époque de la
+structure précédente » ; celui-ci est le premier de l'ère Grafycom, et
+c'est ce qui le rend utile. La mention devra donc passer sur les trois
+anciens au lieu de couvrir le bloc.
 
 ### 11. L'adresse de partage de la fiche Google
 
@@ -197,17 +204,25 @@ Tant que ce n'est pas fait, `social-miroir-rond.png` **ne sert nulle
 part** : la vignette du portfolio utilise la version en long, qui n'a
 pas le défaut.
 
-### 14. La n° 18 attend ta relecture
+### 14. ~~La n° 18~~ — sortie du calendrier le 23 octobre
 
-Le carrousel sur la mention de tri porte toujours son avertissement :
-**« contenu au conditionnel, vérification à faire avant publication »**.
-Les règles de signalétique n'ont pas pu être confirmées sur une source
-officielle — seulement des guides d'éco-organismes et de cabinets, ce
-qui est exactement le piège qui a déjà fonctionné avec le Cerfa
-14798\*01.
+Elle devait partir le mardi 24 novembre à 8 h 00. **Elle ne part pas**,
+et elle n'a plus de date tant que la signalétique de tri n'est pas
+confirmée sur une source officielle.
 
-Le sachet vierge de la planche 07 règle l'**image**. Il ne règle pas le
-**texte**. Rien ne part avant ta relecture.
+Ce qui part avec elle : le texte de fiche Google n° 18 et les deux
+stories S5-B qui la teasaient. Tout est conservé, rien n'est supprimé.
+
+Le cycle passe de **30 à 29 publications**, de 173 à 166 planches. Et
+une conséquence inattendue, mesurée par l'audit : la semaine du 23
+novembre portait six publications et vivait sous dérogation écrite.
+Avec la n° 18 en moins elle retombe à **cinq**. **La dérogation est
+retirée de `audit.py` : le plafond tient désormais tout seul, sans
+exception.**
+
+Pour la remettre un jour : une ligne dans `visuels.py`,
+`GABARITS["emballage-tri"] = pub18_emballage_tri`, et les sept planches
+reviennent — sachet kraft compris.
 
 ### 15. La confirmation des délais d'impression
 
