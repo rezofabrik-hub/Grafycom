@@ -36,6 +36,8 @@ Quatre étapes ne se compressent pas : la création, les corrections, le bon à 
 
 **Janvier : la fabrication et la livraison.** Les ateliers se sont vidés, les transporteurs aussi, et les délais annoncés redeviennent les délais réels.
 
+Une réserve, et elle compte : entre Noël et le 2 janvier, les imprimeurs prennent des congés comme tout le monde, et beaucoup ferment une semaine entière. Un fichier envoyé le 23 décembre ne part pas en machine le 24, il attend la reprise. C'est une raison de plus de boucler le bon à tirer avant les fêtes : le fichier doit être prêt à partir le jour où l'atelier rouvre, pas commencer ce jour-là.
+
 Votre fichier attend pendant les fêtes, votre commande non. L'erreur de calcul, elle, ne change pas : on compte à partir d'aujourd'hui, alors qu'il faut compter à l'envers, depuis le jour où la carte doit être dans la boîte aux lettres.
 
 ## Pourquoi une carte imprimée, en 2026

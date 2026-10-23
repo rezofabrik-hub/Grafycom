@@ -152,8 +152,16 @@ le même sur bleu marine, parfaitement lisible.
   PLU, secteur patrimonial protégé. Trois pastilles numérotées en corail.
 - **S6.** « À Perpignan, le centre ancien est en secteur protégé. L'avis des
   Architectes des Bâtiments de France s'ajoute au dossier. »
-- **S7.** Fond violet. « Posez votre question en commentaire : je vous dis
-  quelle procédure s'applique à votre rue. »
+- **S7.** Fond encre `#2f2723`, texte blanc, filet dégradé : « Une enseigne
+  se pense en amont. Pas après le logo. »
+
+> ♻️ **Description corrigée le 23 octobre.** Elle annonçait « Fond violet.
+> Posez votre question en commentaire : je vous dis quelle procédure
+> s'applique à votre rue. » Laurent a demandé le retrait de cette relance ;
+> en allant la supprimer, elle s'est révélée **n'avoir jamais été
+> produite** — `visuels.py` rend depuis le début la planche ci-dessus.
+> C'est la description qui était fausse, pas la planche. Rien à retirer
+> des visuels, donc, et la relance en commentaire n'a jamais existé ici.
 
 ### Accroche
 **« Votre enseigne a besoin d'une autorisation. Pas d'une déclaration. »**
@@ -174,11 +182,20 @@ le même sur bleu marine, parfaitement lisible.
 > formulaire une deuxième fois.
 >
 > Ensuite, tout dépend de votre rue. Le Règlement Local de Publicité et le
-> PLU de votre commune fixent les tailles, les matériaux, les règles
-> d'éclairage et l'extinction nocturne. À Perpignan, une bonne partie du
-> centre ancien est en secteur patrimonial protégé : l'avis des Architectes
-> des Bâtiments de France s'ajoute au dossier, et il oriente souvent le
-> choix des matières bien avant le choix du logo.
+> PLU fixent les tailles, les matériaux, les règles d'éclairage et
+> l'extinction nocturne.
+>
+> **Sur la métropole, ce règlement n'est plus communal.** Le conseil
+> communautaire de Perpignan Méditerranée Métropole a approuvé un
+> **Règlement Local de Publicité intercommunal le 28 mars 2022**, qui
+> s'applique à toutes les communes membres et se substitue aux anciens
+> règlements communaux. C'est lui qu'il faut consulter, pas celui de votre
+> commune.
+>
+> À Perpignan, une bonne partie du centre ancien est en secteur patrimonial
+> protégé : l'avis des Architectes des Bâtiments de France s'ajoute au
+> dossier, et il oriente souvent le choix des matières bien avant le choix
+> du logo.
 >
 > C'est pour ça qu'une enseigne se pense en amont, pas après le logo.
 >
@@ -193,6 +210,22 @@ commune.
 
 ### Hashtags — jeu C + 2 métier
 `#enseigne #signaletique #commercantsPerpignan #ouvertureCommerce #nouvelleEntreprise #reglementation #autorisationprealable #graphistePerpignan #identitevisuelle #PaysCatalan`
+
+### Ce qui a été vérifié
+- **Le RLP intercommunal, approuvé le 28 mars 2022.** Donné par Laurent le
+  23 octobre, puis confirmé sur deux sources concordantes : la page du
+  Règlement Local de Publicité Intercommunal de
+  `perpignanmediterraneemetropole.fr`, et une délibération du conseil
+  communautaire. La prescription datait du 25 juin 2018 et l'enquête
+  publique s'est tenue du 4 octobre au 5 novembre 2021.
+- **Ce qui n'est pas affirmé** : la date d'entrée en vigueur. L'approbation
+  et l'entrée en vigueur ne coïncident pas forcément — transmission au
+  préfet, mesures de publicité — et aucune source consultée ne la donne.
+  La légende dit donc « approuvé le 28 mars 2022 », pas « en vigueur
+  depuis ». C'est la précision qui a manqué au Cerfa 14798*01.
+- **L'autorisation préalable pour une enseigne** là où un RLP existe n'est
+  pas une nouveauté du RLPi : c'est la règle de fond, et le carrousel la
+  dit déjà.
 
 ### À fournir par Sandra
 - Une photo de devanture avec enseigne pour la S1. Si la façade est
@@ -292,7 +325,7 @@ illisible, la sans-serif reste lisible.
 | 3-9 s | Animation : trois faisceaux de lumière rouge, vert, bleu qui se superposent et deviennent blanc. | RVB : de la **lumière** | Un écran fabrique les couleurs avec de la lumière. Il additionne du rouge, du vert et du bleu. Plus il en met, plus c'est lumineux. |
 | 9-15 s | Animation : quatre gouttes d'encre cyan, magenta, jaune, noir qui se mélangent sur du papier et s'assombrissent. | CMJN : de l'**encre** | Une imprimante fait l'inverse. Elle dépose de l'encre sur du papier blanc. Chaque couche retire de la lumière. |
 | 15-20 s | Nuancier posé sur une table, main qui le feuillette, lumière rasante sur un papier texturé. | Le papier change tout | Et le papier compte autant que l'encre. Un mat absorbe. Un couché renvoie. Le même fichier donne deux résultats. |
-| 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Demandez un BAT. Toujours.** | Alors ne validez jamais une couleur sur un écran. Demandez un bon à tirer. C'est gratuit, et ça évite de tout refaire. |
+| 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Demandez un BAT. Toujours.** | Un bon à tirer, c'est gratuit, et ça évite de tout refaire. |
 
 **Pas de prompt d'arrière-plan.** Il y en avait un ici. Les cinq prompts du
 cahier des charges sont retirés : `reseaux/LIGNE-EDITORIALE.md` interdit une
@@ -321,8 +354,6 @@ débit légèrement soutenu, articulation nette. Pas d'intonation commerciale.
 > Et le papier compte autant que l'encre. Un mat absorbe et adoucit. Un
 > couché brillant renvoie et sature. Le même fichier donne deux résultats
 > différents selon le support.
->
-> La seule parade tient en trois lettres : le BAT, le bon à tirer.
 >
 > **Vous avez déjà eu une mauvaise surprise à la livraison ?** Racontez en
 > commentaire.
@@ -514,9 +545,6 @@ lecture, la tenue en petit corps, et les droits d'utilisation commerciale.
 - **S5.** Fond blanc. « Pourquoi ça compte un jour » : le jour où vous
   vendez l'entreprise, où vous déposez votre marque, où vous changez de
   prestataire.
-- **S6.** Fond encre `#2f2723`, texte blanc, filet dégradé : « Demandez
-  votre contrat de cession. S'il n'existe pas, c'est le moment de le
-  faire. »
 
 ### Accroche
 **« Qui possède votre logo ? »**
@@ -548,7 +576,7 @@ lecture, la tenue en petit corps, et les droits d'utilisation commerciale.
 > pas, c'est déjà une réponse. Dites-le en commentaire, on en parle.
 
 ### Texte alternatif
-Carrousel de six visuels sur la propriété d'un logo. Il explique que le
+Carrousel de cinq visuels sur la propriété d'un logo. Il explique que le
 paiement d'une création ne transfère pas les droits d'auteur, distingue
 les droits patrimoniaux — cessibles — du droit moral, qui reste à l'auteur
 à vie, et liste les trois précisions qu'une cession doit porter : les
@@ -806,9 +834,6 @@ visite, polo brodé, flanc de camionnette, panneau de chantier, favicon.
   lumineuses **seraient soumises à des plages d'extinction nocturne**, et le
   Règlement Local de Publicité de votre commune peut les durcir. Perpignan a
   son RLP ; le centre ancien est en secteur protégé. »
-- **S7.** Fond violet plein, texte blanc, flèche corail. « Votre rue en
-  commentaire : je vous dis quelles pièces réunir avant de commander
-  quoi que ce soit. »
 
 ### Accroche
 **« Depuis dimanche, votre enseigne s'allume une heure plus tôt. »**
@@ -846,12 +871,10 @@ visite, polo brodé, flanc de camionnette, panneau de chantier, favicon.
 > vous dire que ce point se vérifie à la mairie plutôt que de vous donner un
 > horaire approximatif : c'est exactement le genre de détail qui transforme
 > un investissement de plusieurs milliers d'euros en mise en conformité.
->
-> **Quelle est votre rue ?** Dites-le en commentaire, je vous dis quelles
-> pièces réunir avant de commander quoi que ce soit.
+
 
 ### Texte alternatif
-Carrousel de sept visuels sur l'enseigne en hiver. Une photo de rue
+Carrousel de six visuels sur l'enseigne en hiver. Une photo de rue
 commerçante à la tombée du jour, enseignes allumées, barrée d'un bandeau
 violet. Un visuel affiche l'heure « 17 h » en grand. Un autre montre le
 formulaire d'autorisation préalable d'enseigne, Cerfa 16308 étoile 01. Un
@@ -1626,7 +1649,8 @@ paquet posés dessus.
   occupent décembre. L'imprimeur, lui, n'intervient qu'après. »
 - **S5.** Fond blanc, filet dégradé au-dessus du titre : « Le bon à tirer
   n'est pas une formalité. C'est un aller-retour, et parfois deux.
-  Faites-le en décembre, pendant que tout le monde a encore le temps. »
+  Faites-le en décembre : entre Noël et le 2 janvier, les ateliers sont
+  fermés. »
 - **S6.** Fond `#f7f1ef`. Grande flèche corail `#f2585c`. « Vous visez
   janvier ? Dites-le-moi en commentaire. Je vous dis la vraie date limite
   pour le décider, et ce qu'il reste à écrire avant. »
@@ -1659,6 +1683,14 @@ paquet posés dessus.
 > temps existe. L'impression attend janvier, quand les ateliers se sont
 > vidés et que les délais sont redevenus normaux. Vous ne faites pas
 > traverser Noël à votre commande.
+>
+> **Avec une réserve, et elle est importante : tout le monde ferme.** Entre
+> Noël et le 2 janvier, les imprimeurs prennent des congés comme les
+> autres, et beaucoup ferment une semaine entière. Un fichier envoyé le
+> 23 décembre ne part pas en machine le 24 : il attend la reprise. C'est
+> une raison de plus de boucler le bon à tirer **avant** les fêtes plutôt
+> que de le repousser à janvier — le fichier doit être prêt à partir le
+> jour où l'atelier rouvre, pas commencer à ce moment-là.
 >
 > Reste l'erreur de calcul habituelle : on compte à partir d'aujourd'hui, en
 > se demandant si on a encore le temps. Il faut compter à l'envers, depuis
@@ -2177,9 +2209,6 @@ deux, huit et vingt-cinq mètres : les horaires disparaissent avant le nom.
   14798\*01 : il est périmé, un dossier déposé avec l'ancien formulaire est
   considéré comme incomplet depuis le 1er juillet 2026. Il remonte encore
   dans les recherches. »
-- **S6.** Fond violet, texte blanc. « Un appel au service urbanisme de votre
-  mairie coûte dix minutes et c'est gratuit. Dites-moi votre commune en
-  commentaire : je vous dis quelle question poser. »
 
 ### Accroche
 **« Un sticker de Noël sur votre vitrine : enseigne, publicité, ou rien du tout ? »**
@@ -2232,7 +2261,7 @@ deux, huit et vingt-cinq mètres : les horaires disparaissent avant le nom.
 > poser.
 
 ### Texte alternatif
-Carrousel de six visuels sur les règles d'affichage d'une vitrine de fin
+Carrousel de cinq visuels sur les règles d'affichage d'une vitrine de fin
 d'année. Deux blocs opposent l'enseigne, encadrée en violet, qui fait
 l'objet d'une autorisation, et la publicité, encadrée en bleu marine, qui
 fait l'objet d'une déclaration. Un encadré corail rappelle que le formulaire

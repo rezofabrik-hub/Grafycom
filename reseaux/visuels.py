@@ -1945,13 +1945,11 @@ def carrousel_droits(dossier=None):
             "Le jour où vous changez de prestataire.", 44, "brun", 400, avant=70)
     f.append(p.ecrire(d / "05.png"))
 
-    p = Planche("encre")
-    t = "Demandez votre\ncontrat de cession."
-    st = "S'il n'existe pas, c'est le moment de le faire."
-    p.centrer(p.h_titre(t, 88) + p.h_texte(st, 44, avant=50) + 44)
-    p.filet()
-    p.titre(t, 88, "blanc"); p.texte(st, 44, "creme", 600, avant=50)
-    p.signature("sable"); f.append(p.ecrire(d / "06.png"))
+    # La S6 — « Demandez votre contrat de cession » sur fond encre — a
+    # ete RETIREE le 23 octobre, sur decision de Laurent. Elle fermait
+    # le carrousel sur un appel a l'action ; la n° 5 le ferme desormais
+    # sur le fait, « le jour ou vous vendez l'entreprise ». Le
+    # carrousel passe de six planches a cinq.
     return f
 
 
@@ -2277,8 +2275,8 @@ def carrousel_retroplanning(dossier=None):
     # S5 — le bon a tirer
     p = Planche("blanc")
     t = "Le bon à tirer n'est\npas une formalité."
-    st = ("C'est un aller-retour, et parfois deux. Faites-le en décembre, "
-          "pendant que tout le monde a encore le temps.")
+    st = ("C'est un aller-retour, et parfois deux. Faites-le en décembre : "
+          "entre Noël et le 2 janvier, les ateliers sont fermés.")
     p.centrer(p.h_titre(t, 74) + p.h_texte(st, 42, avant=50) + 44)
     p.filet()
     p.titre(t, 74, "encre")
@@ -4422,15 +4420,11 @@ def pub10_enseigne_hiver(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "06.png"))
 
-    p = Planche("violet")
-    p.filet(y=300)
-    p.titre("Votre rue\nen commentaire.", 86, "blanc")
-    p.y += 30
-    p.texte("Je vous dis quelles pièces réunir avant de commander quoi que "
-            "ce soit.", 40, "creme", 400, avant=20)
-    p.fleche("corail", y=1060)
-    p.signature("creme")
-    faits.append(p.ecrire(d / "07.png"))
+    # La S7 — « Votre rue en commentaire » sur fond violet — a ete
+    # RETIREE le 23 octobre avec la chute de la legende, qui disait la
+    # meme chose. Laurent retire les relances en commentaire du cycle ;
+    # le carrousel se termine sur l'extinction nocturne, qui est son
+    # information. Six planches au lieu de sept.
     return faits
 
 
@@ -5124,16 +5118,11 @@ def pub22_sticker_enseigne(dossier=None):
     p.signature("brun")
     faits.append(p.ecrire(d / "05.png"))
 
-    p = Planche("violet")
-    p.filet(y=320)
-    p.titre("Dites-moi votre commune\nen commentaire.", 56, "blanc")
-    p.y += 40
-    p.texte("Je vous dis quelle question poser. Un appel au service "
-            "urbanisme coûte dix minutes, et c'est gratuit.", 40, "creme",
-            400, avant=20)
-    p.fleche("corail", y=1060)
-    p.signature("creme")
-    faits.append(p.ecrire(d / "06.png"))
+    # La S6 — « Dites-moi votre commune en commentaire » sur fond violet
+    # — a ete RETIREE le 23 octobre, sur decision de Laurent. Le
+    # carrousel se termine maintenant sur l'encadre du Cerfa perime,
+    # qui est son information la plus utile. Cinq planches au lieu de
+    # six.
     return faits
 
 
