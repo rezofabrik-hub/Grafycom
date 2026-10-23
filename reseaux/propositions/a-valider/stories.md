@@ -19,7 +19,7 @@ sticker et ses options, arrière-plan.
 
 # 🎬 SEMAINE 1 — du lundi 19 au dimanche 1er novembre
 
-## S1-A — Lundi 26 octobre, 12 h 45 · teasing du carrousel
+## S1-A — Lundi 26 octobre, 18 h 45 · teasing du carrousel
 - **Fond :** nuancier de trois couleurs sur fond `#f7f1ef`.
 - **Texte :** « Nouveau post. Votre couleur parle avant vous. »
 - **Sticker :** *Sondage A/B* — « Le bleu marine évoque plutôt… »
@@ -47,7 +47,7 @@ sticker et ses options, arrière-plan.
   À 20 mètres, une typo devient une silhouette. »
   **Sticker *Curseur emoji* 😲** — « Vous aviez deviné ? »
 
-## S1-E — Vendredi 30 octobre, 18 h 15 · relais du blog
+## S1-E — Vendredi 30 octobre, 10 h 45 · relais du blog
 - **Fond :** capture du haut de l'article, sur fond `#f7f1ef`.
 - **Texte :** « Nouvel article : l'autorisation d'enseigne, étape par
   étape. »
@@ -88,7 +88,7 @@ sticker et ses options, arrière-plan.
   autres sont fausses — le détail est dans le post. »
   **Sticker *Mention du post***
 
-## S2-E — Vendredi 6 novembre, 10 h 45 · relais du blog
+## S2-E — Vendredi 6 novembre, 18 h 15 · relais du blog
 - **Fond :** capture du haut du second article sur `#f7f1ef`.
 - **Texte :** « Nouvel article : choisir le bon support d'impression. »
 - **Sticker :** *Lien* → l'article sur grafycom.fr
@@ -113,65 +113,86 @@ sticker et ses options, arrière-plan.
 
 ## ✅ BON À PUBLIER — stories
 
-> ⚠️ **Ce document porte DEUX checklists qui ne parlent pas des mêmes
-> écrans, et aucune des deux ne suit le calendrier. Relevé le
-> 23 octobre, non corrigé : trancher demande une décision.**
+> ✅ **Tranché le 23 octobre par Laurent, et réconcilié.** Ce document
+> portait **deux** checklists qui employaient les mêmes codes pour des
+> écrans différents — `S3-C` était la boîte à questions dans l'une, le
+> vote du jeudi dans l'autre. **C'est la première qui fait foi**, et
+> c'est déjà la lettre que suivent `visuels.py` et le calendrier. La
+> seconde table est supprimée ; celle-ci les remplace toutes les deux.
 >
-> Celle-ci (ci-dessous, S3-A à S4-F, du 26/10 au 07/11) et celle du
-> canal stories, plus bas (du 09/11 au 21/11), **réutilisent les mêmes
-> codes pour des écrans différents**. Dans celle-ci, `S3-C` est la
-> boîte à questions et `S3-D1` le vote du jeudi ; dans l'autre, `S3-C`
-> est le vote du jeudi et `S3-E` la boîte à questions — les lettres
-> sont décalées d'un cran, parce que la seconde n'a ni écran Halloween
-> ni `S3-E2`.
->
-> **Le moteur et le calendrier suivent la lettre de celle-ci**, pas de
-> l'autre : `visuels.py` produit bien `S3-C` en boîte à questions, et
-> `calendrier.md` la programme au mercredi 11 novembre, 18 h 30. Or la
-> seconde checklist écrit, à cette date : « Aucune story — Armistice,
-> choix assumé ». Les deux ne peuvent pas être vraies.
->
-> **Les dates de cette checklist-ci sont périmées** : elles datent
-> d'avant la permutation « pour rester de saison ». Dix-neuf écrans
-> sont concernés, et le calendrier a raison partout où j'ai pu
-> vérifier — sa règle est constante, la story tombe quinze minutes
+> **Les dates et les heures sont relues sur `calendrier.md`**, qui fait
+> foi et dont la règle est constante : la story tombe quinze minutes
 > après la publication du jour. C'est ce qui explique les trois
-> horaires qui semblaient aberrants : `S1-A` à 18 h 45 derrière un
+> horaires qui paraissaient aberrants — `S1-A` à 18 h 45 derrière un
 > post de 18 h 30, `S1-E` à 10 h 45 derrière le reel de 10 h 30,
-> `S2-E` à 18 h 15 derrière celui de 18 h 00.
+> `S2-E` à 18 h 15 derrière celui de 18 h 00. Sept en-têtes de section
+> ont été recalés au passage.
 >
-> Je peux réaligner les deux tables sur le calendrier d'un coup, et
-> poser le contrôle qui empêchera la dérive de revenir — comme pour la
-> fiche Google. Mais il faut d'abord dire **quelle lettre fait foi**,
-> et **si le 11 novembre porte une story ou non**. Ces deux réponses
-> ne se déduisent d'aucun fichier.
+> **Le 11 novembre ne porte aucune story** — Armistice, décision de
+> Laurent. Le calendrier s'y contredisait : il programmait `S3-C` à
+> 18 h 30 **et** marquait « rien, volontairement ». La ligne `S3-C`
+> est retirée, et l'écran reprend le créneau du **samedi 14 à 11 h 00**,
+> celui des boîtes à questions (`S2-F` le 31/10, `S5-E` le 28/11) —
+> c'est aussi là que l'autre checklist le plaçait. À dire si vous
+> préférez le laisser tomber pour cette semaine-là.
+>
+> `reseaux/audit.py` relit ce tableau à chaque passage : un écran du
+> moteur sans ligne, une ligne sans écran, une date ou une heure qui
+> s'écarte du calendrier, et le contrôle tombe.
 
 | ✔ | Écran | Jour | Date | Heure | Contenu | Validé par |
 |---|---|---|---|---|---|---|
-| ☐ | S3-A | Lundi | 26/10 | 12 h 45 | Teasing carrousel + sondage A/B | |
-| ☐ | S3-B1 | Mardi | 27/10 | 8 h 15 | Quiz enseigne, 2 choix | |
-| ☐ | S3-B2 | Mardi | 27/10 | 10 h 15 | Réponse du quiz | |
-| ☐ | S3-C | Mercredi | 28/10 | 18 h 30 | Boîte à questions | |
-| ☐ | S3-D1 | Jeudi | 29/10 | 12 h 30 | Le vote du jeudi, sondage A/B | |
-| ☐ | S3-D2 | Jeudi | 29/10 | 14 h 30 | Réponse + curseur emoji | |
-| ☐ | S3-E1 | Vendredi | 30/10 | 18 h 15 | Relais du blog, sticker Lien | |
-| ☐ | S3-E2 | Vendredi | 30/10 | 18 h 20 | Teasing du reel vitrine | |
-| ☐ | S3-F | Samedi | 31/10 | 11 h 00 | Halloween, curseur emoji | |
-| ☐ | S4-A | Lundi | 02/11 | 12 h 45 | Teasing carrousel + curseur emoji | |
-| ☐ | S4-B1 | Mardi | 03/11 | 8 h 15 | Quiz langue, 2 choix | |
-| ☐ | S4-B2 | Mardi | 03/11 | 10 h 15 | Réponse du quiz | |
-| ☐ | S4-C | Mercredi | 04/11 | 18 h 30 | Coulisses, sans sticker | |
-| ☐ | S4-D1 | Jeudi | 05/11 | 19 h 00 | Quiz 4 choix, devinez le support | |
-| ☐ | S4-D2 | Jeudi | 05/11 | 21 h 00 | Les quatre réponses | |
-| ☐ | S4-E | Vendredi | 06/11 | 18 h 15 | Relais du blog, sticker Lien | |
-| ☐ | S4-F | Samedi | 07/11 | 10 h 45 | Teasing reel + compte à rebours | |
+| ☐ | S1-A   | Lundi     | 26/10 | 18 h 45  | Nouveau post · Votre couleur parle avant vous. | |
+| ☐ | S1-B1  | Mardi     | 27/10 | 8 h 15   | Réglementation · Enseigne : déclaration ou autorisation ? | |
+| ☐ | S1-B2  | Mardi     | 27/10 | 10 h 15  | La réponse · Autorisation. Cerfa 16308*01, en mairie, en trois… | |
+| ☐ | S1-C   | Mercredi  | 28/10 | 18 h 30  | Boîte à questions · Une question sur votre identité visuelle ? | |
+| ☐ | S1-D1  | Jeudi     | 29/10 | 12 h 30  | Le vote du jeudi · Laquelle se lit à vingt mètres ? | |
+| ☐ | S1-D2  | Jeudi     | 29/10 | 14 h 30  | La réponse · Réponse : B. À vingt mètres, une typo devient une… | |
+| ☐ | S1-E   | Vendredi  | 30/10 | 10 h 45  | Nouvel article · L'autorisation d'enseigne, étape par étape. | |
+| ☐ | S2-F   | Samedi    | 31/10 | 11 h 00  | Halloween · Décorer sa vitrine ne coûte rien, et se remarque. | |
+| ☐ | S2-A   | Lundi     | 02/11 | 12 h 45  | Nouveau post · Cette police est magnifique. Et pourtant… | |
+| ☐ | S2-B   | Mardi     | 03/11 | 8 h 15   | Droits & propriété · Avez-vous un contrat de cession pour votre logo ? | |
+| ☐ | S2-C   | Mercredi  | 04/11 | 18 h 30  | Coulisses · Trois pistes pour un même logo. Deux finiront à la… | |
+| ☐ | S2-D1  | Jeudi     | 05/11 | 19 h 00  | Le quiz du jeudi · 4 idées reçues. Testez-vous. | |
+| ☐ | S2-D2  | Jeudi     | 05/11 | 21 h 00  | La réponse · Un logo doit tenir en noir et blanc. | |
+| ☐ | S2-E   | Vendredi  | 06/11 | 18 h 15  | Nouvel article · Choisir le bon support d'impression. | |
+| ☐ | S4-F   | Lundi     | 09/11 | 12 h 45  | Le reel du jour · Pour Noël, vous êtes déjà en retard. | |
+| ☐ | S3-B1  | Mardi     | 10/11 | 8 h 15   | Quiz enseigne · Vous éclairez votre enseigne existante. Faut-il… | |
+| 🕯️ | —      | Mercredi  | 11/11 | —        | **Aucune story** — Armistice, choix assumé | |
+| ☐ | S3-B2  | Mardi     | 10/11 | 10 h 15  | La réponse · Oui, probablement. | |
+| ☐ | S3-D1  | Jeudi     | 12/11 | 12 h 30  | Le vote du jeudi · Même carte, mêmes prix. Laquelle fait commander le… | |
+| ☐ | S3-D2  | Jeudi     | 12/11 | 14 h 30  | La réponse · A. | |
+| ☐ | S3-E1  | Vendredi  | 13/11 | 18 h 15  | Nouvel article · Habiller sa vitrine : dépoli, microperforé, lettres… | |
+| ☐ | S3-E2  | Vendredi  | 13/11 | 18 h 20  | Le reel est en ligne · Votre vitrine fait 6 m². | |
+| ☐ | S3-A   | Samedi    | 14/11 | 10 h 45  | Nouveau post · Votre logo tient-il sur un stylo ? | |
+| ☐ | S3-C   | Samedi    | 14/11 | 11 h 00  | Boîte à questions · Une question sur votre enseigne, vos imprimés, votre… | |
+| ☐ | S4-A   | Lundi     | 16/11 | 12 h 45  | Nouveau post · Je présente toujours trois pistes. Deux sont faites… | |
+| ☐ | S4-B1  | Mardi     | 17/11 | 8 h 15   | Quiz langue · « Sunset Coffee », et sur le store « Best coffee in… | |
+| ☐ | S4-B2  | Mardi     | 17/11 | 10 h 15  | La réponse · Le slogan. | |
+| ☐ | S4-C   | Mardi     | 17/11 | 18 h 30  | Coulisses · 14 h 40. Une piste de logo qui ne sortira jamais. | |
+| ☐ | S4-D1  | Jeudi     | 19/11 | 19 h 00  | Le quiz du jeudi · Quatre matières en gros plan. Celle-ci, c'est quoi ? | |
+| ☐ | S4-D2  | Jeudi     | 19/11 | 21 h 00  | Les quatre réponses · Chaque matière a son emploi. | |
+| ☐ | S4-E   | Vendredi  | 20/11 | 18 h 15  | Nouvel article · Pour Noël, c'est trop tard. Et c'est une bonne nouvelle. | |
+| ☐ | S5-A   | Lundi     | 23/11 | 12 h 45  | Nouveau post · Pour Noël, c'est passé. Pour janvier, c'est maintenant. | |
+| 🛑 | ~~S5-B1~~ | ~~Mardi~~ | ~~24/11~~ | — | Réglementation · Votre emballage de fête a une mention à porter. — **suspendu avec la n° 18** | |
+| 🛑 | ~~S5-B2~~ | ~~Mardi~~ | ~~24/11~~ | — | La réponse · Avant de dessiner. — **suspendu avec la n° 18** | |
+| ☐ | S5-C1  | Jeudi     | 26/11 | 19 h 00  | Le vote du jeudi · Deux cartes de vœux. Même papier, même logo. | |
+| ☐ | S5-C2  | Jeudi     | 26/11 | 21 h 00  | La réponse · La B. | |
+| ☐ | S5-D   | Vendredi  | 27/11 | 18 h 15  | Nouvel article · Votre vitrine de fin d'année, vue du trottoir. | |
+| ☐ | S5-E   | Samedi    | 28/11 | 11 h 00  | Boîte à questions · Vous préparez quelque chose pour les fêtes ? | |
+| ☐ | S6-A   | Lundi     | 30/11 | 18 h 45  | Nouveau post · Votre vitrine de Noël est faite pour celui qui passe. | |
+| ☐ | S6-B1  | Mardi     | 01/12 | 8 h 15   | Quiz réglementation · Un sticker « -30 % » sur votre vitrine : on le déclare… | |
+| ☐ | S6-B2  | Mardi     | 01/12 | 10 h 15  | La réponse · Une autorisation. | |
+| ☐ | S6-C1  | Jeudi     | 03/12 | 19 h 00  | Le quiz du jeudi · Le doré d'une dorure à chaud, c'est quoi ? | |
+| ☐ | S6-C2  | Jeudi     | 03/12 | 21 h 00  | La réponse · Une feuille métallisée, pressée à chaud. | |
+| ☐ | S6-D   | Vendredi  | 04/12 | 18 h 15  | Nouvel article · Faut-il refaire son logo pour la nouvelle année ? | |
+| ☐ | S6-E   | Samedi    | 05/12 | 10 h 45  | Coulisses · Deux pages de calendrier, décembre et janvier. | |
 
-**17 écrans à valider.** Chaque écran se valide séparément, y compris les
-écrans de réponse : ce sont ceux qu'on oublie de faire relire.
+**42 écrans à publier**, plus deux suspendus avec la n° 18 et
+une ligne de non-publication. Le 11 novembre est une ligne, pas
+un trou : l'absence est un choix validé.
 
-# 🎬 SEMAINE 3 — du lundi 2 au dimanche 15 novembre
-
-## S3-A — Lundi 9 novembre, 12 h 45 · teasing du carrousel
+## S3-A — Samedi 14 novembre, 10 h 45 · teasing du carrousel
 
 | Élément | Contenu |
 |---|---|
@@ -203,7 +224,7 @@ pensent aux couleurs.
 > conditionnel « serait » est volontaire et ne doit pas être retiré à la
 > relecture. S'il est confirmé entre-temps, il peut passer à l'affirmatif.
 
-## S3-C — Mercredi 11 novembre, 18 h 30 · boîte à questions
+## S3-C — Samedi 14 novembre, 11 h 00 · boîte à questions
 
 | Élément | Contenu |
 |---|---|
@@ -340,7 +361,7 @@ l'absence soit un choix validé, pas un trou dans le planning.
 > depuis cinq jours. Le visuel ne change pas — les cartes en éventail
 > conviennent aux vœux de janvier comme à ceux de Noël.
 
-## S4-F — Samedi 21 novembre, 10 h 45 · teasing du reel
+## S4-F — Lundi 9 novembre, 12 h 45 · teasing du reel
 
 | Élément | Contenu |
 |---|---|
@@ -369,25 +390,18 @@ sur le site.
 
 ## Checklist de validation — canal stories
 
-| ✔ | Date | Heure | Écran | Validé par |
-|---|------|-------|-------|------------|
-| ☐ | 09/11 | 12 h 45 | S3-A — teasing du carrousel + sondage A/B | |
-| ☐ | 10/11 | 8 h 15 | S3-B écran 1 — quiz 2 choix emballage | |
-| ☐ | 10/11 | 10 h 15 | S3-B écran 2 — la réponse | |
-| ☐ | 11/11 | — | **Aucune story** — Armistice, choix assumé | |
-| ☐ | 12/11 | 19 h 00 | S3-C écran 1 — le vote du jeudi | |
-| ☐ | 12/11 | 21 h 00 | S3-C écran 2 — la réponse + curseur emoji | |
-| ☐ | 13/11 | 18 h 15 | S3-D — relais du blog (sticker Lien) ⭐ | |
-| ☐ | 14/11 | 11 h 00 | S3-E — boîte à questions | |
-| ☐ | 16/11 | 18 h 45 | S4-A — teasing vitrine + curseur emoji | |
-| ☐ | 17/11 | 8 h 15 | S4-B écran 1 — quiz 2 choix enseigne/publicité | |
-| ☐ | 17/11 | 10 h 15 | S4-B écran 2 — la réponse + Cerfa ⭐ | |
-| ☐ | 19/11 | 19 h 00 | S4-C écran 1 — le quiz du jeudi, 4 choix | |
-| ☐ | 19/11 | 21 h 00 | S4-C écran 2 — la réponse | |
-| ☐ | 20/11 | 18 h 15 | S4-D — relais du blog « refaire son logo » (sticker Lien) ⭐ | |
-| ☐ | 21/11 | 10 h 45 | S4-E — coulisses du reel + mention du post | |
+> 🛑 **Cette seconde table a été supprimée le 23 octobre.** Elle
+> employait les mêmes codes que la checklist unique en tête de
+> document pour des écrans différents — ses lettres étaient décalées
+> d'un cran, faute d'écran Halloween et de `S3-E2`. Laurent a tranché
+> en faveur de la première, qui est aussi la lettre que suivent
+> `visuels.py` et `calendrier.md`.
+>
+> **Tout est dans la table en tête de document**, les quarante-deux
+> écrans programmés et les deux suspendus, relus sur le calendrier.
+> Son 11 novembre — « aucune story, Armistice » — a été retenu et
+> porté au calendrier, qui se contredisait sur ce jour-là.
 
-**15 lignes, dont une ligne de non-publication.** 14 écrans à produire.
 
 # 🎬 SEMAINE 5 — du lundi 16 au dimanche 29 novembre
 
@@ -512,7 +526,7 @@ sur le site.
 
 ---
 
-## S6-B — Mardi 24 novembre · quiz réglementation, 2 écrans
+## S6-B — Mardi 1er décembre · quiz réglementation, 2 écrans
 
 ### Écran 1 — 8 h 15
 

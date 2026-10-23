@@ -73,7 +73,6 @@ automatique du matin.
 | mardi 10 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 2 — 🔀 **permutée, pour rester de saison** |
 | mardi 10 novembre | 8 h 00 | Fiche Google | post | texte n° 2 |
 | mardi 10 novembre | 8 h 15 | Story | story | S3-B1 · quiz enseigne |
-| mercredi 11 novembre | 18 h 30 | Story | story | S3-C · boîte à questions |
 | jeudi 12 novembre | 08 h 00 | Blog | article | Habiller sa vitrine : dépoli, microperforé ou lettres déco ⚠️ |
 | jeudi 12 novembre | 12 h 30 | Instagram + Facebook | Dilemme A/B | n° 11 |
 | jeudi 12 novembre | 12 h 30 | Fiche Google | post | texte n° 11 |
@@ -87,6 +86,7 @@ automatique du matin.
 | samedi 14 novembre | 10 h 30 | Instagram + Facebook | Carrousel | n° 9 — 🔀 **décalée du 9, pour libérer le créneau du reel** |
 | samedi 14 novembre | 10 h 30 | Fiche Google | post | texte n° 9 |
 | samedi 14 novembre | 10 h 45 | Story | story | S3-A · teasing du carrousel |
+| samedi 14 novembre | 11 h 00 | Story | story | S3-C · boîte à questions — 🔀 **déplacée du 11, Armistice** |
 
 | samedi 31 octobre | 11 h 00 | Story | story | S2-F · Halloween — 📌 **date fixe** |
 | | | | | |

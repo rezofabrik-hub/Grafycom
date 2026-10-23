@@ -321,6 +321,61 @@ def photos_a_prendre(pubs):
         juste("photos-a-prendre : les dates du tableau suivent le calendrier")
 
 
+def stories_dates():
+    """La checklist des stories suit-elle le moteur et le calendrier ?
+
+    Troisieme table de dates tenue a la main, troisieme derive — et la
+    pire des trois. stories.md portait DEUX checklists qui employaient
+    les memes codes pour des ecrans differents : S3-C etait la boite a
+    questions dans l'une, le vote du jeudi dans l'autre, les lettres
+    decalees d'un cran faute d'ecran Halloween. Dix-neuf ecrans
+    divergeaient du calendrier, et sept en-tetes de section avec eux.
+
+    Laurent a tranche le 23 octobre : la premiere lettre fait foi,
+    celle que suivent deja visuels.py et le calendrier. Reste a ce que
+    ca le reste. Le controle croise les trois sources — la liste du
+    moteur, les lignes du calendrier, la table du document — et ne
+    laisse passer que leur accord complet.
+    """
+    MOIS_N = {v: k for k, v in MOIS.items()}
+    cal = {}
+    for ligne in lire("reseaux/propositions/a-valider/calendrier.md").split("\n"):
+        m = re.match(r"\| (?:~~)?(\w+) (\d{1,2})(?:er)? (\w+)(?:~~)? \| "
+                     r"\*{0,2}([\dh\s]+?)\*{0,2} \| Story \| story \| "
+                     r"(S\d-[A-Z])\s*(?:·|écran )?\s*(\d)?", ligne)
+        if m:
+            cal[m.group(5) + (m.group(6) or "")] = (
+                datetime.date(2026, MOIS[m.group(3)], int(m.group(2))),
+                re.sub(r"\s+", " ", m.group(4)).strip())
+
+    doc = {}
+    for m in re.finditer(r"^\| ☐ \| (S\d-[A-Z]\d?)\s*\| \w+\s*\| "
+                         r"(\d{2})/(\d{2}) \| ([\dh\s]+?)\s*\|",
+                         lire("reseaux/propositions/a-valider/stories.md"), re.M):
+        doc[m.group(1)] = (datetime.date(2026, int(m.group(3)), int(m.group(2))),
+                           re.sub(r"\s+", " ", m.group(4)).strip())
+
+    moteur = set(re.findall(r'^     \("(S\d-[A-Z]\d?)"',
+                            lire("reseaux/visuels.py"), re.M))
+
+    sans_ligne = sorted((moteur & set(cal)) - set(doc))
+    if sans_ligne:
+        faux("stories : programmées au calendrier mais absentes de la "
+             "checklist : %s" % ", ".join(sans_ligne))
+    fantomes = sorted(set(doc) - moteur)
+    if fantomes:
+        faux("stories : en checklist mais pas dans le moteur : %s"
+             % ", ".join(fantomes))
+    divergent = ["%s : checklist %s %s ≠ calendrier %s %s"
+                 % (c, doc[c][0], doc[c][1], cal[c][0], cal[c][1])
+                 for c in sorted(set(doc) & set(cal)) if doc[c] != cal[c]]
+    for d in divergent:
+        faux("stories — " + d)
+    if not sans_ligne and not fantomes and not divergent:
+        juste("stories : checklist, moteur et calendrier concordent (%d)"
+              % len(doc))
+
+
 def prudence():
     """Les règles qu'on ne discute pas."""
     # Le pseudo. Une citation du défaut n'est pas le défaut.
@@ -458,6 +513,7 @@ def main():
     comptes(pubs)
     fiche_google()
     photos_a_prendre(pubs)
+    stories_dates()
     prudence()
     references()
     reglementation()
