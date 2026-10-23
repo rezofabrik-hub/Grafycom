@@ -86,7 +86,16 @@ Dream, Krusty, Big Food** et, depuis le 23 octobre, **Social Miroir**.
 
 **A — le nuancier en éventail** est intégré : il ouvre la n° 1, et la
 planche bascule sur le repli typographique si le fichier disparaît.
-**B — les papiers sur la tranche** est reçu le 23 octobre.
+**B — les papiers sur la tranche** est reçue le 23 octobre et ouvre la
+**n° 20**, pas la n° 4 comme l'annonçait le brief : les deux écrans
+« matière » de la n° 4 portent des démonstrations calculées, et on ne
+remplace pas une preuve par un décor.
+
+Elle sort du moteur en **940 × 1672** — sa taille native, pas une copie
+réduite. L'écran du reel en fait 1080. L'agrandissement de 1,15 a été
+mesuré plutôt que redouté : il coûte 15 % d'énergie de contours et ne se
+voit pas à 100 % sur la planche. Une photographie absorbe une
+interpolation qu'un logo révèle. **Rien à redemander.**
 
 Restent à commander, dans cet ordre : **C** les caractères en plomb
 (n° 5), **D** le stylo et le tampon (n° 9), **E** les quatre échantillons

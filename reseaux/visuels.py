@@ -89,7 +89,7 @@ PHOTOS = {
     # demontre rien — il affirme qu'on touche une carte avant de la
     # lire. L'ecran 2, qui demontre vraiment (120 g contre 350 g),
     # reste dessine et calcule.
-    "papiers-tranche":   SOURCES / "ambiances" / "B-papiers-tranche.webp",
+    "papiers-tranche":   SOURCES / "ambiances" / "B-papiers-tranche.png",
     # n° 13, clôture — l'écran porte le VRAI logo Solaire 66, incrusté
     # en perspective depuis sources/solaire-66-logo.png : celui que la
     # photo affichait était une approximation, et la publication est

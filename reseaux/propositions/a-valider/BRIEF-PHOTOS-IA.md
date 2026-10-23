@@ -125,6 +125,21 @@ at the bottom for text overlay`.
 | Carrousel | 4:5 — 1080 × 1350 | **2160 × 2700** |
 | Reel, story | 9:16 — 1080 × 1920 | **2160 × 3840** |
 
+> **Ce minimum est un confort, pas une barrière** — vérifié le 23
+> octobre sur l'image B, que le moteur a rendue en **940 × 1672**, soit
+> sa taille native et non une copie réduite. Il manquait 15 %.
+>
+> Mesuré plutôt que redouté : agrandie en Lanczos à 1080, la zone de
+> fibre garde **85 %** de son énergie de contours, et à 100 % sur la
+> planche la tranche et la fibre se lisent toujours. Un agrandissement
+> de 1,15 sur une **photographie** n'est pas celui de 1,18 sur un
+> **logo** — un trait net révèle l'interpolation, une matière
+> l'absorbe. Le plafond de 356 px de la deux lignes de BIG FOOD était
+> un vrai plafond ; 940 px sur une photo n'en est pas un.
+>
+> Le minimum reste demandé : il laisse de la marge au recadrage. Mais
+> une image en dessous se juge sur la planche, pas sur le principe.
+
 Générer **exactement au bon rapport**. Le moteur recadre en
 « couvrir », centré horizontalement : une image 16:9 perdra ses deux
 bords, et c'est souvent là qu'est le sujet.
@@ -254,7 +269,7 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 | # | Publication | L'image à générer |
 |---|---|---|
 | ~~**A**~~ | n° 1 · Pédagogie couleur | ✅ **intégrée le 23 octobre.** Nuancier Pantone en éventail, main qui écarte deux teintes, accent **corail**. Ouvre le cycle. |
-| ~~**B**~~ | **n° 20** · Ce qu'on sent avant de lire | ✅ **reçue le 23 octobre.** Macro d'une pile de papiers vus **sur la tranche**, lumière rasante qui révèle l'épaisseur et la fibre. Accent **orange** sur un seul, 9:16 exact, zone de texte calme. Déposée en `B-papiers-tranche.webp`. |
+| ~~**B**~~ | **n° 20** · Ce qu'on sent avant de lire | ✅ **reçue le 23 octobre.** Macro d'une pile de papiers vus **sur la tranche**, lumière rasante qui révèle l'épaisseur et la fibre. Accent **orange** sur un seul, 9:16 exact, zone de texte calme. Déposée en `B-papiers-tranche.png`. |
 | **C** | n° 5 · Typographie | Des caractères en plomb d'imprimerie, serrés dans un composteur, poussière et reflets d'huile. Accent **bleu** froid dans le métal. |
 | **D** | n° 9 · Un logo tient-il en petit | Un stylo-bille posé en biais sur du papier blanc, et un tampon encreur à côté — l'échelle se lit toute seule. Accent **turquoise** sur le capuchon. |
 | **E** | n° 15 · Quatre supports en coupe | Quatre échantillons de matière — alu, PVC, dibond, plexi — alignés debout sur un établi, vus de trois quarts. Lumière rasante, bords nets. |
