@@ -3123,17 +3123,13 @@ résume la méthode qui en découle.
 
 ### À fournir par Sandra
 - **Rien à dessiner** : les six planches existent.
-- ⚠️ **Un accord à confirmer, et il n'est pas acquis.** Les trois avis
-  de la structure précédente sont repris sur le site **avec l'accord
-  de leurs autrices** — cet accord portait sur le site. Le reprendre
-  sur Instagram et Facebook est un autre usage. Un message à Sarah
-  Otman, Ludivine Le Blay et Jade Lopez avant publication, et la
-  planche 04 part ou ne part pas selon leurs réponses. Le carrousel
-  tient à cinq planches sans elle.
-- **Social Miroir : à confirmer aussi.** L'avis est public sur Google
-  et déjà sur le site, ce qui n'est pas la même chose que d'en faire
-  une planche de carrousel. Un mot suffit.
-- **Solaire 66 : acquis.** C'est Laurent, et il commande ces
-  publications.
+- ✅ **Les accords sont acquis**, validés par Laurent le 24 octobre.
+  Les cinq avis peuvent partir sur Instagram et Facebook, et la
+  planche 04 avec eux. La question se posait parce que l'accord des
+  trois autrices de la structure précédente portait sur le site, et
+  qu'une planche de carrousel est un autre usage — elle est tranchée.
+- **Rien n'est reformulé pour autant.** Les cinq textes restent
+  recopiés mot pour mot. Un accord porte sur ce qu'on a écrit, pas sur
+  une version arrangée.
 
 ---

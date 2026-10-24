@@ -141,9 +141,10 @@ fait renaître les deux obligations pour ce contrat. Si Grafycom décide un jour
 d'ouvrir aux particuliers, il faudra adhérer à un médiateur et rétablir les
 sections retirées — l'historique git les conserve.
 
-**L'adresse du siège n'est pas publiée**, à la demande de l'éditrice. Elle est
-pourtant publique au registre national des entreprises, et
-l'article 6-III de la LCEN l'exige. Voir «&nbsp;Ce qui reste à trancher&nbsp;».
+**L'adresse du siège est publiée depuis le 24 octobre 2026**, alignée sur les
+conditions générales de vente qui la portaient déjà. L'article 6-III de la
+LCEN l'exige, et elle est de toute façon publique au registre national des
+entreprises.
 
 ### 3. Coordonnées — fait
 
@@ -304,25 +305,17 @@ EOF
 
 ## Ce qui reste à trancher
 
-### L'adresse du siège
+### ~~L'adresse du siège~~ — tranché le 24 octobre 2026
 
-Le nom complet de l'éditrice est désormais publié, comme la loi l'exige.
-L'adresse du siège, elle, ne l'est pas&nbsp;: la page indique «&nbsp;Perpignan
-(66000) — adresse postale communiquée sur demande&nbsp;».
+Elle est publiée, sur les mentions légales comme sur les CGV. La première
+des trois options proposées ici, et la plus simple&nbsp;: l'adresse était
+déjà publique au registre national des entreprises, la taire sur le site ne
+protégeait rien.
 
-L'article 6-III de la LCEN impose l'adresse de l'établissement. La page n'y
-répond donc pas entièrement. À noter&nbsp;: cette adresse est **déjà publique**
-au registre national des entreprises, consultable par quiconque tape
-«&nbsp;Grafycom&nbsp;» sur `annuaire-entreprises.data.gouv.fr`. La taire sur le
-site ne protège donc rien&nbsp;; c'est un choix d'affichage, pas de
-confidentialité.
-
-Trois façons de régler ça&nbsp;:
-
-1. **Publier l'adresse du siège**, puisqu'elle est déjà accessible.
-2. **Une société de domiciliation** — une adresse commerciale à Perpignan pour
-   quelques dizaines d'euros par mois, à déclarer au registre comme sur le site.
-3. **Un espace de coworking** proposant la domiciliation.
+Ce qui a emporté la décision n'est pas la LCEN mais la cohérence&nbsp;: les
+conditions générales de vente portent l'adresse — un document contractuel
+doit identifier celui qui s'engage — et deux pages du même site ne peuvent
+pas dire deux choses de l'identité de l'éditrice.
 
 ## Direction artistique
 

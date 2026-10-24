@@ -119,13 +119,11 @@ commencent par l'écoute, aucun par le dessin.** C'est le genre de
 chose qu'on ne peut pas écrire soi-même — et c'est précisément pour
 ça que ça vaut comme preuve.
 
-> ⚠️ **Un accord à confirmer avant publication.** Les trois avis de la
-> structure précédente sont sur le site avec l'accord de leurs
-> autrices — cet accord portait sur le site. En faire une planche de
-> carrousel est un autre usage. Un message à Sarah Otman, Ludivine Le
-> Blay et Jade Lopez, et la planche 04 part ou ne part pas selon
-> leurs réponses ; le carrousel tient à cinq planches sans elle. Même
-> mot à envoyer à Social Miroir. Solaire 66 est acquis.
+> ✅ **Les accords sont acquis**, validés le 24 octobre. Les cinq avis
+> partent, la planche 04 comprise. La réserve portait sur un point
+> précis et il est levé : l'accord des trois autrices de la structure
+> précédente valait pour le site, une planche de carrousel est un
+> autre usage, et il fallait le demander plutôt que le supposer.
 
 ---
 
