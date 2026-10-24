@@ -7123,91 +7123,95 @@ GABARITS["sweet-dream"] = pub27_sweet_dream
 # ---------------------------------------------------------------------
 # n° 29, mardi 1er décembre — les cinq avis. Pilier « preuve ».
 #
-# Premiere version : un mode d'emploi general sur les avis clients.
-# Laurent l'a corrigee le 24 octobre — ce qu'il voulait, ce sont LES
-# AVIS DE SANDRA, et la satisfaction comme pilier de Grafycom. La
-# difference n'est pas de ton, elle est de nature : l'une expliquait
-# un mecanisme, l'autre montre une preuve.
+# Troisieme version. La premiere expliquait COMMENT obtenir des avis :
+# Laurent l'a corrigee, ce qu'il faut montrer ce sont ceux de Sandra.
+# La deuxieme les montrait, et elle etait froide — a juste titre. Elle
+# posait le fait comme une enigme (« un mot qui revient dans quatre »),
+# alignait les citations comme des donnees, et se fermait sur « une
+# methode, PAS un trait de caractere ». C'est l'inverse exact de ce que
+# Sandra dit d'elle-meme : ses clients viennent pour son ecoute, et
+# l'ecoute n'est pas un procede.
 #
-# Les cinq textes sont RECOPIES, jamais resumes ni retouches. Ils
-# viennent de generateurs/p_realisations.py, qui les porte deja sur la
-# page realisations, et les deux premiers de la fiche Google. Les
-# attributions suivent la page : prenom + maison, sauf Social Miroir
-# qui signe du nom de l'entreprise — inventer un prenom serait pire
-# que l'asymetrie.
+# Ce qui change :
+#   - plus aucun fond encre. Degrade chaud et creme partout ;
+#   - la premiere personne. Sandra parle, elle ne commente pas ;
+#   - un mot manuscrit sous chaque avis, en Caveat, comme une reponse
+#     ecrite a la main sous une carte ;
+#   - les citations en Playfair et non en Inter : une serif se lit
+#     comme une voix, une sans-serif comme un releve ;
+#   - la cloture dit « a deux » au lieu de « methode ».
 #
-# Les deux groupes sont gardes. Melanger les cinq ferait croire que
-# les cinq viennent de Grafycom ; trois viennent de la structure
-# precedente, et la page le dit depuis le 23 octobre.
-#
-# Pas d'appel au commentaire : on ne demande pas un avis a des gens
-# qui n'ont rien achete.
+# Ce qui ne change pas : les cinq textes, mot pour mot, et les deux
+# groupes de la page realisations.
 # ---------------------------------------------------------------------
 def pub29_avis_clients(dossier=None):
-    """n° 29 — cinq avis signés, et le mot qui revient dans quatre."""
+    """n° 29 — ils parlent d'écoute avant de parler du dessin."""
     d = pathlib.Path(dossier or (SORTIE / "2026-12-01-avis-clients"))
-    accent("jaune")
+    accent("corail")
     f = []
 
-    # 01 — l'annonce
-    p = Planche("encre")
-    p.surtitre("Ce que disent mes clients", "jaune", y=250)
+    def merci(p, mot, y):
+        """Un mot de Sandra sous l'avis, écrit à la main."""
+        p.d.text((MARGE, y), mot, font=manuscrite(56),
+                 fill=teinte("corail"))
+
+    # 01 — l'ouverture, a la premiere personne
+    p = Planche("sable_chaud")
+    p.surtitre("Ce que disent mes clients", "corail", y=240)
     p.filet()
-    p.titre("Cinq avis.\nEt un mot qui revient\ndans quatre.", 70, "blanc")
-    p.texte("Ce n'est pas celui que j'attendais.", 42, "sable", 400,
-            avant=50)
-    p.fleche("jaune", y=1120)
-    p.signature("sable")
+    p.titre("Ils parlent d'écoute\navant de parler\ndu dessin.", 64,
+            "encre")
+    p.texte("Et ça m'a touchée plus que je ne l'aurais cru.", 42, "brun",
+            400, avant=56)
+    p.fleche("corail", y=1130)
+    p.signature("brun")
     p.numero(1, 6, "taupe")
     f.append(p.ecrire(d / "01.png"))
 
-    # 02 — Solaire 66, mot pour mot
-    p = Planche("blanc")
-    p.surtitre("Projet mené par Grafycom", "jaune", y=170)
-    p.y = 280
-    p.texte("« J'avais beaucoup d'idées en tête, mais je ne savais pas "
-            "comment les concrétiser. Un immense merci à Sandra qui a su "
-            "m'écouter et donner vie à mon projet. »", 46, "encre", 400,
-            avant=0)
-    p.y = 740
-    p.texte("« Mon nouveau logo et ma charte graphique sont magnifiques "
-            "et me correspondent totalement. Son professionnalisme et sa "
-            "patience font toute la différence ! »", 40, "taupe", 400,
-            avant=0)
-    p.y = 1080
+    # 02 — Laurent, Solaire 66, mot pour mot
+    p = Planche("creme")
+    p.surtitre("Projet mené par Grafycom", "corail", y=160)
+    p.y = 268
+    p.titre("« J'avais beaucoup d'idées\nen tête, mais je ne savais\npas "
+            "comment les concrétiser. »", 44, "encre", echelle=False)
+    p.y = 540
+    p.texte("« Un immense merci à Sandra qui a su m'écouter et donner vie "
+            "à mon projet. Son professionnalisme et sa patience font "
+            "toute la différence ! »", 40, "brun", 400, avant=0)
+    p.y = 880
     p.texte("Laurent", 40, "encre", 600, avant=0)
     p.texte("Solaire 66", 34, "taupe", 400, avant=4)
+    merci(p, "Merci Laurent.", 1060)
     p.signature("brun")
     p.numero(2, 6, "taupe")
     f.append(p.ecrire(d / "02.png"))
 
     # 03 — Social Miroir, mot pour mot
-    p = Planche("creme")
-    p.surtitre("Projet mené par Grafycom", "jaune", y=170)
-    p.y = 300
-    p.texte("« Merci beaucoup à Sandra pour son écoute, sa créativité et "
-            "son grand professionnalisme. Elle a réalisé mon logo et ma "
-            "charte graphique avec beaucoup de soin. »", 46, "encre", 400,
-            avant=0)
-    p.y = 780
-    p.texte("« Le résultat final est exactement ce que je recherchais. "
-            "Un excellent travail ! »", 40, "taupe", 400, avant=0)
-    p.y = 1080
+    p = Planche("sable_chaud")
+    p.surtitre("Projet mené par Grafycom", "corail", y=160)
+    p.y = 268
+    p.titre("« Merci beaucoup à Sandra\npour son écoute,\nsa créativité. »",
+            46, "encre", echelle=False)
+    p.y = 540
+    p.texte("« Elle a réalisé mon logo et ma charte graphique avec "
+            "beaucoup de soin, et le résultat final est exactement ce que "
+            "je recherchais. »", 40, "brun", 400, avant=0)
+    p.y = 880
     p.texte("Social Miroir", 40, "encre", 600, avant=0)
+    merci(p, "Merci à vous.", 1060)
     p.signature("brun")
     p.numero(3, 6, "taupe")
     f.append(p.ecrire(d / "03.png"))
 
     # 04 — les trois de la structure precedente
-    p = Planche("blanc")
-    p.surtitre("Projets menés au sein de la structure précédente",
-               "taupe", y=170)
-    p.y = 270
+    p = Planche("creme")
+    p.surtitre("Avant Grafycom, et toujours moi", "taupe", y=160)
+    p.y = 248
     for extrait, qui in (
             ("« Sandra comprend tout de suite ce que vous voulez. »",
              "Sarah Otman · Ô Fait Maison"),
-            ("« Le service client au cœur des prestations : des conseils "
-             "avisés, des délais tenus. »",
+            ("« Des conseils avisés, des délais tenus, le service client "
+             "au cœur des prestations. »",
              "Ludivine Le Blay · La Casquette Bleue"),
             ("« Je travaille avec Sandra depuis plus de cinq ans. J'ai "
              "toujours une mission à leur confier. »",
@@ -7215,45 +7219,45 @@ def pub29_avis_clients(dossier=None):
         p.texte(extrait, 38, "encre", 400, avant=0)
         p.texte(qui, 30, "taupe", 600, avant=10)
         p.y += 54
-    p.y = 1130
-    p.texte("Repris avec l'accord de leurs autrices.", 30, "brun", 400,
-            avant=0)
+    merci(p, "Certaines sont là depuis cinq ans.", 1040)
+    p.y = 1170
+    p.texte("Repris avec leur accord.", 28, "brun", 400, avant=0)
     p.signature("brun")
     p.numero(4, 6, "taupe")
     f.append(p.ecrire(d / "04.png"))
 
-    # 05 — le constat
-    p = Planche("creme")
-    # 62 et pas 72 : à 72, « Personne ne commence » ne tient pas dans
-    # la colonne et le titre passe à trois lignes, dont la dernière
-    # se faisait repeindre par le bloc posé à 440.
-    p.titre("Personne ne commence\npar le dessin.", 62, "encre", y=170)
-    p.y = 440
-    p.texte("Regardez par quoi chacun commence.", 40, "taupe", 400,
+    # 05 — leurs mots, en gros
+    p = Planche("sable_chaud")
+    p.surtitre("Leurs mots, pas les miens", "corail", y=180)
+    p.y = 290
+    for mot in ("Écoute.", "Accueil.", "Patience."):
+        p.titre(mot, 70, "encre", echelle=False)
+        p.y += 26
+    p.y = 820
+    p.texte("Je m'attendais à lire « beau logo ». Personne ne commence "
+            "par là.", 42, "encre", 400, avant=0)
+    p.y = 980
+    p.texte("Et au fond c'est logique : quand on me confie son image, on "
+            "sait ce qui gêne, rarement ce qu'on veut.", 36, "brun", 400,
             avant=0)
-    p.puces(["« su m'écouter »", "« son écoute »",
-             "« l'accueil, l'écoute »", "« le service client »"],
-            pastille="jaune", taille=40, y=580)
-    p.y = 920
-    p.texte("Quatre sur cinq ouvrent sur la relation. Les mots "
-            "« magnifiques » et « créativité » sont là, mais ils "
-            "arrivent après.", 36, "encre", 400, avant=0)
     p.signature("brun")
     p.numero(5, 6, "taupe")
     f.append(p.ecrire(d / "05.png"))
 
-    # 06 — ce que ca engage
-    p = Planche("encre")
-    p.surtitre("Ce que ça engage", "jaune", y=230)
+    # 06 — la cloture, a la premiere personne
+    p = Planche("creme")
+    p.surtitre("Comment je travaille", "corail", y=200)
     p.filet()
-    p.titre("Une méthode,\npas un trait\nde caractère.", 70, "blanc")
-    p.texte("Trois pistes présentées, pas une. Un bon à tirer avant toute "
-            "fabrication. Les délais annoncés, et tenus. Les fichiers "
-            "sources livrés, avec l'écrit qui va avec.", 36, "sable", 400,
-            avant=50)
-    p.texte("Les cinq avis : grafycom.fr/realisations", 34, "jaune", 600,
-            avant=36)
-    p.signature("sable")
+    p.titre("Un logo,\nça se dessine\nà deux.", 74, "encre")
+    p.texte("Vous arrivez avec des idées en vrac, et c'est très bien : "
+            "c'est là que mon travail commence. Écouter, trier, poser les "
+            "questions qui manquent. Le dessin vient après, et il vient "
+            "beaucoup plus facilement.", 38, "brun", 400, avant=50)
+    merci(p, "Sandra", 1020)
+    p.y = 1140
+    p.texte("Les cinq avis : grafycom.fr/realisations", 32, "corail", 600,
+            avant=0)
+    p.signature("brun")
     p.numero(6, 6, "taupe")
     f.append(p.ecrire(d / "06.png"))
     return f
