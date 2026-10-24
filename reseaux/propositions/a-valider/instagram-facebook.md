@@ -3009,3 +3009,101 @@ les fonds sombres. Elles sont utilisables telles quelles par le client —
 gravure, broderie, tampon.
 
 ---
+
+## 29 — Mardi 1er décembre, 18 h 30 · Carrousel 6 planches · Pilier « preuve »
+
+> ♻️ **Reprend le créneau laissé libre par la n° 22**, sortie du
+> calendrier le 23 octobre. Le mardi de cette semaine était vide depuis.
+
+> 🎯 **Pourquoi cette publication existe.** `acquisition.md` mesure que
+> le plan est bâti pour l'autorité — on montre qu'on sait — et très peu
+> pour la **preuve**. Or on ne devient pas client parce qu'on a appris
+> quelque chose. Les avis sont la seule preuve qu'un prestataire ne
+> peut pas fabriquer lui-même, et le seul sujet sur lequel Grafycom
+> peut parler sans se vanter : la publication explique au lecteur
+> comment obtenir les siens, pas comment en laisser un.
+
+### Direction visuelle — carrousel 6 planches, 1080 × 1350 px
+
+Gabarit `avis-clients` dans `reseaux/visuels.py`. **Les six planches
+sont dessinées** — `reseaux/visuels/2026-12-01-avis-clients/`.
+
+- **S1.** Fond encre. Surtitre jaune « Visibilité locale », filet
+  dégradé. « Le seul support qu'on ne paie pas. » Sous-titre sable :
+  « Et le seul que vous ne pouvez pas écrire vous-même. » Flèche jaune.
+- **S2.** Fond blanc. « Ce n'est pas le site qui vous y fait entrer. »
+  Trois pastilles jaunes : 11 fiches sur 20 sans site ; de la dernière à
+  la première, 1 avis puis 285 ; la quatrième n'en a aucun et elle est
+  devant.
+- **S3.** Fond crème. « Le seul moment où l'on dit oui. » Le jour de la
+  livraison, et pourquoi trois mois après ne marche pas. Encadré à filet
+  jaune sur le lien de demande d'avis.
+- **S4.** Fond blanc. « Jamais rien en échange. » Encadré corail :
+  un avis de complaisance n'a aucun détail.
+- **S5.** Fond crème. « Répondez. Même aux bons. » Trois pastilles sur
+  la façon de répondre.
+- **S6.** Fond encre. « Si les délais tiennent. Si on vous joint quand
+  ça coince. » Renvoi à l'article du jour, pas d'appel au commentaire.
+
+### Accroche
+**« Le seul support de communication que vous ne payez pas. »**
+
+### Légende
+
+> Vous pouvez refaire votre logo, votre enseigne et votre site. Vous ne
+> pouvez pas écrire à votre place la phrase qui convainc vraiment :
+> « j'ai travaillé avec eux, et voilà ce que ça a donné. »
+>
+> J'ai relevé le bloc de cartes de « graphiste » autour de Perpignan fin
+> octobre, vingt fiches. Deux choses en sortent, et aucune n'est celle
+> qu'on attend.
+>
+> **Onze fiches sur vingt n'ont aucun site.** Pas un site médiocre : pas
+> de site du tout. Elles sont pourtant devant des entreprises qui en ont
+> un. Le site fait gagner le clic une fois qu'on est dans le bloc. Il n'y
+> fait pas entrer.
+>
+> **L'écart se joue sur les avis.** De la dernière fiche à la première,
+> on passe de 1 à près de 300. Et la quatrième n'en a aucun — ce qui dit
+> l'autre moitié : le ticket d'entrée est bas, c'est la montée qui se
+> gagne.
+>
+> Trois choses qui marchent, et une qui ne marche pas.
+>
+> **Demandez le jour de la livraison.** C'est la seule minute de l'année
+> où la personne est franchement contente de vous. Trois mois plus tard,
+> même satisfaite, elle ne répondra pas.
+>
+> **Donnez le lien direct.** Il se récupère dans le profil
+> d'établissement. Sans lui, il faut chercher la fiche, et personne ne
+> cherche.
+>
+> **Répondez, y compris aux bons.** Un avis sans réponse est un client
+> qui a parlé dans le vide. Et celui qui hésite lit la conversation
+> entière.
+>
+> **N'échangez jamais un avis contre quoi que ce soit.** Google
+> l'interdit. Surtout : un avis de complaisance n'a aucun détail, et il
+> se lit comme ce qu'il est.
+>
+> L'article complet est en ligne aujourd'hui sur grafycom.fr/blog.
+
+### Texte alternatif
+Carrousel de six visuels sur les avis clients. Le premier, sur fond
+encre, annonce « le seul support qu'on ne paie pas ». Les suivants
+donnent les chiffres d'un bloc de cartes local, le moment où demander un
+avis, ce qu'il ne faut jamais échanger contre un avis, et comment
+répondre. Le dernier, sur fond encre, renvoie à l'article du jour.
+
+### Hashtags — jeu B + 2 secteur
+`#identitevisuelle #designgraphique #brandingLocal #graphismeFrance #directionArtistique #charteGraphique #avisclients #visibilitelocale #commercantsPerpignan #entreprises66`
+
+### À fournir par Sandra
+- **Rien à dessiner** : les six planches existent.
+- **Une vérification, et elle est de fond.** Cette publication conseille
+  une pratique que Grafycom doit tenir elle-même. Avant de la publier :
+  récupérer le lien de demande d'avis dans la fiche, et répondre aux
+  avis déjà reçus s'ils ne le sont pas. Publier ce conseil avec une
+  fiche qui ne le suit pas se voit en un clic.
+
+---

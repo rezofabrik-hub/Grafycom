@@ -2643,6 +2643,13 @@ def stories(dossier=None):
       "Deux pages de calendrier, décembre et janvier.",
       "", ["Identiques à un mot près.",
            "C'est tout l'argument du reel du jour."]),
+     # S6-F prend le creneau du mardi 1er decembre, vide depuis que la
+     # n° 22 est sortie du calendrier. Le sondage ne demande pas un
+     # commentaire : il demande un chiffre que le lecteur connait, et
+     # qui lui fait regarder sa propre fiche.
+     ("S6-F", "encre", "blanc", "Nouveau post",
+      "Combien d'avis porte votre fiche ?",
+      "Sondage", ["Vous diriez…", "A : moins de dix", "B : plus de dix"]),
     ]
     for code, fond, enc, sur, titre, st, lignes in E:
         p = Planche(fond, LARGE_S, HAUT_S)
@@ -7112,6 +7119,138 @@ GABARITS["reel-halloween"] = pub08_reel_halloween
 GABARITS["big-food"] = pub25_big_food
 GABARITS["krusty"] = pub26_krusty
 GABARITS["sweet-dream"] = pub27_sweet_dream
+# ---------------------------------------------------------------------
+# n° 29, mardi 1er décembre — les avis clients. Pilier « preuve ».
+#
+# Ce carrousel prend le créneau laissé libre par la n° 22, sortie du
+# calendrier le 23 octobre. Il vient de la lecture d'acquisition.md :
+# le plan est bâti pour l'autorité et très peu pour la preuve, or la
+# preuve est la seule chose qu'un prestataire ne peut pas produire
+# lui-même.
+#
+# Les chiffres de la planche 02 sont RELEVÉS, pas estimés : bloc de
+# cartes de « graphiste » autour de Perpignan, vingt fiches, le
+# 24 octobre 2026. Aucun confrère n'est nommé — on montre une forme,
+# pas une entreprise.
+#
+# Pas d'appel au commentaire en clôture. Quatre ont été retirés du
+# cycle, et celui-ci en demanderait un sur un sujet dont la seule
+# action utile se passe ailleurs : dans la fiche du lecteur.
+# ---------------------------------------------------------------------
+def pub29_avis_clients(dossier=None):
+    """n° 29 — le seul support de communication qu'on ne paie pas."""
+    d = pathlib.Path(dossier or (SORTIE / "2026-12-01-avis-clients"))
+    accent("jaune")
+    f = []
+
+    # 01 — l'affirmation
+    p = Planche("encre")
+    p.surtitre("Visibilité locale", "jaune", y=250)
+    p.filet()
+    p.titre("Le seul support\nqu'on ne paie pas.", 76, "blanc")
+    p.texte("Et le seul que vous ne pouvez pas écrire vous-même.", 42,
+            "sable", 400, avant=50)
+    p.fleche("jaune", y=1120)
+    p.signature("sable")
+    p.numero(1, 6, "taupe")
+    f.append(p.ecrire(d / "01.png"))
+
+    # 02 — ce que le bloc de cartes montre vraiment.
+    # Les trois chiffres passent par puces() et non par d.text : un bloc
+    # dessiné à la main n'est pas suivi par la mise en page, et le
+    # premier jet a déclenché CHEVAUCHE pour exactement cette raison.
+    p = Planche("blanc")
+    p.titre("Ce n'est pas le site\nqui vous y fait entrer.", 70, "encre",
+            y=170)
+    p.y = 430
+    p.texte("Sur une recherche locale, ce qui occupe le haut de l'écran "
+            "est le bloc de cartes. J'en ai relevé un de vingt fiches "
+            "fin octobre.", 40, "taupe", 400, avant=0)
+    p.puces(["11 fiches sur 20 n'ont aucun site.",
+             "De la dernière à la première : 1 avis, puis 285.",
+             "La quatrième n'en a aucun, et elle est devant."],
+            pastille="jaune", taille=40, y=700)
+    p.y = 1030
+    p.texte("Le site fait gagner le clic une fois qu'on y est. "
+            "Il n'y fait pas entrer.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    p.numero(2, 6, "taupe")
+    f.append(p.ecrire(d / "02.png"))
+
+    # 03 — le moment
+    p = Planche("creme")
+    p.titre("Le seul moment\noù l'on dit oui.", 76, "encre", y=170)
+    p.y = 470
+    p.texte("Le jour de la livraison. Quand la personne voit son enseigne "
+            "posée, ouvre le carton, reçoit ses fichiers.", 42, "encre",
+            400, avant=0)
+    p.y = 700
+    p.texte("Trois mois plus tard, même contente, elle ne répondra pas : "
+            "elle est passée à autre chose, et le message tombe dans une "
+            "journée chargée.", 38, "taupe", 400, avant=0)
+    p.encadre("Le lien de demande d'avis se récupère dans le profil "
+              "d'établissement. Sans lui, il faut chercher la fiche — "
+              "et personne ne cherche.", 36, y=990, filet="jaune")
+    p.signature("brun")
+    p.numero(3, 6, "taupe")
+    f.append(p.ecrire(d / "03.png"))
+
+    # 04 — ce qu'on ne fait jamais
+    p = Planche("blanc")
+    p.titre("Jamais rien\nen échange.", 80, "encre", y=170)
+    p.y = 460
+    p.texte("Pas de remise, pas de tirage au sort, pas de café offert.",
+            42, "encre", 600, avant=0)
+    p.y = 600
+    p.texte("Google l'interdit, et la fiche qui le fait risque de perdre "
+            "ses avis. Mais il y a plus simple comme raison.", 38, "taupe",
+            400, avant=0)
+    p.encadre("Un avis de complaisance n'a aucun détail. Il dit « très "
+              "bon travail, je recommande », et il se lit comme ce "
+              "qu'il est.", 38, y=840, filet="corail", fond="creme_rose",
+              couleur="encre")
+    p.y = 1090
+    p.texte("Ce qui convainc, c'est le détail que personne n'aurait "
+            "inventé.", 36, "brun", 400, avant=0)
+    p.signature("brun")
+    p.numero(4, 6, "taupe")
+    f.append(p.ecrire(d / "04.png"))
+
+    # 05 — repondre, y compris aux bons
+    p = Planche("creme")
+    p.titre("Répondez.\nMême aux bons.", 80, "encre", y=170)
+    p.y = 460
+    p.texte("Un avis sans réponse est un client qui a parlé dans le vide. "
+            "Avec une réponse, c'est une conversation — et celui qui "
+            "hésite la lit entière.", 40, "encre", 400, avant=0)
+    p.puces(["« Merci pour votre retour » ne dit rien.",
+             "Reprenez le problème que le client décrit.",
+             "Montrez que vous vous souvenez du dossier."],
+            pastille="jaune", taille=38, y=800)
+    p.signature("brun")
+    p.numero(5, 6, "taupe")
+    f.append(p.ecrire(d / "05.png"))
+
+    # 06 — la cloture : ce que l'avis dit a votre place
+    p = Planche("encre")
+    p.surtitre("Ce que vous ne pouvez pas dire", "jaune", y=230)
+    p.filet()
+    p.titre("Si les délais tiennent.\nSi on vous joint\nquand ça coince.",
+            62, "blanc")
+    p.texte("Ce sont les questions de quelqu'un qui hésite à vous confier "
+            "son image. Aucune ne se répond depuis votre propre site.",
+            38, "sable", 400, avant=50)
+    p.texte("L'article est en ligne : grafycom.fr/blog", 36, "jaune", 600,
+            avant=36)
+    p.signature("sable")
+    p.numero(6, 6, "taupe")
+    f.append(p.ecrire(d / "06.png"))
+    return f
+
+
+GABARITS["avis-clients"] = pub29_avis_clients
+
+
 GABARITS["fichier-vectoriel"] = pub13_fichier_vectoriel
 
 

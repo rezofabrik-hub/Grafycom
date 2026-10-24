@@ -258,7 +258,7 @@ Pour que la liste soit honnête dans les deux sens.
 | Le mock-up du dépliant SWEET DREAM | ✅ calculé, planche 7 |
 | Les photos des publications | ✅ plus aucune publication n'attend d'image |
 | Les cartes Solaire 66 | ✅ reçues le 23 octobre, planche 4 complète |
-| Les gabarits de visuels | ✅ 27 publications, 154 planches, 40 stories |
+| Les gabarits de visuels | ✅ 28 publications, 160 planches, 41 stories |
 | Le logo Social Miroir | ✅ reçu le 23 octobre, trois déclinaisons vectorielles |
 | Le premier visuel IA | ✅ A, le nuancier, intégré à la n° 1 |
 | Le deuxième visuel IA | ✅ B, les papiers sur la tranche, reçu le 23 octobre |

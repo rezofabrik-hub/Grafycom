@@ -15,8 +15,8 @@ photo (voir `photos-a-prendre.md`).
 > python3 reseaux/visuels.py --liste    # les gabarits existants
 > ```
 >
-> **À jour au 24 octobre : 27 publications, 154 planches.** Tout le
-> cycle du 26 octobre au 5 décembre est produit, les 40 écrans de
+> **À jour au 24 octobre : 28 publications, 160 planches.** Tout le
+> cycle du 26 octobre au 5 décembre est produit, les 41 écrans de
 > stories compris.
 > Les huit publications qui attendaient une photographie ont été
 > redessinées — voir `photos-a-prendre.md`, section « Les photos
@@ -43,10 +43,10 @@ les fichiers.
 
 | Ce qui est produit | Compte |
 |---|---|
-| Publications, toutes avec leur dossier de planches | **27** |
-| Planches de publication | **154** |
-| Écrans de story | **40** |
-| Illustrations d'articles | **21** — trois par article |
+| Publications, toutes avec leur dossier de planches | **28** |
+| Planches de publication | **160** |
+| Écrans de story | **41** |
+| Illustrations d'articles | **24** — trois par article |
 | Reels montés, chronos et voix off compris | **6** |
 
 **Rien de ce que `visuels.py` sait dessiner n'attend d'être dessiné.**

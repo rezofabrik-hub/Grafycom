@@ -1063,6 +1063,143 @@ def illu_logo_fichiers():
 # n'a qu'une image en tete se lit comme un mur. Celles-ci ne decorent
 # pas — chacune porte un argument que le texte developpe, et aucune ne
 # se contente de redire le titre.
+# ----------------------------------------------------------------- avis
+
+def etoiles(d, x, y, n=5, taille=11, couleur_nom="jaune", ecart=17):
+    """Une rangée d'étoiles, tracées — Inter n'a pas le glyphe.
+
+    Cinq branches, construites au compas : c'est plus court que de
+    chercher une police qui porte « ★ » et qui ait aussi les accents.
+    """
+    import math
+    for k in range(n):
+        cx = x + k * ecart
+        pts = []
+        for i in range(10):
+            r = taille if i % 2 == 0 else taille * 0.42
+            a = -math.pi / 2 + i * math.pi / 5
+            pts.append((cx + r * math.cos(a), y + r * math.sin(a)))
+        d.polygon(pts, fill=rvb(couleur_nom))
+
+
+def illu_avis():
+    """Deux fiches, le même travail derrière, et un écart écrit par d'autres.
+
+    Le propos de l'article tient dans cette asymétrie : ce qui sépare
+    les deux colonnes n'est ni la qualité ni le site, c'est le nombre
+    de gens qui ont pris trente secondes pour l'écrire.
+    """
+    im, d = fond()
+    for x0, titre, lignes, vide in ((80, "La fiche qu'on trouve", 5, False),
+                                    (632, "La fiche qu'on ne trouve pas",
+                                     1, True)):
+        x1 = x0 + 488
+        d.rounded_rectangle([x0, 96, x1, 436], radius=12, fill=rvb("blanc"),
+                            outline=rvb("sable_fonce"), width=2)
+        d.rectangle([x0, 96, x1, 102],
+                    fill=rvb("taupe" if vide else "jaune"))
+        ecrire(d, x0 + 28, 126, titre, "Inter-800", 25, "encre")
+        y = 166
+        for i in range(lignes):
+            etoiles(d, x0 + 30, y + 10)
+            d.rounded_rectangle([x0 + 142, y + 2, x1 - 30, y + 18],
+                                radius=8, fill=rvb("sable"))
+            d.rounded_rectangle([x0 + 142, y + 24, x1 - 130, y + 36],
+                                radius=6, fill=rvb("creme_rose"))
+            y += 46
+        if not vide:
+            ecrire(d, x0 + 30, y - 2, "…et quarante autres.", "Inter-400",
+                   22, "taupe")
+        if vide:
+            ecrire(d, (x0 + x1) / 2, 320, "…et c'est tout.", "Inter-400",
+                   24, "taupe", centre=True)
+    ecrire(d, LARGE / 2, 468,
+           "Même métier, même soin, même ville.", "Inter-600", 25,
+           "brun", centre=True)
+    titre_bas(d, "Ce qui les sépare, ce sont des gens qui ont écrit.")
+    return im
+
+
+def illu_avis_pack():
+    """Le bloc de cartes de Perpignan, relevé fin octobre.
+
+    Vingt fiches, leur nombre d'avis, et celles qui n'ont pas de site.
+    Les longueurs sont à l'échelle de la racine carrée — sinon la
+    première, à 285, écrase les dix-neuf autres et le graphique ne
+    montre plus rien. Les nombres sont écrits en clair à côté : c'est
+    eux qui portent la vérité, la barre ne porte que la forme.
+    """
+    im, d = fond()
+    # Relevé le 24 octobre 2026, « graphiste » autour de Perpignan.
+    avis = [285, 7, 45, 0, 4, 24, 56, 13, 80, 14,
+            9, 4, 6, 4, 1, 2, 39, 1, 5, 20]
+    sans_site = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 18}
+    x0, large = 150, 820
+    plafond = max(avis) ** 0.5
+    for i, n in enumerate(avis):
+        y = 92 + i * 21
+        ecrire(d, x0 - 24, y - 4, "%02d" % (i + 1), "Inter-600", 17,
+               "sable_fonce")
+        if n:
+            lg = max(4, large * (n ** 0.5) / plafond)
+            d.rounded_rectangle([x0, y, x0 + lg, y + 13], radius=6,
+                                fill=rvb("corail" if i == 0 else "bleu"))
+            ecrire(d, x0 + lg + 10, y - 3, str(n), "Inter-600", 17,
+                   "brun")
+        else:
+            cadre_tirets(d, (x0, y, x0 + 46, y + 13), "corail", 2, 9, 5)
+            ecrire(d, x0 + 58, y - 3, "aucun avis", "Inter-600", 17,
+                   "corail")
+        if i + 1 in sans_site:
+            d.ellipse([LARGE - 112, y + 1, LARGE - 101, y + 12],
+                      fill=rvb("taupe"))
+    ecrire(d, LARGE - 106, 70, "sans site", "Inter-600", 17, "taupe",
+           centre=True)
+    pave(d, x0, 528,
+         "Onze fiches sur vingt n'ont aucun site. La quatrième n'a aucun "
+         "avis. Longueurs à l'échelle de la racine carrée, pour que les "
+         "petits nombres restent lisibles.", "Inter-400", 19, 820, "taupe")
+    return im
+
+
+def illu_avis_reponse():
+    """La même réponse, deux fois, et une seule qui dit quelque chose.
+
+    C'est la partie que presque personne ne fait et qui ne coûte rien.
+    La montrer côte à côte évite d'avoir à l'expliquer.
+    """
+    im, d = fond()
+    for x0, etiquette, texte, bon in (
+            (80, "Remercier dans le vide",
+             "Merci beaucoup pour votre retour, à très bientôt !", False),
+            (632, "Reprendre le problème du client",
+             "Vous aviez beaucoup d'idées et pas d'ordre pour les poser : "
+             "c'est exactement ce qu'on a démêlé ensemble.", True)):
+        x1 = x0 + 488
+        # L'avis du client, en haut : le meme des deux cotes.
+        d.rounded_rectangle([x0, 96, x1, 196], radius=12, fill=rvb("blanc"),
+                            outline=rvb("sable_fonce"), width=2)
+        etoiles(d, x0 + 26, 128, taille=10)
+        pave(d, x0 + 26, 150, "« J'avais des idées plein la tête, "
+                              "sans savoir par où commencer. »",
+             "Inter-400", 21, x1 - x0 - 52, "brun")
+        # La reponse, en dessous et en retrait.
+        d.rounded_rectangle([x0 + 44, 224, x1, 392], radius=12,
+                            fill=rvb("creme_rose" if bon else "creme"))
+        d.rectangle([x0 + 44, 224, x0 + 48, 392],
+                    fill=rvb("turquoise" if bon else "taupe"))
+        ecrire(d, x0 + 72, 246, "Réponse du professionnel", "Inter-600", 19,
+               "taupe")
+        bas = pave(d, x0 + 72, 282, texte, "Inter-600", 23,
+                   x1 - x0 - 100, "encre" if bon else "taupe")
+        ecrire(d, x0 + 72, 412, etiquette, "Inter-800", 22,
+               "turquoise" if bon else "corail")
+    pave(d, 80, 468,
+         "Le lecteur suivant, celui qui hésite, lit la conversation "
+         "entière — pas seulement l'avis.", "Inter-400", 23, LARGE - 160)
+    return im
+
+
 ILLUSTRATIONS = {
     "autorisation-enseigne-perpignan": [
         ("enseigne.png", illu_enseigne),
@@ -1088,6 +1225,10 @@ ILLUSTRATIONS = {
         ("trottoir.png", illu_trottoir),
         ("trottoir-hauteur.png", illu_trottoir_hauteur),
         ("trottoir-nuit.png", illu_trottoir_nuit)],
+    "avis-clients-preuve-locale": [
+        ("avis.png", illu_avis),
+        ("avis-pack.png", illu_avis_pack),
+        ("avis-reponse.png", illu_avis_reponse)],
     "refaire-son-logo-nouvelle-annee": [
         ("bilan.png", illu_bilan),
         ("logo-tailles.png", illu_logo_tailles),

@@ -124,6 +124,10 @@ automatique du matin.
 | lundi 30 novembre | 18 h 30 | Fiche Google | post | texte n° 21 |
 | lundi 30 novembre | 18 h 45 | Story | story | S6-A · teasing vitrine |
 | ~~mardi 1er décembre~~ | — | — | — | 🛑 **n° 22 sortie du calendrier le 23 octobre** — qualification d'un adhésif non confirmée. Le texte Google n° 22 et les stories S6-B partent avec elle |
+| mardi 1er décembre | 08 h 00 | Blog | article | Les avis clients : le seul support de communication que vous ne payez pas |
+| mardi 1er décembre | 18 h 30 | Instagram + Facebook | Carrousel 6 planches | n° 29 — ♻️ **reprend le créneau laissé libre par la n° 22** |
+| mardi 1er décembre | 18 h 30 | Fiche Google | post | texte n° 29 |
+| mardi 1er décembre | 18 h 45 | Story | story | S6-F · teasing du carrousel |
 | mercredi 2 décembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 27 — SWEET DREAM, 🧩 **réalisation intercalée** |
 | jeudi 3 décembre | 19 h 00 | Instagram + Facebook | Quiz | n° 23 |
 | jeudi 3 décembre | 19 h 00 | Fiche Google | post | texte n° 23 |
@@ -142,11 +146,11 @@ automatique du matin.
 
 | Canal | Volume |
 |---|---|
-| Publications Instagram + Facebook | **27** |
-| Textes de fiche Google | **23** |
-| Écrans de story | **40** |
-| Articles de blog | **7** |
-| **Total à valider** | **97** |
+| Publications Instagram + Facebook | **28** |
+| Textes de fiche Google | **24** |
+| Écrans de story | **41** |
+| Articles de blog | **8** |
+| **Total à valider** | **101** |
 
 **Quatre réalisations**, toutes en plus du cycle et aucune à la place
 d'une leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du

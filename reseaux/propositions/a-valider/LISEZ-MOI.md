@@ -6,10 +6,10 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 |---|---|
 | **`PRET-A-VALIDER.md`** | **ce qui est terminé et ce qui ne l'est pas** — à lire en premier |
 | **`calendrier.md`** | les 101 éléments datés, tous canaux, dans l'ordre |
-| **`instagram-facebook.md`** | les 27 publications |
-| **`fiche-google.md`** | les 23 textes de fiche |
-| **`stories.md`** | les 6 séquences hebdomadaires, 40 écrans |
-| **`blog.md`** | l'index des 7 articles, leurs 21 illustrations, et comment un article est mis en page |
+| **`instagram-facebook.md`** | les 28 publications |
+| **`fiche-google.md`** | les 24 textes de fiche |
+| **`stories.md`** | les 6 séquences hebdomadaires, 41 écrans |
+| **`blog.md`** | l'index des 8 articles, leurs 21 illustrations, et comment un article est mis en page |
 | **`articles.pdf`** | **les sept textes complets**, composés sur deux colonnes — le seul PDF qui n'a pas de `.md` : il se fabrique par `python3 reseaux/articles.py` |
 | **`messages-prives.md`** | le message d'accueil et 4 réponses types |
 | **`photos-a-prendre.md`** | **plus rien à photographier** — la réserve de prises de vue, et pourquoi les douze publications concernées sont dessinées |
@@ -44,11 +44,11 @@ que se passe la vraie validation, et c'est le gros du temps.
 
 3. **`instagram-facebook.md`** — le document le plus long de loin, et
    celui dont tout le reste dérive. Rien n'est encore publié :
-   **27 publications attendent ton accord**.
+   **28 publications attendent ton accord**.
 4. **`fiche-google.md`** — 23 textes, un par publication, **avec ses
    cases à cocher**. Si une publication change au point 3, son texte
    change ici.
-5. **`stories.md`** — 40 écrans, **avec ses cases à cocher**. Ils
+5. **`stories.md`** — 41 écrans, **avec ses cases à cocher**. Ils
    annoncent les publications : ils bougent avec elles.
 6. **`articles.pdf`** — les sept textes complets, mis en page comme
    ils paraîtront, illustrations comprises. C'est là qu'on les relit.

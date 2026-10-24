@@ -2,7 +2,7 @@
 
 Document destiné à un prestataire ou à un outil de génération d'images et
 de vidéos. Il décrit **le rendu attendu**, planche par planche, pour les
-194 visuels du cycle : 154 planches de publications, 40 écrans de stories,
+201 visuels du cycle : 160 planches de publications, 41 écrans de stories,
 plus les 7 illustrations d'articles de blog.
 
 ---
@@ -428,7 +428,7 @@ administratif, ni mise en page officielle.
 
 ---
 
-## 6. Les 27 publications, planche par planche
+## 6. Les 28 publications, planche par planche
 
 Les textes exacts (accroche, légende, texte alternatif, hashtags) sont
 dans `instagram-facebook.md`. Ce qui suit décrit **le rendu**.
@@ -1108,7 +1108,7 @@ de l'image, toujours.
 
 ---
 
-## 8. Les 40 écrans de stories
+## 8. Les 41 écrans de stories
 
 Format 9:16. Ils sont **tous typographiques**, volontairement : un écran
 propre vaut mieux qu'un écran qui attend une photo.
@@ -1130,13 +1130,13 @@ propre vaut mieux qu'un écran qui attend une photo.
    - ou simplement un **paragraphe** en Inter 400 42 px.
 6. **Signature** en bas à gauche.
 
-Les 40 codes, dans l'ordre de publication :
+Les 41 codes, dans l'ordre de publication :
 
 `S1-A` `S1-B1` `S1-B2` `S1-D1` `S1-D2` `S1-E` · `S2-A` `S2-B`
 `S2-C` `S2-D1` `S2-D2` `S2-E` `S2-F` · `S3-A` `S3-B1` `S3-B2` `S3-C`
 `S3-D1` `S3-D2` `S3-E1` `S3-E2` · `S4-C` `S4-D1`
 `S4-D2` `S4-E` `S4-F` · `S5-A` `S5-B1` `S5-B2` `S5-C1` `S5-C2` `S5-D`
-`S5-E` · `S6-A` `S6-B1` `S6-B2` `S6-C1` `S6-C2` `S6-D` `S6-E`
+`S5-E` · `S6-A` `S6-B1` `S6-B2` `S6-C1` `S6-C2` `S6-D` `S6-E` `S6-F`
 
 `S1-C`, `S4-A`, `S4-B1` et `S4-B2` sont sortis le 24 octobre.
 
@@ -1205,8 +1205,8 @@ points sont éliminatoires.
 
 | Quoi | Où |
 |---|---|
-| Les 133 planches de publications | `reseaux/visuels/AAAA-MM-JJ-sujet/` — **un dossier par publication, nommé à la date réelle de parution** |
-| Les 40 écrans de stories | `reseaux/visuels/stories/` — nommés par leur code |
+| Les 160 planches de publications | `reseaux/visuels/AAAA-MM-JJ-sujet/` — **un dossier par publication, nommé à la date réelle de parution** |
+| Les 41 écrans de stories | `reseaux/visuels/stories/` — nommés par leur code |
 | Les textes exacts des publications | `reseaux/propositions/a-valider/instagram-facebook.md` |
 | Les textes exacts des stories | `reseaux/propositions/a-valider/stories.md` |
 | Une planche-contact A4 de tout | `python3 reseaux/planche-contact.py` |

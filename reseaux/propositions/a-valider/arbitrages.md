@@ -16,8 +16,8 @@ points ne sont pas réglés.
 > même où ils trompaient, et non seulement signalés ailleurs.
 >
 > **L'état réel, relevé par `reseaux/audit.py` à chaque passage :**
-> 27 publications · 154 planches · 40 écrans de story · 7 articles ·
-> 194 visuels au total. **Plus rien n'attend d'image.** Un seul manque
+> 28 publications · 160 planches · 41 écrans de story · 8 articles ·
+> 201 visuels au total. **Plus rien n'attend d'image.** Un seul manque
 > dans le dossier, et ce n'est pas un dessin : la n° 18 est sortie du
 > calendrier faute de vérification réglementaire.
 >
@@ -71,8 +71,8 @@ redescendre.
 | ~~Publications 9 à 12 et 14 à 24~~ | ~~❌ 15 restent à dessiner~~ | ✅ **les 15 sont produites** |
 | ~~Stories~~ | ~~10 écrans produits sur 41~~ | ✅ **44 écrans sur 44** |
 
-Le cycle entier compte aujourd'hui **27 publications, 154 planches,
-40 écrans de story et 194 visuels**, relevés par `reseaux/audit.py` à
+Le cycle entier compte aujourd'hui **28 publications, 160 planches,
+41 écrans de story et 201 visuels**, relevés par `reseaux/audit.py` à
 chaque passage. La n° 18 est sortie du calendrier le 23 octobre, faute
 de vérification réglementaire : c'est le seul manque du dossier, et ce
 n'est pas un manque de dessin.

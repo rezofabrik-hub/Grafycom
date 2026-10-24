@@ -1,4 +1,4 @@
-# Fiche Google Établissement — les 23 textes à valider
+# Fiche Google Établissement — les 24 textes à valider
 
 Du 26 octobre au 5 décembre. Un texte par publication, à publier le même
 jour qu'elle.
@@ -887,3 +887,36 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 > Pyrénées-Orientales.
 
 **Bouton :** « En savoir plus » → `https://grafycom.fr/refaire-son-image.html`
+
+---
+
+## 29 — Mardi 1er décembre, 18 h 30 — « Les avis clients, et comment les obtenir » (202 mots)
+
+> **Les avis clients : le support que vous ne payez pas**
+>
+> Sur une recherche locale, ce qui occupe le haut de l'écran n'est pas la
+> liste des sites : c'est le bloc de cartes. Un relevé de vingt fiches
+> autour de Perpignan, fin octobre, donne deux enseignements.
+>
+> Onze de ces vingt fiches n'ont aucun site web, et se classent pourtant
+> devant des entreprises qui en ont un. Un site fait gagner le clic une
+> fois qu'on figure dans le bloc ; il n'y fait pas entrer.
+>
+> L'écart se joue sur le nombre d'avis. De la dernière fiche à la
+> première, on passe de un avis à près de trois cents. Le ticket
+> d'entrée reste bas : une fiche correctement renseignée apparaît avec
+> très peu d'avis. C'est la montée qui se gagne.
+>
+> Trois pratiques simples. Demander l'avis le jour de la livraison, au
+> moment où le client est satisfait. Fournir le lien direct, qui se
+> récupère dans le profil d'établissement. Répondre à chaque avis, en
+> reprenant le problème décrit plutôt qu'en remerciant.
+>
+> Une pratique à éviter : échanger un avis contre une remise ou un
+> cadeau. Google l'interdit, et un avis de complaisance ne contient
+> aucun détail vérifiable.
+>
+> Grafycom conseille les entreprises des Pyrénées-Orientales sur leur
+> visibilité locale.
+
+**Bouton :** « En savoir plus » → `https://grafycom.fr/blog.html`

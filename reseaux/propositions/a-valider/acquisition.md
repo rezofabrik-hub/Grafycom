@@ -81,6 +81,42 @@ laissait entendre. Ce qui manque n'est pas tant la preuve que **le chemin
 pour passer d'un lecteur convaincu à une conversation** — et c'est le
 point 4 ci-dessous.
 
+## Le 24 octobre : la preuve change de main
+
+Tout ce document cherche de la **preuve** et n'en trouve pas assez,
+parce qu'il la cherche au seul endroit où Grafycom la fabrique
+elle-même : ses réalisations. Or il en existe une autre, et c'est la
+seule qu'un prestataire ne peut pas produire — **ce que ses clients
+écrivent**.
+
+Elle est arrivée dans le cycle le 24 octobre, sur deux canaux à la
+fois, le mardi 1er décembre :
+
+| Canal | Ce qui paraît |
+|---|---|
+| Blog, 8 h 00 | « Les avis clients : le seul support de communication que vous ne payez pas » |
+| Instagram + Facebook, 18 h 30 | **publication n° 29**, carrousel de 6 planches, 6 planches dessinées |
+| Fiche Google, 18 h 30 | texte n° 29 |
+| Story, 18 h 45 | `S6-F`, sondage — « Combien d'avis porte votre fiche ? » |
+
+Le créneau était libre : c'est celui de la n° 22, sortie le 23 octobre.
+Rien n'a été déplacé pour lui faire de la place.
+
+**Ce que la publication fait, et ne fait pas.** Elle n'affiche pas les
+avis de Grafycom et n'en demande aucun. Elle explique au lecteur
+comment obtenir les siens, avec les chiffres d'un relevé réel du bloc
+de cartes local. C'est la seule façon de traiter ce sujet sans se
+vanter, et c'est aussi la plus utile : le lecteur type est un
+commerçant qui a une fiche et qui ne s'en sert pas.
+
+> ⚠️ **Une condition, et elle est de fond.** Cette publication conseille
+> une pratique que Grafycom doit tenir elle-même. Avant qu'elle parte :
+> récupérer le lien de demande d'avis dans la fiche, et répondre aux
+> avis déjà reçus s'ils ne le sont pas. Donner ce conseil avec une fiche
+> qui ne le suit pas se vérifie en un clic.
+
+---
+
 ## Ce que je propose, par ordre de rendement
 
 ### 1. Publier les réalisations couvertes par un accord — deux et demie, pas six

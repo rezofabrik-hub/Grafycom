@@ -27,15 +27,16 @@ Chaque article paraîtra à sa date, tout seul.
 | vendredi 13 novembre | Qui possède votre logo ? | 687 | 3 | ✅ validé |
 | vendredi 20 novembre | Cartes de vœux : il est trop tard pour Noël, et c'est une bon | 1065 | 3 | ⚠️ à relire |
 | vendredi 27 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le tro | 854 | 3 | ⚠️ à relire |
+| mardi 1er décembre | Les avis clients : le seul support de communication que vous  | 966 | 3 | ⚠️ à relire |
 | vendredi 4 décembre | Faut-il refaire son logo pour la nouvelle année ? Trois quest | 792 | 3 | ⚠️ à relire |
 
-**4 articles sur 7 attendent ta validation.** Pour en
+**5 articles sur 8 attendent ta validation.** Pour en
 valider un : ouvrir son fichier dans `reseaux/blog/`, remplacer la ligne
 `statut:` par `statut: validé`, et le pousser. Le reste est automatique.
 
 ## Les illustrations — faites le 24 octobre
 
-**Vingt et une, trois par article** : une en tête, qui sert aussi de
+**Vingt-quatre, trois par article** : une en tête, qui sert aussi de
 vignette quand le lien est partagé, et deux posées dans le texte à
 l'endroit où l'argument se pose.
 

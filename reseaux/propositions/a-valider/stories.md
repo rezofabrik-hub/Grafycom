@@ -1,10 +1,15 @@
 # Stories — les 6 séquences hebdomadaires à valider
 
-> **40 écrans.** Le compte était de 41, puis de 44 : il oubliait le
+> **41 écrans.** Le compte était de 41, puis de 44, puis de 40 : il
+> oubliait d'abord le
 > second écran de S1-B, S1-D et S2-D, dont le texte en décrit deux là
 > où le calendrier n'en listait qu'un. Les codes des séquences à deux
 > écrans portent donc tous un chiffre : S1-B1 et S1-B2, S1-D1 et
 > S1-D2, etc.
+>
+> **Un écran est entré le 24 octobre :** `S6-F`, le mardi 1er
+> décembre, qui annonce la publication n° 29 sur les avis clients. Il
+> prend le créneau laissé vide par la n° 22.
 >
 > **Quatre écrans sont sortis le 24 octobre, à la demande de Laurent :**
 > `S1-C` (boîte à questions du 28/10 — répondre à tout gratuitement,
@@ -184,12 +189,13 @@ sticker et ses options, arrière-plan.
 | ☐ | S6-A   | Lundi     | 30/11 | 18 h 45  | Nouveau post · Votre vitrine de Noël est faite pour celui qui passe. | |
 | 🛑 | ~~S6-B1~~ | ~~Mardi~~ | ~~01/12~~ | — | Quiz réglementation — **suspendu avec la n° 22** | |
 | 🛑 | ~~S6-B2~~ | ~~Mardi~~ | ~~01/12~~ | — | La réponse — **suspendu avec la n° 22** | |
+| ☐ | S6-F   | Mardi     | 01/12 | 18 h 45  | Nouveau post · Combien d'avis porte votre fiche ? | |
 | ☐ | S6-C1  | Jeudi     | 03/12 | 19 h 00  | Le quiz du jeudi · Le doré d'une dorure à chaud, c'est quoi ? | |
 | ☐ | S6-C2  | Jeudi     | 03/12 | 21 h 00  | La réponse · Une feuille métallisée, pressée à chaud. | |
 | ☐ | S6-D   | Vendredi  | 04/12 | 18 h 15  | Nouvel article · Faut-il refaire son logo pour la nouvelle année ? | |
 | ☐ | S6-E   | Samedi    | 05/12 | 10 h 45  | Coulisses · Deux pages de calendrier, décembre et janvier. | |
 
-**36 écrans à publier**, plus quatre suspendus — deux avec la n° 18,
+**37 écrans à publier**, plus quatre suspendus — deux avec la n° 18,
 deux avec la n° 22 — et une ligne de non-publication. Le 11 novembre
 est une ligne, pas un trou : l'absence est un choix validé.
 
@@ -583,6 +589,23 @@ sur le site.
 - **Sticker :** aucun sticker interactif. C'est un écran de coulisses — il
   se regarde, il ne demande rien. Un sticker de trop sur cet écran casse ce
   qu'il raconte.
+
+## S6-F — Mardi 1er décembre, 18 h 45 · teasing du carrousel
+
+| Élément | Contenu |
+|---|---|
+| **Texte exact** | « Nouveau post. Combien d'avis porte votre fiche ? » |
+| **Sticker** | *Sondage A/B* — « Vous diriez… » → **A : moins de dix** · **B : plus de dix** |
+| **Arrière-plan** | Fond encre, titre en blanc, surtitre jaune — l'écran reprend la planche 01 du carrousel. |
+
+Ajouter le sticker *Mention du post*.
+
+> **Pourquoi un sondage et pas une boîte à questions.** Le sujet du
+> carrousel est le nombre d'avis d'une fiche. La seule chose utile que
+> le lecteur puisse faire en voyant cette story, c'est **aller regarder
+> la sienne** — et un sondage à deux choix l'y envoie en trois
+> secondes. Une boîte à questions l'inviterait à écrire ; c'est
+> exactement ce qu'on ne cherche pas ici.
 - **Puis :** sticker *Mention du post* pour renvoyer au reel.
 
 # Ce qu'il faut produire pour les stories
