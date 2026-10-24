@@ -78,7 +78,7 @@ sticker et ses options, arrière-plan.
 
 ## S2-C — Mercredi 4 novembre, 18 h 30 · coulisses
 - **Fond :** photo d'un plan de travail — crayonnés, nuancier, écran.
-- **Texte :** « Trois pistes pour un même logo. Deux finiront à la
+- **Texte :** « Deux pistes pour un même logo. Une finira à la
   corbeille. C'est normal, et c'est même le travail. »
 - **Sticker :** aucun. Une story sans sollicitation de temps en temps, ça
   repose, et ça humanise.
@@ -161,7 +161,7 @@ sticker et ses options, arrière-plan.
 | ☐ | S2-F   | Samedi    | 31/10 | 11 h 00  | Halloween · Décorer sa vitrine ne coûte rien, et se remarque. | |
 | ☐ | S2-A   | Lundi     | 02/11 | 12 h 45  | Nouveau post · Cette police est magnifique. Et pourtant… | |
 | ☐ | S2-B   | Mardi     | 03/11 | 8 h 15   | Droits & propriété · Avez-vous un contrat de cession pour votre logo ? | |
-| ☐ | S2-C   | Mercredi  | 04/11 | 18 h 30  | Coulisses · Trois pistes pour un même logo. Deux finiront à la… | |
+| ☐ | S2-C   | Mercredi  | 04/11 | 18 h 30  | Coulisses · Deux pistes pour un même logo. Une finira à la corbeille. | |
 | ☐ | S2-D1  | Jeudi     | 05/11 | 19 h 00  | Le quiz du jeudi · 4 idées reçues. Testez-vous. | |
 | ☐ | S2-D2  | Jeudi     | 05/11 | 21 h 00  | La réponse · Un logo doit tenir en noir et blanc. | |
 | ☐ | S2-E   | Vendredi  | 06/11 | 18 h 15  | Nouvel article · Choisir le bon support d'impression. | |

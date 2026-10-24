@@ -47,7 +47,7 @@ BODY = """
 <section>
 """ + etape("03", "La création", "1 à 3 semaines selon le projet",
     "Je travaille les pistes, puis je vous les présente <em>en situation</em> — sur une devanture, une carte, un écran — plutôt qu'en vignette sur fond blanc. Chaque proposition est argumentée&nbsp;: pourquoi cette forme, pourquoi ces couleurs, ce que ça dit de vous.",
-    ["Des pistes distinctes, pas trois variantes de la même idée",
+    ["Deux pistes distinctes, pas deux variantes de la même idée",
      "Une présentation commentée, en rendez-vous ou en visio",
      "Vos retours attendus par écrit ou de vive voix, comme vous préférez"]) + """
 </section>

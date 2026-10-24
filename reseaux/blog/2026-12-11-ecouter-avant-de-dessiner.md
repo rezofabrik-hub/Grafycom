@@ -88,10 +88,15 @@ disparaîtra sur votre enseigne et sur votre tampon. Si vous voulez six
 couleurs, je vous dirai ce que ça change en fabrication. Et si une piste
 ne marche pas, je ne la défends pas sous prétexte que je l'ai dessinée.
 
-Je présente d'ailleurs **trois pistes et non une**, et deux sont faites
-pour être écartées. Ce n'est pas du remplissage : c'est en voyant ce
-qu'on ne veut pas qu'on sait formuler ce qu'on veut. Écarter une piste
-n'est jamais un échec, c'est une information.
+Je présente d'ailleurs **deux pistes et non une**, et l'une des deux
+est faite pour être écartée. Ce n'est pas du remplissage : c'est en
+voyant ce qu'on ne veut pas qu'on sait formuler ce qu'on veut. Écarter
+une piste n'est jamais un échec, c'est une information.
+
+Deux pistes, puis **deux allers-retours de corrections** : c'est le
+cadre, il est écrit dans mes conditions de vente, et il est là pour
+vous autant que pour moi. Un projet qui s'étire en dix versions n'est
+pas un projet mieux soigné, c'est un projet dont le cap s'est perdu.
 
 La vraie bienveillance, c'est de dire les choses tôt — quand elles
 coûtent encore une conversation, et pas une réimpression.

@@ -50,7 +50,8 @@ BODY = ("""
     <p>Le prestataire n'est pas responsable des retards imputables au client, à un tiers intervenant (imprimeur, poseur, hébergeur) ou à un cas de force majeure.</p>
 
     <h2>6. Livraison et fichiers</h2>
-    <p>À la livraison, le client reçoit les fichiers d'exploitation adaptés à l'usage prévu (PDF prêts à imprimer, images optimisées pour le web) ainsi que les fichiers sources, sauf mention contraire au devis.</p>
+    <p>À la livraison, le client reçoit les <strong>fichiers d'exploitation</strong> adaptés à l'usage prévu&nbsp;: PDF prêts à imprimer, images optimisées pour le web, déclinaisons prévues au devis.</p>
+    <p>Les <strong>fichiers sources</strong> (.ai, .psd, .indd et formats de travail équivalents) demeurent la propriété exclusive du prestataire. Leur transmission n'est pas automatique&nbsp;: elle fait l'objet d'un accord écrit et peut être facturée. Toute modification d'une création par le client ou par un tiers, sans accord écrit du prestataire, est interdite.</p>
     <p>Le prestataire conserve une copie des fichiers pendant une durée de <strong>trois ans</strong> à titre de service, sans obligation d'archivage. Il appartient au client de sauvegarder les fichiers livrés.</p>
 
     <h2>7. Propriété intellectuelle et cession de droits</h2>
@@ -58,6 +59,7 @@ BODY = ("""
     <p>Conformément à l'article L131-3 du code de la propriété intellectuelle, la cession est définie au devis, lequel précise&nbsp;: les <strong>droits cédés</strong> (reproduction, représentation, adaptation), les <strong>supports</strong> concernés, l'<strong>étendue géographique</strong> et la <strong>durée</strong>. À défaut de précision, la cession porte sur les seuls supports mentionnés au devis, pour la France, pour la durée légale de protection.</p>
     <p>Le <strong>droit moral</strong> de l'auteur est incessible&nbsp;: le prestataire conserve le droit au respect de son œuvre et à la paternité de celle-ci.</p>
     <p>Les propositions non retenues restent la propriété du prestataire et ne peuvent être exploitées par le client sous quelque forme que ce soit.</p>
+    <p>Le processus de création comprend <strong>deux propositions initiales</strong> ou <strong>deux allers-retours de corrections</strong>. Toute demande supplémentaire fait l'objet d'une facturation complémentaire.</p>
     <p>Le client garantit détenir les droits sur tous les éléments qu'il fournit (textes, images, polices, marques) et garantit le prestataire contre toute réclamation d'un tiers à ce titre.</p>
     <p>Sauf opposition écrite du client, le prestataire peut mentionner le travail réalisé à titre de référence, dans son portfolio et sa communication.</p>
 

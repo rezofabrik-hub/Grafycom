@@ -2517,7 +2517,7 @@ def stories(dossier=None):
       "Sondage", ["Votre logo, vous le possédez…",
                   "A : oui, j'ai l'écrit", "B : aucune idée"]),
      ("S2-C", "creme", "encre", "Coulisses",
-      "Trois pistes pour un même logo.\nDeux finiront à la corbeille.",
+      "Deux pistes pour un même logo.\nUne finira à la corbeille.",
       "", ["C'est normal. C'est même le travail."]),
      ("S2-D1", "sable_chaud", "encre", "Le quiz du jeudi",
       "4 idées reçues. Testez-vous.",
