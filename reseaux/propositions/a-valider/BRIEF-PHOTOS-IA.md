@@ -124,6 +124,13 @@ at the bottom for text overlay`.
 |---|---|---|
 | Carrousel | 4:5 — 1080 × 1350 | **2160 × 2700** |
 | Reel, story | 9:16 — 1080 × 1920 | **2160 × 3840** |
+| Illustration d'article | 1,9:1 — 1200 × 630 | **2400 × 1260** |
+
+L'illustration d'article sert deux fois : en tête de l'article, et en
+vignette quand le lien est partagé. Aucun moteur ne propose 1,9:1 —
+demander du **16:9**, le plus proche, et rogner le haut et le bas. Le
+sujet se place donc au centre, pas dans le tiers supérieur : c'est la
+seule ligne du § 3.6 qui change pour ce format.
 
 > **Ce minimum est un confort, pas une barrière** — vérifié le 23
 > octobre sur l'image B, que le moteur a rendue en **940 × 1672**, soit
@@ -605,6 +612,129 @@ la même ligne d'ombre, une seule vraie structure.
 **La leçon vaut plus que le chiffre : un score élevé se regarde avant
 de se croire.** Sortir les deux carrés, les poser côte à côte. Un motif
 recopié se voit en une seconde ; une structure continue aussi.
+
+---
+
+## 5 ter. Les quatre photographies du blog — passées à la règle
+
+`python3 reseaux/illustrations.py --photos` en liste quatre. Laurent a
+demandé le 24 octobre des prompts pour les faire générer. **Deux
+peuvent l'être, deux ne peuvent pas**, et la frontière est celle du
+§ 2, pas une préférence.
+
+| # | Ce qu'il faut | Article | Verdict |
+|---|---|---|---|
+| **α** | Une devanture du centre ancien, enseigne comprise | Autorisation d'enseigne | ⚠️ générable en **décor anonyme** seulement |
+| **β** | Un bon à tirer posé à côté de l'écran qui affiche le même visuel | Couleurs écran / impression | ⛔ **non** |
+| **γ** | Un nuancier ouvert, en lumière du jour | Couleurs écran / impression | ✅ oui |
+| **δ** | Les fichiers sources ouverts, avec leurs calques | Qui possède votre logo | ⛔ **non** |
+
+### Pourquoi β et δ ne se génèrent pas
+
+Ce ne sont pas des décors, ce sont des **démonstrations**.
+
+**β** existe pour qu'on voie l'écart entre un écran et un imprimé. Une
+image générée fabriquerait cet écart au lieu de le constater : elle
+montrerait exactement la différence qu'on lui aurait demandé de
+montrer. C'est la définition d'un faux, et c'est déjà la raison pour
+laquelle l'image **B** n'a pas pris la planche de la n° 4.
+
+**δ** existe pour montrer ce qu'un client reçoit vraiment. Une
+arborescence de calques inventée est une preuve inventée. Et elle
+franchit en plus la liste close du § 3.5, qui interdit l'**écran
+allumé** — parce qu'un écran généré porte du faux texte, toujours.
+
+**Les deux se photographient en dix minutes**, sans matériel : un
+imprimé posé devant l'écran qui affiche le même fichier, le logiciel
+ouvert sur un vrai projet. Ce sont les deux seules de la liste qui
+n'ont besoin d'aucun déplacement. En attendant, les schémas tiennent
+la place, et ils la tiennent honnêtement : `cmjn.png` explique le
+procédé, `droits.png` explique le droit, aucun des deux ne prétend
+être une photographie.
+
+### α — la devanture, et sa condition
+
+Générable, mais **jamais présentée comme une rue de Perpignan**. Une
+façade générée qu'on légende « centre ancien de Perpignan » est un
+faux, même si elle est jolie. Elle sert de décor, le texte alternatif
+et la légende doivent le dire, et elle ne porte aucune enseigne
+lisible.
+
+Si l'article doit montrer une vraie devanture du 66 — et il gagnerait
+à le faire — c'est une photographie, prise par Sandra, et rien d'autre.
+
+```
+A shop front seen straight on, early morning, the fascia board
+completely blank with no sign and no lettering of any kind, shutters
+half up, worn stone surround and an old painted door frame
+
+on warm grey polished concrete pavement, shot on 50mm at f/2.8, single
+warm window light from camera left at 45 degrees, 4800K late afternoon,
+soft shadows with defined edges, shallow depth of field with background
+falling off, warm neutral palette of cream #f7f1ef, sand #efe4dd, taupe
+#a2897c and brown #6d5a50, exactly one accent of blue #2f7fc4 covering
+less than 10 percent of the frame, fine film grain, slight natural
+imperfection, editorial architectural photography, horizontal 16:9
+framing, subject centred, calm empty surface on the left for text
+overlay
+
+NEGATIVE: faces, people, eyes, text, letters, numbers, logos,
+watermarks, brand names, readable signage, shop names, house numbers,
+street signs, posters, menus, price lists, symmetry, flat lighting,
+pure white background, 3D render, CGI, plastic sheen, oversaturation,
+two accent colours, green plants, flowers, screens, cars, gold, silver,
+metallic
+```
+
+> ⚠️ **À vérifier à pleine résolution avant de l'accepter.** Les
+> moteurs posent du faux texte sur les façades — c'est exactement ce
+> qu'a raté la première série de portraits, § 3.5. Une seule lettre
+> inventée sur le bandeau, et l'image part.
+
+Elle se déposerait en `assets/img/blog/devanture.png`, et elle
+**n'évince pas** `enseigne.png` : le schéma des deux façades porte
+l'argument de l'article — le lieu décide, pas la taille — et une photo
+ne le dit pas. Elle viendrait en seconde figure, pas en tête.
+
+### γ — le nuancier
+
+Le cas simple. C'est de la matière, ça ne démontre rien, et ça
+remplace avantageusement un aplat.
+
+```
+An open fan-deck of printing colour swatches spread in an arc on a
+table, each blade a solid flat colour with no printed reference,
+numbers or text anywhere, the metal rivet and the worn edges visible
+
+on light oak, shot on 50mm at f/2.2, single warm window light from
+camera left at 45 degrees, 4800K late afternoon, soft shadows with
+defined edges, shallow depth of field with background falling off,
+warm neutral palette of cream #f7f1ef, sand #efe4dd, taupe #a2897c and
+brown #6d5a50, exactly one accent of orange #f5883c covering less than
+10 percent of the frame, fine film grain, slight natural imperfection,
+editorial still life photography, horizontal 16:9 framing, subject
+centred, calm empty surface on the right for text overlay
+
+NEGATIVE: faces, people, eyes, text, letters, numbers, codes, logos,
+watermarks, brand names, Pantone, readable references, symmetry, flat
+lighting, pure white background, 3D render, CGI, plastic sheen,
+oversaturation, two accent colours, green plants, flowers, screens,
+laptops, phones, gold, silver, metallic
+```
+
+> ⚠️ **« Pantone » est un nom de marque**, et il est dans le négatif
+> pour cette raison. Un éventail générique dit la même chose à un
+> lecteur, et n'emprunte le nom de personne.
+
+Elle se déposerait en `assets/img/blog/nuancier.png`, en seconde
+figure de l'article sur les couleurs, à côté de `cmjn-papiers.png` qui
+montre l'autre moitié du sujet — l'encre et le papier.
+
+### Une fois reçues
+
+Les déposer dans `assets/img/blog/`, me le dire, et j'écris la ligne
+`[figure: …]` à sa place dans l'article, légende et description
+alternative comprises. Le reste du dispositif ne bouge pas.
 
 ---
 

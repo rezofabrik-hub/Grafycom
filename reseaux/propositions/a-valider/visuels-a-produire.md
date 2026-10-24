@@ -78,9 +78,18 @@ inventée sur le compte d'une graphiste se retourne contre elle.
 
 Les quatre du blog : une devanture réelle du centre ancien, un bon à
 tirer posé à côté de l'écran qui affiche le même visuel, un nuancier
-Pantone ouvert en lumière du jour, un jeu de fichiers sources ouvert
-avec ses calques. Les schémas tiennent la place en attendant, et ils
-la tiennent honnêtement : ils n'ont jamais prétendu être des preuves.
+ouvert en lumière du jour, un jeu de fichiers sources ouvert avec ses
+calques. Les schémas tiennent la place en attendant, et ils la
+tiennent honnêtement : ils n'ont jamais prétendu être des preuves.
+
+> **Deux des quatre peuvent être générées, deux ne peuvent pas** — les
+> prompts et les refus motivés sont au § 5 ter de `BRIEF-PHOTOS-IA.md`,
+> écrits le 24 octobre. Le nuancier est du décor et se génère. La
+> devanture se génère en façade anonyme, qu'on ne légendera jamais
+> « Perpignan ». Le bon à tirer devant l'écran et les fichiers sources
+> ouverts sont des démonstrations : les générer, c'est fabriquer l'écart
+> qu'on prétend constater. Ces deux-là se photographient en dix
+> minutes, sans matériel et sans déplacement.
 
 ---
 
