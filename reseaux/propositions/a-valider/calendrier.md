@@ -1,4 +1,4 @@
-# Calendrier — du 26 octobre au 5 décembre 2026
+# Calendrier — du 26 octobre au 11 décembre 2026
 
 Tout ce qui est écrit et non publié, tous canaux, dans l'ordre.
 
@@ -124,7 +124,6 @@ automatique du matin.
 | lundi 30 novembre | 18 h 30 | Fiche Google | post | texte n° 21 |
 | lundi 30 novembre | 18 h 45 | Story | story | S6-A · teasing vitrine |
 | ~~mardi 1er décembre~~ | — | — | — | 🛑 **n° 22 sortie du calendrier le 23 octobre** — qualification d'un adhésif non confirmée. Le texte Google n° 22 et les stories S6-B partent avec elle |
-| mardi 1er décembre | 08 h 00 | Blog | article | Écouter, c'est déjà dessiner |
 | mardi 1er décembre | 18 h 30 | Instagram + Facebook | Carrousel 6 planches | n° 29 — ♻️ **reprend le créneau laissé libre par la n° 22** |
 | mardi 1er décembre | 18 h 30 | Fiche Google | post | texte n° 29 |
 | mardi 1er décembre | 18 h 45 | Story | story | S6-F · teasing du carrousel |
@@ -138,6 +137,8 @@ automatique du matin.
 | samedi 5 décembre | 10 h 30 | Instagram + Facebook | REEL 30 s | n° 24 |
 | samedi 5 décembre | 10 h 30 | Fiche Google | post | texte n° 24 |
 | samedi 5 décembre | 10 h 45 | Story | story | S6-E · coulisses du reel |
+| | | | | |
+| vendredi 11 décembre | 08 h 00 | Blog | article | Écouter, c'est déjà dessiner — 🔀 **décalé du 1er**, les six vendredis du cycle portaient déjà un article |
 | | | | | |
 
 ---

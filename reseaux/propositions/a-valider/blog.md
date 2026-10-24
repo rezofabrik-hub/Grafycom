@@ -27,10 +27,25 @@ Chaque article paraîtra à sa date, tout seul.
 | vendredi 13 novembre | Qui possède votre logo ? | 687 | 3 | ✅ validé |
 | vendredi 20 novembre | Cartes de vœux : il est trop tard pour Noël, et c'est une bon | 1026 | 3 | ✅ validé |
 | vendredi 27 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le tro | 854 | 3 | ✅ validé |
-| mardi 1er décembre | Écouter, c'est déjà dessiner | 996 | 3 | ⚠️ à relire |
 | vendredi 4 décembre | Faut-il refaire son logo pour la nouvelle année ? Trois quest | 792 | 3 | ✅ validé |
+| vendredi 11 décembre | Écouter, c'est déjà dessiner | 996 | 3 | ✅ validé |
 
-**1 article sur 8 attend ta validation.** Pour en
+**Les huit articles sont validés le 24 octobre.** Il n'y a plus rien à
+relire.
+
+> ⚠️ **Ils ne paraîtront pas tout seuls pour autant, et c'est un trou
+> que j'ai trouvé en préparant la mise en ligne.** Ce document et le
+> calendrier annoncent un « passage automatique du matin ». Il n'existe
+> pas : le dépôt ne porte qu'un seul workflow, et il vérifie le
+> certificat du domaine. Sans intervention, l'article du 30 octobre ne
+> sortira pas.
+>
+> Deux façons de régler ça : un workflow quotidien qui reconstruit et
+> publie seul — c'est ce que je recommande et c'est une heure de
+> travail — ou une commande lancée chaque matin. Tant que l'un des deux
+> n'est pas en place, la parution est manuelle.
+
+Pour en
 valider un : ouvrir son fichier dans `reseaux/blog/`, remplacer la ligne
 `statut:` par `statut: validé`, et le pousser. Le reste est automatique.
 

@@ -3,11 +3,11 @@ titre: "Écouter, c'est déjà dessiner"
 slug: ecouter-avant-de-dessiner
 titre_seo: "L'écoute dans un projet d'identité visuelle"
 liens_retour: methode.html, realisations.html, a-propos.html
-date: 2026-12-01
+date: 2026-12-11
 meta: "Mes clients parlent d'écoute avant de parler du dessin. Ce que je fais avant de sortir un crayon, et pourquoi c'est là qu'est le vrai travail."
 illustration: avis.png
 illustration_alt: "Les cinq avis reçus par Grafycom, présentés en deux groupes : les deux projets menés par le studio, et les trois menés au sein de la structure précédente."
-statut: à relire
+statut: validé
 ---
 
 # Écouter, c'est déjà dessiner
