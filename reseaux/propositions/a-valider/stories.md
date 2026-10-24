@@ -1,10 +1,16 @@
 # Stories — les 6 séquences hebdomadaires à valider
 
-> **44 écrans, pas 41.** Le compte précédent oubliait le second écran
-> de S1-B, S1-D et S2-D : leur texte en décrit deux, le calendrier n'en
-> listait qu'un. Les trois lignes manquantes y sont, et les écrans de
-> réponse sont dessinés. Les codes des séquences à deux écrans portent
-> désormais tous un chiffre : S1-B1 et S1-B2, S1-D1 et S1-D2, etc.
+> **40 écrans.** Le compte était de 41, puis de 44 : il oubliait le
+> second écran de S1-B, S1-D et S2-D, dont le texte en décrit deux là
+> où le calendrier n'en listait qu'un. Les codes des séquences à deux
+> écrans portent donc tous un chiffre : S1-B1 et S1-B2, S1-D1 et
+> S1-D2, etc.
+>
+> **Quatre écrans sont sortis le 24 octobre, à la demande de Laurent :**
+> `S1-C` (boîte à questions du 28/10 — répondre à tout gratuitement,
+> c'est donner une prestation qui se paie), `S4-A` (teasing des trois
+> pistes du 16/11), et `S4-B1` / `S4-B2`, qui étaient déjà suspendus
+> avec la publication n° 14 et qui partent pour de bon.
 
 Du 26 octobre au 5 décembre. Chaque écran est détaillé : texte exact,
 sticker et ses options, arrière-plan.
@@ -33,12 +39,6 @@ sticker et ses options, arrière-plan.
   → **Une déclaration préalable** (faux) · **Une autorisation préalable** (vrai)
 - **Écran 2 :** « Autorisation. Cerfa 16308*01, en mairie, en 3 exemplaires.
   Le détail est dans le post. »
-
-## S1-C — Mercredi 28 octobre, 18 h 30 · boîte à questions
-- **Fond :** fond dégradé chaud `#f7f1ef` → `#e9dcd5`, texte encre, filet dégradé au-dessus du titre, centré.
-- **Texte :** « Une question sur votre identité visuelle ? Je réponds à
-  tout, même aux questions bêtes. Surtout à celles-là. »
-- **Sticker :** *Boîte à questions* — « Posez votre question »
 
 ## S1-D — Jeudi 29 octobre, 12 h 30 · le vote du jeudi
 - **Écran 1.** Les deux enseignes côte à côte. « Laquelle se lit à 20 m ? »
@@ -150,7 +150,6 @@ sticker et ses options, arrière-plan.
 | ☐ | S1-A   | Lundi     | 26/10 | 18 h 45  | Nouveau post · Votre couleur parle avant vous. | |
 | ☐ | S1-B1  | Mardi     | 27/10 | 8 h 15   | Réglementation · Enseigne : déclaration ou autorisation ? | |
 | ☐ | S1-B2  | Mardi     | 27/10 | 10 h 15  | La réponse · Autorisation. Cerfa 16308*01, en mairie, en trois… | |
-| ☐ | S1-C   | Mercredi  | 28/10 | 18 h 30  | Boîte à questions · Une question sur votre identité visuelle ? | |
 | ☐ | S1-D1  | Jeudi     | 29/10 | 12 h 30  | Le vote du jeudi · Laquelle se lit à vingt mètres ? | |
 | ☐ | S1-D2  | Jeudi     | 29/10 | 14 h 30  | La réponse · Réponse : B. À vingt mètres, une typo devient une… | |
 | ☐ | S1-E   | Vendredi  | 30/10 | 10 h 45  | Nouvel article · L'autorisation d'enseigne, étape par étape. | |
@@ -171,9 +170,6 @@ sticker et ses options, arrière-plan.
 | ☐ | S3-E2  | Vendredi  | 13/11 | 18 h 20  | Le reel est en ligne · Votre vitrine fait 6 m². | |
 | ☐ | S3-A   | Samedi    | 14/11 | 10 h 45  | Nouveau post · Votre logo tient-il sur un stylo ? | |
 | ☐ | S3-C   | Samedi    | 14/11 | 11 h 00  | Boîte à questions · Une question sur votre enseigne, vos imprimés, votre… | |
-| ☐ | S4-A   | Lundi     | 16/11 | 12 h 45  | Nouveau post · Je présente toujours trois pistes. Deux sont faites… | |
-| 🛑 | ~~S4-B1~~ | ~~Mardi~~ | ~~17/11~~ | — | Quiz langue — **suspendu avec la n° 14** | |
-| 🛑 | ~~S4-B2~~ | ~~Mardi~~ | ~~17/11~~ | — | La réponse — **suspendu avec la n° 14** | |
 | ☐ | S4-C   | Mardi     | 17/11 | 18 h 30  | Coulisses · 14 h 40. Une piste de logo qui ne sortira jamais. | |
 | ☐ | S4-D1  | Jeudi     | 19/11 | 19 h 00  | Le quiz du jeudi · Quatre matières en gros plan. Celle-ci, c'est quoi ? | |
 | ☐ | S4-D2  | Jeudi     | 19/11 | 21 h 00  | Les quatre réponses · Chaque matière a son emploi. | |
@@ -193,10 +189,9 @@ sticker et ses options, arrière-plan.
 | ☐ | S6-D   | Vendredi  | 04/12 | 18 h 15  | Nouvel article · Faut-il refaire son logo pour la nouvelle année ? | |
 | ☐ | S6-E   | Samedi    | 05/12 | 10 h 45  | Coulisses · Deux pages de calendrier, décembre et janvier. | |
 
-**38 écrans à publier**, plus six suspendus — deux avec la n° 18,
-deux avec la n° 14, deux avec la n° 22 — et
-une ligne de non-publication. Le 11 novembre est une ligne, pas
-un trou : l'absence est un choix validé.
+**36 écrans à publier**, plus quatre suspendus — deux avec la n° 18,
+deux avec la n° 22 — et une ligne de non-publication. Le 11 novembre
+est une ligne, pas un trou : l'absence est un choix validé.
 
 ## S3-A — Samedi 14 novembre, 10 h 45 · teasing du carrousel
 
@@ -279,36 +274,6 @@ n'offre pas d'angle honnête sur le métier, et un contenu commercial ce
 jour-là se remarque pour de mauvaises raisons.
 
 # 🎬 SEMAINE 4 — du lundi 9 au dimanche 22 novembre
-
-## S4-A — Lundi 16 novembre, 12 h 45 · teasing du carrousel
-
-| Élément | Contenu |
-|---|---|
-| **Texte exact** | « Nouveau post. Je présente toujours trois pistes de logo. Deux sont faites pour être écartées. » |
-| **Sticker** | *Curseur emoji* 🤨 — « Vous trouvez ça logique ? » |
-| **Arrière-plan** | Les trois vignettes de logo fictives du carrousel, alignées verticalement sur fond `#f7f1ef`, numérotées 1, 2, 3. Mention en pied : « Exercice de style — projet non commandé. » |
-
-Ajouter le sticker *Mention du post*.
-
-## S4-B1 — Mardi 17 novembre, 8 h 15 · quiz langue
-
-| Élément | Contenu |
-|---|---|
-| **Texte exact** | « Votre boutique s'appelle Sunset Coffee, et votre store dit “Best coffee in town”. Lequel des deux pose question ? » |
-| **Sticker** | *Quiz à 2 choix* — **« Le nom »** · **« Le slogan »** |
-| **Arrière-plan** | Devanture fictive recomposée, nom en grand et slogan sur le store, sur fond de ciel clair. Aucun commerce réel. |
-
-## S4-B2 — Mardi 17 novembre, 10 h 15 · la réponse
-
-| Élément | Contenu |
-|---|---|
-| **Texte exact** | « Réponse : le slogan. Ce qui vous nomme — nom, marque, enseigne — resterait libre. Ce qui informe le client serait attendu en français, ou accompagné d'une version française. La parade est graphique : on ajoute une ligne, on ne retire rien. » |
-| **Sticker** | *Mention du post* vers le carrousel du 3. Pas de sticker interactif. |
-| **Arrière-plan** | La même devanture, avec la ligne française ajoutée en plus petit sous le nom, entourée en corail `#f2585c`. |
-
-> ⚠️ Écran au conditionnel tant que les trois vérifications listées dans
-> `A-instagram-facebook.md` (publication n° 6) n'ont pas été faites. Ne pas
-> retirer les « serait » à la relecture.
 
 ## S4-C — Mardi 17 novembre, 18 h 30 · coulisses
 

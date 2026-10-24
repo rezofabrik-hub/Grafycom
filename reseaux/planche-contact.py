@@ -47,7 +47,7 @@ MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
 IGNORES = {"sources"}
 
 # Au-dela, les vignettes deviennent trop petites pour qu'on voie quoi que
-# ce soit. Les 44 ecrans de stories se repartissent donc sur quatre pages
+# ce soit. Les 40 ecrans de stories se repartissent donc sur quatre pages
 # plutot que de tenir sur une, illisibles.
 PAR_PAGE = 12
 

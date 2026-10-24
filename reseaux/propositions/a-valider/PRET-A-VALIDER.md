@@ -16,11 +16,11 @@ autres documents de ce dossier.
 | Instagram + Facebook | 25 | **25** | **22** *(3 attendent une vérification)* |
 | Fiche Google | 25 | — *(canal sans visuel)* | **25** |
 | Blog | 7 | **7 illustrations** | **7** |
-| Stories | 44 écrans | **44 écrans** | **44** |
+| Stories | 40 écrans | **40 écrans** | **40** |
 | Messages privés | 6 modèles | — | **6** |
 
 **104 éléments peuvent être programmés aujourd'hui** : 22 publications,
-23 textes de fiche, 7 articles, 44 écrans de story, 6 modèles de message.
+23 textes de fiche, 7 articles, 40 écrans de story, 6 modèles de message.
 
 **Plus rien n'attend une image.** Les 133 planches Instagram et les 44
 écrans de story sont dessinés, les 7 articles sont illustrés. Il ne reste
@@ -67,7 +67,7 @@ Texte **et** visuel prêts. Les planches sont dans `reseaux/visuels/`, en
 | **27** | mer 2 déc | Carrousel 8 planches | **SWEET DREAM** | 8 |
 | **28** | mer 25 nov | Carrousel 8 planches | **Solaire 66** | 8 |
 
-**154 planches de publication** (198 avec les 44 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
+**154 planches de publication** (194 avec les 40 écrans de story), dans `reseaux/visuels/`, un dossier par publication —
 et le dossier porte **la date réelle de parution**. Il portait jusqu'au
 14 octobre la date d'avant le décalage du calendrier, soit sept jours
 d'écart : un dossier ouvert au hasard faisait publier une semaine trop
@@ -160,10 +160,10 @@ retirées au passage.
 
 ---
 
-## 4. Stories — les 44 écrans sont dessinés
+## 4. Stories — les 40 écrans sont dessinés
 
-Les 44 écrans sont écrits dans `stories.md`, texte exact et sticker
-compris, **et tous les 44 sont dessinés** — dans `reseaux/visuels/stories/`,
+Les 40 écrans sont écrits dans `stories.md`, texte exact et sticker
+compris, **et tous les 40 sont dessinés** — dans `reseaux/visuels/stories/`,
 nommés par leur code de séquence (S1-A, S1-B1, S1-B2…) et non par un
 numéro d'ordre, pour qu'un écran ajouté ne décale pas les autres.
 

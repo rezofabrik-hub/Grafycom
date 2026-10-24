@@ -37,7 +37,6 @@ automatique du matin.
 | mardi 27 octobre | 8 h 00 | Fiche Google | post | texte n° 10 |
 | mardi 27 octobre | 8 h 15 | Story | story | S1-B1 · teasing réglementation |
 | mardi 27 octobre | 10 h 15 | Story | story | S1-B2 · la réponse |
-| mercredi 28 octobre | 18 h 30 | Story | story | S1-C · boîte à questions |
 | jeudi 29 octobre | 12 h 30 | Instagram + Facebook | Dilemme A/B | n° 3 |
 | jeudi 29 octobre | 12 h 30 | Fiche Google | post | texte n° 3 |
 | jeudi 29 octobre | 12 h 30 | Story | story | S1-D1 · le vote du jeudi |
@@ -92,7 +91,6 @@ automatique du matin.
 | | | | | |
 | lundi 16 novembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 13 — fichiers vectoriels |
 | lundi 16 novembre | 12 h 30 | Fiche Google | post | texte n° 13 |
-| lundi 16 novembre | 12 h 45 | Story | story | S4-A · teasing du carrousel |
 | ~~mardi 17 novembre~~ | — | — | — | 🛑 **n° 14 sortie du calendrier le 23 octobre** — loi Toubon non confirmée. Le texte Google n° 14 et les stories S4-B partent avec elle |
 | mardi 17 novembre | 18 h 30 | Story | story | S4-C · coulisses — 🔀 **décalée du 11** |
 | mercredi 18 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, 🧩 **réalisation intercalée** |
@@ -146,9 +144,9 @@ automatique du matin.
 |---|---|
 | Publications Instagram + Facebook | **27** |
 | Textes de fiche Google | **23** |
-| Écrans de story | **44** |
+| Écrans de story | **40** |
 | Articles de blog | **7** |
-| **Total à valider** | **101** |
+| **Total à valider** | **97** |
 
 **Quatre réalisations**, toutes en plus du cycle et aucune à la place
 d'une leçon, conformément à l'arbitrage du 18 octobre. Depuis l'arbitrage du
