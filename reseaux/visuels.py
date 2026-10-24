@@ -2282,9 +2282,9 @@ def carrousel_retroplanning(dossier=None):
     # la fabrication qui vient apres.
     p = Planche("blanc")
     t = "Validez le visuel\navant les fêtes."
-    st = ("Je vous envoie le fichier, vous validez les textes et la mise "
-          "en page. La fabrication, elle, attend la réouverture des "
-          "ateliers le 2 janvier.")
+    st = ("Je vous envoie le fichier, vous validez les textes, la mise "
+          "en page et les couleurs. La fabrication, elle, attend la "
+          "réouverture des ateliers le 2 janvier.")
     p.centrer(p.h_titre(t, 74) + p.h_texte(st, 42, avant=50) + 44)
     p.filet()
     p.titre(t, 74, "encre")
@@ -5842,15 +5842,18 @@ def pub04_reel_cmjn(dossier=None):
     _feuille_imprimee(p, 760, 640, 340, terne, angle=5)
     p.y = 1000
     p.filet()
-    p.titre("Validez le visuel.\nPas la couleur.", 77, "blanc")
+    p.titre("Le BAT fige vos couleurs.\nPas leur rendu.", 66, "blanc")
     p.y += 30
     # Le BAT de Sandra est un FICHIER qu'elle envoie, et sur lequel le
-    # client valide le visuel : textes, mise en page, dessin. Ce n'est
-    # ni une epreuve papier, ni un controle colorimetrique, ni un
-    # service gratuit. L'ecran disait les trois.
-    p.texte("Le BAT que je vous envoie valide les textes, la mise en page, "
-            "le dessin. La couleur, elle, se juge sur la matière.", 40,
-            "creme", 400, avant=20)
+    # client valide le visuel : textes, mise en page, dimensions ET
+    # couleurs. Ce qu'il ne promet pas, c'est le RENDU de ces couleurs
+    # sur un support donne — precision de Sandra le 24 octobre, apres
+    # une premiere correction qui allait trop loin dans l'autre sens.
+    # Ce n'est ni une epreuve papier, ni un service gratuit.
+    p.texte("Vous validez les textes, la mise en page et les couleurs du "
+            "visuel. Ce qui change ensuite, c'est le support : le même "
+            "fichier ne rend pas pareil sur un couché et sur un kraft.",
+            38, "creme", 400, avant=20)
     p.abonnement("sable")
     p.signature("sable")
     faits.append(p.ecrire(d / "ecran5.png"))

@@ -325,7 +325,7 @@ illisible, la sans-serif reste lisible.
 | 3-9 s | Animation : trois faisceaux de lumière rouge, vert, bleu qui se superposent et deviennent blanc. | RVB : de la **lumière** | Un écran fabrique les couleurs avec de la lumière. Il additionne du rouge, du vert et du bleu. Plus il en met, plus c'est lumineux. |
 | 9-15 s | Animation : quatre gouttes d'encre cyan, magenta, jaune, noir qui se mélangent sur du papier et s'assombrissent. | CMJN : de l'**encre** | Une imprimante fait l'inverse. Elle dépose de l'encre sur du papier blanc. Chaque couche retire de la lumière. |
 | 15-20 s | Nuancier posé sur une table, main qui le feuillette, lumière rasante sur un papier texturé. | Le papier change tout | Et le papier compte autant que l'encre. Un mat absorbe. Un couché renvoie. Le même fichier donne deux résultats. |
-| 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Validez le visuel. Pas la couleur.** | Le BAT que je vous envoie valide les textes, la mise en page, le dessin. La couleur, elle, se juge sur la matière. |
+| 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Le BAT fige vos couleurs. Pas leur rendu.** | Vous validez les textes, la mise en page et les couleurs du visuel. Ce qui change ensuite, c'est le support : le même fichier ne rend pas pareil sur un couché et sur un kraft. |
 
 **Pas de prompt d'arrière-plan.** Il y en avait un ici. Les cinq prompts du
 cahier des charges sont retirés : `reseaux/LIGNE-EDITORIALE.md` interdit une

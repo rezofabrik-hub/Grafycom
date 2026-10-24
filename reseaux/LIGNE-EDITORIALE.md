@@ -78,16 +78,19 @@ Précisé par Sandra le 24 octobre, après que trois endroits du cycle ont
 dit le contraire.
 
 **Un BAT, chez Grafycom, est un fichier.** Sandra l'envoie au client,
-et le client valide **le visuel** : les textes, la mise en page, le
-dessin. C'est tout, et c'est déjà beaucoup — c'est le moment où une
-coquille se rattrape pour rien.
+et le client valide **le visuel** : les textes, la mise en page, les
+dimensions et **les couleurs**. C'est le moment où une coquille se
+rattrape pour rien, et sa validation est définitive.
 
 Ce qu'il n'est pas, et qu'on n'écrit donc jamais :
 
 - **une épreuve imprimée.** Un exemplaire tiré sur le papier définitif
   se commande à l'imprimeur, et il se paie ;
-- **un contrôle de couleur.** La couleur se juge sur la matière, pas
-  sur un fichier ni sur un écran ;
+- **une promesse de rendu.** Les couleurs du visuel sont validées ; ce
+  que le même fichier donnera sur un couché, un offset ou un kraft ne
+  l'est pas, et ne peut pas l'être. Dire « le BAT ne valide pas la
+  couleur » est aussi faux que dire qu'il la garantit : il fige la
+  couleur **demandée**, pas la couleur **obtenue** ;
 - **gratuit.** Le mot avait été écrit deux fois. Il ne doit l'être
   nulle part : il promet à la place de Sandra, et il promet faux.
 
