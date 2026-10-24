@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from gen import page, MAIL, TEL, TEL_URI, FORMULAIRE_ACTIF, ENVOI_FORMULAIRE
+from gen import (page, page_jsonld, MAIL, TEL, TEL_URI, FORMULAIRE_ACTIF,
+                 ENVOI_FORMULAIRE)
 
 BODY = """
 <section class="heros">
@@ -159,4 +160,8 @@ page("contact.html",
      "Contact & devis gratuit — Grafycom Perpignan",
      "Contactez Grafycom à Perpignan pour votre logo ou vos supports de communication. Premier échange gratuit, réponse sous 48 h ouvrées.",
      BODY,
-     ogtitle="Contacter Grafycom — Perpignan")
+     ogtitle="Contacter Grafycom — Perpignan",
+     jsonld=page_jsonld(
+         "Contact & devis gratuit — Grafycom Perpignan", "contact.html",
+         "Premier échange gratuit, réponse sous 48 h ouvrées.",
+         typ="ContactPage"))

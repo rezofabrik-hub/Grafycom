@@ -91,6 +91,16 @@ HEAD = """<!DOCTYPE html>
 <main>
 """
 
+# Les titres de colonnes du pied de page ne sont PAS des titres de
+# document : ce sont des libelles de navigation. En h4 ils creaient un
+# saut de niveau sur les 37 pages qui portent ce pied, et un plan de
+# titres qui saute un niveau est un defaut d'accessibilite autant que de
+# referencement. Ils sont donc en <p class="titre-colonne">, dont le
+# style reprend exactement l'ancienne regle « footer h4 » de style.css.
+#
+# Le commentaire lui-meme a d'abord ete ecrit DANS le gabarit HTML : il
+# partait alors dans chaque page, et comme il citait la balise, il
+# trompait le controle cense la traquer.
 FOOT = """</main>
 
 <footer>
@@ -116,7 +126,7 @@ FOOT = """</main>
         </div>
       </div>
       <div>
-        <h4>Prestations</h4>
+        <p class="titre-colonne">Prestations</p>
         <ul>
           <li><a href="prestations.html#logo">Création de logo</a></li>
           <li><a href="prestations.html#charte">Charte graphique</a></li>
@@ -127,7 +137,7 @@ FOOT = """</main>
         </ul>
       </div>
       <div>
-        <h4>Le studio</h4>
+        <p class="titre-colonne">Le studio</p>
         <ul>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="a-propos.html">À propos</a></li>
@@ -136,7 +146,7 @@ FOOT = """</main>
         </ul>
       </div>
       <div>
-        <h4>Par situation</h4>
+        <p class="titre-colonne">Par situation</p>
         <ul>
           <li><a href="ouverture-commerce-66.html">J'ouvre un commerce</a></li>
           <li><a href="refaire-son-image.html">Mon image a vieilli</a></li>
@@ -145,7 +155,7 @@ FOOT = """</main>
         </ul>
       </div>
       <div>
-        <h4>Zone d'intervention</h4>
+        <p class="titre-colonne">Zone d'intervention</p>
         <ul>
           <li><a href="infographiste-perpignan.html">Perpignan</a></li>
           <li><a href="graphiste-canet-en-roussillon.html">Canet-en-Roussillon</a></li>
@@ -159,7 +169,7 @@ FOOT = """</main>
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <p class="titre-colonne">Contact</p>
         <ul>
           <li><a href="tel:{tel_uri}">{tel}</a></li>
           <li><a href="mailto:{mail}">{mail}</a></li>
@@ -272,6 +282,55 @@ def _garde_liens_retour(chemin, html):
               % os.path.basename(chemin))
         return html
     return neuf
+
+
+# Les services reels, repris tels quels du ProfessionalService de
+# l'accueil : une page qui en annoncerait d'autres mentirait au balisage.
+SERVICES = ["Création de logo", "Charte graphique", "Identité visuelle",
+            "Design graphique", "Menus et cartes",
+            "Supports de communication", "Direction artistique"]
+
+
+def page_jsonld(titre, slug, desc, typ="WebPage", offres=False):
+    """Le noeud minimal qui rattache une page a l'entreprise.
+
+    Neuf pages n'avaient aucune donnee structuree — dont prestations et
+    realisations, les deux plus commerciales. Elles existaient pour
+    Google comme du texte sans proprietaire : rien ne disait que cette
+    page appartient a la meme entite que l'accueil. Ce noeud le dit, et
+    il reprend la forme du WebPage deja produit par faq_jsonld pour que
+    les deux se repondent.
+
+    Aucune note, aucun avis, aucun prix : le balisage ne dit que ce qui
+    est verifiable sur la page.
+    """
+    import json as _json
+    sansnbsp = lambda t: t.replace("&nbsp;", " ").replace("&amp;", "&")
+    noeud = {
+        "@type": typ,
+        "name": sansnbsp(titre),
+        "url": "%s/%s" % (SITE, slug),
+        "description": sansnbsp(desc),
+        "inLanguage": "fr-FR",
+        "isPartOf": {"@type": "WebSite", "name": "Grafycom",
+                     "url": "%s/" % SITE},
+        "about": {"@type": "ProfessionalService", "name": "Grafycom",
+                  "url": "%s/" % SITE,
+                  "areaServed": {"@type": "AdministrativeArea",
+                                 "name": "Pyrénées-Orientales"}},
+    }
+    if offres:
+        noeud["mainEntity"] = {
+            "@type": "OfferCatalog", "name": "Prestations",
+            "itemListElement": [
+                {"@type": "Offer",
+                 "itemOffered": {"@type": "Service", "name": nom,
+                                 "provider": {"@type": "ProfessionalService",
+                                              "name": "Grafycom"}}}
+                for nom in SERVICES],
+        }
+    return _json.dumps({"@context": "https://schema.org", **noeud},
+                       ensure_ascii=False, indent=1)
 
 
 def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow",

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from gen import page, appel
+from gen import page, appel, page_jsonld
 
 # `avant=True` marque un projet mene AVANT Grafycom, au sein d'une
 # precedente structure. La mention se pose alors SUR LA FICHE, et non en
@@ -17,7 +17,10 @@ PROVENANCE = ("\n      <p style=\"margin-top:10px;font-size:12.5px;"
 def reaz(cat, titre, desc, fichier, alt=None, avant=False):
     return """    <article class="reaz">
       <div class="reaz-vignette"><img src="assets/img/realisations/%s" alt="%s" data-attente="Visuel à venir" loading="lazy"></div>
-      <div class="reaz-texte"><span>%s</span><h3>%s</h3><p>%s</p>%s</div>
+      <!-- h2 et non h3 : chaque réalisation est une section de la page,
+           au même rang que « Cinq avis ». En h3 sous un h1, le plan de
+           titres sautait un niveau. -->
+      <div class="reaz-texte"><span>%s</span><h2>%s</h2><p>%s</p>%s</div>
     </article>
 """ % (fichier, alt or titre, cat, titre, desc, PROVENANCE if avant else "")
 
@@ -174,4 +177,8 @@ page("realisations.html",
      "Une sélection de réalisations Grafycom : logos, cartes de restaurant, enseignes et supports imprimés dans les Pyrénées-Orientales.",
      BODY,
      ogtitle="Les réalisations Grafycom",
-     robots="index, follow")
+     robots="index, follow",
+     jsonld=page_jsonld(
+         "Réalisations — Grafycom Perpignan", "realisations.html",
+         "Logos, cartes de restaurant, enseignes et supports imprimés.",
+         typ="CollectionPage"))

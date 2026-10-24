@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from gen import page, appel
+from gen import page, appel, page_jsonld
 
 BLOC = """<section class="{fond}" id="{ancre}">
   <div class="conteneur grille g2" style="align-items:start; gap:clamp(30px,5vw,60px)">
@@ -233,6 +233,13 @@ BODY += """<section>
 
 page("prestations.html",
      "Création de logo et charte graphique — Grafycom Perpignan",
-     "Création de logo, charte graphique, menus, supports imprimés, signalétique et réseaux sociaux. Grafycom, infographiste à Perpignan. La charte se commande seule, sur un logo existant.",
+     "Création de logo, charte graphique, menus et signalétique. Grafycom, "
+     "infographiste à Perpignan. La charte se commande seule, sur un logo "
+     "existant.",
      BODY,
-     ogtitle="Les prestations Grafycom — Perpignan")
+     ogtitle="Les prestations Grafycom — Perpignan",
+     jsonld=page_jsonld(
+         "Création de logo et charte graphique — Grafycom Perpignan",
+         "prestations.html",
+         "Logo, charte graphique, menus, supports imprimés, signalétique.",
+         offres=True))

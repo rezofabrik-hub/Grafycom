@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from gen import page, appel
+from gen import page, appel, page_jsonld
 
 ETAPE = """  <div class="conteneur grille g2" style="align-items:start;gap:clamp(24px,4vw,56px);margin-bottom:clamp(40px,5vw,64px)">
     <div><span class="num" style="font-family:'Playfair Display',serif;font-size:56px;font-weight:700;line-height:1;background:var(--degrade);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:10px">{num}</span>
@@ -103,4 +103,7 @@ page("methode.html",
      "Comment se déroule un projet — Grafycom",
      "Les six étapes d'un projet chez Grafycom : échange gratuit, devis détaillé, création, ajustements, livraison des fichiers sources.",
      BODY,
-     ogtitle="La méthode Grafycom, étape par étape")
+     ogtitle="La méthode Grafycom, étape par étape",
+     jsonld=page_jsonld(
+         "Comment se déroule un projet — Grafycom", "methode.html",
+         "Les six étapes d'un projet chez Grafycom."))

@@ -32,7 +32,7 @@ import pathlib
 import re
 from datetime import date as _date
 
-from gen import page, appel, SITE, DEBUT_RETOUR, FIN_RETOUR
+from gen import page, appel, page_jsonld, SITE, DEBUT_RETOUR, FIN_RETOUR
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 ARTICLES = RACINE / "reseaux" / "blog"
@@ -446,7 +446,12 @@ def page_index(articles: list[dict]) -> None:
          "Conseils pratiques pour les commerces et artisans du 66 : "
          "réglementation des enseignes, choix des supports, préparation "
          "des fichiers d'impression.",
-         corps, ogtitle="Le blog de Grafycom")
+         corps, ogtitle="Le blog de Grafycom",
+         jsonld=page_jsonld(
+             "Blog — enseignes, impression et identité visuelle",
+             "blog.html",
+             "Conseils pratiques pour les commerces et artisans du 66.",
+             typ="Blog"))
 
 
 def maj_liens_retour(articles: list[dict]) -> None:
