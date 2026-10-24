@@ -37,6 +37,8 @@ Les conséquences arrivent toujours plus tard, et toujours au mauvais moment :
 
 Dans chacun de ces cas, la question « qui détient les droits ? » se pose, et l'absence d'écrit se transforme en négociation — avec quelqu'un qu'il faut d'abord retrouver.
 
+
+[figure: droits-livraison.png | Ce qu'on reçoit souvent, et ce qui fait de vous le propriétaire. | Deux colonnes : à gauche un fichier .jpg seul, à droite l'écrit de cession signé accompagné des sources vectorielles et de leurs déclinaisons.]
 ## Les deux pièces qui règlent le problème
 
 Un dossier propre tient en deux choses.
@@ -44,6 +46,10 @@ Un dossier propre tient en deux choses.
 **Un écrit de cession**, qui précise les droits cédés (reproduction, représentation, adaptation, modification), les supports visés — et là il faut être large : print, numérique, signalétique, véhicules, textile, objets —, le territoire, et la durée. Pour une identité d'entreprise, on cède pour toute la durée de protection et pour le monde entier : ça évite de rouvrir le sujet à chaque nouveau projet.
 
 **Les fichiers sources vectoriels.** Un JPEG ou un PNG est une image aplatie : on ne peut pas l'agrandir sans qu'elle se dégrade, ni en extraire une version monochrome, ni changer une couleur proprement. Le fichier vectoriel, lui, se redimensionne à l'infini et se décline. Sans lui, vous détenez une photo de votre logo, pas votre logo.
+
+
+[figure: droits-cession.png | Les quatre mentions que l'écrit doit porter. Une qui manque, c'est un droit qui n'est pas cédé. | Quatre colonnes numérotées : les droits cédés, les supports, le territoire et la durée.]
+[exergue: Sans le fichier vectoriel, vous détenez une photo de votre logo, pas votre logo.]
 
 ## Un détail qui n'en est pas un : le droit moral
 

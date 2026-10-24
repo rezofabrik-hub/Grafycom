@@ -41,133 +41,8 @@ SITEMAP = RACINE / "sitemap.xml"
 DEBUT_BLOC = "  <!-- blog : bloc produit par generateurs/p_blog.py -->"
 FIN_BLOC = "  <!-- fin blog -->"
 
-MOIS = ("janvier", "février", "mars", "avril", "mai", "juin", "juillet",
-        "août", "septembre", "octobre", "novembre", "décembre")
-
-
-def en_francais(iso: str) -> str:
-    """2026-10-16 -> 16 octobre 2026."""
-    try:
-        a, m, j = (int(x) for x in iso.split("-"))
-        return "%d %s %d" % (j, MOIS[m - 1], a)
-    except Exception:
-        return iso
-
-
-def entete(texte: str) -> tuple[dict, str]:
-    """Sépare l'en-tête de métadonnées du corps de l'article."""
-    if not texte.startswith("---"):
-        return {}, texte
-    fin = texte.find("\n---", 3)
-    if fin == -1:
-        return {}, texte
-    meta = {}
-    for ligne in texte[3:fin].strip().splitlines():
-        if ":" not in ligne:
-            continue
-        cle, _, valeur = ligne.partition(":")
-        meta[cle.strip()] = valeur.strip().strip('"').strip("'")
-    return meta, texte[fin + 4:].lstrip("\n")
-
-
-def en_ligne(t: str) -> str:
-    """Gras, italique, code et liens, après échappement du HTML."""
-    t = _html.escape(t, quote=False)
-    t = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", r'<a href="\2">\1</a>', t)
-    t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
-    t = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", t)
-    t = re.sub(r"`(.+?)`", r"<code>\1</code>", t)
-    # Markdown echappe l'asterisque par « \* » pour qu'il ne devienne pas
-    # de l'italique. L'antislash ne doit pas se retrouver a l'ecran.
-    t = re.sub(r"\\([*_`\[\]])", r"\1", t)
-    # Les espaces insécables françaises avant la ponctuation double.
-    t = re.sub(r" ([?!:;»])", r"&nbsp;\1", t)
-    t = t.replace("« ", "«&nbsp;")
-    return t
-
-
-def convertir(markdown: str) -> tuple[str, str]:
-    """Rend le corps en HTML. Renvoie (titre H1, corps sans le H1)."""
-    titre, sortie = "", []
-    liste = None       # None, "ul" ou "ol"
-    paragraphe = []    # lignes consecutives du paragraphe en cours
-    citation = []      # lignes consecutives d'une citation « > »
-
-    def vide_paragraphe():
-        # En Markdown, un paragraphe se termine sur une ligne vide, pas sur
-        # un retour a la ligne. Sans ce regroupement, chaque ligne du
-        # fichier devenait un <p> : le texte s'affichait hache.
-        if paragraphe:
-            sortie.append("<p>%s</p>" % en_ligne(" ".join(paragraphe)))
-            paragraphe.clear()
-
-    def vide_citation():
-        # Meme principe que pour le paragraphe : les lignes « > »
-        # consecutives forment UNE citation. Sans ce regroupement, un
-        # encart de six lignes sortait en six blockquotes empiles, chacun
-        # avec sa barre violette et ses marges - ce qui se voyait.
-        if citation:
-            sortie.append("<blockquote><p>%s</p></blockquote>"
-                          % " ".join(citation))
-            citation.clear()
-
-    def ferme():
-        nonlocal liste
-        vide_paragraphe()
-        vide_citation()
-        if liste:
-            sortie.append("</%s>" % liste)
-            liste = None
-
-    for brute in markdown.splitlines():
-        l = brute.strip()
-
-        if not l:
-            ferme()
-            continue
-
-        if l.startswith("# "):
-            ferme()
-            titre = l[2:].strip()
-            continue
-        if l.startswith("### "):
-            ferme()
-            sortie.append("<h3>%s</h3>" % en_ligne(l[4:].strip()))
-            continue
-        if l.startswith("## "):
-            ferme()
-            sortie.append("<h2>%s</h2>" % en_ligne(l[3:].strip()))
-            continue
-        if l.startswith("---"):
-            ferme()
-            continue
-        if l.startswith("> "):
-            vide_paragraphe()
-            citation.append(en_ligne(l[2:].strip()))
-            continue
-        if citation:
-            vide_citation()
-
-        puce = re.match(r"^[-*]\s+(.*)$", l)
-        numero = re.match(r"^\d+\.\s+(.*)$", l)
-        if puce or numero:
-            voulue = "ol" if numero else "ul"
-            vide_paragraphe()
-            if liste != voulue:
-                ferme()
-                sortie.append("<%s>" % voulue)
-                liste = voulue
-            sortie.append("<li>%s</li>"
-                          % en_ligne((numero or puce).group(1)))
-            continue
-
-        if liste:
-            ferme()
-        paragraphe.append(l)
-
-    ferme()
-    return titre, "\n".join(sortie)
-
+from md_article import (MOIS, en_francais, entete, en_ligne,  # noqa: F401
+                        figure_en_ligne, convertir, FIGURE, EXERGUE)
 
 def VALIDE(statut: str) -> bool:
     """Le statut autorise-t-il la publication ?
@@ -208,7 +83,7 @@ def lire_articles() -> tuple[list[dict], list[tuple]]:
     attente: list[tuple] = []
     for f in sorted(ARTICLES.glob("*.md")):
         meta, corps = entete(f.read_text(encoding="utf-8"))
-        titre_h1, html = convertir(corps)
+        titre_h1, html = convertir(corps, f.name)
         titre = meta.get("titre") or titre_h1
         slug = meta.get("slug") or f.stem
         if not titre or not slug:

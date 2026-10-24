@@ -56,6 +56,8 @@ lequel ne fonctionne pas. Un logo qui ne tient que dans un cas n'est pas
 terminé — il lui manque ses déclinaisons, ce qui n'est pas la même chose
 qu'une refonte.
 
+
+[figure: logo-tailles.png | Le même dessin à quatre tailles réelles. Ce qui tombe en premier, c'est ce qui portait le nom. | Le même monogramme posé à quatre échelles — enseigne, véhicule, carte de visite, favicon — le nom disparaissant à la plus petite.]
 ## 2. Avez-vous les fichiers d'origine ?
 
 Les formats vectoriels — .AI, .EPS ou .PDF — se redimensionnent sans perte,
@@ -73,6 +75,10 @@ Profitez-en pour vérifier un point voisin : savez-vous ce que votre contrat
 de création vous a réellement cédé comme droits ? C'est un sujet à part
 entière, et il se vérifie avant de faire travailler quelqu'un d'autre
 dessus.
+
+
+[figure: logo-fichiers.png | Le même monogramme, réduit à dix-huit pixels puis réagrandi. La dégradation n'est pas dessinée, elle est subie. | Deux cartes : à gauche le monogramme vectoriel net, à droite le même en pixels, visiblement escalier.]
+[exergue: Vous le voyez cinquante fois par jour. Votre client l'a vu trois fois cette année.]
 
 ## 3. Dit-il encore ce que vous vendez aujourd'hui ?
 

@@ -24,6 +24,8 @@ Son usage principal n'est pas décoratif, il est pratique : masquer le bas de la
 
 On peut y découper le logo, le nom ou un motif en réserve — c'est-à-dire laisser le verre nu aux endroits du dessin, qui apparaît alors en transparent dans le dépoli. C'est sobre, ça ne se démode pas, et ça fonctionne aussi bien de jour que de nuit.
 
+
+[figure: vitrine-deux-cotes.png | Les trois familles, vues des deux côtés du verre. C'est la seule comparaison qui décide. | Grille de six vitrines : dépoli, microperforé et lettres découpées, vus depuis la rue puis depuis l'intérieur.]
 Son défaut : il marque les traces de doigts. Sur une porte, posez-le au-dessus de la poignée.
 
 ## Le microperforé : plein dehors, transparent dedans
@@ -34,6 +36,8 @@ C'est la solution pour couvrir une grande surface vitrée avec un visuel sans en
 
 Deux choses à savoir avant de le commander. Il perd une partie de la lumière, entre trente et cinquante pour cent selon le taux de perforation : dans une pièce déjà sombre, il faut y réfléchir. Et il est moins durable que le dépoli, surtout en plein sud — ce qui, dans les Pyrénées-Orientales, n'est pas un détail. Comptez-le comme un support de saison, pas comme un investissement de dix ans.
 
+
+[figure: vitrine-microperfore.png | Le même film, deux distances de regard. | Agrandissement d'un film microperforé : une trame de trous d'environ un millimètre, avec une flèche venant de la rue et une autre venant de l'intérieur.]
 ## Les lettres découpées : ce qui vieillit le mieux
 
 Troisième famille, la plus discrète : des lettres et des formes découpées une à une dans un adhésif de couleur unie, puis posées sur le verre sans aucun fond.
@@ -43,6 +47,8 @@ Le nom du commerce, les horaires, le numéro de téléphone, l'adresse du site. 
 C'est ce qui vieillit le mieux, pour une raison simple : il n'y a pas de fond. Un visuel imprimé sur un fond blanc finit par jaunir, et le rectangle se voit. Des lettres découpées, elles, ne jaunissent pas — et quand l'une se décolle, on la remplace seule.
 
 C'est aussi le support des informations que vos clients cherchent vraiment : les horaires sur une vitrine, c'est le détail que tout le monde oublie et que tout le monde lit.
+
+[exergue: C'est le plus grand support que vous possédez, et vous ne le louez à personne.]
 
 ## Trois points à régler avant de commander
 

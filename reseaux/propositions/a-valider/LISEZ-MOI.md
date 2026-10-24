@@ -9,7 +9,8 @@ Tout ce qui est écrit et pas encore publié, classé par canal.
 | **`instagram-facebook.md`** | les 27 publications |
 | **`fiche-google.md`** | les 23 textes de fiche |
 | **`stories.md`** | les 6 séquences hebdomadaires, 40 écrans |
-| **`blog.md`** | l'index des 7 articles — les textes sont dans `reseaux/blog/` |
+| **`blog.md`** | l'index des 7 articles, leurs 21 illustrations, et comment un article est mis en page |
+| **`articles.pdf`** | **les sept textes complets**, composés sur deux colonnes — le seul PDF qui n'a pas de `.md` : il se fabrique par `python3 reseaux/articles.py` |
 | **`messages-prives.md`** | le message d'accueil et 4 réponses types |
 | **`photos-a-prendre.md`** | **plus rien à photographier** — la réserve de prises de vue, et pourquoi les douze publications concernées sont dessinées |
 | **`visuels-a-produire.md`** | le récapitulatif de ce qui a été produit |
@@ -49,9 +50,11 @@ que se passe la vraie validation, et c'est le gros du temps.
    change ici.
 5. **`stories.md`** — 40 écrans, **avec ses cases à cocher**. Ils
    annoncent les publications : ils bougent avec elles.
-6. **`blog.md`** — l'index seul. Les sept textes ne sont pas dans les
-   PDF : ils s'ouvrent dans `reseaux/blog/`, et se valident en y
-   écrivant `statut: validé`.
+6. **`articles.pdf`** — les sept textes complets, mis en page comme
+   ils paraîtront, illustrations comprises. C'est là qu'on les relit.
+   `blog.md` reste l'index : il dit qui attend quoi. La validation,
+   elle, s'écrit toujours dans le fichier de l'article, en remplaçant
+   sa ligne `statut:` par `statut: validé`.
 
 **Puis ce qui ne se valide pas, mais se vérifie** — une relecture de
 cohérence, rapide, une fois que les décisions sont prises.

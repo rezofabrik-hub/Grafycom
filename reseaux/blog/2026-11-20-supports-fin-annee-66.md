@@ -26,6 +26,8 @@ C'est ce qui rend la date intéressante. En décembre, votre carte arrive au mil
 
 Une précision qui change le calendrier : **le 31 janvier est la limite, pas la cible.** L'usage veut un envoi dès la reprise, et passé le 25 janvier une carte commence à ressembler à un oubli rattrapé. Visez la première quinzaine. C'est de là qu'on compte à rebours.
 
+
+[figure: voeux-fenetre.png | La même carte, deux mois, deux effets. | À gauche, dix-huit enveloppes empilées pour décembre ; à droite, une seule enveloppe pour janvier.]
 ## Le rétroplanning, coupé en deux
 
 Quatre étapes ne se compressent pas : la création, les corrections, le bon à tirer, la fabrication. Jusqu'ici elles s'enchaînaient. Pour janvier, elles se coupent en deux, et c'est tout l'intérêt.
@@ -34,11 +36,15 @@ Quatre étapes ne se compressent pas : la création, les corrections, le bon à 
 
 **Décembre : le bon à tirer.** Un exemplaire réel sur le papier définitif, validé avant de lancer la série. C'est l'étape que les gens pressés veulent sauter, et celle qui évite de refaire mille cartes.
 
+
+[figure: voeux-fermeture.png | La semaine où rien n'avance, et tout ce qu'elle déplace. | Frise de la création à la réception, coupée par une zone en pointillés corail du 24 décembre au 2 janvier, marquée « ateliers fermés ».]
 **Janvier : la fabrication et la livraison.** Les ateliers se sont vidés, les transporteurs aussi, et les délais annoncés redeviennent les délais réels.
 
 Une réserve, et elle compte : entre Noël et le 2 janvier, les imprimeurs prennent des congés comme tout le monde, et beaucoup ferment une semaine entière. Un fichier envoyé le 23 décembre ne part pas en machine le 24, il attend la reprise. C'est une raison de plus de boucler le bon à tirer avant les fêtes : le fichier doit être prêt à partir le jour où l'atelier rouvre, pas commencer ce jour-là.
 
 Votre fichier attend pendant les fêtes, votre commande non. L'erreur de calcul, elle, ne change pas : on compte à partir d'aujourd'hui, alors qu'il faut compter à l'envers, depuis le jour où la carte doit être dans la boîte aux lettres.
+
+[exergue: En décembre, votre carte arrive au milieu de trente autres. En janvier, elle arrive seule.]
 
 ## Pourquoi une carte imprimée, en 2026
 

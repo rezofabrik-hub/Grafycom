@@ -37,6 +37,8 @@ sa notice, le Cerfa n° 52393#01. Il couvre l'installation, le remplacement
 et la modification d'un ou plusieurs dispositifs, et il est téléchargeable
 librement sur service-public.gouv.fr.
 
+
+[figure: enseigne-cerfa.png | Le formulaire en vigueur et celui qu'il remplace. Des sites publics renvoient encore vers le second. | Deux fiches côte à côte : le Cerfa 16308*01 en vigueur, et le Cerfa 14798*01 barré de corail, périmé depuis le 1er juillet 2026.]
 > ⚠️ **Attention au numéro.** Beaucoup de documents encore en ligne —
 > y compris sur des sites de mairies et de préfectures — renvoient vers
 > l'ancien formulaire **Cerfa 14798\*01**. Il n'est plus valable : depuis
@@ -108,8 +110,12 @@ La bonne séquence est simple :
    — et nulle part ailleurs — puis le déposer en trois exemplaires ;
 5. attendre la réponse avant de lancer la fabrication.
 
+
+[figure: enseigne-sequence.png | La séquence dans l'ordre. L'étape 2 ouvre une branche qui ne dépend pas de vous. | Cinq étapes numérotées, de la consultation du RLP à l'attente de la réponse, suivies d'un encadré sur l'avis de l'architecte des Bâtiments de France.]
 Cette dernière ligne est celle qu'on saute le plus souvent, et c'est celle
 qui coûte le plus cher.
+
+[exergue: Dessiner d'abord, vérifier ensuite, c'est risquer de tout reprendre.]
 
 ## Concevoir une enseigne qui passe du premier coup
 

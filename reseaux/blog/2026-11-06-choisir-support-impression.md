@@ -62,6 +62,10 @@ différents sur ces trois papiers. Ce n'est pas un problème : c'est un choix
 à faire en connaissance de cause. Un restaurant gastronomique et un food
 truck n'ont pas besoin du même rendu.
 
+
+[figure: cmjn-papiers.png | Même fichier, même encre, même machine. Quatre papiers. | Le même aplat orange imprimé sur quatre papiers — couché brillant, couché mat, offset non couché et kraft — du plus vif au plus éteint.]
+[exergue: Aucun réglage ne corrige cela. C'est une limite physique, pas un défaut de qualité.]
+
 ## Les trois réglages à vérifier avant d'envoyer un fichier
 
 Au-delà des couleurs, trois points techniques décident de la réussite d'une
@@ -84,6 +88,8 @@ dépasser du format final — généralement de 3 à 5 millimètres. C'est le
 **fond perdu**. Sans lui, la moindre imprécision de coupe laisse un filet
 blanc sur la tranche.
 
+
+[figure: cmjn-coupe.png | Trois traits concentriques, et un seul sera visible : celui du milieu. | Un document en coupe montrant le fond perdu en pointillés corail au-delà du format final, le trait de coupe, et la zone de sécurité en retrait.]
 ### Les zones de sécurité
 
 À l'inverse, rien d'important ne doit s'approcher du bord. Texte, logo,

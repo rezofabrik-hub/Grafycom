@@ -41,6 +41,10 @@ La conséquence est simple et un peu frustrante. **La zone la plus précieuse
 de votre vitrine est une bande d'environ trente centimètres.** Tout ce qui
 doit être lu y va. Le reste décore.
 
+
+[figure: trottoir-hauteur.png | Deux mètres de vitrine, trente centimètres vraiment lus. | Élévation d'une vitrine de deux mètres, cotée, avec la bande comprise entre 1,40 m et 1,70 m du sol marquée en turquoise.]
+[exergue: Le client, lui, est à huit mètres, sur le trottoir d'en face, et il marche.]
+
 ## Le verre libre : on entre pour ce qu'on voit à l'intérieur
 
 C'est le point le plus contre-intuitif, et celui qui coûte le plus cher en
@@ -80,6 +84,8 @@ Règlement Local de Publicité. Un appel au service urbanisme de la mairie
 suffit à les connaître, et c'est gratuit — dix minutes avant la commande
 valent mieux qu'un courrier après la pose.
 
+
+[figure: trottoir-nuit.png | Le soir, le verre choisit son camp selon le côté le plus éclairé. | Deux vitrines de nuit : l'une laisse voir l'intérieur, l'autre réfléchit la rue en obliques.]
 ## Le fond : un texte sur verre se lit contre ce qu'il y a derrière
 
 Un lettrage adhésif n'a pas de fond. Il se lit contre ce qui se trouve
