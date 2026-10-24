@@ -1,0 +1,106 @@
+# Parution du blog, tous les matins.
+#
+# Pourquoi ce fichier existe
+# --------------------------
+# Un article du blog paraît quand DEUX conditions sont réunies : son
+# en-tête porte « statut: validé », et sa date est arrivée. La seconde
+# ne se vérifie pas toute seule — il faut que quelqu'un, ou quelque
+# chose, relance le générateur. Le calendrier annonçait « un passage
+# automatique du matin » depuis le premier jour. Il n'existait pas.
+# Sans lui, les huit articles validés seraient restés dans le dépôt, et
+# le premier devait sortir le 30 octobre.
+#
+# Ce que ce workflow fait, et rien d'autre
+# ----------------------------------------
+# Il lance `generateurs/p_blog.py`, qui lit `reseaux/blog/*.md`, écrit
+# `blog.html` et une page par article paru, et met à jour le bloc du
+# blog dans `sitemap.xml`. Puis il commite, si et seulement si quelque
+# chose a changé. GitHub Pages sert la racine du dépôt : pousser, c'est
+# publier.
+#
+# Il ne lance PAS `build.sh` : celui-ci assemble `dist/` à partir des
+# fichiers déjà écrits, il n'exécute aucun générateur. Lancer build.sh
+# ici ne produirait rien et donnerait l'illusion du contraire.
+#
+# Il ne touche à aucune autre page. Un changement dans `p_index.py` ou
+# `p_cgv.py` se régénère à la main, comme avant.
+name: Parution du blog
+
+on:
+  # 07 h 07 UTC, soit 08 h 07 à Perpignan en heure d'hiver. Pas à
+  # l'heure pile : les crons de GitHub s'y bousculent et prennent du
+  # retard. Le calendrier annonce 8 h 00, l'écart est tenable ; un
+  # article qui sort à 8 h 12 plutôt qu'à 8 h 00 ne gêne personne, un
+  # article qui ne sort pas, si.
+  schedule:
+    - cron: "7 7 * * *"
+  # Pour forcer une parution sans attendre le lendemain.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Deux passages en même temps écriraient le même fichier. On attend.
+concurrency:
+  group: parution-blog
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # Aucune dépendance à installer : les générateurs n'utilisent que
+      # la bibliothèque standard. C'est un choix du projet, et c'est ce
+      # qui rend ce workflow aussi court.
+      - name: Régénérer le blog
+        working-directory: generateurs
+        run: python3 p_blog.py
+
+      # Un générateur qui échoue à moitié peut écrire un fichier vide
+      # ou tronqué. On ne pousse pas ça sur un site en ligne.
+      - name: Vérifier ce qui a été écrit
+        run: |
+          set -euo pipefail
+          test -s blog.html
+          if [ "$(wc -c < blog.html)" -lt 2000 ]; then
+            echo "::error::blog.html fait moins de 2 ko — génération suspecte."
+            exit 1
+          fi
+          grep -q "</html>" blog.html
+          grep -q "blog : bloc produit par generateurs/p_blog.py" sitemap.xml
+          for f in blog-*.html; do
+            [ -e "$f" ] || continue
+            grep -q "</html>" "$f" || {
+              echo "::error::$f est tronqué."
+              exit 1
+            }
+          done
+
+      - name: Publier si quelque chose a changé
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Rien de neuf ce matin : aucun article n'arrive à sa date."
+            echo "Rien de neuf ce matin." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "### Pages modifiées" >> "$GITHUB_STEP_SUMMARY"
+          git status --porcelain | sed 's/^/    /' >> "$GITHUB_STEP_SUMMARY"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          # Deux -m plutôt qu'une chaîne sur plusieurs lignes : dans un
+          # bloc YAML indenté, les retours à la ligne emportent leur
+          # indentation dans le message de commit.
+          git commit \
+            -m "Parution du blog — $(date -u +%Y-%m-%d)" \
+            -m "Passage automatique du matin : un article validé a atteint sa date, ou un lien de retour a bougé avec lui. Les pages sont produites par generateurs/p_blog.py, jamais écrites à la main."
+          git push

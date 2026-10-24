@@ -33,17 +33,25 @@ Chaque article paraîtra à sa date, tout seul.
 **Les huit articles sont validés le 24 octobre.** Il n'y a plus rien à
 relire.
 
-> ⚠️ **Ils ne paraîtront pas tout seuls pour autant, et c'est un trou
-> que j'ai trouvé en préparant la mise en ligne.** Ce document et le
-> calendrier annoncent un « passage automatique du matin ». Il n'existe
-> pas : le dépôt ne porte qu'un seul workflow, et il vérifie le
-> certificat du domaine. Sans intervention, l'article du 30 octobre ne
-> sortira pas.
+> ✅ **Le passage automatique du matin existe depuis le 24 octobre.**
+> Ce document et le calendrier l'annonçaient depuis le premier jour, et
+> il n'existait pas : le dépôt ne portait qu'un workflow, qui vérifie
+> le certificat du domaine. Sans lui, l'article du 30 octobre serait
+> resté dans le dépôt.
 >
-> Deux façons de régler ça : un workflow quotidien qui reconstruit et
-> publie seul — c'est ce que je recommande et c'est une heure de
-> travail — ou une commande lancée chaque matin. Tant que l'un des deux
-> n'est pas en place, la parution est manuelle.
+> Il s'appelle `.github/workflows/parution-blog.yml`, il tourne tous
+> les matins à **8 h 07**, et il ne fait qu'une chose : relancer
+> `generateurs/p_blog.py`, vérifier que les pages produites tiennent
+> debout, et pousser si quelque chose a changé. GitHub Pages sert la
+> racine du dépôt — pousser, c'est publier.
+>
+> Il ne lance pas `build.sh` : celui-ci assemble `dist/` à partir des
+> fichiers déjà écrits, il n'exécute aucun générateur. C'est une chose
+> que j'ai apprise en refaisant les CGV, et elle aurait coûté cher un
+> 30 octobre au matin.
+>
+> **À vérifier une fois, et une seule :** lancer le workflow à la main
+> depuis l'onglet Actions, et regarder qu'il finit en vert.
 
 Pour en
 valider un : ouvrir son fichier dans `reseaux/blog/`, remplacer la ligne
