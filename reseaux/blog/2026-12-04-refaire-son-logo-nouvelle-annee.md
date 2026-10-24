@@ -7,7 +7,7 @@ date: 2026-12-04
 meta: "Changer de logo parce que l'année change n'est pas une raison. Trois questions concrètes pour savoir s'il faut ajuster, refondre, ou ne rien toucher."
 illustration: bilan.png
 illustration_alt: "Les trois questions du diagnostic — lisible partout, fichiers en main, dit-il ce que vous vendez — et les deux issues : un seul non, on ajuste ; trois non, on redessine."
-statut: à relire
+statut: validé
 ---
 
 # Faut-il refaire son logo pour la nouvelle année ? Trois questions avant de décider

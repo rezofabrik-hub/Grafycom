@@ -7,7 +7,7 @@ date: 2026-11-20
 meta: "Passé la mi-novembre, imprimer pour Noël devient un pari. Le calendrier des vœux de janvier, l'emballage réutilisable et le menu de réveillon : ce qui reste tenable."
 illustration: retroplanning.png
 illustration_alt: "Frise du rétroplanning lue de droite à gauche, de la mi-janvier vers aujourd'hui : réception en mi-janvier, impression en janvier, bon à tirer en décembre, création maintenant."
-statut: à relire
+statut: validé
 ---
 
 # Cartes de vœux : il est trop tard pour Noël, et c'est une bonne nouvelle
@@ -30,17 +30,14 @@ Une précision qui change le calendrier : **le 31 janvier est la limite, pas la 
 [figure: voeux-fenetre.png | La même carte, deux mois, deux effets. | À gauche, dix-huit enveloppes empilées pour décembre ; à droite, une seule enveloppe pour janvier.]
 ## Le rétroplanning, coupé en deux
 
-Quatre étapes ne se compressent pas : la création, les corrections, le bon à tirer, la fabrication. Jusqu'ici elles s'enchaînaient. Pour janvier, elles se coupent en deux, et c'est tout l'intérêt.
+Trois étapes ne se compressent pas : la création, les corrections, la fabrication. Jusqu'ici elles s'enchaînaient. Pour janvier, elles se coupent en deux, et c'est tout l'intérêt.
 
-**Maintenant : la création.** On décide ce qu'on envoie, à qui, et en quelle quantité. Comptez une semaine de création et une semaine d'aller-retour pour les corrections — celles-ci dépendent de votre disponibilité, pas de la mienne, et cette disponibilité, vous l'avez en novembre.
-
-**Décembre : le bon à tirer.** Un exemplaire réel sur le papier définitif, validé avant de lancer la série. C'est l'étape que les gens pressés veulent sauter, et celle qui évite de refaire mille cartes.
-
+**Maintenant : la création et les corrections.** On décide ce qu'on envoie, à qui, et en quelle quantité. Comptez une semaine de création et une semaine d'aller-retour pour les corrections — celles-ci dépendent de votre disponibilité, pas de la mienne, et cette disponibilité, vous l'avez en novembre.
 
 [figure: voeux-fermeture.png | La semaine où rien n'avance, et tout ce qu'elle déplace. | Frise de la création à la réception, coupée par une zone en pointillés corail du 24 décembre au 2 janvier, marquée « ateliers fermés ».]
 **Janvier : la fabrication et la livraison.** Les ateliers se sont vidés, les transporteurs aussi, et les délais annoncés redeviennent les délais réels.
 
-Une réserve, et elle compte : entre Noël et le 2 janvier, les imprimeurs prennent des congés comme tout le monde, et beaucoup ferment une semaine entière. Un fichier envoyé le 23 décembre ne part pas en machine le 24, il attend la reprise. C'est une raison de plus de boucler le bon à tirer avant les fêtes : le fichier doit être prêt à partir le jour où l'atelier rouvre, pas commencer ce jour-là.
+Une réserve, et elle compte : entre Noël et le 2 janvier, les imprimeurs prennent des congés comme tout le monde, et beaucoup ferment une semaine entière. Un fichier envoyé le 23 décembre ne part pas en machine le 24, il attend la reprise. C'est une raison de plus de tout boucler avant les fêtes : le fichier doit être prêt à partir le jour où l'atelier rouvre, pas commencer ce jour-là.
 
 Votre fichier attend pendant les fêtes, votre commande non. L'erreur de calcul, elle, ne change pas : on compte à partir d'aujourd'hui, alors qu'il faut compter à l'envers, depuis le jour où la carte doit être dans la boîte aux lettres.
 

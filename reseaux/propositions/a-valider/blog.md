@@ -23,14 +23,14 @@ Chaque article paraîtra à sa date, tout seul.
 |---|---|---|---|---|
 | vendredi 30 octobre | Enseigne de commerce : comment obtenir l'autorisation préalab | 801 | 3 | ✅ validé |
 | vendredi 6 novembre | Pourquoi vos couleurs imprimées ne ressemblent jamais à votre | 647 | 3 | ✅ validé |
-| jeudi 12 novembre | Habiller sa vitrine : dépoli, microperforé ou lettres découpé | 925 | 3 | ⚠️ à relire |
+| jeudi 12 novembre | Habiller sa vitrine : dépoli, microperforé ou lettres découpé | 925 | 3 | ✅ validé |
 | vendredi 13 novembre | Qui possède votre logo ? | 687 | 3 | ✅ validé |
-| vendredi 20 novembre | Cartes de vœux : il est trop tard pour Noël, et c'est une bon | 1065 | 3 | ⚠️ à relire |
-| vendredi 27 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le tro | 854 | 3 | ⚠️ à relire |
+| vendredi 20 novembre | Cartes de vœux : il est trop tard pour Noël, et c'est une bon | 1026 | 3 | ✅ validé |
+| vendredi 27 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le tro | 854 | 3 | ✅ validé |
 | mardi 1er décembre | Cinq avis signés, et le mot qui revient dans quatre | 1185 | 3 | ⚠️ à relire |
-| vendredi 4 décembre | Faut-il refaire son logo pour la nouvelle année ? Trois quest | 792 | 3 | ⚠️ à relire |
+| vendredi 4 décembre | Faut-il refaire son logo pour la nouvelle année ? Trois quest | 792 | 3 | ✅ validé |
 
-**5 articles sur 8 attendent ta validation.** Pour en
+**1 article sur 8 attend ta validation.** Pour en
 valider un : ouvrir son fichier dans `reseaux/blog/`, remplacer la ligne
 `statut:` par `statut: validé`, et le pousser. Le reste est automatique.
 

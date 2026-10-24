@@ -7,7 +7,7 @@ date: 2026-11-27
 meta: "Hauteur des yeux, verre libre, éclairage, fond : les quatre points qui décident si votre vitrine de fin d'année se lit depuis la rue."
 illustration: trottoir.png
 illustration_alt: "La même vitrine de Noël vue à trois, dix et vingt mètres : les lignes de détail disparaissent une à une, seul le mot principal reste lisible."
-statut: à relire
+statut: validé
 ---
 
 # Vitrine de fin d'année : ce qui se lit vraiment depuis le trottoir d'en face

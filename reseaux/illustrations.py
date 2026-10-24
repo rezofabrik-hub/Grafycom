@@ -684,10 +684,14 @@ def illu_retroplanning():
     tirer et reprend en janvier.
     """
     im, d = fond()
-    etapes = [("Création", "maintenant"), ("Bon à tirer", "décembre"),
-              ("Impression", "janvier"), ("Réception", "mi-janvier")]
+    # Trois moments depuis le 24 octobre : le bon à tirer est sorti de
+    # l'article, la frise le suit. L'intervalle vide se déplace donc
+    # entre la création et l'impression — c'est toujours le même
+    # intervalle, celui des fêtes, mais il n'a plus d'étape à sa droite.
+    etapes = [("Création", "maintenant"), ("Impression", "janvier"),
+              ("Réception", "mi-janvier")]
     cy = 250
-    xs = [170, 450, 730, 1010]
+    xs = [210, 600, 990]
     for i, (nom, delai) in enumerate(etapes):
         x = xs[i]
         d.ellipse([x - 42, cy - 42, x + 42, cy + 42], fill=rvb("corail"))
@@ -697,12 +701,12 @@ def illu_retroplanning():
                fill=rvb("blanc"))
         legende(d, x, cy + 64, nom, 23, "encre", centre=True)
         legende(d, x, cy + 94, delai, 20, "taupe", centre=True)
-        if i < 3:                       # une fleche, vers la gauche
+        if i < len(etapes) - 1:         # une fleche, vers la gauche
             xa, xb = xs[i + 1] - 58, x + 58
-            if i == 1:
-                # L'intervalle entre l'impression (janvier) et le bon a
-                # tirer (decembre) est le seul ou RIEN ne se passe : le
-                # fichier attend les fetes. Le legender sans le dessiner
+            if i == 0:
+                # L'intervalle entre la creation et l'impression est
+                # le seul ou RIEN ne se passe : le fichier attend les
+                # fetes. Le legender sans le dessiner
                 # laisserait la frise dire le contraire de sa propre
                 # legende, donc ce trait-la est pointille.
                 t = xa
@@ -717,8 +721,8 @@ def illu_retroplanning():
                        width=5)
             d.polygon([(xb, cy), (xb + 22, cy - 12), (xb + 22, cy + 12)],
                       fill=rvb("sable_fonce"))
-    legende(d, 170, cy - 92, "aujourd'hui", 20, "taupe", centre=True)
-    legende(d, 1010, cy - 92, "la boîte aux lettres", 20, "taupe",
+    legende(d, 210, cy - 92, "aujourd'hui", 20, "taupe", centre=True)
+    legende(d, 990, cy - 92, "la boîte aux lettres", 20, "taupe",
             centre=True)
     titre_bas(d, "Le calendrier se coupe en deux, et on compte à rebours.")
     return im
@@ -791,10 +795,9 @@ def illu_voeux_fermeture():
     ecrire(d, (fx0 + fx1) / 2, y + 58, "du 24 décembre au 2 janvier",
            "Inter-600", 21, "corail", centre=True)
 
-    jalons = [(0.02, "Création", "maintenant"),
-              (0.26, "Bon à tirer", "avant les fêtes"),
+    jalons = [(0.06, "Création", "maintenant"),
               (0.72, "Fabrication", "dès la reprise"),
-              (0.96, "Réception", "mi-janvier")]
+              (0.94, "Réception", "mi-janvier")]
     for p, titre, quand in jalons:
         x = x0 + (x1 - x0) * p
         d.ellipse([x - 11, y - 11, x + 11, y + 11], fill=rvb("violet"))
@@ -802,9 +805,9 @@ def illu_voeux_fermeture():
         ecrire(d, x, y + 114, quand, "Inter-400", 21, "taupe", centre=True)
     pave(d, 90, 364,
          "Un fichier envoyé le 23 décembre ne part pas en machine le 24 : "
-         "il attend la reprise. C'est une raison de plus de boucler le bon "
-         "à tirer avant les fêtes — le fichier doit être prêt à partir le "
-         "jour où l'atelier rouvre, pas commencer ce jour-là.",
+         "il attend la reprise. C'est une raison de plus de tout boucler "
+         "avant les fêtes — le fichier doit être prêt à partir le jour où "
+         "l'atelier rouvre, pas commencer ce jour-là.",
          "Inter-400", 23, LARGE - 180)
     titre_bas(d, "Une semaine de fermeture déplace tout le reste.")
     return im
