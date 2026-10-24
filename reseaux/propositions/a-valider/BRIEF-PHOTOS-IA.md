@@ -423,6 +423,138 @@ n'ont rien à gagner à une photo — leur planche fonctionne comme elle est.
 | **J** | n° 20 · Matières et fabrication | Une découpe en cours : lame, règle en acier, chute d'adhésif qui s'enroule. Geste arrêté. |
 | **K** | n° 23 · Impressions de fin d'année | Une sortie d'imprimante en train de tomber dans le réceptacle, légèrement floue par le mouvement. |
 
+#### Les quatre prompts, prêts à coller — écrits le 24 octobre
+
+Tentés depuis ici le 24 octobre : **le générateur a refusé deux fois**,
+d'abord la résolution 2K que la formule en cours n'ouvre pas, puis la
+génération elle-même, faute de crédits. Les prompts sont donc écrits
+ici plutôt que produits, et ils fonctionnent avec n'importe quel moteur.
+
+Chacun suit le bloc du § 3.6 : seule la première ligne change. Les
+surfaces viennent de la liste close du § 3.5, et chaque image ne porte
+qu'un seul accent.
+
+> ⚠️ **Le format.** Demander du **4:5** si le moteur le propose. S'il
+> n'offre que du 3:4, le prendre : le recadrage « couvrir » rognera le
+> haut et le bas plutôt que les côtés, et le sujet est dans les deux
+> tiers supérieurs. Ne jamais prendre du 16:9, qui perd les bords —
+> c'est souvent là qu'est le sujet.
+
+> ⚠️ **Viser 2160 px sur le grand côté.** En dessous, l'image se juge
+> sur la planche et pas sur le principe (voir § 3.3) — mais un
+> agrandissement de 1,3 sur une photographie commence à se voir.
+
+**G — n° 17, rétroplanning vœux.** Accent violet, surface chêne clair.
+
+```
+A hand and forearm, cut off before the elbow, setting a thick blank
+greeting card down flat on a table, a small stack of identical blank
+cards beside it, blind embossing catching the raking light across the
+card face, the card surface carrying no text and no mark of any kind
+
+on light oak, shot on 50mm at f/2.2, single warm window light from
+camera left at 45 degrees, 4800K late afternoon, soft shadows with
+defined edges, shallow depth of field with background falling off,
+warm neutral palette of cream #f7f1ef, sand #efe4dd, taupe #a2897c and
+brown #6d5a50, exactly one accent of violet #a86cd0 covering less than
+10 percent of the frame, fine film grain, slight natural imperfection,
+editorial still life photography, vertical 4:5 framing, subject
+entirely in the upper third, lower third is calm empty surface with
+soft shadow falloff for text overlay
+
+NEGATIVE: faces, people, eyes, text, letters, numbers, logos,
+watermarks, brand names, readable signage, printed words, symmetry,
+flat lighting, pure white background, 3D render, CGI, plastic sheen,
+oversaturation, two accent colours, green plants, flowers, screens,
+laptops, phones, gold, silver, metallic, jewellery, watches, nail
+polish
+```
+
+**I — n° 15 bis, un visuel sur quatre supports.** Accent orange,
+surface béton ciré gris chaud, vue de dessus.
+
+```
+Four blank printed pieces laid side by side in slight disorder, seen
+from directly above — a gummed label, a flat kraft paper bag, a thick
+business card and a cut sheet of matte vinyl — every surface
+completely unmarked, no text and no image on any of them
+
+on warm grey polished concrete, shot on 50mm at f/2.2, single warm
+window light from camera left at 45 degrees, 4800K late afternoon,
+soft shadows with defined edges, shallow depth of field with
+background falling off, warm neutral palette of cream #f7f1ef, sand
+#efe4dd, taupe #a2897c and brown #6d5a50, exactly one accent of orange
+#f5883c covering less than 10 percent of the frame, fine film grain,
+slight natural imperfection, editorial still life photography,
+vertical 4:5 framing, subject entirely in the upper third, lower third
+is calm empty surface with soft shadow falloff for text overlay
+
+NEGATIVE: faces, people, eyes, text, letters, numbers, logos,
+watermarks, brand names, readable signage, printed words, symmetry,
+flat lighting, pure white background, 3D render, CGI, plastic sheen,
+oversaturation, two accent colours, green plants, flowers, screens,
+laptops, phones, gold, silver, metallic
+```
+
+**J — n° 20, matières et fabrication.** Accent turquoise, surface
+chêne clair.
+
+```
+A cut in progress, the gesture stopped mid-motion — a scalpel blade
+pressed along a steel ruler, a thin curl of offcut vinyl lifting away
+from the sheet, one hand and forearm only, cut off before the elbow,
+the vinyl entirely plain with nothing printed on it
+
+on light oak, shot on 50mm at f/2.2, single warm window light from
+camera left at 45 degrees, 4800K late afternoon, soft shadows with
+defined edges, shallow depth of field with background falling off,
+warm neutral palette of cream #f7f1ef, sand #efe4dd, taupe #a2897c and
+brown #6d5a50, exactly one accent of turquoise #3ec2b3 covering less
+than 10 percent of the frame, fine film grain, slight natural
+imperfection, editorial still life photography, vertical 4:5 framing,
+subject entirely in the upper third, lower third is calm empty surface
+with soft shadow falloff for text overlay
+
+NEGATIVE: faces, people, eyes, text, letters, numbers, logos,
+watermarks, brand names, readable signage, printed words, symmetry,
+flat lighting, pure white background, 3D render, CGI, plastic sheen,
+oversaturation, two accent colours, green plants, flowers, screens,
+laptops, phones, gold, silver, metallic, jewellery, watches, nail
+polish
+```
+
+**K — n° 23, impressions de fin d'année.** Accent orange, surface
+béton ciré gris chaud.
+
+```
+A freshly printed sheet dropping into the output tray of a press,
+caught slightly blurred by its own motion, a small stack already
+landed beneath it, every sheet carrying only soft abstract blocks of
+colour and nothing legible
+
+on warm grey polished concrete, shot on 50mm at f/2.2, single warm
+window light from camera left at 45 degrees, 4800K late afternoon,
+soft shadows with defined edges, shallow depth of field with
+background falling off, warm neutral palette of cream #f7f1ef, sand
+#efe4dd, taupe #a2897c and brown #6d5a50, exactly one accent of orange
+#f5883c covering less than 10 percent of the frame, fine film grain,
+slight natural imperfection, editorial still life photography,
+vertical 4:5 framing, subject entirely in the upper third, lower third
+is calm empty surface with soft shadow falloff for text overlay
+
+NEGATIVE: faces, people, eyes, text, letters, numbers, logos,
+watermarks, brand names, readable signage, printed words, symmetry,
+flat lighting, pure white background, 3D render, CGI, plastic sheen,
+oversaturation, two accent colours, green plants, flowers, screens,
+laptops, phones, gold, silver, metallic
+```
+
+**Une fois reçues**, les déposer dans
+`reseaux/visuels/sources/ambiances/` sous `G-…`, `I-…`, `J-…`, `K-…`
+— le § 7 dit comment les nommer — et me le dire : `photo()` les pose
+sur la planche avec le voile de lisibilité, sans que les textes
+bougent.
+
 ### ~~Priorité basse~~ — les quatre textures, faites le 23 octobre
 
 Elles étaient rangées en réserve. Elles se sont révélées la réponse la

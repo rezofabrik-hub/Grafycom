@@ -4,8 +4,13 @@ Cinquième canal du dispositif. Il ne se programme pas : ce sont des
 réponses, écrites d'avance pour ne pas avoir à les improviser un soir de
 fatigue, et à adapter à chaque personne.
 
-> **Tout est à valider avant usage**, comme le reste. Rien ici n'est
-> automatique : aucun message ne part tout seul.
+> ✅ **Validés le 24 octobre par Laurent**, les cinq. Ils peuvent
+> servir tels quels.
+>
+> Ce qui reste vrai, et qui n'a rien à voir avec la validation : **aucun
+> message ne part tout seul.** Ce canal ne se programme pas, il se
+> répond. Chaque envoi reste une décision, et chaque message s'adapte à
+> la personne qui écrit.
 
 ---
 
@@ -29,12 +34,30 @@ est déjà arbitré. À adapter au prénom, rien d'autre.
 > Très belle journée à toi,
 > Sandra – GRAFYCOM
 
-**Une décision à prendre, et elle revient à Sandra.** Ce message tutoie,
-alors que le site et les publications vouvoient. Ce n'est pas une
-incohérence si c'est assumé — le message privé est une conversation, le
-site un document commercial. Mais c'est son choix, pas le mien. Si elle
-préfère l'uniformité, c'est la seule chose à changer, et je réécris le
-message au vouvoiement.
+> ✅ **Tranché le 24 octobre : on garde le tutoiement.**
+
+La question se posait parce que le site et les publications vouvoient.
+La réponse est que ce n'est pas une incohérence : **le message privé
+est une conversation, le site un document commercial.** Quelqu'un qui
+vient de s'abonner a fait un geste vers Sandra ; lui répondre au
+vouvoiement, c'est reculer d'un pas au moment où il en a fait un.
+
+**La décision ne s'étend pas aux quatre autres**, et c'est voulu : la
+question ne portait que sur celui-ci. Les messages 2 à 5 répondent à
+quelqu'un qui demande un prix, un devis ou un avis — un échange
+commercial entre professionnels, où le vouvoiement est la norme. Ils
+restent donc au vouvoiement.
+
+La ligne est donc celle de la relation, pas celle du canal :
+
+| Qui écrit | Message | Ton |
+|---|---|---|
+| Un nouvel abonné, qui vient de faire un geste | 1 | **tutoiement** |
+| Un prospect, qui demande un prix ou un devis | 2 à 5 | **vouvoiement** |
+
+Ce qu'il faut surveiller en adaptant un texte : ne pas mélanger les
+deux dans le même message, ça se remarque tout de suite. Si tu préfères
+tutoyer partout, c'est un mot à me dire et je réécris les quatre.
 
 ---
 
