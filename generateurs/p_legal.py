@@ -22,7 +22,7 @@ ML = ("""
     <p>
       <strong>Grafycom</strong> — nom commercial de Sandra Martinez Gala<br>
       Entrepreneur individuel (EI)<br>
-      Siège social&nbsp;: 98 avenue Louis Torcatis, 66000 Perpignan, France<br>
+      Siège social&nbsp;: Perpignan (66000), France — <strong>adresse postale communiquée sur demande</strong><br>
       Immatriculation&nbsp;: 999&nbsp;556&nbsp;301 R.C.S. Perpignan<br>
       SIREN&nbsp;: 999&nbsp;556&nbsp;301 — SIRET du siège&nbsp;: 999&nbsp;556&nbsp;301&nbsp;00011<br>
       TVA&nbsp;: non applicable, article 293 B du code général des impôts<br>
@@ -30,12 +30,17 @@ ML = ("""
       Téléphone&nbsp;: <a href="tel:%(tel_uri)s">%(tel)s</a><br>
       Courriel&nbsp;: <a href="mailto:%(mail)s">%(mail)s</a>
     </p>
-    <!-- L'adresse du siège est publiée depuis le 24 octobre 2026, alignée
-         sur les conditions générales de vente. Elle ne l'était pas : la
-         page disait « adresse postale communiquée sur demande », ce qui
-         ne répondait pas à l'article 6-III de la LCEN et contredisait les
-         CGV, qui la portent. Elle est de toute façon publique au registre
-         national des entreprises. -->
+    <!-- L'ADRESSE N'EST PAS AFFICHÉE, et c'est une décision de Sandra
+         du 24 octobre 2026 : le siège est son domicile.
+         Elle l'avait été quelques heures le même jour, le temps
+         d'aligner cette page sur les CGV. Les CGV ne la portent plus
+         non plus : les deux pages disent de nouveau la même chose.
+         Ce qu'il faut savoir, et qui est écrit dans le README : pour
+         une entreprise individuelle, l'article 6-III de la LCEN exige
+         le domicile de l'éditrice. Cette page n'y répond donc pas
+         entièrement, et la seule parade propre est une domiciliation —
+         qui change l'adresse AU REGISTRE, pas seulement ici.
+         Ne pas la remettre sans le lui demander. -->
 
     <h2>Activités</h2>
     <p>Les activités de l'entreprise, couvertes par une assurance responsabilité civile professionnelle&nbsp;:</p>

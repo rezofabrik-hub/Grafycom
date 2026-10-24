@@ -489,8 +489,26 @@ def prudence():
     else:
         juste("le pseudo porte toujours son point")
 
-    # Sandra : ni nom de famille ni adresse, SAUF mentions légales et CGV,
-    # où la loi les exige. L'exception est la règle, ici.
+    # L'adresse du domicile, NULLE PART. Elle a été publiée quelques
+    # heures le 24 octobre, le temps d'aligner les mentions légales sur
+    # les CGV — j'avais pris l'exception légale pour une permission.
+    # Sandra travaille chez elle, et la remettre se ferait en une ligne
+    # sans que rien ne le voie. Le motif est celui de la voie, pas le
+    # numéro : une rue se retrouve, un numéro seul ne se cherche pas.
+    rue = re.compile(r"\b(?:avenue|rue|boulevard|impasse|chemin|all[ée]e)"
+                     r"\s+Louis\s+Torcatis", re.I)
+    adresses = [str(f.relative_to(R))
+                for f in list(R.rglob("*.md")) + list(R.rglob("*.html"))
+                + list(R.rglob("*.py"))
+                if ".git" not in f.parts and "dist" not in f.parts
+                and rue.search(f.read_text("utf-8", errors="ignore"))]
+    if adresses:
+        faux("l'adresse du domicile est publiée : " + ", ".join(adresses))
+    else:
+        juste("l'adresse du domicile n'est publiée nulle part")
+
+    # Sandra : pas de nom de famille, SAUF mentions légales et CGV, où la
+    # loi l'exige. L'exception est la règle, ici.
     fuite = []
     for f in list(R.rglob("*.md")) + list(R.rglob("*.html")):
         if ".git" in f.parts or f.name in IDENTITE_LEGALE:

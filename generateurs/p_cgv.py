@@ -25,7 +25,7 @@ BODY = ("""
     <p>Les présentes conditions générales de vente sont conclues par <strong>Sandra Martinez Gala</strong>, entrepreneur individuel (EI).</p>
     <ul>
       <li>Nom commercial&nbsp;: <strong>GRAFYCOM</strong></li>
-      <li>Siège social&nbsp;: 98 avenue Louis Torcatis, 66000 Perpignan, France</li>
+      <li>Siège social&nbsp;: Perpignan (66000), France — adresse postale communiquée sur demande</li>
       <li>Immatriculation&nbsp;: 999&nbsp;556&nbsp;301 R.C.S. Perpignan — SIRET 999&nbsp;556&nbsp;301&nbsp;00011</li>
       <li>Contact&nbsp;: <a href="mailto:%(mail)s">%(mail)s</a> — %(tel)s</li>
     </ul>

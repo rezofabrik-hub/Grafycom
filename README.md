@@ -141,10 +141,10 @@ fait renaître les deux obligations pour ce contrat. Si Grafycom décide un jour
 d'ouvrir aux particuliers, il faudra adhérer à un médiateur et rétablir les
 sections retirées — l'historique git les conserve.
 
-**L'adresse du siège est publiée depuis le 24 octobre 2026**, alignée sur les
-conditions générales de vente qui la portaient déjà. L'article 6-III de la
-LCEN l'exige, et elle est de toute façon publique au registre national des
-entreprises.
+**L'adresse du siège n'est pas affichée**, à la demande de Sandra&nbsp;: le
+siège est son domicile. L'article 6-III de la LCEN l'exige pourtant pour une
+entreprise individuelle. Voir «&nbsp;Ce qui reste à trancher&nbsp;»&nbsp;: la
+seule parade propre est une domiciliation.
 
 ### 3. Coordonnées — fait
 
@@ -305,17 +305,33 @@ EOF
 
 ## Ce qui reste à trancher
 
-### ~~L'adresse du siège~~ — tranché le 24 octobre 2026
+### L'adresse du siège — à régler, et la solution n'est pas sur le site
 
-Elle est publiée, sur les mentions légales comme sur les CGV. La première
-des trois options proposées ici, et la plus simple&nbsp;: l'adresse était
-déjà publique au registre national des entreprises, la taire sur le site ne
-protégeait rien.
+**Le siège est le domicile de Sandra.** Elle a demandé le 24 octobre que
+l'adresse ne soit affichée nulle part&nbsp;: ni sur les mentions légales, ni
+sur les CGV du site. Les deux pages disent donc «&nbsp;Perpignan (66000) —
+adresse postale communiquée sur demande&nbsp;».
 
-Ce qui a emporté la décision n'est pas la LCEN mais la cohérence&nbsp;: les
-conditions générales de vente portent l'adresse — un document contractuel
-doit identifier celui qui s'engage — et deux pages du même site ne peuvent
-pas dire deux choses de l'identité de l'éditrice.
+**Ce que ça laisse ouvert.** L'article 6-III de la LCEN impose, pour une
+personne physique, ses nom, prénom et **domicile**. Les mentions légales n'y
+répondent donc pas entièrement. Le risque est faible et il est assumé&nbsp;;
+il n'est pas nul.
+
+**Et ce que ça ne règle pas.** L'adresse reste **publique au registre
+national des entreprises**&nbsp;: n'importe qui tape «&nbsp;Grafycom&nbsp;»
+sur `annuaire-entreprises.data.gouv.fr` et la lit. La retirer du site réduit
+l'exposition — un site s'indexe, un registre se consulte moins — mais elle ne
+la supprime pas.
+
+**La seule parade qui règle vraiment le problème&nbsp;: la domiciliation.**
+Une adresse commerciale à Perpignan, quelques dizaines d'euros par mois,
+déclarée au registre. L'adresse du domicile disparaît alors du registre
+aussi, et le site peut porter l'adresse commerciale sans réserve — ce qui
+rend les mentions légales conformes et la maison invisible. C'est la seule
+option des trois qui fait les deux à la fois.
+
+Deux formes&nbsp;: une société de domiciliation, ou un espace de coworking
+qui propose le service.
 
 ## Direction artistique
 
