@@ -94,26 +94,38 @@ fois, le mardi 1er décembre :
 
 | Canal | Ce qui paraît |
 |---|---|
-| Blog, 8 h 00 | « Les avis clients : le seul support de communication que vous ne payez pas » |
+| Blog, 8 h 00 | « Cinq avis signés, et le mot qui revient dans quatre » |
 | Instagram + Facebook, 18 h 30 | **publication n° 29**, carrousel de 6 planches, 6 planches dessinées |
 | Fiche Google, 18 h 30 | texte n° 29 |
-| Story, 18 h 45 | `S6-F`, sondage — « Combien d'avis porte votre fiche ? » |
+| Story, 18 h 45 | `S6-F`, sondage — « Lequel des deux mots revient ? » |
 
 Le créneau était libre : c'est celui de la n° 22, sortie le 23 octobre.
 Rien n'a été déplacé pour lui faire de la place.
 
-**Ce que la publication fait, et ne fait pas.** Elle n'affiche pas les
-avis de Grafycom et n'en demande aucun. Elle explique au lecteur
-comment obtenir les siens, avec les chiffres d'un relevé réel du bloc
-de cartes local. C'est la seule façon de traiter ce sujet sans se
-vanter, et c'est aussi la plus utile : le lecteur type est un
-commerçant qui a une fiche et qui ne s'en sert pas.
+> ♻️ **Corrigé le 24 octobre.** La première version de ces quatre
+> pièces était un mode d'emploi général — comment obtenir des avis,
+> quand les demander. Ce n'était pas la demande : ce qu'il fallait
+> montrer, ce sont **les avis que Sandra a reçus**, et la
+> satisfaction comme pilier de Grafycom. L'une expliquait un
+> mécanisme ; celle-ci montre une preuve.
 
-> ⚠️ **Une condition, et elle est de fond.** Cette publication conseille
-> une pratique que Grafycom doit tenir elle-même. Avant qu'elle parte :
-> récupérer le lien de demande d'avis dans la fiche, et répondre aux
-> avis déjà reçus s'ils ne le sont pas. Donner ce conseil avec une fiche
-> qui ne le suit pas se vérifie en un clic.
+**Ce que la publication fait, et ne fait pas.** Elle cite les cinq
+témoignages mot pour mot, signés, en gardant les deux groupes de la
+page réalisations. Elle ne demande aucun avis à personne, et surtout
+pas à des gens qui n'ont rien acheté.
+
+Le constat qu'elle porte n'était pas prévu : **quatre des cinq
+commencent par l'écoute, aucun par le dessin.** C'est le genre de
+chose qu'on ne peut pas écrire soi-même — et c'est précisément pour
+ça que ça vaut comme preuve.
+
+> ⚠️ **Un accord à confirmer avant publication.** Les trois avis de la
+> structure précédente sont sur le site avec l'accord de leurs
+> autrices — cet accord portait sur le site. En faire une planche de
+> carrousel est un autre usage. Un message à Sarah Otman, Ludivine Le
+> Blay et Jade Lopez, et la planche 04 part ou ne part pas selon
+> leurs réponses ; le carrousel tient à cinq planches sans elle. Même
+> mot à envoyer à Social Miroir. Solaire 66 est acquis.
 
 ---
 

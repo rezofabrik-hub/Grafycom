@@ -1,135 +1,177 @@
 ---
-titre: "Les avis clients : le seul support de communication que vous ne payez pas"
+titre: "Cinq avis signés, et le mot qui revient dans quatre"
 slug: avis-clients-preuve-locale
-titre_seo: "Avis clients : comment les obtenir et les utiliser"
-liens_retour: realisations.html, methode.html, graphiste-restaurant-perpignan.html
+titre_seo: "Ce que disent les clients de Grafycom"
+liens_retour: realisations.html, methode.html, a-propos.html
 date: 2026-12-01
-meta: "Pourquoi dix avis pèsent plus que six mois de site, le seul moment où l'on dit oui, ce qu'on ne demande jamais, et comment répondre."
+meta: "Cinq clients ont écrit ce qu'ils pensaient du travail de Grafycom. Quatre commencent par le même mot, et aucun ne commence par le dessin."
 illustration: avis.png
-illustration_alt: "Deux fiches d'établissement côte à côte : l'une avec une longue colonne d'avis, l'autre presque vide, la même qualité de travail derrière les deux."
+illustration_alt: "Les cinq avis reçus par Grafycom, présentés en deux groupes : les deux projets menés par le studio, et les trois menés au sein de la structure précédente."
 statut: à relire
 ---
 
-# Les avis clients : le seul support de communication que vous ne payez pas
+# Cinq avis signés, et le mot qui revient dans quatre
 
-Vous pouvez refaire votre logo, votre enseigne et votre site. Vous ne
-pouvez pas écrire à votre place la phrase qui convainc vraiment : « j'ai
-travaillé avec eux, et voilà ce que ça a donné. »
+Cinq personnes ont pris le temps d'écrire ce qu'elles pensaient du
+travail fourni. Elles sont cinq, pas trente. Elles sont [sur la page
+réalisations](realisations.html), signées, avec le nom de leur
+entreprise quand elles ont voulu le donner.
 
-Celle-là, seul un client peut l'écrire. Et c'est la seule que son
-destinataire croit sans réserve.
+S'il n'y en a que cinq, c'est qu'il n'y en a que cinq. Aucune phrase
+n'a été écrite pour faire nombre.
 
-## Ce qu'un avis change, en chiffres plutôt qu'en principe
+Ce qui m'intéresse ici n'est pas qu'elles soient élogieuses — un avis
+qu'on publie l'est toujours. C'est ce qu'elles ont en commun, et que
+je n'avais pas prévu.
 
-Sur une recherche locale — « graphiste », « serrurier », « traiteur »,
-suivi d'un nom de ville — ce qui occupe le haut de l'écran n'est pas la
-liste des sites. C'est le bloc de cartes, trois fiches visibles, le reste
-replié.
+## Deux groupes, et pourquoi c'est écrit
 
-J'ai relevé celui de Perpignan sur « graphiste », vingt fiches, fin
-octobre. Deux choses en sortent, et aucune n'est celle qu'on attend.
+Les cinq ne viennent pas du même endroit, et la page le dit au lieu de
+l'arrondir.
 
-**La première : onze fiches sur vingt n'ont aucun site.** Pas un site
-médiocre — pas de site du tout. Elles sont pourtant devant des
-entreprises qui en ont un. Le site n'est donc pas ce qui fait entrer dans
-le bloc de cartes ; il fait gagner le clic une fois qu'on y est, ce qui
-n'est pas la même chose.
+**Deux concernent des projets menés par Grafycom** : Solaire 66 et
+Social Miroir. Ce sont les seuls qui prouvent ce que l'entreprise livre
+aujourd'hui, sous son nom actuel.
 
-**La seconde : l'écart se joue sur les avis.** La première fiche en a
-près de trois cents. La dixième en a quatorze. Entre les deux, le volume
-d'avis suit l'ordre d'apparition presque sans exception. Et la position
-quatre, elle, n'en a aucun — ce qui dit l'autre moitié de l'histoire :
-le ticket d'entrée est bas, c'est la montée qui se gagne.
+**Trois viennent de la structure précédente**, et sont repris avec
+l'accord de leurs autrices. Le travail était le même, la personne
+aussi ; l'enseigne au-dessus, non.
 
-[figure: avis-pack.png | Le bloc de cartes d'une recherche locale : onze fiches sur vingt n'ont pas de site, et le volume d'avis suit l'ordre d'apparition. | Schéma de vingt fiches d'un bloc de cartes local, la hauteur de chaque barre figurant son nombre d'avis, décroissante du haut vers le bas, avec la mention que onze d'entre elles n'ont pas de site web.]
+[figure: avis.png | Les cinq avis, en deux groupes. La page les sépare au lieu de les mélanger : une mention globale fausse pour deux cinquièmes du bloc fait douter du reste. | Cinq cartes de témoignage disposées en deux groupes, deux pour les projets menés par Grafycom et trois pour ceux de la structure précédente, chacune signée du nom de son autrice et de son entreprise.]
 
-Autrement dit : dix avis de vrais clients pèsent plus lourd que six mois
-de travail sur un site. Ce n'est pas agréable à écrire quand on fabrique
-des sites. C'est mesurable.
+Cette distinction a coûté une ligne de plus sur la page. Elle vaut
+mieux qu'une note de bas de bloc : un bloc d'avis qui dit « laissés à
+l'époque de la structure précédente » alors que deux ne le sont pas
+est faux, et un lecteur qui attrape un détail faux cesse de croire le
+reste.
 
-## Le seul moment où l'on dit oui
+## Ce qu'ils ont écrit
 
-Un avis ne se demande pas trois mois après. À ce moment-là le client est
-passé à autre chose, votre message tombe dans une journée chargée, et
-même content il ne répondra pas.
+> J'avais beaucoup d'idées en tête, mais je ne savais pas comment les
+> concrétiser. Un immense merci à Sandra qui a su m'écouter et donner
+> vie à mon projet. Mon nouveau logo et ma charte graphique sont
+> magnifiques et me correspondent totalement. Son professionnalisme et
+> sa patience font toute la différence !
+>
+> — **Laurent**, Solaire 66
 
-Il se demande **le jour de la livraison**, au moment précis où la
-personne voit son enseigne posée, ouvre le carton de cartes de visite ou
-reçoit ses fichiers. C'est la seule minute de l'année où elle est
-franchement contente de vous, et où dire oui ne lui coûte rien.
+> Merci beaucoup à Sandra pour son écoute, sa créativité et son grand
+> professionnalisme. Elle a réalisé mon logo et ma charte graphique
+> avec beaucoup de soin, et le résultat final est exactement ce que je
+> recherchais. Un excellent travail !
+>
+> — **Social Miroir**
 
-Trois conditions pour que ça marche :
+> J'ai adoré l'accueil, l'écoute et le professionnalisme. Sandra
+> comprend tout de suite ce que vous voulez. Je la recommande
+> vivement : mon coffee shop a été mis en avant avec sa créativité, et
+> maintenant mes bougies artisanales aussi.
+>
+> — **Sarah Otman**, Ô Fait Maison
 
-1. **Un lien direct.** Google en fournit un dans le profil
-   d'établissement. Il ouvre la fenêtre d'avis d'un seul geste. Sans lui,
-   il faut chercher la fiche, et personne ne cherche.
-2. **Une demande courte.** Une phrase. Pas un paragraphe qui explique
-   pourquoi c'est important pour vous — ça, c'est votre problème, pas le
-   sien.
-3. **Rien à côté.** Pas de remise, pas de tirage au sort, pas de café
-   offert.
+> Sandra et son équipe mettent la notion de « service client » au cœur
+> de leurs prestations : des conseils avisés, des délais tenus, et un
+> travail de qualité à la hauteur de vos attentes. Je vous recommande
+> vivement de leur confier la communication de votre entreprise.
+>
+> — **Ludivine Le Blay**, La Casquette Bleue
 
-[exergue: Dix avis de vrais clients pèsent plus lourd que six mois de travail sur un site.]
+> Je travaille avec Sandra depuis plus de cinq ans. Je suis ravie de
+> leurs prestations : rapidité, efficacité, tarifs abordables. J'ai
+> toujours une mission à leur confier. Je recommande les yeux fermés !
+>
+> — **Jade Lopez**, Mia Beauty
 
-## Ce qu'on ne demande jamais
+## Le mot qui revient
 
-Le troisième point mérite qu'on s'y arrête, parce que l'idée revient
-souvent et qu'elle paraît inoffensive.
+Relisez-les dans l'ordre et regardez par quoi chacun commence.
 
-**Échanger un avis contre quelque chose est interdit par Google**, et la
-fiche qui le fait risque la suppression de ses avis, voire sa
-suspension. Ce n'est pas une règle qu'on contourne discrètement : les
-avis obtenus de cette façon se ressemblent, arrivent groupés, et les
-systèmes de détection cherchent exactement ces deux signaux.
+Laurent commence par « su m'écouter ». Social Miroir par « son
+écoute ». Sarah Otman par « l'accueil, l'écoute ». Ludivine Le Blay par
+« service client ». Quatre sur cinq ouvrent sur la même chose, et ce
+n'est pas le dessin.
 
-Il y a plus simple comme raison de ne pas le faire : **un avis acheté ne
-sert à rien.** Ce qui convainc dans un avis, c'est le détail que
-personne n'aurait inventé — le délai tenu, la question bête qu'on a posée
-trois fois, le fichier renvoyé un dimanche. Un avis de complaisance n'a
-aucun détail. Il dit « très bon travail, je recommande », et il se lit
-comme ce qu'il est.
+[figure: avis-ecoute.png | Par quoi chaque avis commence. Quatre sur cinq ouvrent sur l'écoute ou l'accueil ; aucun n'ouvre sur le graphisme. | Les cinq avis réduits à leur premier qualificatif, alignés les uns sous les autres : écoute, écoute, accueil et écoute, service client, rapidité.]
 
-## Répondre, y compris aux bons
+**Personne ne commence par « beau logo ».** Les mots « magnifiques »,
+« créativité » et « qualité » sont bien là, mais ils arrivent en
+deuxième ou en troisième position, après autre chose.
 
-La réponse publique est la partie que presque personne ne fait, et c'est
-la moins chère.
+C'est contre-intuitif pour un métier qui se vend sur des images, et
+c'est pourtant logique. Un client qui commande une identité visuelle
+ne sait pas, au départ, ce qu'il veut. Il sait ce qui le gêne. Le
+travail consiste d'abord à transformer « je voudrais quelque chose de
+moderne mais pas froid » en une demande qu'on puisse dessiner — et
+c'est cette partie-là qu'on retient, parce que c'est elle qui était
+difficile.
 
-Un avis sans réponse est un client qui a parlé dans le vide. Un avis avec
-une réponse est une conversation — et le lecteur suivant, celui qui
-hésite, la lit entière.
+[exergue: Quatre sur cinq ouvrent sur l'écoute. Aucun n'ouvre sur le dessin.]
 
-Une bonne réponse ne remercie pas dans le vide. Elle **reprend le
-problème que le client décrit** et montre qu'il a été entendu. « Merci
-beaucoup pour votre retour » ne dit rien. « Vous aviez beaucoup d'idées
-et pas d'ordre pour les poser : c'est exactement ce qu'on a démêlé
-ensemble » dit que vous vous souvenez du dossier.
+Laurent l'écrit presque mot pour mot : « j'avais beaucoup d'idées en
+tête, mais je ne savais pas comment les concrétiser ». Le livrable
+était un logo et une charte. Ce dont il parle, c'est du chemin.
 
-[figure: avis-reponse.png | La même réponse, deux versions. Celle de droite reprend le problème du client ; celle de gauche remercie dans le vide. | Deux réponses à un avis client placées côte à côte, la première générique et barrée, la seconde reprenant le problème décrit par le client.]
+## Ce que ça engage, concrètement
 
-Pour un avis négatif, la règle ne change pas, elle devient seulement plus
-exigeante : répondre vite, sans discuter les faits en public, et proposer
-de reprendre la conversation ailleurs. Le lecteur ne juge pas le
-problème — il juge comment vous le traitez.
+Si c'est l'écoute qui ressort, alors ce n'est pas un trait de
+caractère qu'on met en avant : c'est une méthode qu'on doit tenir. Et
+une méthode se vérifie.
 
-## Ce qu'un avis dit que vous ne pouvez pas dire
+**Trois pistes présentées, pas une.** Deux sont faites pour être
+écartées. C'est en voyant ce qu'on ne veut pas qu'on sait formuler ce
+qu'on veut, et ça fait gagner deux allers-retours.
 
-Une page de réalisations montre ce que vous savez faire. Elle ne dit rien
-de ce que ça fait de travailler avec vous : si les délais tiennent, si
-les corrections sont une négociation, si l'on vous joint quand quelque
-chose coince.
+**Un bon à tirer avant toute fabrication.** Signé, daté. Ce n'est pas
+une formalité administrative : c'est le moment où le client voit
+exactement ce qui va partir en machine, et où il peut encore dire non
+sans que ça coûte.
 
-Ce sont les trois questions que se pose quelqu'un qui hésite à vous
-confier son identité visuelle. Aucune ne se répond depuis votre propre
-site, et toutes se répondent dans un avis.
+**Les délais annoncés, et tenus.** Ludivine Le Blay est la seule à le
+nommer explicitement. C'est la promesse la plus facile à faire et la
+plus coûteuse à tenir, et c'est pour ça qu'elle est citée.
 
-C'est pour ça que la satisfaction n'est pas un sujet de fin d'année chez
-Grafycom, mais la matière première du reste : un client content écrit
-trois lignes qui travaillent pour vous pendant des années, gratuitement,
-à l'endroit exact où les prochains regardent. Les [réalisations du
-studio](realisations.html) montrent les projets ; les avis disent le
-reste, et c'est le reste qu'on achète.
+**Les fichiers sources livrés, avec l'écrit qui va avec.** On ne
+possède pas un logo parce qu'on l'a payé — [c'est un sujet à part
+entière](realisations.html), et c'est la raison pour laquelle le
+contrat de cession fait partie de la livraison et non d'une option.
 
-**À faire cette semaine**, et ça prend dix minutes : récupérer le lien de
-demande d'avis dans votre profil d'établissement, le ranger dans vos
-notes, et le donner au prochain client le jour de la livraison. Pas
-avant, pas après.
+La [méthode complète est détaillée ici](methode.html), étape par
+étape. Elle n'a rien de spectaculaire. C'est précisément ce qu'on
+attend d'une méthode.
+
+## La preuve la plus difficile à obtenir
+
+Un avis se demande. Un client qui revient, non.
+
+Jade Lopez écrit « je travaille avec Sandra depuis plus de cinq ans »
+et « j'ai toujours une mission à leur confier ». Sarah Otman raconte
+deux projets à des années d'écart — le coffee shop, puis les bougies
+artisanales.
+
+C'est le seul indicateur qu'on ne peut pas solliciter. On peut demander
+un avis le jour de la livraison, au moment où le client est content.
+On ne peut pas demander à quelqu'un de revenir trois ans plus tard : il
+revient, ou il ne revient pas.
+
+Sur cinq témoignages, deux parlent d'une relation qui dure. C'est la
+ligne que je regarde en premier.
+
+## Pourquoi cette page existe
+
+Une page de réalisations montre ce qu'on sait faire. Elle ne dit rien
+de ce que ça fait de travailler avec quelqu'un : si les délais
+tiennent, si les corrections sont une négociation, si l'on vous joint
+quand quelque chose coince.
+
+Ce sont les trois questions que se pose une personne qui hésite à
+confier son image. Aucune ne se répond depuis le site de celui qui la
+demande. Toutes se répondent dans un avis.
+
+C'est pour cette raison que la satisfaction n'est pas un argument de
+fin d'année chez Grafycom, mais la matière première du reste : un
+client content écrit trois lignes qui travaillent pendant des années,
+à l'endroit exact où les suivants regardent.
+
+Et s'il y en a cinq aujourd'hui, c'est qu'il y en a cinq. Le chiffre
+bougera en demandant, un client à la fois, le jour de la livraison.
+Pas autrement.

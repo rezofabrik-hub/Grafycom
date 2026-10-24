@@ -189,7 +189,7 @@ sticker et ses options, arrière-plan.
 | ☐ | S6-A   | Lundi     | 30/11 | 18 h 45  | Nouveau post · Votre vitrine de Noël est faite pour celui qui passe. | |
 | 🛑 | ~~S6-B1~~ | ~~Mardi~~ | ~~01/12~~ | — | Quiz réglementation — **suspendu avec la n° 22** | |
 | 🛑 | ~~S6-B2~~ | ~~Mardi~~ | ~~01/12~~ | — | La réponse — **suspendu avec la n° 22** | |
-| ☐ | S6-F   | Mardi     | 01/12 | 18 h 45  | Nouveau post · Combien d'avis porte votre fiche ? | |
+| ☐ | S6-F   | Mardi     | 01/12 | 18 h 45  | Nouveau post · Cinq avis. Et un mot qui revient dans quatre. | |
 | ☐ | S6-C1  | Jeudi     | 03/12 | 19 h 00  | Le quiz du jeudi · Le doré d'une dorure à chaud, c'est quoi ? | |
 | ☐ | S6-C2  | Jeudi     | 03/12 | 21 h 00  | La réponse · Une feuille métallisée, pressée à chaud. | |
 | ☐ | S6-D   | Vendredi  | 04/12 | 18 h 15  | Nouvel article · Faut-il refaire son logo pour la nouvelle année ? | |
@@ -594,18 +594,16 @@ sur le site.
 
 | Élément | Contenu |
 |---|---|
-| **Texte exact** | « Nouveau post. Combien d'avis porte votre fiche ? » |
-| **Sticker** | *Sondage A/B* — « Vous diriez… » → **A : moins de dix** · **B : plus de dix** |
+| **Texte exact** | « Nouveau post. Cinq avis. Et un mot qui revient dans quatre. » |
+| **Sticker** | *Sondage A/B* — « À votre avis, lequel ? » → **A : « créativité »** · **B : « écoute »** |
 | **Arrière-plan** | Fond encre, titre en blanc, surtitre jaune — l'écran reprend la planche 01 du carrousel. |
 
 Ajouter le sticker *Mention du post*.
 
-> **Pourquoi un sondage et pas une boîte à questions.** Le sujet du
-> carrousel est le nombre d'avis d'une fiche. La seule chose utile que
-> le lecteur puisse faire en voyant cette story, c'est **aller regarder
-> la sienne** — et un sondage à deux choix l'y envoie en trois
-> secondes. Une boîte à questions l'inviterait à écrire ; c'est
-> exactement ce qu'on ne cherche pas ici.
+> **Le sondage pose la question à laquelle le carrousel répond**, et
+> la bonne réponse est la moins attendue des deux. C'est ce qui donne
+> une raison d'ouvrir le post : on y va pour savoir si on avait juste.
+> Un sondage dont la réponse est évidente ne fait cliquer personne.
 - **Puis :** sticker *Mention du post* pour renvoyer au reel.
 
 # Ce qu'il faut produire pour les stories

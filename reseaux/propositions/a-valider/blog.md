@@ -27,7 +27,7 @@ Chaque article paraîtra à sa date, tout seul.
 | vendredi 13 novembre | Qui possède votre logo ? | 687 | 3 | ✅ validé |
 | vendredi 20 novembre | Cartes de vœux : il est trop tard pour Noël, et c'est une bon | 1065 | 3 | ⚠️ à relire |
 | vendredi 27 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le tro | 854 | 3 | ⚠️ à relire |
-| mardi 1er décembre | Les avis clients : le seul support de communication que vous  | 966 | 3 | ⚠️ à relire |
+| mardi 1er décembre | Cinq avis signés, et le mot qui revient dans quatre | 1185 | 3 | ⚠️ à relire |
 | vendredi 4 décembre | Faut-il refaire son logo pour la nouvelle année ? Trois quest | 792 | 3 | ⚠️ à relire |
 
 **5 articles sur 8 attendent ta validation.** Pour en

@@ -25,7 +25,7 @@ Son usage principal n'est pas décoratif, il est pratique : masquer le bas de la
 On peut y découper le logo, le nom ou un motif en réserve — c'est-à-dire laisser le verre nu aux endroits du dessin, qui apparaît alors en transparent dans le dépoli. C'est sobre, ça ne se démode pas, et ça fonctionne aussi bien de jour que de nuit.
 
 
-[figure: vitrine-deux-cotes.png | Les trois familles, vues des deux côtés du verre. C'est la seule comparaison qui décide. | Grille de six vitrines : dépoli, microperforé et lettres découpées, vus depuis la rue puis depuis l'intérieur.]
+[figure: vitrine-deux-cotes.png | Les trois familles, vues des deux côtés du verre. C'est la seule comparaison qui décide — et le lettrage, vu de dos, s'inverse. | Grille de six vitrines : dépoli, microperforé et lettres découpées, vus depuis la rue puis depuis l'intérieur, où le nom apparaît en miroir.]
 Son défaut : il marque les traces de doigts. Sur une porte, posez-le au-dessus de la poignée.
 
 ## Le microperforé : plein dehors, transparent dedans

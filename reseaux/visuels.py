@@ -2644,12 +2644,13 @@ def stories(dossier=None):
       "", ["Identiques à un mot près.",
            "C'est tout l'argument du reel du jour."]),
      # S6-F prend le creneau du mardi 1er decembre, vide depuis que la
-     # n° 22 est sortie du calendrier. Le sondage ne demande pas un
-     # commentaire : il demande un chiffre que le lecteur connait, et
-     # qui lui fait regarder sa propre fiche.
+     # n° 22 est sortie du calendrier. Le sondage pose la question a
+     # laquelle le carrousel repond, et la bonne reponse est la moins
+     # attendue des deux : « ecoute », pas « creativite ».
      ("S6-F", "encre", "blanc", "Nouveau post",
-      "Combien d'avis porte votre fiche ?",
-      "Sondage", ["Vous diriez…", "A : moins de dix", "B : plus de dix"]),
+      "Cinq avis. Et un mot qui revient dans quatre.",
+      "Sondage", ["À votre avis, lequel ?", "A : « créativité »",
+                  "B : « écoute »"]),
     ]
     for code, fond, enc, sur, titre, st, lignes in E:
         p = Planche(fond, LARGE_S, HAUT_S)
@@ -7120,127 +7121,137 @@ GABARITS["big-food"] = pub25_big_food
 GABARITS["krusty"] = pub26_krusty
 GABARITS["sweet-dream"] = pub27_sweet_dream
 # ---------------------------------------------------------------------
-# n° 29, mardi 1er décembre — les avis clients. Pilier « preuve ».
+# n° 29, mardi 1er décembre — les cinq avis. Pilier « preuve ».
 #
-# Ce carrousel prend le créneau laissé libre par la n° 22, sortie du
-# calendrier le 23 octobre. Il vient de la lecture d'acquisition.md :
-# le plan est bâti pour l'autorité et très peu pour la preuve, or la
-# preuve est la seule chose qu'un prestataire ne peut pas produire
-# lui-même.
+# Premiere version : un mode d'emploi general sur les avis clients.
+# Laurent l'a corrigee le 24 octobre — ce qu'il voulait, ce sont LES
+# AVIS DE SANDRA, et la satisfaction comme pilier de Grafycom. La
+# difference n'est pas de ton, elle est de nature : l'une expliquait
+# un mecanisme, l'autre montre une preuve.
 #
-# Les chiffres de la planche 02 sont RELEVÉS, pas estimés : bloc de
-# cartes de « graphiste » autour de Perpignan, vingt fiches, le
-# 24 octobre 2026. Aucun confrère n'est nommé — on montre une forme,
-# pas une entreprise.
+# Les cinq textes sont RECOPIES, jamais resumes ni retouches. Ils
+# viennent de generateurs/p_realisations.py, qui les porte deja sur la
+# page realisations, et les deux premiers de la fiche Google. Les
+# attributions suivent la page : prenom + maison, sauf Social Miroir
+# qui signe du nom de l'entreprise — inventer un prenom serait pire
+# que l'asymetrie.
 #
-# Pas d'appel au commentaire en clôture. Quatre ont été retirés du
-# cycle, et celui-ci en demanderait un sur un sujet dont la seule
-# action utile se passe ailleurs : dans la fiche du lecteur.
+# Les deux groupes sont gardes. Melanger les cinq ferait croire que
+# les cinq viennent de Grafycom ; trois viennent de la structure
+# precedente, et la page le dit depuis le 23 octobre.
+#
+# Pas d'appel au commentaire : on ne demande pas un avis a des gens
+# qui n'ont rien achete.
 # ---------------------------------------------------------------------
 def pub29_avis_clients(dossier=None):
-    """n° 29 — le seul support de communication qu'on ne paie pas."""
+    """n° 29 — cinq avis signés, et le mot qui revient dans quatre."""
     d = pathlib.Path(dossier or (SORTIE / "2026-12-01-avis-clients"))
     accent("jaune")
     f = []
 
-    # 01 — l'affirmation
+    # 01 — l'annonce
     p = Planche("encre")
-    p.surtitre("Visibilité locale", "jaune", y=250)
+    p.surtitre("Ce que disent mes clients", "jaune", y=250)
     p.filet()
-    p.titre("Le seul support\nqu'on ne paie pas.", 76, "blanc")
-    p.texte("Et le seul que vous ne pouvez pas écrire vous-même.", 42,
-            "sable", 400, avant=50)
+    p.titre("Cinq avis.\nEt un mot qui revient\ndans quatre.", 70, "blanc")
+    p.texte("Ce n'est pas celui que j'attendais.", 42, "sable", 400,
+            avant=50)
     p.fleche("jaune", y=1120)
     p.signature("sable")
     p.numero(1, 6, "taupe")
     f.append(p.ecrire(d / "01.png"))
 
-    # 02 — ce que le bloc de cartes montre vraiment.
-    # Les trois chiffres passent par puces() et non par d.text : un bloc
-    # dessiné à la main n'est pas suivi par la mise en page, et le
-    # premier jet a déclenché CHEVAUCHE pour exactement cette raison.
+    # 02 — Solaire 66, mot pour mot
     p = Planche("blanc")
-    p.titre("Ce n'est pas le site\nqui vous y fait entrer.", 70, "encre",
-            y=170)
-    p.y = 430
-    p.texte("Sur une recherche locale, ce qui occupe le haut de l'écran "
-            "est le bloc de cartes. J'en ai relevé un de vingt fiches "
-            "fin octobre.", 40, "taupe", 400, avant=0)
-    p.puces(["11 fiches sur 20 n'ont aucun site.",
-             "De la dernière à la première : 1 avis, puis 285.",
-             "La quatrième n'en a aucun, et elle est devant."],
-            pastille="jaune", taille=40, y=700)
-    p.y = 1030
-    p.texte("Le site fait gagner le clic une fois qu'on y est. "
-            "Il n'y fait pas entrer.", 36, "brun", 400, avant=0)
+    p.surtitre("Projet mené par Grafycom", "jaune", y=170)
+    p.y = 280
+    p.texte("« J'avais beaucoup d'idées en tête, mais je ne savais pas "
+            "comment les concrétiser. Un immense merci à Sandra qui a su "
+            "m'écouter et donner vie à mon projet. »", 46, "encre", 400,
+            avant=0)
+    p.y = 740
+    p.texte("« Mon nouveau logo et ma charte graphique sont magnifiques "
+            "et me correspondent totalement. Son professionnalisme et sa "
+            "patience font toute la différence ! »", 40, "taupe", 400,
+            avant=0)
+    p.y = 1080
+    p.texte("Laurent", 40, "encre", 600, avant=0)
+    p.texte("Solaire 66", 34, "taupe", 400, avant=4)
     p.signature("brun")
     p.numero(2, 6, "taupe")
     f.append(p.ecrire(d / "02.png"))
 
-    # 03 — le moment
+    # 03 — Social Miroir, mot pour mot
     p = Planche("creme")
-    p.titre("Le seul moment\noù l'on dit oui.", 76, "encre", y=170)
-    p.y = 470
-    p.texte("Le jour de la livraison. Quand la personne voit son enseigne "
-            "posée, ouvre le carton, reçoit ses fichiers.", 42, "encre",
-            400, avant=0)
-    p.y = 700
-    p.texte("Trois mois plus tard, même contente, elle ne répondra pas : "
-            "elle est passée à autre chose, et le message tombe dans une "
-            "journée chargée.", 38, "taupe", 400, avant=0)
-    p.encadre("Le lien de demande d'avis se récupère dans le profil "
-              "d'établissement. Sans lui, il faut chercher la fiche — "
-              "et personne ne cherche.", 36, y=990, filet="jaune")
+    p.surtitre("Projet mené par Grafycom", "jaune", y=170)
+    p.y = 300
+    p.texte("« Merci beaucoup à Sandra pour son écoute, sa créativité et "
+            "son grand professionnalisme. Elle a réalisé mon logo et ma "
+            "charte graphique avec beaucoup de soin. »", 46, "encre", 400,
+            avant=0)
+    p.y = 780
+    p.texte("« Le résultat final est exactement ce que je recherchais. "
+            "Un excellent travail ! »", 40, "taupe", 400, avant=0)
+    p.y = 1080
+    p.texte("Social Miroir", 40, "encre", 600, avant=0)
     p.signature("brun")
     p.numero(3, 6, "taupe")
     f.append(p.ecrire(d / "03.png"))
 
-    # 04 — ce qu'on ne fait jamais
+    # 04 — les trois de la structure precedente
     p = Planche("blanc")
-    p.titre("Jamais rien\nen échange.", 80, "encre", y=170)
-    p.y = 460
-    p.texte("Pas de remise, pas de tirage au sort, pas de café offert.",
-            42, "encre", 600, avant=0)
-    p.y = 600
-    p.texte("Google l'interdit, et la fiche qui le fait risque de perdre "
-            "ses avis. Mais il y a plus simple comme raison.", 38, "taupe",
-            400, avant=0)
-    p.encadre("Un avis de complaisance n'a aucun détail. Il dit « très "
-              "bon travail, je recommande », et il se lit comme ce "
-              "qu'il est.", 38, y=840, filet="corail", fond="creme_rose",
-              couleur="encre")
-    p.y = 1090
-    p.texte("Ce qui convainc, c'est le détail que personne n'aurait "
-            "inventé.", 36, "brun", 400, avant=0)
+    p.surtitre("Projets menés au sein de la structure précédente",
+               "taupe", y=170)
+    p.y = 270
+    for extrait, qui in (
+            ("« Sandra comprend tout de suite ce que vous voulez. »",
+             "Sarah Otman · Ô Fait Maison"),
+            ("« Le service client au cœur des prestations : des conseils "
+             "avisés, des délais tenus. »",
+             "Ludivine Le Blay · La Casquette Bleue"),
+            ("« Je travaille avec Sandra depuis plus de cinq ans. J'ai "
+             "toujours une mission à leur confier. »",
+             "Jade Lopez · Mia Beauty")):
+        p.texte(extrait, 38, "encre", 400, avant=0)
+        p.texte(qui, 30, "taupe", 600, avant=10)
+        p.y += 54
+    p.y = 1130
+    p.texte("Repris avec l'accord de leurs autrices.", 30, "brun", 400,
+            avant=0)
     p.signature("brun")
     p.numero(4, 6, "taupe")
     f.append(p.ecrire(d / "04.png"))
 
-    # 05 — repondre, y compris aux bons
+    # 05 — le constat
     p = Planche("creme")
-    p.titre("Répondez.\nMême aux bons.", 80, "encre", y=170)
-    p.y = 460
-    p.texte("Un avis sans réponse est un client qui a parlé dans le vide. "
-            "Avec une réponse, c'est une conversation — et celui qui "
-            "hésite la lit entière.", 40, "encre", 400, avant=0)
-    p.puces(["« Merci pour votre retour » ne dit rien.",
-             "Reprenez le problème que le client décrit.",
-             "Montrez que vous vous souvenez du dossier."],
-            pastille="jaune", taille=38, y=800)
+    # 62 et pas 72 : à 72, « Personne ne commence » ne tient pas dans
+    # la colonne et le titre passe à trois lignes, dont la dernière
+    # se faisait repeindre par le bloc posé à 440.
+    p.titre("Personne ne commence\npar le dessin.", 62, "encre", y=170)
+    p.y = 440
+    p.texte("Regardez par quoi chacun commence.", 40, "taupe", 400,
+            avant=0)
+    p.puces(["« su m'écouter »", "« son écoute »",
+             "« l'accueil, l'écoute »", "« le service client »"],
+            pastille="jaune", taille=40, y=580)
+    p.y = 920
+    p.texte("Quatre sur cinq ouvrent sur la relation. Les mots "
+            "« magnifiques » et « créativité » sont là, mais ils "
+            "arrivent après.", 36, "encre", 400, avant=0)
     p.signature("brun")
     p.numero(5, 6, "taupe")
     f.append(p.ecrire(d / "05.png"))
 
-    # 06 — la cloture : ce que l'avis dit a votre place
+    # 06 — ce que ca engage
     p = Planche("encre")
-    p.surtitre("Ce que vous ne pouvez pas dire", "jaune", y=230)
+    p.surtitre("Ce que ça engage", "jaune", y=230)
     p.filet()
-    p.titre("Si les délais tiennent.\nSi on vous joint\nquand ça coince.",
-            62, "blanc")
-    p.texte("Ce sont les questions de quelqu'un qui hésite à vous confier "
-            "son image. Aucune ne se répond depuis votre propre site.",
-            38, "sable", 400, avant=50)
-    p.texte("L'article est en ligne : grafycom.fr/blog", 36, "jaune", 600,
+    p.titre("Une méthode,\npas un trait\nde caractère.", 70, "blanc")
+    p.texte("Trois pistes présentées, pas une. Un bon à tirer avant toute "
+            "fabrication. Les délais annoncés, et tenus. Les fichiers "
+            "sources livrés, avec l'écrit qui va avec.", 36, "sable", 400,
+            avant=50)
+    p.texte("Les cinq avis : grafycom.fr/realisations", 34, "jaune", 600,
             avant=36)
     p.signature("sable")
     p.numero(6, 6, "taupe")

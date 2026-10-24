@@ -3012,98 +3012,119 @@ gravure, broderie, tampon.
 
 ## 29 — Mardi 1er décembre, 18 h 30 · Carrousel 6 planches · Pilier « preuve »
 
-> ♻️ **Reprend le créneau laissé libre par la n° 22**, sortie du
-> calendrier le 23 octobre. Le mardi de cette semaine était vide depuis.
+> ♻️ **Réécrite le 24 octobre.** La première version était un mode
+> d'emploi général sur les avis clients — comment en obtenir, quand
+> les demander. Laurent l'a corrigée : ce qu'il voulait, ce sont **les
+> avis de Sandra**, et la satisfaction comme pilier de Grafycom. La
+> différence n'est pas de ton, elle est de nature : l'une expliquait
+> un mécanisme, celle-ci montre une preuve.
 
-> 🎯 **Pourquoi cette publication existe.** `acquisition.md` mesure que
-> le plan est bâti pour l'autorité — on montre qu'on sait — et très peu
-> pour la **preuve**. Or on ne devient pas client parce qu'on a appris
-> quelque chose. Les avis sont la seule preuve qu'un prestataire ne
-> peut pas fabriquer lui-même, et le seul sujet sur lequel Grafycom
-> peut parler sans se vanter : la publication explique au lecteur
-> comment obtenir les siens, pas comment en laisser un.
+> 🎯 **Pourquoi elle existe.** `acquisition.md` mesure que le plan est
+> bâti pour l'autorité et très peu pour la **preuve**. Les cinq avis
+> sont la seule preuve que Sandra ne fabrique pas elle-même, et la
+> seule qui réponde aux questions qu'un prospect n'ose pas poser :
+> est-ce que les délais tiennent, est-ce qu'on la joint quand ça
+> coince.
+
+> ⚠️ **Rien n'est reformulé.** Les cinq textes sont recopiés mot pour
+> mot depuis la page réalisations. Un avis qu'on raccourcit pour qu'il
+> tienne sur une planche n'est plus un avis, c'est une citation
+> arrangée. Là où la place manque, la planche coupe entre deux phrases
+> et garde la suivante entière.
 
 ### Direction visuelle — carrousel 6 planches, 1080 × 1350 px
 
 Gabarit `avis-clients` dans `reseaux/visuels.py`. **Les six planches
 sont dessinées** — `reseaux/visuels/2026-12-01-avis-clients/`.
 
-- **S1.** Fond encre. Surtitre jaune « Visibilité locale », filet
-  dégradé. « Le seul support qu'on ne paie pas. » Sous-titre sable :
-  « Et le seul que vous ne pouvez pas écrire vous-même. » Flèche jaune.
-- **S2.** Fond blanc. « Ce n'est pas le site qui vous y fait entrer. »
-  Trois pastilles jaunes : 11 fiches sur 20 sans site ; de la dernière à
-  la première, 1 avis puis 285 ; la quatrième n'en a aucun et elle est
-  devant.
-- **S3.** Fond crème. « Le seul moment où l'on dit oui. » Le jour de la
-  livraison, et pourquoi trois mois après ne marche pas. Encadré à filet
-  jaune sur le lien de demande d'avis.
-- **S4.** Fond blanc. « Jamais rien en échange. » Encadré corail :
-  un avis de complaisance n'a aucun détail.
-- **S5.** Fond crème. « Répondez. Même aux bons. » Trois pastilles sur
-  la façon de répondre.
-- **S6.** Fond encre. « Si les délais tiennent. Si on vous joint quand
-  ça coince. » Renvoi à l'article du jour, pas d'appel au commentaire.
+- **S1.** Fond encre, surtitre jaune « Ce que disent mes clients ».
+  « Cinq avis. Et un mot qui revient dans quatre. » Sous-titre :
+  « Ce n'est pas celui que j'attendais. »
+- **S2.** Fond blanc. L'avis de **Laurent, Solaire 66**, en deux
+  blocs, signé.
+- **S3.** Fond crème. L'avis de **Social Miroir**, signé.
+- **S4.** Fond blanc. Les **trois avis de la structure précédente**,
+  en extraits courts, chacun signé, avec la mention « repris avec
+  l'accord de leurs autrices ».
+- **S5.** Fond crème. « Personne ne commence par le dessin. » Les
+  quatre ouvertures en pastilles jaunes : « su m'écouter », « son
+  écoute », « l'accueil, l'écoute », « le service client ».
+- **S6.** Fond encre. « Une méthode, pas un trait de caractère » —
+  trois pistes, un BAT, les délais, les sources livrées. Renvoi à la
+  page réalisations.
 
 ### Accroche
-**« Le seul support de communication que vous ne payez pas. »**
+**« Cinq avis signés, et le mot qui revient dans quatre n'est pas celui que j'attendais. »**
 
 ### Légende
 
-> Vous pouvez refaire votre logo, votre enseigne et votre site. Vous ne
-> pouvez pas écrire à votre place la phrase qui convainc vraiment :
-> « j'ai travaillé avec eux, et voilà ce que ça a donné. »
+> Cinq personnes ont pris le temps d'écrire ce qu'elles pensaient du
+> travail. Elles sont cinq, pas trente. S'il n'y en a que cinq, c'est
+> qu'il n'y en a que cinq.
 >
-> J'ai relevé le bloc de cartes de « graphiste » autour de Perpignan fin
-> octobre, vingt fiches. Deux choses en sortent, et aucune n'est celle
-> qu'on attend.
+> Deux concernent des projets menés par Grafycom : Solaire 66 et
+> Social Miroir. Trois viennent de la structure précédente, et sont
+> reprises avec l'accord de leurs autrices. La page le dit au lieu de
+> l'arrondir — un bloc d'avis dont une mention est fausse pour deux
+> cinquièmes fait douter du reste.
 >
-> **Onze fiches sur vingt n'ont aucun site.** Pas un site médiocre : pas
-> de site du tout. Elles sont pourtant devant des entreprises qui en ont
-> un. Le site fait gagner le clic une fois qu'on est dans le bloc. Il n'y
-> fait pas entrer.
+> Ce qui m'a surprise, c'est ce qu'elles ont en commun.
 >
-> **L'écart se joue sur les avis.** De la dernière fiche à la première,
-> on passe de 1 à près de 300. Et la quatrième n'en a aucun — ce qui dit
-> l'autre moitié : le ticket d'entrée est bas, c'est la montée qui se
-> gagne.
+> Laurent commence par « su m'écouter ». Social Miroir par « son
+> écoute ». Sarah Otman par « l'accueil, l'écoute ». Ludivine Le Blay
+> par « service client ». **Quatre sur cinq ouvrent sur la même
+> chose, et ce n'est pas le dessin.**
 >
-> Trois choses qui marchent, et une qui ne marche pas.
+> Les mots « magnifiques », « créativité », « qualité » sont bien là.
+> Ils arrivent en deuxième ou en troisième position, après autre
+> chose.
 >
-> **Demandez le jour de la livraison.** C'est la seule minute de l'année
-> où la personne est franchement contente de vous. Trois mois plus tard,
-> même satisfaite, elle ne répondra pas.
+> C'est contre-intuitif pour un métier qui se vend sur des images, et
+> c'est pourtant logique. Quelqu'un qui commande une identité
+> visuelle ne sait pas ce qu'il veut : il sait ce qui le gêne. Le
+> travail consiste d'abord à transformer « quelque chose de moderne
+> mais pas froid » en une demande qu'on puisse dessiner. C'est cette
+> partie-là qu'on retient, parce que c'est elle qui était difficile.
 >
-> **Donnez le lien direct.** Il se récupère dans le profil
-> d'établissement. Sans lui, il faut chercher la fiche, et personne ne
-> cherche.
+> Laurent l'écrit presque mot pour mot : « j'avais beaucoup d'idées
+> en tête, mais je ne savais pas comment les concrétiser ».
 >
-> **Répondez, y compris aux bons.** Un avis sans réponse est un client
-> qui a parlé dans le vide. Et celui qui hésite lit la conversation
-> entière.
+> Alors si c'est l'écoute qui ressort, ce n'est pas un trait de
+> caractère à mettre en avant : c'est une méthode à tenir. Trois
+> pistes présentées et pas une. Un bon à tirer avant toute
+> fabrication. Les délais annoncés, et tenus. Les fichiers sources
+> livrés, avec l'écrit qui va avec.
 >
-> **N'échangez jamais un avis contre quoi que ce soit.** Google
-> l'interdit. Surtout : un avis de complaisance n'a aucun détail, et il
-> se lit comme ce qu'il est.
+> Et une dernière chose, la seule qui ne se demande pas : Jade Lopez
+> travaille avec moi depuis plus de cinq ans, Sarah Otman est revenue
+> des années après. On peut demander un avis le jour de la livraison.
+> On ne peut pas demander à quelqu'un de revenir.
 >
-> L'article complet est en ligne aujourd'hui sur grafycom.fr/blog.
+> Les cinq sont sur grafycom.fr/realisations, signés.
 
 ### Texte alternatif
-Carrousel de six visuels sur les avis clients. Le premier, sur fond
-encre, annonce « le seul support qu'on ne paie pas ». Les suivants
-donnent les chiffres d'un bloc de cartes local, le moment où demander un
-avis, ce qu'il ne faut jamais échanger contre un avis, et comment
-répondre. Le dernier, sur fond encre, renvoie à l'article du jour.
+Carrousel de six visuels. Le premier annonce « cinq avis, et un mot
+qui revient dans quatre ». Les trois suivants citent les témoignages
+reçus, signés du prénom et du nom de l'entreprise. Le cinquième
+aligne les quatre débuts de phrase qui parlent d'écoute. Le dernier
+résume la méthode qui en découle.
 
 ### Hashtags — jeu B + 2 secteur
-`#identitevisuelle #designgraphique #brandingLocal #graphismeFrance #directionArtistique #charteGraphique #avisclients #visibilitelocale #commercantsPerpignan #entreprises66`
+`#identitevisuelle #designgraphique #brandingLocal #graphismeFrance #directionArtistique #charteGraphique #avisclients #satisfactionclient #commercantsPerpignan #entreprises66`
 
 ### À fournir par Sandra
 - **Rien à dessiner** : les six planches existent.
-- **Une vérification, et elle est de fond.** Cette publication conseille
-  une pratique que Grafycom doit tenir elle-même. Avant de la publier :
-  récupérer le lien de demande d'avis dans la fiche, et répondre aux
-  avis déjà reçus s'ils ne le sont pas. Publier ce conseil avec une
-  fiche qui ne le suit pas se voit en un clic.
+- ⚠️ **Un accord à confirmer, et il n'est pas acquis.** Les trois avis
+  de la structure précédente sont repris sur le site **avec l'accord
+  de leurs autrices** — cet accord portait sur le site. Le reprendre
+  sur Instagram et Facebook est un autre usage. Un message à Sarah
+  Otman, Ludivine Le Blay et Jade Lopez avant publication, et la
+  planche 04 part ou ne part pas selon leurs réponses. Le carrousel
+  tient à cinq planches sans elle.
+- **Social Miroir : à confirmer aussi.** L'avis est public sur Google
+  et déjà sur le site, ce qui n'est pas la même chose que d'en faire
+  une planche de carrousel. Un mot suffit.
+- **Solaire 66 : acquis.** C'est Laurent, et il commande ces
+  publications.
 
 ---

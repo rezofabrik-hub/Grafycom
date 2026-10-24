@@ -890,33 +890,32 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 
 ---
 
-## 29 — Mardi 1er décembre, 18 h 30 — « Les avis clients, et comment les obtenir » (202 mots)
+## 29 — Mardi 1er décembre, 18 h 30 — « Cinq avis, et le mot qui revient » (177 mots)
 
-> **Les avis clients : le support que vous ne payez pas**
+> **Ce que disent les clients de Grafycom**
 >
-> Sur une recherche locale, ce qui occupe le haut de l'écran n'est pas la
-> liste des sites : c'est le bloc de cartes. Un relevé de vingt fiches
-> autour de Perpignan, fin octobre, donne deux enseignements.
+> Cinq clients ont laissé un témoignage signé. Ils sont cinq, pas
+> trente, et aucune phrase n'a été ajoutée pour faire nombre. Deux
+> concernent des projets menés par Grafycom, trois des projets menés
+> au sein de la structure précédente, et la page de réalisations le
+> précise plutôt que de l'arrondir.
 >
-> Onze de ces vingt fiches n'ont aucun site web, et se classent pourtant
-> devant des entreprises qui en ont un. Un site fait gagner le clic une
-> fois qu'on figure dans le bloc ; il n'y fait pas entrer.
+> Leur point commun n'était pas prévu. Quatre des cinq commencent par
+> la même chose : l'écoute, l'accueil, le service. Les mots qui
+> relèvent du dessin — créativité, qualité du résultat — arrivent
+> ensuite.
 >
-> L'écart se joue sur le nombre d'avis. De la dernière fiche à la
-> première, on passe de un avis à près de trois cents. Le ticket
-> d'entrée reste bas : une fiche correctement renseignée apparaît avec
-> très peu d'avis. C'est la montée qui se gagne.
+> C'est cohérent avec le métier. Une entreprise qui commande une
+> identité visuelle sait rarement ce qu'elle veut au départ ; elle
+> sait ce qui la gêne. Le travail consiste d'abord à transformer une
+> intention en une demande que l'on puisse dessiner, et c'est cette
+> étape que les clients retiennent.
 >
-> Trois pratiques simples. Demander l'avis le jour de la livraison, au
-> moment où le client est satisfait. Fournir le lien direct, qui se
-> récupère dans le profil d'établissement. Répondre à chaque avis, en
-> reprenant le problème décrit plutôt qu'en remerciant.
+> Elle se traduit par une méthode : trois pistes présentées plutôt
+> qu'une, un bon à tirer signé avant toute fabrication, des délais
+> annoncés puis tenus, et les fichiers sources livrés accompagnés de
+> l'écrit de cession.
 >
-> Une pratique à éviter : échanger un avis contre une remise ou un
-> cadeau. Google l'interdit, et un avis de complaisance ne contient
-> aucun détail vérifiable.
->
-> Grafycom conseille les entreprises des Pyrénées-Orientales sur leur
-> visibilité locale.
+> Les cinq témoignages sont consultables sur la page réalisations.
 
-**Bouton :** « En savoir plus » → `https://grafycom.fr/blog.html`
+**Bouton :** « En savoir plus » → `https://grafycom.fr/realisations.html`

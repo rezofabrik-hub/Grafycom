@@ -604,10 +604,24 @@ def illu_vitrine_deux_cotes():
             else:                           # lettres : le verre reste nu
                 f = police("Playfair-800", 56)
                 mot = "NOM"
-                d.text((x + (larg - f.getlength(mot)) / 2, y + 44), mot,
-                       font=f, fill=rvb("turquoise" if r == 0 else "sable_fonce"))
-                ecrire(d, x + larg / 2, y + 112,
-                       "le reste est transparent", "Inter-400", 19,
+                if r == 0:
+                    d.text((x + (larg - f.getlength(mot)) / 2, y + 44),
+                           mot, font=f, fill=rvb("turquoise"))
+                    note = "le reste est transparent"
+                else:
+                    # Depuis l'interieur, on voit le DOS des lettres :
+                    # le nom est inverse, et il se lit en silhouette a
+                    # contre-jour. La premiere version le posait a
+                    # l'endroit, en plus pale — c'etait faux, et c'est
+                    # Laurent qui l'a releve le 24 octobre.
+                    lg = int(f.getlength(mot)) + 8
+                    tuile = Image.new("RGB", (lg, 76), rvb("creme_rose"))
+                    ImageDraw.Draw(tuile).text((4, -6), mot, font=f,
+                                               fill=rvb("brun"))
+                    tuile = tuile.transpose(Image.FLIP_LEFT_RIGHT)
+                    im.paste(tuile, (int(x + (larg - lg) / 2), y + 40))
+                    note = "vu de dos, le nom s'inverse"
+                ecrire(d, x + larg / 2, y + 112, note, "Inter-400", 19,
                        "taupe", centre=True)
     titre_bas(d, "Quatre mètres sur deux : huit mètres carrés à décider.")
     return im
@@ -1083,120 +1097,124 @@ def etoiles(d, x, y, n=5, taille=11, couleur_nom="jaune", ecart=17):
 
 
 def illu_avis():
-    """Deux fiches, le même travail derrière, et un écart écrit par d'autres.
+    """Les cinq avis, en deux groupes, comme sur la page réalisations.
 
-    Le propos de l'article tient dans cette asymétrie : ce qui sépare
-    les deux colonnes n'est ni la qualité ni le site, c'est le nombre
-    de gens qui ont pris trente secondes pour l'écrire.
+    La page les sépare au lieu de les mélanger, et c'est une décision
+    de fond : une mention globale « laissés à l'époque de la structure
+    précédente » devenait fausse pour deux cinquièmes du bloc, et un
+    lecteur qui attrape un détail faux cesse de croire le reste.
     """
     im, d = fond()
-    for x0, titre, lignes, vide in ((80, "La fiche qu'on trouve", 5, False),
-                                    (632, "La fiche qu'on ne trouve pas",
-                                     1, True)):
-        x1 = x0 + 488
-        d.rounded_rectangle([x0, 96, x1, 436], radius=12, fill=rvb("blanc"),
-                            outline=rvb("sable_fonce"), width=2)
-        d.rectangle([x0, 96, x1, 102],
-                    fill=rvb("taupe" if vide else "jaune"))
-        ecrire(d, x0 + 28, 126, titre, "Inter-800", 25, "encre")
-        y = 166
-        for i in range(lignes):
-            etoiles(d, x0 + 30, y + 10)
-            d.rounded_rectangle([x0 + 142, y + 2, x1 - 30, y + 18],
-                                radius=8, fill=rvb("sable"))
-            d.rounded_rectangle([x0 + 142, y + 24, x1 - 130, y + 36],
-                                radius=6, fill=rvb("creme_rose"))
-            y += 46
-        if not vide:
-            ecrire(d, x0 + 30, y - 2, "…et quarante autres.", "Inter-400",
-                   22, "taupe")
-        if vide:
-            ecrire(d, (x0 + x1) / 2, 320, "…et c'est tout.", "Inter-400",
-                   24, "taupe", centre=True)
-    ecrire(d, LARGE / 2, 468,
-           "Même métier, même soin, même ville.", "Inter-600", 25,
-           "brun", centre=True)
-    titre_bas(d, "Ce qui les sépare, ce sont des gens qui ont écrit.")
+    grafycom = [("Laurent", "Solaire 66",
+                 "su m'écouter et donner vie à mon projet"),
+                ("Social Miroir", "",
+                 "son écoute, sa créativité et son grand "
+                 "professionnalisme")]
+    avant = [("Sarah Otman", "Ô Fait Maison",
+              "l'accueil, l'écoute et le professionnalisme"),
+             ("Ludivine Le Blay", "La Casquette Bleue",
+              "le « service client » au cœur des prestations"),
+             ("Jade Lopez", "Mia Beauty",
+              "plus de cinq ans, et toujours une mission")]
+
+    def carte(x, larg, haut, y, nom, maison, extrait, vif):
+        d.rounded_rectangle([x, y, x + larg, y + haut], radius=10,
+                            fill=rvb("blanc"), outline=rvb("sable_fonce"),
+                            width=2)
+        d.rectangle([x, y, x + larg, y + 5],
+                    fill=rvb("jaune" if vif else "sable_fonce"))
+        etoiles(d, x + 20, y + 30, taille=9, ecart=15)
+        bas = pave(d, x + 20, y + 54, "« %s »" % extrait, "Inter-400", 20,
+                   larg - 40, "brun")
+        d.text((x + 20, haut + y - 46), nom, font=police("Inter-600", 21),
+               fill=rvb("encre"))
+        if maison:
+            d.text((x + 20, haut + y - 22), maison,
+                   font=police("Inter-400", 19), fill=rvb("taupe"))
+        return bas
+
+    ecrire(d, 60, 56, "PROJETS MENÉS PAR GRAFYCOM", "Inter-800", 20,
+           "jaune")
+    for i, (nom, maison, ex) in enumerate(grafycom):
+        carte(60 + i * 548, 524, 196, 88, nom, maison, ex, True)
+
+    ecrire(d, 60, 310, "PROJETS MENÉS AU SEIN DE LA STRUCTURE PRÉCÉDENTE",
+           "Inter-800", 20, "taupe")
+    for i, (nom, maison, ex) in enumerate(avant):
+        carte(60 + i * 362, 338, 196, 342, nom, maison, ex, False)
     return im
 
 
-def illu_avis_pack():
-    """Le bloc de cartes de Perpignan, relevé fin octobre.
+def illu_avis_ecoute():
+    """Par quoi chaque avis commence, et ce que ça dit du métier.
 
-    Vingt fiches, leur nombre d'avis, et celles qui n'ont pas de site.
-    Les longueurs sont à l'échelle de la racine carrée — sinon la
-    première, à 285, écrase les dix-neuf autres et le graphique ne
-    montre plus rien. Les nombres sont écrits en clair à côté : c'est
-    eux qui portent la vérité, la barre ne porte que la forme.
+    C'est la seule chose que les cinq ont en commun, et elle n'était
+    pas prévue : quatre ouvrent sur la relation, aucun sur le dessin.
+    Le graphique ne compte rien — il aligne cinq débuts de phrase, et
+    l'alignement suffit.
     """
     im, d = fond()
-    # Relevé le 24 octobre 2026, « graphiste » autour de Perpignan.
-    avis = [285, 7, 45, 0, 4, 24, 56, 13, 80, 14,
-            9, 4, 6, 4, 1, 2, 39, 1, 5, 20]
-    sans_site = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 18}
-    x0, large = 150, 820
-    plafond = max(avis) ** 0.5
-    for i, n in enumerate(avis):
-        y = 92 + i * 21
-        ecrire(d, x0 - 24, y - 4, "%02d" % (i + 1), "Inter-600", 17,
-               "sable_fonce")
-        if n:
-            lg = max(4, large * (n ** 0.5) / plafond)
-            d.rounded_rectangle([x0, y, x0 + lg, y + 13], radius=6,
-                                fill=rvb("corail" if i == 0 else "bleu"))
-            ecrire(d, x0 + lg + 10, y - 3, str(n), "Inter-600", 17,
-                   "brun")
-        else:
-            cadre_tirets(d, (x0, y, x0 + 46, y + 13), "corail", 2, 9, 5)
-            ecrire(d, x0 + 58, y - 3, "aucun avis", "Inter-600", 17,
-                   "corail")
-        if i + 1 in sans_site:
-            d.ellipse([LARGE - 112, y + 1, LARGE - 101, y + 12],
-                      fill=rvb("taupe"))
-    ecrire(d, LARGE - 106, 70, "sans site", "Inter-600", 17, "taupe",
-           centre=True)
-    pave(d, x0, 528,
-         "Onze fiches sur vingt n'ont aucun site. La quatrième n'a aucun "
-         "avis. Longueurs à l'échelle de la racine carrée, pour que les "
-         "petits nombres restent lisibles.", "Inter-400", 19, 820, "taupe")
+    lignes = [("Laurent — Solaire 66", "su m'écouter", True),
+              ("Social Miroir", "son écoute", True),
+              ("Sarah Otman — Ô Fait Maison", "l'accueil, l'écoute", True),
+              ("Ludivine Le Blay — La Casquette Bleue",
+               "le « service client »", True),
+              ("Jade Lopez — Mia Beauty", "rapidité, efficacité", False)]
+    ecrire(d, 60, 62, "PAR QUOI CHAQUE AVIS COMMENCE", "Inter-800", 21,
+           "taupe")
+    for i, (qui, mot, relation) in enumerate(lignes):
+        y = 118 + i * 74
+        d.rectangle([60, y + 6, 64, y + 46],
+                    fill=rvb("turquoise" if relation else "sable_fonce"))
+        ecrire(d, 86, y, qui, "Inter-400", 22, "taupe")
+        ecrire(d, 86, y + 28, "« %s »" % mot, "Inter-800", 27,
+               "encre" if relation else "brun")
+    d.line([(60, 496), (LARGE - 60, 496)], fill=rvb("sable_fonce"), width=2)
+    ecrire(d, 60, 518, "Aucun ne commence par le dessin.", "Inter-600", 26,
+           "turquoise")
     return im
 
 
 def illu_avis_reponse():
-    """La même réponse, deux fois, et une seule qui dit quelque chose.
+    """L'échange réel, et ce qu'aurait donné la réponse facile.
 
-    C'est la partie que presque personne ne fait et qui ne coûte rien.
-    La montrer côte à côte évite d'avoir à l'expliquer.
+    À droite, l'avis de Social Miroir et la réponse que Sandra a
+    publiée : elle nomme le projet au lieu de remercier dans le vide.
+    À gauche, la même réponse écrite comme on les écrit d'habitude.
+    Les deux textes de droite sont ceux de la fiche, mot pour mot.
     """
     im, d = fond()
     for x0, etiquette, texte, bon in (
             (80, "Remercier dans le vide",
              "Merci beaucoup pour votre retour, à très bientôt !", False),
-            (632, "Reprendre le problème du client",
-             "Vous aviez beaucoup d'idées et pas d'ordre pour les poser : "
-             "c'est exactement ce qu'on a démêlé ensemble.", True)):
+            (632, "Nommer le projet",
+             "Ça a été un plaisir de travailler avec vous pour ce projet "
+             "original. Je vous remercie pour votre confiance et les "
+             "moments d'échanges.", True)):
         x1 = x0 + 488
-        # L'avis du client, en haut : le meme des deux cotes.
-        d.rounded_rectangle([x0, 96, x1, 196], radius=12, fill=rvb("blanc"),
+        d.rounded_rectangle([x0, 92, x1, 238], radius=12, fill=rvb("blanc"),
                             outline=rvb("sable_fonce"), width=2)
-        etoiles(d, x0 + 26, 128, taille=10)
-        pave(d, x0 + 26, 150, "« J'avais des idées plein la tête, "
-                              "sans savoir par où commencer. »",
-             "Inter-400", 21, x1 - x0 - 52, "brun")
-        # La reponse, en dessous et en retrait.
-        d.rounded_rectangle([x0 + 44, 224, x1, 392], radius=12,
+        etoiles(d, x0 + 26, 124, taille=10)
+        # Le début de l'avis est coupé, et les points de suspension le
+        # disent : trois lignes de citation passaient sous la signature.
+        pave(d, x0 + 26, 146,
+             "« …son écoute, sa créativité et son grand "
+             "professionnalisme. »", "Inter-400", 21, x1 - x0 - 52, "brun")
+        ecrire(d, x0 + 26, 206, "Social Miroir", "Inter-600", 19, "encre")
+        d.rounded_rectangle([x0 + 44, 256, x1, 456], radius=12,
                             fill=rvb("creme_rose" if bon else "creme"))
-        d.rectangle([x0 + 44, 224, x0 + 48, 392],
+        d.rectangle([x0 + 44, 256, x0 + 48, 456],
                     fill=rvb("turquoise" if bon else "taupe"))
-        ecrire(d, x0 + 72, 246, "Réponse du professionnel", "Inter-600", 19,
+        ecrire(d, x0 + 72, 274, "Réponse de Sandra", "Inter-600", 19,
                "taupe")
-        bas = pave(d, x0 + 72, 282, texte, "Inter-600", 23,
-                   x1 - x0 - 100, "encre" if bon else "taupe")
-        ecrire(d, x0 + 72, 412, etiquette, "Inter-800", 22,
+        pave(d, x0 + 72, 308, texte, "Inter-600", 23, x1 - x0 - 100,
+             "encre" if bon else "taupe")
+        ecrire(d, x0 + 72, 472, etiquette, "Inter-800", 22,
                "turquoise" if bon else "corail")
-    pave(d, 80, 468,
-         "Le lecteur suivant, celui qui hésite, lit la conversation "
-         "entière — pas seulement l'avis.", "Inter-400", 23, LARGE - 160)
+    pave(d, 80, 518,
+         "Celle de droite est publiée. Celui qui hésite lit la "
+         "conversation entière, pas seulement l'avis.",
+         "Inter-400", 23, LARGE - 160)
     return im
 
 
@@ -1227,7 +1245,7 @@ ILLUSTRATIONS = {
         ("trottoir-nuit.png", illu_trottoir_nuit)],
     "avis-clients-preuve-locale": [
         ("avis.png", illu_avis),
-        ("avis-pack.png", illu_avis_pack),
+        ("avis-ecoute.png", illu_avis_ecoute),
         ("avis-reponse.png", illu_avis_reponse)],
     "refaire-son-logo-nouvelle-annee": [
         ("bilan.png", illu_bilan),
