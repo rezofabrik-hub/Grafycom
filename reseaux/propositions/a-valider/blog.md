@@ -27,7 +27,7 @@ Chaque article paraîtra à sa date, tout seul.
 | vendredi 13 novembre | Qui possède votre logo ? | 687 | 3 | ✅ validé |
 | vendredi 20 novembre | Cartes de vœux : il est trop tard pour Noël, et c'est une bon | 1026 | 3 | ✅ validé |
 | vendredi 27 novembre | Vitrine de fin d'année : ce qui se lit vraiment depuis le tro | 854 | 3 | ✅ validé |
-| mardi 1er décembre | Cinq avis signés, et le mot qui revient dans quatre | 1185 | 3 | ⚠️ à relire |
+| mardi 1er décembre | Écouter, c'est déjà dessiner | 996 | 3 | ⚠️ à relire |
 | vendredi 4 décembre | Faut-il refaire son logo pour la nouvelle année ? Trois quest | 792 | 3 | ✅ validé |
 
 **1 article sur 8 attend ta validation.** Pour en
@@ -48,7 +48,7 @@ réduit à dix-huit pixels puis réagrandi. Elles se fabriquent toutes avec
 charte et refuse de démarrer s'il en rencontre une.
 
 **Ce qu'elles ne sont pas : des photographies.** Une devanture réelle, un
-bon à tirer posé à côté de l'écran, un nuancier ouvert — ça se
+imprimé posé à côté de l'écran, un nuancier ouvert — ça se
 photographie, c'est le métier de Sandra, et la liste est donnée par
 `python3 reseaux/illustrations.py --photos`. Un schéma ne les remplace
 pas ; il tient la place en attendant, et il tient honnêtement, parce

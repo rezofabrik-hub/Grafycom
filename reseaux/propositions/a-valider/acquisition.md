@@ -94,7 +94,7 @@ fois, le mardi 1er décembre :
 
 | Canal | Ce qui paraît |
 |---|---|
-| Blog, 8 h 00 | « Cinq avis signés, et le mot qui revient dans quatre » |
+| Blog, 8 h 00 | « Écouter, c'est déjà dessiner » |
 | Instagram + Facebook, 18 h 30 | **publication n° 29**, carrousel de 6 planches, 6 planches dessinées |
 | Fiche Google, 18 h 30 | texte n° 29 |
 | Story, 18 h 45 | `S6-F`, sondage — « Lequel des deux mots revient ? » |

@@ -890,7 +890,7 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 
 ---
 
-## 29 — Mardi 1er décembre, 18 h 30 — « Cinq avis, et le mot qui revient » (177 mots)
+## 29 — Mardi 1er décembre, 18 h 30 — « Cinq avis, et le mot qui revient » (179 mots)
 
 > **Ce que disent les clients de Grafycom**
 >
@@ -911,10 +911,10 @@ touchés le 23 octobre, ➕ celui qui a été écrit ce jour-là.
 > intention en une demande que l'on puisse dessiner, et c'est cette
 > étape que les clients retiennent.
 >
-> Elle se traduit par une méthode : trois pistes présentées plutôt
-> qu'une, un bon à tirer signé avant toute fabrication, des délais
-> annoncés puis tenus, et les fichiers sources livrés accompagnés de
-> l'écrit de cession.
+> Elle se traduit par une façon de travailler : trois pistes
+> présentées plutôt qu'une, un visuel validé par écrit avant toute
+> fabrication, des délais annoncés puis tenus, et les fichiers
+> sources livrés accompagnés de l'écrit de cession.
 >
 > Les cinq témoignages sont consultables sur la page réalisations.
 

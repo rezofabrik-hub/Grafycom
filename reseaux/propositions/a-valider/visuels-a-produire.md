@@ -86,7 +86,7 @@ tiennent honnêtement : ils n'ont jamais prétendu être des preuves.
 > prompts et les refus motivés sont au § 5 ter de `BRIEF-PHOTOS-IA.md`,
 > écrits le 24 octobre. Le nuancier est du décor et se génère. La
 > devanture se génère en façade anonyme, qu'on ne légendera jamais
-> « Perpignan ». Le bon à tirer devant l'écran et les fichiers sources
+> « Perpignan ». L'imprimé posé devant l'écran et les fichiers sources
 > ouverts sont des démonstrations : les générer, c'est fabriquer l'écart
 > qu'on prétend constater. Ces deux-là se photographient en dix
 > minutes, sans matériel et sans déplacement.

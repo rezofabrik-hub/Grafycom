@@ -67,10 +67,31 @@ Interdits de vocabulaire : « boostez », « votre partenaire de confiance »,
 restaurant, un logo qui doit tenir brodé sur un polo et sur un panneau de
 trois mètres, pourquoi le menu en Word se lit mal. Format carrousel.
 
-**Les coulisses** — les crayonnés, les pistes écartées, un bon à tirer
+**Les coulisses** — les crayonnés, les pistes écartées, un visuel
 annoté, la pose d'une enseigne, la préparation d'un fichier grand format.
 Format reel court ou carrousel. C'est ce qui marche le mieux et c'est ce
 qu'on oublie de photographier : prendre l'habitude de filmer dix secondes.
+
+## Ce qu'est un BAT, et ce qu'il n'est pas
+
+Précisé par Sandra le 24 octobre, après que trois endroits du cycle ont
+dit le contraire.
+
+**Un BAT, chez Grafycom, est un fichier.** Sandra l'envoie au client,
+et le client valide **le visuel** : les textes, la mise en page, le
+dessin. C'est tout, et c'est déjà beaucoup — c'est le moment où une
+coquille se rattrape pour rien.
+
+Ce qu'il n'est pas, et qu'on n'écrit donc jamais :
+
+- **une épreuve imprimée.** Un exemplaire tiré sur le papier définitif
+  se commande à l'imprimeur, et il se paie ;
+- **un contrôle de couleur.** La couleur se juge sur la matière, pas
+  sur un fichier ni sur un écran ;
+- **gratuit.** Le mot avait été écrit deux fois. Il ne doit l'être
+  nulle part : il promet à la place de Sandra, et il promet faux.
+
+`reseaux/audit.py` relit cette règle à chaque passage.
 
 **Le territoire** — une devanture à Collioure, une carte bilingue, un
 commerce de Perpignan. Ancrage local, et les gens d'ici se reconnaissent.

@@ -584,6 +584,55 @@ def reglementation():
         juste("le Cerfa périmé n'est jamais donné pour valable")
 
 
+def bon_a_tirer():
+    """Le BAT est un fichier, il n'est ni du papier ni gratuit.
+
+    Précisé par Sandra le 24 octobre, et la définition est dans
+    `reseaux/LIGNE-EDITORIALE.md`. Elle a fallu la poser parce que
+    TROIS endroits du cycle disaient le contraire sans que rien ne
+    s'en aperçoive : le reel n° 4 promettait « un bon à tirer, c'est
+    gratuit », son découpage le recopiait, et la planche 05 de la
+    n° 17 rattachait le BAT à la fermeture des ateliers — donc à
+    l'imprimeur.
+
+    Promettre la gratuité d'une prestation à la place de celle qui la
+    facture est la faute la plus chère du lot : elle se lit comme un
+    engagement. Le contrôle travaille donc à la PHRASE et non au
+    fichier, sinon les CGV et les rétroplannings — qui nomment le BAT
+    et l'impression à deux lignes d'écart, légitimement — tomberaient
+    à chaque passage.
+    """
+    GRATUIT = r"gratuit|gratuite|sans frais|ne coûte rien|offert|compris"
+    PAPIER = (r"papier définitif|exemplaire réel|épreuve imprimée|"
+              r"bon à tirer papier|tiré sur le papier")
+    fichiers = (list((R / "reseaux").rglob("*.md"))
+                + list((R / "reseaux/blog").glob("*.md"))
+                + [R / "reseaux/visuels.py", R / "reseaux/illustrations.py"]
+                + list((R / "generateurs").glob("p_*.py")))
+    fautes = []
+    for f in fichiers:
+        if ".git" in f.parts or not f.exists():
+            continue
+        texte = f.read_text("utf-8", errors="ignore")
+        # On garde la ligne editoriale hors du champ : c'est elle qui
+        # ENONCE la regle, donc elle cite forcement les mots interdits.
+        if f.name == "LIGNE-EDITORIALE.md":
+            continue
+        for phrase in re.split(r"(?<=[.!?])\s+|\n\n", texte):
+            if not re.search(r"bon à tirer|\bBAT\b", phrase):
+                continue
+            if re.search(GRATUIT, phrase, re.I):
+                fautes.append("%s : « %s »"
+                              % (f.name, " ".join(phrase.split())[:72]))
+            elif re.search(PAPIER, phrase, re.I):
+                fautes.append("%s : « %s »"
+                              % (f.name, " ".join(phrase.split())[:72]))
+    for faute in fautes:
+        faux("le BAT donné pour gratuit ou pour du papier — " + faute)
+    if not fautes:
+        juste("le BAT n'est jamais donné pour gratuit ni pour du papier")
+
+
 def cycle(rapport):
     """Ce que le moteur a signalé en produisant les visuels."""
     t = pathlib.Path(rapport).read_text(encoding="utf-8")
@@ -613,6 +662,7 @@ def main():
     prudence()
     references()
     reglementation()
+    bon_a_tirer()
     if len(sys.argv) > 1:
         cycle(sys.argv[1])
     else:

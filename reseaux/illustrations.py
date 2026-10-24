@@ -1246,7 +1246,7 @@ ILLUSTRATIONS = {
         ("trottoir.png", illu_trottoir),
         ("trottoir-hauteur.png", illu_trottoir_hauteur),
         ("trottoir-nuit.png", illu_trottoir_nuit)],
-    "avis-clients-preuve-locale": [
+    "ecouter-avant-de-dessiner": [
         ("avis.png", illu_avis),
         ("avis-ecoute.png", illu_avis_ecoute),
         ("avis-reponse.png", illu_avis_reponse)],
@@ -1263,8 +1263,10 @@ PHOTOS_A_FAIRE = [
      "Une devanture réelle du centre ancien de Perpignan ou de "
      "Villefranche, enseigne comprise, prise de face."),
     ("couleurs-impression-ecran-cmjn",
-     "Un bon à tirer posé à côté de l'écran qui affiche le même visuel : "
-     "l'écart de couleur se voit, aucun schéma ne le remplace."),
+     "Un imprimé posé à côté de l'écran qui affiche le même fichier : "
+     "l'écart de couleur se voit, aucun schéma ne le remplace. Un "
+     "imprimé, pas un « bon à tirer » — le BAT est le fichier qu'on "
+     "fait valider, pas l'épreuve papier."),
     ("couleurs-impression-ecran-cmjn",
      "Un nuancier Pantone ouvert, en lumière du jour."),
     ("qui-possede-votre-logo",

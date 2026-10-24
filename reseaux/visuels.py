@@ -2272,11 +2272,19 @@ def carrousel_retroplanning(dossier=None):
     p.numero(4, 6, "taupe")
     f.append(p.ecrire(d / "04.png"))
 
-    # S5 — le bon a tirer
+    # S5 — la validation du visuel
+    #
+    # Cette planche disait « le bon a tirer n'est pas une formalite,
+    # faites-le en decembre, les ateliers sont fermes » — ce qui
+    # rattachait le BAT a l'imprimeur. Chez Grafycom, le BAT est un
+    # FICHIER envoye au client pour qu'il valide le visuel : la
+    # fermeture des ateliers n'a rien a voir avec lui, elle concerne
+    # la fabrication qui vient apres.
     p = Planche("blanc")
-    t = "Le bon à tirer n'est\npas une formalité."
-    st = ("C'est un aller-retour, et parfois deux. Faites-le en décembre : "
-          "entre Noël et le 2 janvier, les ateliers sont fermés.")
+    t = "Validez le visuel\navant les fêtes."
+    st = ("Je vous envoie le fichier, vous validez les textes et la mise "
+          "en page. La fabrication, elle, attend la réouverture des "
+          "ateliers le 2 janvier.")
     p.centrer(p.h_titre(t, 74) + p.h_texte(st, 42, avant=50) + 44)
     p.filet()
     p.titre(t, 74, "encre")
@@ -5834,11 +5842,15 @@ def pub04_reel_cmjn(dossier=None):
     _feuille_imprimee(p, 760, 640, 340, terne, angle=5)
     p.y = 1000
     p.filet()
-    p.titre("Demandez un BAT.\nToujours.", 77, "blanc")
+    p.titre("Validez le visuel.\nPas la couleur.", 77, "blanc")
     p.y += 30
-    p.texte("Ne validez jamais une couleur sur un écran. Un bon à tirer, "
-            "c'est gratuit, et ça évite de tout refaire.", 40, "creme", 400,
-            avant=20)
+    # Le BAT de Sandra est un FICHIER qu'elle envoie, et sur lequel le
+    # client valide le visuel : textes, mise en page, dessin. Ce n'est
+    # ni une epreuve papier, ni un controle colorimetrique, ni un
+    # service gratuit. L'ecran disait les trois.
+    p.texte("Le BAT que je vous envoie valide les textes, la mise en page, "
+            "le dessin. La couleur, elle, se juge sur la matière.", 40,
+            "creme", 400, avant=20)
     p.abonnement("sable")
     p.signature("sable")
     faits.append(p.ecrire(d / "ecran5.png"))

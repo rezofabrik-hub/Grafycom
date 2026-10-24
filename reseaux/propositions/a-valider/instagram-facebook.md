@@ -325,7 +325,7 @@ illisible, la sans-serif reste lisible.
 | 3-9 s | Animation : trois faisceaux de lumière rouge, vert, bleu qui se superposent et deviennent blanc. | RVB : de la **lumière** | Un écran fabrique les couleurs avec de la lumière. Il additionne du rouge, du vert et du bleu. Plus il en met, plus c'est lumineux. |
 | 9-15 s | Animation : quatre gouttes d'encre cyan, magenta, jaune, noir qui se mélangent sur du papier et s'assombrissent. | CMJN : de l'**encre** | Une imprimante fait l'inverse. Elle dépose de l'encre sur du papier blanc. Chaque couche retire de la lumière. |
 | 15-20 s | Nuancier posé sur une table, main qui le feuillette, lumière rasante sur un papier texturé. | Le papier change tout | Et le papier compte autant que l'encre. Un mat absorbe. Un couché renvoie. Le même fichier donne deux résultats. |
-| 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Demandez un BAT. Toujours.** | Un bon à tirer, c'est gratuit, et ça évite de tout refaire. |
+| 20-24 s | Logo Grafycom sur fond encre `#2f2723`, texte blanc, filet dégradé au-dessus du titre, signature `@grafycom.graphiste`. | **Validez le visuel. Pas la couleur.** | Le BAT que je vous envoie valide les textes, la mise en page, le dessin. La couleur, elle, se juge sur la matière. |
 
 **Pas de prompt d'arrière-plan.** Il y en avait un ici. Les cinq prompts du
 cahier des charges sont retirés : `reseaux/LIGNE-EDITORIALE.md` interdit une
@@ -3012,12 +3012,24 @@ gravure, broderie, tampon.
 
 ## 29 — Mardi 1er décembre, 18 h 30 · Carrousel 6 planches · Pilier « preuve »
 
-> ♻️ **Réécrite le 24 octobre.** La première version était un mode
-> d'emploi général sur les avis clients — comment en obtenir, quand
-> les demander. Laurent l'a corrigée : ce qu'il voulait, ce sont **les
-> avis de Sandra**, et la satisfaction comme pilier de Grafycom. La
-> différence n'est pas de ton, elle est de nature : l'une expliquait
-> un mécanisme, celle-ci montre une preuve.
+> ✅ **Validée le 24 octobre**, à la troisième version. Les deux
+> premières ne l'étaient pas, et les deux refus disent quelque chose
+> d'utile pour la suite du cycle.
+>
+> **La première** était un mode d'emploi général : comment obtenir des
+> avis, quand les demander. Ce n'était pas la demande — ce qu'il
+> fallait montrer, ce sont **les avis de Sandra**.
+>
+> **La deuxième** les montrait, et elle était **froide**. Elle posait
+> le constat comme une énigme, alignait les citations comme des
+> données, et se fermait sur « une méthode, **pas** un trait de
+> caractère » — l'inverse exact de ce que Sandra dit d'elle-même. Ses
+> clients viennent pour son écoute, et l'écoute n'est pas un procédé.
+>
+> **Celle-ci** parle à la première personne, sur fonds chauds, avec un
+> mot manuscrit sous chaque avis. La règle qui en sort, et qui vaut
+> au-delà de cette publication : **quand le sujet est la relation, on
+> ne l'analyse pas, on la montre.**
 
 > 🎯 **Pourquoi elle existe.** `acquisition.md` mesure que le plan est
 > bâti pour l'autorité et très peu pour la **preuve**. Les cinq avis
@@ -3037,70 +3049,67 @@ gravure, broderie, tampon.
 Gabarit `avis-clients` dans `reseaux/visuels.py`. **Les six planches
 sont dessinées** — `reseaux/visuels/2026-12-01-avis-clients/`.
 
-- **S1.** Fond encre, surtitre jaune « Ce que disent mes clients ».
-  « Cinq avis. Et un mot qui revient dans quatre. » Sous-titre :
-  « Ce n'est pas celui que j'attendais. »
-- **S2.** Fond blanc. L'avis de **Laurent, Solaire 66**, en deux
-  blocs, signé.
-- **S3.** Fond crème. L'avis de **Social Miroir**, signé.
-- **S4.** Fond blanc. Les **trois avis de la structure précédente**,
-  en extraits courts, chacun signé, avec la mention « repris avec
-  l'accord de leurs autrices ».
-- **S5.** Fond crème. « Personne ne commence par le dessin. » Les
-  quatre ouvertures en pastilles jaunes : « su m'écouter », « son
-  écoute », « l'accueil, l'écoute », « le service client ».
-- **S6.** Fond encre. « Une méthode, pas un trait de caractère » —
-  trois pistes, un BAT, les délais, les sources livrées. Renvoi à la
-  page réalisations.
+**Aucun fond encre.** Dégradé chaud et crème sur les six, accent
+corail, et un mot **manuscrit** en Caveat sous chaque avis — comme une
+réponse écrite à la main sous une carte. Les citations sont en
+Playfair et non en Inter : une serif se lit comme une voix, une
+sans-serif comme un relevé.
+
+- **S1.** Dégradé chaud. « Ils parlent d'écoute avant de parler du
+  dessin. » Puis : « Et ça m'a touchée plus que je ne l'aurais cru. »
+- **S2.** Crème. L'avis de **Laurent, Solaire 66**, signé. Manuscrit
+  en pied : *Merci Laurent.*
+- **S3.** Dégradé chaud. L'avis de **Social Miroir**, signé.
+  Manuscrit : *Merci à vous.*
+- **S4.** Crème. Les **trois avis de la structure précédente**,
+  surtitre « Avant Grafycom, et toujours moi ». Manuscrit :
+  *Certaines sont là depuis cinq ans.*
+- **S5.** Dégradé chaud. « Écoute. Accueil. Patience. » en grand, puis
+  « Je m'attendais à lire *beau logo*. Personne ne commence par là. »
+- **S6.** Crème. « Un logo, ça se dessine à deux. » Ce qui se passe
+  avant le premier trait, signé **Sandra** à la main.
 
 ### Accroche
-**« Cinq avis signés, et le mot qui revient dans quatre n'est pas celui que j'attendais. »**
+**« Ils parlent d'écoute avant de parler du dessin. Et ça m'a touchée plus que je ne l'aurais cru. »**
 
 ### Légende
 
-> Cinq personnes ont pris le temps d'écrire ce qu'elles pensaient du
-> travail. Elles sont cinq, pas trente. S'il n'y en a que cinq, c'est
-> qu'il n'y en a que cinq.
+> On m'appelle rarement en sachant ce qu'on veut. On m'appelle en
+> sachant ce qui gêne.
 >
-> Deux concernent des projets menés par Grafycom : Solaire 66 et
-> Social Miroir. Trois viennent de la structure précédente, et sont
-> reprises avec l'accord de leurs autrices. La page le dit au lieu de
-> l'arrondir — un bloc d'avis dont une mention est fausse pour deux
-> cinquièmes fait douter du reste.
+> « Mon logo fait vieux, mais je ne saurais pas dire pourquoi. »
+> « J'ai fait faire des cartes, et je ne les donne pas. » « Je
+> voudrais quelque chose de moderne, mais pas froid. »
 >
-> Ce qui m'a surprise, c'est ce qu'elles ont en commun.
+> Aucune de ces phrases ne décrit un dessin. Elles décrivent une gêne,
+> et c'est un très bon point de départ — à condition de ne pas se
+> précipiter sur le crayon.
 >
-> Laurent commence par « su m'écouter ». Social Miroir par « son
-> écoute ». Sarah Otman par « l'accueil, l'écoute ». Ludivine Le Blay
-> par « service client ». **Quatre sur cinq ouvrent sur la même
-> chose, et ce n'est pas le dessin.**
+> En relisant les cinq témoignages laissés sur ma page réalisations,
+> j'ai regardé par quoi chacun commence. Je ne m'attendais pas à ça.
 >
-> Les mots « magnifiques », « créativité », « qualité » sont bien là.
-> Ils arrivent en deuxième ou en troisième position, après autre
-> chose.
+> Laurent, de Solaire 66 : « j'avais beaucoup d'idées en tête, mais je
+> ne savais pas comment les concrétiser. Un immense merci à Sandra qui
+> a su m'écouter. » Social Miroir : « son écoute, sa créativité. »
+> Sarah Otman : « l'accueil, l'écoute et le professionnalisme. »
+> Ludivine Le Blay : « le service client au cœur des prestations. »
 >
-> C'est contre-intuitif pour un métier qui se vend sur des images, et
-> c'est pourtant logique. Quelqu'un qui commande une identité
-> visuelle ne sait pas ce qu'il veut : il sait ce qui le gêne. Le
-> travail consiste d'abord à transformer « quelque chose de moderne
-> mais pas froid » en une demande qu'on puisse dessiner. C'est cette
-> partie-là qu'on retient, parce que c'est elle qui était difficile.
+> **Quatre sur cinq ouvrent sur l'écoute. Aucun n'ouvre sur le
+> dessin.** Les mots « magnifiques » et « créativité » sont bien là,
+> mais ils arrivent après.
 >
-> Laurent l'écrit presque mot pour mot : « j'avais beaucoup d'idées
-> en tête, mais je ne savais pas comment les concrétiser ».
+> Pour un métier qui se vend sur des images, c'est déroutant la
+> première fois qu'on le lit. Puis c'est logique : on retient l'étape
+> qui était difficile, et la difficulté n'était pas de dessiner. Elle
+> était de mettre des mots sur une intention.
 >
-> Alors si c'est l'écoute qui ressort, ce n'est pas un trait de
-> caractère à mettre en avant : c'est une méthode à tenir. Trois
-> pistes présentées et pas une. Un bon à tirer avant toute
-> fabrication. Les délais annoncés, et tenus. Les fichiers sources
-> livrés, avec l'écrit qui va avec.
+> Alors oui, un logo, ça se dessine à deux. Vous arrivez avec des
+> idées en vrac, et c'est très bien : c'est là que mon travail
+> commence. Écouter, trier, poser les questions qui manquent. Le
+> dessin vient après, et il vient beaucoup plus facilement.
 >
-> Et une dernière chose, la seule qui ne se demande pas : Jade Lopez
-> travaille avec moi depuis plus de cinq ans, Sarah Otman est revenue
-> des années après. On peut demander un avis le jour de la livraison.
-> On ne peut pas demander à quelqu'un de revenir.
->
-> Les cinq sont sur grafycom.fr/realisations, signés.
+> Merci à vous cinq. Les témoignages sont sur
+> grafycom.fr/realisations, signés.
 
 ### Texte alternatif
 Carrousel de six visuels. Le premier annonce « cinq avis, et un mot

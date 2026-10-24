@@ -625,7 +625,7 @@ peuvent l'être, deux ne peuvent pas**, et la frontière est celle du
 | # | Ce qu'il faut | Article | Verdict |
 |---|---|---|---|
 | **α** | Une devanture du centre ancien, enseigne comprise | Autorisation d'enseigne | ⚠️ générable en **décor anonyme** seulement |
-| **β** | Un bon à tirer posé à côté de l'écran qui affiche le même visuel | Couleurs écran / impression | ⛔ **non** |
+| **β** | Un imprimé posé à côté de l'écran qui affiche le même fichier | Couleurs écran / impression | ⛔ **non** |
 | **γ** | Un nuancier ouvert, en lumière du jour | Couleurs écran / impression | ✅ oui |
 | **δ** | Les fichiers sources ouverts, avec leurs calques | Qui possède votre logo | ⛔ **non** |
 
@@ -633,7 +633,7 @@ peuvent l'être, deux ne peuvent pas**, et la frontière est celle du
 
 Ce ne sont pas des décors, ce sont des **démonstrations**.
 
-**β** existe pour qu'on voie l'écart entre un écran et un imprimé. Une
+**β** existe pour qu'on voie l'écart entre un écran et un imprimé. Ce n'est pas un « bon à tirer » : chez Grafycom le BAT est le fichier qu'on fait valider, pas l'épreuve papier. Une
 image générée fabriquerait cet écart au lieu de le constater : elle
 montrerait exactement la différence qu'on lui aurait demandé de
 montrer. C'est la définition d'un faux, et c'est déjà la raison pour
