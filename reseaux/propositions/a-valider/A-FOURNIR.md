@@ -16,7 +16,7 @@ Trois niveaux, et ils ne se valent pas.
 
 ## 🟢 Plus aucun bloquant
 
-**Le cycle est complet.** 217 visuels, aucune planche avec un trou.
+**Le cycle est complet.** 160 planches de publication et 41 écrans de story, plus 24 illustrations d'articles. Aucune planche avec un trou.
 
 Les deux derniers manques sont arrivés le 23 octobre :
 
@@ -150,11 +150,105 @@ de bas de bloc.
 
 ### 10. L'adresse de partage de la fiche Google
 
-Une adresse courte en `g.page/…`, ou un lien Maps. Elle se récupère dans
-le profil d'établissement, bouton **« Partager »**.
+**Ce que j'attends :** une seule ligne, du genre
+`https://maps.app.goo.gl/XXXXXXXX` ou `https://g.page/XXXXXXXX`. Rien
+d'autre, et surtout aucun identifiant de connexion.
 
-C'est la dernière entrée manquante du bloc `sameAs` : celle qui permet à
-Google de rapprocher le site, la fiche et les réseaux sans le deviner.
+C'est la dernière entrée manquante du bloc `sameAs` de `index.html`, qui
+déclare aujourd'hui Instagram et Facebook et pas la fiche :
+
+```json
+"sameAs": [
+  "https://www.instagram.com/grafycom.graphiste/",
+  "https://www.facebook.com/profile.php?id=61586219309517"
+]
+```
+
+Ce bloc dit à Google : *ces adresses parlent toutes de la même
+entreprise*. Sans la fiche dedans, il lui reste à le deviner à partir du
+nom et du site. Il y arrive souvent. « Souvent » n'est pas « toujours »,
+et ça ne coûte qu'une ligne de le lui dire.
+
+#### Le chemin le plus court : depuis le téléphone
+
+C'est celui que je conseille — trois gestes, et le lien part directement
+par message.
+
+1. Ouvrir l'application **Google Maps**, connecté avec **le compte
+   Google de Sandra** (celui qui administre la fiche).
+2. Dans la barre de recherche, taper **`Grafycom`**. La fiche doit
+   sortir en premier. La toucher pour l'ouvrir.
+3. Dans la rangée de boutons sous le nom — *Itinéraire*, *Enregistrer*,
+   *Appeler*… — toucher **« Partager »**. Il est parfois sous les trois
+   points **⋮** si la rangée est pleine.
+4. Choisir **« Copier le lien »**.
+5. Me le coller ici.
+
+#### Depuis un ordinateur
+
+1. Se connecter à Google avec **le compte de Sandra**.
+2. Aller sur **google.com/maps** et chercher **`Grafycom`**.
+3. Cliquer sur la fiche, puis sur **« Partager »** dans le panneau de
+   gauche.
+4. Une fenêtre s'ouvre sur l'onglet **« Envoyer un lien »** : cliquer
+   **« Copier le lien »**.
+5. Me le coller ici.
+
+> 💡 **Variante.** Connecté au compte propriétaire, une recherche
+> `Grafycom` sur **google.com** fait apparaître le panneau de gestion de
+> la fiche au-dessus des résultats. Il porte lui aussi un bouton de
+> partage. Les deux chemins donnent le même lien — prenez celui qui
+> s'ouvre le premier. Google déplace ces boutons deux fois par an ;
+> si rien ne ressemble à ce qui est décrit ici, envoyez-moi une copie
+> d'écran et je vous dis où cliquer.
+
+#### Comment savoir que le lien est le bon
+
+| Ce que vous collez | Verdict |
+|---|---|
+| `https://maps.app.goo.gl/…` | ✅ parfait |
+| `https://g.page/…` sans `/r/` | ✅ parfait |
+| `https://www.google.com/maps/place/Grafycom/…` | ✅ parfait, plus long |
+| `https://g.page/r/…/review` | ⚠️ ce n'est pas celui-ci — voir juste en dessous |
+| Une adresse qui contient `business.google.com` | ❌ c'est la page d'administration, elle n'est visible que par vous |
+
+**Le test en dix secondes :** ouvrir le lien dans une fenêtre de
+navigation privée, donc déconnecté. Si la fiche Grafycom s'affiche
+normalement, c'est le bon. Si on vous demande de vous connecter, c'est
+un lien d'administration.
+
+#### Pendant que vous y êtes : l'autre lien, celui des avis
+
+Ce sont **deux liens différents**, et c'est la confusion la plus
+courante :
+
+- **Le lien de partage** — celui que je demande ici — **ouvre la
+  fiche**. Il va dans le code du site, une fois, et n'en bouge plus.
+- **Le lien de demande d'avis** — `g.page/r/…/review` — **ouvre
+  directement la fenêtre d'avis**, cinq étoiles et un champ de texte.
+  Il ne va nulle part dans le code : il se donne à un client, à la main,
+  le jour de la livraison.
+
+Le second se récupère au même endroit : dans le panneau de gestion de la
+fiche, sous **« Demander des avis »** ou **« Obtenir plus d'avis »**.
+
+**Prenez les deux maintenant**, tant que vous êtes connectée. Le second
+n'est pas pour moi : il est pour le prochain client, et la publication
+n° 29 du 1er décembre conseille précisément cette pratique — la tenir
+avant de la publier n'est pas une coquetterie, ça se vérifie en un clic.
+
+#### Ce que j'en fais
+
+J'ajoute la ligne au bloc `sameAs` de `generateurs/p_index.py`, je
+régénère, et c'est tout. Deux minutes, pas de décision à prendre.
+
+> ⚠️ **Un point de vigilance qui tient à la discrétion voulue.** La
+> fiche est en « zone desservie », adresse masquée : c'est bien, et ça
+> ne change rien ici. Un lien de partage de fiche sans adresse affichée
+> ne révèle pas l'adresse. Vérifiez quand même, à l'ouverture du lien en
+> navigation privée, qu'aucune adresse postale n'apparaît — si elle
+> apparaît, c'est le réglage « type d'établissement » de la fiche qui
+> est à corriger, et c'est le point 2 de `outils/FICHE-GOOGLE.md`.
 
 ### 11. ~~Le violet de BIG FOOD~~ — tranché le 23 octobre
 
@@ -166,35 +260,7 @@ de registre reste en place, vide : il a servi une fois, il resservira.
 L'orange et le blanc continuent de se relever dans le vectoriel :
 `#f39200` et `#ffffff`, exacts.
 
-### 12. Le logo rond de Social Miroir — rien ne l'attend non plus
-
-**Le site n'est pas concerné.** La vignette de la page réalisations est
-faite à partir de la version **en long**, qui n'a pas le défaut. Le
-fichier rond ne sert nulle part : ni sur le site, ni dans une
-publication, ni dans un visuel. Il n'y a donc **rien à enlever**, et
-rien qui bloque.
-
-La reprise ne devient utile que le jour où la version ronde doit servir
-d'**avatar** — c'est son usage, et c'est là que le défaut se verrait :
-Instagram et Facebook recadrent l'avatar en cercle, et ce qui touche le
-bord se fait rogner.
-
-Les mesures restent ici pour ce jour-là, et la correction est plus
-simple qu'elle n'en a l'air :
-
-| | Aujourd'hui | Cible |
-|---|---|---|
-| Marge à gauche | 26,1 mm | inchangée |
-| Marge à droite | **1,9 mm** | 26,1 mm |
-| Décentrage du bloc | +12,1 mm | 0 |
-| Largeur du bloc | 172,0 mm | **147,9 mm** |
-
-**La largeur visée est exactement celle de la version carrée** —
-147,7 mm mesurés contre 147,9. Il ne s'agit pas de redessiner, mais de
-rendre à la bande la longueur qu'elle a déjà dans les deux autres
-déclinaisons, et de recentrer.
-
-### 13. ~~La n° 18~~ — sortie du calendrier le 23 octobre
+### 12. ~~La n° 18~~ — sortie du calendrier le 23 octobre
 
 Elle devait partir le mardi 24 novembre à 8 h 00. **Elle ne part pas**,
 et elle n'a plus de date tant que la signalétique de tri n'est pas
@@ -214,7 +280,7 @@ Pour la remettre un jour : une ligne dans `visuels.py`,
 `GABARITS["emballage-tri"] = pub18_emballage_tri`, et les sept planches
 reviennent — sachet kraft compris.
 
-### 14. ~~La confirmation des délais d'impression~~ — donnée le 23 octobre
+### 13. ~~La confirmation des délais d'impression~~ — donnée le 23 octobre
 
 **Création sur la première quinzaine de novembre**, parce qu'en
 décembre les livraisons deviennent risquées à cause de Noël. La chaîne
