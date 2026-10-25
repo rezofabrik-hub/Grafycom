@@ -236,3 +236,63 @@ page("signature.html", "Signature d'e-mail — Grafycom",
      "Gmail.",
      BODY, ogtitle="Signature d'e-mail — Grafycom",
      robots="noindex, nofollow")
+
+
+def en_png(dossier="assets/img"):
+    """La signature aplatie en image, à la demande.
+
+    Ce que l'image coûte, et il faut l'avoir en tête avant de s'en
+    servir : plus aucun lien n'est cliquable — ni le téléphone, ni le
+    site, ni le compte Instagram ; le texte ne se sélectionne ni ne se
+    copie ; un lecteur d'écran n'a plus que l'attribut alt ; et quand
+    la messagerie bloque les images, il ne reste RIEN, là où la
+    version HTML perd seulement son logo.
+
+    Deux fonds, et le blanc est le bon. Un PNG transparent laisse le
+    texte encre sur le fond du client : illisible en mode nuit. Un
+    rectangle blanc dans un message sombre se voit, mais il se lit.
+
+    Rendu à 2× puis affiché à 1× : sans cela l'image est floue sur
+    tout écran moderne.
+    """
+    import asyncio
+    import pathlib
+    import re
+
+    racine = pathlib.Path(__file__).resolve().parent.parent
+    cible = racine / dossier
+
+    async def tirer():
+        from playwright.async_api import async_playwright
+        async with async_playwright() as pw:
+            exe = next((str(c) for c in sorted(
+                pathlib.Path("/opt/pw-browsers").glob(
+                    "chromium-*/chrome-linux/chrome"), reverse=True)), None)
+            nav = await (pw.chromium.launch(executable_path=exe) if exe
+                         else pw.chromium.launch())
+            for nom, fond in (("signature.png", "#ffffff"),
+                              ("signature-transparente.png", None)):
+                page_ = await nav.new_page(
+                    viewport={"width": 420, "height": 240},
+                    device_scale_factor=2)
+                await page_.set_content(
+                    "<body style=\"margin:0;padding:10px;background:%s\">"
+                    "%s</body>" % (fond or "transparent", SIGNATURE))
+                await page_.wait_for_load_state("networkidle")
+                await page_.locator("table").first.screenshot(
+                    path=str(cible / nom),
+                    omit_background=fond is None)
+                await page_.close()
+            await nav.close()
+
+    asyncio.run(tirer())
+    for nom in ("signature.png", "signature-transparente.png"):
+        f = cible / nom
+        e = f.read_bytes()[16:24]
+        print("%-28s %4d x %-4d %6.0f ko"
+              % (nom, int.from_bytes(e[:4], "big"),
+                 int.from_bytes(e[4:], "big"), f.stat().st_size / 1024))
+
+
+if __name__ == "__main__" and "--png" in __import__("sys").argv:
+    en_png()
