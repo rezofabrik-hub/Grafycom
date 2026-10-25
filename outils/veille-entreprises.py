@@ -327,7 +327,14 @@ AGENT = "veille-grafycom/1.0 (+https://grafycom.fr)"
 # une connexion maintenue : 0,5 seconde par appel, aucun echec.
 #
 # requests gere la reutilisation sans rien demander. S'il manque, on
-# retombe sur urllib : plus lent et moins sur, mais la veille tourne.
+# tient la connexion a la main avec http.client, qui est dans la
+# bibliotheque standard : c'est le meme mecanisme, en moins confortable.
+#
+# Le repli precedent passait par urllib.request, donc une connexion
+# NEUVE par entreprise. Mesure du 25 octobre sur une machine sans
+# requests : 143 adresses demandees, 143 echecs — exactement la panne
+# que le commentaire ci-dessus decrit, et que le repli etait cense
+# eviter. Un repli qui reproduit le defaut n'est pas un repli.
 try:
     import requests as _requests
     _session = _requests.Session()
@@ -335,6 +342,46 @@ try:
 except ImportError:
     _requests = None
     _session = None
+
+
+class _Tenue:
+    """Une connexion HTTPS maintenue, quand requests n'est pas la.
+
+    Elle se rouvre toute seule si le serveur la ferme : une connexion
+    maintenue le reste rarement plus de quelques dizaines d'appels.
+    """
+
+    def __init__(self, hote: str) -> None:
+        self.hote, self.lien = hote, None
+
+    def get(self, chemin: str) -> dict:
+        import http.client
+        for tentative in (1, 2):
+            if self.lien is None:
+                self.lien = http.client.HTTPSConnection(self.hote,
+                                                        timeout=25)
+            try:
+                self.lien.request("GET", chemin, headers={
+                    "User-Agent": AGENT, "Accept": "application/json",
+                    "Connection": "keep-alive"})
+                rep = self.lien.getresponse()
+                corps = rep.read()
+                if rep.status != 200:
+                    raise OSError("HTTP %d" % rep.status)
+                return json.loads(corps.decode("utf-8"))
+            except Exception:
+                try:
+                    self.lien.close()
+                except Exception:
+                    pass
+                self.lien = None
+                if tentative == 2:
+                    raise
+        raise OSError("inatteignable")
+
+
+_tenue = None if _session is not None else _Tenue(
+    urllib.parse.urlsplit(ANNUAIRE).netloc)
 
 
 def interroger_annuaire(params: dict) -> dict | None:
@@ -345,10 +392,9 @@ def interroger_annuaire(params: dict) -> dict | None:
                 reponse = _session.get(ANNUAIRE, params=params, timeout=25)
                 reponse.raise_for_status()
                 return reponse.json()
-            url = ANNUAIRE + "?" + urllib.parse.urlencode(params)
-            requete = urllib.request.Request(url, headers={"User-Agent": AGENT})
-            with urllib.request.urlopen(requete, timeout=25) as rep:
-                return json.loads(rep.read().decode("utf-8"))
+            chemin = (urllib.parse.urlsplit(ANNUAIRE).path + "?"
+                      + urllib.parse.urlencode(params))
+            return _tenue.get(chemin)
         except Exception:
             if essai < 4:
                 time.sleep(1.5 * (essai + 1))
@@ -726,6 +772,10 @@ def main() -> int:
         if douteux:
             print(f"  {douteux} non vérifiées : l'annuaire n'a pas répondu. "
                   f"Ne rien leur envoyer avant de relancer.")
+            if douteux == len(prospects) and _session is None:
+                print("  Toutes ont échoué, et `requests` n'est pas "
+                      "installé. C'est très probablement la cause :")
+                print("      python -m pip install requests")
 
     SORTIE.mkdir(exist_ok=True)
     if args.quotidien:
