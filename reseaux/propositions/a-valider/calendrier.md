@@ -47,6 +47,7 @@ automatique du matin.
 | vendredi 30 octobre | 10 h 45 | Story | story | S1-E · relais du blog |
 | samedi 31 octobre | 10 h 30 | Instagram + Facebook | Carrousel | **n° 4 bis · annonce du blog** |
 | samedi 31 octobre | 10 h 30 | Fiche Google | post | texte n° 4 bis |
+| samedi 31 octobre | 11 h 00 | Story | story | S2-F · Halloween — 📌 **date fixe** |
 | | | | | |
 | lundi 2 novembre | 12 h 30 | Instagram + Facebook | Carrousel | n° 5 |
 | lundi 2 novembre | 12 h 30 | Fiche Google | post | texte n° 5 |
@@ -68,10 +69,11 @@ automatique du matin.
 | lundi 9 novembre | 12 h 30 | Instagram + Facebook | REEL 25 s | n° 16 — 🔀 **remontée du 28, décision de l'imprimeur** |
 | lundi 9 novembre | 12 h 30 | Fiche Google | post | texte n° 16 |
 | lundi 9 novembre | 12 h 45 | Story | story | S4-F · teasing du reel |
-| mardi 10 novembre | 10 h 15 | Story | story | S3-B2 · la réponse |
 | mardi 10 novembre | 8 h 00 | Instagram + Facebook | Carrousel | n° 2 — 🔀 **permutée, pour rester de saison** |
 | mardi 10 novembre | 8 h 00 | Fiche Google | post | texte n° 2 |
 | mardi 10 novembre | 8 h 15 | Story | story | S3-B1 · quiz enseigne |
+| mardi 10 novembre | 10 h 15 | Story | story | S3-B2 · la réponse |
+| mercredi 11 novembre | — | — | — | 🕯️ **rien, volontairement** — Armistice |
 | jeudi 12 novembre | 08 h 00 | Blog | article | Habiller sa vitrine : dépoli, microperforé ou lettres déco ⚠️ |
 | jeudi 12 novembre | 12 h 30 | Instagram + Facebook | Dilemme A/B | n° 11 |
 | jeudi 12 novembre | 12 h 30 | Fiche Google | post | texte n° 11 |
@@ -87,14 +89,12 @@ automatique du matin.
 | samedi 14 novembre | 10 h 45 | Story | story | S3-A · teasing du carrousel |
 | samedi 14 novembre | 11 h 00 | Story | story | S3-C · boîte à questions — 🔀 **déplacée du 11, Armistice ; créneau validé le 23 octobre** |
 
-| samedi 31 octobre | 11 h 00 | Story | story | S2-F · Halloween — 📌 **date fixe** |
 | | | | | |
 | lundi 16 novembre | 12 h 30 | Instagram + Facebook | Carrousel 7 planches | n° 13 — fichiers vectoriels |
 | lundi 16 novembre | 12 h 30 | Fiche Google | post | texte n° 13 |
 | ~~mardi 17 novembre~~ | — | — | — | 🛑 **n° 14 sortie du calendrier le 23 octobre** — loi Toubon non confirmée. Le texte Google n° 14 et les stories S4-B partent avec elle |
 | mardi 17 novembre | 18 h 30 | Story | story | S4-C · coulisses — 🔀 **décalée du 11** |
 | mercredi 18 novembre | 18 h 30 | Instagram + Facebook | Carrousel 8 planches | n° 26 — KRUSTY, 🧩 **réalisation intercalée** |
-| mercredi 11 novembre | — | — | — | 🕯️ **rien, volontairement** — Armistice |
 | jeudi 19 novembre | 19 h 00 | Instagram + Facebook | Quiz 4 choix | n° 15 |
 | jeudi 19 novembre | 19 h 00 | Fiche Google | post | texte n° 15 |
 | jeudi 19 novembre | 19 h 00 | Story | story | S4-D1 · le quiz du jeudi |

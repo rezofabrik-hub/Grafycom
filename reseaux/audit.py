@@ -602,6 +602,43 @@ def reglementation():
         juste("le Cerfa périmé n'est jamais donné pour valable")
 
 
+def calendrier_ordonne():
+    """Le calendrier se lit-il dans l'ordre du temps ?
+
+    C'est le document sur lequel on programme, ligne par ligne, un
+    soir. Une ligne au mauvais endroit ne se voit pas à la relecture
+    et se rate à la saisie. Trois s'y étaient glissées : la story
+    d'Halloween du 31 octobre rangée après le 14 novembre, l'Armistice
+    du 11 après le 18, et la réponse de 10 h 15 du 10 novembre AVANT
+    la question de 8 h 00 du même jour.
+
+    Aucun autre contrôle ne les voyait : les dates sont justes, elles
+    concordent avec le document des publications, les compteurs
+    tombent. Seul l'ordre était faux, et l'ordre est précisément ce
+    qu'on suit quand on programme.
+    """
+    MOIS_N = {v: k for k, v in MOIS.items()}
+    lignes = lire("reseaux/propositions/a-valider/calendrier.md").split("\n")
+    precedent, recules = None, []
+    for ligne in lignes:
+        m = re.match(r"\| (?:~~)?(?:\w+) (\d{1,2})(?:er)? (\w+)(?:~~)? \| "
+                     r"\*{0,2}(\d{1,2})?\s*h?\s*(\d{2})?", ligne)
+        if not m or m.group(2) not in MOIS:
+            continue
+        jour = datetime.date(2026, MOIS[m.group(2)], int(m.group(1)))
+        heure = (int(m.group(3) or 0), int(m.group(4) or 0))
+        maintenant = (jour, heure)
+        if precedent and maintenant < precedent:
+            recules.append("%s %s %s" % (m.group(1), m.group(2),
+                                         ligne.split("|")[2].strip() or "—"))
+        precedent = maintenant
+    if recules:
+        faux("calendrier : %d ligne(s) remontent le temps — %s"
+             % (len(recules), " ; ".join(recules[:4])))
+    else:
+        juste("le calendrier se lit dans l'ordre du temps")
+
+
 def bon_a_tirer():
     """Le BAT est un fichier, il n'est ni du papier ni gratuit.
 
@@ -680,6 +717,7 @@ def main():
     prudence()
     references()
     reglementation()
+    calendrier_ordonne()
     bon_a_tirer()
     if len(sys.argv) > 1:
         cycle(sys.argv[1])
