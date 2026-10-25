@@ -72,57 +72,48 @@ def lien(url, texte, couleur=None):
 
 
 def contacts():
-    """Les quatre coordonnées sur UNE ligne, séparées par des points.
+    """Les coordonnées, empilées court.
 
-    La première version les empilait en quatre rangées étiquetées
-    TÉL / WEB / INSTA / ZONE. C'était lisible et deux fois trop haut :
-    une signature se lit en bas d'un message, pas comme une fiche. Les
-    étiquettes ne disaient rien qu'un numéro de téléphone ou une
-    adresse en .fr n'annonce déjà.
+    Elles ont tenu sur une seule ligne un moment, et le bloc faisait
+    520 px de large. Trop long : une signature se range à gauche d'un
+    message, pas en travers. Repliées sur trois lignes, elles ramènent
+    la largeur à 260 px — la moitié — pour une trentaine de pixels de
+    hauteur en plus.
 
-    Les séparateurs reprennent les couleurs du dégradé — c'est ce qui
-    reste de la charte une fois les étiquettes parties.
+    Les points de séparation reprennent les couleurs du dégradé :
+    c'est ce qui reste de la charte à cette taille.
     """
-    bouts = [lien("tel:" + TEL_URI, TEL),
-             lien(SITE + "/", "grafycom.fr"),
-             lien("https://www.instagram.com/%s/" % INSTA, "@" + INSTA),
-             '<span style="color:%s">Perpignan et alentours</span>' % BRUN]
-    points = ("#3ec2b3", "#a86cd0", "#f5883c")
-    out = bouts[0]
-    for couleur, bout in zip(points, bouts[1:]):
-        out += ('<span style="color:%s">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;'
-                "</span>%s" % (couleur, bout))
-    return out
+    def pt(couleur):
+        return ('<span style="color:%s">&nbsp;&#8226;&nbsp;</span>'
+                % couleur)
+
+    return [
+        lien("tel:" + TEL_URI, TEL) + pt("#3ec2b3")
+        + lien(SITE + "/", "grafycom.fr"),
+        lien("https://www.instagram.com/%s/" % INSTA, "@" + INSTA),
+        '<span style="color:%s">Perpignan et alentours</span>' % BRUN,
+    ]
 
 
 SIGNATURE = """
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"
-       style="border-collapse:collapse;background:%(creme)s;
-       max-width:520px">
+       style="border-collapse:collapse;width:262px">
   <tr>
-    <td style="padding:11px 16px 9px 14px">
-      <table role="presentation" cellpadding="0" cellspacing="0"
-             border="0" style="border-collapse:collapse">
-        <tr>
-          <td width="60" style="vertical-align:middle;padding-right:12px">
-            <img src="%(logo)s" width="48" height="48" alt="Grafycom"
-                 style="display:block;width:48px;height:48px;border:0">
-          </td>
-          <td style="vertical-align:middle">
-            <div style="font:400 16px/20px %(serif)s;color:%(encre)s;
-                 letter-spacing:.05em">Sandra<span style="font:11px/20px
-                 %(sans)s;color:%(taupe)s;letter-spacing:.11em">
-                 &nbsp;&nbsp;&#8226;&nbsp;&nbsp;GRAFYCOM</span></div>
-            <div style="font:italic 11.5px/16px %(serif)s;color:%(brun)s">
-                 Communication visuelle &#183; L'image qui vous
-                 ressemble</div>
-          </td>
-        </tr>
-      </table>
+    <td width="52" style="vertical-align:top;padding:0 10px 0 0">
+      <img src="%(logo)s" width="44" height="44" alt="Grafycom"
+           style="display:block;width:44px;height:44px;border:0">
+    </td>
+    <td style="vertical-align:top;padding-top:1px">
+      <div style="font:400 15px/18px %(serif)s;color:%(encre)s;
+           letter-spacing:.05em">Sandra</div>
+      <div style="font:9.5px/14px %(sans)s;color:%(taupe)s;
+           letter-spacing:.14em">GRAFYCOM</div>
+      <div style="font:italic 10.5px/14px %(serif)s;color:%(brun)s">
+           L'image qui vous ressemble</div>
     </td>
   </tr>
   <tr>
-    <td style="padding:0 16px 0 14px">
+    <td colspan="2" style="padding:7px 0 0 0">
       <table role="presentation" cellpadding="0" cellspacing="0"
              border="0" width="100%%"
              style="border-collapse:collapse;width:100%%">
@@ -131,13 +122,13 @@ SIGNATURE = """
     </td>
   </tr>
   <tr>
-    <td style="padding:8px 16px 11px 14px;font:11px/15px %(sans)s;
-        color:%(encre)s;white-space:nowrap">%(contacts)s</td>
+    <td colspan="2" style="padding:6px 0 0 0;font:10.5px/15px %(sans)s;
+        color:%(encre)s;white-space:nowrap">%(l1)s<br>%(l2)s<br>%(l3)s</td>
   </tr>
-</table>""" % {
-    "creme": CREME, "logo": LOGO, "serif": SERIF, "sans": SANS,
-    "encre": ENCRE, "taupe": TAUPE, "brun": BRUN, "filet": filet(),
-    "contacts": contacts()}
+</table>""" % dict(zip(
+    ("logo", "serif", "sans", "encre", "taupe", "brun", "filet",
+     "l1", "l2", "l3"),
+    (LOGO, SERIF, SANS, ENCRE, TAUPE, BRUN, filet()) + tuple(contacts())))
 
 TEXTE = """Sandra — Grafycom
 Communication visuelle · L'image qui vous ressemble
@@ -165,10 +156,13 @@ BODY = """
     <div class="trait"></div>
     <p class="chapeau">S&eacute;lectionnez tout le bloc ci-dessous, du logo &agrave;
     la derni&egrave;re ligne, et copiez-le avec <code>Ctrl+C</code>.</p>
-    <div style="margin:28px 0;padding:22px;background:#fff;
-         border:1px solid #e4d5cc;border-radius:10px;overflow-x:auto">
+    <div style="margin:28px 0;padding:26px 0 0;overflow-x:auto">
 %(signature)s
     </div>
+    <p style="font-size:14px;color:#a2897c;margin-top:22px">La
+    signature n'a <strong>aucun cadre et aucun fond</strong> : elle
+    prend celui de la messagerie, blanc le jour et sombre la nuit.
+    Ce que vous voyez ici est pos&eacute; sur la page, rien de plus.</p>
   </div>
 </section>
 
