@@ -72,16 +72,13 @@ def lien(url, texte, couleur=None):
 
 
 def contacts():
-    """Les coordonnées, empilées court.
+    """Les coordonnées, en trois lignes courtes.
 
-    Elles ont tenu sur une seule ligne un moment, et le bloc faisait
-    520 px de large. Trop long : une signature se range à gauche d'un
-    message, pas en travers. Repliées sur trois lignes, elles ramènent
-    la largeur à 260 px — la moitié — pour une trentaine de pixels de
-    hauteur en plus.
-
-    Les points de séparation reprennent les couleurs du dégradé :
-    c'est ce qui reste de la charte à cette taille.
+    La largeur du bloc n'est pas décidée par la mise en page : elle
+    est imposée par la plus longue de ces lignes. « 07 82 92 19 81 •
+    grafycom.fr » est la plus large, et c'est elle qui fixe les
+    175 px. Tout le reste — logo, corps de texte, interlignes — a été
+    réglé pour tenir dessous.
     """
     def pt(couleur):
         return ('<span style="color:%s">&nbsp;&#8226;&nbsp;</span>'
@@ -97,23 +94,23 @@ def contacts():
 
 SIGNATURE = """
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"
-       style="border-collapse:collapse;width:262px">
+       style="border-collapse:collapse;width:175px">
   <tr>
-    <td width="52" style="vertical-align:top;padding:0 10px 0 0">
-      <img src="%(logo)s" width="44" height="44" alt="Grafycom"
-           style="display:block;width:44px;height:44px;border:0">
+    <td width="46" style="vertical-align:top;padding:0 8px 0 0">
+      <img src="%(logo)s" width="38" height="38" alt="Grafycom"
+           style="display:block;width:38px;height:38px;border:0">
     </td>
-    <td style="vertical-align:top;padding-top:1px">
-      <div style="font:400 15px/18px %(serif)s;color:%(encre)s;
-           letter-spacing:.05em">Sandra</div>
-      <div style="font:9.5px/14px %(sans)s;color:%(taupe)s;
-           letter-spacing:.14em">GRAFYCOM</div>
-      <div style="font:italic 10.5px/14px %(serif)s;color:%(brun)s">
+    <td style="vertical-align:top">
+      <div style="font:400 13.5px/16px %(serif)s;color:%(encre)s;
+           letter-spacing:.04em">Sandra</div>
+      <div style="font:8.5px/12px %(sans)s;color:%(taupe)s;
+           letter-spacing:.13em">GRAFYCOM</div>
+      <div style="font:italic 9.5px/12px %(serif)s;color:%(brun)s">
            L'image qui vous ressemble</div>
     </td>
   </tr>
   <tr>
-    <td colspan="2" style="padding:7px 0 0 0">
+    <td colspan="2" style="padding:6px 0 0 0">
       <table role="presentation" cellpadding="0" cellspacing="0"
              border="0" width="100%%"
              style="border-collapse:collapse;width:100%%">
@@ -122,7 +119,7 @@ SIGNATURE = """
     </td>
   </tr>
   <tr>
-    <td colspan="2" style="padding:6px 0 0 0;font:10.5px/15px %(sans)s;
+    <td colspan="2" style="padding:5px 0 0 0;font:10px/14px %(sans)s;
         color:%(encre)s;white-space:nowrap">%(l1)s<br>%(l2)s<br>%(l3)s</td>
   </tr>
 </table>""" % dict(zip(
