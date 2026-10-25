@@ -115,7 +115,7 @@ def cible(slug, title, desc, eyebrow, h1a, h1b, chapeau, corps1,
 cible(
  "ouverture-commerce-66.html",
  "Ouvrir un commerce dans le 66 : les supports à prévoir",
- "Vous ouvrez dans les Pyrénées-Orientales ? L'ordre dans lequel préparer logo, enseigne, vitrine et cartes, et les délais à anticiper avant le jour J.",
+ "Ouvrir un commerce demande plus que les clés : l'ordre dans lequel préparer logo, enseigne, vitrine et cartes, les délais réels, et l'autorisation que tout le monde découvre trop tard.",
  "Vous ouvrez bientôt",
  "Ouvrir un commerce",
  "dans les Pyrénées-Orientales",
@@ -333,3 +333,137 @@ cible(
    "Oui, dans tout le département. Un déplacement se justifie quand il faut relever des cotes ou voir la façade en vrai ; le reste se traite très bien à distance. Voir la page zone d'intervention.")],
  "Une façade à habiller&nbsp;?",
  "Envoyez-moi une photo de la devanture, prise d'en face et de loin. C'est tout ce qu'il me faut pour un premier avis — gratuit, et franc, y compris si l'enseigne actuelle peut rester.")
+
+
+# ───────────── 5. Le logo d'auto-entrepreneur ─────────────
+#
+# Mesuré le 25 octobre 2026 : « logo auto entrepreneur » pèse 70
+# recherches par mois en France pour une difficulté de 4 — l'une des
+# deux seules difficultés que l'outil mesure vraiment sur ce champ, et
+# la plus basse. C'est la requête la plus gagnable du site pour un
+# domaine de trois semaines, et elle est d'intention commerciale.
+#
+# Pourquoi cette page et pas « graphiste + commune » : les requêtes
+# locales de création d'entreprise ne pèsent RIEN. « créer son
+# entreprise perpignan », « ouvrir un commerce perpignan »,
+# « création entreprise pyrénées orientales » : aucun volume
+# mesurable. Quand on se lance, on ne cherche pas un prestataire par
+# ville, on cherche une réponse.
+
+cible(
+ "logo-auto-entrepreneur.html",
+ "Logo d'auto-entrepreneur : ce qu'il vous faut vraiment pour démarrer",
+ "Faut-il un logo quand on se lance seul ? Ce qui est utile le premier mois, ce qui peut attendre, et les deux erreurs qui coûtent cher à refaire.",
+ "Vous vous lancez",
+ "Un logo d'auto-entrepreneur,",
+ "et après&nbsp;?",
+ "Quand on démarre seul, le budget est compté et tout le monde a un avis. Voici ce qui sert vraiment le premier mois, ce qui peut attendre six mois, et les deux choses qu'on ne rattrape pas.",
+ """    <h2 style="margin-top:0">Ce dont vous avez besoin le premier mois</h2>
+    <p>Beaucoup moins que ce qu'on vous vendra. Au démarrage, un logo sert à trois choses, et trois seulement&nbsp;: être reconnaissable sur une facture, tenir sur une carte de visite, et ne pas se transformer en tache sur une photo de profil de 40&nbsp;pixels.</p>
+    <p>Ce qui peut attendre&nbsp;: la charte graphique complète, le jeu de déclinaisons par support, le papier à en-tête. Ce sont de vrais besoins, mais d'une entreprise qui tourne déjà — pas d'une qui cherche ses trois premiers clients.</p>
+    <h2>Les deux erreurs qu'on ne rattrape pas</h2>
+    <p><strong>Repartir sans vos fichiers sources.</strong> C'est la première, et de loin la plus fréquente. Un logo livré en JPEG ou en PNG se redimensionne mal, ne se découpe pas, ne se grave pas, et ne se décline pas en une couleur. Le jour où vous commanderez une enseigne, un tampon ou un marquage de véhicule, on vous redemandera un fichier vectoriel — et s'il n'existe pas, tout est à refaire.</p>
+    <p><strong>Ne pas vérifier qui possède le logo.</strong> Payer une création ne vous en rend pas automatiquement propriétaire&nbsp;: la cession de droits doit être écrite, et le code de la propriété intellectuelle demande qu'elle précise ce qui est cédé, pour quels usages, sur quel territoire et pour combien de temps. Une facture seule ne suffit pas. C'est le sujet d'un <a href="blog.html">article du blog</a>, et c'est ce que dit l'article&nbsp;7 des <a href="cgv.html">conditions générales</a>.</p>
+    <h2>Les plateformes à 5&nbsp;€, et ce qu'elles font réellement</h2>
+    <p>Elles font quelque chose. Si votre activité n'a pas de vitrine, pas d'enseigne, pas de support imprimé et que vous testez une idée, un logo de plateforme vous permettra d'avancer, et c'est un choix défendable.</p>
+    <p>Ce qu'il faut savoir avant&nbsp;: beaucoup de ces logos sont construits sur des visuels sous licence, revendus à d'autres, et la licence limite souvent les usages — parfois elle exclut l'enseigne, le dépôt de marque ou la revente. Ce n'est pas une arnaque, c'est écrit dans les conditions. Le piège est de le découvrir deux ans plus tard, quand le logo est sur la camionnette.</p>""",
+ "Ce qui compte vraiment",
+ "Trois critères, avant le dessin",
+ [carte("p-bleu", "fa-vector-square", "Un fichier vectoriel",
+        "Le seul format qui s'agrandit sans perdre, se découpe et se grave. Sans lui, votre logo ne quittera jamais l'écran."),
+  carte("p-violet", "fa-circle-half-stroke", "Une version en une couleur",
+        "Noir, blanc, et un aplat. C'est ce qui sert pour un tampon, une gravure, un fond sombre — et ce qui manque toujours."),
+  carte("p-corail", "fa-file-signature", "Une cession écrite",
+        "Qui possède quoi, pour quels usages. Trois lignes sur un devis évitent une négociation pénible des années plus tard.")],
+ """    <h2>Lisible à 3&nbsp;centimètres comme à 3&nbsp;mètres</h2>
+    <p>Le test se fait en dix secondes et il élimine la moitié des propositions&nbsp;: réduisez le logo à la taille d'une photo de profil, puis imaginez-le sur une façade. S'il faut plisser les yeux dans un cas ou dans l'autre, il est trop détaillé, ou sa typographie est trop fine.</p>
+    <p>C'est la raison pour laquelle un logo pensé pour un écran échoue souvent en découpe&nbsp;: les contre-formes — l'intérieur d'un «&nbsp;a&nbsp;», d'un «&nbsp;e&nbsp;» — se bouchent, et les dégradés n'existent pas dans un adhésif.</p>
+    <h2>Et si vous changez d'avis dans deux ans&nbsp;?</h2>
+    <p>C'est probable, et ce n'est pas grave. Une activité qui se précise fait évoluer son image&nbsp;; la plupart des marques que vous connaissez ont redessiné la leur plusieurs fois. Ce qui coûte cher n'est pas de faire évoluer un logo, c'est de devoir tout reprendre de zéro faute de fichiers exploitables.</p>
+    <p>Autrement dit&nbsp;: démarrez simple, mais démarrez propre.</p>""",
+ "Ce qu'on me demande le plus souvent",
+ [("Un auto-entrepreneur a-t-il vraiment besoin d'un logo&nbsp;?",
+   "Pas toujours tout de suite. Si vous travaillez en sous-traitance ou par bouche-à-oreille, un nom bien écrit et une carte lisible suffisent un moment. Le logo devient utile dès qu'il y a une vitrine, un véhicule, un marché ou un compte professionnel à tenir."),
+  ("Combien de temps faut-il&nbsp;?",
+   "Comptez deux à trois semaines pour un logo seul, échanges compris. L'essentiel du temps n'est pas le dessin&nbsp;: c'est de comprendre l'activité et de laisser décanter entre deux propositions."),
+  ("Puis-je apporter mes idées&nbsp;?",
+   "Oui, et c'est même mieux. Des exemples de ce que vous aimez — et surtout de ce que vous détestez — font gagner un aller-retour. La seule chose qui ne marche pas, c'est de décrire un logo avec des mots seuls."),
+  ("Le logo m'appartient-il&nbsp;?",
+   "Oui, la cession est prévue au devis, avec le détail des usages. Les fichiers de travail restent chez moi, mais tout ce qui sert à exploiter le logo vous est livré, vectoriel compris."),
+  ("Je ne suis pas dans les Pyrénées-Orientales, est-ce un problème&nbsp;?",
+   "Non. Un logo se travaille très bien à distance — c'est une enseigne ou une pose qui demande d'être sur place. Les échanges se font par visio et par mail.")],
+ "Vous démarrez votre activité&nbsp;?",
+ "Dites-moi ce que vous lancez et où vous en êtes. Je vous dirai franchement ce dont vous avez besoin maintenant, et ce qui peut attendre — y compris si la réponse est «&nbsp;pas encore de logo&nbsp;».")
+
+
+# ───────────── 6. Le prix d'un logo ─────────────
+#
+# La requête la plus lourde du champ : « logo création entreprise »
+# pèse 720 recherches mensuelles en France, « identité visuelle prix »
+# 50, « combien coûte un logo » 40 — et les trois sont d'intention
+# commerciale. Mesuré le 25 octobre 2026.
+#
+# LA CONTRAINTE, et c'est elle qui a dicté la page. `prestations.html`
+# refuse d'afficher un tarif, et le dit : « à partir de 290 € »
+# reviendrait à vendre quelque chose avant de savoir ce dont le client
+# a besoin. Position prise par Laurent, pas contournée ici.
+#
+# La page répond donc à la question sans la tarifer : elle explique ce
+# qui fait varier un prix, ce qu'on achète réellement, et comment lire
+# un devis. Le seul chiffre qui y figure est le minimum de facturation
+# de 100 €, qui n'est pas inventé pour l'occasion — il est déjà public dans
+# les CGV, article 3.
+#
+# Si Laurent change d'avis et veut afficher une fourchette Grafycom,
+# c'est ce bloc qu'il faut reprendre, pas la page entière.
+
+cible(
+ "prix-logo-identite-visuelle.html",
+ "Combien coûte un logo ? Ce qui fait varier le prix, en clair",
+ "Pourquoi un logo va de 5 € à plusieurs milliers, ce que vous achetez réellement, et les trois lignes à chercher sur un devis avant de signer.",
+ "La question que tout le monde pose",
+ "Combien coûte",
+ "un logo&nbsp;?",
+ "De 5&nbsp;€ à plusieurs milliers, pour quelque chose qui porte le même nom. L'écart n'est pas une question de talent&nbsp;: il tient à ce qui est livré, et à ce qui est cédé.",
+ """    <h2 style="margin-top:0">Vous ne trouverez pas de tarif sur ce site</h2>
+    <p>C'est volontaire, et autant l'écrire en premier plutôt que de vous le faire découvrir en bas de page. Annoncer «&nbsp;à partir de&nbsp;» reviendrait à vous vendre quelque chose avant de savoir ce dont vous avez besoin — et le même logo n'a pas le même coût selon qu'il finit sur une carte de visite ou sur une façade de douze mètres.</p>
+    <p>Ce que vous trouverez ici, en revanche&nbsp;: de quoi lire un devis, le mien comme celui d'un confrère, et comprendre pourquoi deux propositions pour «&nbsp;un logo&nbsp;» peuvent varier d'un facteur&nbsp;vingt.</p>
+    <h2>Les cinq choses qui font le prix</h2>
+    <ol>
+      <li><strong>Le nombre de pistes.</strong> Une proposition unique coûte moins cher que trois directions distinctes — et donne moins à décider. Chez Grafycom, c'est deux propositions initiales, ou deux allers-retours de corrections sur une seule.</li>
+      <li><strong>Ce qui est livré.</strong> Un fichier d'écran, ou le jeu complet&nbsp;: vectoriel, versions monochromes, déclinaisons horizontale et carrée, formats pour l'impression. C'est souvent là que se cache l'écart entre deux devis.</li>
+      <li><strong>Les droits cédés.</strong> Un logo utilisable sur vos réseaux ne coûte pas le même prix qu'un logo cédé pour tout usage commercial, y compris le dépôt de marque. La cession doit préciser les usages, le territoire et la durée.</li>
+      <li><strong>Le travail en amont.</strong> Comprendre une activité, regarder ce que font les concurrents, tester la lisibilité en petit et en grand. Invisible sur le résultat, et c'est pourtant l'essentiel du temps passé.</li>
+      <li><strong>Ce qui vient avec.</strong> Un logo seul, ou un logo plus les supports qui vont le porter. Grouper coûte moins cher que revenir trois fois.</li>
+    </ol>""",
+ "Les trois familles",
+ "À quoi correspondent les écarts de prix",
+ [carte("p-bleu", "fa-robot", "Générateur ou plateforme",
+        "Quelques euros, immédiat. Visuel souvent sous licence partagée, usages parfois limités — l'enseigne et le dépôt de marque en premier. Lisez les conditions avant, pas après."),
+  carte("p-violet", "fa-pen-nib", "Création sur mesure",
+        "Le prix tient au temps passé et aux droits cédés. C'est là que se situe un graphiste indépendant, et là que l'écart entre deux devis s'explique par ce qui est livré."),
+  carte("p-corail", "fa-building-columns", "Agence et plateforme de marque",
+        "Plusieurs intervenants, étude, territoire de marque complet. Justifié quand il y a des enjeux de déploiement à grande échelle. Rarement le besoin d'un commerce qui ouvre.")],
+ """    <h2>Les trois lignes à chercher sur un devis</h2>
+    <p>Avant le montant, regardez ces trois points. Leur absence explique la plupart des mauvaises surprises&nbsp;:</p>
+    <ul>
+      <li><strong>«&nbsp;Fichiers sources&nbsp;» ou «&nbsp;vectoriel&nbsp;»</strong> — sans mention explicite, vous risquez de recevoir une image et rien d'autre&nbsp;;</li>
+      <li><strong>«&nbsp;Cession de droits&nbsp;»</strong>, avec les usages, le territoire et la durée — une facture seule ne vaut pas cession&nbsp;;</li>
+      <li><strong>Le nombre d'allers-retours inclus</strong>, et le prix des suivants. C'est ce qui évite qu'un devis doux devienne une facture salée.</li>
+    </ul>
+    <h2>Ce qui est public, chez Grafycom</h2>
+    <p>Pas de grille tarifaire, donc, mais pas de flou non plus&nbsp;: les <a href="cgv.html">conditions générales</a> sont en ligne et disent ce qui vaut pour toute commande. Un <strong>minimum de facturation de 100&nbsp;€</strong>, un acompte de 50&nbsp;% à la commande, deux propositions ou deux allers-retours compris, les fichiers de travail qui restent la propriété du studio et les fichiers d'exploitation qui vous sont livrés.</p>
+    <p>Le reste se chiffre après un échange, parce qu'il n'y a pas d'autre moyen honnête de le faire.</p>""",
+ "Les questions de prix, sans détour",
+ [("Pourquoi refuser d'afficher un prix de départ&nbsp;?",
+   "Parce qu'un « à partir de » n'est jamais le prix que vous paierez, et qu'il sert surtout à faire venir. Le premier échange est gratuit et sans engagement : il est plus utile qu'un chiffre qui ne correspond à personne."),
+  ("Un logo plus cher est-il meilleur&nbsp;?",
+   "Non. Un prix élevé peut couvrir un nom d'agence, et un prix bas cacher l'absence de fichiers exploitables. Ce qui se compare n'est pas le montant, ce sont les livrables et les droits — à livrables égaux, les écarts se réduisent beaucoup."),
+  ("Peut-on étaler le paiement&nbsp;?",
+   "Un acompte de 50 % est demandé à la commande, le solde à la livraison. Pour un projet qui s'étale sur plusieurs mois, le découpage se discute au devis."),
+  ("Que se passe-t-il si aucune proposition ne me plaît&nbsp;?",
+   "Deux allers-retours sont compris, ce qui suffit presque toujours à converger. Si rien ne convient, l'acompte reste acquis — c'est du travail fourni — et les propositions non retenues ne sont pas exploitables, elles n'ont pas fait l'objet d'une cession."),
+  ("Le devis est-il payant&nbsp;?",
+   "Non. Le devis et le premier échange sont gratuits, et le devis reste valable un mois.")],
+ "Une idée du budget, en un échange&nbsp;?",
+ "Décrivez votre projet en trois lignes — ce que vous lancez, pour quand, et sur quels supports le logo devra vivre. Vous aurez un devis détaillé, et un avis franc si le besoin est plus petit que vous ne le pensiez.")
