@@ -688,6 +688,58 @@ def bon_a_tirer():
         juste("le BAT n'est jamais donné pour gratuit ni pour du papier")
 
 
+def textes_du_calendrier():
+    """Chaque ligne du calendrier retrouve-t-elle son texte ?
+
+    `tout-en-un.pdf` rapproche trois documents par une clé : le numéro
+    d'une publication, le code d'un écran de story. Quand la clé ne
+    tombe pas, le document s'imprime quand même — la ligne est là, la
+    vignette aussi, et seul le texte manque. Rien ne le signale, et on
+    ne s'en aperçoit qu'en cherchant un texte le soir où on programme.
+
+    Sept lignes étaient dans ce cas le 25 octobre : la n° 4 bis, seule
+    en gras de sa colonne, dont les astérisques mangeaient le numéro ;
+    et six écrans de séquences à deux temps — S1-B1, S1-B2, S1-D1,
+    S1-D2, S2-D1, S2-D2 — que `stories.md` décrit par paire sous un
+    seul code.
+
+    Le contrôle charge le vrai module et lui pose la question, plutôt
+    que de recopier sa logique : une correction là-bas vaut ici.
+    """
+    import importlib.util
+    chemin = R / "reseaux/calendrier-illustre.py"
+    spec = importlib.util.spec_from_file_location("calillu", chemin)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+
+    pubs = m.sections("instagram-facebook.md", r"(\d+(?: bis)?) —")
+    goog = m.sections("fiche-google.md", r"(\d+(?: bis)?) —")
+    stor = m.sections("stories.md", r"(S\d-[A-Z]\d?) —")
+    orphelines = []
+    for r in m.lignes_du_calendrier():
+        if r["sortie"] or r["canal"] in ("—", ""):
+            continue
+        quoi, canal = r["quoi"], r["canal"]
+        if canal.startswith("Instagram"):
+            n = m.numero(quoi)
+            trouve = bool(n) and n in pubs
+        elif canal.startswith("Fiche"):
+            n = m.numero(re.sub(r"^texte ", "",
+                                quoi.strip().strip("*").strip()))
+            trouve = bool(n) and n in goog
+        elif canal == "Story":
+            trouve = bool(m.texte_story(m.code_story(quoi), stor))
+        else:
+            continue
+        if not trouve:
+            orphelines.append("%s %s" % (r["date"], quoi[:40]))
+    if orphelines:
+        faux("tout-en-un : %d ligne(s) sans texte — %s"
+             % (len(orphelines), " ; ".join(orphelines[:4])))
+    else:
+        juste("chaque ligne du calendrier retrouve son texte")
+
+
 def cycle(rapport):
     """Ce que le moteur a signalé en produisant les visuels."""
     t = pathlib.Path(rapport).read_text(encoding="utf-8")
@@ -719,6 +771,7 @@ def main():
     reglementation()
     calendrier_ordonne()
     bon_a_tirer()
+    textes_du_calendrier()
     if len(sys.argv) > 1:
         cycle(sys.argv[1])
     else:
