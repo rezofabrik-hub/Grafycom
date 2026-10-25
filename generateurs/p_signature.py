@@ -61,66 +61,68 @@ SANS = "Arial,Helvetica,sans-serif"
 def filet():
     """Le dégradé de la charte, en huit marches de tableau."""
     return "".join(
-        '<td width="12.5%%" height="3" bgcolor="%s" '
-        'style="font-size:0;line-height:0;height:3px">&nbsp;</td>' % c
+        '<td width="12.5%%" height="2" bgcolor="%s" '
+        'style="font-size:0;line-height:0;height:2px">&nbsp;</td>' % c
         for c in DEGRADE)
 
 
-def ligne(etiquette, contenu, couleur):
-    """Une ligne de contact : son étiquette en petites capitales.
-
-    Les pictogrammes du modèle d'origine sont des caractères que
-    beaucoup de polices n'ont pas — le destinataire voit alors un
-    carré vide. Une étiquette courte, dans une couleur de la charte,
-    dit la même chose et s'affiche partout.
-    """
-    return """
-      <tr>
-        <td style="padding:0 0 5px 0;font:11px/16px %(sans)s;
-            color:%(coul)s;letter-spacing:.09em;white-space:nowrap;
-            vertical-align:top;padding-right:14px"
-            width="62">%(etiq)s</td>
-        <td style="padding:0 0 5px 0;font:13px/16px %(sans)s;
-            color:%(encre)s;vertical-align:top">%(cont)s</td>
-      </tr>""" % {"sans": SANS, "coul": couleur, "etiq": etiquette,
-                  "encre": ENCRE, "cont": contenu}
-
-
-def lien(url, texte, couleur=ENCRE):
+def lien(url, texte, couleur=None):
     return ('<a href="%s" style="color:%s;text-decoration:none">%s</a>'
-            % (url, couleur, texte))
+            % (url, couleur or ENCRE, texte))
+
+
+def contacts():
+    """Les quatre coordonnées sur UNE ligne, séparées par des points.
+
+    La première version les empilait en quatre rangées étiquetées
+    TÉL / WEB / INSTA / ZONE. C'était lisible et deux fois trop haut :
+    une signature se lit en bas d'un message, pas comme une fiche. Les
+    étiquettes ne disaient rien qu'un numéro de téléphone ou une
+    adresse en .fr n'annonce déjà.
+
+    Les séparateurs reprennent les couleurs du dégradé — c'est ce qui
+    reste de la charte une fois les étiquettes parties.
+    """
+    bouts = [lien("tel:" + TEL_URI, TEL),
+             lien(SITE + "/", "grafycom.fr"),
+             lien("https://www.instagram.com/%s/" % INSTA, "@" + INSTA),
+             '<span style="color:%s">Perpignan et alentours</span>' % BRUN]
+    points = ("#3ec2b3", "#a86cd0", "#f5883c")
+    out = bouts[0]
+    for couleur, bout in zip(points, bouts[1:]):
+        out += ('<span style="color:%s">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;'
+                "</span>%s" % (couleur, bout))
+    return out
 
 
 SIGNATURE = """
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"
        style="border-collapse:collapse;background:%(creme)s;
-       max-width:470px">
+       max-width:520px">
   <tr>
-    <td style="padding:16px 20px 14px 18px">
+    <td style="padding:11px 16px 9px 14px">
       <table role="presentation" cellpadding="0" cellspacing="0"
              border="0" style="border-collapse:collapse">
         <tr>
-          <td width="76" style="vertical-align:middle;padding-right:16px">
-            <img src="%(logo)s" width="72" height="72" alt="Grafycom"
-                 style="display:block;width:72px;height:72px;border:0">
+          <td width="60" style="vertical-align:middle;padding-right:12px">
+            <img src="%(logo)s" width="48" height="48" alt="Grafycom"
+                 style="display:block;width:48px;height:48px;border:0">
           </td>
           <td style="vertical-align:middle">
-            <div style="font:400 21px/25px %(serif)s;color:%(encre)s;
-                 letter-spacing:.055em">Sandra</div>
-            <div style="font:11px/17px %(sans)s;color:%(taupe)s;
-                 letter-spacing:.11em;padding-top:4px">
-              &#8226;&nbsp; GRAFYCOM &nbsp;&#8226;&nbsp; COMMUNICATION
-              VISUELLE &nbsp;&#8226;
-            </div>
-            <div style="font:italic 12px/17px %(serif)s;color:%(brun)s;
-                 padding-top:2px">L'image qui vous ressemble</div>
+            <div style="font:400 16px/20px %(serif)s;color:%(encre)s;
+                 letter-spacing:.05em">Sandra<span style="font:11px/20px
+                 %(sans)s;color:%(taupe)s;letter-spacing:.11em">
+                 &nbsp;&nbsp;&#8226;&nbsp;&nbsp;GRAFYCOM</span></div>
+            <div style="font:italic 11.5px/16px %(serif)s;color:%(brun)s">
+                 Communication visuelle &#183; L'image qui vous
+                 ressemble</div>
           </td>
         </tr>
       </table>
     </td>
   </tr>
   <tr>
-    <td style="padding:0 20px 0 18px">
+    <td style="padding:0 16px 0 14px">
       <table role="presentation" cellpadding="0" cellspacing="0"
              border="0" width="100%%"
              style="border-collapse:collapse;width:100%%">
@@ -129,24 +131,13 @@ SIGNATURE = """
     </td>
   </tr>
   <tr>
-    <td style="padding:12px 20px 16px 18px">
-      <table role="presentation" cellpadding="0" cellspacing="0"
-             border="0" style="border-collapse:collapse">%(lignes)s
-      </table>
-    </td>
+    <td style="padding:8px 16px 11px 14px;font:11px/15px %(sans)s;
+        color:%(encre)s;white-space:nowrap">%(contacts)s</td>
   </tr>
 </table>""" % {
     "creme": CREME, "logo": LOGO, "serif": SERIF, "sans": SANS,
     "encre": ENCRE, "taupe": TAUPE, "brun": BRUN, "filet": filet(),
-    "lignes": "".join([
-        ligne("T&Eacute;L", lien("tel:" + TEL_URI, TEL), "#2f7fc4"),
-        ligne("WEB", lien(SITE + "/", "grafycom.fr"), "#a86cd0"),
-        ligne("INSTA", lien("https://www.instagram.com/%s/" % INSTA,
-                            "@" + INSTA), "#e33d82"),
-        ligne("ZONE",
-              '<span style="color:%s">Perpignan et alentours</span>'
-              % BRUN, "#f5883c"),
-    ])}
+    "contacts": contacts()}
 
 TEXTE = """Sandra — Grafycom
 Communication visuelle · L'image qui vous ressemble
