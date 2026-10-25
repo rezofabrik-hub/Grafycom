@@ -114,7 +114,7 @@ où personne n'est clairement propriétaire.
 | ☐ | 4. Zones desservies | `Pyrénées-Orientales`, `Fitou`, `Leucate` | Modifier le profil → Localisation |
 | ☐ | 5. Site web | `https://grafycom.fr/` | Modifier le profil → Coordonnées |
 | ☐ | 6. Téléphone | `07 82 92 19 81` | Modifier le profil → Coordonnées |
-| ☐ | 7. Catégories secondaires | `Agence de publicité`, `Studio de design` | Modifier le profil → À propos |
+| ☐ | 7. Catégories secondaires | `Agence de publicité`, `Agence de design`, `Agence de branding` | Modifier le profil → À propos |
 | ☐ | 8. Description | le texte de 726 caractères, plus bas | Modifier le profil → À propos |
 | ☐ | 9. Services | les neuf, un par un, plus bas | Modifier le profil → Services |
 | ☐ | 10. Horaires | **les vrais** — personne ne peut les mettre à la place de Sandra | Modifier le profil → Horaires |
@@ -155,8 +155,26 @@ seul, le plus juste. Tout le reste de la fiche compte moins que celui-là.
 
 ```
 Agence de publicité
-Studio de design
+Agence de design
+Agence de branding
 ```
+
+`Studio de design` était écrit ici depuis le début, et **cette
+catégorie n'existe pas** dans la liste française de Google. Elle a été
+inventée par ressemblance, et une catégorie qu'on ne trouve pas dans le
+menu déroulant fait perdre dix minutes à chercher ce qui n'est pas là.
+
+Les trois ci-dessus sont relevées sur des fiches voisines, le
+25 octobre, donc vérifiées comme existantes : `Agence de publicité` et
+`Agence de design` sur Karadesign et FAUST4M, `Agence de branding` sur
+Karadesign et HELLO MIKADO.
+
+**La troisième est un ajout**, et elle se défend : l'identité de marque
+est le cœur du métier de Sandra, et c'est la catégorie qui porte
+« création de logo » et « identité visuelle ». Google en accepte neuf ;
+en prendre trois justes vaut mieux que neuf approximatives. Une
+catégorie qui ne correspond pas à une activité réelle est un motif de
+suspension.
 
 **Adresse — le point qui règle la contrainte de discrétion**
 
