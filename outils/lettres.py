@@ -101,8 +101,10 @@ GABARIT = """<article class="lettre">
   <p>Très bonne installation à vous.</p>
   <p class="signature">%(exp_nom)s</p>
   <p class="mention">Vous recevez ce courrier parce que votre immatriculation
-  a été publiée au BODACC. Dites-le-moi d'un mot et je retire votre
-  entreprise de ma liste, définitivement.</p>
+  a été publiée au BODACC. Dites-le-moi d'un mot — par courriel ou par
+  téléphone — et je retire votre entreprise de ma liste, définitivement.
+  Le détail de ce qui est conservé, pour combien de temps et de vos droits
+  est sur %(site)s/confidentialite.html</p>
 </article>
 """
 
