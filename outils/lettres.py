@@ -29,13 +29,36 @@ La sortie contient des noms et des adresses de personnes physiques : elle
 reste dans outils/prospects/, exclu du dépôt.
 """
 import argparse
+import base64
 import csv
+import datetime as dt
 import html
 import pathlib
 import sys
 
 RACINE = pathlib.Path(__file__).resolve().parent
 SORTIE = RACINE / "prospects"
+IMAGES = RACINE.parent / "assets/img"
+
+MOIS = ("janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+        "août", "septembre", "octobre", "novembre", "décembre")
+
+
+def incruste(nom: str) -> str:
+    """Une image du site, embarquée dans le HTML en base64.
+
+    Le fichier produit part sur une clé, s'ouvre depuis le dossier
+    Téléchargements, se rouvre trois semaines plus tard. Un chemin
+    relatif vers assets/ casse au premier déplacement, et une lettre
+    au logo manquant est pire qu'une lettre sans logo. Les deux
+    images pèsent 105 ko à elles deux, incrustées UNE fois en tête
+    de page et non par courrier.
+    """
+    chemin = IMAGES / nom
+    if not chemin.exists():
+        return ""
+    return "data:image/png;base64," + base64.b64encode(
+        chemin.read_bytes()).decode("ascii")
 
 EXPEDITEUR = {
     "nom": "Sandra — Grafycom",
@@ -77,15 +100,22 @@ DEFAUT = ("Une identité visuelle posée au départ, c'est un logo qui tient "
           "aussi bien sur une carte de visite que sur une enseigne.")
 
 GABARIT = """<article class="lettre">
-  <header>
-    <p class="exp">%(exp_nom)s<br>%(tel)s · %(mail)s<br>%(site)s</p>
+  <div class="tete">
+    <div class="marque">
+      <img class="logo" src="%(logo)s" alt="">
+      <p class="exp"><b>%(exp_nom)s</b><br>Communication visuelle
+      &middot; Perpignan<br>%(tel)s &middot; %(mail)s<br>%(site)s</p>
+    </div>
     <p class="dest">%(dest)s<br>%(adresse)s</p>
-  </header>
-  <p class="objet">Objet&nbsp;: félicitations pour votre immatriculation</p>
+  </div>
+  <img class="filet" src="%(filet)s" alt="">
+  <p class="date">Perpignan, le %(date)s</p>
+  <p class="objet">Objet&nbsp;: votre nouvelle entreprise, et son image</p>
   <p>Bonjour%(civilite)s,</p>
-  <p>J'ai vu la création de %(designation)s dans les annonces du BODACC, le
-  bulletin où sont publiées toutes les immatriculations. Je me permets donc
-  ce mot, en voisine.</p>
+  <p><strong>Félicitations pour votre immatriculation.</strong> J'ai vu la
+  création de %(designation)s dans les annonces du BODACC, le bulletin où
+  sont publiées toutes les immatriculations. Je me permets donc ce mot, en
+  voisine.</p>
   <p>Je suis infographiste et chef de projet à Perpignan. Je construis
   l'identité visuelle des entreprises du département&nbsp;: le logo, la carte
   de visite, l'enseigne, la carte d'un restaurant, le marquage d'un
@@ -117,10 +147,19 @@ PAGE = """<!DOCTYPE html>
          max-width: 170mm; margin: 0 auto; padding: 10mm; }
   .lettre { page-break-after: always; min-height: 240mm; }
   .lettre:last-child { page-break-after: auto; }
-  header { display: flex; justify-content: space-between; gap: 20mm;
-           margin-bottom: 18mm; }
-  .exp { font-size: 10pt; line-height: 1.5; margin: 0; }
-  .dest { text-align: right; margin: 0; font-size: 10.5pt; }
+  .tete { display: flex; justify-content: space-between; gap: 18mm;
+          align-items: flex-start; }
+  .marque { display: flex; gap: 5mm; align-items: flex-start; }
+  .logo { width: 17mm; height: 17mm; flex: 0 0 17mm; }
+  .exp { font-size: 9.5pt; line-height: 1.45; margin: 0; color: #6d5a50; }
+  .exp b { color: #2f2723; font-size: 11pt; }
+  .dest { text-align: right; margin: 2mm 0 0; font-size: 10.5pt; }
+  /* Le filet de la charte, en image : un degrade CSS ne s'imprime pas
+     de la meme facon selon le navigateur, une image si. */
+  .filet { display: block; width: 100%%; height: 2.2mm;
+           margin: 7mm 0 10mm; }
+  .date { text-align: right; margin: 0 0 8mm; font-size: 10.5pt;
+          color: #6d5a50; }
   .objet { font-weight: bold; margin: 0 0 8mm; }
   p { margin: 0 0 4.5mm; text-align: justify; }
   .signature { margin-top: 8mm; font-weight: bold; }
@@ -129,7 +168,10 @@ PAGE = """<!DOCTYPE html>
   .compte { font-family: system-ui, sans-serif; font-size: 10pt;
             color: #6d5a50; border-bottom: 1px solid #ddd;
             padding-bottom: 6mm; margin-bottom: 10mm; }
-  @media print { .compte { display: none; } }
+  @media print {
+    .compte { display: none; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
 </style></head><body>
 <p class="compte">%(nb)d courriers — veille du %(periode)s. Imprimer en recto,
 une page par destinataire.</p>
@@ -157,6 +199,13 @@ def main() -> int:
     chemin = pathlib.Path(args.fichier) if args.fichier else plus_recent()
     fiches = list(csv.DictReader(chemin.open(encoding="utf-8-sig")))
 
+    # Incrustées une fois pour toutes, avant la boucle : vingt
+    # courriers ne doivent pas porter vingt copies du logo.
+    logo, filet = incruste("signature-logo.png"), incruste("filet-degrade.png")
+    today = dt.date.today()
+    date_fr = "%d%s %s %d" % (today.day, "er" if today.day == 1 else "",
+                              MOIS[today.month - 1], today.year)
+
     lettres, ecartes = [], 0
     for f in fiches:
         if not f.get("adresse") or f.get("diffusion") == "non vérifié" \
@@ -176,6 +225,7 @@ def main() -> int:
             "site": EXPEDITEUR["site"],
             "dest": html.escape(enseigne or nom),
             "adresse": html.escape(f["adresse"]),
+            "logo": logo, "filet": filet, "date": date_fr,
             "civilite": "",   # jamais de « Monsieur » deviné sur un prénom
             "designation": html.escape(designation),
             "accroche": ACCROCHES.get(f["secteur"], DEFAUT),
