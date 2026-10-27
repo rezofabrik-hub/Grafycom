@@ -40,6 +40,12 @@ reseaux/propositions/*-apercu.html
 # rien apporter.
 reseaux/visuels/
 
+# Les photographies, elles, SONT versionnées — voir
+# reseaux/photos/LISEZ-MOI.md. L'exclusion ci-dessus vise ce qui se
+# régénère en deux secondes ; une photo prise un jour donné dans un
+# lieu donné ne se régénère pas, et si elle disparaît il faut y
+# retourner. 956 ko, et le dépôt s'en porte très bien.
+
 # Reels montés par reseaux/reels.py — même raison, et le dépôt est
 # public : des MP4 d'une mégaoctet chacun n'y ont rien à faire.
 reseaux/reels/

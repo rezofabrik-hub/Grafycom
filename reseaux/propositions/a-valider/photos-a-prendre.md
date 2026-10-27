@@ -83,7 +83,7 @@ dossier, et elles règlent plusieurs manques d'un coup.
 | Lettre découpée blanche, de trois quarts | la tranche et les plots de collage, en relief | ✅ recadrée |
 | Lettre acrylique brillante sur fond rouge | la même matière en finition opposée | ✅ recadrée |
 | Vitrophanie d'horaires sur vitrine | le texte adhésif sur verre, avec les reflets | ✅ recadrée |
-| Traceur Roland en impression | les coulisses de la fabrication | ⛔ voir plus bas |
+| Traceur Roland en impression | les coulisses de la fabrication | ✅ recadrée, voir plus bas |
 
 ### La provenance se dit, elle ne se tait pas
 
@@ -110,7 +110,22 @@ Grafycom. Elles illustrent une **matière** et une **technique** — ce
 que le dossier appelle le décor — et jamais une preuve. Aucune
 légende ne doit laisser entendre « voici ce que j'ai fait ».
 
-### Le traceur Roland est en attente
+### Les planches déjà produites ne sont pas refaites
+
+**Tranché par Laurent le 27 octobre.** Le nuancier réel ne remplace
+pas l'image générée dans les visuels du cycle en cours : ils sont
+validés, prêts, et le cycle démarre.
+
+Ces photos servent aux **publications suivantes**. Refaire des
+planches validées pour y gagner une nuance de vérité coûterait un jour
+de travail et retarderait un cycle en cours — cher payé pour une
+amélioration que personne ne remarquerait.
+
+Les fichiers sont dans `reseaux/photos/`, **versionnés** contrairement
+au reste des visuels : une planche se régénère en deux secondes, une
+photographie non.
+
+### Le traceur Roland est recadré
 
 On y lit **deux travaux clients identifiables** : un menu de
 sandwicherie avec son numéro de téléphone, et un kakémono de
@@ -118,9 +133,11 @@ conciergerie avec le sien. Ni l'un ni l'autre n'est client de
 Grafycom, et la règle plus bas est sans appel — « une marque tierce
 lisible qui n'a rien à faire là » rend une photo inutilisable.
 
-Deux sorties, et la seconde suffit : leur accord, ou **un recadrage
-serré sur la tête d'impression** — la machine, l'encre, le vinyle qui
-défile, sans rien de lisible. Elle garde l'essentiel de son intérêt.
+**Recadré le 27 octobre** sur la tête d'impression : la machine, la
+rampe, les galets, et plus rien de lisible. Resserré deux fois — au
+premier essai il restait un filet du menu en bas à droite, et la règle
+dit « même de loin ». Seul le recadrage est conservé&nbsp;;
+l'original ne rejoint pas le dépôt.
 
 ---
 
