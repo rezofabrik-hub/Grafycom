@@ -115,7 +115,7 @@ def cible(slug, title, desc, eyebrow, h1a, h1b, chapeau, corps1,
 cible(
  "ouverture-commerce-66.html",
  "Ouvrir un commerce dans le 66 : les supports à prévoir",
- "Ouvrir un commerce demande plus que les clés : l'ordre dans lequel préparer logo, enseigne, vitrine et cartes, les délais réels, et l'autorisation que tout le monde découvre trop tard.",
+ "Ouvrir un commerce : l'ordre dans lequel préparer logo, enseigne, vitrine et cartes, les délais réels, et l'autorisation que tout le monde découvre trop tard.",
  "Vous ouvrez bientôt",
  "Ouvrir un commerce",
  "dans les Pyrénées-Orientales",
@@ -352,7 +352,7 @@ cible(
 
 cible(
  "logo-auto-entrepreneur.html",
- "Logo d'auto-entrepreneur : ce qu'il vous faut vraiment pour démarrer",
+ "Logo d'auto-entrepreneur : ce qu'il faut vraiment pour démarrer",
  "Faut-il un logo quand on se lance seul ? Ce qui est utile le premier mois, ce qui peut attendre, et les deux erreurs qui coûtent cher à refaire.",
  "Vous vous lancez",
  "Un logo d'auto-entrepreneur,",

@@ -239,6 +239,81 @@ Direction artistique
 Sandra. Mettre les vrais. Une fiche qui annonce « ouvert » quand personne
 ne répond fait plus de mal que pas d'horaires du tout.
 
+## Les questions-réponses — le champ que personne ne remplit
+
+Google laisse le propriétaire **poser ses propres questions et y
+répondre** sur sa fiche. C'est une fonction officielle, gratuite, et
+quasiment inutilisée : sur les vingt-deux graphistes relevés autour de
+Perpignan le 25 octobre, aucun n'a de questions-réponses.
+
+Ce que ça apporte : la fiche gagne du texte, donc des mots sur
+lesquels elle peut sortir ; et un prospect qui hésite trouve sa
+réponse sans écrire.
+
+**Où :** sur la fiche vue depuis Google Maps ou la recherche,
+connectée au compte propriétaire → « Poser une question ». Poser la
+question, puis y répondre depuis le même compte. La réponse porte la
+mention « Propriétaire », ce qui est honnête et rassure.
+
+Les sept ci-dessous reprennent les requêtes réellement mesurées le
+25 octobre — « combien coûte un logo » (40/mois), « logo auto
+entrepreneur » (70), « identité visuelle prix » (50) — et les
+questions qui reviennent vraiment en rendez-vous.
+
+> **Combien coûte la création d'un logo ?**
+>
+> Cela dépend de ce qui est livré et des droits cédés, pas du dessin
+> lui-même : un logo pour une carte de visite et un logo destiné à une
+> enseigne de douze mètres ne demandent pas le même travail. Le devis
+> est gratuit et détaillé, le premier échange aussi. Le détail de ce
+> qui fait varier un prix est sur grafycom.fr/prix-logo-identite-visuelle.html
+
+> **Je me lance en auto-entrepreneur, ai-je vraiment besoin d'un logo ?**
+>
+> Pas toujours tout de suite. Si vous travaillez en sous-traitance ou
+> par bouche-à-oreille, un nom bien écrit suffit un moment. Le logo
+> devient utile dès qu'il y a une vitrine, un véhicule, un marché ou
+> un compte professionnel à tenir. Je le dis franchement au premier
+> échange, y compris quand la réponse est « pas encore ».
+
+> **Dans quelles communes intervenez-vous ?**
+>
+> Dans tout le département des Pyrénées-Orientales — Perpignan,
+> Canet, Argelès, Céret, Prades, Thuir, Saint-Cyprien, la Cerdagne et
+> le Capcir — ainsi qu'à Fitou et Leucate. Un déplacement se justifie
+> pour relever des cotes ou voir une façade ; le reste se traite très
+> bien à distance.
+
+> **Faut-il une autorisation pour poser une enseigne ?**
+>
+> Oui, une autorisation préalable, et non une simple déclaration.
+> C'est le Cerfa 16308*01, à déposer en mairie. Je fournis les pièces
+> graphiques du dossier — plan coté et insertion sur photo ; la
+> demande reste au nom de l'exploitant.
+
+> **Combien de temps faut-il pour créer une identité visuelle ?**
+>
+> Deux à trois semaines pour un logo seul, échanges compris. Pour une
+> identité complète avec ses déclinaisons, comptez un mois et demi.
+> L'essentiel du temps n'est pas le dessin : c'est de comprendre
+> l'activité, et de laisser décanter entre deux propositions.
+
+> **Les fichiers m'appartiennent-ils ?**
+>
+> Oui. La cession de droits est prévue au devis, avec le détail des
+> usages. Vous recevez les fichiers d'exploitation, vectoriel compris
+> — c'est le seul format qui se découpe, se grave et s'agrandit sans
+> perdre. Les fichiers de travail restent au studio.
+
+> **Parlez-vous espagnol ou catalan ?**
+>
+> Oui, les deux, en plus du français. C'est utile dans un département
+> frontalier, pour un commerce qui travaille des deux côtés.
+
+**Une règle en les publiant :** répondre comme on parle, et ne jamais
+poser une question dont la réponse serait une promesse qu'on ne tient
+pas. Une fiche se lit, et un client déçu y répond au même endroit.
+
 ## La validation
 
 Google propose selon les cas un courrier postal, un appel, un e-mail ou

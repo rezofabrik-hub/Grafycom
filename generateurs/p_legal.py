@@ -164,5 +164,5 @@ CONF = ("""
 
 page("confidentialite.html",
      "Politique de confidentialité | Grafycom",
-     "Comment Grafycom traite les données du formulaire de contact, et celles des registres publics utilisées pour un courrier de présentation : origine, finalité, durée, retrait sur simple demande.",
+     "Données du formulaire de contact et des registres publics utilisées pour un courrier de présentation : origine, finalité, durée, retrait sur demande.",
      CONF, robots="noindex, follow")
