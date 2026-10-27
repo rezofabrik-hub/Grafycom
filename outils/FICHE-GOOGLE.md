@@ -240,19 +240,25 @@ le 25 octobre. Les services de conseil, moins cherchés, passent après.
 | `Identité visuelle & Branding` | Création d'un univers unique pour votre marque. Une image forte et cohérente qui reflète vos valeurs et capte vos clients. |
 | `Graphisme Print` | Mise en page professionnelle de vos flyers, brochures et affiches. Un design de qualité pour un impact maximal lors de vos événements. |
 | `Signalétique & PLV` | Habillez votre point de vente ou vos bureaux. Création de supports physiques personnalisés pour une visibilité optimale sur site. |
-| `Design de menus & cartes` | Valorisez votre savoir-faire avec des menus et cartes de visite élégants. Idéal pour restaurateurs et commerçants de proximité. |
+| `Menus & cartes de restaurant` | Valorisez votre savoir-faire avec une carte élégante et facile à lire. Menus, ardoises, formats à emporter — pour restaurateurs, bars et traiteurs. |
+| `Cartes de visite` | La première chose qu'on garde de vous. Choix du papier, des finitions et une lisibilité soignée, pour une carte qu'on range au lieu de la jeter. |
 | `Supports 360°` | Une communication globale : du digital au papier. Je crée l'ensemble de vos visuels pour une cohérence parfaite de votre marque. |
 | `Conseil en image` | Un accompagnement stratégique pour définir votre positionnement. Ensemble, créons l'image qui vous ressemble vraiment. |
 | `Stratégie visuelle` | Alignez votre communication avec vos objectifs business. Une vision claire pour acquérir et fidéliser votre clientèle idéale. |
 | `Gestion de projet` | +7 ans d'expertise pour piloter vos projets créatifs. De l'idée à la livraison, je gère chaque étape avec rigueur et bienveillance. |
 | `Com' transfrontalière` | Développez votre activité sur l'axe France-Espagne. Expertise bilingue ES/CAT pour une communication fluide sans frontières. |
 
-> **Un mot sur « Design de menus & cartes ».** La description parle de
-> « menus et cartes de visite » : deux produits très différents sous un
-> seul intitulé. Sur Facebook, où l'on survole, ça passe. Sur une fiche
-> Google, quelqu'un qui cherche une carte de restaurant lit une phrase
-> à moitié consacrée aux cartes de visite. À scinder en deux services
-> le jour où il y a de la place — Google en accepte largement plus.
+> **« Design de menus & cartes » a été scindé**, à la demande de
+> Laurent le 27 octobre. L'intitulé couvrait deux produits qui n'ont
+> rien à voir — la carte d'un restaurant et la carte de visite d'un
+> artisan — et sa description parlait des deux. Sur Facebook, où l'on
+> survole, ça passait. Sur une fiche Google, quelqu'un qui cherche une
+> carte de restaurant lisait une phrase à moitié consacrée aux cartes
+> de visite.
+>
+> Les deux descriptions gardent la voix de Sandra et son registre — on
+> valorise, on s'adresse directement, on nomme le métier du lecteur.
+> Onze services au lieu de dix ; Google en accepte largement plus.
 
 **Horaires** — le seul champ que personne ne peut remplir à la place de
 Sandra. Mettre les vrais. Une fiche qui annonce « ouvert » quand personne

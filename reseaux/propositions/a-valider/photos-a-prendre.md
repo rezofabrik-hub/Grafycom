@@ -71,6 +71,59 @@ photo à refaire :**
 
 ---
 
+## Les photos du 27 octobre — chez l'imprimeur
+
+**Cinq vraies photos sont arrivées**, prises par Laurent le 27 octobre
+**chez l'imprimeur de Sandra**. Ce sont les premières photographies du
+dossier, et elles règlent plusieurs manques d'un coup.
+
+| Photo | Ce qu'elle couvre | État |
+|---|---|---|
+| Nuancier de plaques en éventail | « le nuancier ouvert en éventail, en lumière du jour » | ✅ recadrée 1080 × 1350 |
+| Lettre découpée blanche, de trois quarts | la tranche et les plots de collage, en relief | ✅ recadrée |
+| Lettre acrylique brillante sur fond rouge | la même matière en finition opposée | ✅ recadrée |
+| Vitrophanie d'horaires sur vitrine | le texte adhésif sur verre, avec les reflets | ✅ recadrée |
+| Traceur Roland en impression | les coulisses de la fabrication | ⛔ voir plus bas |
+
+### La provenance se dit, elle ne se tait pas
+
+Ces photos ont été prises **chez un prestataire, pas dans l'atelier de
+Sandra**. Elles ne peuvent donc pas être légendées « mes coulisses ».
+C'est la même règle que pour les réalisations menées au sein d'une
+structure précédente, et elle vaut pour la même raison : un prospect
+qui découvre l'écart perd confiance d'un coup.
+
+La formule juste est aussi la plus avantageuse :
+
+> **« Chez mon imprimeur »**, « chez le poseur », « en atelier ».
+
+Montrer qu'on suit la fabrication n'est pas un aveu, c'est un
+argument : beaucoup de graphistes livrent un fichier et ne mettent
+jamais les pieds là où il devient un objet. Le dire vaut mieux que de
+le laisser croire — et vaut mieux que de le cacher.
+
+### Ce que ces photos ne sont pas
+
+**Ce ne sont pas des réalisations.** Les lettres découpées et le
+nuancier sont les échantillons de l'imprimeur, pas des travaux
+Grafycom. Elles illustrent une **matière** et une **technique** — ce
+que le dossier appelle le décor — et jamais une preuve. Aucune
+légende ne doit laisser entendre « voici ce que j'ai fait ».
+
+### Le traceur Roland est en attente
+
+On y lit **deux travaux clients identifiables** : un menu de
+sandwicherie avec son numéro de téléphone, et un kakémono de
+conciergerie avec le sien. Ni l'un ni l'autre n'est client de
+Grafycom, et la règle plus bas est sans appel — « une marque tierce
+lisible qui n'a rien à faire là » rend une photo inutilisable.
+
+Deux sorties, et la seconde suffit : leur accord, ou **un recadrage
+serré sur la tête d'impression** — la machine, l'encre, le vinyle qui
+défile, sans rien de lisible. Elle garde l'essentiel de son intérêt.
+
+---
+
 ## Les prises de vue permanentes
 
 À constituer une fois, puis à compléter au fil des chantiers. C'est le
