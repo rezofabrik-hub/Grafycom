@@ -37,5 +37,6 @@
   <url><loc>https://grafycom.fr/a-propos.html</loc><lastmod>2026-09-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <!-- blog : bloc produit par generateurs/p_blog.py -->
   <url><loc>https://grafycom.fr/blog.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://grafycom.fr/blog-autorisation-enseigne-perpignan.html</loc><lastmod>2026-10-30</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <!-- fin blog -->
 </urlset>
