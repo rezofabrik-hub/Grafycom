@@ -293,7 +293,7 @@ form.devis { background: #fff; border: 1px solid var(--sable); border-radius: va
 .champ label .opt { font-weight: 400; color: var(--taupe); }
 .champ input, .champ textarea, .champ select {
   width: 100%; padding: 13px 16px; border: 1.5px solid var(--sable-fonce); border-radius: 12px;
-  font-family: inherit; font-size: 15.5px; color: var(--encre); background: #fff; transition: border-color .2s, box-shadow .2s;
+  font-family: inherit; font-size: 16px; color: var(--encre); background: #fff; transition: border-color .2s, box-shadow .2s;
 }
 .champ textarea { min-height: 140px; resize: vertical; }
 .champ input:focus, .champ textarea:focus, .champ select:focus {
