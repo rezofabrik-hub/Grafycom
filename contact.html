@@ -86,10 +86,12 @@
 <section>
   <div class="conteneur form-grille">
 
-    <!-- Aucun service d'envoi n'est branché : tant que l'attribut action reste
-         absent, le formulaire ouvre le logiciel de messagerie du visiteur avec
-         un message prérempli. Voir le README pour brancher un vrai envoi. -->
-    <form class="devis" data-mailto="contact@grafycom.fr" novalidate>
+    <!-- L'attribut action, l'enctype et le champ « photos » sont posés par le
+         générateur, et tous les trois dépendent du même drapeau : quand
+         FORMULAIRE_ACTIF vaut False, le formulaire retombe sur le logiciel de
+         messagerie du visiteur, qui ne sait pas porter de pièce jointe — donc
+         le champ disparaît avec le point d'envoi. Voir generateurs/gen.py. -->
+    <form class="devis" data-mailto="contact@grafycom.fr" action="/api/contact" method="POST" enctype="multipart/form-data" novalidate>
       <h2 style="margin-bottom:6px">Demande de devis</h2>
       <p style="font-size:15px;margin-bottom:26px">Les champs marqués d'un astérisque sont nécessaires pour vous répondre.</p>
 
@@ -152,6 +154,19 @@
       <div class="champ">
         <label for="message">Votre projet *</label>
         <textarea id="message" name="message" required placeholder="Votre activité, vos clients, ce qui existe déjà et ce qui vous gêne aujourd'hui. Pas besoin de vocabulaire technique : écrivez simplement."></textarea>
+      </div>
+
+
+      <div class="champ">
+        <label for="photos">Des photos, si vous en avez <span class="opt">(facultatif)</span></label>
+        <p class="aide-champ">Votre vitrine, votre ancienne carte, le mur où doit aller l'enseigne, le véhicule à marquer. Une photo prise au téléphone suffit&nbsp;: elle en dit plus que dix lignes de description, et permet souvent de chiffrer du premier coup.</p>
+        <input type="file" id="photos" name="photos" class="fichier-cache" multiple accept="image/*,.pdf,.heic,.heif">
+        <label class="depot" for="photos">
+          <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+          <span class="depot-texte"><strong>Choisir des photos</strong><span>Images ou PDF&nbsp;— 4 fichiers au maximum, 5&nbsp;Mo chacun</span></span>
+        </label>
+        <ul class="photos-liste" hidden></ul>
+        <p class="aide-champ" style="margin-top:10px">Les photos sont réduites par votre navigateur avant l'envoi, pour que cela reste rapide en 4G. Elles ne sont pas stockées sur ce site&nbsp;: elles partent avec le courriel, directement.</p>
       </div>
 
       <!-- Pot de miel anti-robots : invisible et hors du parcours au clavier.

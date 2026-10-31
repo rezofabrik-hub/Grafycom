@@ -2,6 +2,30 @@
 from gen import (page, page_jsonld, MAIL, TEL, TEL_URI, FORMULAIRE_ACTIF,
                  ENVOI_FORMULAIRE)
 
+
+# Le champ photos n'existe que si un point d'envoi existe. Sans lui, le
+# formulaire compose un courriel dans le logiciel du visiteur : ce chemin
+# ne transporte aucun fichier, et un champ qui promet de les envoyer
+# mentirait. Il est donc inséré, ou pas, par le même drapeau que l'action.
+#
+# Les chiffres annoncés au visiteur sont ceux que le Worker applique
+# vraiment (PHOTOS_MAX et PHOTO_OCTETS_MAX dans src/index.js). Les écrire
+# ici à la main est le seul endroit où les deux peuvent diverger : s'ils
+# changent là-bas, ils changent ici.
+PHOTOS = """
+      <div class="champ">
+        <label for="photos">Des photos, si vous en avez <span class="opt">(facultatif)</span></label>
+        <p class="aide-champ">Votre vitrine, votre ancienne carte, le mur où doit aller l'enseigne, le véhicule à marquer. Une photo prise au téléphone suffit&nbsp;: elle en dit plus que dix lignes de description, et permet souvent de chiffrer du premier coup.</p>
+        <input type="file" id="photos" name="photos" class="fichier-cache" multiple accept="image/*,.pdf,.heic,.heif">
+        <label class="depot" for="photos">
+          <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+          <span class="depot-texte"><strong>Choisir des photos</strong><span>Images ou PDF&nbsp;— 4 fichiers au maximum, 5&nbsp;Mo chacun</span></span>
+        </label>
+        <ul class="photos-liste" hidden></ul>
+        <p class="aide-champ" style="margin-top:10px">Les photos sont réduites par votre navigateur avant l'envoi, pour que cela reste rapide en 4G. Elles ne sont pas stockées sur ce site&nbsp;: elles partent avec le courriel, directement.</p>
+      </div>
+"""
+
 BODY = """
 <section class="heros">
   <div class="conteneur centre" style="position:relative;z-index:1">
@@ -15,9 +39,11 @@ BODY = """
 <section>
   <div class="conteneur form-grille">
 
-    <!-- Aucun service d'envoi n'est branché : tant que l'attribut action reste
-         absent, le formulaire ouvre le logiciel de messagerie du visiteur avec
-         un message prérempli. Voir le README pour brancher un vrai envoi. -->
+    <!-- L'attribut action, l'enctype et le champ « photos » sont posés par le
+         générateur, et tous les trois dépendent du même drapeau : quand
+         FORMULAIRE_ACTIF vaut False, le formulaire retombe sur le logiciel de
+         messagerie du visiteur, qui ne sait pas porter de pièce jointe — donc
+         le champ disparaît avec le point d'envoi. Voir generateurs/gen.py. -->
     <form class="devis" data-mailto="%(mail)s"%(action)s novalidate>%(champs)s
       <h2 style="margin-bottom:6px">Demande de devis</h2>
       <p style="font-size:15px;margin-bottom:26px">Les champs marqués d'un astérisque sont nécessaires pour vous répondre.</p>
@@ -83,6 +109,7 @@ BODY = """
         <textarea id="message" name="message" required placeholder="Votre activité, vos clients, ce qui existe déjà et ce qui vous gêne aujourd'hui. Pas besoin de vocabulaire technique : écrivez simplement."></textarea>
       </div>
 
+%(photos)s
       <!-- Pot de miel anti-robots : invisible et hors du parcours au clavier.
            Un humain ne le voit pas, un robot le remplit et l'envoi est rejeté. -->
       <div class="pot-de-miel" aria-hidden="true">
@@ -152,8 +179,10 @@ BODY = """
 </section>
 """ % {
     "mail": MAIL, "tel": TEL, "tel_uri": TEL_URI,
-    "action": (' action="%s" method="POST"' % ENVOI_FORMULAIRE) if FORMULAIRE_ACTIF else "",
+    "action": ((' action="%s" method="POST" enctype="multipart/form-data"'
+                % ENVOI_FORMULAIRE) if FORMULAIRE_ACTIF else ""),
     "champs": "",
+    "photos": PHOTOS if FORMULAIRE_ACTIF else "",
 }
 
 page("contact.html",

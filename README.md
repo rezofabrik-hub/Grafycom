@@ -54,7 +54,7 @@ Si vous régénérez les pages depuis les scripts de génération, pensez à pas
 ### Avant d'ouvrir — la liste
 
 2. Les mentions légales complètes : raison sociale, statut, SIRET, TVA, hébergeur
-3. Le formulaire de contact branché sur un service d'envoi
+3. ~~Le formulaire de contact branché sur un service d'envoi~~ — fait le 31 octobre 2026
 4. Le domaine nu `grafycom.fr` qui redirige vers `www`
 5. HTTPS forcé dans les réglages GitHub Pages
 
@@ -192,54 +192,95 @@ automatiquement par GitHub.
 au moment de la bascule. Pour qu'il redirige lui aussi, il faut quatre
 enregistrements `A` sur `@` dans Route 53 — voir `MISE-EN-LIGNE.md`.
 
-### 5. Brancher le formulaire de contact
+### 5. Le formulaire de contact — branché
 
-Le formulaire est **entièrement câblé**, il ne lui manque que trois secrets
-Cloudflare. Il n'utilise aucun service de formulaire tiers&nbsp;: le message part
-du Worker (`src/index.js`) vers **Resend**, sur votre propre domaine.
+Le message part du Worker (`src/index.js`) vers **Resend**, sur le domaine de
+Grafycom. Aucun service de formulaire tiers, aucune page d'un prestataire où
+le visiteur serait expédié.
 
-En attendant, `FORMULAIRE_ACTIF = False` dans les scripts de génération&nbsp;:
-le formulaire ouvre la messagerie du visiteur avec un message prérempli, comme
-avant. GitHub Pages ne sait pas exécuter de code, donc l'activer maintenant
-casserait l'envoi.
+**En service depuis le 31 octobre 2026.** Le point d'envoi, lui, existait
+depuis le 11 octobre : il répondait correctement, et personne ne l'appelait,
+parce que `FORMULAIRE_ACTIF` était resté à `False` bien après le départ de
+GitHub Pages. Le formulaire composait donc un courriel dans le logiciel du
+visiteur — ce qui marche, mais ne porte aucune pièce jointe et laisse partir
+une demande sur deux dans un brouillon jamais envoyé.
 
-#### Ce qu'il reste à faire, une fois le site sur Cloudflare
+#### Les photos jointes
 
-1. **Créer une clé d'API Resend** — [resend.com](https://resend.com) →
-   API Keys → Create.
-2. **Déclarer trois secrets** dans Cloudflare → Workers &amp; Pages → le projet →
-   Settings → Variables and Secrets&nbsp;:
+Le formulaire accepte **jusqu'à quatre images ou PDF**, 5 Mo par fichier et
+10 Mo en tout. Trois choses y tiennent, et elles sont liées.
 
-   | Secret | Contenu |
-   |---|---|
-   | `RESEND_API_KEY` | la clé créée à l'étape 1 |
-   | `CONTACT_TO` | l'adresse qui reçoit les demandes |
-   | `CONTACT_FROM` | l'expéditeur, par exemple `Grafycom <contact@grafycom.fr>` — le domaine doit être vérifié chez Resend. Sans ce secret, l'expéditeur est `onboarding@resend.dev`, qui ne délivre qu'au titulaire du compte Resend&nbsp;: pratique pour tester, insuffisant en production. |
+**Le navigateur réduit avant d'envoyer** (`assets/site.js`). Une photo
+d'iPhone pèse 3 à 5 Mo ; ramenée à 2000 px de côté en JPEG 82, elle tombe à
+300-500 ko et reste bien plus détaillée qu'il n'en faut pour juger d'une
+vitrine. Sans cela, quatre photos dépassent ce que le courriel accepte, et
+l'envoi prend des minutes en 4G — exactement la situation du commerçant qui
+photographie sa devanture depuis le trottoir. L'orientation EXIF est
+appliquée, sans quoi une photo verticale ressortirait couchée. Un PNG de
+moins d'1,5 Mo n'est pas touché : c'est presque toujours un logo, et
+l'aplatir en JPEG lui coûterait sa transparence.
 
-3. **Passer `FORMULAIRE_ACTIF = True`** et régénérer les pages, ou ajouter à la
-   main `action="/api/contact" method="POST"` sur la balise `<form>` de
-   `contact.html`.
+**Le Worker vérifie le contenu, pas le nom.** `signature()` lit les premiers
+octets de chaque fichier : JPEG, PNG, GIF, WebP, HEIC/HEIF ou PDF, rien
+d'autre. Un exécutable renommé `photo.jpg` est refusé, et l'extension du
+fichier qui arrive dans la boîte de Sandra est celle de son vrai type, pas
+celle de son nom.
+
+**Rien n'est stocké sur le site.** Les fichiers sont attachés au courriel et
+n'existent ensuite que dans la boîte de Sandra. Pas de seau R2, pas de base,
+pas de purge à prévoir.
+
+Les limites sont écrites à deux endroits — `PHOTOS_MAX` / `PHOTO_OCTETS_MAX`
+dans `src/index.js`, et les constantes du même nom dans `assets/site.js`,
+plus la phrase affichée au visiteur dans `generateurs/p_contact.py`. C'est le
+seul endroit du dispositif où trois valeurs peuvent diverger : les changer,
+c'est les changer aux trois.
+
+**Les pièces jointes ne partent que par Resend.** Le lien `EMAIL` de
+Cloudflare prend un message simple, pas un envoi MIME multipart. Si
+`RESEND_API_KEY` venait à disparaître, le message partirait quand même — en
+annonçant à Sandra, avec la liste des noms de fichiers, que les photos n'ont
+pas pu suivre et qu'il faut les redemander. Perdre une demande serait pire
+que perdre les photos.
+
+#### Si le formulaire doit être débranché
+
+`FORMULAIRE_ACTIF = False` dans `generateurs/gen.py`, puis régénérer. Une
+seule constante gouverne les trois choses : l'attribut `action`, l'`enctype`,
+et le champ « photos » qui disparaît avec eux — promettre un envoi de
+fichiers sans point d'envoi serait pire que de ne rien proposer. Le repli par
+courriel reprend aussitôt sa place.
+
+#### Les secrets
+
+Cloudflare → Workers &amp; Pages → le projet → Settings → Variables and
+Secrets :
+
+| Nom | Contenu |
+|---|---|
+| `RESEND_API_KEY` | clé d'API Resend (`re_…`), **type Secret** |
+| `CONTACT_TO` | l'adresse qui reçoit les demandes |
+| `CONTACT_FROM` | l'expéditeur, sur un domaine vérifié chez Resend |
 
 #### Changer l'adresse de réception
 
 C'est le secret `CONTACT_TO`, **pas le code**. Modifier la valeur dans
-l'interface Cloudflare suffit — rien à redéployer, rien à recommiter. C'est ce
-qui permet de recevoir les demandes sur une adresse pendant la mise au point,
-puis de basculer sur celle de Sandra en trente secondes.
+l'interface Cloudflare suffit — rien à redéployer, rien à recommiter.
 
-L'adresse affichée sur le site reste indépendante&nbsp;: c'est `MAIL` dans les
+L'adresse affichée sur le site reste indépendante : c'est `MAIL` dans les
 scripts de génération.
 
 #### Ce que fait le Worker
 
-Il vérifie le pot de miel, contrôle que le nom, le courriel et le message sont
-présents et plausibles, limite leur longueur, puis appelle Resend en plaçant
-l'adresse du visiteur en `reply_to` — un simple « Répondre » suffit.
+Il vérifie le pot de miel, contrôle que le nom, le courriel et le message
+sont présents et plausibles, limite leur longueur, lit et vérifie les photos,
+puis appelle Resend en plaçant l'adresse du visiteur en `reply_to` — un
+simple « Répondre » suffit. L'objet porte le nombre de photos, pour que
+Sandra sache depuis sa liste de messages qu'il y a de quoi regarder.
 
-En cas de succès il redirige vers `merci.html`&nbsp;; en cas d'échec vers
+En cas de succès il redirige vers `merci.html` ; en cas d'échec vers
 `contact.html?erreur=…`, et la page affiche alors un message qui distingue le
-champ manquant de la panne d'envoi.
-
+champ manquant de la panne d'envoi, du fichier trop lourd, du fichier refusé.
 
 ### 6. Renseigner les réseaux sociaux
 

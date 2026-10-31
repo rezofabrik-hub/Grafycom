@@ -301,10 +301,13 @@ Projet → **Settings → Variables and Secrets** → **Add**, type **Secret** :
 | `CONTACT_TO` | adresse qui reçoit les demandes |
 | `CONTACT_FROM` | expéditeur sur un domaine vérifié chez Resend (facultatif) |
 
-Tant qu'ils manquent, `/api/contact` renvoie une erreur. C'est pourquoi le
-formulaire du site reste pour l'instant en mode « ouvre le logiciel de
-messagerie » : il ne sera basculé sur `/api/contact` qu'une fois les secrets en
-place et un envoi réel vérifié.
+Tant qu'ils manquent, `/api/contact` renvoie une erreur.
+
+**Posés, et le formulaire bascule dessus le 31 octobre 2026.** Il porte
+désormais `action="/api/contact"` et un champ photos — jusqu'à quatre images
+ou PDF, réduites par le navigateur avant l'envoi et attachées au courriel.
+Voir le README, section 5, pour les limites et pour la marche à suivre si le
+formulaire doit être débranché.
 
 ### 2 ter. La voix off des reels — deux variables d'environnement
 

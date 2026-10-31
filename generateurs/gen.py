@@ -10,10 +10,17 @@ CONSTRUCTION = False
 # Le formulaire est traité par le Worker Cloudflare (src/index.js), qui envoie
 # le message via Resend. Ni clé ni adresse ici : ce sont des secrets Cloudflare.
 #
-# False tant que le site est servi par GitHub Pages, qui ne sait pas exécuter
-# de code : le formulaire garde alors son repli par courriel. Passer à True le
-# jour où Cloudflare sert le site.
-FORMULAIRE_ACTIF = False
+# True depuis le 31 octobre 2026. Ce drapeau était resté à False bien après
+# que Cloudflare ait remplacé GitHub Pages : le point d'envoi existait,
+# fonctionnait, et personne ne l'appelait. Le formulaire composait un
+# courriel dans le logiciel du visiteur — ce qui marche, mais ne sait pas
+# porter de pièce jointe, et laisse partir une demande sur deux dans un
+# brouillon jamais envoyé.
+#
+# À False, le repli par courriel revient et le champ « photos » disparaît :
+# promettre un envoi de fichiers sans point d'envoi serait pire que de ne
+# rien proposer. Les deux comportements tiennent dans cette seule constante.
+FORMULAIRE_ACTIF = True
 ENVOI_FORMULAIRE = "/api/contact"
 
 # Jeton de validation de la Google Search Console, methode « balise HTML ».

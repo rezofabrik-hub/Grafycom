@@ -307,6 +307,53 @@ form.devis { background: #fff; border: 1px solid var(--sable); border-radius: va
 .rgpd input { width: auto; margin-top: 4px; accent-color: var(--violet); }
 .form-aide { font-size: 13.5px; margin-top: 16px; }
 
+/* ---------- Champ photos du formulaire ----------
+   L'input natif est deplace hors cadre plutot que masque : display:none le
+   retire du parcours au clavier, et le visiteur qui navigue sans souris ne
+   peut plus joindre de photo. Ici il reste focusable, et c'est la zone
+   .depot qui montre le focus. */
+.aide-champ { font-size: 13.5px; line-height: 1.6; color: var(--brun-clair); margin-bottom: 10px; }
+/* .champ input et .champ label sont plus specifiques qu'une simple classe :
+   sans l'element dans le selecteur, leur width:100% et leur display:block
+   l'emporteraient, l'ordre du fichier n'y changeant rien. */
+.champ input.fichier-cache { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.champ label.depot {
+  display: flex; align-items: center; gap: 14px; cursor: pointer;
+  border: 1.5px dashed var(--sable-fonce); border-radius: 14px;
+  padding: 16px 18px; background: var(--creme);
+  transition: border-color .2s, background .2s, box-shadow .2s;
+  font-weight: 400;
+}
+.champ label.depot:hover { border-color: var(--violet); background: var(--creme-rose); }
+.champ input.fichier-cache:focus-visible + label.depot { border-color: var(--violet); box-shadow: 0 0 0 4px rgba(168,108,208,.14); }
+.champ label.depot > i { color: var(--violet); font-size: 21px; flex: none; }
+.depot-texte { display: block; min-width: 0; }
+.depot-texte strong { display: block; font-size: 15px; color: var(--encre); }
+.depot-texte span { display: block; font-size: 13px; color: var(--brun-clair); margin-top: 2px; }
+.champ label.depot.survol { border-color: var(--violet); border-style: solid; background: var(--creme-rose); }
+
+.photos-liste { list-style: none; margin: 12px 0 0; display: grid; gap: 8px; }
+.photos-liste li {
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid var(--sable); border-radius: 12px; padding: 8px 10px; background: #fff;
+}
+.photos-liste img { width: 46px; height: 46px; object-fit: cover; border-radius: 8px; flex: none; background: var(--sable); }
+.photos-liste .vignette-pdf {
+  width: 46px; height: 46px; border-radius: 8px; flex: none; background: var(--sable);
+  display: flex; align-items: center; justify-content: center; color: var(--brun); font-size: 17px;
+}
+/* min-width:0 : sans lui, un nom de fichier long pousse le bouton hors de la
+   carte au lieu d'etre tronque. */
+.photos-liste .nom { flex: 1; min-width: 0; font-size: 14px; color: var(--encre); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.photos-liste .poids { font-size: 12.5px; color: var(--taupe); flex: none; font-variant-numeric: tabular-nums; }
+.photos-liste button {
+  flex: none; width: 44px; height: 44px; border: none; border-radius: 10px; cursor: pointer;
+  background: var(--creme); color: var(--brun); font-size: 14px; transition: background .2s, color .2s;
+}
+.photos-liste button:hover { background: #fdecea; color: #b3282c; }
+.photos-note { font-size: 13px; margin-top: 10px; color: var(--brun-clair); }
+.photos-note.refus { color: #b3282c; }
+
 .bloc-contact { background: var(--creme); border-radius: var(--radius-lg); padding: clamp(26px, 4vw, 38px); }
 .ligne-contact { display: flex; gap: 15px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid var(--sable-fonce); }
 .ligne-contact:last-child { border-bottom: none; }
