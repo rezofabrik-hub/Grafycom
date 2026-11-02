@@ -46,10 +46,27 @@ NAV = [
     ("prestations.html", "Prestations"),
     ("realisations.html", "Réalisations"),
     ("blog.html", "Blog"),
+    ("actualites.html", "Actualités"),
     ("methode.html", "Méthode"),
     ("a-propos.html", "À propos"),
     ("contact.html", "Contact"),
 ]
+
+# Politique de securite des pages. Elle est repetee dans _headers, en vrai
+# en-tete : les deux doivent rester identiques.
+CSP = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
+       "img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; "
+       "frame-ancestors 'none'; base-uri 'self'; object-src 'none'")
+
+# La page Actualites lit les publications de Sandra dans la base Supabase de
+# l'Espace Pro de Rezo Fabrik, et affiche leurs photos depuis le meme projet.
+# Cette seule page autorise donc cette origine en lecture (connect-src) et
+# pour les images (img-src) ; toutes les autres gardent la politique stricte.
+# A reporter dans _headers si l'origine change.
+SUPABASE = "https://jkydfgfuzhgtqbmuzitt.supabase.co"
+CSP_ACTUALITES = CSP.replace(
+    "img-src 'self' data:;",
+    "img-src 'self' data: %s; connect-src 'self' %s;" % (SUPABASE, SUPABASE))
 
 HEAD = """<!DOCTYPE html>
 <html lang="fr">
@@ -72,7 +89,7 @@ HEAD = """<!DOCTYPE html>
 <meta name="twitter:card" content="summary_large_image">{ogdate}
 
 <link rel="icon" href="assets/img/logo-grafycom-carre.jpg">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; form-action 'self' mailto:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="{csp}">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/fa/css/all.min.css">
@@ -343,7 +360,7 @@ def page_jsonld(titre, slug, desc, typ="WebPage", offres=False):
 
 
 def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow",
-         ogtype="website", ogimage=None, ogdate=None):
+         ogtype="website", ogimage=None, ogdate=None, csp=CSP):
     """ogtype / ogimage / ogdate servent aux articles du blog.
 
     Un article partage sur un reseau social avec le logo du studio en
@@ -367,7 +384,7 @@ def page(slug, title, desc, body, ogtitle=None, jsonld="", robots="index, follow
                                else "%s/assets/img/logo-grafycom-carre.jpg" % SITE,
                        ogdate=('\n<meta property="article:published_time" '
                                'content="%s">' % ogdate) if ogdate else "",
-                       verif=verif)
+                       verif=verif, csp=csp)
     html += body
     html += FOOT.format(mail=MAIL, tel=TEL, tel_uri=TEL_URI)
     chemin = os.path.join(OUT, slug)

@@ -399,6 +399,9 @@ footer a:hover { color: #fff; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
+  /* Huit entrées de menu depuis l'ajout d'« Actualités » : entre 861 et
+     1000 px, l'en-tête débordait. On resserre les pastilles du menu. */
+  nav.principal a { padding: 9px 10px; }
   .g4 { grid-template-columns: repeat(2, 1fr); }
   .galerie { grid-template-columns: repeat(2, 1fr); }
   .pied-grille { grid-template-columns: 1fr 1fr 1fr; }
@@ -545,4 +548,32 @@ footer a:hover { color: #fff; }
 blockquote.alerte {
   border-left-color: var(--corail);
   background: var(--creme-rose);
+}
+
+/* ---------------------------------------------------------------
+   Actualités : les publications de Sandra, chargées par
+   assets/actualites.js. Une seule colonne, comme un fil : les textes
+   et les photos n'ont pas tous la même longueur, une grille laisserait
+   des trous.
+   --------------------------------------------------------------- */
+.actus { max-width: 720px; }
+.actus-vide { text-align: center; color: var(--brun-clair); font-style: italic; margin: 0; }
+.actus-liste { display: grid; gap: 32px; }
+.actu {
+  background: var(--blanc); border: 1px solid var(--sable); border-radius: var(--radius);
+  overflow: hidden; min-width: 0;
+}
+.actu-photos { background: var(--creme); }
+.actu-photo { display: block; width: 100%; height: auto; }
+.actu-vignettes { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; padding: 6px; }
+.actu-vignettes a { display: block; border-radius: 8px; overflow: hidden; }
+.actu-vignettes img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: opacity .2s; }
+.actu-vignettes a:hover img { opacity: .85; }
+.actu-corps { padding: 24px 28px 28px; }
+.actu-corps > .date-article { margin: 0; }
+.actu h2 { margin: 6px 0 10px; font-size: clamp(20px, 2.1vw, 25px); }
+.actu-texte { margin: 10px 0 0; white-space: pre-line; overflow-wrap: anywhere; }
+.actu-texte a { color: var(--bleu); }
+@media (max-width: 520px) {
+  .actu-corps { padding: 20px 18px 22px; }
 }
