@@ -49,6 +49,8 @@ NAV = [
     ("actualites.html", "Actualités"),
     ("methode.html", "Méthode"),
     ("a-propos.html", "À propos"),
+    # Boutique : page d'attente pour l'instant (p_boutique.py, 18/11/2026).
+    ("boutique.html", "Boutique"),
     ("contact.html", "Contact"),
 ]
 

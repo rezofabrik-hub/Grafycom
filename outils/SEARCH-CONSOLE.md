@@ -63,7 +63,7 @@ Y coller le jeton entre les guillemets, puis régénérer :
 
 ```bash
 cd generateurs
-for p in p_index p_prestations p_methode p_apropos p_contact p_merci \
+for p in p_index p_prestations p_methode p_apropos p_contact p_merci p_boutique \
          p_legal p_cgv p_realisations p_cibles zone \
          villes villes2 villes3 villes4 villes5 villes6 p_construction; do
   python3 "$p.py"

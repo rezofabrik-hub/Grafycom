@@ -1,0 +1,3 @@
+# Adresse courte annoncee pour la boutique : /boutique mene a la page.
+# (html_handling = "none" dans wrangler.toml : sans cette ligne, /boutique repondrait 404.)
+/boutique /boutique.html 301
