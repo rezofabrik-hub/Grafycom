@@ -398,10 +398,25 @@ footer a:hover { color: #fff; }
 .pied-bas { border-top: 1px solid rgba(255,255,255,.14); padding: 22px 0; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13.5px; }
 
 /* ---------- Responsive ---------- */
+/* Neuf entrées de menu depuis l'ajout de « Boutique » (18/11/2026) :
+   jusqu'à 1300 px, le menu poussait le logo, qui rétrécissait, et entre
+   1001 et 1100 px l'en-tête débordait. Le logo garde sa taille, les
+   pastilles du menu se resserrent et, sous 1100 px, le bouton « Parlons
+   de votre projet » laisse la place au menu (« Contact » y reste), comme
+   il le fait déjà sur mobile. */
+.logo { flex-shrink: 0; }
+@media (max-width: 1300px) {
+  nav.principal a { padding: 9px 11px; }
+}
+@media (max-width: 1100px) {
+  .entete > .btn { display: none; }
+}
 @media (max-width: 1000px) {
   /* Huit entrées de menu depuis l'ajout d'« Actualités » : entre 861 et
-     1000 px, l'en-tête débordait. On resserre les pastilles du menu. */
-  nav.principal a { padding: 9px 10px; }
+     1000 px, l'en-tête débordait. On resserre les pastilles du menu.
+     Neuvième entrée (« Boutique ») : on resserre encore, texte compris. */
+  nav.principal a { padding: 9px 6px; font-size: 14px; }
+  .entete { gap: 14px; }
   .g4 { grid-template-columns: repeat(2, 1fr); }
   .galerie { grid-template-columns: repeat(2, 1fr); }
   .pied-grille { grid-template-columns: 1fr 1fr 1fr; }
