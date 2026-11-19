@@ -6,7 +6,7 @@ le menu, et la page dit simplement qu'elle arrive. Aucun produit, aucun
 prix, aucun paiement : tant que rien n'est en vente, la page n'annonce rien
 qu'on ne pourrait pas tenir.
 
-noindex : une page « bientôt en ligne » n'a rien a faire dans les
+noindex : une page « bientôt disponible » n'a rien a faire dans les
 resultats de recherche. Elle n'est pas non plus dans sitemap.xml. A
 l'ouverture de la vraie boutique, repasser en « index, follow » et
 l'ajouter au sitemap.
@@ -17,7 +17,7 @@ BODY = """
 <section class="heros">
   <div class="conteneur centre" style="position:relative;z-index:1">
     <span class="eyebrow">Boutique</span>
-    <h1>Bientôt<br><span class="texte-degrade">en ligne</span></h1>
+    <h1>Bientôt<br><span class="texte-degrade">disponible</span></h1>
     <div class="trait"></div>
     <p class="chapeau">La boutique Grafycom ouvre bientôt. En attendant, contactez-moi pour toute demande&nbsp;: je vous réponds avec plaisir.</p>
     <div class="groupe-btn" style="margin-top:32px">
@@ -47,6 +47,6 @@ BODY = """
 </section>
 """ % {"tel": TEL, "tel_uri": TEL_URI}
 
-page("boutique.html", "Boutique — bientôt en ligne | Grafycom",
+page("boutique.html", "Boutique — bientôt disponible | Grafycom",
      "La boutique en ligne Grafycom ouvre bientôt. En attendant, contactez le studio pour toute demande.",
-     BODY, ogtitle="Boutique Grafycom — bientôt en ligne", robots="noindex, follow")
+     BODY, ogtitle="Boutique Grafycom — bientôt disponible", robots="noindex, follow")
