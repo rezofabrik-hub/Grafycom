@@ -19,7 +19,7 @@ BODY = """
     <span class="eyebrow">Boutique</span>
     <h1>Bientôt<br><span class="texte-degrade">disponible</span></h1>
     <div class="trait"></div>
-    <p class="chapeau">La boutique Grafycom ouvre bientôt. En attendant, contactez-moi pour toute demande&nbsp;: je vous réponds avec plaisir.</p>
+    <p class="chapeau" style="margin-left:auto;margin-right:auto">La boutique Grafycom ouvre bientôt. En attendant, contactez-moi pour toute demande&nbsp;: je vous réponds avec plaisir.</p>
     <div class="groupe-btn" style="margin-top:32px">
       <a href="contact.html" class="btn btn-couleur">Me contacter <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
       <a href="tel:%(tel_uri)s" class="btn btn-secondaire"><i class="fa-solid fa-phone" aria-hidden="true"></i> %(tel)s</a>
